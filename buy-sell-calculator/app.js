@@ -26,9 +26,20 @@
       row.append(label, value); result.append(row);
     }
   }
+  function updateSpread() {
+    const buyInput = document.getElementById('buy-price');
+    const sellInput = document.getElementById('sell-price');
+    const buy = Number(buyInput.value), sell = Number(sellInput.value);
+    const spread = (sell / buy - 1) * 100;
+    document.getElementById('spread-result').textContent =
+      buyInput.value !== '' && sellInput.value !== '' && buy > 0 && sell > 0 && Number.isFinite(spread)
+        ? `${spread > 0 ? '+' : ''}${Number(spread.toFixed(2))}%` : '—';
+  }
   for (const side of ['buy', 'sell']) {
     for (const key of ['price', 'rate', 'count']) document.getElementById(side + '-' + key).addEventListener('input', () => update(side));
+    document.getElementById(side + '-price').addEventListener('input', updateSpread);
     update(side);
   }
+  updateSpread();
   if (typeof module !== 'undefined') module.exports = { roundPrice };
 }());
