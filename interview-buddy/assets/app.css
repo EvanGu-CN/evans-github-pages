@@ -24,6 +24,31 @@
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   --mono: "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", monospace;
   --topbar-h: 54px;
+  color-scheme: light;
+}
+
+/* 深色主题：同一套 token 换值，保证所有组件跟随 */
+:root[data-theme="dark"] {
+  --bg: #0e1319;
+  --surface: #151c25;
+  --surface-soft: #1a232e;
+  --surface-mute: #202b38;
+  --line: #293644;
+  --line-strong: #3a4959;
+  --ink: #e8edf4;
+  --ink-2: #b6c0ce;
+  --ink-3: #93a0b1;
+  --accent: #7aa9ff;
+  --accent-soft: #1a2942;
+  --accent-line: #3b5a8c;
+  --easy: #63d3a2;
+  --easy-soft: #16302a;
+  --medium: #e8bb6a;
+  --medium-soft: #322817;
+  --hard: #f28b8b;
+  --hard-soft: #3a1f22;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -90,6 +115,27 @@ svg { flex: none; }
 }
 .brand-text { display: flex; align-items: baseline; gap: 7px; font-size: 15px; font-weight: 650; letter-spacing: 0.01em; white-space: nowrap; }
 .brand-sub { font-size: 12px; font-weight: 500; color: var(--ink-3); letter-spacing: 0.04em; }
+
+/* 主题切换按钮 */
+.theme-toggle {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink-2);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.theme-toggle:hover { border-color: var(--accent-line); color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .ic-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .ic-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
 
 /* 主体 */
 .shell {
@@ -964,3 +1010,19 @@ html.diagram-open body { overflow: hidden; overscroll-behavior: none; }
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
 }
+
+/* ---------------- 深色主题硬编码色修正 ---------------- */
+:root[data-theme="dark"] ::selection { background: #2c4570; }
+:root[data-theme="dark"] .topbar { background: rgba(21, 28, 37, 0.94); }
+:root[data-theme="dark"] .tabbar { background: rgba(21, 28, 37, 0.97); }
+:root[data-theme="dark"] .btn:hover { background: var(--surface-mute); }
+:root[data-theme="dark"] .q-nav a:hover { background: var(--surface-mute); }
+:root[data-theme="dark"] .mermaid-zoom-badge { background: rgba(21, 28, 37, 0.94); }
+:root[data-theme="dark"] .diagram-viewport { background: #101720; }
+:root[data-theme="dark"] .diagram-dialog { box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55); }
+:root[data-theme="dark"] .md code { color: var(--ink); }
+:root[data-theme="dark"] .md .mermaid { background: var(--surface-soft); }
+:root[data-theme="dark"] .md .mermaid svg,
+:root[data-theme="dark"] .diagram-canvas svg { filter: invert(0.92) hue-rotate(180deg); }
+:root[data-theme="dark"] .md .mermaid-failed { border-color: var(--line-strong); background: var(--hard-soft); }
+:root[data-theme="dark"] .noscript { background: var(--medium-soft); color: var(--medium); }
