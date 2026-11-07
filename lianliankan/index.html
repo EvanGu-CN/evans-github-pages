@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#040a17">
+<title>宠物连连看 共享版 3.1 · H5</title>
+<style>
+  :root{
+    --ink:#2f333d;
+    --tile:32px;
+    --gap:2px;
+    --gold:#ffd465;
+  }
+  *{box-sizing:border-box;}
+  [hidden]{display:none !important;}
+  html,body{height:100%;margin:0;}
+  body{
+    background:#040a17;
+    color:#e8f1ff;
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+    overflow:hidden;
+    -webkit-user-select:none;user-select:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  #app{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+  .b1{width:62vw;height:62vw;left:-22vw;top:-28vw;background:radial-gradient(circle,#12345f 0%,rgba(6,16,34,0) 68%);}
+  .b2{width:70vw;height:70vw;right:-26vw;bottom:-32vw;background:radial-gradient(circle,#0d2a52 0%,rgba(4,10,23,0) 70%);}
+  .b3{width:40vw;height:40vw;left:40%;top:55%;background:radial-gradient(circle,rgba(30,64,110,.5) 0%,rgba(4,10,23,0) 70%);}
+
+  .screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+
+  /* ---------------- 开始页 ---------------- */
+  .start{
+    background:#000;
+    gap:0;
+    padding:24px;
+    z-index:5;
+  }
+  .start::after{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(60% 45% at 50% 42%,rgba(46,120,30,.16),rgba(0,0,0,0) 70%);
+    pointer-events:none;
+  }
+  .title-wrap{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:center;width:100%;}
+  .start-title{
+    font-weight:900;
+    font-size:clamp(40px,9vmin,92px);
+    line-height:1.05;
+    letter-spacing:.035em;
+    padding:0 6px 8px;
+    background:linear-gradient(180deg,#f4ffb8 0%,#d2f56d 22%,#8fdc36 48%,#5cb61b 70%,#327d0c 100%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+    -webkit-text-stroke:1px #1f4c08;
+    filter:drop-shadow(0 4px 0 #1c5c0b) drop-shadow(0 8px 0 #143f07) drop-shadow(0 16px 26px rgba(0,0,0,.85));
+    transform:rotate(-1.5deg);
+    white-space:nowrap;
+  }
+  .title-sub{
+    position:relative;
+    top:.45em;
+    margin-left:12px;
+    font-size:clamp(9px,1.4vmin,13px);
+    letter-spacing:.06em;
+    color:#f2f7ff;
+    opacity:.9;
+    white-space:nowrap;
+    z-index:2;
+  }
+  .btn-start{
+    position:relative;z-index:1;
+    margin-top:clamp(46px,12vh,110px);
+    padding:12px 44px;
+    font-family:inherit;
+    font-size:clamp(15px,2.2vmin,21px);
+    font-weight:700;
+    letter-spacing:.32em;
+    text-indent:.32em;
+    color:#fff;
+    border:2px solid #e9f3ff;
+    border-radius:4px;
+    cursor:pointer;
+    background:linear-gradient(180deg,#3d86f2 0%,#1a58cc 52%,#0d3fa3 100%);
+    box-shadow:0 0 0 2px #082c6c, 0 10px 24px rgba(0,58,160,.6), inset 0 1px 0 rgba(255,255,255,.55);
+    transition:transform .1s ease, box-shadow .1s ease;
+  }
+  .btn-start:hover{filter:brightness(1.08);}
+  .btn-start:active{transform:translateY(2px);box-shadow:0 0 0 2px #082c6c, 0 5px 12px rgba(0,58,160,.5), inset 0 1px 0 rgba(255,255,255,.55);}
+  .start-tip{
+    position:relative;z-index:1;
+    margin:clamp(26px,6vh,54px) 0 0;
+    font-size:13px;
+    letter-spacing:.02em;
+    color:#7e8aa1;
+  }
+  .start-best{
+    position:relative;z-index:1;
+    margin:40px 0 0;
+    font-size:12px;
+    color:#5b687e;
+    letter-spacing:.1em;
+  }
+  .start-best span{color:#9ec1ec;}
+
+  /* ---------------- 游戏页 ---------------- */
+  .game{
+    justify-content:flex-start;
+    padding:max(8px,env(safe-area-inset-top)) 10px max(8px,env(safe-area-inset-bottom));
+    gap:6px;
+    z-index:4;
+  }
+  .stage{width:100%;max-width:1120px;display:flex;flex-direction:column;gap:6px;flex:1;min-height:0;}
+  .hud{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;width:100%;
+    padding:2px 2px 0;
+  }
+  .stats{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;}
+  .stat{
+    display:flex;align-items:baseline;gap:5px;
+    padding:5px 10px;
+    border-radius:999px;
+    border:1px solid rgba(140,185,255,.22);
+    background:rgba(24,52,96,.28);
+    white-space:nowrap;
+  }
+  .stat .k{font-size:11px;color:#8aa6cc;letter-spacing:.06em;}
+  .stat .v{font-size:15px;font-weight:700;color:#eaf4ff;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+  .stat .v.gold{color:var(--gold);}
+  .actions{display:flex;align-items:center;gap:6px;}
+  .btn-ghost{
+    font-family:inherit;
+    padding:7px 12px;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    color:#d9e8ff;
+    border:1px solid rgba(150,195,255,.38);
+    background:rgba(30,66,124,.22);
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s ease,border-color .15s ease,transform .1s ease;
+  }
+  .btn-ghost:hover{background:rgba(48,96,170,.34);border-color:rgba(180,220,255,.6);}
+  .btn-ghost:active{transform:scale(.96);}
+  .btn-ghost.mute{opacity:.55;}
+
+  .time-row{display:flex;align-items:center;gap:10px;width:100%;padding:0 2px;}
+  .time-track{
+    position:relative;flex:1;height:11px;border-radius:999px;overflow:hidden;
+    background:rgba(255,255,255,.07);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .time-fill{
+    height:100%;width:100%;border-radius:999px;
+    background:linear-gradient(90deg,#57de6d,#a6e85c 45%,#ffd166 72%,#ff7a5c 100%);
+    transition:width .12s linear, filter .2s ease;
+  }
+  .time-row.danger .time-fill{animation:dangerPulse .8s ease-in-out infinite;background:linear-gradient(90deg,#ff8a5c,#ff4d4d);}
+  .time-text{font-size:12px;color:#9db6d8;font-variant-numeric:tabular-nums;min-width:48px;text-align:right;letter-spacing:.03em;}
+  .time-row.danger .time-text{color:#ff8f8f;}
+  @keyframes dangerPulse{0%,100%{filter:brightness(1);}50%{filter:brightness(1.35);}}
+
+  .board-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;padding:4px 0;}
+  .board{
+    position:relative;
+    border-radius:12px;
+    background:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/var(--tile) var(--tile),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/var(--tile) var(--tile),
+      radial-gradient(130% 120% at 50% 0%,#14294a 0%,#0b1832 46%,#060f21 100%);
+    box-shadow:0 26px 60px rgba(0,0,0,.6),inset 0 0 0 1px rgba(110,165,255,.16),inset 0 0 70px rgba(0,0,0,.55);
+    touch-action:manipulation;
+  }
+  .path-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6;overflow:visible;}
+  .fx{position:absolute;inset:0;pointer-events:none;z-index:8;overflow:visible;}
+
+  .tile{
+    position:absolute;
+    left:calc(var(--c) * var(--tile) + var(--gap) / 2);
+    top:calc(var(--r) * var(--tile) + var(--gap) / 2);
+    width:calc(var(--tile) - var(--gap));
+    height:calc(var(--tile) - var(--gap));
+    border-radius:6px;
+    background:linear-gradient(180deg,#ffffff 0%,#f2f6fd 55%,#dfe8f5 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 0 0 1px #b5c3d8,0 3px 6px rgba(0,0,0,.35);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    transition:transform .12s ease,box-shadow .12s ease,background .18s ease,filter .12s ease;
+    will-change:transform;
+  }
+  .tile svg{width:88%;height:88%;display:block;pointer-events:none;}
+  @media (hover:hover){
+    .tile:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 0 0 1px #9fb8dc,0 5px 10px rgba(0,0,0,.45);}
+  }
+  .tile.sel{
+    transform:scale(1.07);
+    z-index:7;
+    background:linear-gradient(180deg,#fffdf2,#ffeab8);
+    box-shadow:0 0 0 2px var(--gold),0 0 16px rgba(255,212,101,.8),inset 0 1px 0 #fff;
+  }
+  .tile.hint{animation:hintPulse .7s ease-in-out infinite alternate;z-index:7;}
+  @keyframes hintPulse{
+    from{box-shadow:0 0 0 1px #7fe0ff,0 0 10px rgba(110,225,255,.5),inset 0 1px 0 #fff;}
+    to{box-shadow:0 0 0 3px #7fe0ff,0 0 20px rgba(110,225,255,.95),inset 0 1px 0 #fff;transform:scale(1.06);}
+  }
+  .tile.bad{animation:shake .34s ease;}
+  @keyframes shake{
+    0%,100%{transform:translateX(0);}
+    20%{transform:translateX(-4px) rotate(-2deg);}
+    45%{transform:translateX(4px) rotate(2deg);}
+    70%{transform:translateX(-3px) rotate(-1deg);}
+  }
+  .tile.gone{animation:popOut .3s cubic-bezier(.3,.7,.4,1) forwards;pointer-events:none;}
+  @keyframes popOut{
+    0%{transform:scale(1.02);}
+    45%{transform:scale(1.16) rotate(4deg);filter:brightness(1.5);}
+    100%{transform:scale(.15) rotate(-18deg);opacity:0;filter:brightness(2);}
+  }
+  .tile.drop-in{animation:dropIn .32s cubic-bezier(.2,.9,.3,1.2) backwards;}
+  @keyframes dropIn{
+    0%{opacity:0;transform:scale(.5) translateY(-6px);}
+    100%{opacity:1;transform:scale(1) translateY(0);}
+  }
+
+  .spark{
+    position:absolute;width:8px;height:8px;border-radius:50%;
+    background:radial-gradient(circle,#fff 0%,var(--gold) 40%,rgba(255,212,101,0) 72%);
+    animation:sparkFly .55s ease-out forwards;
+  }
+  @keyframes sparkFly{
+    0%{transform:translate(-50%,-50%) scale(.4);opacity:1;}
+    100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.1);opacity:0;}
+  }
+  .float-score{
+    position:absolute;transform:translate(-50%,-50%);
+    font-weight:800;font-size:15px;color:var(--gold);
+    text-shadow:0 2px 6px rgba(0,0,0,.7);
+    animation:floatUp .8s ease-out forwards;white-space:nowrap;
+  }
+  @keyframes floatUp{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(.7);}
+    25%{opacity:1;transform:translate(-50%,-70%) scale(1.08);}
+    100%{opacity:0;transform:translate(-50%,-150%) scale(1);}
+  }
+
+  /* ---------------- 弹窗 ---------------- */
+  .modal{
+    position:absolute;inset:0;z-index:30;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(3,7,16,.72);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    animation:fadeIn .18s ease;
+  }
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .dialog{
+    min-width:min(88vw,350px);
+    max-width:88vw;
+    padding:24px 28px 20px;
+    background:#fdf7ce;
+    border:3px solid #fff;
+    border-radius:6px;
+    box-shadow:0 0 0 2px #d9d09a,0 22px 48px rgba(0,0,0,.65);
+    text-align:center;
+    color:#d9483c;
+  }
+  .dialog h2{
+    margin:0 0 12px;
+    font-size:clamp(24px,5vmin,34px);
+    letter-spacing:.14em;
+    text-indent:.14em;
+    color:#e2453b;
+    text-shadow:1px 1px 0 #fff,0 0 1px #fff;
+  }
+  .dlg-body{font-size:14px;line-height:1.9;color:#b47a16;letter-spacing:.04em;}
+  .dlg-body b{font-size:20px;color:#d6852c;font-weight:800;font-variant-numeric:tabular-nums;}
+  .dlg-body .sub{font-size:12px;color:#a58f5a;}
+  .btn-row{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;}
+  .btn-primary{
+    font-family:inherit;
+    padding:9px 22px;font-size:14.5px;font-weight:700;letter-spacing:.08em;
+    color:#fff;cursor:pointer;border-radius:4px;
+    border:2px solid #17469a;
+    background:linear-gradient(180deg,#4b92f0,#1a58cb);
+    box-shadow:0 4px 10px rgba(20,50,110,.35),inset 0 1px 0 rgba(255,255,255,.45);
+    transition:transform .1s ease,filter .15s ease;
+  }
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-primary:active{transform:translateY(1px);}
+  .btn-primary.plain{
+    color:#8a6a1d;
+    background:linear-gradient(180deg,#fffdf0,#f4e8b8);
+    border-color:#d9c98c;
+    box-shadow:0 3px 8px rgba(120,100,40,.2),inset 0 1px 0 #fff;
+  }
+
+  .toast{
+    position:absolute;left:50%;top:14%;transform:translate(-50%,-8px);
+    padding:9px 18px;border-radius:999px;
+    background:rgba(8,20,42,.92);
+    border:1px solid rgba(140,190,255,.4);
+    color:#dcecff;font-size:13px;letter-spacing:.05em;
+    opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;
+    z-index:40;white-space:nowrap;
+    box-shadow:0 10px 24px rgba(0,0,0,.5);
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+
+  @media (max-width:560px){
+    .stat{padding:4px 8px;gap:4px;}
+    .stat .k{font-size:10px;}
+    .stat .v{font-size:13px;}
+    .btn-ghost{padding:6px 9px;font-size:11.5px;}
+    .hud{gap:4px;}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <!-- 开始页 -->
+  <section class="screen start" id="startScreen">
+    <div class="title-wrap">
+      <div class="start-title">宠物连连看</div>
+      <div class="title-sub">共享版 3.1</div>
+    </div>
+    <button class="btn-start" id="btnStart">开始游戏</button>
+    <p class="start-tip">点击两个相同的宠物，连线转弯不超过两次即可消除</p>
+    <p class="start-best">最高分 <span id="bestScore">0</span></p>
+  </section>
+
+  <!-- 游戏页 -->
+  <section class="screen game" id="gameScreen" hidden>
+    <div class="stage">
+      <div class="hud">
+        <div class="stats">
+          <div class="stat"><span class="k">关卡</span><span class="v" id="hudLevel">1</span></div>
+          <div class="stat"><span class="k">分数</span><span class="v gold" id="hudScore">0</span></div>
+          <div class="stat"><span class="k">剩余</span><span class="v" id="hudLeft">0</span></div>
+        </div>
+        <div class="actions">
+          <button class="btn-ghost" id="btnHint">提示</button>
+          <button class="btn-ghost" id="btnShuffle">重排</button>
+          <button class="btn-ghost" id="btnPause">暂停</button>
+          <button class="btn-ghost" id="btnSound">音效</button>
+        </div>
+      </div>
+      <div class="time-row" id="timeRow">
+        <div class="time-track"><div class="time-fill" id="timeFill"></div></div>
+        <div class="time-text" id="timeText">05:00</div>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board">
+          <svg class="path-layer" id="pathLayer" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="fx" id="fx"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 弹窗 -->
+  <div class="modal" id="modal" hidden>
+    <div class="dialog">
+      <h2 id="dlgTitle">游戏结束</h2>
+      <div class="dlg-body" id="dlgBody"></div>
+      <div class="btn-row" id="dlgBtns"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  const INK = '#2f333d';
+
+  /* ================= 宠物图标（手绘 SVG，统一风格） ================= */
+  const PETS = [
+    // 0 蓝猫
+    {svg:`
+      <path d="M18 42 L13 12 L41 28 Z" fill="#a8c9ec" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M82 42 L87 12 L59 28 Z" fill="#a8c9ec" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M21 35 L18 20 L32 29 Z" fill="#f4b7c9"/>
+      <path d="M79 35 L82 20 L68 29 Z" fill="#f4b7c9"/>
+      <ellipse cx="50" cy="57" rx="32" ry="30" fill="#c2dcf7" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="69" rx="23" ry="15" fill="#eff7ff"/>
+      <ellipse cx="37" cy="53" rx="5.6" ry="6.6" fill="#2f333d"/>
+      <ellipse cx="63" cy="53" rx="5.6" ry="6.6" fill="#2f333d"/>
+      <circle cx="39" cy="50.5" r="1.9" fill="#fff"/>
+      <circle cx="65" cy="50.5" r="1.9" fill="#fff"/>
+      <path d="M45 63 L55 63 L50 69 Z" fill="#f28fa6"/>
+      <path d="M50 69 v5" stroke="${INK}" stroke-width="1.4"/>
+      <path d="M43 75 q7 5 14 0" fill="none" stroke="${INK}" stroke-width="1.4"/>
+      <g stroke="${INK}" stroke-width="1.1" opacity=".55">
+        <path d="M7 56 h16"/><path d="M8 63 h15"/><path d="M77 56 h16"/><path d="M77 63 h15"/>
+      </g>`},
+    // 1 黄狗
+    {svg:`
+      <ellipse cx="17" cy="50" rx="8" ry="18" fill="#d9a145" stroke="${INK}" stroke-width="2.2" transform="rotate(20 17 50)"/>
+      <ellipse cx="83" cy="50" rx="8" ry="18" fill="#d9a145" stroke="${INK}" stroke-width="2.2" transform="rotate(-20 83 50)"/>
+      <ellipse cx="50" cy="56" rx="31" ry="29" fill="#f4c871" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="70" rx="21" ry="14" fill="#fff3d6" stroke="${INK}" stroke-width="1.8"/>
+      <ellipse cx="37" cy="48" rx="5" ry="6" fill="#2f333d"/>
+      <ellipse cx="63" cy="48" rx="5" ry="6" fill="#2f333d"/>
+      <circle cx="39" cy="45.8" r="1.7" fill="#fff"/>
+      <circle cx="65" cy="45.8" r="1.7" fill="#fff"/>
+      <ellipse cx="50" cy="64" rx="7" ry="5.4" fill="#2f333d"/>
+      <path d="M50 69 v7" stroke="${INK}" stroke-width="1.5"/>
+      <path d="M43 75 q7 7 14 0" fill="none" stroke="${INK}" stroke-width="1.5"/>
+      <path d="M46 78 q4 8 8 0 z" fill="#f28fa6" stroke="${INK}" stroke-width="1.1"/>
+      <ellipse cx="24" cy="62" rx="5" ry="3.4" fill="#f2a0b4" opacity=".55"/>
+      <ellipse cx="76" cy="62" rx="5" ry="3.4" fill="#f2a0b4" opacity=".55"/>`},
+    // 2 青蛙
+    {svg:`
+      <ellipse cx="50" cy="64" rx="34" ry="25" fill="#8dd055" stroke="${INK}" stroke-width="2.4"/>
+      <circle cx="32" cy="32" r="14" fill="#8dd055" stroke="${INK}" stroke-width="2.4"/>
+      <circle cx="68" cy="32" r="14" fill="#8dd055" stroke="${INK}" stroke-width="2.4"/>
+      <circle cx="32" cy="32" r="9" fill="#fff"/>
+      <circle cx="68" cy="32" r="9" fill="#fff"/>
+      <circle cx="33" cy="33" r="4.6" fill="#2f333d"/>
+      <circle cx="67" cy="33" r="4.6" fill="#2f333d"/>
+      <circle cx="34.5" cy="31.5" r="1.4" fill="#fff"/>
+      <circle cx="68.5" cy="31.5" r="1.4" fill="#fff"/>
+      <ellipse cx="50" cy="74" rx="17" ry="9" fill="#c9ee9c"/>
+      <path d="M31 61 q19 14 38 0" fill="none" stroke="${INK}" stroke-width="2"/>
+      <circle cx="23" cy="60" r="4" fill="#f2a0b4" opacity=".65"/>
+      <circle cx="77" cy="60" r="4" fill="#f2a0b4" opacity=".65"/>
+      <path d="M18 78 q6 4 12 2" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".45"/>
+      <path d="M82 78 q-6 4 -12 2" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".45"/>`},
+    // 3 企鹅
+    {svg:`
+      <ellipse cx="50" cy="58" rx="27" ry="34" fill="#39404d" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="64" rx="18" ry="26" fill="#f7fbff"/>
+      <ellipse cx="50" cy="36" rx="21" ry="17" fill="#f7fbff"/>
+      <ellipse cx="40" cy="37" rx="4.4" ry="5.2" fill="#2f333d"/>
+      <ellipse cx="60" cy="37" rx="4.4" ry="5.2" fill="#2f333d"/>
+      <circle cx="41.5" cy="35" r="1.6" fill="#fff"/>
+      <circle cx="61.5" cy="35" r="1.6" fill="#fff"/>
+      <path d="M50 44 L58 51 L50 55 L42 51 Z" fill="#f5a53a" stroke="${INK}" stroke-width="1.6" stroke-linejoin="round"/>
+      <ellipse cx="22" cy="62" rx="7" ry="14" fill="#39404d" stroke="${INK}" stroke-width="2.2" transform="rotate(12 22 62)"/>
+      <ellipse cx="78" cy="62" rx="7" ry="14" fill="#39404d" stroke="${INK}" stroke-width="2.2" transform="rotate(-12 78 62)"/>
+      <path d="M34 90 q-6 6 2 6 h12 q4 0 0 -6 z" fill="#f5a53a" stroke="${INK}" stroke-width="1.5"/>
+      <path d="M66 90 q6 6 -2 6 h-12 q-4 0 0 -6 z" fill="#f5a53a" stroke="${INK}" stroke-width="1.5"/>
+      <ellipse cx="40" cy="74" rx="4" ry="2.6" fill="#f2a0b4" opacity=".55"/>
+      <ellipse cx="60" cy="74" rx="4" ry="2.6" fill="#f2a0b4" opacity=".55"/>`},
+    // 4 熊猫
+    {svg:`
+      <circle cx="21" cy="27" r="12" fill="#2f333d"/>
+      <circle cx="79" cy="27" r="12" fill="#2f333d"/>
+      <circle cx="50" cy="56" r="32" fill="#fbfcff" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="36" cy="52" rx="10" ry="12" fill="#2f333d" transform="rotate(26 36 52)"/>
+      <ellipse cx="64" cy="52" rx="10" ry="12" fill="#2f333d" transform="rotate(-26 64 52)"/>
+      <circle cx="36" cy="52" r="4.3" fill="#fff"/>
+      <circle cx="64" cy="52" r="4.3" fill="#fff"/>
+      <circle cx="36" cy="52" r="2" fill="#2f333d"/>
+      <circle cx="64" cy="52" r="2" fill="#2f333d"/>
+      <ellipse cx="50" cy="67" rx="5" ry="3.6" fill="#2f333d"/>
+      <path d="M50 71 v4" stroke="${INK}" stroke-width="1.5"/>
+      <path d="M43 78 q7 5 14 0" fill="none" stroke="${INK}" stroke-width="1.5"/>
+      <circle cx="25" cy="64" r="4.4" fill="#f2a0b4" opacity=".5"/>
+      <circle cx="75" cy="64" r="4.4" fill="#f2a0b4" opacity=".5"/>`},
+    // 5 老鼠
+    {svg:`
+      <circle cx="19" cy="33" r="14" fill="#a7c8ee" stroke="${INK}" stroke-width="2.2"/>
+      <circle cx="81" cy="33" r="14" fill="#a7c8ee" stroke="${INK}" stroke-width="2.2"/>
+      <circle cx="19" cy="33" r="7.5" fill="#f4b7c9"/>
+      <circle cx="81" cy="33" r="7.5" fill="#f4b7c9"/>
+      <ellipse cx="50" cy="58" rx="29" ry="27" fill="#9dc0e8" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="70" rx="18" ry="12" fill="#e6f2ff"/>
+      <ellipse cx="37" cy="52" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <ellipse cx="63" cy="52" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <circle cx="38.5" cy="50" r="1.6" fill="#fff"/>
+      <circle cx="64.5" cy="50" r="1.6" fill="#fff"/>
+      <ellipse cx="50" cy="63" rx="5.4" ry="4.2" fill="#f28fa6" stroke="${INK}" stroke-width="1.2"/>
+      <path d="M50 67 v5 M45 74 h10" stroke="${INK}" stroke-width="1.5" fill="none"/>
+      <rect x="45" y="74" width="4.4" height="6" rx="1" fill="#fff" stroke="${INK}" stroke-width="1.1"/>
+      <rect x="50.6" y="74" width="4.4" height="6" rx="1" fill="#fff" stroke="${INK}" stroke-width="1.1"/>
+      <g stroke="${INK}" stroke-width="1.1" opacity=".55">
+        <path d="M12 58 h14"/><path d="M13 65 h13"/><path d="M74 58 h14"/><path d="M74 65 h13"/>
+      </g>`},
+    // 6 大象
+    {svg:`
+      <circle cx="18" cy="46" r="20" fill="#c9d1e2" stroke="${INK}" stroke-width="2.4"/>
+      <circle cx="82" cy="46" r="20" fill="#c9d1e2" stroke="${INK}" stroke-width="2.4"/>
+      <circle cx="18" cy="46" r="13" fill="#e8ecf5"/>
+      <circle cx="82" cy="46" r="13" fill="#e8ecf5"/>
+      <circle cx="50" cy="48" r="27" fill="#dbe1ec" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="39" cy="44" rx="4.4" ry="5.2" fill="#2f333d"/>
+      <ellipse cx="61" cy="44" rx="4.4" ry="5.2" fill="#2f333d"/>
+      <circle cx="40.5" cy="42" r="1.5" fill="#fff"/>
+      <circle cx="62.5" cy="42" r="1.5" fill="#fff"/>
+      <path d="M44 62 q0 22 8 26 q9 4 11 -7" fill="#dbe1ec" stroke="${INK}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M58 66 q6 2 8 -2" stroke="${INK}" stroke-width="1.3" fill="none" opacity=".7"/>
+      <path d="M33 62 q-3 9 2 12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M67 62 q3 9 -2 12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="26" cy="58" r="4" fill="#f2a0b4" opacity=".5"/>
+      <circle cx="74" cy="58" r="4" fill="#f2a0b4" opacity=".5"/>`},
+    // 7 小猪
+    {svg:`
+      <path d="M22 34 L16 15 L36 24 Z" fill="#f59ab5" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M78 34 L84 15 L64 24 Z" fill="#f59ab5" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="50" cy="56" rx="31" ry="28" fill="#f7adc2" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="37" cy="47" rx="4.8" ry="5.6" fill="#2f333d"/>
+      <ellipse cx="63" cy="47" rx="4.8" ry="5.6" fill="#2f333d"/>
+      <circle cx="38.5" cy="45" r="1.6" fill="#fff"/>
+      <circle cx="64.5" cy="45" r="1.6" fill="#fff"/>
+      <ellipse cx="50" cy="66" rx="14" ry="10" fill="#fcd0db" stroke="${INK}" stroke-width="1.8"/>
+      <ellipse cx="45" cy="66" rx="2.5" ry="3.6" fill="#d97b96"/>
+      <ellipse cx="55" cy="66" rx="2.5" ry="3.6" fill="#d97b96"/>
+      <circle cx="26" cy="60" r="4.2" fill="#f28fa6" opacity=".7"/>
+      <circle cx="74" cy="60" r="4.2" fill="#f28fa6" opacity=".7"/>
+      <path d="M42 80 q8 5 16 0" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".8"/>`},
+    // 8 小鸭
+    {svg:`
+      <ellipse cx="50" cy="56" rx="28" ry="27" fill="#fbe07a" stroke="${INK}" stroke-width="2.4"/>
+      <path d="M44 30 q-2 -12 5 -14 q1 8 5 11" fill="#fbe07a" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>
+      <ellipse cx="38" cy="48" rx="4.6" ry="5.6" fill="#2f333d"/>
+      <ellipse cx="62" cy="48" rx="4.6" ry="5.6" fill="#2f333d"/>
+      <circle cx="39.5" cy="46" r="1.6" fill="#fff"/>
+      <circle cx="63.5" cy="46" r="1.6" fill="#fff"/>
+      <ellipse cx="50" cy="65" rx="14" ry="9" fill="#f5a53a" stroke="${INK}" stroke-width="1.8"/>
+      <path d="M36 65 q14 5 28 0" stroke="${INK}" stroke-width="1.2" fill="none"/>
+      <ellipse cx="22" cy="62" rx="7" ry="10" fill="#f6d45e" stroke="${INK}" stroke-width="1.6" transform="rotate(14 22 62)"/>
+      <ellipse cx="78" cy="62" rx="7" ry="10" fill="#f6d45e" stroke="${INK}" stroke-width="1.6" transform="rotate(-14 78 62)"/>
+      <circle cx="25" cy="58" r="3.6" fill="#f2a0b4" opacity=".55"/>
+      <circle cx="75" cy="58" r="3.6" fill="#f2a0b4" opacity=".55"/>`},
+    // 9 兔子
+    {svg:`
+      <ellipse cx="35" cy="24" rx="9" ry="23" fill="#fbffff" stroke="${INK}" stroke-width="2.2" transform="rotate(-8 35 24)"/>
+      <ellipse cx="65" cy="24" rx="9" ry="23" fill="#fbffff" stroke="${INK}" stroke-width="2.2" transform="rotate(8 65 24)"/>
+      <ellipse cx="35" cy="24" rx="4.6" ry="16" fill="#f4b7c9" transform="rotate(-8 35 24)"/>
+      <ellipse cx="65" cy="24" rx="4.6" ry="16" fill="#f4b7c9" transform="rotate(8 65 24)"/>
+      <ellipse cx="50" cy="63" rx="29" ry="26" fill="#fbfdff" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="38" cy="57" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <ellipse cx="62" cy="57" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <circle cx="39.5" cy="55" r="1.6" fill="#fff"/>
+      <circle cx="63.5" cy="55" r="1.6" fill="#fff"/>
+      <ellipse cx="50" cy="66" rx="4.6" ry="3.6" fill="#f28fa6" stroke="${INK}" stroke-width="1.2"/>
+      <path d="M50 70 v4 M50 74 h0" stroke="${INK}" stroke-width="1.4" fill="none"/>
+      <rect x="45" y="74" width="4.6" height="6.4" rx="1" fill="#fff" stroke="${INK}" stroke-width="1.1"/>
+      <rect x="50.4" y="74" width="4.6" height="6.4" rx="1" fill="#fff" stroke="${INK}" stroke-width="1.1"/>
+      <circle cx="27" cy="66" r="4.2" fill="#f2a0b4" opacity=".55"/>
+      <circle cx="73" cy="66" r="4.2" fill="#f2a0b4" opacity=".55"/>`},
+    // 10 小鸡
+    {svg:`
+      <circle cx="50" cy="58" r="29" fill="#fce27c" stroke="${INK}" stroke-width="2.4"/>
+      <path d="M45 30 q-3 -11 4 -13 q2 7 5 10" fill="#fce27c" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M55 30 q3 -10 8 -9 q1 5 -2 9" fill="#fce27c" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>
+      <ellipse cx="39" cy="52" rx="4.6" ry="5.6" fill="#2f333d"/>
+      <ellipse cx="61" cy="52" rx="4.6" ry="5.6" fill="#2f333d"/>
+      <circle cx="40.5" cy="50" r="1.6" fill="#fff"/>
+      <circle cx="62.5" cy="50" r="1.6" fill="#fff"/>
+      <path d="M50 60 L61 65 L50 70 Z" fill="#f5a53a" stroke="${INK}" stroke-width="1.7" stroke-linejoin="round"/>
+      <ellipse cx="20" cy="62" rx="6" ry="11" fill="#f6d45e" stroke="${INK}" stroke-width="1.6" transform="rotate(16 20 62)"/>
+      <ellipse cx="80" cy="62" rx="6" ry="11" fill="#f6d45e" stroke="${INK}" stroke-width="1.6" transform="rotate(-16 80 62)"/>
+      <circle cx="26" cy="64" r="3.8" fill="#f2a0b4" opacity=".6"/>
+      <circle cx="74" cy="64" r="3.8" fill="#f2a0b4" opacity=".6"/>`},
+    // 11 蜜蜂
+    {svg:`
+      <ellipse cx="50" cy="58" rx="27" ry="28" fill="#f7d84f" stroke="${INK}" stroke-width="2.4"/>
+      <path d="M23 50 q27 10 54 0 q0 8 -27 12 q-27 -4 -27 -12 z" fill="#3b3b3b"/>
+      <path d="M23 68 q27 10 54 0 q0 8 -27 12 q-27 -4 -27 -12 z" fill="#3b3b3b"/>
+      <ellipse cx="32" cy="24" rx="14" ry="8" fill="#d7ecff" stroke="${INK}" stroke-width="1.8" transform="rotate(-24 32 24)" opacity=".9"/>
+      <ellipse cx="68" cy="24" rx="14" ry="8" fill="#d7ecff" stroke="${INK}" stroke-width="1.8" transform="rotate(24 68 24)" opacity=".9"/>
+      <path d="M40 34 q-4 -10 -12 -12" stroke="${INK}" stroke-width="2" fill="none"/>
+      <path d="M60 34 q4 -10 12 -12" stroke="${INK}" stroke-width="2" fill="none"/>
+      <circle cx="28" cy="22" r="3.4" fill="#2f333d"/>
+      <circle cx="72" cy="22" r="3.4" fill="#2f333d"/>
+      <circle cx="43" cy="52" r="5" fill="#fff" stroke="${INK}" stroke-width="1.2"/>
+      <circle cx="57" cy="52" r="5" fill="#fff" stroke="${INK}" stroke-width="1.2"/>
+      <circle cx="43" cy="52" r="2.2" fill="#2f333d"/>
+      <circle cx="57" cy="52" r="2.2" fill="#2f333d"/>
+      <path d="M46 62 q4 4 8 0" stroke="${INK}" stroke-width="1.6" fill="none"/>`},
+    // 12 猴子
+    {svg:`
+      <circle cx="17" cy="50" r="12" fill="#c98a52" stroke="${INK}" stroke-width="2.2"/>
+      <circle cx="83" cy="50" r="12" fill="#c98a52" stroke="${INK}" stroke-width="2.2"/>
+      <circle cx="17" cy="50" r="7" fill="#f0cba0"/>
+      <circle cx="83" cy="50" r="7" fill="#f0cba0"/>
+      <circle cx="50" cy="54" r="29" fill="#c98a52" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="62" rx="23" ry="18" fill="#f2d3a8" stroke="${INK}" stroke-width="1.6"/>
+      <ellipse cx="38" cy="48" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <ellipse cx="62" cy="48" rx="4.6" ry="5.4" fill="#2f333d"/>
+      <circle cx="39.5" cy="46" r="1.6" fill="#fff"/>
+      <circle cx="63.5" cy="46" r="1.6" fill="#fff"/>
+      <ellipse cx="45" cy="60" rx="2.2" ry="1.8" fill="#b57b45"/>
+      <ellipse cx="55" cy="60" rx="2.2" ry="1.8" fill="#b57b45"/>
+      <path d="M42 68 q8 7 16 0" fill="none" stroke="${INK}" stroke-width="1.7"/>
+      <path d="M50 72 q-2 3 0 4" stroke="${INK}" stroke-width="1.2" fill="none" opacity=".6"/>
+      <circle cx="28" cy="62" r="4" fill="#f2a0b4" opacity=".45"/>
+      <circle cx="72" cy="62" r="4" fill="#f2a0b4" opacity=".45"/>`},
+    // 13 狐狸
+    {svg:`
+      <path d="M20 46 L14 13 L40 30 Z" fill="#ef9552" stroke="${INK}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M80 46 L86 13 L60 30 Z" fill="#ef9552" stroke="${INK}" stroke-width="2.3" stroke-linejoin="round"/>
+      <path d="M22 40 L19 20 L34 31 Z" fill="#3a3a42"/>
+      <path d="M78 40 L81 20 L66 31 Z" fill="#3a3a42"/>
+      <ellipse cx="50" cy="56" rx="30" ry="27" fill="#f09a58" stroke="${INK}" stroke-width="2.4"/>
+      <path d="M50 82 q-19 -7 -21 -17 q11 -7 21 -5 q10 -2 21 5 q-2 10 -21 17 z" fill="#fff6ec" stroke="${INK}" stroke-width="1.5"/>
+      <ellipse cx="37" cy="50" rx="4.8" ry="5.4" fill="#2f333d"/>
+      <ellipse cx="63" cy="50" rx="4.8" ry="5.4" fill="#2f333d"/>
+      <circle cx="38.5" cy="48" r="1.6" fill="#fff"/>
+      <circle cx="64.5" cy="48" r="1.6" fill="#fff"/>
+      <path d="M46 66 L54 66 L50 72 Z" fill="#2f333d"/>
+      <path d="M50 72 v3 M43 78 q7 5 14 0" stroke="${INK}" stroke-width="1.3" fill="none"/>
+      <circle cx="30" cy="62" r="4" fill="#f2a0b4" opacity=".4"/>
+      <circle cx="70" cy="62" r="4" fill="#f2a0b4" opacity=".4"/>`},
+    // 14 猫头鹰
+    {svg:`
+      <path d="M28 31 L22 12 L41 23 Z" fill="#c6a6e0" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M72 31 L78 12 L59 23 Z" fill="#c6a6e0" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="50" cy="56" rx="30" ry="32" fill="#c6a6e0" stroke="${INK}" stroke-width="2.4"/>
+      <ellipse cx="50" cy="68" rx="20" ry="18" fill="#f1e3f8"/>
+      <circle cx="36" cy="48" r="13" fill="#fff" stroke="${INK}" stroke-width="1.8"/>
+      <circle cx="64" cy="48" r="13" fill="#fff" stroke="${INK}" stroke-width="1.8"/>
+      <circle cx="36" cy="48" r="6" fill="#2f333d"/>
+      <circle cx="64" cy="48" r="6" fill="#2f333d"/>
+      <circle cx="38" cy="46" r="1.8" fill="#fff"/>
+      <circle cx="66" cy="46" r="1.8" fill="#fff"/>
+      <path d="M50 57 L59 64 L50 72 L41 64 Z" fill="#f0a23a" stroke="${INK}" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M28 72 q7 7 13 3" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".55"/>
+      <path d="M72 72 q-7 7 -13 3" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".55"/>
+      <path d="M40 84 l4 4 M60 84 l-4 4" stroke="#f0a23a" stroke-width="2.6"/>`},
+    // 15 乌龟
+    {svg:`
+      <ellipse cx="50" cy="78" rx="35" ry="12" fill="#8fd98f" stroke="${INK}" stroke-width="2.2"/>
+      <ellipse cx="50" cy="64" rx="31" ry="22" fill="#e7c46a" stroke="${INK}" stroke-width="2.4"/>
+      <path d="M50 44 v40 M24 64 h52 M31 49 q19 15 0 30 M69 49 q-19 15 0 30" stroke="#a9822f" stroke-width="1.8" fill="none"/>
+      <ellipse cx="50" cy="28" rx="17" ry="15" fill="#9fe29a" stroke="${INK}" stroke-width="2.3"/>
+      <ellipse cx="44" cy="26" rx="3.6" ry="4.4" fill="#2f333d"/>
+      <ellipse cx="56" cy="26" rx="3.6" ry="4.4" fill="#2f333d"/>
+      <circle cx="45" cy="24.5" r="1.3" fill="#fff"/>
+      <circle cx="57" cy="24.5" r="1.3" fill="#fff"/>
+      <path d="M43 34 q7 5 14 0" stroke="${INK}" stroke-width="1.5" fill="none"/>
+      <ellipse cx="15" cy="78" rx="7" ry="5" fill="#8fd98f" stroke="${INK}" stroke-width="1.8"/>
+      <ellipse cx="85" cy="78" rx="7" ry="5" fill="#8fd98f" stroke="${INK}" stroke-width="1.8"/>
+      <ellipse cx="33" cy="88" rx="6" ry="4.6" fill="#8fd98f" stroke="${INK}" stroke-width="1.8"/>
+      <ellipse cx="67" cy="88" rx="6" ry="4.6" fill="#8fd98f" stroke="${INK}" stroke-width="1.8"/>`}
+  ];
+
+  const DIRS = [[-1,0],[1,0],[0,-1],[0,1]];
+  const LS_BEST = 'pet_llk_best_v31';
+
+  /* ================= 工具 ================= */
+  function shuffleArr(a){
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      const t=a[i]; a[i]=a[j]; a[j]=t;
+    }
+    return a;
+  }
+  function iconHTML(i){
+    return '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">'+PETS[i].svg+'</svg>';
+  }
+
+  /* ================= 寻路（最多两次转弯，可绕棋盘外圈） ================= */
+  function findPathIn(grid, cols, rows, a, b){
+    const R = rows + 2, C = cols + 2;
+    const start = {r:a.r, c:a.c, dir:-1, turns:0, parent:null};
+    const q = [start];
+    let head = 0, end = null;
+    const seen = new Set();
+
+    while(head < q.length && !end){
+      const cur = q[head++];
+      for(let d=0; d<4; d++){
+        if(cur.dir >= 0){
+          const pd = DIRS[cur.dir], nd = DIRS[d];
+          if(nd[0] === -pd[0] && nd[1] === -pd[1]) continue; // 不允许回头
+        }
+        const nt = (cur.dir < 0 || cur.dir === d) ? cur.turns : cur.turns + 1;
+        if(nt > 2) continue;
+        const nr = cur.r + DIRS[d][0];
+        const nc = cur.c + DIRS[d][1];
+        if(nr < 0 || nr >= R || nc < 0 || nc >= C) continue;
+        const isTarget = (nr === b.r && nc === b.c);
+        if(!isTarget && grid[nr*C + nc] >= 0) continue;
+        const key = (nr*C + nc) * 16 + d * 3 + nt;
+        if(seen.has(key)) continue;
+        seen.add(key);
+        const node = {r:nr, c:nc, dir:d, turns:nt, parent:cur};
+        if(isTarget){ end = node; break; }
+        q.push(node);
+      }
+    }
+    if(!end) return null;
+
+    const cells = [];
+    for(let n = end; n; n = n.parent) cells.push([n.r, n.c]);
+    cells.reverse();
+
+    const pts = [cells[0]];
+    for(let i=1; i<cells.length-1; i++){
+      const p = cells[i-1], m = cells[i], n2 = cells[i+1];
+      if((m[0]-p[0]) !== (n2[0]-m[0]) || (m[1]-p[1]) !== (n2[1]-m[1])) pts.push(m);
+    }
+    pts.push(cells[cells.length-1]);
+    return pts;
+  }
+
+  function findAnyMoveIn(grid, cols, rows){
+    const C = cols + 2;
+    const groups = new Map();
+    for(let r=1; r<=rows; r++){
+      for(let c=1; c<=cols; c++){
+        const v = grid[r*C + c];
+        if(v < 0) continue;
+        let g = groups.get(v);
+        if(!g){ g = []; groups.set(v, g); }
+        g.push({r, c});
+      }
+    }
+    for(const list of groups.values()){
+      for(let i=0; i<list.length; i++){
+        for(let j=i+1; j<list.length; j++){
+          const p = findPathIn(grid, cols, rows, list[i], list[j]);
+          if(p) return {a:list[i], b:list[j], path:p};
+        }
+      }
+    }
+    return null;
+  }
+
+  /* ================= 音效 ================= */
+  let AC = null, soundOn = true;
+  function ensureAudio(){
+    if(!soundOn) return null;
+    if(!AC){
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if(!Ctx) return null;
+      AC = new Ctx();
+    }
+    if(AC.state === 'suspended') AC.resume();
+    return AC;
+  }
+  function tone(freq, dur, type, gain, delay){
+    const ac = ensureAudio();
+    if(!ac) return;
+    const t0 = ac.currentTime + (delay || 0);
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(gain || 0.08, t0 + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    osc.connect(g); g.connect(ac.destination);
+    osc.start(t0); osc.stop(t0 + dur + 0.02);
+  }
+  const SFX = {
+    select(){ tone(660, 0.07, 'triangle', 0.06); },
+    match(combo){
+      const base = 520 + Math.min(combo, 6) * 40;
+      tone(base, 0.1, 'sine', 0.08);
+      tone(base * 1.5, 0.13, 'sine', 0.06, 0.06);
+    },
+    error(){ tone(180, 0.13, 'square', 0.05); },
+    level(){
+      [523, 659, 784, 1046].forEach((f, i) => tone(f, 0.16, 'triangle', 0.07, i * 0.1));
+    },
+    over(){
+      [523, 440, 330, 220].forEach((f, i) => tone(f, 0.22, 'sine', 0.07, i * 0.14));
+    },
+    hint(){ tone(880, 0.08, 'sine', 0.05); tone(1174, 0.1, 'sine', 0.045, 0.07); }
+  };
+
+  /* ================= DOM ================= */
+  const $ = (s, root) => (root || document).querySelector(s);
+  const startScreen = $('#startScreen');
+  const gameScreen = $('#gameScreen');
+  const boardEl = $('#board');
+  const pathLayer = $('#pathLayer');
+  const fxLayer = $('#fx');
+  const modalEl = $('#modal');
+  const dlgTitle = $('#dlgTitle');
+  const dlgBody = $('#dlgBody');
+  const dlgBtns = $('#dlgBtns');
+  const hudLevel = $('#hudLevel');
+  const hudScore = $('#hudScore');
+  const hudLeft = $('#hudLeft');
+  const timeRow = $('#timeRow');
+  const timeFill = $('#timeFill');
+  const timeText = $('#timeText');
+  const toastEl = $('#toast');
+  const bestScoreEl = $('#bestScore');
+  const btnSound = $('#btnSound');
+
+  let S = null;
+  let timerId = null;
+  let toastTimer = null;
+
+  /* ================= 布局 ================= */
+  function wrapSize(){
+    const wrap = boardEl.parentElement;
+    return {
+      w: Math.max(200, wrap.clientWidth - 8),
+      h: Math.max(200, wrap.clientHeight - 8)
+    };
+  }
+  function chooseDims(){
+    const availW = Math.min(wrapSize().w, 1120);
+    let cols = 16;
+    while(cols > 8 && availW / (cols + 2) < 27) cols -= 2;
+    const tileW = Math.min(availW / (cols + 2), 56);
+    let rows = 8;
+    // 竖屏窄屏：适当增加行数，避免棋盘上下留白过多
+    if(tileW < 38) rows = Math.min(12, Math.max(8, Math.round(wrapSize().h / tileW) - 2));
+    return {cols, rows};
+  }
+  function computeTile(cols, rows){
+    const avail = wrapSize();
+    return Math.max(17, Math.min(avail.w / (cols + 2), avail.h / (rows + 2), 56));
+  }
+  function applyTile(){
+    if(!S) return;
+    S.tilePx = computeTile(S.cols, S.rows);
+    const bw = S.tilePx * (S.cols + 2);
+    const bh = S.tilePx * (S.rows + 2);
+    boardEl.style.setProperty('--tile', S.tilePx + 'px');
+    boardEl.style.width = bw + 'px';
+    boardEl.style.height = bh + 'px';
+    const avail = wrapSize();
+    const scale = Math.min(1, avail.w / bw, avail.h / bh);
+    boardEl.style.transform = scale < 0.999 ? 'scale(' + scale.toFixed(4) + ')' : '';
+  }
+
+  /* ================= 开局 ================= */
+  function buildGrid(cols, rows, kinds){
+    const C = cols + 2;
+    const grid = new Int16Array((cols + 2) * (rows + 2)).fill(-1);
+    const total = cols * rows;
+    const pairs = total / 2;
+    const pool = shuffleArr(PETS.map((_, i) => i)).slice(0, kinds);
+    const counts = new Int16Array(kinds).fill(0);
+    for(let i=0; i<pairs; i++) counts[i % kinds]++;
+
+    const cells = [];
+    for(let k=0; k<kinds; k++){
+      for(let n=0; n<counts[k]*2; n++) cells.push(pool[k]);
+    }
+
+    // 反复洗牌，至少保证开局有路可走
+    for(let attempt=0; attempt<40; attempt++){
+      shuffleArr(cells);
+      let i = 0;
+      for(let r=1; r<=rows; r++){
+        for(let c=1; c<=cols; c++) grid[r*C + c] = cells[i++];
+      }
+      if(findAnyMoveIn(grid, cols, rows)) return grid;
+    }
+    return grid;
+  }
+
+  function startLevel(level, score){
+    hideModal();
+    startScreen.hidden = true;
+    gameScreen.hidden = false;
+
+    const dims = chooseDims();
+    const cols = dims.cols, rows = dims.rows;
+    const kinds = Math.min(PETS.length, 6 + level * 2);
+    const timeMax = Math.max(150, 300 - (level - 1) * 20);
+
+    S = {
+      level, score, cols, rows,
+      grid: buildGrid(cols, rows, kinds),
+      remaining: cols * rows,
+      tiles: new Map(),
+      selected: null,
+      running: true,
+      paused: false,
+      busy: false,
+      combo: 0,
+      comboAt: 0,
+      timeMax,
+      time: timeMax,
+      tilePx: 0
+    };
+
+    renderBoard();
+    applyTile();
+    updateHUD();
+    updateTimeUI();
+    startTimer();
+  }
+
+  function renderBoard(){
+    boardEl.querySelectorAll('.tile').forEach(el => el.remove());
+    pathLayer.innerHTML = '';
+    fxLayer.innerHTML = '';
+    S.tiles.clear();
+
+    const C = S.cols + 2;
+    for(let r=1; r<=S.rows; r++){
+      for(let c=1; c<=S.cols; c++){
+        const v = S.grid[r*C + c];
+        if(v < 0) continue;
+        const el = document.createElement('div');
+        el.className = 'tile';
+        el.dataset.r = r;
+        el.dataset.c = c;
+        el.style.setProperty('--r', r);
+        el.style.setProperty('--c', c);
+        el.innerHTML = iconHTML(v);
+        boardEl.appendChild(el);
+        S.tiles.set(r + '-' + c, el);
+      }
+    }
+  }
+
+  /* ================= HUD / 计时 ================= */
+  function updateHUD(){
+    if(!S) return;
+    hudLevel.textContent = S.level;
+    hudScore.textContent = S.score;
+    hudLeft.textContent = S.remaining;
+  }
+  function updateTimeUI(){
+    const ratio = Math.max(0, S.time / S.timeMax);
+    timeFill.style.width = (ratio * 100).toFixed(2) + '%';
+    const t = Math.max(0, Math.ceil(S.time));
+    const mm = String(Math.floor(t / 60)).padStart(2, '0');
+    const ss = String(t % 60).padStart(2, '0');
+    timeText.textContent = mm + ':' + ss;
+    timeRow.classList.toggle('danger', ratio <= 0.18);
+  }
+  function startTimer(){
+    stopTimer();
+    let last = performance.now();
+    timerId = setInterval(() => {
+      if(!S || !S.running || S.paused) return;
+      const now = performance.now();
+      const dt = Math.min(0.4, (now - last) / 1000);
+      last = now;
+      S.time -= dt;
+      if(S.time <= 0){
+        S.time = 0;
+        updateTimeUI();
+        updateHUD();
+        gameOver();
+        return;
+      }
+      updateTimeUI();
+    }, 100);
+  }
+  function stopTimer(){
+    if(timerId){ clearInterval(timerId); timerId = null; }
+  }
+
+  /* ================= 交互 ================= */
+  boardEl.addEventListener('click', (e) => {
+    const el = e.target.closest('.tile');
+    if(!el || !S) return;
+    if(!S.running || S.paused || S.busy) return;
+    const r = Number(el.dataset.r), c = Number(el.dataset.c);
+    handleTileClick(r, c);
+  });
+
+  function keyOf(r, c){ return r + '-' + c; }
+
+  function clearSelection(){
+    if(!S.selected) return;
+    const el = S.tiles.get(keyOf(S.selected.r, S.selected.c));
+    if(el) el.classList.remove('sel');
+    S.selected = null;
+  }
+
+  function handleTileClick(r, c){
+    const C = S.cols + 2;
+    if(S.grid[r*C + c] < 0) return;
+
+    if(S.selected && S.selected.r === r && S.selected.c === c){
+      clearSelection();
+      return;
+    }
+
+    if(!S.selected){
+      S.selected = {r, c};
+      S.tiles.get(keyOf(r, c)).classList.add('sel');
+      SFX.select();
+      return;
+    }
+
+    const a = S.selected;
+    const b = {r, c};
+    const elA = S.tiles.get(keyOf(a.r, a.c));
+    const elB = S.tiles.get(keyOf(b.r, b.c));
+    if(!elA || !elB) return;
+
+    if(S.grid[a.r*C + a.c] === S.grid[r*C + c]){
+      const path = findPathIn(S.grid, S.cols, S.rows, a, b);
+      if(path){
+        clearSelection();
+        matchPair(a, b, path);
+        return;
+      }
+    }
+
+    // 配对失败
+    SFX.error();
+    elA.classList.remove('sel');
+    elA.classList.add('bad');
+    elB.classList.add('bad');
+    setTimeout(() => {
+      elA.classList.remove('bad');
+      elB.classList.remove('bad');
+    }, 360);
+    clearSelection();
+    S.selected = {r, c};
+    elB.classList.add('sel');
+  }
+
+  function matchPair(a, b, path){
+    const C = S.cols + 2;
+    const idxA = a.r*C + a.c, idxB = b.r*C + b.c;
+
+    S.grid[idxA] = -1;
+    S.grid[idxB] = -1;
+    S.remaining -= 2;
+
+    const now = performance.now();
+    S.combo = (now - S.comboAt < 3200) ? Math.min(S.combo + 1, 6) : 1;
+    S.comboAt = now;
+    const gain = 10 + (S.combo - 1) * 4;
+    S.score += gain;
+    updateHUD();
+    SFX.match(S.combo);
+
+    drawPath(path);
+    const elA = S.tiles.get(keyOf(a.r, a.c));
+    const elB = S.tiles.get(keyOf(b.r, b.c));
+    if(elA) elA.classList.add('gone');
+    if(elB) elB.classList.add('gone');
+    const mid = midpointOfTiles(a, b, path);
+    burstSparks(mid);
+    floatScore(mid, '+' + gain + (S.combo > 1 ? ' 连击x' + S.combo : ''));
+
+    setTimeout(() => {
+      if(elA){ elA.remove(); S.tiles.delete(keyOf(a.r, a.c)); }
+      if(elB){ elB.remove(); S.tiles.delete(keyOf(b.r, b.c)); }
+    }, 320);
+
+    setTimeout(afterMove, 120);
+  }
+
+  function afterMove(){
+    if(!S || !S.running) return;
+    if(S.remaining <= 0){
+      levelClear();
+      return;
+    }
+    if(!findAnyMoveIn(S.grid, S.cols, S.rows)){
+      autoShuffle();
+    }
+  }
+
+  /* ================= 特效 ================= */
+  function cellCenter(r, c){
+    const t = S.tilePx;
+    return {x:(c + 0.5) * t, y:(r + 0.5) * t};
+  }
+  function midpointOfTiles(a, b){
+    const p1 = cellCenter(a.r, a.c), p2 = cellCenter(b.r, b.c);
+    return {x:(p1.x + p2.x) / 2, y:(p1.y + p2.y) / 2};
+  }
+  function drawPath(path){
+    const t = S.tilePx;
+    const pts = path.map(([r, c]) => ((c + 0.5) * t) + ',' + ((r + 0.5) * t)).join(' ');
+    const ns = 'http://www.w3.org/2000/svg';
+
+    const glow = document.createElementNS(ns, 'polyline');
+    glow.setAttribute('points', pts);
+    glow.setAttribute('fill', 'none');
+    glow.setAttribute('stroke', 'rgba(255,212,101,.38)');
+    glow.setAttribute('stroke-width', '10');
+    glow.setAttribute('stroke-linejoin', 'round');
+    glow.classList.add('path-glow');
+
+    const line = document.createElementNS(ns, 'polyline');
+    line.setAttribute('points', pts);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', '#ffd465');
+    line.setAttribute('stroke-width', '3.4');
+    line.setAttribute('stroke-linecap', 'round');
+    line.setAttribute('stroke-linejoin', 'round');
+
+    pathLayer.appendChild(glow);
+    pathLayer.appendChild(line);
+
+    setTimeout(() => { glow.remove(); line.remove(); }, 380);
+  }
+  function burstSparks(pos){
+    for(let i=0; i<7; i++){
+      const s = document.createElement('span');
+      s.className = 'spark';
+      const ang = Math.random() * Math.PI * 2;
+      const dist = 14 + Math.random() * 26;
+      s.style.left = pos.x + 'px';
+      s.style.top = pos.y + 'px';
+      s.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+      s.style.setProperty('--dy', Math.sin(ang) * dist + 'px');
+      s.style.animationDelay = (Math.random() * 60) + 'ms';
+      fxLayer.appendChild(s);
+      setTimeout(() => s.remove(), 700);
+    }
+  }
+  function floatScore(pos, text){
+    const el = document.createElement('div');
+    el.className = 'float-score';
+    el.textContent = text;
+    el.style.left = pos.x + 'px';
+    el.style.top = pos.y + 'px';
+    fxLayer.appendChild(el);
+    setTimeout(() => el.remove(), 900);
+  }
+
+  /* ================= 提示 / 重排 ================= */
+  function doHint(){
+    if(!S || !S.running || S.paused || S.busy) return;
+    const mv = findAnyMoveIn(S.grid, S.cols, S.rows);
+    if(!mv){ autoShuffle(); return; }
+    SFX.hint();
+    const elA = S.tiles.get(keyOf(mv.a.r, mv.a.c));
+    const elB = S.tiles.get(keyOf(mv.b.r, mv.b.c));
+    [elA, elB].forEach(el => {
+      if(!el) return;
+      el.classList.add('hint');
+      setTimeout(() => el.classList.remove('hint'), 2200);
+    });
+  }
+
+  function autoShuffle(){
+    toast('无路可走了，自动重排');
+    doShuffle(true);
+  }
+
+  function doShuffle(auto){
+    if(!S || !S.running || S.paused) return;
+    clearSelection();
+
+    const C = S.cols + 2;
+    const pos = [], vals = [];
+    for(let r=1; r<=S.rows; r++){
+      for(let c=1; c<=S.cols; c++){
+        if(S.grid[r*C + c] >= 0){
+          pos.push([r, c]);
+          vals.push(S.grid[r*C + c]);
+        }
+      }
+    }
+    if(pos.length <= 2) return;
+
+    let placed = false;
+    for(let attempt=0; attempt<60 && !placed; attempt++){
+      shuffleArr(vals);
+      pos.forEach(([r, c], i) => { S.grid[r*C + c] = vals[i]; });
+      if(findAnyMoveIn(S.grid, S.cols, S.rows)) placed = true;
+    }
+
+    pos.forEach(([r, c]) => {
+      const el = S.tiles.get(keyOf(r, c));
+      if(!el) return;
+      el.innerHTML = iconHTML(S.grid[r*C + c]);
+      el.classList.remove('drop-in');
+      void el.offsetWidth;
+      el.classList.add('drop-in');
+    });
+
+    if(!auto) toast('已重新排列');
+  }
+
+  /* ================= 关卡结算 / 结束 ================= */
+  function levelClear(){
+    if(!S || !S.running) return;
+    S.running = false;
+    stopTimer();
+    clearSelection();
+    SFX.level();
+
+    const bonus = Math.floor(S.time) * 2;
+    const finalScore = S.score + bonus;
+    S.score = finalScore;
+    updateHUD();
+    saveBest(finalScore);
+
+    const nextLevel = S.level + 1;
+    showDialog('过关啦！', `
+      <div>第 <b>${S.level}</b> 关完成</div>
+      <div>剩余时间奖励 <b>+${bonus}</b></div>
+      <div class="sub">本关总分 ${finalScore}</div>
+    `, [
+      {label:'下一关', fn:() => startLevel(nextLevel, finalScore)}
+    ]);
+  }
+
+  function gameOver(){
+    if(!S || !S.running) return;
+    S.running = false;
+    stopTimer();
+    clearSelection();
+    SFX.over();
+    const finalScore = S.score;
+    saveBest(finalScore);
+
+    showDialog('游戏结束', `
+      <div>你在第 <b>${S.level}</b> 关用光了时间</div>
+      <div class="sub">最终得分 <b>${finalScore}</b> · 最高分 ${getBest()}</div>
+    `, [
+      {label:'再玩一次', fn:() => startLevel(1, 0)},
+      {label:'返回首页', plain:true, fn:() => backHome()}
+    ]);
+  }
+
+  function getBest(){
+    const v = Number(localStorage.getItem(LS_BEST) || 0);
+    return Number.isFinite(v) ? v : 0;
+  }
+  function saveBest(v){
+    if(v > getBest()) localStorage.setItem(LS_BEST, String(v));
+    bestScoreEl.textContent = getBest();
+  }
+
+  function backHome(){
+    stopTimer();
+    hideModal();
+    gameScreen.hidden = true;
+    startScreen.hidden = false;
+    S = null;
+    bestScoreEl.textContent = getBest();
+  }
+
+  /* ================= 弹窗 / Toast ================= */
+  function showDialog(title, bodyHTML, buttons){
+    dlgTitle.textContent = title;
+    dlgBody.innerHTML = bodyHTML;
+    dlgBtns.innerHTML = '';
+    buttons.forEach(b => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-primary' + (b.plain ? ' plain' : '');
+      btn.textContent = b.label;
+      btn.addEventListener('click', b.fn);
+      dlgBtns.appendChild(btn);
+    });
+    modalEl.hidden = false;
+  }
+  function hideModal(){ modalEl.hidden = true; }
+
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
+  }
+
+  /* ================= 暂停 ================= */
+  function togglePause(forcePause){
+    if(!S || !S.running) return;
+    const willPause = (forcePause === true) ? true : !S.paused;
+    if(willPause){
+      if(S.paused) return;
+      S.paused = true;
+      showDialog('暂停中', '<div class="sub">休息一下，随时继续</div>', [
+        {label:'继续游戏', fn:() => { S.paused = false; hideModal(); }},
+        {label:'重新开始', plain:true, fn:() => startLevel(1, 0)},
+        {label:'返回首页', plain:true, fn:() => backHome()}
+      ]);
+    } else {
+      S.paused = false;
+      hideModal();
+    }
+  }
+
+  /* ================= 按钮绑定 ================= */
+  $('#btnStart').addEventListener('click', () => {
+    ensureAudio();
+    startLevel(1, 0);
+  });
+  $('#btnHint').addEventListener('click', doHint);
+  $('#btnShuffle').addEventListener('click', () => {
+    if(!S || !S.running || S.paused || S.busy) return;
+    doShuffle(false);
+  });
+  $('#btnPause').addEventListener('click', () => togglePause());
+  btnSound.addEventListener('click', () => {
+    soundOn = !soundOn;
+    btnSound.classList.toggle('mute', !soundOn);
+    btnSound.textContent = soundOn ? '音效' : '静音';
+    if(soundOn){ ensureAudio(); SFX.select(); }
+  });
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) togglePause(true);
+  });
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    if(resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if(S){ applyTile(); }
+    }, 120);
+  });
+
+  /* ================= 启动 ================= */
+  bestScoreEl.textContent = getBest();
+})();
+</script>
+</body>
+</html>
