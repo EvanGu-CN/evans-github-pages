@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f4ef"><title>投骰子 | 小工具集</title><link rel="stylesheet" href="../style.css"><script defer src="app.js"></script>
+<style>
+.dice-stage{background:#fff;border:1px solid #e1e6de;border-radius:16px;padding:34px 28px}
+.dice-tray{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;min-height:132px;padding:8px 0 22px}
+.die{width:88px;height:88px;border-radius:18px;background:#fbfcfa;border:1px solid #dce3dc;box-shadow:0 4px 0 #e4e9e2,0 10px 22px #1d29250d;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:12px;gap:4px;transition:transform .18s}
+.die.rolling{animation:tumble .35s linear infinite}
+.die.settled{animation:settle .32s cubic-bezier(.2,1.7,.5,1)}
+.pip{width:100%;height:100%;border-radius:50%;background:transparent}
+.pip.on{background:#377a59;box-shadow:inset 0 -1px 1px #00000022}
+@keyframes tumble{0%{transform:rotate(0) translateY(0)}25%{transform:rotate(8deg) translateY(-6px)}50%{transform:rotate(0) translateY(0)}75%{transform:rotate(-8deg) translateY(-6px)}100%{transform:rotate(0) translateY(0)}}
+@keyframes settle{0%{transform:scale(1.12)}60%{transform:scale(.96)}100%{transform:scale(1)}}
+.dice-summary{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#e9eee7;border:1px solid #dce5dc;border-radius:12px;padding:18px 24px}
+.dice-summary strong{font-size:14px}
+.dice-summary span{display:block;margin-top:5px;color:#78877b;font-size:12px}
+.dice-summary output{font-size:28px;font-weight:750;color:#397d5c;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dice-controls{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end;margin-top:22px}
+.dice-controls .field{margin:0}
+.roll-btn{border:0;border-radius:10px;background:#377a59;color:#fff;font:inherit;font-weight:750;font-size:14px;padding:14px 34px;cursor:pointer;transition:.15s;box-shadow:0 2px 0 #2c6247}
+.roll-btn:hover{background:#2f6a4d}
+.roll-btn:active{transform:translateY(2px);box-shadow:none}
+.roll-btn:focus-visible{outline:3px solid #8fc4a8;outline-offset:3px}
+.roll-btn:disabled{background:#9fb8ab;box-shadow:0 2px 0 #8ca597;cursor:default;transform:none}
+.hint{color:#93a096;font-size:12px;margin-top:14px;line-height:1.7}
+@media(max-width:650px){.dice-stage{padding:22px 18px}.die{width:72px;height:72px;padding:10px;border-radius:15px}.dice-tray{gap:12px;min-height:110px}.dice-controls{grid-template-columns:1fr}.roll-btn{padding:15px;width:100%}}
+</style></head>
+<body><main class="container"><nav class="topbar"><a class="back" href="../">← 返回工具集</a><div class="eyebrow">EVAN'S TOOLBOX</div></nav><header class="page-head"><div class="kicker">RANDOM TOOL / 02</div><h1>投骰子</h1><p>选定数量，随手一掷。每一面都同样公平。</p></header>
+
+<section class="dice-stage" aria-labelledby="dice-title"><h2 id="dice-title" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">骰子</h2><div class="dice-tray" id="dice-tray" aria-hidden="true"></div><div class="dice-summary"><div><strong>总点数</strong><span>所有骰子点数之和</span></div><output id="total" aria-live="polite">—</output></div><div class="dice-controls"><label class="field"><span>骰子数量</span><select id="count"><option value="1">1 颗</option><option value="2" selected>2 颗</option><option value="3">3 颗</option><option value="4">4 颗</option><option value="5">5 颗</option><option value="6">6 颗</option></select></label><button class="roll-btn" id="roll" type="button">掷骰子</button></div><p class="hint">6 面骰，每颗点数在 1–6 之间等概率随机。按空格键或回车也可投掷。</p></section>
+
+<aside class="note"><strong>关于随机</strong><br>本页面使用浏览器的 Web Crypto 随机数生成器（crypto.getRandomValues）产生点数，避免伪随机序列带来的偏差。所有计算均在本地完成，不上传任何数据。</aside><footer>EVAN'S TOOLBOX <span>随手一掷 · 各凭运气</span></footer></main></body></html>
