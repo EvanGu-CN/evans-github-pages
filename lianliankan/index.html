@@ -146,6 +146,11 @@
   .btn-ghost:hover{background:rgba(48,96,170,.34);border-color:rgba(180,220,255,.6);}
   .btn-ghost:active{transform:scale(.96);}
   .btn-ghost.mute{opacity:.55;}
+  .btn-ghost:disabled{
+    opacity:.45;cursor:not-allowed;color:#93a9c4;
+    background:rgba(30,66,124,.12);border-color:rgba(150,195,255,.18);
+  }
+  .btn-ghost:disabled:hover{background:rgba(30,66,124,.12);border-color:rgba(150,195,255,.18);}
 
   .time-row{display:flex;align-items:center;gap:10px;width:100%;padding:0 2px;}
   .time-track{
@@ -314,7 +319,9 @@
     .stat .k{font-size:10px;}
     .stat .v{font-size:13px;}
     .btn-ghost{padding:6px 9px;font-size:11.5px;}
-    .hud{gap:4px;}
+    /* 窄屏：统计与按钮分两行，避免三个按钮挤在同一行时溢出 */
+    .hud{flex-wrap:wrap;row-gap:5px;}
+    .actions{width:100%;justify-content:flex-end;}
   }
 </style>
 </head>
@@ -345,8 +352,7 @@
           <div class="stat"><span class="k">剩余</span><span class="v" id="hudLeft">0</span></div>
         </div>
         <div class="actions">
-          <button class="btn-ghost" id="btnHint">提示</button>
-          <button class="btn-ghost" id="btnShuffle">重排</button>
+          <button class="btn-ghost" id="btnHint">提示 3/3</button>
           <button class="btn-ghost" id="btnPause">暂停</button>
           <button class="btn-ghost" id="btnSound">音效</button>
         </div>
@@ -792,6 +798,8 @@
   const toastEl = $('#toast');
   const bestScoreEl = $('#bestScore');
   const btnSound = $('#btnSound');
+  const btnHint = $('#btnHint');
+  const HINT_MAX = 3;
 
   let S = null;
   let timerId = null;
@@ -866,8 +874,10 @@
 
     const dims = chooseDims();
     const cols = dims.cols, rows = dims.rows;
-    const kinds = Math.min(PETS.length, 6 + level * 2);
-    const timeMax = Math.max(150, 300 - (level - 1) * 20);
+    // 前几关直接拉高难度：第 1 关即 10 种图标，每关 +2 种，第 4 关起满 16 种
+    const kinds = Math.min(PETS.length, 10 + (level - 1) * 2);
+    // 单关时限：第 1 关 240 秒，每关 -15 秒，最低 120 秒
+    const timeMax = Math.max(120, 240 - (level - 1) * 15);
 
     S = {
       level, score, cols, rows,
@@ -882,12 +892,14 @@
       comboAt: 0,
       timeMax,
       time: timeMax,
+      hintsLeft: HINT_MAX,
       tilePx: 0
     };
 
     renderBoard();
     applyTile();
     updateHUD();
+    updateHintButton();
     updateTimeUI();
     startTimer();
   }
@@ -1058,7 +1070,7 @@
       return;
     }
     if(!findAnyMoveIn(S.grid, S.cols, S.rows)){
-      autoShuffle();
+      noMovesLeft();
     }
   }
 
@@ -1122,11 +1134,26 @@
     setTimeout(() => el.remove(), 900);
   }
 
-  /* ================= 提示 / 重排 ================= */
+  /* ================= 提示 / 死局 ================= */
+  function updateHintButton(){
+    if(!S) return;
+    btnHint.textContent = '提示 ' + S.hintsLeft + '/' + HINT_MAX;
+    btnHint.disabled = S.hintsLeft <= 0;
+    btnHint.title = S.hintsLeft > 0
+      ? '本关剩余 ' + S.hintsLeft + ' 次提示'
+      : '本关提示次数已用完';
+  }
+
   function doHint(){
     if(!S || !S.running || S.paused || S.busy) return;
+    if(S.hintsLeft <= 0){ toast('本关提示次数已用完'); return; }
     const mv = findAnyMoveIn(S.grid, S.cols, S.rows);
-    if(!mv){ autoShuffle(); return; }
+    if(!mv){ toast('当前没有可消除的配对'); return; }
+
+    S.hintsLeft--;
+    updateHintButton();
+    if(S.hintsLeft <= 0) toast('提示次数已用完');
+
     SFX.hint();
     const elA = S.tiles.get(keyOf(mv.a.r, mv.a.c));
     const elB = S.tiles.get(keyOf(mv.b.r, mv.b.c));
@@ -1137,44 +1164,18 @@
     });
   }
 
-  function autoShuffle(){
-    toast('无路可走了，自动重排');
-    doShuffle(true);
-  }
-
-  function doShuffle(auto){
-    if(!S || !S.running || S.paused) return;
+  function noMovesLeft(){
+    if(!S || !S.running) return;
+    S.paused = true;
     clearSelection();
-
-    const C = S.cols + 2;
-    const pos = [], vals = [];
-    for(let r=1; r<=S.rows; r++){
-      for(let c=1; c<=S.cols; c++){
-        if(S.grid[r*C + c] >= 0){
-          pos.push([r, c]);
-          vals.push(S.grid[r*C + c]);
-        }
-      }
-    }
-    if(pos.length <= 2) return;
-
-    let placed = false;
-    for(let attempt=0; attempt<60 && !placed; attempt++){
-      shuffleArr(vals);
-      pos.forEach(([r, c], i) => { S.grid[r*C + c] = vals[i]; });
-      if(findAnyMoveIn(S.grid, S.cols, S.rows)) placed = true;
-    }
-
-    pos.forEach(([r, c]) => {
-      const el = S.tiles.get(keyOf(r, c));
-      if(!el) return;
-      el.innerHTML = iconHTML(S.grid[r*C + c]);
-      el.classList.remove('drop-in');
-      void el.offsetWidth;
-      el.classList.add('drop-in');
-    });
-
-    if(!auto) toast('已重新排列');
+    SFX.error();
+    showDialog('无路可走', `
+      <div>第 <b>${S.level}</b> 关已没有可消除的配对</div>
+      <div class="sub">重开本关会重置提示次数</div>
+    `, [
+      {label:'重开本关', fn:() => startLevel(S.level, S.score)},
+      {label:'返回首页', plain:true, fn:() => backHome()}
+    ]);
   }
 
   /* ================= 关卡结算 / 结束 ================= */
@@ -1283,11 +1284,7 @@
     ensureAudio();
     startLevel(1, 0);
   });
-  $('#btnHint').addEventListener('click', doHint);
-  $('#btnShuffle').addEventListener('click', () => {
-    if(!S || !S.running || S.paused || S.busy) return;
-    doShuffle(false);
-  });
+  btnHint.addEventListener('click', doHint);
   $('#btnPause').addEventListener('click', () => togglePause());
   btnSound.addEventListener('click', () => {
     soundOn = !soundOn;
