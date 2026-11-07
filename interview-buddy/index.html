@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <title>InterviewBuddy · 面试题库</title>
+<script>
+/* 早期应用主题，避免刷新时闪白 */
+(function () {
+  var theme = null;
+  try { theme = localStorage.getItem('ib-theme'); } catch (e) {}
+  if (theme !== 'light' && theme !== 'dark') {
+    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/app.css">
 </head>
@@ -21,6 +32,14 @@
       </span>
       <span class="brand-text">InterviewBuddy<span class="brand-sub">面试题库</span></span>
     </a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深色模式" aria-pressed="false" title="切换深色模式">
+      <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+      </svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.9 19.1 1.4-1.4"/><path d="m17.7 6.3 1.4-1.4"/>
+      </svg>
+    </button>
   </div>
 </header>
 
@@ -47,5 +66,45 @@
 
 <script src="data/catalog.js"></script>
 <script src="assets/app.js"></script>
+<script>
+/* 主题切换：手动选择写入 localStorage，未选择时跟随系统 */
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function current() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
+
+  function sync() {
+    var dark = current() === 'dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    var label = dark ? '切换浅色模式' : '切换深色模式';
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
+  }
+
+  btn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ib-theme', next); } catch (e) {}
+    sync();
+  });
+
+  if (mq) {
+    var onSystemChange = function (e) {
+      var saved = null;
+      try { saved = localStorage.getItem('ib-theme'); } catch (err) {}
+      if (saved) return;
+      root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      sync();
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onSystemChange);
+    else if (mq.addListener) mq.addListener(onSystemChange);
+  }
+
+  sync();
+})();
+</script>
 </body>
 </html>
