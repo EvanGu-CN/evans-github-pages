@@ -210,6 +210,11 @@ kbd {
 .supplies b { display: inline-grid; place-items: center; width: 19px; border-radius: 4px; color: #101823; margin-right: 4px; }
 .power { background: var(--accent); }
 .repair { background: #89f5ab; }
+.shield { background: #c6abff; }
+.rapid { background: #ffdf86; }
+.loadout { display: flex; justify-content: space-between; gap: 8px; padding-top: 12px; font-size: .75rem; color: var(--muted); }
+.loadout strong { color: var(--accent); }
+.mission-status { color: var(--muted); font-size: .75rem; margin: 8px 0 0; }
 .game-footer { margin-top: 16px; border-top: 1px solid var(--line); }
 
 @media (pointer: coarse), (max-width: 700px) {

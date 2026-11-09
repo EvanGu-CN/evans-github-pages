@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0e1526">
-  <meta name="description" content="三段战区的竖屏飞行射击游戏，支持键盘和触屏。">
+  <meta name="description" content="五大战区、自动射击、首领战与四种补给，支持键盘和触屏。">
   <title>雷霆战机 · Evan's Arcade</title>
   <link rel="stylesheet" href="../arcade/arcade.css">
   <script defer src="../arcade/arcade.js"></script>
-  <script defer src="game.js"></script>
+  <script defer src="game.js?v=2"></script>
 </head>
 <body class="fighter">
   <main class="arcade">
@@ -21,7 +21,7 @@
       <div>
         <p class="eyebrow">CARTRIDGE 02 <span></span> SHOOT ’EM UP</p>
         <h1>雷霆战机</h1>
-        <p class="intro">穿过三段战区，击破旗舰。</p>
+        <p class="intro">自动开火，穿过五大战区，击破雷霆母舰。</p>
       </div>
       <div class="game-actions">
         <button type="button" data-sound aria-pressed="false">音效关</button>
@@ -32,20 +32,26 @@
       <section class="game-console" aria-label="雷霆战机游戏">
         <div class="hud" aria-label="游戏数据">
           <div>得分 <strong data-stat="score">00000</strong></div>
-          <div>战区 <strong data-stat="sector">1 / 3</strong></div>
+          <div>战区 <strong data-stat="sector">1 / 5</strong></div>
           <div>护甲 <strong data-stat="lives">03</strong></div>
         </div>
         <div class="screen">
           <canvas width="420" height="570" aria-label="竖屏飞行射击画面">此浏览器不支持 Canvas。</canvas>
           <div class="overlay" data-overlay>
             <div class="overlay-card">
-              <p class="eyebrow" data-overlay-tag>MISSION 01–03</p>
+              <p class="eyebrow" data-overlay-tag>MISSION 01–05</p>
               <h2 data-overlay-title role="status">准备出击</h2>
-              <p data-overlay-copy>击落敌机，拾取补给，突破拦截。</p>
+              <p data-overlay-copy>战机自动射击，专注移动与闪避。每个战区都有首领。</p>
               <button class="play" type="button" data-play>开始游戏</button>
             </div>
           </div>
         </div>
+        <div class="loadout" aria-label="装备状态">
+          <span>火力 <strong data-stat="power">Lv.1</strong></span>
+          <span>护盾 <strong data-stat="shield">0s</strong></span>
+          <span>速射 <strong data-stat="rapid">0s</strong></span>
+        </div>
+        <p class="mission-status" data-stat="phase">近地轨道</p>
       </section>
       <aside class="field-guide" aria-label="玩法说明">
         <p class="eyebrow">FLIGHT MANUAL</p>
@@ -53,14 +59,17 @@
         <div class="record">本机最高分 <strong data-stat="best">00000</strong></div>
         <dl>
           <div><dt>移动</dt><dd><kbd>方向键</kbd> / <kbd>WASD</kbd></dd></div>
-          <div><dt>开火</dt><dd><kbd>空格</kbd> / <kbd>X</kbd> 长按</dd></div>
+          <div><dt>开火</dt><dd>全程自动射击</dd></div>
           <div><dt>暂停</dt><dd><kbd>P</kbd> / <kbd>Esc</kbd></dd></div>
         </dl>
-        <p class="touch-note">手机上按住战场拖动即可操控，拖动时自动开火。</p>
+        <p class="touch-note">手机上按住战场拖动即可操控，松手后仍会自动射击。</p>
         <ul class="supplies">
           <li><b class="power">P</b> 火力升级，最高三级。</li>
           <li><b class="repair">+</b> 修复一格护甲，最多三格。</li>
+          <li><b class="shield">S</b> 8 秒护盾，抵挡伤害。</li>
+          <li><b class="rapid">F</b> 10 秒速射，提升射击频率。</li>
         </ul>
+        <p>击破每关首领后，修复一格护甲、提升一级火力。留意高速拦截机与可击碎的陨石。</p>
       </aside>
     </div>
     <footer class="game-footer"><span>EVAN’S ARCADE / 02</span><span>原创战机绘图与合成音效</span></footer>

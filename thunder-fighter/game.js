@@ -4,14 +4,24 @@
   const width = 420;
   const height = 570;
   const sectors = [
-    { name: "近地轨道", top: "#0e1937", bottom: "#1a3d58", glow: "#5887cc" },
-    { name: "离子风暴", top: "#191732", bottom: "#443255", glow: "#916cdb" },
-    { name: "旗舰封锁", top: "#21192f", bottom: "#522b47", glow: "#e1738e" },
+    { name: "近地轨道", boss: "巡逻领航舰", hp: 55, top: "#0e1937", bottom: "#1a3d58", glow: "#5887cc" },
+    { name: "陨石航道", boss: "碎星采矿舰", hp: 75, top: "#182b29", bottom: "#31554b", glow: "#74b995" },
+    { name: "离子风暴", boss: "离子守卫", hp: 100, top: "#191732", bottom: "#443255", glow: "#916cdb" },
+    { name: "赤焰防线", boss: "赤焰巡洋舰", hp: 130, top: "#321b23", bottom: "#693f3e", glow: "#ed9b65" },
+    { name: "旗舰封锁", boss: "雷霆母舰", hp: 170, top: "#21192f", bottom: "#522b47", glow: "#e1738e" },
   ];
   const types = {
     scout: { speed: 98, hp: 1, radius: 15, points: 100, color: "#ff9f72" },
     wing: { speed: 72, hp: 2, radius: 18, points: 160, color: "#d49eff" },
     armor: { speed: 52, hp: 5, radius: 24, points: 350, color: "#fb789b" },
+    interceptor: { speed: 155, hp: 2, radius: 16, points: 220, color: "#ffe08a" },
+    asteroid: { speed: 64, hp: 7, radius: 26, points: 200, color: "#9babb8" },
+  };
+  const supplies = {
+    power: { label: "P", color: "#91efff" },
+    repair: { label: "+", color: "#a7ffb6" },
+    shield: { label: "S", color: "#c6abff" },
+    rapid: { label: "F", color: "#ffdf86" },
   };
   const stars = Array.from({ length: 94 }, (_, i) => ({
     x: (i * 169 + i * i * 7) % width,
@@ -32,7 +42,7 @@
   let lastBackground, backdrop;
 
   function reset() {
-    player = { x: width / 2, y: height - 75, radius: 12, lives: 3, power: 1, cooldown: 0, shield: 0, lean: 0 };
+    player = { x: width / 2, y: height - 75, radius: 12, lives: 3, power: 1, cooldown: 0, shield: 0, rapid: 0, lean: 0 };
     bullets = [];
     hostiles = [];
     enemies = [];
@@ -62,20 +72,26 @@
     game.stat("best", digits(best, 5));
     game.stat("sector", `${sector + 1} / ${sectors.length}`);
     game.stat("lives", digits(player.lives, 2));
+    game.stat("power", `Lv.${player.power}`);
+    game.stat("shield", `${Math.ceil(player.shield)}s`);
+    game.stat("rapid", `${Math.ceil(player.rapid)}s`);
+    game.stat("phase", boss ? sectors[sector].boss : `${sectors[sector].name} · ${Math.min(wave, Math.ceil((18 + sector * 2) / (2.55 - sector * .16)))} 波`);
   }
 
   function spawnWave() {
     const center = 103 + (wave * 73 + sector * 47) % 214;
-    const kind = wave % 5 === 4 ? "armor" : wave % 2 === 0 ? "scout" : "wing";
-    const count = kind === "armor" ? 1 : kind === "wing" ? 3 : 3 + Number(sector > 0);
+    const formation = sector === 0 ? ["scout", "wing", "scout", "armor"]
+      : ["scout", "interceptor", "wing", "asteroid", "armor", "interceptor"];
+    const kind = formation[wave % formation.length];
+    const count = kind === "armor" || kind === "asteroid" ? 1 : 3;
     for (let i = 0; i < count; i++) {
       const type = types[kind];
       const baseX = Arcade.clamp(center + (i - (count - 1) / 2) * 48, 28, width - 28);
       enemies.push({
         ...type, kind, x: baseX, baseX, y: -36 - i * 24,
         age: 0, phase: i * .46, cooldown: 1.35 + i * .24,
-        supply: i === Math.floor(count / 2) && (wave % 4 === 1 || kind === "armor")
-          ? (wave % 10 === 4 ? "repair" : "power") : null,
+        supply: i === Math.floor(count / 2)
+          ? ["power", "shield", "repair", "rapid"][(wave + sector) % 4] : null,
       });
     }
     wave++;
@@ -125,9 +141,10 @@
     player.y = Arcade.clamp(player.y, 68, height - 22);
     player.lean += (Arcade.clamp((player.x - oldX) * .037, -.28, .28) - player.lean) * .28;
     player.shield = Math.max(0, player.shield - dt);
+    player.rapid = Math.max(0, player.rapid - dt);
     player.cooldown -= dt;
-    if ((game.dragging() || game.held("fire")) && player.cooldown <= 0) {
-      player.cooldown = .135;
+    if (player.cooldown <= 0) {
+      player.cooldown = player.rapid > 0 ? .075 : .135;
       bullets.push({ x: player.x, y: player.y - 17, vx: 0, radius: 4 });
       if (player.power >= 2) {
         const spread = player.power === 3 ? 94 : 36;
@@ -144,6 +161,7 @@
       enemy.y += (enemy.speed + sector * 9) * dt;
       enemy.x = Arcade.clamp(enemy.baseX + Math.sin(enemy.age * 2.5 + enemy.phase) * (enemy.kind === "wing" ? 54 : 19), 18, width - 18);
       enemy.cooldown -= dt;
+      if (enemy.kind === "asteroid") continue;
       if (enemy.cooldown > 0 || enemy.y < 30 || enemy.y > player.y - 75) continue;
       const angle = aim(enemy.x, enemy.y);
       if (enemy.kind === "armor") {
@@ -163,9 +181,39 @@
     boss.cooldown -= dt;
     if (boss.cooldown > 0 || boss.y < 72) return;
     const angle = boss.salvo % 2 ? Math.PI / 2 : aim(boss.x, boss.y);
-    for (let i = -2; i <= 2; i++) fire(boss.x, boss.y + 29, angle + i * .235, 186, 6);
+    if (sector === 1 || (sector === 4 && boss.salvo % 3 === 0)) {
+      for (let i = 0; i < 12; i++) fire(boss.x, boss.y, i * Math.PI / 6 + boss.age * .2, 135, 5);
+    } else if (sector === 2) {
+      for (const offset of [-40, 40]) {
+        for (const spread of [-.18, 0, .18]) fire(boss.x + offset, boss.y + 20, angle + spread, 174, 5);
+      }
+    } else {
+      const spreadCount = sector === 0 ? 1 : 2;
+      for (let i = -spreadCount; i <= spreadCount; i++) fire(boss.x, boss.y + 29, angle + i * .235, 160 + sector * 8, 6);
+    }
     boss.salvo++;
-    boss.cooldown = boss.hp < boss.maxHp / 2 ? .66 : .98;
+    boss.cooldown = boss.hp < boss.maxHp / 2 ? .85 : 1.25;
+  }
+
+  function clearSector(game) {
+    addScore(1500 + sector * 500);
+    game.effect("clear");
+    boss = null;
+    hostiles = [];
+    if (sector === sectors.length - 1) {
+      game.finish({ tag: "MISSION COMPLETE", title: "雷霆母舰已击破", copy: `五个战区全部突破，最终得分 ${score}。` });
+      return;
+    }
+    sector++;
+    clock = 0;
+    wave = 0;
+    nextWave = 2;
+    enemies = [];
+    bullets = [];
+    drops = [];
+    player.lives = Math.min(3, player.lives + 1);
+    player.power = Math.min(3, player.power + 1);
+    player.shield = 3;
   }
 
   function collisions(game) {
@@ -176,10 +224,7 @@
         burst(bullet.x, bullet.y, "#fc9cba", 3);
         if (boss.hp <= 0) {
           burst(boss.x, boss.y, "#ffe0aa", 55);
-          addScore(3500);
-          game.effect("clear");
-          game.finish({ tag: "MISSION COMPLETE", title: "旗舰已击破", copy: `三段战区全部突破，最终得分 ${score}。` });
-          boss = null;
+          clearSector(game);
           return;
         }
         continue;
@@ -198,7 +243,9 @@
     for (const drop of drops) {
       if (!touches(player, drop)) continue;
       if (drop.kind === "power") player.power = Math.min(3, player.power + 1);
-      else player.lives = Math.min(3, player.lives + 1);
+      else if (drop.kind === "repair") player.lives = Math.min(3, player.lives + 1);
+      else if (drop.kind === "shield") player.shield = 8;
+      else if (drop.kind === "rapid") player.rapid = 10;
       addScore(50);
       drop.taken = true;
       game.effect("coin");
@@ -223,22 +270,16 @@
   function update(dt, game) {
     elapsed += dt;
     clock += dt;
-    if (sector < 2 && clock >= 23) {
-      sector++;
-      clock = 0;
-      wave = 0;
-      nextWave = 1.6;
-      game.effect("clear");
-    }
     if (clock >= nextWave && !boss) {
-      if (sector === 2 && clock >= 17) {
+      if (clock >= 18 + sector * 2) {
         if (enemies.length === 0) {
-          boss = { x: width / 2, y: -65, radius: 53, hp: 115, maxHp: 115, age: 0, salvo: 0, cooldown: 2 };
+          const hp = sectors[sector].hp;
+          boss = { x: width / 2, y: -65, radius: 53, hp, maxHp: hp, age: 0, salvo: 0, cooldown: 2 };
           game.effect("clear");
         }
       } else {
         spawnWave();
-        nextWave += 2.55 - sector * .25;
+        nextWave += 2.55 - sector * .16;
       }
     }
     updatePlayer(dt, game);
@@ -309,6 +350,16 @@
     ctx.save();
     ctx.translate(Math.round(enemy.x), Math.round(enemy.y));
     const r = enemy.radius;
+    if (enemy.kind === "asteroid") {
+      ctx.rotate(enemy.age * .6);
+      poly(ctx, "#465669", [[-r, -8], [-15, -r], [11, -r], [r, -5], [18, 19], [-7, r], [-r, 9]]);
+      poly(ctx, enemy.color, [[-r + 4, -6], [-13, -r + 4], [9, -r + 4], [r - 4, -4], [15, 15], [-6, r - 4], [-r + 4, 7]]);
+      rect(ctx, "#65778b", -10, -10, 12, 10);
+      rect(ctx, "#65778b", 5, 5, 8, 8);
+      ctx.restore();
+      return;
+    }
+    if (enemy.kind === "interceptor") ctx.scale(.8, 1.35);
     poly(ctx, "#221934", [[-r, -r * .7], [0, -r * .39], [r, -r * .7], [r * .76, r * .52], [0, r], [-r * .76, r * .52]]);
     poly(ctx, enemy.color, [[-r + 3, -r * .5], [-r * .28, -r * .2], [0, -r * .65], [r * .28, -r * .2], [r - 3, -r * .5], [r * .58, r * .45], [0, r * .72], [-r * .58, r * .45]]);
     poly(ctx, "#6c385b", [[0, -r * .45], [r * .34, r * .1], [0, r * .54], [-r * .34, r * .1]]);
@@ -330,9 +381,9 @@
     rect(ctx, "#2a1932", 66, 24, width - 132, 8);
     rect(ctx, "#ff8fac", 66, 24, (width - 132) * boss.hp / boss.maxHp, 8);
     ctx.fillStyle = "#ffe1ea";
-    ctx.font = "bold 12px monospace";
+    ctx.font = "bold 12px system-ui";
     ctx.textAlign = "center";
-    ctx.fillText("FLAGSHIP", width / 2, 18);
+    ctx.fillText(sectors[sector].boss, width / 2, 18);
   }
 
   function drawPlayer(ctx) {
@@ -360,11 +411,11 @@
     enemies.forEach((enemy) => drawShip(ctx, enemy));
     if (boss) drawBoss(ctx);
     for (const drop of drops) {
-      rect(ctx, drop.kind === "power" ? "#91efff" : "#a7ffb6", drop.x - 11, drop.y - 11, 22, 22);
+      rect(ctx, supplies[drop.kind].color, drop.x - 11, drop.y - 11, 22, 22);
       ctx.fillStyle = "#18253e";
       ctx.font = "bold 17px monospace";
       ctx.textAlign = "center";
-      ctx.fillText(drop.kind === "power" ? "P" : "+", drop.x, drop.y + 6);
+      ctx.fillText(supplies[drop.kind].label, drop.x, drop.y + 6);
     }
     for (const bullet of bullets) {
       rect(ctx, "#4dcfff8c", bullet.x - 4, bullet.y - 9, 8, 20);
