@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151c16">
+  <meta name="description" content="三关复古横版平台游戏，支持键盘和触屏。">
+  <title>超级玛丽 · Evan's Arcade</title>
+  <link rel="stylesheet" href="../arcade/arcade.css">
+  <script defer src="../arcade/arcade.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body class="mario">
+  <main class="arcade">
+    <nav class="arcade-nav" aria-label="街机导航">
+      <a href="../">← 返回工具集</a>
+      <span>EVAN’S <strong>ARCADE</strong></span>
+      <a href="../thunder-fighter/">雷霆战机 ↗</a>
+    </nav>
+    <header class="game-heading">
+      <div>
+        <p class="eyebrow">CARTRIDGE 01 <span></span> PLATFORMER</p>
+        <h1>超级玛丽</h1>
+        <p class="intro">跑过草地，跃过深谷，在城堡前升起终点旗。</p>
+      </div>
+      <div class="game-actions">
+        <button type="button" data-sound aria-pressed="false">音效关</button>
+        <button type="button" data-pause disabled>暂停</button>
+      </div>
+    </header>
+    <div class="game-layout">
+      <section class="game-console" aria-label="超级玛丽游戏">
+        <div class="hud" aria-label="游戏数据">
+          <div>关卡 <strong data-stat="stage">1 / 3</strong></div>
+          <div>金币 <strong data-stat="coins">00</strong></div>
+          <div>生命 <strong data-stat="lives">03</strong></div>
+        </div>
+        <div class="screen">
+          <canvas width="800" height="416" aria-label="横版闯关画面">此浏览器不支持 Canvas。</canvas>
+          <div class="overlay" data-overlay>
+            <div class="overlay-card">
+              <p class="eyebrow" data-overlay-tag>WORLD 01–03</p>
+              <h2 data-overlay-title role="status">出发去冒险</h2>
+              <p data-overlay-copy>收集金币，踩倒巡逻怪，跑到旗杆过关。</p>
+              <button class="play" type="button" data-play>开始游戏</button>
+            </div>
+          </div>
+        </div>
+        <div class="touch-controls" aria-label="屏幕按键">
+          <button type="button" data-hold="left" aria-label="向左">←</button>
+          <button type="button" data-hold="right" aria-label="向右">→</button>
+          <button type="button" data-hold="jump">跳跃 ↑</button>
+        </div>
+      </section>
+      <aside class="field-guide" aria-label="玩法说明">
+        <p class="eyebrow">HOW TO PLAY</p>
+        <h2>冒险手册</h2>
+        <dl>
+          <div><dt>移动</dt><dd><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd></dd></div>
+          <div><dt>跳跃</dt><dd><kbd>空格</kbd> / <kbd>↑</kbd> / <kbd>W</kbd></dd></div>
+          <div><dt>暂停</dt><dd><kbd>P</kbd> / <kbd>Esc</kbd></dd></div>
+        </dl>
+        <p>从下方顶问号砖能拿到金币。从上方踩怪，碰到怪物侧面或掉进沟里会失去一条命。</p>
+        <p class="touch-note">手机可用画面下方的方向键和跳跃键。</p>
+      </aside>
+    </div>
+    <footer class="game-footer"><span>EVAN’S ARCADE / 01</span><span>原创像素绘图与合成音效</span></footer>
+    <noscript>请启用 JavaScript 后开始游戏。</noscript>
+  </main>
+</body>
+</html>
