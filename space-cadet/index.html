@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#172537" />
+    <meta
+      name="description"
+      content="3D Pinball: Space Cadet 网页游戏，支持键盘、触屏按键、暂停与本机最高分。"
+    />
+    <title>3D Pinball: Space Cadet · Evan's Arcade</title>
+    <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
+    <link rel="stylesheet" href="../arcade/classics.css" />
+    <script defer src="../arcade/arcade.js"></script>
+    <script defer src="../arcade/record.js"></script>
+    <script defer src="game.js"></script>
+  </head>
+  <body class="classic pinball">
+    <main class="arcade">
+      <nav class="arcade-nav" aria-label="街机导航">
+        <a href="../">← 返回工具集</a><span>EVAN’S <strong>ARCADE</strong></span
+        ><a href="../flappy-bird/">Flappy Bird ↗</a>
+      </nav>
+      <header class="game-heading">
+        <div>
+          <p class="eyebrow">CARTRIDGE 06 <span></span> CLASSICS</p>
+          <h1 style="font-size: clamp(1.65rem, 4vw, 2.8rem)">
+            3D Pinball: Space Cadet
+          </h1>
+          <p class="intro">太空弹珠 · 网页致敬版</p>
+        </div>
+        <div class="game-actions">
+          <button type="button" data-sound aria-pressed="false">音效关</button
+          ><button type="button" data-pause disabled>暂停</button>
+        </div>
+      </header>
+      <div class="game-layout">
+        <section class="game-console" aria-label="3D Pinball: Space Cadet 游戏">
+          <div class="hud" aria-label="游戏数据">
+            <div>得分 <strong data-stat="score">0</strong></div>
+            <div>剩余球 <strong data-stat="balls">3</strong></div>
+            <div>倍率 <strong data-stat="multiplier">×1</strong></div>
+          </div>
+          <div class="screen">
+            <canvas
+              width="420"
+              height="620"
+              aria-label="3D Pinball: Space Cadet 游戏画面"
+              >此浏览器不支持 Canvas。</canvas
+            >
+            <div class="overlay" data-overlay>
+              <div class="overlay-card">
+                <p class="eyebrow" data-overlay-tag>
+                  SPACE CADET / WEB EDITION
+                </p>
+                <h2 data-overlay-title role="status">准备开始</h2>
+                <p data-overlay-copy>
+                  发射钢球，操纵两侧挡板，击中目标完成太空任务。
+                </p>
+                <button class="play" type="button" data-play>开始游戏</button>
+              </div>
+            </div>
+          </div>
+          <div class="touch-controls" aria-label="屏幕按键">
+            <button type="button" data-hold="left">左挡板</button
+            ><button type="button" data-hold="launch">按住发射</button
+            ><button type="button" data-hold="right">右挡板</button>
+          </div>
+          <p class="mission" data-stat="mission" role="status">
+            任务 1 · 点亮三个蓝色目标
+          </p>
+        </section>
+        <aside class="field-guide" aria-label="玩法说明">
+          <p class="eyebrow">HOW TO PLAY</p>
+          <h2>玩法手册</h2>
+          <div class="record">
+            本机最高分 <strong data-stat="best">0</strong>
+          </div>
+          <dl>
+            <div>
+              <dt>左挡板</dt>
+              <dd>← / A / Z</dd>
+            </div>
+            <div>
+              <dt>右挡板</dt>
+              <dd>→ / D / /</dd>
+            </div>
+            <div>
+              <dt>蓄力发射</dt>
+              <dd>按住空格，松开发射</dd>
+            </div>
+            <div>
+              <dt>暂停</dt>
+              <dd><kbd>P</kbd> / <kbd>Esc</kbd></dd>
+            </div>
+          </dl>
+          <p>
+            击中三个蓝色目标完成任务，获得奖励并提高倍率。撞击弹射器、侧边靶和轨道都能得分。每局
+            3 球。
+          </p>
+          <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
+        </aside>
+      </div>
+      <footer class="game-footer">
+        <span>EVAN’S ARCADE / 06</span><span>Space Cadet 网页致敬版</span>
+      </footer>
+      <noscript>请启用 JavaScript 后开始游戏。</noscript>
+    </main>
+  </body>
+</html>

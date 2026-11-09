@@ -1,0 +1,101 @@
+.classic {
+  --page: #111d2a;
+  --panel: #192a3b;
+  --raised: #253b50;
+  --line: #3b5369;
+  --muted: #b3c8d9;
+  --ink: #eef7ff;
+  --accent: #8be5d3;
+}
+.classic .arcade {
+  max-width: 1050px;
+}
+.classic .game-layout {
+  grid-template-columns: minmax(0, 1fr) 275px;
+}
+.classic .game-console {
+  display: grid;
+  justify-items: center;
+}
+.classic .game-console > * {
+  width: min(100%, 420px);
+}
+.classic canvas {
+  touch-action: none;
+}
+.classic .touch-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.classic .touch-controls button {
+  min-height: 44px;
+  font-size: 0.8rem;
+}
+.classic .game-actions button {
+  min-height: 44px;
+}
+.classic .overlay-card h2 {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+.classic .record {
+  margin-bottom: 14px;
+}
+.classic .game-footer {
+  letter-spacing: 0.05em;
+}
+.classic .flight-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.75rem;
+}
+.snake {
+  --page: #14251f;
+  --panel: #1c3329;
+  --raised: #2a4838;
+  --line: #41634c;
+  --accent: #b4e483;
+}
+.snake .touch-controls {
+  grid-template-columns: repeat(4, 1fr);
+}
+.pinball {
+  --page: #15162e;
+  --panel: #20213d;
+  --raised: #303253;
+  --line: #49496b;
+  --accent: #ffc87c;
+}
+.pinball .game-console > * {
+  width: min(100%, 420px);
+}
+.pinball .mission {
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
+@media (max-width: 760px) {
+  .classic .game-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .classic .game-console > * {
+    width: min(100%, 420px, max(240px, calc((100svh - 285px) * 0.7)));
+  }
+  .tetris .game-console > * {
+    width: min(100%, 420px, max(220px, calc((100svh - 400px) * 0.7)));
+  }
+  .pinball .game-console > * {
+    width: min(100%, 420px, max(220px, calc((100svh - 365px) * 0.677)));
+  }
+  .snake .game-console > * {
+    width: min(100%, 420px);
+  }
+  .classic .field-guide {
+    padding: 16px;
+  }
+  .classic .arcade-nav > span {
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+}

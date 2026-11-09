@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#172537" />
+    <meta
+      name="description"
+      content="贪吃蛇 网页游戏，支持键盘、触屏按键、暂停与本机最高分。"
+    />
+    <title>贪吃蛇 · Evan's Arcade</title>
+    <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
+    <link rel="stylesheet" href="../arcade/classics.css" />
+    <script defer src="../arcade/arcade.js"></script>
+    <script defer src="../arcade/record.js"></script>
+    <script defer src="game.js"></script>
+  </head>
+  <body class="classic snake">
+    <main class="arcade">
+      <nav class="arcade-nav" aria-label="街机导航">
+        <a href="../">← 返回工具集</a><span>EVAN’S <strong>ARCADE</strong></span
+        ><a href="../flappy-bird/">Flappy Bird ↗</a>
+      </nav>
+      <header class="game-heading">
+        <div>
+          <p class="eyebrow">CARTRIDGE 05 <span></span> CLASSICS</p>
+          <h1>贪吃蛇</h1>
+          <p class="intro">吃掉星果，沿着自己的轨迹继续前进。</p>
+        </div>
+        <div class="game-actions">
+          <button type="button" data-sound aria-pressed="false">音效关</button
+          ><button type="button" data-pause disabled>暂停</button>
+        </div>
+      </header>
+      <div class="game-layout">
+        <section class="game-console" aria-label="贪吃蛇 游戏">
+          <div class="hud" aria-label="游戏数据">
+            <div>得分 <strong data-stat="score">0</strong></div>
+            <div>长度 <strong data-stat="length">4</strong></div>
+            <div>速度 <strong data-stat="speed">1</strong></div>
+          </div>
+          <div class="screen">
+            <canvas width="400" height="400" aria-label="贪吃蛇 游戏画面"
+              >此浏览器不支持 Canvas。</canvas
+            >
+            <div class="overlay" data-overlay>
+              <div class="overlay-card">
+                <p class="eyebrow" data-overlay-tag>JUST ONE MORE BITE</p>
+                <h2 data-overlay-title role="status">准备开始</h2>
+                <p data-overlay-copy>吃果实会变长，撞到墙壁或自己时结束。</p>
+                <button class="play" type="button" data-play>开始游戏</button>
+              </div>
+            </div>
+          </div>
+          <div class="touch-controls" aria-label="屏幕按键">
+            <button type="button" data-hold="left">← 左</button
+            ><button type="button" data-hold="up">↑ 上</button
+            ><button type="button" data-hold="down">↓ 下</button
+            ><button type="button" data-hold="right">右 →</button>
+          </div>
+        </section>
+        <aside class="field-guide" aria-label="玩法说明">
+          <p class="eyebrow">HOW TO PLAY</p>
+          <h2>玩法手册</h2>
+          <div class="record">
+            本机最高分 <strong data-stat="best">0</strong>
+          </div>
+          <dl>
+            <div>
+              <dt>转向</dt>
+              <dd>方向键 / WASD</dd>
+            </div>
+            <div>
+              <dt>手机操作</dt>
+              <dd>画面下方方向按钮</dd>
+            </div>
+            <div>
+              <dt>暂停</dt>
+              <dd><kbd>P</kbd> / <kbd>Esc</kbd></dd>
+            </div>
+          </dl>
+          <p>
+            每个果实加 10 分，每吃 5
+            个逐渐加速。可以提前输入连续转弯，避免迎头掉转。
+          </p>
+          <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
+        </aside>
+      </div>
+      <footer class="game-footer">
+        <span>EVAN’S ARCADE / 05</span><span>再来一局</span>
+      </footer>
+      <noscript>请启用 JavaScript 后开始游戏。</noscript>
+    </main>
+  </body>
+</html>
