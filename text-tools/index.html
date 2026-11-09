@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../tools.css">
   <script defer src="vendor/diff.min.js"></script>
   <script defer src="vendor/md5.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="app.js?v=2"></script>
 </head>
 <body>
   <main class="container tool-page">
@@ -40,7 +40,7 @@
           <div class="tool-field"><label for="after">修改后</label><textarea id="after" maxlength="250000" spellcheck="false"></textarea></div>
         </div>
         <div class="tool-controls">
-          <button class="tool-button primary" type="submit">开始对比</button>
+          <button class="tool-button primary" type="submit" disabled>开始对比</button>
           <label class="option"><input id="ignore-space" type="checkbox">忽略行首尾空白</label>
           <label class="option"><input id="changes-only" type="checkbox">仅显示差异</label>
         </div>
@@ -64,8 +64,8 @@
         </div>
         <div class="tool-controls">
           <div class="tool-field"><label for="indent">缩进</label><select id="indent"><option value="2">2 个空格</option><option value="4">4 个空格</option><option value="tab">制表符</option></select></div>
-          <button class="tool-button primary" type="submit" value="format">格式化</button>
-          <button class="tool-button" type="submit" value="compact">压缩</button>
+          <button class="tool-button primary" type="submit" value="format" disabled>格式化</button>
+          <button class="tool-button" type="submit" value="compact" disabled>压缩</button>
           <button class="tool-button" type="button" data-copy="json-output" disabled>复制结果</button>
         </div>
         <p class="tool-status" id="json-status" role="status"></p>
@@ -82,8 +82,8 @@
         </div>
         <div class="tool-controls">
           <div class="tool-field"><label for="encoding-mode">编码类型</label><select id="encoding-mode"><option value="base64">Base64</option><option value="base64url">Base64URL</option><option value="url">URL 组件</option></select></div>
-          <button class="tool-button primary" type="submit" value="encode">编码</button>
-          <button class="tool-button" type="submit" value="decode">解码</button>
+          <button class="tool-button primary" type="submit" value="encode" disabled>编码</button>
+          <button class="tool-button" type="submit" value="decode" disabled>解码</button>
           <button class="tool-button" type="button" data-copy="encoding-output" disabled>复制结果</button>
         </div>
         <p class="tool-status" id="encoding-status" role="status"></p>
@@ -95,7 +95,7 @@
       <p class="tool-intro">计算 UTF-8 文本的十六进制摘要，空格与换行也计入。MD5 适用于旧系统的兼容校验。</p>
       <form id="hash-form">
         <div class="tool-field"><label for="hash-input">输入文本</label><textarea id="hash-input" maxlength="1000000" spellcheck="false"></textarea></div>
-        <div class="tool-controls"><button class="tool-button primary" type="submit">计算哈希</button></div>
+        <div class="tool-controls"><button class="tool-button primary" type="submit" disabled>计算哈希</button></div>
         <div class="tool-results">
           <div class="tool-field result-row"><label for="md5-output">MD5</label><input id="md5-output" readonly><button class="tool-button" type="button" data-copy="md5-output" aria-label="复制 MD5" disabled>复制</button></div>
           <div class="tool-field result-row"><label for="sha256-output">SHA-256</label><input id="sha256-output" readonly><button class="tool-button" type="button" data-copy="sha256-output" aria-label="复制 SHA-256" disabled>复制</button></div>
@@ -122,7 +122,7 @@
               <option value="blank">删除空白行</option><option value="upper">转大写</option><option value="lower">转小写</option>
             </select>
           </div>
-          <button class="tool-button primary" type="submit">处理文本</button>
+          <button class="tool-button primary" type="submit" disabled>处理文本</button>
           <button class="tool-button" type="button" data-copy="lines-output" disabled>复制结果</button>
         </div>
         <p class="tool-status" id="lines-status" role="status"></p>
@@ -135,7 +135,7 @@
       <form id="uuid-form">
         <div class="tool-controls">
           <div class="tool-field count-field"><label for="uuid-count">数量（1–100）</label><input id="uuid-count" type="number" inputmode="numeric" min="1" max="100" value="1" required></div>
-          <button class="tool-button primary" type="submit">生成 UUID</button>
+          <button class="tool-button primary" type="submit" disabled>生成 UUID</button>
           <button class="tool-button" type="button" data-copy="uuid-output" disabled>全部复制</button>
         </div>
         <div class="tool-field tool-output"><label for="uuid-output">生成结果</label><textarea id="uuid-output" readonly spellcheck="false"></textarea></div>
@@ -151,15 +151,15 @@
           <div class="tool-field"><label for="epoch-input">Unix 时间戳</label><input id="epoch-input" maxlength="20" placeholder="例如 1767225600"></div>
           <div class="tool-controls">
             <div class="tool-field"><label for="epoch-unit">单位</label><select id="epoch-unit"><option value="seconds">秒</option><option value="milliseconds">毫秒</option></select></div>
-            <button class="tool-button primary" type="submit">转换为日期</button>
-            <button class="tool-button" type="submit" value="now">当前时间</button>
+            <button class="tool-button primary" type="submit" disabled>转换为日期</button>
+            <button class="tool-button" type="submit" value="now" disabled>当前时间</button>
           </div>
         </form>
         <form id="date-form">
           <div class="tool-field"><label for="date-input">日期时间</label><input id="date-input" maxlength="23" placeholder="YYYY-MM-DD HH:mm:ss" aria-describedby="date-hint"></div>
           <div class="tool-controls">
             <div class="tool-field"><label for="date-zone">输入时区</label><select id="date-zone"><option value="8">北京时间（UTC+08:00）</option><option value="0">UTC</option></select></div>
-            <button class="tool-button primary" type="submit">转换为时间戳</button>
+            <button class="tool-button primary" type="submit" disabled>转换为时间戳</button>
           </div>
         </form>
       </div>

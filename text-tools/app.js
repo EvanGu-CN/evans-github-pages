@@ -158,6 +158,10 @@ byId('diff-form').addEventListener('input', clearDiff);
 byId('diff-form').addEventListener('submit', (event) => {
   event.preventDefault();
   clearDiff();
+  if (typeof Diff === 'undefined') {
+    showStatus('diff-status', '对比组件加载失败，请刷新页面重试。', true);
+    return;
+  }
   const before = value('before');
   const after = value('after');
   const original = diffLines(before);
@@ -257,6 +261,7 @@ bindTool('encoding-form', 'encoding-status', ['encoding-output'], (action) => {
 
 bindTool('hash-form', 'hash-status', ['md5-output', 'sha256-output', 'sha512-output'], async () => {
   if (!crypto.subtle) throw new Error('请通过 HTTPS 或 localhost 打开页面以计算哈希。');
+  if (typeof md5 !== 'function') throw new Error('MD5 组件加载失败，请刷新页面重试。');
   const bytes = utf8.encode(value('hash-input'));
   const hashes = await Promise.all(['SHA-256', 'SHA-512'].map(async (algorithm) => {
     const digest = await crypto.subtle.digest(algorithm, bytes);
@@ -368,3 +373,5 @@ for (const id of ['epoch-form', 'date-form']) {
     }
   });
 }
+
+for (const button of document.querySelectorAll('button[type="submit"]')) button.disabled = false;
