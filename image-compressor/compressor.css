@@ -39,7 +39,7 @@
   color: var(--green);
 }
 
-.drop-zone p, .list-status, .format-note, .image-note { color: var(--muted); line-height: 1.55; }
+.drop-zone p, .list-status, .setting-note, .image-note { color: var(--muted); line-height: 1.55; }
 .drop-zone p { margin: 8px 0 19px; font-size: 13px; }
 .drop-zone .privacy { display: flex; align-items: center; gap: 6px; margin: 17px 0 0; font-size: 12px; }
 .privacy svg { width: 15px; height: 15px; flex-shrink: 0; }
@@ -67,14 +67,11 @@
 .button:disabled { cursor: default; opacity: .52; }
 
 .compression-settings h2 { margin-bottom: 19px; }
-.compression-settings .field { min-width: 0; margin-bottom: 0; }
+.compression-fields { display: grid; gap: 15px; margin-bottom: 19px; }
+.compression-settings .field { margin-bottom: 0; }
+.compression-settings .field label { display: block; margin-bottom: 6px; color: #384e42; font-size: 13px; font-weight: 700; }
 .compression-settings .field select { padding: 10px 8px; font-size: 14px; }
-.quality-control { margin-top: 19px; }
-.quality-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; }
-.quality-head output { color: var(--green); font-variant-numeric: tabular-nums; }
-#quality { display: block; width: 100%; margin: 10px 0 0; accent-color: var(--green); }
-#quality:disabled { opacity: .55; }
-.format-note { min-height: 2.9em; margin: 10px 0; font-size: 12px; }
+.setting-note { display: block; margin-top: 5px; font-size: 12px; }
 .compress-button { width: 100%; }
 
 .image-list { margin-top: 20px; }

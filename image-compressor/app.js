@@ -5,8 +5,8 @@ const settings = document.querySelector("#settings");
 const format = document.querySelector("#format");
 const maxEdge = document.querySelector("#max-edge");
 const quality = document.querySelector("#quality");
-const qualityValue = document.querySelector("#quality-value");
 const formatNote = document.querySelector("#format-note");
+const qualityNote = document.querySelector("#quality-note");
 const compressButton = document.querySelector("#compress");
 const clearButton = document.querySelector("#clear");
 const results = document.querySelector("#results");
@@ -18,9 +18,9 @@ const maxFiles = 25;
 const maxBytes = 30_000_000;
 const extensions = { "image/webp": "webp", "image/jpeg": "jpg", "image/png": "png" };
 const formatNotes = {
-  "image/webp": "WebP 保留透明背景。",
-  "image/jpeg": "JPEG 会将透明背景填充为白色。",
-  "image/png": "PNG 保留透明背景，仅调整尺寸。",
+  "image/jpeg": "大多数设备都能打开 JPG，透明背景会变成白色。",
+  "image/png": "PNG 可以保留透明背景，适合截图和图标。",
+  "image/webp": "WebP 通常体积更小，也能保留透明背景。",
 };
 
 const entries = [];
@@ -49,8 +49,10 @@ function updateControls() {
 }
 
 function updateSettings() {
-  qualityValue.textContent = format.value === "image/png" ? "无损" : quality.value + "%";
-  formatNote.textContent = formatNotes[format.value] + "长边超出上限时等比缩小。";
+  const usePng = format.value === "image/png";
+  quality.hidden = usePng;
+  qualityNote.textContent = usePng ? "PNG 会保留画质。想减小文件，可以选更小的图片尺寸。" : "越清晰，文件通常越大。";
+  formatNote.textContent = formatNotes[format.value];
   if (entries.some((entry) => entry.outputUrl)) {
     status.textContent = "设置已更新，点击「开始压缩」生成新结果。";
   }

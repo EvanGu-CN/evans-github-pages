@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f4ef">
-  <meta name="description" content="在浏览器本地批量压缩图片，调整画质和尺寸，支持 WebP、JPEG 和 PNG。">
+  <meta name="description" content="在浏览器本地批量压缩图片，按用途选择清晰度和尺寸，支持 JPG、PNG 和 WebP。">
   <title>图片压缩 | 小工具集</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="compressor.css">
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="compressor.css?v=2">
+  <script defer src="app.js?v=2"></script>
 </head>
 <body>
   <main class="container compressor">
@@ -42,33 +42,36 @@
 
       <form class="panel compression-settings" id="settings">
         <h2>压缩设置</h2>
-        <div class="settings">
-          <label class="field">
-            <span>输出格式</span>
+        <div class="compression-fields">
+          <div class="field">
+            <label for="format">保存成什么格式？</label>
             <select id="format" aria-describedby="format-note">
-              <option value="image/webp">WebP</option>
-              <option value="image/jpeg">JPEG</option>
-              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPG · 普通照片</option>
+              <option value="image/png">PNG · 截图或透明图片</option>
+              <option value="image/webp" selected>WebP · 文件通常更小</option>
             </select>
-          </label>
-          <label class="field">
-            <span>最长边上限</span>
-            <select id="max-edge">
-              <option value="1280">1280 px</option>
-              <option value="1920">1920 px</option>
-              <option value="2560" selected>2560 px</option>
-              <option value="4096">4096 px</option>
-            </select>
-          </label>
-        </div>
-        <div class="quality-control">
-          <div class="quality-head">
-            <label for="quality">画质</label>
-            <output id="quality-value" for="quality">80%</output>
+            <small class="setting-note" id="format-note">WebP 通常体积更小，也能保留透明背景。</small>
           </div>
-          <input id="quality" type="range" min="10" max="100" value="80" aria-describedby="format-note">
+          <div class="field">
+            <label for="quality">想要多清晰？</label>
+            <select id="quality" aria-describedby="quality-note">
+              <option value="92">清晰优先</option>
+              <option value="80" selected>兼顾清晰与大小（推荐）</option>
+              <option value="60">文件更小</option>
+            </select>
+            <small class="setting-note" id="quality-note">越清晰，文件通常越大。</small>
+          </div>
+          <div class="field">
+            <label for="max-edge">图片准备怎么用？</label>
+            <select id="max-edge" aria-describedby="size-note">
+              <option value="1280">小图 · 聊天发送</option>
+              <option value="1920">中图 · 网页分享</option>
+              <option value="2560" selected>大图 · 日常使用（推荐）</option>
+              <option value="4096">超大图 · 大屏查看</option>
+            </select>
+            <small class="setting-note" id="size-note">尺寸过大的图片会缩小，画面完整保留。</small>
+          </div>
         </div>
-        <p class="format-note" id="format-note">WebP 保留透明背景。长边超出上限时等比缩小。</p>
         <button class="button primary compress-button" id="compress" type="submit" disabled>开始压缩</button>
       </form>
     </div>
