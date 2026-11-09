@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b2d">
+  <meta name="description" content="轻点振翅，穿过水管。支持空格、鼠标和触屏的 Flappy Bird 网页游戏。">
+  <title>Flappy Bird · Evan's Arcade</title>
+  <link rel="stylesheet" href="../arcade/arcade.css">
+  <link rel="stylesheet" href="flappy.css">
+  <script defer src="../arcade/arcade.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body class="flappy">
+  <main class="arcade">
+    <nav class="arcade-nav" aria-label="街机导航">
+      <a href="../">← 返回工具集</a>
+      <span>EVAN’S <strong>ARCADE</strong></span>
+      <a href="../super-mario/">超级玛丽 ↗</a>
+    </nav>
+    <header class="game-heading">
+      <div>
+        <p class="eyebrow">CARTRIDGE 03 <span></span> ONE MORE TRY</p>
+        <h1>Flappy Bird</h1>
+        <p class="intro">轻轻一点，再飞远一点。</p>
+      </div>
+      <div class="game-actions">
+        <button type="button" data-sound aria-pressed="false">音效关</button>
+        <button type="button" data-pause disabled>暂停</button>
+      </div>
+    </header>
+    <div class="game-layout">
+      <section class="game-console" aria-label="Flappy Bird 游戏">
+        <div class="hud" aria-label="游戏数据">
+          <div>本局得分 <strong data-stat="score">00</strong></div>
+          <div>本机最高 <strong data-stat="best">00</strong></div>
+        </div>
+        <div class="screen">
+          <canvas width="400" height="560" data-hold="flap" aria-label="飞行画面，点击或按空格振翅">此浏览器不支持 Canvas。</canvas>
+          <div class="overlay" data-overlay>
+            <div class="overlay-card">
+              <p class="eyebrow" data-overlay-tag>READY TO FLY?</p>
+              <h2 data-overlay-title role="status">准备好起飞了吗</h2>
+              <p data-overlay-copy>轻点画面或按空格振翅。<br>每穿过一组水管，得 1 分。</p>
+              <button class="play" type="button" data-play>开始游戏</button>
+            </div>
+          </div>
+        </div>
+        <p class="flight-hint">点击画面 / 轻触屏幕 / 空格振翅</p>
+      </section>
+      <aside class="field-guide" aria-label="玩法说明">
+        <p class="eyebrow">A LITTLE FLIGHT</p>
+        <h2>飞行小贴士</h2>
+        <dl>
+          <div><dt>振翅</dt><dd><kbd>空格</kbd> / <kbd>↑</kbd> / <kbd>W</kbd></dd></div>
+          <div><dt>鼠标 / 触屏</dt><dd>轻点游戏画面</dd></div>
+          <div><dt>暂停</dt><dd><kbd>P</kbd> / <kbd>Esc</kbd></dd></div>
+        </dl>
+        <p>每轻点一次，小鸟向上飞一下。松手后会下落，保持节奏，从水管中间穿过去。</p>
+        <p>碰到水管、地面或画面上沿，本局结束。得分越高，飞行速度会逐渐加快。</p>
+        <div class="tip"><span aria-hidden="true">✦</span><p>先稳住节奏。<br>下一组水管，就在前面。</p></div>
+      </aside>
+    </div>
+    <footer class="game-footer"><span>EVAN’S ARCADE / 03</span><span>再飞一局</span></footer>
+    <noscript>请启用 JavaScript 后开始游戏。</noscript>
+  </main>
+</body>
+</html>
