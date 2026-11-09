@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="将网址或文本在浏览器本地转为二维码，可下载 PNG 和 SVG。">
+  <title>二维码生成 | 小工具集</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../tools.css">
+  <script defer src="vendor/qrcode.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="container tool-page">
+    <nav class="topbar"><a class="back" href="../">← 返回工具集</a><div class="eyebrow">EVAN'S TOOLBOX</div></nav>
+    <header class="page-head">
+      <div class="kicker">IMAGE / SHARE</div>
+      <h1>二维码生成</h1>
+      <p>将网址或文本转成二维码。输入和生成结果都留在浏览器里。</p>
+    </header>
+
+    <div class="tool-grid qr-layout">
+      <section class="panel" aria-labelledby="qr-input-title">
+        <h2 id="qr-input-title">二维码内容</h2>
+        <p class="tool-intro">支持中文、表情和换行，最多 2,000 个 UTF-8 字节。</p>
+        <form id="qr-form">
+          <div class="tool-field">
+            <label for="qr-input">网址或文本</label>
+            <textarea id="qr-input" maxlength="2000" required spellcheck="false" placeholder="https://example.com" aria-describedby="qr-count"></textarea>
+            <small id="qr-count">0 / 2,000 字节</small>
+          </div>
+          <div class="tool-controls">
+            <button class="tool-button primary" id="qr-generate" type="submit" disabled>生成二维码</button>
+          </div>
+          <p class="tool-status" id="qr-status" role="status"></p>
+          <noscript><p>请启用 JavaScript 后生成二维码。</p></noscript>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="qr-preview-title">
+        <h2 id="qr-preview-title">预览与下载</h2>
+        <p class="tool-intro">PNG 适合直接分享，SVG 可无损缩放。</p>
+        <div class="qr-preview">
+          <p id="qr-placeholder">生成后会在这里显示二维码。</p>
+          <canvas id="qr-canvas" role="img" aria-label="生成的二维码" hidden></canvas>
+        </div>
+        <div class="tool-controls">
+          <button class="tool-button primary" type="button" id="qr-png" disabled>下载 PNG</button>
+          <button class="tool-button" type="button" id="qr-svg" disabled>下载 SVG</button>
+        </div>
+      </section>
+    </div>
+
+    <footer>EVAN'S TOOLBOX <span>二维码生成 · 本地处理</span></footer>
+  </main>
+</body>
+</html>

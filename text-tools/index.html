@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="浏览器本地处理的文本对比、JSON 格式化、编码、哈希、文本整理、UUID 与时间戳工具。">
+  <title>文本与开发工具 | 小工具集</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../tools.css">
+  <script defer src="vendor/diff.min.js"></script>
+  <script defer src="vendor/md5.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="container tool-page">
+    <nav class="topbar"><a class="back" href="../">← 返回工具集</a><div class="eyebrow">EVAN'S TOOLBOX</div></nav>
+    <header class="page-head">
+      <div class="kicker">TEXT / DATA</div>
+      <h1>文本与开发工具</h1>
+      <p>所有输入在浏览器本地处理。切换工具时保留当前页面里的输入和结果。</p>
+    </header>
+    <nav class="tool-nav" aria-label="文本与开发工具">
+      <a href="#diff" aria-current="page">文本对比</a>
+      <a href="#json">JSON 格式化</a>
+      <a href="#encoding">编码解码</a>
+      <a href="#hash">哈希计算</a>
+      <a href="#lines">文本整理</a>
+      <a href="#uuid">UUID 生成</a>
+      <a href="#timestamp">时间戳转换</a>
+    </nav>
+    <noscript><p>请启用 JavaScript 后使用这些工具。</p></noscript>
+
+    <section class="panel" id="diff" aria-labelledby="diff-title">
+      <h2 id="diff-title">文本对比</h2>
+      <p class="tool-intro">逐行对比两版文本，标出删除和新增。每侧最多 5,000 行、25 万字符。</p>
+      <form id="diff-form">
+        <div class="tool-grid">
+          <div class="tool-field"><label for="before">原文</label><textarea id="before" maxlength="250000" spellcheck="false"></textarea></div>
+          <div class="tool-field"><label for="after">修改后</label><textarea id="after" maxlength="250000" spellcheck="false"></textarea></div>
+        </div>
+        <div class="tool-controls">
+          <button class="tool-button primary" type="submit">开始对比</button>
+          <label class="option"><input id="ignore-space" type="checkbox">忽略行首尾空白</label>
+          <label class="option"><input id="changes-only" type="checkbox">仅显示差异</label>
+        </div>
+        <p class="tool-status" id="diff-status" role="status"></p>
+        <div class="diff-table" id="diff-results" tabindex="0" aria-label="文本差异" hidden>
+          <table aria-label="逐行差异">
+            <thead><tr><th scope="col">原文</th><th scope="col">修改后</th></tr></thead>
+            <tbody id="diff-body"></tbody>
+          </table>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel" id="json" aria-labelledby="json-title" hidden>
+      <h2 id="json-title">JSON 格式化</h2>
+      <p class="tool-intro">校验 JSON，调整缩进或压缩为一行。保留数字精度、键的顺序和字符串转义。</p>
+      <form id="json-form">
+        <div class="tool-grid">
+          <div class="tool-field"><label for="json-input">JSON 输入</label><textarea id="json-input" maxlength="500000" spellcheck="false" placeholder='{"name":"Evan","tools":["JSON","UUID"]}'></textarea></div>
+          <div class="tool-field"><label for="json-output">处理结果</label><textarea id="json-output" readonly spellcheck="false"></textarea></div>
+        </div>
+        <div class="tool-controls">
+          <div class="tool-field"><label for="indent">缩进</label><select id="indent"><option value="2">2 个空格</option><option value="4">4 个空格</option><option value="tab">制表符</option></select></div>
+          <button class="tool-button primary" type="submit" value="format">格式化</button>
+          <button class="tool-button" type="submit" value="compact">压缩</button>
+          <button class="tool-button" type="button" data-copy="json-output" disabled>复制结果</button>
+        </div>
+        <p class="tool-status" id="json-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="encoding" aria-labelledby="encoding-title" hidden>
+      <h2 id="encoding-title">编码解码</h2>
+      <p class="tool-intro">支持 UTF-8 Base64、Base64URL 和 URL 组件编码。URL 模式可处理查询参数值。</p>
+      <form id="encoding-form">
+        <div class="tool-grid">
+          <div class="tool-field"><label for="encoding-input">输入</label><textarea id="encoding-input" maxlength="1000000" spellcheck="false"></textarea></div>
+          <div class="tool-field"><label for="encoding-output">处理结果</label><textarea id="encoding-output" readonly spellcheck="false"></textarea></div>
+        </div>
+        <div class="tool-controls">
+          <div class="tool-field"><label for="encoding-mode">编码类型</label><select id="encoding-mode"><option value="base64">Base64</option><option value="base64url">Base64URL</option><option value="url">URL 组件</option></select></div>
+          <button class="tool-button primary" type="submit" value="encode">编码</button>
+          <button class="tool-button" type="submit" value="decode">解码</button>
+          <button class="tool-button" type="button" data-copy="encoding-output" disabled>复制结果</button>
+        </div>
+        <p class="tool-status" id="encoding-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="hash" aria-labelledby="hash-title" hidden>
+      <h2 id="hash-title">哈希计算</h2>
+      <p class="tool-intro">计算 UTF-8 文本的十六进制摘要，空格与换行也计入。MD5 适用于旧系统的兼容校验。</p>
+      <form id="hash-form">
+        <div class="tool-field"><label for="hash-input">输入文本</label><textarea id="hash-input" maxlength="1000000" spellcheck="false"></textarea></div>
+        <div class="tool-controls"><button class="tool-button primary" type="submit">计算哈希</button></div>
+        <div class="tool-results">
+          <div class="tool-field result-row"><label for="md5-output">MD5</label><input id="md5-output" readonly><button class="tool-button" type="button" data-copy="md5-output" aria-label="复制 MD5" disabled>复制</button></div>
+          <div class="tool-field result-row"><label for="sha256-output">SHA-256</label><input id="sha256-output" readonly><button class="tool-button" type="button" data-copy="sha256-output" aria-label="复制 SHA-256" disabled>复制</button></div>
+          <div class="tool-field result-row"><label for="sha512-output">SHA-512</label><input id="sha512-output" readonly><button class="tool-button" type="button" data-copy="sha512-output" aria-label="复制 SHA-512" disabled>复制</button></div>
+        </div>
+        <p class="tool-status" id="hash-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="lines" aria-labelledby="lines-title" hidden>
+      <h2 id="lines-title">文本整理</h2>
+      <p class="tool-intro">逐行去重、排序、清理空白，或转换大小写。输入时即时统计字符、行数和 UTF-8 字节数。</p>
+      <form id="lines-form">
+        <div class="tool-grid">
+          <div class="tool-field"><label for="lines-input">输入文本</label><textarea id="lines-input" maxlength="500000" spellcheck="false"></textarea></div>
+          <div class="tool-field"><label for="lines-output">处理结果</label><textarea id="lines-output" readonly spellcheck="false"></textarea></div>
+        </div>
+        <p class="tool-hint" id="lines-stats">0 字符 · 0 行 · 0 字节</p>
+        <div class="tool-controls">
+          <div class="tool-field">
+            <label for="lines-mode">操作</label>
+            <select id="lines-mode">
+              <option value="dedupe">逐行去重</option><option value="sort">逐行排序</option><option value="trim">清除行首尾空白</option>
+              <option value="blank">删除空白行</option><option value="upper">转大写</option><option value="lower">转小写</option>
+            </select>
+          </div>
+          <button class="tool-button primary" type="submit">处理文本</button>
+          <button class="tool-button" type="button" data-copy="lines-output" disabled>复制结果</button>
+        </div>
+        <p class="tool-status" id="lines-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="uuid" aria-labelledby="uuid-title" hidden>
+      <h2 id="uuid-title">UUID 生成</h2>
+      <p class="tool-intro">使用浏览器的随机源生成 UUID v4，每行一个。</p>
+      <form id="uuid-form">
+        <div class="tool-controls">
+          <div class="tool-field count-field"><label for="uuid-count">数量（1–100）</label><input id="uuid-count" type="number" inputmode="numeric" min="1" max="100" value="1" required></div>
+          <button class="tool-button primary" type="submit">生成 UUID</button>
+          <button class="tool-button" type="button" data-copy="uuid-output" disabled>全部复制</button>
+        </div>
+        <div class="tool-field tool-output"><label for="uuid-output">生成结果</label><textarea id="uuid-output" readonly spellcheck="false"></textarea></div>
+        <p class="tool-status" id="uuid-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="timestamp" aria-labelledby="timestamp-title" hidden>
+      <h2 id="timestamp-title">时间戳转换</h2>
+      <p class="tool-intro">在 Unix 时间戳与日期时间之间转换，同时查看 UTC、北京时间和本机时间。</p>
+      <div class="tool-grid">
+        <form id="epoch-form">
+          <div class="tool-field"><label for="epoch-input">Unix 时间戳</label><input id="epoch-input" maxlength="20" placeholder="例如 1767225600"></div>
+          <div class="tool-controls">
+            <div class="tool-field"><label for="epoch-unit">单位</label><select id="epoch-unit"><option value="seconds">秒</option><option value="milliseconds">毫秒</option></select></div>
+            <button class="tool-button primary" type="submit">转换为日期</button>
+            <button class="tool-button" type="submit" value="now">当前时间</button>
+          </div>
+        </form>
+        <form id="date-form">
+          <div class="tool-field"><label for="date-input">日期时间</label><input id="date-input" maxlength="23" placeholder="YYYY-MM-DD HH:mm:ss" aria-describedby="date-hint"></div>
+          <div class="tool-controls">
+            <div class="tool-field"><label for="date-zone">输入时区</label><select id="date-zone"><option value="8">北京时间（UTC+08:00）</option><option value="0">UTC</option></select></div>
+            <button class="tool-button primary" type="submit">转换为时间戳</button>
+          </div>
+        </form>
+      </div>
+      <p class="tool-hint" id="date-hint">日期时间可附带毫秒，例如 2026-01-01 08:00:00.123。</p>
+      <div class="tool-results">
+        <div class="tool-field result-row"><label for="seconds-output">时间戳（秒）</label><input id="seconds-output" readonly><button class="tool-button" type="button" data-copy="seconds-output" aria-label="复制秒时间戳" disabled>复制</button></div>
+        <div class="tool-field result-row"><label for="millis-output">时间戳（毫秒）</label><input id="millis-output" readonly><button class="tool-button" type="button" data-copy="millis-output" aria-label="复制毫秒时间戳" disabled>复制</button></div>
+        <div class="tool-field result-row"><label for="utc-output">UTC</label><input id="utc-output" readonly><button class="tool-button" type="button" data-copy="utc-output" aria-label="复制 UTC 时间" disabled>复制</button></div>
+        <div class="tool-field result-row"><label for="beijing-output">北京时间</label><input id="beijing-output" readonly><button class="tool-button" type="button" data-copy="beijing-output" aria-label="复制北京时间" disabled>复制</button></div>
+        <div class="tool-field result-row"><label for="local-output">本机时间</label><input id="local-output" readonly><button class="tool-button" type="button" data-copy="local-output" aria-label="复制本机时间" disabled>复制</button></div>
+      </div>
+      <p class="tool-status" id="timestamp-status" role="status"></p>
+    </section>
+
+    <footer>EVAN'S TOOLBOX <span>文本与开发工具 · 本地处理</span></footer>
+  </main>
+</body>
+</html>
