@@ -17,25 +17,25 @@
     if (Number.isSafeInteger(saved) && saved > 0) best = saved;
   } catch { /* Keep scores in memory when browser storage is unavailable. */ }
 
-  let bird, pipes, score, time, distance, flying, crashed, startingBest, chain, shield, nextPipe, game;
+  let bird, pipes, score, time, distance, flying, crashed, startingBest, chain, longestChain, nextPipe, game;
 
   function updateHud() {
     if (!game) return;
     game.stat("score", digits(score));
     game.stat("best", digits(best));
-    game.stat("rings", shield ? "护盾就绪" : `光环 ${chain}/3`);
+    game.stat("rings", `${chain} 连穿`);
   }
 
   function reset() {
     bird = { y: 252, vy: 0, radius: 12 };
-    pipes = [{ x: width + 90, center: 252, gap: 162, ring: true, scored: false }];
+    pipes = [{ x: width + 90, center: 252, gap: 144, ring: true, scored: false }];
     score = 0;
     time = 0;
     distance = 0;
     flying = false;
     crashed = false;
     chain = 0;
-    shield = false;
+    longestChain = 0;
     nextPipe = 2;
     startingBest = best;
     updateHud();
@@ -62,7 +62,7 @@
     game.finish({
       tag: score > startingBest ? "NEW BEST" : "ONE MORE TRY",
       title: score > startingBest ? "新的最高分！" : "再飞一次？",
-      copy: `本局 ${score} 分 · 最高 ${best} 分。轻点“再玩一次”，重新出发。`,
+      copy: `穿过 ${score} 组水管，最高 ${best}。本局最长光环连穿 ${longestChain}。`,
     });
   }
 
@@ -74,42 +74,27 @@
       game.effect("jump");
     }
     if (!flying) return;
-    const travel = (150 + Math.min(45, score * 1.5)) * dt;
+    const travel = (164 + Math.min(54, score * 2.2)) * dt;
     distance += travel;
     bird.vy = Math.min(460, bird.vy + gravity * dt);
     bird.y += bird.vy * dt;
     for (const pipe of pipes) {
       pipe.x -= travel;
-      if (pipe.moving) pipe.center = pipe.base + Math.sin(time * 1.9 + pipe.phase) * 28;
-      if (pipe.ring && Math.hypot(pipe.x + pipeWidth / 2 - birdX, pipe.center - bird.y) <= 20) {
+      if (pipe.moving) pipe.center = pipe.base + Math.sin(time * 2.1 + pipe.phase) * 30;
+      if (pipe.ring && Math.hypot(pipe.x + pipeWidth / 2 - birdX, pipe.center - bird.y) <= 16) {
         pipe.ring = false;
         pipe.collected = true;
-        if (!shield && ++chain === 3) {
-          shield = true;
-          chain = 0;
-        }
+        chain++;
+        longestChain = Math.max(longestChain, chain);
         game.effect("coin");
         updateHud();
       }
     }
 
-    if (bird.y - bird.radius <= 0 || bird.y + bird.radius >= ground) {
+    if (bird.y - bird.radius <= 0 || bird.y + bird.radius >= ground || pipes.some(hitPipe)) {
       bird.y = Arcade.clamp(bird.y, bird.radius, ground - bird.radius);
       endFlight();
       return;
-    }
-    const hit = pipes.find((pipe) => !pipe.bypassed && hitPipe(pipe));
-    if (hit) {
-      if (!shield) {
-        endFlight();
-        return;
-      }
-      shield = false;
-      hit.bypassed = true;
-      bird.y = hit.center;
-      bird.vy = -130;
-      game.effect("clear");
-      updateHud();
     }
     for (const pipe of pipes) {
       if (pipe.scored || pipe.x + pipeWidth + 4 >= birdX - bird.radius) continue;
@@ -127,13 +112,14 @@
     }
     const last = pipes.at(-1);
     if (last.x < width + 30) {
-      const moving = nextPipe >= 7 && nextPipe % 3 === 1;
+      const moving = nextPipe % 3 === 0;
+      const narrow = nextPipe % 5 === 0;
       const base = Arcade.clamp((last.base ?? last.center) + (Math.random() - .5) * 126, 137, ground - 137);
       pipes.push({
         x: last.x + pipeSpacing,
         center: base,
-        base, moving, phase: nextPipe,
-        gap: 162 - Math.min(20, score * .8),
+        base, moving, narrow, phase: nextPipe,
+        gap: 144 - Math.min(18, score * 1.2) - (narrow ? 12 : 0),
         ring: true,
         scored: false,
       });
@@ -240,15 +226,14 @@
     for (const pipe of pipes) {
       const top = pipe.center - pipe.gap / 2;
       const bottom = pipe.center + pipe.gap / 2;
-      ctx.globalAlpha = pipe.bypassed ? .45 : 1;
       pipeBody(ctx, pipe.x, 0, top);
       pipeBody(ctx, pipe.x, bottom, ground - bottom);
       pipeCap(ctx, pipe.x, top - 25);
       pipeCap(ctx, pipe.x, bottom);
-      ctx.globalAlpha = 1;
-      if (pipe.moving) {
-        rect(ctx, "#de9760", pipe.x, top - 7, pipeWidth, 4);
-        rect(ctx, "#de9760", pipe.x, bottom + 3, pipeWidth, 4);
+      if (pipe.moving || pipe.narrow) {
+        const stripe = pipe.narrow ? "#d96362" : "#de9760";
+        rect(ctx, stripe, pipe.x, top - 7, pipeWidth, 4);
+        rect(ctx, stripe, pipe.x, bottom + 3, pipeWidth, 4);
       }
       if (pipe.ring) {
         ctx.beginPath();
@@ -274,13 +259,6 @@
     for (let x = -24 - grassOffset; x < width; x += 36) {
       rect(ctx, "#ccbb8b", x + 8, ground + 39, 5, 3);
       rect(ctx, "#ccbb8b", x + 22, ground + 53, 4, 3);
-    }
-    if (shield) {
-      ctx.beginPath();
-      ctx.arc(birdX, bird.y, 24, 0, Math.PI * 2);
-      ctx.strokeStyle = "#fff5a2";
-      ctx.lineWidth = 3;
-      ctx.stroke();
     }
     drawBird(ctx);
     ctx.textAlign = "center";

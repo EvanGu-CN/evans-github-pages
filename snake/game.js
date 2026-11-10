@@ -9,16 +9,23 @@
   };
   const record = arcadeRecord("evans-arcade-snake-best");
   const gates = [{ x: 2, y: 4 }, { x: 17, y: 15 }];
+  const walls = [];
+  for (const x of [5, 14]) {
+    for (let y = 3; y <= 16; y++) {
+      if (y !== 6 && y !== 13) walls.push({ x, y });
+    }
+  }
   const modePicker = document.querySelector("[data-mode]");
   const sameCell = (a, b) => a && b && a.x === b.x && a.y === b.y;
   let snake, direction, turns, food, gold, eaten, mode, score, timer, over, time, game;
+  const speedLevel = () => Math.min(7, Math.floor(eaten / 4));
   function hud() {
     if (!game) return;
     game.stat("score", score);
     game.stat("length", snake.length);
-    game.stat("speed", 1 + Math.floor(eaten / 5));
+    game.stat("speed", 1 + speedLevel());
     game.stat("best", record.value);
-    game.stat("mode", mode === "portal" ? "传送门场" : "经典场");
+    game.stat("mode", mode === "portal" ? "传送门场" : "障碍场");
     game.stat("gold", gold ? `金果 ${Math.ceil(gold.until - time)} 秒` : "");
   }
   function emptyCell() {
@@ -27,6 +34,7 @@
       for (let x = 0; x < size; x++) {
         const cell = { x, y };
         if (!snake.some((part) => sameCell(part, cell)) &&
+            !walls.some((wall) => sameCell(wall, cell)) &&
             !(mode === "portal" && gates.some((gate) => sameCell(gate, cell))) &&
             !sameCell(food, cell) && !sameCell(gold, cell)) empty.push(cell);
       }
@@ -65,12 +73,14 @@
       }
     }
     const eating = sameCell(food, head);
-    const body = eating ? snake : snake.slice(0, -1);
+    const bonus = sameCell(gold, head);
+    const body = eating || bonus ? snake : snake.slice(0, -1);
     if (
       head.x < 0 ||
       head.y < 0 ||
       head.x >= size ||
       head.y >= size ||
+      walls.some((wall) => sameCell(wall, head)) ||
       body.some((part) => sameCell(part, head) || sameCell(part, entry))
     ) {
       over = true;
@@ -95,7 +105,7 @@
       }
       if (eaten % 4 === 0) {
         const cell = emptyCell();
-        if (cell) gold = { ...cell, until: time + 7 };
+        if (cell) gold = { ...cell, until: time + 5 };
       }
       if (!food) {
         over = true;
@@ -105,14 +115,11 @@
           copy: `最终得分 ${score}，长度 ${snake.length}。`,
         });
       }
-    } else {
-      snake.pop();
-      if (sameCell(gold, head)) {
-        gold = null;
-        score += 25;
-        game.effect("clear");
-      }
-    }
+    } else if (bonus) {
+      gold = null;
+      score += 25;
+      game.effect("clear");
+    } else snake.pop();
     record.save(score);
     hud();
   }
@@ -131,7 +138,7 @@
       if (next !== (turns.at(-1) || direction)) turns.push(next);
     }
     timer += dt;
-    const interval = Math.max(0.065, 0.17 - Math.floor(eaten / 5) * 0.012);
+    const interval = Math.max(0.06, 0.145 - speedLevel() * 0.013);
     if (timer >= interval) {
       timer -= interval;
       step();
@@ -145,6 +152,12 @@
         ctx.fillStyle = (x + y) % 2 ? "#19372b" : "#1c3b2e";
         ctx.fillRect(x * 20, y * 20, 20, 20);
       }
+    for (const wall of walls) {
+      ctx.fillStyle = "#789397";
+      ctx.fillRect(wall.x * 20 + 1, wall.y * 20 + 1, 18, 18);
+      ctx.fillStyle = "#b3c4bb";
+      ctx.fillRect(wall.x * 20 + 3, wall.y * 20 + 3, 14, 3);
+    }
     if (mode === "portal") {
       for (const gate of gates) {
         ctx.strokeStyle = "#c2a6ff";

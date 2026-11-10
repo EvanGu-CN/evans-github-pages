@@ -34,8 +34,9 @@
       [310, 449],
     ],
   ];
-  const scoop = { x: 190, y: 414, r: 16 };
+  const scoop = { x: 190, y: 414, r: 12 };
   const skillTarget = { x: 190, y: 49, r: 15 };
+  const flipperLength = 59;
   let ball,
     balls,
     score,
@@ -47,10 +48,9 @@
     charge,
     charging,
     skillShot,
-    savedBall,
-    saveTime,
     scoopTime,
     nudgeTime,
+    nudges,
     orbitReady,
     time,
     over,
@@ -66,7 +66,7 @@
         ? `发射蓄力 ${Math.round(charge * 100)}% · 松开发射`
         : "按住空格或发射按钮蓄力，松手发射"
       : `任务 ${mission} · 点亮目标 ${lit.filter(Boolean).length}/3 · 完成奖励 ${2000 * multiplier}`;
-    game.stat("mission", `${message}${saveTime > 0 ? ` · 救球 ${Math.ceil(saveTime)}s` : ""}`);
+    game.stat("mission", message);
   }
   function newBall() {
     ball = { x: 382, y: 549, vx: 0, vy: 0, r: 8, ready: true, inLane: true };
@@ -74,10 +74,9 @@
     charge = 0;
     orbitReady = true;
     skillShot = false;
-    savedBall = false;
-    saveTime = 0;
     scoopTime = 0;
     nudgeTime = 0;
+    nudges = 2;
   }
   function reset() {
     balls = 3;
@@ -177,7 +176,6 @@
         ball.y = 90;
         ball.vx = skillShot ? -485 : -260 - charge * 120;
         ball.vy = skillShot ? -200 : -105 - charge * 115;
-        if (!savedBall) saveTime = 7;
         game.effect("coin");
       }
       return;
@@ -189,7 +187,7 @@
       game.effect("clear");
     }
     if (ball.y > 190) skillShot = false;
-    if (scoopTime <= 0 && ball.vy > 0 && Math.hypot(ball.x - scoop.x, ball.y - scoop.y) < scoop.r) {
+    if (ball.vy < -150 && Math.hypot(ball.x - scoop.x, ball.y - scoop.y) < scoop.r) {
       ball.x = scoop.x;
       ball.y = scoop.y;
       ball.vx = 0;
@@ -234,8 +232,8 @@
       }
     });
     for (const f of flippers) {
-      const dx = Math.cos(f.angle) * 65,
-        dy = Math.sin(f.angle) * 65;
+      const dx = Math.cos(f.angle) * flipperLength,
+        dy = Math.sin(f.angle) * flipperLength;
       if (
         lineCollision(
           f.x,
@@ -247,7 +245,7 @@
           f.omega * dx * 0.65,
         )
       ) {
-        if (game.held(f.side)) {
+        if (game.held(f.side) && Math.abs(f.omega) > 1) {
           ball.vy = Math.min(ball.vy, -440);
           ball.vx += (195 - ball.x) * 2;
           game.effect("jump");
@@ -269,7 +267,6 @@
   function update(dt) {
     if (over) return;
     time += dt;
-    saveTime = Math.max(0, saveTime - dt);
     nudgeTime = Math.max(0, nudgeTime - dt);
     flashes = flashes.map((value) => Math.max(0, value - dt));
     updateFlippers(dt);
@@ -293,22 +290,16 @@
         game.effect("shoot");
       }
     } else {
-      if (!ball.inLane && nudgeTime <= 0 && game.pressed("nudge")) {
+      if (!ball.inLane && nudges > 0 && nudgeTime <= 0 && game.pressed("nudge")) {
         ball.vx += ball.x < 190 ? 115 : -115;
         ball.vy -= 165;
-        nudgeTime = 6;
+        nudges--;
+        nudgeTime = .9;
         game.effect("pop");
       }
       // Small substeps keep fast balls from crossing thin rails or flippers.
       for (let i = 0; i < 6 && scoopTime <= 0; i++) physics(dt / 6);
       if (ball.y > 620 || ball.x < -40 || ball.x > 460) {
-        if (saveTime > 0 && !savedBall) {
-          newBall();
-          savedBall = true;
-          game.effect("clear");
-          hud();
-          return;
-        }
         balls--;
         game.effect("hit");
         if (balls === 0) {
@@ -464,13 +455,13 @@
     disk(ctx, skillTarget.x, skillTarget.y, skillTarget.r, skillShot ? "#ffd878" : "#514c7e");
     ctx.fillStyle = "#f7dc9d";
     ctx.fillText("★", skillTarget.x, skillTarget.y + 4);
-    ctx.fillText(nudgeTime > 0 ? `推台 ${Math.ceil(nudgeTime)}s` : "推台就绪", 190, 470);
+    ctx.fillText(`推台剩余 ${nudges}/2`, 190, 470);
     ctx.fillStyle = "#4d3652";
     ctx.fillRect(130, 566, 130, 22);
     ctx.fillStyle = "#eaa78d";
     ctx.fillText("DRAIN", 195, 581);
     for (const f of flippers) {
-      const tip = [f.x + Math.cos(f.angle) * 65, f.y + Math.sin(f.angle) * 65];
+      const tip = [f.x + Math.cos(f.angle) * flipperLength, f.y + Math.sin(f.angle) * flipperLength];
       line(
         ctx,
         [

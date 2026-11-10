@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../arcade/arcade.css" />
     <link rel="stylesheet" href="fighter.css" />
     <script defer src="../arcade/arcade.js?v=3"></script>
-    <script defer src="game.js?v=4"></script>
+    <script defer src="game.js?v=5"></script>
   </head>
   <body class="fighter">
     <main class="arcade">
@@ -37,7 +37,7 @@
           <div class="hud" aria-label="游戏数据">
             <div>得分 <strong data-stat="score">00000</strong></div>
             <div>战区 <strong data-stat="sector">1轮 · 1/5</strong></div>
-            <div>护甲 <strong data-stat="lives">4/4</strong></div>
+            <div>护甲 <strong data-stat="lives">3/3</strong></div>
           </div>
           <div class="screen">
             <canvas width="420" height="570" aria-label="竖屏飞行射击画面"
@@ -110,7 +110,7 @@
           <ul class="supplies">
             <li><b class="power">P</b> 火力升级，最高三级。</li>
             <li><b class="repair">+</b> 修复一格护甲。</li>
-            <li><b class="shield">S</b> 3 秒护盾，抵挡伤害。</li>
+            <li><b class="shield">S</b> 2 秒护盾，抵挡伤害。</li>
             <li><b class="rapid">F</b> 10 秒速射，提升射击频率。</li>
           </ul>
           <p>
@@ -124,6 +124,7 @@
             每关后从随机三项改造中选择一项。五关后可结算，也可带着改造进入更强的下一轮。
           </p>
           <p>带蓝弧的装甲机能挡住正面火力，换穿透炮或从侧面打。拦截机亮起黄色感叹号后会沿预警方向俯冲。</p>
+          <p>橙色雷球停下后会向四周炸出弹幕，可提前击毁。首领换阶段会召来援军。关间保留当前护甲，留意维修补给与改造。</p>
         </aside>
       </div>
       <footer class="game-footer">

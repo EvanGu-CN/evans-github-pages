@@ -57,6 +57,7 @@
       color: "#ffe08a",
     },
     asteroid: { speed: 64, hp: 7, radius: 26, points: 200, color: "#9babb8" },
+    mine: { speed: 115, hp: 6, radius: 18, points: 280, color: "#ffa466" },
     cruiser: { speed: 42, hp: 16, radius: 27, points: 600, color: "#91edca" },
   };
   const weapons = { spread: "散射炮", lance: "穿透炮", missile: "追踪弹" };
@@ -127,8 +128,8 @@
       x: width / 2,
       y: height - 75,
       radius: 8,
-      lives: 4,
-      maxLives: 4,
+      lives: 3,
+      maxLives: 3,
       power: 1,
       cooldown: 0,
       shield: 0,
@@ -211,11 +212,11 @@
     const phase = Math.min(2, Math.floor(clock / (stageDuration() / 3)));
     const formation = [
       ["scout", "wing", "interceptor", "wing"],
-      ["asteroid", "wing", "armor", "interceptor"],
+      ["mine", "asteroid", "armor", "interceptor"],
       ["cruiser", "interceptor", "armor", "wing"],
     ][phase];
     const kind = formation[wave % formation.length];
-    const count = ["armor", "asteroid", "cruiser"].includes(kind)
+    const count = ["armor", "asteroid", "cruiser", "mine"].includes(kind)
       ? 1
       : 3 + Number(round > 1);
     for (let i = 0; i < count; i++) {
@@ -237,7 +238,7 @@
         cooldown: 1.35 + i * 0.24,
         barrier: kind === "armor" ? 5 : 0,
         supply:
-          i === Math.floor(count / 2) && wave % 3 === 1
+          i === Math.floor(count / 2) && wave % 4 === 1
             ? ["power", "shield", "repair", "rapid"][
                 Math.floor(Math.random() * 4)
               ]
@@ -267,7 +268,7 @@
     player.lives--;
     combo = 0;
     comboTime = 0;
-    player.shield = 1.55;
+    player.shield = 1.05;
     player.power = Math.max(1, player.power - 1);
     game.effect("hit");
     burst(player.x, player.y, "#85eaff", 18);
@@ -302,7 +303,7 @@
       pulse = 0.65;
       hostiles = [];
       lasers = [];
-      player.shield = Math.max(player.shield, 1.5);
+      player.shield = Math.max(player.shield, .75);
       for (const enemy of enemies) {
         enemy.barrier = 0;
         enemy.hp -= 12;
@@ -373,6 +374,19 @@
     for (const enemy of enemies) {
       if (enemy.hp <= 0) continue;
       enemy.age += dt;
+      if (enemy.kind === "mine") {
+        enemy.y = Math.min(230, enemy.y + enemy.speed * dt);
+        if (enemy.y === 230) {
+          enemy.fuse = (enemy.fuse ?? 1.3) - dt;
+          if (enemy.fuse <= 0) {
+            for (let i = 0; i < 14; i++)
+              fire(enemy.x, enemy.y, i * Math.PI / 7 + enemy.phase, 155 + sector * 12, 5);
+            burst(enemy.x, enemy.y, enemy.color, 18);
+            enemy.hp = 0;
+          }
+        }
+        continue;
+      }
       if (enemy.kind === "interceptor" && enemy.y >= 68) {
         if (!enemy.dive) {
           enemy.dive = {
@@ -425,6 +439,7 @@
       boss.phase = phase;
       game.effect("clear");
       hazardTimer = Math.min(hazardTimer, 1.5);
+      if (phase >= 2) spawnWave();
     }
     if (boss.cooldown > 0 || boss.y < 72) return;
     const angle = boss.salvo % 2 ? Math.PI / 2 : aim(boss.x, boss.y);
@@ -489,7 +504,7 @@
         copy:
           sector === 4
             ? "选择改造后进入更强的下一轮，或结算成绩。"
-            : "选择一项永久改造。下一关会自动补充一格护甲。",
+            : "选择一项改造，带着当前护甲进入下一战区。",
       },
       options,
       (id) => {
@@ -533,8 +548,7 @@
     enemies = [];
     bullets = [];
     drops = [];
-    player.lives = Math.min(player.maxLives, player.lives + 1);
-    player.shield = 3;
+    player.shield = .75;
     transition = false;
     hazardTimer = 8;
     updateHud(game);
@@ -595,7 +609,7 @@
       if (drop.kind === "power") player.power = Math.min(3, player.power + 1);
       else if (drop.kind === "repair")
         player.lives = Math.min(player.maxLives, player.lives + 1);
-      else if (drop.kind === "shield") player.shield = 3;
+      else if (drop.kind === "shield") player.shield = 2;
       else if (drop.kind === "rapid") player.rapid = 10;
       addScore(50);
       drop.taken = true;
@@ -785,6 +799,22 @@
     ctx.save();
     ctx.translate(Math.round(enemy.x), Math.round(enemy.y));
     const r = enemy.radius;
+    if (enemy.kind === "mine") {
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+      ctx.fillStyle = "#352337";
+      ctx.fill();
+      ctx.strokeStyle = enemy.fuse !== undefined && Math.floor(enemy.fuse * 10) % 2 ? "#fff4b1" : enemy.color;
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      if (enemy.fuse !== undefined) {
+        ctx.beginPath();
+        ctx.arc(0, 0, r + 6, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (1 - enemy.fuse / 1.3));
+        ctx.stroke();
+      }
+      ctx.restore();
+      return;
+    }
     if (enemy.kind === "asteroid") {
       ctx.rotate(enemy.age * 0.6);
       poly(ctx, "#465669", [

@@ -45,6 +45,7 @@
     "#91db9d",
     "#cba0ff",
     "#f7839c",
+    "#8794a7",
   ];
   const record = arcadeRecord("evans-arcade-tetris-best");
   let board,
@@ -63,6 +64,7 @@
     combo,
     backToBack,
     clearLabel,
+    pressure,
     over,
     game;
   const level = () => 1 + Math.floor(lines / 10);
@@ -126,13 +128,14 @@
     combo = 0;
     backToBack = false;
     clearLabel = "";
+    pressure = 0;
     spawn();
     hud();
   }
   function move(dx) {
     if (!fits(piece.matrix, piece.x + dx, piece.y)) return;
     piece.x += dx;
-    if (resets < 15) {
+    if (resets < 8) {
       lockTime = 0;
       resets++;
     }
@@ -158,7 +161,7 @@
       piece.matrix = rotated;
       piece.x += dx;
       piece.y += dy;
-      if (resets < 15) {
+      if (resets < 8) {
         lockTime = 0;
         resets++;
       }
@@ -191,6 +194,21 @@
       ...remaining,
     ];
     record.save(score);
+    pressure = Math.max(0, pressure + 1 - cleared * 2);
+    if (pressure >= 8) {
+      pressure = 0;
+      if (board[0].some(Boolean)) {
+        hud();
+        end();
+        return;
+      }
+      board.shift();
+      const row = Array(10).fill(colors.length);
+      row[Math.floor(Math.random() * row.length)] = 0;
+      board.push(row);
+      clearLabel = "垃圾行上升";
+      game.effect("hit");
+    }
     game.effect(cleared ? "clear" : "pop");
     swapped = false;
     spawn();
@@ -232,7 +250,7 @@
     gravityTime += dt;
     const interval = game.held("down")
       ? 0.04
-      : Math.max(0.07, 0.75 * 0.82 ** (level() - 1));
+      : Math.max(0.06, 0.62 * 0.8 ** (level() - 1));
     if (gravityTime >= interval) {
       gravityTime = 0;
       if (fits(piece.matrix, piece.x, piece.y + 1)) {
@@ -243,7 +261,7 @@
     }
     if (!fits(piece.matrix, piece.x, piece.y + 1)) {
       lockTime += dt;
-      if (lockTime >= 0.45) lock();
+      if (lockTime >= 0.35) lock();
     }
     record.save(score);
     hud();
@@ -320,6 +338,8 @@
     ctx.fillStyle = "#ffda9b";
     ctx.fillText(clearLabel, 301, 555);
     ctx.fillText("空格 · 直接落底", 22, 584);
+    ctx.fillStyle = pressure >= 6 ? "#ff8c80" : "#ffda9b";
+    ctx.fillText(`垃圾行 ${pressure}/8`, 301, 584);
   }
   game = Arcade.mount({
     keys: {

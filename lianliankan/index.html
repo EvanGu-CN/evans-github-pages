@@ -338,7 +338,7 @@
       <div class="title-sub">共享版 3.1</div>
     </div>
     <button class="btn-start" id="btnStart">开始游戏</button>
-    <p class="start-tip">两次转弯内消除相同宠物。快速连消补时间，洗牌消耗 12 秒。</p>
+    <p class="start-tip">两次转弯内消除相同宠物。错配扣 3 秒，第二关起棋盘会滑动。</p>
     <p class="start-best">最高分 <span id="bestScore">0</span></p>
   </section>
 
@@ -352,15 +352,16 @@
           <div class="stat"><span class="k">剩余</span><span class="v" id="hudLeft">0</span></div>
         </div>
         <div class="actions">
-          <button class="btn-ghost" id="btnHint">提示 3/3</button>
+          <button class="btn-ghost" id="btnHint">提示 2/2</button>
           <button class="btn-ghost" id="btnPause">暂停</button>
           <button class="btn-ghost" id="btnSound">音效</button>
         </div>
       </div>
       <div class="time-row" id="timeRow">
         <div class="time-track"><div class="time-fill" id="timeFill"></div></div>
-        <div class="time-text" id="timeText">05:00</div>
-        <button class="btn-ghost" id="btnShuffle" type="button">洗牌 −12秒</button>
+        <div class="time-text" id="timeText">02:50</div>
+        <div class="time-text" id="slideText">固定</div>
+        <button class="btn-ghost" id="btnShuffle" type="button">洗牌 −20秒</button>
       </div>
       <div class="board-wrap">
         <div class="board" id="board">
@@ -801,8 +802,11 @@
   const btnSound = $('#btnSound');
   const btnHint = $('#btnHint');
   const btnShuffle = $('#btnShuffle');
-  const SHUFFLE_COST = 12;
-  const HINT_MAX = 3;
+  const slideText = $('#slideText');
+  const SHUFFLE_COST = 20;
+  const HINT_MAX = 2;
+  const SLIDES = ['down', 'left', 'up', 'right'];
+  const SLIDE_LABELS = {down:'滑动↓', left:'滑动←', up:'滑动↑', right:'滑动→'};
 
   let S = null;
   let timerId = null;
@@ -879,11 +883,11 @@
     const cols = dims.cols, rows = dims.rows;
     // 前几关直接拉高难度：第 1 关即 10 种图标，每关 +2 种，第 4 关起满 16 种
     const kinds = Math.min(PETS.length, 10 + (level - 1) * 2);
-    // 单关时限：第 1 关 240 秒，每关 -15 秒，最低 120 秒
-    const timeMax = Math.max(120, 240 - (level - 1) * 15);
+    const timeMax = Math.max(85, 170 - (level - 1) * 12);
+    const slide = level === 1 ? null : SLIDES[(level - 2) % SLIDES.length];
 
     S = {
-      level, score, cols, rows,
+      level, score, cols, rows, slide,
       grid: buildGrid(cols, rows, kinds),
       remaining: cols * rows,
       tiles: new Map(),
@@ -900,6 +904,7 @@
     };
 
     renderBoard();
+    slideText.textContent = SLIDE_LABELS[slide] ?? '固定';
     applyTile();
     updateHUD();
     updateHintButton();
@@ -1021,6 +1026,10 @@
 
     // 配对失败
     S.combo = 0;
+    S.time = Math.max(0, S.time - 3);
+    updateTimeUI();
+    if(S.time === 0){ gameOver(); return; }
+    toast('错配 −3 秒');
     SFX.error();
     elA.classList.remove('sel');
     elA.classList.add('bad');
@@ -1042,13 +1051,11 @@
     S.grid[idxA] = -1;
     S.grid[idxB] = -1;
     S.remaining -= 2;
+    if(S.remaining === 0) stopTimer();
 
     const now = performance.now();
     S.combo = (now - S.comboAt < 3200) ? S.combo + 1 : 1;
     S.comboAt = now;
-    const timeBonus = S.combo % 3 === 0 ? Math.min(4, S.timeMax - S.time) : 0;
-    S.time += timeBonus;
-    updateTimeUI();
     const gain = 10 + Math.min(S.combo - 1, 5) * 4;
     S.score += gain;
     updateHUD();
@@ -1061,7 +1068,7 @@
     if(elB) elB.classList.add('gone');
     const mid = midpointOfTiles(a, b, path);
     burstSparks(mid);
-    floatScore(mid, '+' + gain + (S.combo > 1 ? ' 连击x' + S.combo : '') + (timeBonus >= 1 ? ' · +' + Math.floor(timeBonus) + '秒' : ''));
+    floatScore(mid, '+' + gain + (S.combo > 1 ? ' 连击x' + S.combo : ''));
 
     setTimeout(() => {
       if(S !== session) return;
@@ -1071,7 +1078,32 @@
       }
     }, 320);
 
-    setTimeout(() => { if(S === session) afterMove(); }, 120);
+    S.busy = true;
+    setTimeout(() => {
+      if(S !== session || !S.running) return;
+      if(S.slide && S.remaining > 0){
+        slideTiles();
+        renderBoard();
+      }
+      S.busy = false;
+      if(!S.paused) afterMove();
+    }, 150);
+  }
+
+  function slideTiles(){
+    const vertical = S.slide === 'up' || S.slide === 'down';
+    const reverse = S.slide === 'down' || S.slide === 'right';
+    const stride = S.cols + 2;
+    const length = vertical ? S.rows : S.cols;
+    const lanes = vertical ? S.cols : S.rows;
+    for(let lane=1; lane<=lanes; lane++){
+      const positions = Array.from({length}, (_, i) => {
+        const step = reverse ? length - i : i + 1;
+        return vertical ? step * stride + lane : lane * stride + step;
+      });
+      const pets = positions.map(index => S.grid[index]).filter(value => value >= 0);
+      positions.forEach((index, i) => { S.grid[index] = pets[i] ?? -1; });
+    }
   }
 
   function afterMove(){
@@ -1182,7 +1214,7 @@
     SFX.error();
     showDialog('无路可走', `
       <div>第 <b>${S.level}</b> 关已没有可消除的配对</div>
-      <div class="sub">花费 12 秒重排剩余宠物</div>
+      <div class="sub">花费 ${SHUFFLE_COST} 秒重排剩余宠物</div>
     `, [
       {label:'洗牌继续', fn:() => shuffleBoard()},
       {label:'返回首页', plain:true, fn:() => backHome()}
@@ -1206,7 +1238,7 @@
     S.paused = false;
     hideModal();
     renderBoard();
-    toast('已洗牌，消耗 12 秒');
+    toast('已洗牌，消耗 ' + SHUFFLE_COST + ' 秒');
   }
 
   /* ================= 关卡结算 / 结束 ================= */
@@ -1300,14 +1332,19 @@
       if(S.paused) return;
       S.paused = true;
       showDialog('暂停中', '<div class="sub">休息一下，随时继续</div>', [
-        {label:'继续游戏', fn:() => { S.paused = false; hideModal(); }},
+        {label:'继续游戏', fn:resume},
         {label:'重新开始', plain:true, fn:() => startLevel(1, 0)},
         {label:'返回首页', plain:true, fn:() => backHome()}
       ]);
     } else {
-      S.paused = false;
-      hideModal();
+      resume();
     }
+  }
+
+  function resume(){
+    S.paused = false;
+    hideModal();
+    if(!S.busy) afterMove();
   }
 
   /* ================= 按钮绑定 ================= */
@@ -1318,7 +1355,7 @@
   btnHint.addEventListener('click', doHint);
   btnShuffle.addEventListener('click', () => {
     if(!S || !S.running || S.paused || S.busy) return;
-    if(S.time <= SHUFFLE_COST){ toast('洗牌需要超过 12 秒'); return; }
+    if(S.time <= SHUFFLE_COST){ toast('洗牌需要超过 ' + SHUFFLE_COST + ' 秒'); return; }
     shuffleBoard();
   });
   $('#btnPause').addEventListener('click', () => togglePause());
