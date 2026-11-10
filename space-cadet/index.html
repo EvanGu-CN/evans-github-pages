@@ -10,10 +10,10 @@
     />
     <title>3D Pinball: Space Cadet · Evan's Arcade</title>
     <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
-    <link rel="stylesheet" href="../arcade/classics.css" />
+    <link rel="stylesheet" href="../arcade/classics.css?v=2" />
     <script defer src="../arcade/arcade.js"></script>
     <script defer src="../arcade/record.js"></script>
-    <script defer src="game.js"></script>
+    <script defer src="game.js?v=2"></script>
   </head>
   <body class="classic pinball">
     <main class="arcade">
@@ -64,7 +64,8 @@
           <div class="touch-controls" aria-label="屏幕按键">
             <button type="button" data-hold="left">左挡板</button
             ><button type="button" data-hold="launch">按住发射</button
-            ><button type="button" data-hold="right">右挡板</button>
+            ><button type="button" data-hold="right">右挡板</button
+            ><button type="button" data-hold="nudge">X 推台</button>
           </div>
           <p class="mission" data-stat="mission" role="status">
             任务 1 · 点亮三个蓝色目标
@@ -99,6 +100,7 @@
             3 球。
           </p>
           <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
+          <p>在绿色蓄力区松手可瞄准上方星标。中央回弹口接球后默认向左弹，按住右挡板可改向。<kbd>X</kbd> 推台能向内、向上挪动球速，每 6 秒可用一次。发射后的 7 秒内可免费救球一次。</p>
         </aside>
       </div>
       <footer class="game-footer">

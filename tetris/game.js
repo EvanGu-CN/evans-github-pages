@@ -58,6 +58,11 @@
     resets,
     repeatTime,
     previousMove,
+    reserve,
+    swapped,
+    combo,
+    backToBack,
+    clearLabel,
     over,
     game;
   const level = () => 1 + Math.floor(lines / 10);
@@ -99,9 +104,8 @@
       copy: `得分 ${score}，共消除 ${lines} 行。`,
     });
   }
-  function spawn() {
-    const type = queue.shift();
-    queue.push(nextType());
+  function spawn(type = queue.shift()) {
+    if (queue.length < 4) queue.push(nextType());
     piece = { type, matrix: shapes[type].map((row) => [...row]), x: 3, y: -1 };
     gravityTime = 0;
     lockTime = 0;
@@ -117,6 +121,11 @@
     repeatTime = 0;
     previousMove = 0;
     over = false;
+    reserve = null;
+    swapped = false;
+    combo = 0;
+    backToBack = false;
+    clearLabel = "";
     spawn();
     hud();
   }
@@ -171,7 +180,11 @@
     );
     const remaining = board.filter((row) => row.some((cell) => cell === 0));
     const cleared = 20 - remaining.length;
-    score += [0, 100, 300, 500, 800][cleared] * level();
+    combo = cleared ? combo + 1 : 0;
+    const quadBonus = cleared === 4 && backToBack;
+    if (cleared) backToBack = cleared === 4;
+    score += ([0, 100, 300, 500, 800][cleared] + (quadBonus ? 400 : 0) + Math.max(0, combo - 1) * 50) * level();
+    clearLabel = quadBonus ? "连续四消！" : cleared === 4 ? "四行消除！" : combo > 1 ? `${combo} 连消` : "";
     lines += cleared;
     board = [
       ...Array.from({ length: cleared }, () => Array(10).fill(0)),
@@ -179,11 +192,19 @@
     ];
     record.save(score);
     game.effect(cleared ? "clear" : "pop");
+    swapped = false;
     spawn();
     hud();
   }
   function update(dt) {
     if (over) return;
+    if (game.pressed("hold") && !swapped) {
+      const previous = reserve;
+      reserve = piece.type;
+      swapped = true;
+      spawn(previous ?? undefined);
+      return;
+    }
     const dx = Number(game.held("right")) - Number(game.held("left"));
     if (game.pressed("left")) move(-1);
     if (game.pressed("right")) move(1);
@@ -290,6 +311,14 @@
     ctx.fillStyle = "#9bb3c8";
     ctx.font = "12px system-ui";
     ctx.fillText(`再消 ${10 - (lines % 10)} 行升级`, 301, 426);
+    ctx.fillText(swapped ? "暂存已用" : "C · 暂存", 301, 454);
+    if (reserve !== null) {
+      shapes[reserve].forEach((row, y) => row.forEach((value, x) => {
+        if (value) cell(ctx, 301 + x * 22, 463 + y * 22, 22, colors[reserve]);
+      }));
+    }
+    ctx.fillStyle = "#ffda9b";
+    ctx.fillText(clearLabel, 301, 555);
     ctx.fillText("空格 · 直接落底", 22, 584);
   }
   game = Arcade.mount({
@@ -299,6 +328,7 @@
       KeyX: "rotate",
       KeyZ: "reverse",
       Space: "drop",
+      KeyC: "hold",
     },
     reset,
     update,

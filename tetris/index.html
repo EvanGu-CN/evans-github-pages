@@ -10,10 +10,10 @@
     />
     <title>俄罗斯方块 · Evan's Arcade</title>
     <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
-    <link rel="stylesheet" href="../arcade/classics.css" />
+    <link rel="stylesheet" href="../arcade/classics.css?v=2" />
     <script defer src="../arcade/arcade.js"></script>
     <script defer src="../arcade/record.js"></script>
-    <script defer src="game.js"></script>
+    <script defer src="game.js?v=2"></script>
   </head>
   <body class="classic tetris">
     <main class="arcade">
@@ -60,7 +60,8 @@
             ><button type="button" data-hold="right">右移 →</button
             ><button type="button" data-hold="reverse">↺ 反向</button
             ><button type="button" data-hold="down">↓ 下落</button
-            ><button type="button" data-hold="drop">落到底</button>
+            ><button type="button" data-hold="drop">落到底</button
+            ><button type="button" data-hold="hold">C 暂存</button>
           </div>
         </section>
         <aside class="field-guide" aria-label="玩法说明">
@@ -92,6 +93,7 @@
             </div>
           </dl>
           <p>轮廓方块显示落点，右侧可预览接下来三块。每消除 10 行提升一级。</p>
+          <p>按 <kbd>C</kbd> 暂存或交换方块，每块落定前可用一次。连续落块都有消行会获得连消奖励，两次四消之间若无其他消行，第二次额外加分。</p>
           <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
         </aside>
       </div>

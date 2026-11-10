@@ -10,10 +10,10 @@
     />
     <title>贪吃蛇 · Evan's Arcade</title>
     <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
-    <link rel="stylesheet" href="../arcade/classics.css" />
+    <link rel="stylesheet" href="../arcade/classics.css?v=2" />
     <script defer src="../arcade/arcade.js"></script>
     <script defer src="../arcade/record.js"></script>
-    <script defer src="game.js"></script>
+    <script defer src="game.js?v=2"></script>
   </head>
   <body class="classic snake">
     <main class="arcade">
@@ -39,6 +39,10 @@
             <div>长度 <strong data-stat="length">4</strong></div>
             <div>速度 <strong data-stat="speed">1</strong></div>
           </div>
+          <div class="game-mode">
+            <span data-stat="mode">经典场</span>
+            <strong data-stat="gold"></strong>
+          </div>
           <div class="screen">
             <canvas width="400" height="400" aria-label="贪吃蛇 游戏画面"
               >此浏览器不支持 Canvas。</canvas
@@ -48,6 +52,12 @@
                 <p class="eyebrow" data-overlay-tag>JUST ONE MORE BITE</p>
                 <h2 data-overlay-title role="status">准备开始</h2>
                 <p data-overlay-copy>吃果实会变长，撞到墙壁或自己时结束。</p>
+                <label class="mode-picker">下局场地
+                  <select data-mode>
+                    <option value="classic">经典场</option>
+                    <option value="portal">传送门场</option>
+                  </select>
+                </label>
                 <button class="play" type="button" data-play>开始游戏</button>
               </div>
             </div>
@@ -83,6 +93,7 @@
             每个果实加 10 分，每吃 5
             个逐渐加速。可以提前输入连续转弯，避免迎头掉转。
           </p>
+          <p>每吃 4 个普通果实就会出现一个限时橙色金果，吃到加 25 分。传送门场的两个紫色门互通，穿门后保持原方向，小心出口的蛇身。</p>
           <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
         </aside>
       </div>

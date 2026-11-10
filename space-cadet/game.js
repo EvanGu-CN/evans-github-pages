@@ -34,6 +34,8 @@
       [310, 449],
     ],
   ];
+  const scoop = { x: 190, y: 414, r: 16 };
+  const skillTarget = { x: 190, y: 49, r: 15 };
   let ball,
     balls,
     score,
@@ -44,6 +46,11 @@
     flippers,
     charge,
     charging,
+    skillShot,
+    savedBall,
+    saveTime,
+    scoopTime,
+    nudgeTime,
     orbitReady,
     time,
     over,
@@ -59,13 +66,18 @@
         ? `发射蓄力 ${Math.round(charge * 100)}% · 松开发射`
         : "按住空格或发射按钮蓄力，松手发射"
       : `任务 ${mission} · 点亮目标 ${lit.filter(Boolean).length}/3 · 完成奖励 ${2000 * multiplier}`;
-    game.stat("mission", message);
+    game.stat("mission", `${message}${saveTime > 0 ? ` · 救球 ${Math.ceil(saveTime)}s` : ""}`);
   }
   function newBall() {
     ball = { x: 382, y: 549, vx: 0, vy: 0, r: 8, ready: true, inLane: true };
     charging = false;
     charge = 0;
     orbitReady = true;
+    skillShot = false;
+    savedBall = false;
+    saveTime = 0;
+    scoopTime = 0;
+    nudgeTime = 0;
   }
   function reset() {
     balls = 3;
@@ -163,13 +175,30 @@
         ball.inLane = false;
         ball.x = 333;
         ball.y = 90;
-        ball.vx = -330;
-        ball.vy = -160;
+        ball.vx = skillShot ? -485 : -260 - charge * 120;
+        ball.vy = skillShot ? -200 : -105 - charge * 115;
+        if (!savedBall) saveTime = 7;
         game.effect("coin");
       }
       return;
     }
     for (const wall of walls) lineCollision(...wall);
+    if (skillShot && Math.hypot(ball.x - skillTarget.x, ball.y - skillTarget.y) <= ball.r + skillTarget.r) {
+      skillShot = false;
+      points(1250);
+      game.effect("clear");
+    }
+    if (ball.y > 190) skillShot = false;
+    if (scoopTime <= 0 && ball.vy > 0 && Math.hypot(ball.x - scoop.x, ball.y - scoop.y) < scoop.r) {
+      ball.x = scoop.x;
+      ball.y = scoop.y;
+      ball.vx = 0;
+      ball.vy = 0;
+      scoopTime = .35;
+      points(350);
+      game.effect("coin");
+      return;
+    }
     bumpers.forEach((bumper, i) => {
       if (circleCollision(bumper, 135) && flashes[i] <= 0) {
         points(100);
@@ -240,6 +269,8 @@
   function update(dt) {
     if (over) return;
     time += dt;
+    saveTime = Math.max(0, saveTime - dt);
+    nudgeTime = Math.max(0, nudgeTime - dt);
     flashes = flashes.map((value) => Math.max(0, value - dt));
     updateFlippers(dt);
     if (ball.ready) {
@@ -249,14 +280,35 @@
         if (!game.held("launch")) {
           ball.ready = false;
           ball.vy = -830 - charge * 230;
+          skillShot = charge >= .55 && charge <= .75;
           charging = false;
           game.effect("shoot");
         }
       }
+    } else if (scoopTime > 0) {
+      scoopTime -= dt;
+      if (scoopTime <= 0) {
+        ball.vx = 170 * (game.held("right") ? 1 : -1);
+        ball.vy = -565;
+        game.effect("shoot");
+      }
     } else {
+      if (!ball.inLane && nudgeTime <= 0 && game.pressed("nudge")) {
+        ball.vx += ball.x < 190 ? 115 : -115;
+        ball.vy -= 165;
+        nudgeTime = 6;
+        game.effect("pop");
+      }
       // Small substeps keep fast balls from crossing thin rails or flippers.
-      for (let i = 0; i < 6; i++) physics(dt / 6);
+      for (let i = 0; i < 6 && scoopTime <= 0; i++) physics(dt / 6);
       if (ball.y > 620 || ball.x < -40 || ball.x > 460) {
+        if (saveTime > 0 && !savedBall) {
+          newBall();
+          savedBall = true;
+          game.effect("clear");
+          hud();
+          return;
+        }
         balls--;
         game.effect("hit");
         if (balls === 0) {
@@ -407,6 +459,12 @@
     ctx.fillStyle = "#f0c98c";
     ctx.font = "11px system-ui";
     ctx.fillText("ORBIT 500  ·  TARGETS 250", 190, 369);
+    disk(ctx, scoop.x, scoop.y, scoop.r + 4, scoopTime > 0 ? "#ffe3a1" : "#7a6ba3");
+    disk(ctx, scoop.x, scoop.y, scoop.r, "#0b1025");
+    disk(ctx, skillTarget.x, skillTarget.y, skillTarget.r, skillShot ? "#ffd878" : "#514c7e");
+    ctx.fillStyle = "#f7dc9d";
+    ctx.fillText("★", skillTarget.x, skillTarget.y + 4);
+    ctx.fillText(nudgeTime > 0 ? `推台 ${Math.ceil(nudgeTime)}s` : "推台就绪", 190, 470);
     ctx.fillStyle = "#4d3652";
     ctx.fillRect(130, 566, 130, 22);
     ctx.fillStyle = "#eaa78d";
@@ -453,6 +511,8 @@
     steel.addColorStop(1, "#52627c");
     disk(ctx, ball.x, ball.y, ball.r, steel);
     if (ball.ready) {
+      ctx.fillStyle = "#72e4ad";
+      ctx.fillRect(371, 555 - .75 * 35, 22, .2 * 35);
       ctx.fillStyle = "#ffe0a2";
       ctx.fillRect(375, 555 - charge * 35, 14, 3);
       ctx.textAlign = "center";
@@ -461,7 +521,7 @@
     }
   }
   game = Arcade.mount({
-    keys: { KeyZ: "left", Slash: "right", Space: "launch" },
+    keys: { KeyZ: "left", Slash: "right", Space: "launch", KeyX: "nudge" },
     reset,
     update,
     draw,

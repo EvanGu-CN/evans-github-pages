@@ -17,22 +17,26 @@
     if (Number.isSafeInteger(saved) && saved > 0) best = saved;
   } catch { /* Keep scores in memory when browser storage is unavailable. */ }
 
-  let bird, pipes, score, time, distance, flying, crashed, startingBest, game;
+  let bird, pipes, score, time, distance, flying, crashed, startingBest, chain, shield, nextPipe, game;
 
   function updateHud() {
     if (!game) return;
     game.stat("score", digits(score));
     game.stat("best", digits(best));
+    game.stat("rings", shield ? "护盾就绪" : `光环 ${chain}/3`);
   }
 
   function reset() {
     bird = { y: 252, vy: 0, radius: 12 };
-    pipes = [{ x: width + 90, center: 252, gap: 162, scored: false }];
+    pipes = [{ x: width + 90, center: 252, gap: 162, ring: true, scored: false }];
     score = 0;
     time = 0;
     distance = 0;
     flying = false;
     crashed = false;
+    chain = 0;
+    shield = false;
+    nextPipe = 2;
     startingBest = best;
     updateHud();
   }
@@ -74,16 +78,43 @@
     distance += travel;
     bird.vy = Math.min(460, bird.vy + gravity * dt);
     bird.y += bird.vy * dt;
-    for (const pipe of pipes) pipe.x -= travel;
+    for (const pipe of pipes) {
+      pipe.x -= travel;
+      if (pipe.moving) pipe.center = pipe.base + Math.sin(time * 1.9 + pipe.phase) * 28;
+      if (pipe.ring && Math.hypot(pipe.x + pipeWidth / 2 - birdX, pipe.center - bird.y) <= 20) {
+        pipe.ring = false;
+        pipe.collected = true;
+        if (!shield && ++chain === 3) {
+          shield = true;
+          chain = 0;
+        }
+        game.effect("coin");
+        updateHud();
+      }
+    }
 
-    if (bird.y - bird.radius <= 0 || bird.y + bird.radius >= ground || pipes.some(hitPipe)) {
+    if (bird.y - bird.radius <= 0 || bird.y + bird.radius >= ground) {
       bird.y = Arcade.clamp(bird.y, bird.radius, ground - bird.radius);
       endFlight();
       return;
     }
+    const hit = pipes.find((pipe) => !pipe.bypassed && hitPipe(pipe));
+    if (hit) {
+      if (!shield) {
+        endFlight();
+        return;
+      }
+      shield = false;
+      hit.bypassed = true;
+      bird.y = hit.center;
+      bird.vy = -130;
+      game.effect("clear");
+      updateHud();
+    }
     for (const pipe of pipes) {
       if (pipe.scored || pipe.x + pipeWidth + 4 >= birdX - bird.radius) continue;
       pipe.scored = true;
+      if (!pipe.collected) chain = 0;
       score++;
       if (score > best) {
         best = score;
@@ -96,12 +127,17 @@
     }
     const last = pipes.at(-1);
     if (last.x < width + 30) {
+      const moving = nextPipe >= 7 && nextPipe % 3 === 1;
+      const base = Arcade.clamp((last.base ?? last.center) + (Math.random() - .5) * 126, 137, ground - 137);
       pipes.push({
         x: last.x + pipeSpacing,
-        center: Arcade.clamp(last.center + (Math.random() - .5) * 150, 128, ground - 126),
+        center: base,
+        base, moving, phase: nextPipe,
         gap: 162 - Math.min(20, score * .8),
+        ring: true,
         scored: false,
       });
+      nextPipe++;
     }
     pipes = pipes.filter((pipe) => pipe.x + pipeWidth + 4 > -10);
   }
@@ -204,10 +240,26 @@
     for (const pipe of pipes) {
       const top = pipe.center - pipe.gap / 2;
       const bottom = pipe.center + pipe.gap / 2;
+      ctx.globalAlpha = pipe.bypassed ? .45 : 1;
       pipeBody(ctx, pipe.x, 0, top);
       pipeBody(ctx, pipe.x, bottom, ground - bottom);
       pipeCap(ctx, pipe.x, top - 25);
       pipeCap(ctx, pipe.x, bottom);
+      ctx.globalAlpha = 1;
+      if (pipe.moving) {
+        rect(ctx, "#de9760", pipe.x, top - 7, pipeWidth, 4);
+        rect(ctx, "#de9760", pipe.x, bottom + 3, pipeWidth, 4);
+      }
+      if (pipe.ring) {
+        ctx.beginPath();
+        ctx.arc(pipe.x + pipeWidth / 2, pipe.center, 10, 0, Math.PI * 2);
+        ctx.strokeStyle = "#bd731f";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+        ctx.strokeStyle = "#fff196";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
     }
     rect(ctx, "#3f7650", 0, ground, width, 4);
     rect(ctx, "#c6df8c", 0, ground + 4, width, 14);
@@ -222,6 +274,13 @@
     for (let x = -24 - grassOffset; x < width; x += 36) {
       rect(ctx, "#ccbb8b", x + 8, ground + 39, 5, 3);
       rect(ctx, "#ccbb8b", x + 22, ground + 53, 4, 3);
+    }
+    if (shield) {
+      ctx.beginPath();
+      ctx.arc(birdX, bird.y, 24, 0, Math.PI * 2);
+      ctx.strokeStyle = "#fff5a2";
+      ctx.lineWidth = 3;
+      ctx.stroke();
     }
     drawBird(ctx);
     ctx.textAlign = "center";

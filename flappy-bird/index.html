@@ -7,9 +7,9 @@
   <meta name="description" content="轻点振翅，穿过水管。支持空格、鼠标和触屏的 Flappy Bird 网页游戏。">
   <title>Flappy Bird · Evan's Arcade</title>
   <link rel="stylesheet" href="../arcade/arcade.css">
-  <link rel="stylesheet" href="flappy.css">
+  <link rel="stylesheet" href="flappy.css?v=2">
   <script defer src="../arcade/arcade.js"></script>
-  <script defer src="game.js"></script>
+  <script defer src="game.js?v=2"></script>
 </head>
 <body class="flappy">
   <main class="arcade">
@@ -34,6 +34,7 @@
         <div class="hud" aria-label="游戏数据">
           <div>本局得分 <strong data-stat="score">00</strong></div>
           <div>本机最高 <strong data-stat="best">00</strong></div>
+          <div>连穿 <strong data-stat="rings">光环 0/3</strong></div>
         </div>
         <div class="screen">
           <canvas width="400" height="560" data-hold="flap" aria-label="飞行画面，点击或按空格振翅">此浏览器不支持 Canvas。</canvas>
@@ -57,7 +58,8 @@
           <div><dt>暂停</dt><dd><kbd>P</kbd> / <kbd>Esc</kbd></dd></div>
         </dl>
         <p>每轻点一次，小鸟向上飞一下。松手后会下落，保持节奏，从水管中间穿过去。</p>
-        <p>碰到水管、地面或画面上沿，本局结束。得分越高，飞行速度会逐渐加快。</p>
+        <p>连续穿过 3 个金色光环可抵挡一次撞管，漏掉就重新计数。护盾无法抵挡地面和画面上沿。</p>
+        <p>第 7 组起会遇到橙边升降管。得分越高，飞行速度越快。</p>
         <div class="tip"><span aria-hidden="true">✦</span><p>先稳住节奏。<br>下一组水管，就在前面。</p></div>
       </aside>
     </div>

@@ -211,7 +211,7 @@
     const phase = Math.min(2, Math.floor(clock / (stageDuration() / 3)));
     const formation = [
       ["scout", "wing", "interceptor", "wing"],
-      ["asteroid", "wing", "asteroid", "interceptor"],
+      ["asteroid", "wing", "armor", "interceptor"],
       ["cruiser", "interceptor", "armor", "wing"],
     ][phase];
     const kind = formation[wave % formation.length];
@@ -235,6 +235,7 @@
         age: 0,
         phase: i * 0.46,
         cooldown: 1.35 + i * 0.24,
+        barrier: kind === "armor" ? 5 : 0,
         supply:
           i === Math.floor(count / 2) && wave % 3 === 1
             ? ["power", "shield", "repair", "rapid"][
@@ -303,6 +304,7 @@
       lasers = [];
       player.shield = Math.max(player.shield, 1.5);
       for (const enemy of enemies) {
+        enemy.barrier = 0;
         enemy.hp -= 12;
         if (enemy.hp <= 0) destroyEnemy(enemy, game);
       }
@@ -371,6 +373,20 @@
     for (const enemy of enemies) {
       if (enemy.hp <= 0) continue;
       enemy.age += dt;
+      if (enemy.kind === "interceptor" && enemy.y >= 68) {
+        if (!enemy.dive) {
+          enemy.dive = {
+            warning: .65,
+            vx: Arcade.clamp((player.x - enemy.x) * 1.3, -235, 235),
+          };
+        }
+        enemy.dive.warning -= dt;
+        if (enemy.dive.warning <= 0) {
+          enemy.y += (300 + sector * 20) * dt;
+          enemy.x = Arcade.clamp(enemy.x + enemy.dive.vx * dt, 16, width - 16);
+        }
+        continue;
+      }
       const hovering =
         enemy.kind === "cruiser" && enemy.y >= 125 && enemy.age < 11;
       if (!hovering)
@@ -563,6 +579,12 @@
       bullet.hits.add(enemy);
       bullet.pierce--;
       bullet.spent = bullet.pierce <= 0;
+      if (enemy.barrier > 0 && bullet.kind !== "lance" &&
+          bullet.y >= enemy.y && Math.abs(bullet.x - enemy.x) < enemy.radius * .72) {
+        enemy.barrier--;
+        burst(bullet.x, bullet.y, "#8be8ff", 3);
+        continue;
+      }
       enemy.hp -= bullet.damage;
       if (enemy.hp > 0) continue;
       destroyEnemy(enemy, game);
@@ -814,6 +836,25 @@
       [-r * 0.34, r * 0.1],
     ]);
     rect(ctx, "#fff1c5", -3, 2, 6, 5);
+    if (enemy.barrier > 0) {
+      ctx.strokeStyle = "#8be8ff";
+      ctx.lineWidth = 2 + enemy.barrier * .6;
+      ctx.beginPath();
+      ctx.arc(0, 1, r + 5, Math.PI * .24, Math.PI * .76);
+      ctx.stroke();
+    }
+    if (enemy.dive?.warning > 0) {
+      ctx.fillStyle = "#ffea9a";
+      ctx.font = "bold 15px system-ui";
+      ctx.textAlign = "center";
+      ctx.fillText("!", 0, -r - 6);
+      ctx.beginPath();
+      ctx.moveTo(0, r);
+      ctx.lineTo(enemy.dive.vx * .22, r + 65);
+      ctx.strokeStyle = "#ffca7588";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
     ctx.restore();
   }
 

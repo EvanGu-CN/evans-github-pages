@@ -338,7 +338,7 @@
       <div class="title-sub">共享版 3.1</div>
     </div>
     <button class="btn-start" id="btnStart">开始游戏</button>
-    <p class="start-tip">点击两个相同的宠物，连线转弯不超过两次即可消除</p>
+    <p class="start-tip">两次转弯内消除相同宠物。快速连消补时间，洗牌消耗 12 秒。</p>
     <p class="start-best">最高分 <span id="bestScore">0</span></p>
   </section>
 
@@ -360,6 +360,7 @@
       <div class="time-row" id="timeRow">
         <div class="time-track"><div class="time-fill" id="timeFill"></div></div>
         <div class="time-text" id="timeText">05:00</div>
+        <button class="btn-ghost" id="btnShuffle" type="button">洗牌 −12秒</button>
       </div>
       <div class="board-wrap">
         <div class="board" id="board">
@@ -799,6 +800,8 @@
   const bestScoreEl = $('#bestScore');
   const btnSound = $('#btnSound');
   const btnHint = $('#btnHint');
+  const btnShuffle = $('#btnShuffle');
+  const SHUFFLE_COST = 12;
   const HINT_MAX = 3;
 
   let S = null;
@@ -948,10 +951,10 @@
     stopTimer();
     let last = performance.now();
     timerId = setInterval(() => {
-      if(!S || !S.running || S.paused) return;
       const now = performance.now();
       const dt = Math.min(0.4, (now - last) / 1000);
       last = now;
+      if(!S || !S.running || S.paused) return;
       S.time -= dt;
       if(S.time <= 0){
         S.time = 0;
@@ -1017,6 +1020,7 @@
     }
 
     // 配对失败
+    S.combo = 0;
     SFX.error();
     elA.classList.remove('sel');
     elA.classList.add('bad');
@@ -1031,6 +1035,7 @@
   }
 
   function matchPair(a, b, path){
+    const session = S;
     const C = S.cols + 2;
     const idxA = a.r*C + a.c, idxB = b.r*C + b.c;
 
@@ -1039,9 +1044,12 @@
     S.remaining -= 2;
 
     const now = performance.now();
-    S.combo = (now - S.comboAt < 3200) ? Math.min(S.combo + 1, 6) : 1;
+    S.combo = (now - S.comboAt < 3200) ? S.combo + 1 : 1;
     S.comboAt = now;
-    const gain = 10 + (S.combo - 1) * 4;
+    const timeBonus = S.combo % 3 === 0 ? Math.min(4, S.timeMax - S.time) : 0;
+    S.time += timeBonus;
+    updateTimeUI();
+    const gain = 10 + Math.min(S.combo - 1, 5) * 4;
     S.score += gain;
     updateHUD();
     SFX.match(S.combo);
@@ -1053,14 +1061,17 @@
     if(elB) elB.classList.add('gone');
     const mid = midpointOfTiles(a, b, path);
     burstSparks(mid);
-    floatScore(mid, '+' + gain + (S.combo > 1 ? ' 连击x' + S.combo : ''));
+    floatScore(mid, '+' + gain + (S.combo > 1 ? ' 连击x' + S.combo : '') + (timeBonus >= 1 ? ' · +' + Math.floor(timeBonus) + '秒' : ''));
 
     setTimeout(() => {
-      if(elA){ elA.remove(); S.tiles.delete(keyOf(a.r, a.c)); }
-      if(elB){ elB.remove(); S.tiles.delete(keyOf(b.r, b.c)); }
+      if(S !== session) return;
+      for(const [cell, el] of [[a, elA], [b, elB]]){
+        const key = keyOf(cell.r, cell.c);
+        if(S.tiles.get(key) === el){ el.remove(); S.tiles.delete(key); }
+      }
     }, 320);
 
-    setTimeout(afterMove, 120);
+    setTimeout(() => { if(S === session) afterMove(); }, 120);
   }
 
   function afterMove(){
@@ -1171,11 +1182,31 @@
     SFX.error();
     showDialog('无路可走', `
       <div>第 <b>${S.level}</b> 关已没有可消除的配对</div>
-      <div class="sub">重开本关会重置提示次数</div>
+      <div class="sub">花费 12 秒重排剩余宠物</div>
     `, [
-      {label:'重开本关', fn:() => startLevel(S.level, S.score)},
+      {label:'洗牌继续', fn:() => shuffleBoard()},
       {label:'返回首页', plain:true, fn:() => backHome()}
     ]);
+  }
+
+  function shuffleBoard(){
+    if(!S || !S.running || S.remaining < 2) return;
+    clearSelection();
+    S.time = Math.max(0, S.time - SHUFFLE_COST);
+    updateTimeUI();
+    if(S.time === 0){ gameOver(); return; }
+    const positions = [];
+    for(let i=0; i<S.grid.length; i++) if(S.grid[i] >= 0) positions.push(i);
+    const pets = shuffleArr(positions.map(i => S.grid[i]));
+    // The first two occupied cells in row order can connect through the top edge.
+    const mate = pets.indexOf(pets[0], 1);
+    [pets[1], pets[mate]] = [pets[mate], pets[1]];
+    positions.forEach((index, i) => { S.grid[index] = pets[i]; });
+    S.combo = 0;
+    S.paused = false;
+    hideModal();
+    renderBoard();
+    toast('已洗牌，消耗 12 秒');
   }
 
   /* ================= 关卡结算 / 结束 ================= */
@@ -1285,6 +1316,11 @@
     startLevel(1, 0);
   });
   btnHint.addEventListener('click', doHint);
+  btnShuffle.addEventListener('click', () => {
+    if(!S || !S.running || S.paused || S.busy) return;
+    if(S.time <= SHUFFLE_COST){ toast('洗牌需要超过 12 秒'); return; }
+    shuffleBoard();
+  });
   $('#btnPause').addEventListener('click', () => togglePause());
   btnSound.addEventListener('click', () => {
     soundOn = !soundOn;

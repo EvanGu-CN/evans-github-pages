@@ -14,7 +14,7 @@ body.flappy {
 .flappy .game-layout { grid-template-columns: minmax(0, 1fr) 280px; }
 .flappy .game-console { display: grid; justify-items: center; }
 .flappy .game-console > * { width: min(100%, 400px, max(260px, calc((100svh - 280px) * 400 / 560))); }
-.flappy .hud { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.flappy .hud { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .flappy .hud > div { padding: 8px 12px; }
 .flappy canvas { touch-action: none; user-select: none; cursor: pointer; }
 .flappy .overlay { background: #142c42a6; }
