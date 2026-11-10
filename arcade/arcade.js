@@ -22,6 +22,10 @@ const Arcade = (() => {
     const copy = overlay.querySelector("[data-overlay-copy]");
     const tag = overlay.querySelector("[data-overlay-tag]");
     const play = document.querySelector("[data-play]");
+    const choices = document.createElement("div");
+    choices.className = "arcade-choices";
+    choices.hidden = true;
+    play.after(choices);
     const pause = document.querySelector("[data-pause]");
     const sound = document.querySelector("[data-sound]");
     const controls = [...document.querySelectorAll("[data-hold]")];
@@ -81,6 +85,9 @@ const Arcade = (() => {
       cancelAnimationFrame(frameId);
       clearInputs();
       overlay.hidden = false;
+      choices.hidden = true;
+      choices.replaceChildren();
+      play.hidden = false;
       pause.disabled = mode !== "paused";
       pause.textContent = mode === "paused" ? "继续" : "暂停";
       tag.textContent = text.tag;
@@ -123,6 +130,23 @@ const Arcade = (() => {
       effect,
       stat,
       finish: (text) => show("finished", { ...text, button: "再玩一次" }),
+      choose: (text, options, onChoose) => {
+        show("choosing", { ...text, button: "" });
+        play.hidden = true;
+        choices.hidden = false;
+        for (const option of options) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = option.label;
+          button.addEventListener("click", () => {
+            if (mode !== "choosing") return;
+            mode = "selected";
+            if (onChoose(option.id) !== false) start(false);
+          });
+          choices.append(button);
+        }
+        choices.firstElementChild?.focus({ preventScroll: true });
+      },
     };
 
     sound.addEventListener("click", () => {
