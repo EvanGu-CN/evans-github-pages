@@ -14,10 +14,19 @@
   background: var(--raised);
   touch-action: none;
 }
+.combat-controls button span {
+  display: block;
+  font-size: 0.65rem;
+}
+.combat-controls button[aria-pressed="true"],
 .combat-controls button[data-active] {
   background: var(--accent);
   color: #101c2c;
 }
+.fighter .supplies .spread { background: #91efff; }
+.fighter .supplies .lance { background: #e1acff; }
+.fighter .supplies .missile { background: #ffda86; }
+.fighter .supplies .power { background: #f4fbff; }
 .combat-controls button:last-child {
   color: #ffe3a4;
   border-color: #a78655;
