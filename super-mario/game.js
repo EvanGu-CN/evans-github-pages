@@ -63,7 +63,12 @@
       const edge = level.land[i][1];
       return { x: (edge + start) / 2 - 23, y: 320, w: 46, h: 12, fragile: stage > 0 || i > 0, crumble: null };
     });
-    spikes = spikeLayouts[stage].map(([x, w]) => ({ x, y: floor - 14, w, h: 14 }));
+    spikes = spikeLayouts[stage].flatMap(([start, width]) =>
+      Array.from({ length: Math.ceil(width / 12) }, (_, i) => {
+        const x = start + i * 12;
+        const right = Math.min(x + 12, start + width);
+        return { x, right, tip: Math.min(x + 6, right), y: floor - 14 };
+      }));
     for (const [x, height] of level.pipes) solids.push({ x, y: floor - height, w: 54, h: height, kind: "pipe" });
     for (const [x, y, count] of level.bricks) {
       for (let i = 0; i < count; i++) {
@@ -105,6 +110,16 @@
       game.finish({ tag: "GAME OVER", title: "冒险结束", copy: `到达第 ${stage + 1} 关，收集了 ${coins} 枚金币。` });
     }
     updateHud(game);
+  }
+
+  function touchesSpike(spike) {
+    const depth = Math.min(1, (player.y + player.h - spike.y) / (floor - spike.y));
+    if (depth <= 0 || player.y >= floor) return false;
+    const left = spike.tip + (spike.x - spike.tip) * depth;
+    const right = spike.tip + (spike.right - spike.tip) * depth;
+    // The sprite's feet are inset from the sides of its movement box.
+    const footInset = 6;
+    return player.x + player.w - footInset > left && player.x + footInset < right;
   }
 
   function update(dt, game) {
@@ -174,7 +189,7 @@
         if (platform.fragile && platform.crumble === null) platform.crumble = .35;
       }
     }
-    if (spikes.some(spike => overlaps(player, spike))) {
+    if (spikes.some(touchesSpike)) {
       loseLife(game);
       return;
     }
@@ -312,14 +327,12 @@
       fill(ctx, warning ? "#fff2a3" : platform.fragile ? "#d291be" : "#8ce6dc", platform.x + 2, platform.y, platform.w - 4, 4);
     }
     for (const spike of spikes) {
-      for (let x = spike.x; x < spike.x + spike.w; x += 12) {
-        ctx.beginPath();
-        ctx.moveTo(x, floor);
-        ctx.lineTo(Math.min(x + 6, spike.x + spike.w), spike.y);
-        ctx.lineTo(Math.min(x + 12, spike.x + spike.w), floor);
-        ctx.fillStyle = "#f6796b";
-        ctx.fill();
-      }
+      ctx.beginPath();
+      ctx.moveTo(spike.x, floor);
+      ctx.lineTo(spike.tip, spike.y);
+      ctx.lineTo(spike.right, floor);
+      ctx.fillStyle = "#f6796b";
+      ctx.fill();
     }
     fill(ctx, "#e4ddc4", flag + 5, 159, 5, floor - 159);
     fill(ctx, "#f9d56e", flag + 2, 153, 11, 8);
