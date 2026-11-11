@@ -3,6 +3,7 @@
 (() => {
   const width = 420;
   const height = 570;
+  const fullHeart = 2; // Health is counted in half hearts.
   const shieldDuration = 6;
   const maxWeaponLevel = 3;
   const sectors = [
@@ -121,9 +122,9 @@
   const upgrades = [
     { id: "damage", label: "强化弹头 · 永久伤害 +20%" },
     { id: "cooling", label: "冷却改造 · 射速 +12%" },
-    { id: "hull", label: "装甲扩容 · 护甲上限 +1，修复 2 格" },
+    { id: "hull", label: "生命强化 · 上限增加 1 颗心，恢复 2 颗心" },
     { id: "drone", label: "护航僚机 · 增加一架自动射击僚机" },
-    { id: "magnet", label: "补给牵引 · 扩大拾取范围，并修复 1 格" },
+    { id: "magnet", label: "补给牵引 · 扩大拾取范围，恢复 1 颗心" },
     { id: "reactor", label: "反应堆 · EMP 充能速度 +30%，立即充满" },
   ];
   const supplies = {
@@ -188,8 +189,8 @@
       x: width / 2,
       y: height - 75,
       radius: 8,
-      lives: 3,
-      maxLives: 3,
+      health: 3 * fullHeart,
+      maxHealth: 3 * fullHeart,
       cooldown: 0,
       shield: 0,
       rapid: 0,
@@ -240,7 +241,17 @@
     game.stat("score", digits(score, 5));
     game.stat("best", digits(best, 5));
     game.stat("sector", `${round}轮 · ${sector + 1}/${sectors.length}`);
-    game.stat("lives", `${player.lives}/${player.maxLives}`);
+    const healthLabel = `血量 ${player.health / fullHeart} / ${player.maxHealth / fullHeart} 颗心`;
+    if (hearts.getAttribute("aria-label") !== healthLabel) {
+      hearts.setAttribute("aria-label", healthLabel);
+      hearts.replaceChildren();
+      for (let i = 0; i < player.maxHealth; i += fullHeart) {
+        const remaining = player.health - i;
+        const icon = document.createElement("span");
+        icon.dataset.fill = remaining >= fullHeart ? "full" : remaining > 0 ? "half" : "empty";
+        hearts.append(icon);
+      }
+    }
     game.stat("power", `Lv.${weaponLevels[weapon]}`);
     game.stat("shield", `${Math.ceil(player.shield)}s`);
     game.stat("rapid", `${Math.ceil(player.rapid)}s`);
@@ -252,7 +263,9 @@
       if (button.getAttribute("aria-pressed") !== String(active))
         button.setAttribute("aria-pressed", String(active));
     }
-    game.stat("energy", `${Math.floor(energy)}%`);
+    const charge = Math.floor(energy);
+    game.stat("energy", `${charge}%`);
+    if (empMeter.value !== charge) empMeter.value = charge;
     game.stat(
       "combo",
       `${combo} 连击 · ×${(1 + Math.min(2, combo * 0.05)).toFixed(1)}`,
@@ -338,15 +351,15 @@
     }
   }
 
-  function hurt(game) {
+  function hurt(game, amount) {
     if (player.shield > 0) return;
-    player.lives--;
+    player.health = Math.max(0, player.health - amount);
     combo = 0;
     comboTime = 0;
     player.shield = 1.05;
     game.effect("hit");
     burst(player.x, player.y, "#85eaff", 18);
-    if (player.lives <= 0) {
+    if (player.health === 0) {
       game.finish({
         tag: "SIGNAL LOST",
         title: "战机坠毁",
@@ -424,6 +437,7 @@
           hits: new Set(),
           pierce: kind === "lance" ? 2 + rank : 1,
           age: 0,
+          trail: kind === "missile" ? [] : null,
         });
       if (weapon === "missile") {
         for (let i = 0; i < level; i++) {
@@ -580,10 +594,10 @@
       (item) =>
         !(item.id === "drone" && drones >= 4) &&
         !(item.id === "cooling" && cooling >= 2) &&
-        !(item.id === "hull" && player.maxLives >= 8),
+        !(item.id === "hull" && player.maxHealth >= 8 * fullHeart),
     ).map((item) => {
       if (item.id === "magnet" && magnet >= 180)
-        return { ...item, label: "牵引维护 · 修复 1 格护甲（范围已满）" };
+        return { ...item, label: "牵引维护 · 恢复 1 颗心（范围已满）" };
       if (item.id === "reactor" && reactor >= 3)
         return { ...item, label: "能量补给 · EMP 立即充满（充能速度已满）" };
       return item;
@@ -601,7 +615,7 @@
         copy:
           finalSector
             ? `已打通全部 ${sectors.length} 关。选择改造进入下一轮，或结算成绩。`
-            : "选择一项改造，带着当前护甲进入下一战区。",
+            : "选择一项改造，带着当前血量进入下一战区。",
       },
       options,
       (id) => {
@@ -616,13 +630,13 @@
         if (id === "damage") damage += 0.2;
         if (id === "cooling") cooling = Math.min(2, cooling + 0.12);
         if (id === "hull") {
-          player.maxLives++;
-          player.lives = Math.min(player.maxLives, player.lives + 2);
+          player.maxHealth += fullHeart;
+          heal(2 * fullHeart);
         }
         if (id === "drone") drones++;
         if (id === "magnet") {
           magnet = Math.min(180, magnet + 40);
-          player.lives = Math.min(player.maxLives, player.lives + 1);
+          heal(fullHeart);
         }
         if (id === "reactor") {
           reactor = Math.min(3, reactor + 0.3);
@@ -662,6 +676,10 @@
     game.effect("pop");
   }
 
+  function heal(amount) {
+    player.health = Math.min(player.maxHealth, player.health + amount);
+  }
+
   function collisions(game) {
     for (const bullet of bullets) {
       if (
@@ -672,7 +690,7 @@
       ) {
         bullet.spent = true;
         boss.hp -= bullet.damage;
-        burst(bullet.x, bullet.y, "#fc9cba", 3);
+        burst(bullet.x, bullet.y, weapons[bullet.kind].color, 5);
         if (boss.hp <= 0) {
           burst(boss.x, boss.y, "#ffe0aa", 55);
           clearSector(game);
@@ -697,6 +715,7 @@
         continue;
       }
       enemy.hp -= bullet.damage;
+      burst(bullet.x, bullet.y, weapons[bullet.kind].color, bullet.kind === "missile" ? 8 : 3);
       if (enemy.hp > 0) continue;
       destroyEnemy(enemy, game);
     }
@@ -706,8 +725,7 @@
       if (Object.hasOwn(weapons, drop.kind) || drop.kind === "power") {
         if (drop.kind !== "power") weapon = drop.kind;
         weaponLevels[weapon] = Math.min(maxWeaponLevel, weaponLevels[weapon] + 1);
-      } else if (drop.kind === "repair")
-        player.lives = Math.min(player.maxLives, player.lives + 1);
+      } else if (drop.kind === "repair") heal(fullHeart);
       else if (drop.kind === "shield") player.shield = shieldDuration;
       else if (drop.kind === "rapid") player.rapid = 10;
       addScore(50);
@@ -718,11 +736,11 @@
       if (enemy.hp <= 0 || !touches(player, enemy)) continue;
       enemy.hp = 0;
       burst(enemy.x, enemy.y, enemy.color);
-      hurt(game);
-      if (player.lives <= 0) return;
+      hurt(game, fullHeart);
+      if (player.health === 0) return;
     }
-    if (boss && touches(player, boss)) hurt(game);
-    if (player.lives <= 0) return;
+    if (boss && touches(player, boss)) hurt(game, fullHeart);
+    if (player.health === 0) return;
     for (const shot of hostiles) {
       const distance = Math.hypot(player.x - shot.x, player.y - shot.y);
       if (
@@ -737,8 +755,8 @@
       }
       if (!touches(player, shot)) continue;
       shot.spent = true;
-      hurt(game);
-      if (player.lives <= 0) return;
+      hurt(game, 1);
+      if (player.health === 0) return;
     }
   }
 
@@ -788,6 +806,8 @@
     for (const bullet of bullets) {
       bullet.age += dt;
       if (bullet.kind === "missile") {
+        bullet.trail.push([bullet.x, bullet.y]);
+        if (bullet.trail.length > 9) bullet.trail.shift();
         const target =
           boss?.y >= 72 ? boss : enemies.find((enemy) => enemy.hp > 0 && enemy.y > 0);
         if (target) {
@@ -816,13 +836,13 @@
       spark.age += dt;
     }
     collisions(game);
-    if (!transition && player.lives > 0) {
+    if (!transition && player.health > 0) {
       for (const laser of lasers)
         if (
           laser.age >= 1.15 &&
           Math.abs(player.x - laser.x) < 16 + player.radius
         )
-          hurt(game);
+          hurt(game, fullHeart);
     }
     bullets = bullets.filter(
       ({ spent, y, x, age }) =>
@@ -1031,16 +1051,16 @@
     rect(ctx, "#ffb296", -53, 7, 14, 6);
     rect(ctx, "#ffb296", 39, 7, 14, 6);
     ctx.restore();
-    rect(ctx, "#2a1932", 66, 24, width - 132, 8);
-    rect(ctx, "#ff8fac", 66, 24, ((width - 132) * boss.hp) / boss.maxHp, 8);
+    rect(ctx, "#2a1932", 66, 63, width - 132, 6);
+    rect(ctx, "#ff8fac", 66, 63, ((width - 132) * boss.hp) / boss.maxHp, 6);
     ctx.fillStyle = "#ffe1ea";
     ctx.font = "bold 12px system-ui";
     ctx.textAlign = "center";
-    ctx.fillText(sectors[sector].boss, width / 2, 18);
+    ctx.fillText(sectors[sector].boss, width / 2, 58);
   }
 
   function drawPlayer(ctx) {
-    if (player.lives === 0) return;
+    if (player.health === 0) return;
     ctx.save();
     ctx.translate(player.x, player.y);
     ctx.rotate(player.lean);
@@ -1090,6 +1110,44 @@
     ctx.restore();
   }
 
+  function drawBullet(ctx, bullet) {
+    const { x, y, vx, vy, kind, radius, age, trail } = bullet;
+    ctx.save();
+    if (trail?.length > 1) {
+      ctx.beginPath();
+      ctx.moveTo(...trail[0]);
+      for (let i = 1; i < trail.length; i++) ctx.lineTo(...trail[i]);
+      ctx.lineTo(x, y);
+      ctx.lineCap = ctx.lineJoin = "round";
+      ctx.strokeStyle = "#ff9d4855";
+      ctx.lineWidth = 6;
+      ctx.stroke();
+      ctx.strokeStyle = "#ffc779aa";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    ctx.translate(x, y);
+    ctx.rotate(Math.atan2(vy, vx) + Math.PI / 2);
+    if (kind === "missile") {
+      const flame = 14 + Math.sin(age * 43) * 4;
+      poly(ctx, "#ff9d48", [[-3, 5], [3, 5], [0, flame]]);
+      poly(ctx, "#fff5b8", [[-1.6, 5], [1.6, 5], [0, flame - 4]]);
+      poly(ctx, "#eaa65d", [[-3, -2], [-6, 7], [0, 5], [6, 7], [3, -2]]);
+      poly(ctx, "#ffebb4", [[0, -9], [3, -3], [3, 5], [-3, 5], [-3, -3]]);
+    } else if (kind === "lance") {
+      const tail = 25 + radius * 2;
+      poly(ctx, "#b16cff44", [[0, -14], [radius + 4, 1], [0, tail], [-radius - 4, 1]]);
+      poly(ctx, "#d9a5ff", [[0, -11], [radius - 1, 0], [0, tail - 4], [1 - radius, 0]]);
+      poly(ctx, "#fff4ff", [[0, -9], [2, 0], [0, tail - 9], [-2, 0]]);
+    } else {
+      poly(ctx, "#62e5ff44", [[0, -10], [6, -1], [0, 23], [-6, -1]]);
+      poly(ctx, "#91efff", [[0, -8], [3.5, -2], [0, 17], [-3.5, -2]]);
+      poly(ctx, "#ecfdff", [[0, -6], [1.5, -2], [0, 7], [-1.5, -2]]);
+    }
+    ctx.restore();
+  }
+
   function draw(ctx) {
     drawBackground(ctx);
     for (const laser of lasers) {
@@ -1117,18 +1175,7 @@
       ctx.textAlign = "center";
       ctx.fillText(supplies[drop.kind].label, drop.x, drop.y + 6);
     }
-    for (const bullet of bullets) {
-      const color = weapons[bullet.kind].color;
-      rect(
-        ctx,
-        color,
-        bullet.x - 3,
-        bullet.y - 9,
-        6,
-        bullet.kind === "lance" ? 18 + bullet.radius * 2 : 15,
-      );
-      rect(ctx, "#fffbed", bullet.x - 1, bullet.y - 7, 2, 10);
-    }
+    for (const bullet of bullets) drawBullet(ctx, bullet);
     for (const shot of hostiles) {
       const r = shot.radius;
       poly(ctx, "#fb718d", [
@@ -1149,7 +1196,8 @@
         [x - 6, player.y + 5],
       ]);
     }
-    rect(ctx, "#ffffff", player.x - 2, player.y - 2, 4, 4);
+    if (player.health > 0)
+      rect(ctx, "#ffffff", player.x - 2, player.y - 2, 4, 4);
     if (pulse > 0) {
       ctx.strokeStyle = "#9bf5ff";
       ctx.lineWidth = 4;
@@ -1170,6 +1218,8 @@
     }
   }
 
+  const hearts = document.querySelector("[data-health]");
+  const empMeter = document.querySelector("[data-emp-meter]");
   const weaponButtons = [...document.querySelectorAll(".combat-controls [aria-pressed]")];
   const game = Arcade.mount({
     keys: {
