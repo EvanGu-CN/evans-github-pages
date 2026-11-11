@@ -28,11 +28,6 @@
       patrols: [[207, 310], [684, 790], [900, 1035], [1230, 1346], [1455, 1660], [1870, 1990], [2090, 2200], [2420, 2556], [2680, 2774], [2970, 3070], [3170, 3318]],
     },
   ];
-  const spikeLayouts = [
-    [[197, 46], [1998, 54]],
-    [[143, 56], [1720, 36], [2910, 64]],
-    [[141, 60], [1610, 54], [2724, 48], [3048, 44]],
-  ];
   const hero = [
     "   RRRR  ", "  RRRRRRR", "  DFFDF  ", " DFFFDDFF", "  FFFFF  ",
     " RRBRR   ", "RRRBBBRR ", "FFBBBBBFF", "  BB BB  ", "  DD DD  ",
@@ -40,7 +35,7 @@
   const palette = { R: "#f04a41", D: "#512b30", F: "#ffd3a0", B: "#255dc6" };
   const overlaps = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
   const number = (value) => String(value).padStart(2, "0");
-  let stage, coins, lives, level, player, camera, time, banner, solids, pickups, enemies, effects, flag, platforms, spikes;
+  let stage, coins, lives, level, player, camera, time, banner, solids, pickups, enemies, effects, flag, platforms;
 
   function spawn() {
     player = { x: 78, y: floor - 39, w: 32, h: 39, vx: 0, vy: 0, grounded: true, coyote: 0, buffer: 0, facing: 1, platform: null };
@@ -63,12 +58,6 @@
       const edge = level.land[i][1];
       return { x: (edge + start) / 2 - 23, y: 320, w: 46, h: 12, fragile: stage > 0 || i > 0, crumble: null };
     });
-    spikes = spikeLayouts[stage].flatMap(([start, width]) =>
-      Array.from({ length: Math.ceil(width / 12) }, (_, i) => {
-        const x = start + i * 12;
-        const right = Math.min(x + 12, start + width);
-        return { x, right, tip: Math.min(x + 6, right), y: floor - 14 };
-      }));
     for (const [x, height] of level.pipes) solids.push({ x, y: floor - height, w: 54, h: height, kind: "pipe" });
     for (const [x, y, count] of level.bricks) {
       for (let i = 0; i < count; i++) {
@@ -110,16 +99,6 @@
       game.finish({ tag: "GAME OVER", title: "冒险结束", copy: `到达第 ${stage + 1} 关，收集了 ${coins} 枚金币。` });
     }
     updateHud(game);
-  }
-
-  function touchesSpike(spike) {
-    const depth = Math.min(1, (player.y + player.h - spike.y) / (floor - spike.y));
-    if (depth <= 0 || player.y >= floor) return false;
-    const left = spike.tip + (spike.x - spike.tip) * depth;
-    const right = spike.tip + (spike.right - spike.tip) * depth;
-    // The sprite's feet are inset from the sides of its movement box.
-    const footInset = 6;
-    return player.x + player.w - footInset > left && player.x + footInset < right;
   }
 
   function update(dt, game) {
@@ -189,11 +168,6 @@
         if (platform.fragile && platform.crumble === null) platform.crumble = .35;
       }
     }
-    if (spikes.some(touchesSpike)) {
-      loseLife(game);
-      return;
-    }
-
     for (const coin of pickups) {
       if (!coin.collected && overlaps(player, coin)) {
         coin.collected = true;
@@ -325,14 +299,6 @@
       fill(ctx, "#24485e", platform.x, platform.y, platform.w, platform.h);
       const warning = platform.crumble !== null && Math.floor(time * 20) % 2;
       fill(ctx, warning ? "#fff2a3" : platform.fragile ? "#d291be" : "#8ce6dc", platform.x + 2, platform.y, platform.w - 4, 4);
-    }
-    for (const spike of spikes) {
-      ctx.beginPath();
-      ctx.moveTo(spike.x, floor);
-      ctx.lineTo(spike.tip, spike.y);
-      ctx.lineTo(spike.right, floor);
-      ctx.fillStyle = "#f6796b";
-      ctx.fill();
     }
     fill(ctx, "#e4ddc4", flag + 5, 159, 5, floor - 159);
     fill(ctx, "#f9d56e", flag + 2, 153, 11, 8);
