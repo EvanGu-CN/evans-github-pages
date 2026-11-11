@@ -38,19 +38,25 @@
     ],
   ];
   const colors = [
-    "#6de1ed",
-    "#7198ff",
-    "#f5ae65",
-    "#f6da7a",
-    "#91db9d",
-    "#cba0ff",
-    "#f7839c",
-    "#8794a7",
+    "#40cce7",
+    "#6285f6",
+    "#f4a24f",
+    "#f4d050",
+    "#71cf70",
+    "#b786ee",
+    "#ec6378",
   ];
+  const columns = 10;
+  const rows = 20;
+  const tile = 52;
+  const linePoints = [0, 100, 300, 500, 800];
+  const nextPreview = document.querySelector("[data-next]").getContext("2d");
+  const holdPreview = document.querySelector("[data-reserve]").getContext("2d");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const record = arcadeRecord("evans-arcade-tetris-best");
   let board,
     piece,
-    queue,
+    upcoming,
     bag,
     score,
     lines,
@@ -61,10 +67,8 @@
     previousMove,
     reserve,
     swapped,
-    combo,
-    backToBack,
-    clearLabel,
-    pressure,
+    flashingRows,
+    flashTime,
     over,
     game;
   const level = () => 1 + Math.floor(lines / 10);
@@ -92,8 +96,8 @@
         (cell, x) =>
           !cell ||
           (px + x >= 0 &&
-            px + x < 10 &&
-            py + y < 20 &&
+            px + x < columns &&
+            py + y < rows &&
             (py + y < 0 || !board[py + y][px + x])),
       ),
     );
@@ -106,18 +110,24 @@
       copy: `得分 ${score}，共消除 ${lines} 行。`,
     });
   }
-  function spawn(type = queue.shift()) {
-    if (queue.length < 4) queue.push(nextType());
+  function spawn(type) {
+    if (type === undefined) {
+      type = upcoming;
+      upcoming = nextType();
+    }
     piece = { type, matrix: shapes[type].map((row) => [...row]), x: 3, y: -1 };
     gravityTime = 0;
     lockTime = 0;
     resets = 0;
+    drawPreview(nextPreview, upcoming, "下一块");
+    drawPreview(holdPreview, reserve, "暂存");
+    holdPreview.canvas.dataset.used = String(swapped);
     if (!fits(piece.matrix, piece.x, piece.y)) end();
   }
   function reset() {
-    board = Array.from({ length: 20 }, () => Array(10).fill(0));
+    board = Array.from({ length: rows }, () => Array(columns).fill(0));
     bag = [];
-    queue = Array.from({ length: 4 }, nextType);
+    upcoming = nextType();
     score = 0;
     lines = 0;
     repeatTime = 0;
@@ -125,10 +135,8 @@
     over = false;
     reserve = null;
     swapped = false;
-    combo = 0;
-    backToBack = false;
-    clearLabel = "";
-    pressure = 0;
+    flashingRows = [];
+    flashTime = 0;
     spawn();
     hud();
   }
@@ -181,34 +189,24 @@
         if (cell) board[piece.y + y][piece.x + x] = piece.type + 1;
       }),
     );
-    const remaining = board.filter((row) => row.some((cell) => cell === 0));
-    const cleared = 20 - remaining.length;
-    combo = cleared ? combo + 1 : 0;
-    const quadBonus = cleared === 4 && backToBack;
-    if (cleared) backToBack = cleared === 4;
-    score += ([0, 100, 300, 500, 800][cleared] + (quadBonus ? 400 : 0) + Math.max(0, combo - 1) * 50) * level();
-    clearLabel = quadBonus ? "连续四消！" : cleared === 4 ? "四行消除！" : combo > 1 ? `${combo} 连消` : "";
-    lines += cleared;
-    board = [
-      ...Array.from({ length: cleared }, () => Array(10).fill(0)),
-      ...remaining,
-    ];
-    record.save(score);
-    pressure = Math.max(0, pressure + 1 - cleared * 2);
-    if (pressure >= 8) {
-      pressure = 0;
-      if (board[0].some(Boolean)) {
-        hud();
-        end();
-        return;
-      }
-      board.shift();
-      const row = Array(10).fill(colors.length);
-      row[Math.floor(Math.random() * row.length)] = 0;
-      board.push(row);
-      clearLabel = "垃圾行上升";
-      game.effect("hit");
+    const clearedRows = [];
+    const remaining = board.filter((row, index) => {
+      if (row.includes(0)) return true;
+      clearedRows.push(index);
+      return false;
+    });
+    const cleared = clearedRows.length;
+    if (cleared) {
+      score += linePoints[cleared] * level();
+      lines += cleared;
+      board = [
+        ...Array.from({ length: cleared }, () => Array(columns).fill(0)),
+        ...remaining,
+      ];
+      flashingRows = clearedRows;
+      flashTime = 0.18;
     }
+    record.save(score);
     game.effect(cleared ? "clear" : "pop");
     swapped = false;
     spawn();
@@ -216,6 +214,7 @@
   }
   function update(dt) {
     if (over) return;
+    flashTime = Math.max(0, flashTime - dt);
     if (game.pressed("hold") && !swapped) {
       const previous = reserve;
       reserve = piece.type;
@@ -266,32 +265,72 @@
     record.save(score);
     hud();
   }
-  function cell(ctx, x, y, size, color, ghost = false) {
-    ctx.fillStyle = color;
+  function drawCell(ctx, x, y, size, color, ghost = false) {
     if (ghost) {
+      ctx.globalAlpha = 0.65;
       ctx.strokeStyle = color;
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(x + 3, y + 3, size - 6, size - 6);
+      ctx.lineWidth = 3;
+      ctx.strokeRect(x + 6, y + 6, size - 12, size - 12);
+      ctx.globalAlpha = 1;
       return;
     }
-    ctx.fillRect(x + 1, y + 1, size - 2, size - 2);
-    ctx.fillStyle = "#ffffff55";
-    ctx.fillRect(x + 3, y + 3, size - 6, 3);
-    ctx.fillStyle = "#00000024";
-    ctx.fillRect(x + 3, y + size - 6, size - 6, 3);
+    const inset = Math.round(size / 8);
+    ctx.fillStyle = color;
+    ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
+    ctx.fillStyle = "#0005";
+    ctx.fillRect(x + size - inset, y + 2, inset - 2, size - 4);
+    ctx.fillRect(x + 2, y + size - inset, size - 4, inset - 2);
+    ctx.fillStyle = "#fff7";
+    ctx.fillRect(x + 2, y + 2, size - inset - 2, inset - 2);
+    ctx.fillStyle = "#fff3";
+    ctx.fillRect(x + 2, y + inset, inset - 2, size - 2 * inset);
+    ctx.strokeStyle = "#fff2";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(x + inset + 0.5, y + inset + 0.5, size - 2 * inset - 1, size - 2 * inset - 1);
+  }
+  function drawPreview(ctx, type, label) {
+    const { width, height } = ctx.canvas;
+    ctx.clearRect(0, 0, width, height);
+    if (type === null) {
+      ctx.canvas.setAttribute("aria-label", `${label}为空`);
+      ctx.fillStyle = "#6f687c";
+      ctx.fillRect(width / 2 - 9, height / 2 - 1, 18, 2);
+      return;
+    }
+    ctx.canvas.setAttribute("aria-label", `${label}，${"IJLOSTZ"[type]} 形`);
+    const cells = shapes[type].flatMap((row, y) =>
+      row.flatMap((value, x) => (value ? [[x, y]] : [])),
+    );
+    const size = 34;
+    const xs = cells.map(([x]) => x);
+    const ys = cells.map(([, y]) => y);
+    const left = (width - (Math.min(...xs) + Math.max(...xs) + 1) * size) / 2;
+    const top = (height - (Math.min(...ys) + Math.max(...ys) + 1) * size) / 2;
+    for (const [x, y] of cells) {
+      drawCell(ctx, left + x * size, top + y * size, size, colors[type]);
+    }
   }
   function draw(ctx) {
-    ctx.fillStyle = "#0b1523";
-    ctx.fillRect(0, 0, 420, 600);
-    ctx.fillStyle = "#142437";
-    ctx.fillRect(15, 19, 272, 542);
-    for (let y = 0; y < 20; y++)
-      for (let x = 0; x < 10; x++) {
-        ctx.fillStyle = "#0c1929";
-        ctx.fillRect(16 + x * 27, 20 + y * 27, 26, 26);
-        if (board[y][x])
-          cell(ctx, 16 + x * 27, 20 + y * 27, 27, colors[board[y][x] - 1]);
+    ctx.fillStyle = "#211f2d";
+    ctx.fillRect(0, 0, columns * tile, rows * tile);
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < columns; x++) {
+        ctx.fillStyle = (x + y) % 2 ? "#15141e" : "#171621";
+        ctx.fillRect(x * tile + 1, y * tile + 1, tile - 2, tile - 2);
+        if (board[y][x]) {
+          drawCell(ctx, x * tile, y * tile, tile, colors[board[y][x] - 1]);
+        }
       }
+    }
+    if (flashTime > 0 && !reducedMotion.matches) {
+      ctx.fillStyle = "#fff0cc";
+      ctx.globalAlpha = flashTime * 2;
+      for (const y of flashingRows) {
+        ctx.fillRect(0, y * tile + 2, columns * tile, tile - 4);
+      }
+      ctx.globalAlpha = 1;
+    }
+    if (over) return;
     let ghostY = piece.y;
     while (fits(piece.matrix, piece.x, ghostY + 1)) ghostY++;
     for (const [py, ghost] of [
@@ -301,45 +340,17 @@
       piece.matrix.forEach((row, y) =>
         row.forEach((value, x) => {
           if (value && py + y >= 0)
-            cell(
+            drawCell(
               ctx,
-              16 + (piece.x + x) * 27,
-              20 + (py + y) * 27,
-              27,
+              (piece.x + x) * tile,
+              (py + y) * tile,
+              tile,
               colors[piece.type],
               ghost,
             );
         }),
       );
     }
-    ctx.font = "bold 14px system-ui";
-    ctx.fillStyle = "#abc4d7";
-    ctx.fillText("接下来", 307, 44);
-    queue.slice(0, 3).forEach((type, i) => {
-      shapes[type].forEach((row, y) =>
-        row.forEach((v, x) => {
-          if (v)
-            cell(ctx, 301 + x * 22, 67 + i * 92 + y * 22, 22, colors[type]);
-        }),
-      );
-    });
-    ctx.fillStyle = "#8be5d3";
-    ctx.font = "bold 20px monospace";
-    ctx.fillText(`LV ${level()}`, 306, 398);
-    ctx.fillStyle = "#9bb3c8";
-    ctx.font = "12px system-ui";
-    ctx.fillText(`再消 ${10 - (lines % 10)} 行升级`, 301, 426);
-    ctx.fillText(swapped ? "暂存已用" : "C · 暂存", 301, 454);
-    if (reserve !== null) {
-      shapes[reserve].forEach((row, y) => row.forEach((value, x) => {
-        if (value) cell(ctx, 301 + x * 22, 463 + y * 22, 22, colors[reserve]);
-      }));
-    }
-    ctx.fillStyle = "#ffda9b";
-    ctx.fillText(clearLabel, 301, 555);
-    ctx.fillText("空格 · 直接落底", 22, 584);
-    ctx.fillStyle = pressure >= 6 ? "#ff8c80" : "#ffda9b";
-    ctx.fillText(`垃圾行 ${pressure}/8`, 301, 584);
   }
   game = Arcade.mount({
     keys: {

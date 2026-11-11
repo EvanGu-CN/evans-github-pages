@@ -3,104 +3,112 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#172537" />
+    <meta name="theme-color" content="#17151f" />
     <meta
       name="description"
       content="俄罗斯方块 网页游戏，支持键盘、触屏按键、暂停与本机最高分。"
     />
     <title>俄罗斯方块 · Evan's Arcade</title>
     <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
-    <link rel="stylesheet" href="../arcade/classics.css?v=2" />
+    <link rel="stylesheet" href="tetris.css?v=1" />
     <script defer src="../arcade/arcade.js"></script>
     <script defer src="../arcade/record.js"></script>
-    <script defer src="game.js?v=3"></script>
+    <script defer src="game.js?v=4"></script>
   </head>
-  <body class="classic tetris">
+  <body class="tetris">
     <main class="arcade">
       <nav class="arcade-nav" aria-label="街机导航">
         <a href="../">← 返回工具集</a><span>EVAN’S <strong>ARCADE</strong></span
         ><a href="../flappy-bird/">Flappy Bird ↗</a>
       </nav>
       <header class="game-heading">
-        <div>
-          <p class="eyebrow">CARTRIDGE 04 <span></span> CLASSICS</p>
-          <h1>俄罗斯方块</h1>
-          <p class="intro">旋转、落下、消行。把空隙留给下一块。</p>
-        </div>
+        <h1>俄罗斯方块</h1>
         <div class="game-actions">
           <button type="button" data-sound aria-pressed="false">音效关</button
           ><button type="button" data-pause disabled>暂停</button>
         </div>
       </header>
       <div class="game-layout">
-        <section class="game-console" aria-label="俄罗斯方块 游戏">
-          <div class="hud" aria-label="游戏数据">
-            <div>得分 <strong data-stat="score">0</strong></div>
-            <div>消行 <strong data-stat="lines">0</strong></div>
-            <div>等级 <strong data-stat="level">1</strong></div>
-          </div>
-          <div class="screen">
-            <canvas width="420" height="600" aria-label="俄罗斯方块 游戏画面"
-              >此浏览器不支持 Canvas。</canvas
-            >
-            <div class="overlay" data-overlay>
-              <div class="overlay-card">
-                <p class="eyebrow" data-overlay-tag>STACK / CLEAR / REPEAT</p>
-                <h2 data-overlay-title role="status">准备开始</h2>
-                <p data-overlay-copy>
-                  填满一整行即可消除。方块堆到顶部，本局结束。
-                </p>
-                <button class="play" type="button" data-play>开始游戏</button>
+        <section class="game-console" aria-label="俄罗斯方块游戏">
+          <div class="cabinet">
+            <div class="screen">
+              <canvas width="520" height="1040" aria-label="俄罗斯方块棋盘"
+                >此浏览器不支持 Canvas。</canvas
+              >
+              <div class="overlay" data-overlay>
+                <div class="overlay-card">
+                  <p data-overlay-tag hidden></p>
+                  <h2 data-overlay-title role="status">准备开始</h2>
+                  <p data-overlay-copy></p>
+                  <button class="play" type="button" data-play>开始游戏</button>
+                </div>
               </div>
             </div>
+            <aside class="game-display" aria-label="游戏状态">
+              <div class="readout">
+                <p>下一块</p>
+                <canvas width="160" height="90" data-next role="img" aria-label="下一块"></canvas>
+              </div>
+              <div class="readout">
+                <p>暂存 <kbd>C</kbd></p>
+                <canvas width="160" height="90" data-reserve role="img" aria-label="暂存为空"></canvas>
+              </div>
+              <div class="hud" aria-label="游戏数据">
+                <div class="score">得分 <strong data-stat="score">0</strong></div>
+                <div>等级 <strong data-stat="level">1</strong></div>
+                <div>消行 <strong data-stat="lines">0</strong></div>
+              </div>
+            </aside>
           </div>
           <div class="touch-controls" aria-label="屏幕按键">
-            <button type="button" data-hold="left">← 左移</button
-            ><button type="button" data-hold="rotate">↻ 旋转</button
-            ><button type="button" data-hold="right">右移 →</button
-            ><button type="button" data-hold="reverse">↺ 反向</button
-            ><button type="button" data-hold="down">↓ 下落</button
-            ><button type="button" data-hold="drop">落到底</button
-            ><button type="button" data-hold="hold">C 暂存</button>
+            <button type="button" data-hold="left" aria-label="左移">←</button>
+            <button type="button" data-hold="down" aria-label="加速下落">↓</button>
+            <button type="button" data-hold="right" aria-label="右移">→</button>
+            <button type="button" data-hold="drop">落底</button>
+            <button type="button" data-hold="reverse">↺ 反转</button>
+            <button type="button" data-hold="rotate">↻ 旋转</button>
+            <button type="button" data-hold="hold">暂存</button>
           </div>
         </section>
         <aside class="field-guide" aria-label="玩法说明">
-          <p class="eyebrow">HOW TO PLAY</p>
-          <h2>玩法手册</h2>
           <div class="record">
             本机最高分 <strong data-stat="best">0</strong>
           </div>
+          <h2>键盘操作</h2>
           <dl>
             <div>
               <dt>移动</dt>
-              <dd>← → / A D</dd>
+              <dd><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd></dd>
             </div>
             <div>
-              <dt>旋转</dt>
-              <dd>↑ / W / X，Z 反向</dd>
+              <dt>顺时针旋转</dt>
+              <dd><kbd>↑</kbd> / <kbd>W</kbd> / <kbd>X</kbd></dd>
+            </div>
+            <div>
+              <dt>逆时针旋转</dt>
+              <dd><kbd>Z</kbd></dd>
             </div>
             <div>
               <dt>加速下落</dt>
-              <dd>↓ / S</dd>
+              <dd><kbd>↓</kbd> / <kbd>S</kbd></dd>
             </div>
             <div>
               <dt>直接落底</dt>
-              <dd>空格</dd>
+              <dd><kbd>空格</kbd></dd>
+            </div>
+            <div>
+              <dt>暂存或交换</dt>
+              <dd><kbd>C</kbd></dd>
             </div>
             <div>
               <dt>暂停</dt>
               <dd><kbd>P</kbd> / <kbd>Esc</kbd></dd>
             </div>
           </dl>
-          <p>轮廓方块显示落点，右侧可预览接下来三块。每消除 10 行提升一级。</p>
-          <p>按 <kbd>C</kbd> 暂存或交换方块，每块落定前可用一次。连续落块都有消行会获得连消奖励，两次四消之间若无其他消行，第二次额外加分。</p>
-          <p>每落定一块，垃圾行计量加 1。满 8 后底部升起一行带缺口的灰块，每消 1 行可压回 2 格计量。</p>
-          <p>切换页面时自动暂停，点击“继续游戏”即可接着玩。</p>
+          <p>填满一行即可消除。每消 10 行升一级，方块下落得更快。</p>
+          <p>空心轮廓标出落点。每块落定前可暂存或交换一次。</p>
         </aside>
       </div>
-      <footer class="game-footer">
-        <span>EVAN’S ARCADE / 04</span><span>再来一局</span>
-      </footer>
       <noscript>请启用 JavaScript 后开始游戏。</noscript>
     </main>
   </body>
