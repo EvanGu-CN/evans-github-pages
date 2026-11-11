@@ -10,10 +10,10 @@
     />
     <title>贪吃蛇 · Evan's Arcade</title>
     <link rel="stylesheet" href="../arcade/arcade.css?v=3" />
-    <link rel="stylesheet" href="../arcade/classics.css?v=2" />
+    <link rel="stylesheet" href="../arcade/classics.css?v=3" />
     <script defer src="../arcade/arcade.js"></script>
     <script defer src="../arcade/record.js"></script>
-    <script defer src="game.js?v=3"></script>
+    <script defer src="game.js?v=4"></script>
   </head>
   <body class="classic snake">
     <main class="arcade">
@@ -23,9 +23,7 @@
       </nav>
       <header class="game-heading">
         <div>
-          <p class="eyebrow">CARTRIDGE 05 <span></span> CLASSICS</p>
           <h1>贪吃蛇</h1>
-          <p class="intro">吃掉星果，沿着自己的轨迹继续前进。</p>
         </div>
         <div class="game-actions">
           <button type="button" data-sound aria-pressed="false">音效关</button
@@ -44,7 +42,7 @@
             <strong data-stat="gold"></strong>
           </div>
           <div class="screen">
-            <canvas width="400" height="400" aria-label="贪吃蛇 游戏画面"
+            <canvas width="600" height="440" aria-label="贪吃蛇 30 列 22 行棋盘"
               >此浏览器不支持 Canvas。</canvas
             >
             <div class="overlay" data-overlay>

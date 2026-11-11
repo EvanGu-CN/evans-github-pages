@@ -56,6 +56,27 @@
   --line: #41634c;
   --accent: #b4e483;
 }
+.snake .arcade {
+  width: min(1320px, 100%);
+  max-width: none;
+}
+.snake .game-heading {
+  margin: 16px 0;
+  align-items: center;
+}
+.snake h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+}
+.snake .game-console {
+  grid-template-columns: minmax(0, 1fr);
+}
+.snake .game-console > * {
+  width: min(100%, max(520px, calc((100svh - 250px) * 30 / 22)));
+}
+.snake .overlay {
+  overflow: auto;
+}
 .snake .touch-controls {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -120,7 +141,16 @@
     width: min(100%, 420px, max(220px, calc((100svh - 365px) * 0.677)));
   }
   .snake .game-console > * {
-    width: min(100%, 420px);
+    width: 100%;
+  }
+  .snake .arcade {
+    padding-inline: 8px;
+  }
+  .snake .game-console {
+    padding: 6px;
+  }
+  .snake .arcade-nav > span {
+    display: none;
   }
   .classic .field-guide {
     padding: 16px;

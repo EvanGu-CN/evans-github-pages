@@ -1,6 +1,8 @@
 "use strict";
 (() => {
-  const size = 20;
+  const columns = 30;
+  const rows = 22;
+  const cellSize = 20;
   const vectors = {
     left: { x: -1, y: 0 },
     right: { x: 1, y: 0 },
@@ -8,11 +10,11 @@
     down: { x: 0, y: 1 },
   };
   const record = arcadeRecord("evans-arcade-snake-best");
-  const gates = [{ x: 2, y: 4 }, { x: 17, y: 15 }];
+  const gates = [{ x: 3, y: 5 }, { x: 26, y: 16 }];
   const walls = [];
-  for (const x of [5, 14]) {
-    for (let y = 3; y <= 16; y++) {
-      if (y !== 6 && y !== 13) walls.push({ x, y });
+  for (const x of [7, 22]) {
+    for (let y = 3; y < rows - 3; y++) {
+      if (y !== 6 && y !== 15) walls.push({ x, y });
     }
   }
   const modePicker = document.querySelector("[data-mode]");
@@ -30,8 +32,8 @@
   }
   function emptyCell() {
     const empty = [];
-    for (let y = 0; y < size; y++)
-      for (let x = 0; x < size; x++) {
+    for (let y = 0; y < rows; y++)
+      for (let x = 0; x < columns; x++) {
         const cell = { x, y };
         if (!snake.some((part) => sameCell(part, cell)) &&
             !walls.some((wall) => sameCell(wall, cell)) &&
@@ -41,12 +43,10 @@
     return empty[Math.floor(Math.random() * empty.length)] ?? null;
   }
   function reset() {
-    snake = [
-      { x: 9, y: 10 },
-      { x: 8, y: 10 },
-      { x: 7, y: 10 },
-      { x: 6, y: 10 },
-    ];
+    snake = Array.from({ length: 4 }, (_, i) => ({
+      x: Math.floor(columns / 2) - 1 - i,
+      y: Math.floor(rows / 2),
+    }));
     direction = "right";
     turns = [];
     score = 0;
@@ -78,8 +78,8 @@
     if (
       head.x < 0 ||
       head.y < 0 ||
-      head.x >= size ||
-      head.y >= size ||
+      head.x >= columns ||
+      head.y >= rows ||
       walls.some((wall) => sameCell(wall, head)) ||
       body.some((part) => sameCell(part, head) || sameCell(part, entry))
     ) {
@@ -145,29 +145,28 @@
     }
   }
   function draw(ctx) {
-    ctx.fillStyle = "#122b23";
-    ctx.fillRect(0, 0, 400, 400);
-    for (let y = 0; y < size; y++)
-      for (let x = 0; x < size; x++) {
+    for (let y = 0; y < rows; y++)
+      for (let x = 0; x < columns; x++) {
         ctx.fillStyle = (x + y) % 2 ? "#19372b" : "#1c3b2e";
-        ctx.fillRect(x * 20, y * 20, 20, 20);
+        ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
       }
     for (const wall of walls) {
       ctx.fillStyle = "#789397";
-      ctx.fillRect(wall.x * 20 + 1, wall.y * 20 + 1, 18, 18);
+      ctx.fillRect(wall.x * cellSize + 1, wall.y * cellSize + 1, 18, 18);
       ctx.fillStyle = "#b3c4bb";
-      ctx.fillRect(wall.x * 20 + 3, wall.y * 20 + 3, 14, 3);
+      ctx.fillRect(wall.x * cellSize + 3, wall.y * cellSize + 3, 14, 3);
     }
     if (mode === "portal") {
       for (const gate of gates) {
         ctx.strokeStyle = "#c2a6ff";
         ctx.lineWidth = 3;
-        ctx.strokeRect(gate.x * 20 + 3, gate.y * 20 + 3, 14, 14);
+        ctx.strokeRect(gate.x * cellSize + 3, gate.y * cellSize + 3, 14, 14);
       }
     }
     for (const fruit of [food, gold]) {
       if (!fruit) continue;
-      const x = fruit.x * 20 + 10, y = fruit.y * 20 + 10;
+      const x = (fruit.x + .5) * cellSize;
+      const y = (fruit.y + .5) * cellSize;
       ctx.fillStyle = fruit === gold ? "#ff8c39" : "#ffdc76";
       ctx.beginPath();
       for (let i = 0; i < 10; i++) {
@@ -180,24 +179,24 @@
     }
     snake.forEach((part, i) => {
       ctx.fillStyle = i === 0 ? "#d3f69d" : i % 2 ? "#9ad375" : "#8cc669";
-      ctx.fillRect(part.x * 20 + 1, part.y * 20 + 1, 18, 18);
+      ctx.fillRect(part.x * cellSize + 1, part.y * cellSize + 1, 18, 18);
       ctx.fillStyle = "#ffffff24";
-      ctx.fillRect(part.x * 20 + 3, part.y * 20 + 3, 14, 3);
+      ctx.fillRect(part.x * cellSize + 3, part.y * cellSize + 3, 14, 3);
     });
     const head = snake[0],
       v = vectors[direction];
     ctx.fillStyle = over ? "#a24d53" : "#254831";
     for (const sign of [-1, 1]) {
       ctx.fillRect(
-        head.x * 20 + 8 + v.x * 4 - v.y * sign * 4,
-        head.y * 20 + 8 + v.y * 4 + v.x * sign * 4,
+        head.x * cellSize + 8 + v.x * 4 - v.y * sign * 4,
+        head.y * cellSize + 8 + v.y * 4 + v.x * sign * 4,
         4,
         4,
       );
     }
     ctx.strokeStyle = "#7eaf624d";
     ctx.lineWidth = 2;
-    ctx.strokeRect(1, 1, 398, 398);
+    ctx.strokeRect(1, 1, columns * cellSize - 2, rows * cellSize - 2);
   }
   game = Arcade.mount({ keys: {}, reset, update, draw });
   hud();
