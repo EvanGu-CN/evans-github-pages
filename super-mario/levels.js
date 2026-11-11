@@ -226,8 +226,60 @@ const MarioLevels = (() => {
     ]],
   };
 
+  // 关卡扩展：保留关底结构，把可复用元素复制成三段，总长度至少为原来的 3 倍
+  const copyable = entry => {
+    const kind = entry[0];
+    if (["exit", "boss", "wall", "maze"].includes(kind)) return false;
+    if (kind === "q" && entry[3] === "vine") return false;
+    return kind !== "p" || !entry[3];
+  };
+  const reach = ([kind, x, a, b]) => {
+    if (kind === "b") return x + (b ?? 1);
+    if (kind === "coin" || kind === "arc") return x + b;
+    if (kind === "stairs") return x + a;
+    if (kind === "shelf") return x + b;
+    if (kind === "reef") return x + (b ?? 2);
+    if (kind === "gap" || kind === "lava") return x + a;
+    if (kind === "balance") return Math.max(x, a) + b;
+    if (kind === "lift") return x + (b ?? 3);
+    return x + (kind === "p" ? 2 : 1);
+  };
+  const shift = (entry, offset) => {
+    const moved = [...entry];
+    moved[1] += offset;
+    if (entry[0] === "balance" || entry[0] === "maze") moved[2] += offset;
+    if (entry[0] === "p" && entry[3] === "main" && typeof entry[4] === "number") moved[4] += offset;
+    return moved;
+  };
+  // 最宽 4 格，保证普通速度起跳也能跨过
+  const narrow = entry => (entry[0] === "gap" || entry[0] === "lava")
+    ? [entry[0], entry[1], Math.min(4, entry[2])]
+    : entry;
+  const stretch = ([name, theme, length, , layout, extra]) => {
+    const body = layout.filter(copyable);
+    const end = body.reduce((max, entry) => Math.max(max, reach(entry)), 0);
+    const stride = Math.max(length, end + 12);
+    const offset = stride * 2;
+    return [name, theme, offset + length, offset + 3, [
+      ...body.map(entry => narrow(shift(entry, 0))),
+      ...body.map(entry => narrow(shift(entry, stride))),
+      ...layout.map(entry => narrow(shift(entry, offset))),
+    ], extra];
+  };
+
+  const stages = worlds.flat().map(stretch);
+  // 8-4 的支线房间会通过水管返回主场景，返回点同步到扩展后的终段
+  const mainReturn = stages[31][4].find(entry => entry[0] === "p" && entry[3] === "main")?.[4];
+  if (mainReturn) {
+    for (const room of Object.values(finalRooms)) {
+      for (const entry of room[2]) {
+        if (entry[0] === "p" && entry[3] === "main") entry[4] = mainReturn;
+      }
+    }
+  }
+
   return {
-    stages: worlds.flat(),
+    stages,
     finalRooms,
     label: (stage) => `${Math.floor(stage / 4) + 1}-${stage % 4 + 1}`,
   };

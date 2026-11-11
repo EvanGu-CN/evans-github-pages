@@ -5,7 +5,7 @@
   const tile = 16;
   const floor = 208;
   const width = 384;
-  const gravity = 860;
+  const gravity = 820;
   const clamp = Arcade.clamp;
   const overlap = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
   const inColumn = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x;
@@ -183,7 +183,7 @@
     fireworks = 0;
     flash = null;
     finalClear = false;
-    timer = stage % 4 === 3 || index >= 28 ? 400 : 300;
+    timer = stage % 4 === 3 || index >= 28 ? 1200 : 900;
     openRoom("main", checkpoint ? level[3] || 3 : 3);
     setPhase("intro", .85);
     record.stage = stage;
@@ -452,7 +452,7 @@
     } else {
       player.crouch = false;
     }
-    const speed = water ? 69 : running ? 141 : 92;
+    const speed = water ? 69 : running ? 152 : 104;
     const target = direction * speed * (player.crouch ? .2 : 1);
     const accel = room.theme === "snow" && direction === 0 ? 170 : player.ground ? 690 : 430;
     player.vx += clamp(target - player.vx, -accel * dt, accel * dt);
@@ -462,7 +462,7 @@
     if (player.jumpBuffer > 0 && (water || player.coyote > 0)) {
       const onSpring = player.ground && room.solids.some(block => block.kind === "spring" &&
         inColumn(player, block) && Math.abs(player.y + player.h - block.y) < 1);
-      const jump = onSpring ? 430 : Math.abs(player.vx) > 100 ? 347 : 319;
+      const jump = onSpring ? 470 : Math.abs(player.vx) > 128 ? 365 : 340;
       player.vy = water ? -116 : -jump;
       player.jumpBuffer = 0;
       player.coyote = 0;
@@ -487,7 +487,7 @@
       player.vy = 0;
     }
     if (player.ground && contact.kind === "spring" && game.held("jump")) {
-      player.vy = -430;
+      player.vy = -470;
       player.ground = false;
       player.coyote = 0;
       game.effect("jump");
