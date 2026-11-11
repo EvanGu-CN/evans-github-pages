@@ -15,10 +15,82 @@ const MarioView = (() => {
     cloud:  ["#70b8e8", "#f5f1e1", "#c3dbed", "#f5f1e1", "#c3dbed", "#ffffff"],
     warp:   ["#191c37", "#323951", "#252942", "#547eb1", "#2c3b6a", "#9cc5d6"],
   };
-  const hero = [
-    "   RRRR  ", "  RRRRRRR", "  DFFDF  ", " DFFFDDFF", "  FFFFF  ",
-    " RRBRR   ", "RRRBBBRR ", "FFBBBBBFF", "  BB BB  ", "  DD DD  ",
-  ];
+  // 像素特朗普：金色大背头、深色西装、红领带
+  const trump = {
+    head: [
+      "   HHHHHH   ",
+      "  HHHHHHHH  ",
+      " hHHHHHHHHH ",
+      " hHHHHFFFFH ",
+      " FFFFKFFKFF ",
+      " FFFFFMMFF  ",
+      "  FFFFFFFF  ",
+    ],
+    torso: [
+      "   WWWWWW   ",
+      "  SWWTTWWS  ",
+      "  SWWTTWWS  ",
+      "  sWWTTWWs  ",
+    ],
+    stand: [
+      "  PPP  PPP  ",
+      "  PPP  PPP  ",
+      "  BBB  BBB  ",
+      " BBB    BBB ",
+    ],
+    runs: [
+      [
+        "  PPPPPPPP  ",
+        " PPP    PPP ",
+        " BB      BB ",
+        "BBB      BBB",
+      ],
+      [
+        "  PPP  PPP  ",
+        "  PPP  PPP  ",
+        "  BB    BB  ",
+        " BBB    BBB ",
+      ],
+      [
+        "  PPPPPPPP  ",
+        " PPP    PPP ",
+        "  BB    BB  ",
+        " BB      BB ",
+      ],
+      [
+        "  PPP  PPP  ",
+        "  PPP  PPP  ",
+        "  BBB  BBB  ",
+        "  BB    BB  ",
+      ],
+    ],
+    rise: [
+      "  PPP  PPP  ",
+      "  PPP  PPP  ",
+      "  BBB  BBB  ",
+      "            ",
+    ],
+    fall: [
+      "  PPPPPPPP  ",
+      " PPP    PPP ",
+      " BB      BB ",
+      "BB        BB",
+    ],
+    crouch: [
+      "   HHHHHH   ",
+      "  HHHHHHHH  ",
+      " hHHHHHHHHH ",
+      " hHHHHFFFFH ",
+      " FFFFKFFKFF ",
+      " FFFFFMMFF  ",
+      "  FFFFFFFF  ",
+      "  SWWTTWWS  ",
+      "  SWWTTWWS  ",
+      " PPPPPPPPPP ",
+      "PPP      PPP",
+      "BB        BB",
+    ],
+  };
   const mushroom = [
     "   CCCC   ", "  CCWWCC  ", " CCWWWWCC ", "CCCWWWWCCC", "CWCCCCCCWC",
     "WWWWWWWWWW", "  FFDFDF  ", "  FFFFFF  ",
@@ -233,12 +305,60 @@ const MarioView = (() => {
     ctx.save();
     ctx.translate(Math.round(player.x + player.w / 2), Math.round(player.y));
     ctx.scale(player.direction, 1);
-    const color = player.star ? ["#ffe46b", "#9ff7b0", "#ef74a6", "#a9b6ff"][Math.floor(clock * 13) % 4]
-      : player.power === 2 ? "#fff0d3" : turn === 1 ? "#65bf73" : "#e85049";
-    const blues = player.power === 2 ? "#dc5e3b" : turn === 1 ? "#294b72" : "#345bb3";
-    const stride = player.ground && Math.abs(player.vx) > 12 && Math.floor(clock * 14) % 2;
-    const pose = stride ? [...hero.slice(0, -1), " DD   DD "] : hero;
-    pixels(ctx, pose, { R: color, D: "#613544", F: "#ffd2a0", B: blues }, -7, 0, 1.55, player.h / 10);
+
+    const speed = Math.abs(player.vx);
+    const airborne = !player.ground;
+    const moving = player.ground && speed > 14;
+    const skid = player.ground && speed > 40 && player.vx * player.direction < 0;
+    const frame = Math.floor(clock * (5 + speed / 18)) % 4;
+    const suit = player.star ? ["#ffe46b", "#9ff7b0", "#ef74a6", "#a9b6ff"][Math.floor(clock * 13) % 4]
+      : player.power === 2 ? "#f2ecdb" : turn === 1 ? "#3a5940" : "#2e395c";
+    const dark = player.star ? "#52496b" : player.power === 2 ? "#c8bda3" : turn === 1 ? "#24382a" : "#1f2742";
+    const pants = player.star ? "#3b3f57" : player.power === 2 ? "#4a5168" : turn === 1 ? "#3d5c43" : "#3b4a76";
+    const colors = {
+      H: "#f6cd5c", h: "#cfa332", F: "#efb98c", K: "#2b2333", M: "#9f5b4b",
+      W: "#f4efe1", T: player.star ? "#a45bb5" : "#cd3a3a", S: suit, s: dark,
+      P: pants, B: "#141019",
+    };
+
+    const sx = 1.2;
+    if (player.crouch) {
+      pixels(ctx, trump.crouch, colors, -6 * sx, 0, sx, player.h / 12);
+      ctx.restore();
+      return;
+    }
+
+    const sy = player.h / 15;
+    const x0 = -6 * sx;
+    const bob = airborne ? 0 : moving ? (frame % 2 ? -1 : 0) : Math.sin(clock * 2.2) > 0 ? -1 : 0;
+    const legs = airborne ? (player.vy < -20 ? trump.rise : trump.fall)
+      : skid ? trump.runs[2] : moving ? trump.runs[frame] : trump.stand;
+
+    ctx.translate(0, bob);
+    pixels(ctx, trump.head, colors, x0, 0, sx, sy);
+    pixels(ctx, trump.torso, colors, x0, 7 * sy, sx, sy);
+    pixels(ctx, legs, colors, x0, 11 * sy, sx, sy);
+
+    const arm = (col, row, len) => rect(ctx, colors.S, x0 + col * sx, row * sy, 2 * sx, len * sy);
+    if (airborne) {
+      if (player.vy < -20) {
+        arm(.6, 5.1, 3);
+        arm(9.8, 5.1, 3);
+      } else {
+        arm(.2, 8.3, 2.6);
+        arm(10, 8.3, 2.6);
+      }
+    } else if (skid) {
+      arm(.8, 7.3, 2.7);
+      arm(9.8, 9.1, 2.7);
+    } else if (moving) {
+      const swing = [[8.1, 9.3], [8.7, 8.7], [9.3, 8.1], [8.7, 8.7]][frame];
+      arm(.7, swing[0], 2.8);
+      arm(9.6, swing[1], 2.8);
+    } else {
+      arm(.9, 8.4, 2.8);
+      arm(9.5, 8.4, 2.8);
+    }
     ctx.restore();
   }
 
@@ -341,7 +461,7 @@ const MarioView = (() => {
       rect(ctx, "#1f1b30e6", width / 2 - 89, 63, 178, 80);
       text(ctx, `WORLD ${stage}${secondQuest ? "  ★" : ""}`, width / 2, 89, 17, "center", "#ffdb85");
       text(ctx, name, width / 2, 110, 13, "center");
-      text(ctx, `${turn === 1 ? "LUIGI" : "MARIO"}  ×  ${lives}`, width / 2, 129, 10, "center");
+      text(ctx, `${turn === 1 ? "TRUMP 2" : "TRUMP"}  ×  ${lives}`, width / 2, 129, 10, "center");
     } else if (phase === "pipe") {
       ctx.fillStyle = `rgba(21, 17, 35, ${Math.sin(Math.PI * phaseTime / .46) * .77})`;
       ctx.fillRect(0, 0, width, height);

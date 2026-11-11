@@ -820,7 +820,7 @@
     game.stat("lives", record.lives);
     game.stat("time", Math.max(0, Math.ceil(timer)));
     game.stat("score", String(record.score).padStart(6, "0"));
-    game.stat("player", turn === 1 ? "LUIGI" : "MARIO");
+    game.stat("player", turn === 1 ? "TRUMP 2" : "TRUMP");
   }
 
   function update(dt, game) {
