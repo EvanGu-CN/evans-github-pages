@@ -28,8 +28,8 @@
       exit: null, boss: null, flag: null, time: 0,
     };
     let groundStart = 0;
-    const addBlock = (kind, x, y, w, h, item, extra) => {
-      const block = { kind, x, y, w, h, item, extra, bump: 0 };
+    const addBlock = (kind, x, y, w, h, item, extra, route) => {
+      const block = { kind, x, y, w, h, item, extra, route, bump: 0 };
       result.solids.push(block);
       return block;
     };
@@ -66,7 +66,7 @@
           const y = floor - a * tile;
           const existing = result.solids.findIndex(block => block.x === bx && block.y === y && block.kind === "b");
           if (existing >= 0) result.solids.splice(existing, 1);
-          addBlock(kind, bx, y, tile, tile, kind === "b" ? null : b, c);
+          addBlock(kind, bx, y, tile, tile, kind === "b" ? null : b, c, d);
         }
       } else if (kind === "p" || kind === "gun") {
         const block = addBlock(kind, x, floor - a * tile, (kind === "p" ? 2 : 1) * tile, a * tile);
@@ -167,6 +167,7 @@
       ["p", 1, 2], ["stairs", 15, 4],
     ]];
     if (key === "warp") return ["warp", 32, level[5].map((world, i) => ["p", 8 + i * 7, 2, "world", world])];
+    if (key === "warp5") return ["warp", 25, [["p", 12, 2, "world", 5]]];
     return finalRooms[key];
   }
 
@@ -304,7 +305,7 @@
         if (room.time < block.until) return;
       }
     } else if (item === "vine") {
-      room.vines.push({ x: x + 4, y, bottom: y + tile, destination: block.extra });
+      room.vines.push({ x: x + 4, y, bottom: y + tile, destination: block.extra, to: block.route ?? "cloud" });
       game.effect("coin");
     } else {
       const type = item === "power" ? (player.power ? "flower" : "mushroom") : item;
@@ -391,7 +392,7 @@
   }
 
   function usePipe(pipe, game) {
-    if (pipe.to === "cellar" || pipe.to === "warp") returnPoint = { area, x: pipe.destination };
+    if (pipe.to === "cellar") returnPoint = { area, x: pipe.destination };
     startWarp(pipe.to, pipe.destination, game);
   }
 
@@ -402,7 +403,7 @@
       enterLevel((destination - 1) * 4);
     } else {
       if (to === "return") openRoom(returnPoint.area, returnPoint.x, true);
-      else openRoom(to, ["cellar", "warp", "cloud"].includes(to) ? 3 : destination);
+      else openRoom(to, ["cellar", "warp", "warp5", "cloud"].includes(to) ? 3 : destination);
       setPhase("play", 0);
     }
   }
@@ -426,8 +427,8 @@
       player.ground = false;
       player.coyote = 0;
       if (player.y + player.h <= vine.y + 1 && vine.y <= 10) {
-        returnPoint = { area, x: vine.destination };
-        startWarp("cloud", 3, game);
+        if (vine.to === "cloud") returnPoint = { area, x: vine.destination };
+        startWarp(vine.to, 3, game);
       }
       return null;
     }
@@ -876,7 +877,7 @@
   function draw(ctx) {
     MarioView.draw(ctx, {
       room, player, camera, clock, floor, phase, phaseTime, flash, fireworks, finalClear, secondQuest, turn,
-      stage: label(stage), name: level[0], lives: record.lives, warp: level[5], firebar,
+      stage: label(stage), name: level[0], lives: record.lives, firebar,
     });
   }
 

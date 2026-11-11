@@ -38,6 +38,19 @@
   font: inherit;
 }
 .mario [data-overlay-copy]:empty { display: none; }
+.mario .arcade-choices { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.mario .arcade-choices button {
+  min-height: 38px;
+  padding: 6px 12px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--raised);
+  font-weight: 700;
+  font-size: .82rem;
+}
+.mario .arcade-choices button:first-child { color: var(--page); background: var(--accent); }
+.mario .arcade-choices button:hover { border-color: var(--accent); }
 .mario .touch-controls { grid-template-columns: repeat(3, 1fr) 1.4fr 1.4fr; }
 .mario .touch-controls button { padding: 0 4px; font-size: .8rem; }
 @media (max-width: 480px) {

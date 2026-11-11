@@ -243,7 +243,7 @@ const MarioView = (() => {
   }
 
   function draw(ctx, view) {
-    const { room, player, camera, floor, phase, phaseTime, clock, flash, fireworks, finalClear, stage, name, lives, turn, warp, secondQuest, firebar } = view;
+    const { room, player, camera, floor, phase, phaseTime, clock, flash, fireworks, finalClear, stage, name, lives, turn, secondQuest, firebar } = view;
     const { width, height } = ctx.canvas;
     const visible = actor => actor.x + actor.w > camera - 25 && actor.x < camera + width + 25;
     backdrop(ctx, room, camera, floor);
@@ -290,7 +290,7 @@ const MarioView = (() => {
     }
     if (room.theme === "warp") {
       text(ctx, "WARP ZONE", 228, 92, 15, "center");
-      room.pipes.forEach((pipe, i) => text(ctx, String(warp[i]), pipe.x + 16, pipe.y - 11, 12, "center", "#ffdb7f"));
+      for (const pipe of room.pipes) text(ctx, String(pipe.destination), pipe.x + 16, pipe.y - 11, 12, "center", "#ffdb7f");
     }
     for (const vine of room.vines) {
       rect(ctx, "#2e8056", vine.x + 3, vine.y, 3, vine.bottom - vine.y);
