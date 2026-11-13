@@ -1,0 +1,13 @@
+{
+  "namedNeighborhoods": 147,
+  "assignedBuildings": 3161,
+  "minimumMembershipCoverage": 0.6143117794583851,
+  "maximumSurfaceBuildingOverlapM2": 0,
+  "buildingExtractSha256": "80cf807e1c7fc2fff15febf7e41ef2888d80278ead387ff83455de6d0335f992",
+  "snapshots": {
+    "land": "2026-11-12T16:43:05Z",
+    "roads": "2026-11-11T16:04:03Z",
+    "urban": "2026-11-11T16:02:01Z",
+    "pois": "2026-11-12T05:45:35Z"
+  }
+}

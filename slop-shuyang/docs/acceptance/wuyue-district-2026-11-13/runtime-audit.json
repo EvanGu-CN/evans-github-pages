@@ -1,0 +1,353 @@
+{
+  "arrivals": [
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -94.7304347826087,
+        "z": 261.5652173913043
+      },
+      "id": "central",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": 2266.635,
+        "z": 1935.465
+      },
+      "id": "gov",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -2515.7042253521126,
+        "z": 4061.6859154929575
+      },
+      "id": "culture",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -704.504761904762,
+        "z": 4687.8761904761905
+      },
+      "id": "sports",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -1270.2,
+        "z": 1746.35
+      },
+      "id": "station",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": 2610.7169811320755,
+        "z": 1354.0094339622642
+      },
+      "id": "yuji",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -107.22692307692309,
+        "z": -800.7384615384615
+      },
+      "id": "yujiPark",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -2248.2283323775173,
+        "z": 4111.30150275778
+      },
+      "id": "nanhu",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -246.61612903225807,
+        "z": 15.000000000000014
+      },
+      "id": "bluesky",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -1524.1206896551726,
+        "z": 3540.687931034483
+      },
+      "id": "wanda",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -657.8872727272727,
+        "z": -855.1327272727274
+      },
+      "id": "wuyinxian",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -1355.2303797468353,
+        "z": -165.17594936708855
+      },
+      "id": "cotton",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -1527.1031578947368,
+        "z": -1282.6694736842103
+      },
+      "id": "shuhe",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -231.1941176470588,
+        "z": 1688.476470588235
+      },
+      "id": "rtmart",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": 1734,
+        "z": 2717.7
+      },
+      "id": "wuyue",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": 948.12,
+        "z": 107.34
+      },
+      "id": "highschool",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": -212.53859649122808,
+        "z": 1451.459649122807
+      },
+      "id": "wanhao",
+      "water": false
+    },
+    {
+      "check": "findTeleportPosition includes full body collision clearance",
+      "destination": {
+        "x": 40.48666666666665,
+        "z": -2.7333333333333343
+      },
+      "id": "jiusheng",
+      "water": false
+    }
+  ],
+  "communityCount": 143,
+  "coverage": {
+    "clipFailures": [],
+    "clipped": [
+      {
+        "index": 1384,
+        "retainedAreaM2": 216.4,
+        "sourceAreaM2": 614.3
+      },
+      {
+        "index": 1386,
+        "retainedAreaM2": 143.5,
+        "sourceAreaM2": 843.6
+      },
+      {
+        "index": 1400,
+        "retainedAreaM2": 707.6,
+        "sourceAreaM2": 979.1
+      },
+      {
+        "index": 1415,
+        "retainedAreaM2": 58.3,
+        "sourceAreaM2": 59.3
+      },
+      {
+        "index": 1428,
+        "retainedAreaM2": 137.9,
+        "sourceAreaM2": 858.8
+      },
+      {
+        "index": 1454,
+        "retainedAreaM2": 573.9,
+        "sourceAreaM2": 963.3
+      },
+      {
+        "index": 1455,
+        "retainedAreaM2": 3110.9,
+        "sourceAreaM2": 4379.4
+      },
+      {
+        "index": 1462,
+        "retainedAreaM2": 1371.3,
+        "sourceAreaM2": 2435
+      },
+      {
+        "index": 1476,
+        "retainedAreaM2": 1696.7,
+        "sourceAreaM2": 3094.3
+      },
+      {
+        "index": 1479,
+        "retainedAreaM2": 115.1,
+        "sourceAreaM2": 188.8
+      },
+      {
+        "index": 1487,
+        "retainedAreaM2": 212.6,
+        "sourceAreaM2": 235
+      },
+      {
+        "index": 1756,
+        "retainedAreaM2": 198.7,
+        "sourceAreaM2": 215.8
+      },
+      {
+        "index": 5030,
+        "retainedAreaM2": 1279.3,
+        "sourceAreaM2": 1310
+      }
+    ],
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1914,
+      2558,
+      2565,
+      2713,
+      2780,
+      2782,
+      3028,
+      3029,
+      3155,
+      3458,
+      6176,
+      6543,
+      6544,
+      6545
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "rendered": 7583,
+    "replacedByLandmarks": 20,
+    "source": 7603
+  },
+  "dataVersion": "186e2fde3b066883ffbe9a5206be931ea58a2fef465aa0cb6a9c80effc76ff09",
+  "footbridges": [
+    {
+      "allowsCars": false,
+      "cyclistY": 0.38,
+      "personY": 0.38,
+      "water": true,
+      "x": -2411.1000000000004,
+      "z": 3790
+    },
+    {
+      "allowsCars": false,
+      "cyclistY": 0.38,
+      "personY": 0.38,
+      "water": true,
+      "x": -2369.3,
+      "z": 3761.1
+    },
+    {
+      "allowsCars": false,
+      "cyclistY": 0.38,
+      "personY": 0.38,
+      "water": true,
+      "x": -2339.65,
+      "z": 3624.55
+    },
+    {
+      "allowsCars": false,
+      "cyclistY": 0.38,
+      "personY": 0.38,
+      "water": true,
+      "x": -2335.8500000000004,
+      "z": 3560.6000000000004
+    }
+  ],
+  "newCommunities": [
+    {
+      "boundarySource": "User map labels + dated imagery street-block approximation, not an official estate boundary",
+      "name": "盛源金城",
+      "records": 27,
+      "source": "ReviewedImagery"
+    },
+    {
+      "boundarySource": "User map labels + dated imagery street-block approximation, not an official estate boundary",
+      "name": "临安小区",
+      "records": 96,
+      "source": "ReviewedImagery"
+    }
+  ],
+  "parkTrees": {
+    "count": 3761,
+    "inWater": 0,
+    "onPlaza": 0
+  },
+  "sourceSummary": {
+    "OSM": 1425,
+    "Overture": 6133,
+    "ReviewedImagery": 45
+  },
+  "surfaces": {
+    "basketball": 8,
+    "green": 1,
+    "parking": 4,
+    "path": 68,
+    "plaza": 2,
+    "residential-ground": 1,
+    "soccer": 13,
+    "sports-ground": 25
+  },
+  "water": {
+    "extent3857": [
+      13218801.994024787,
+      4040999.120257268,
+      13219701.65944449,
+      4041947.367609635
+    ],
+    "imageAcquired": "2021-12-10",
+    "imageSize": [
+      1000,
+      1054
+    ],
+    "metadataFile": "nanhu-imagery-metadata.json",
+    "method": "Visually reviewed colour-segmented water boundary, with four manually traced shaded channel gaps. Small holes under 100 image pixels removed; island and peninsula land retained. Approximate dated shoreline, not a survey or current condition.",
+    "providerAccuracyMetres": 5,
+    "resolutionMetres": 0.46,
+    "service": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "serviceRelease": "Raster Basemaps 2026.R05",
+    "source": "Esri World Imagery / Vantor GE01"
+  }
+}

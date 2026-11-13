@@ -1,0 +1,57 @@
+[
+  {
+    "id": "reviewed/mengxi/east-sport-apron",
+    "x": 483.7380301056593,
+    "z": 1559.0
+  },
+  {
+    "id": "reviewed/mengxi/east-infield",
+    "x": 535.3368721499558,
+    "z": 1562.95
+  },
+  {
+    "id": "reviewed/mengxi/west-courts",
+    "x": 305.3,
+    "z": 1546.0
+  },
+  {
+    "id": "reviewed/mengxi/west-court-apron",
+    "x": 334.6319773565034,
+    "z": 1546.0
+  },
+  {
+    "id": "reviewed/wode/central-garden",
+    "x": 592.6465163135317,
+    "z": 1958.6
+  },
+  {
+    "id": "reviewed/wode/garden-walk",
+    "x": 632.5254022762952,
+    "z": 1951.25
+  },
+  {
+    "id": "reviewed/mengxi/central-drive",
+    "x": 453.99574721780607,
+    "z": 1519.8
+  },
+  {
+    "id": "reviewed/wode/north-axis",
+    "x": 553.7681198910082,
+    "z": 1908.05
+  },
+  {
+    "id": "reviewed/wode/west-axis",
+    "x": 534.500563697858,
+    "z": 2138.3500000000004
+  },
+  {
+    "id": "reviewed/wode/east-axis",
+    "x": 681.4969294242908,
+    "z": 2094.45
+  },
+  {
+    "id": "reviewed/wode/south-central-axis",
+    "x": 618.8713957707353,
+    "z": 2199.6
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "controls": [
+    {
+      "h": 148,
+      "id": "minimap-card",
+      "inside": true,
+      "w": 174,
+      "x": 20,
+      "y": 196
+    },
+    {
+      "h": 52,
+      "id": "btn-boost",
+      "inside": true,
+      "w": 108,
+      "x": 1152,
+      "y": 474
+    },
+    {
+      "h": 59.60000228881836,
+      "id": "mode-switch",
+      "inside": true,
+      "w": 265.6000061035156,
+      "x": 507.2000122070313,
+      "y": 640.4000244140625
+    }
+  ],
+  "horizontalOverflow": false,
+  "method": "DOM layout inspection at desktop test breakpoint; render canvases saved separately",
+  "viewport": [
+    1280,
+    720
+  ]
+}

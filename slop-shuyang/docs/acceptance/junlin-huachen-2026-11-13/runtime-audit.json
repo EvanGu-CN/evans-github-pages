@@ -1,0 +1,1017 @@
+{
+  "coverage": {
+    "source": 7694,
+    "rendered": 7669,
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1914,
+      2558,
+      2565,
+      2713,
+      2780,
+      2782,
+      3028,
+      3029,
+      3155,
+      3458,
+      6194,
+      6231,
+      6232,
+      6610,
+      6611,
+      6612,
+      6659,
+      6679,
+      6702
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "clipped": [
+      {
+        "index": 1384,
+        "sourceAreaM2": 614.3,
+        "retainedAreaM2": 216.4
+      },
+      {
+        "index": 1386,
+        "sourceAreaM2": 843.6,
+        "retainedAreaM2": 143.5
+      },
+      {
+        "index": 1400,
+        "sourceAreaM2": 979.1,
+        "retainedAreaM2": 707.6
+      },
+      {
+        "index": 1415,
+        "sourceAreaM2": 59.3,
+        "retainedAreaM2": 58.3
+      },
+      {
+        "index": 1428,
+        "sourceAreaM2": 858.8,
+        "retainedAreaM2": 137.9
+      },
+      {
+        "index": 1454,
+        "sourceAreaM2": 963.3,
+        "retainedAreaM2": 573.9
+      },
+      {
+        "index": 1455,
+        "sourceAreaM2": 4379.4,
+        "retainedAreaM2": 3110.9
+      },
+      {
+        "index": 1462,
+        "sourceAreaM2": 2435,
+        "retainedAreaM2": 1371.3
+      },
+      {
+        "index": 1476,
+        "sourceAreaM2": 3094.3,
+        "retainedAreaM2": 1696.7
+      },
+      {
+        "index": 1479,
+        "sourceAreaM2": 188.8,
+        "retainedAreaM2": 115.1
+      },
+      {
+        "index": 1487,
+        "sourceAreaM2": 235,
+        "retainedAreaM2": 212.6
+      },
+      {
+        "index": 1756,
+        "sourceAreaM2": 215.8,
+        "retainedAreaM2": 198.7
+      },
+      {
+        "index": 5030,
+        "sourceAreaM2": 1310,
+        "retainedAreaM2": 1279.3
+      }
+    ],
+    "clipFailures": [],
+    "replacedByLandmarks": 25
+  },
+  "probes": [
+    {
+      "id": "reviewed/online/junlin/01",
+      "kind": "ordinary",
+      "x": 1462,
+      "z": 3225.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/03",
+      "kind": "ordinary",
+      "x": 1431.7565789473683,
+      "z": 3194.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/04",
+      "kind": "ordinary",
+      "x": 1484.875,
+      "z": 3202.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/07",
+      "kind": "ordinary",
+      "x": 1425.3014705882351,
+      "z": 3162,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/08",
+      "kind": "ordinary",
+      "x": 1487.625,
+      "z": 3171.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/11",
+      "kind": "ordinary",
+      "x": 1420.2875,
+      "z": 3126.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/12",
+      "kind": "ordinary",
+      "x": 1475.8125,
+      "z": 3133.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/15",
+      "kind": "ordinary",
+      "x": 1414.866883116883,
+      "z": 3094.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/16",
+      "kind": "ordinary",
+      "x": 1456.5,
+      "z": 3093.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/20",
+      "kind": "ordinary",
+      "x": 1409.25,
+      "z": 3067.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/21",
+      "kind": "ordinary",
+      "x": 1488.25,
+      "z": 3065.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/23",
+      "kind": "ordinary",
+      "x": 1407.5,
+      "z": 3031,
+      "expectedHeight": 33.22,
+      "hit": {
+        "y": 33.220001220703125,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/24",
+      "kind": "ordinary",
+      "x": 1495.703125,
+      "z": 3031.75,
+      "expectedHeight": 33.22,
+      "hit": {
+        "y": 33.220001220703125,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/55",
+      "kind": "ordinary",
+      "x": 1776,
+      "z": 3258,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/56",
+      "kind": "ordinary",
+      "x": 1852.5,
+      "z": 3251,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/57",
+      "kind": "ordinary",
+      "x": 1899.8229166666665,
+      "z": 3259,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/58",
+      "kind": "ordinary",
+      "x": 1983.25,
+      "z": 3254,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/59",
+      "kind": "ordinary",
+      "x": 1807.5,
+      "z": 3283.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/60",
+      "kind": "ordinary",
+      "x": 1864.4848484848485,
+      "z": 3287,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/61",
+      "kind": "ordinary",
+      "x": 1948.1333333333332,
+      "z": 3272.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/63",
+      "kind": "ordinary",
+      "x": 1907,
+      "z": 3293.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/64",
+      "kind": "ordinary",
+      "x": 1989.9147727272727,
+      "z": 3310.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/65",
+      "kind": "ordinary",
+      "x": 1770.5,
+      "z": 3331.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/66",
+      "kind": "ordinary",
+      "x": 1824,
+      "z": 3317.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/67",
+      "kind": "ordinary",
+      "x": 1886.125,
+      "z": 3327.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/68",
+      "kind": "ordinary",
+      "x": 1942.1988636363635,
+      "z": 3325.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/70",
+      "kind": "ordinary",
+      "x": 1810.1517857142858,
+      "z": 3350.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/71",
+      "kind": "ordinary",
+      "x": 1848.75,
+      "z": 3358.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/72",
+      "kind": "ordinary",
+      "x": 1981.1923076923076,
+      "z": 3344,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/75",
+      "kind": "ordinary",
+      "x": 1886.5955882352941,
+      "z": 3366.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/76",
+      "kind": "ordinary",
+      "x": 1932.35,
+      "z": 3371.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/77",
+      "kind": "ordinary",
+      "x": 1971,
+      "z": 3379.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/02",
+      "kind": "ordinary",
+      "x": 1549.8653846153848,
+      "z": 3246.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/05",
+      "kind": "ordinary",
+      "x": 1553.8333333333335,
+      "z": 3214,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/06",
+      "kind": "ordinary",
+      "x": 1607.1011904761904,
+      "z": 3218.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/09",
+      "kind": "ordinary",
+      "x": 1561.5666666666666,
+      "z": 3184.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/10",
+      "kind": "ordinary",
+      "x": 1612.25,
+      "z": 3183.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/13",
+      "kind": "ordinary",
+      "x": 1572.171875,
+      "z": 3149.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/14",
+      "kind": "ordinary",
+      "x": 1617.4464285714284,
+      "z": 3150.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/17",
+      "kind": "ordinary",
+      "x": 1506.25,
+      "z": 3103.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/18",
+      "kind": "ordinary",
+      "x": 1568.642857142857,
+      "z": 3111.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/19",
+      "kind": "ordinary",
+      "x": 1618.125,
+      "z": 3109.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/22",
+      "kind": "ordinary",
+      "x": 1572.6442307692307,
+      "z": 3079.5,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/aux-19",
+      "kind": "ordinary",
+      "x": 1515.9958333333334,
+      "z": 3129.75,
+      "expectedHeight": 6.22,
+      "hit": {
+        "y": 6.219999790191679,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/aux-54",
+      "kind": "ordinary",
+      "x": 1592.4921875,
+      "z": 3251.75,
+      "expectedHeight": 6.22,
+      "hit": {
+        "y": 6.21999979019165,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/north-east",
+      "kind": "ordinary",
+      "x": 1618.90625,
+      "z": 3052.75,
+      "expectedHeight": 33.22,
+      "hit": {
+        "y": 33.220001220703125,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/51",
+      "kind": "ordinary",
+      "x": 2057.5763888888887,
+      "z": 3233.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/62",
+      "kind": "ordinary",
+      "x": 2033.5,
+      "z": 3276.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/69",
+      "kind": "ordinary",
+      "x": 2032.75,
+      "z": 3314.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/73",
+      "kind": "ordinary",
+      "x": 2022.3630952380952,
+      "z": 3347.75,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/happiness-full/78",
+      "kind": "ordinary",
+      "x": 2010,
+      "z": 3383.25,
+      "expectedHeight": 18.22,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "华辰大厦4号楼",
+      "kind": "tower",
+      "x": 1820.4633275717983,
+      "z": 3069.6954273938695,
+      "expectedHeight": 78.22,
+      "hit": {
+        "y": 78.22000122070311,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "华辰大厦3号楼",
+      "kind": "tower",
+      "x": 1897.7718106489297,
+      "z": 3078.886711706943,
+      "expectedHeight": 78.22,
+      "hit": {
+        "y": 78.22000122070312,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/huachen/01",
+      "kind": "tower",
+      "x": 2081.75,
+      "z": 3106,
+      "expectedHeight": 78.22,
+      "hit": {
+        "y": 78.22000122070312,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/huachen/02",
+      "kind": "tower",
+      "x": 1995.2232142857142,
+      "z": 3094,
+      "expectedHeight": 78.22,
+      "hit": {
+        "y": 78.22000122070312,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "huachen-low-connector",
+      "kind": "connector",
+      "x": 1869.2377106638476,
+      "z": 3075.154753157958,
+      "expectedHeight": 8.22,
+      "hit": {
+        "y": 8.220000267028809,
+        "mesh": "SurveyedBuildingChunk"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-1",
+      "kind": "path",
+      "x": 1533.535518373868,
+      "z": 3135.8500000000004,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-2",
+      "kind": "path",
+      "x": 1438.300725748287,
+      "z": 3119.3,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-3",
+      "kind": "path",
+      "x": 1638.91156105547,
+      "z": 3119.25,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-4",
+      "kind": "path",
+      "x": 1574.1254992056706,
+      "z": 3059.75,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-5",
+      "kind": "path",
+      "x": 1495.2606418621056,
+      "z": 3159.6,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-6",
+      "kind": "path",
+      "x": 1524.9008090731793,
+      "z": 3193.8,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    },
+    {
+      "id": "reviewed/online/junlin/path-7",
+      "kind": "path",
+      "x": 1514.184581939798,
+      "z": 3220.8999999999996,
+      "expectedHeight": 0.255,
+      "hit": {
+        "y": 0.2549999952316284,
+        "mesh": "Mapped-community-path"
+      },
+      "passed": true
+    }
+  ],
+  "arrivals": [
+    {
+      "id": "central",
+      "destination": {
+        "x": -94.7304347826087,
+        "z": 261.5652173913043
+      },
+      "water": false
+    },
+    {
+      "id": "gov",
+      "destination": {
+        "x": 2266.6349999999998,
+        "z": 1935.465
+      },
+      "water": false
+    },
+    {
+      "id": "culture",
+      "destination": {
+        "x": -2515.7042253521126,
+        "z": 4061.6859154929575
+      },
+      "water": false
+    },
+    {
+      "id": "sports",
+      "destination": {
+        "x": -704.504761904762,
+        "z": 4687.8761904761905
+      },
+      "water": false
+    },
+    {
+      "id": "station",
+      "destination": {
+        "x": -1270.2,
+        "z": 1746.35
+      },
+      "water": false
+    },
+    {
+      "id": "yuji",
+      "destination": {
+        "x": 2610.7169811320755,
+        "z": 1354.0094339622642
+      },
+      "water": false
+    },
+    {
+      "id": "yujiPark",
+      "destination": {
+        "x": -107.22692307692307,
+        "z": -800.7384615384615
+      },
+      "water": false
+    },
+    {
+      "id": "nanhu",
+      "destination": {
+        "x": -2248.2283323775173,
+        "z": 4111.30150275778
+      },
+      "water": false
+    },
+    {
+      "id": "bluesky",
+      "destination": {
+        "x": -246.61612903225807,
+        "z": 15.000000000000014
+      },
+      "water": false
+    },
+    {
+      "id": "wanda",
+      "destination": {
+        "x": -1524.1206896551726,
+        "z": 3540.687931034483
+      },
+      "water": false
+    },
+    {
+      "id": "wuyinxian",
+      "destination": {
+        "x": -657.8872727272727,
+        "z": -855.1327272727274
+      },
+      "water": false
+    },
+    {
+      "id": "cotton",
+      "destination": {
+        "x": -1355.2303797468353,
+        "z": -165.17594936708855
+      },
+      "water": false
+    },
+    {
+      "id": "shuhe",
+      "destination": {
+        "x": -1527.1031578947368,
+        "z": -1282.6694736842105
+      },
+      "water": false
+    },
+    {
+      "id": "rtmart",
+      "destination": {
+        "x": -231.19411764705882,
+        "z": 1688.4764705882353
+      },
+      "water": false
+    },
+    {
+      "id": "wuyue",
+      "destination": {
+        "x": 1734,
+        "z": 2717.7
+      },
+      "water": false
+    },
+    {
+      "id": "highschool",
+      "destination": {
+        "x": 948.12,
+        "z": 107.34
+      },
+      "water": false
+    },
+    {
+      "id": "wanhao",
+      "destination": {
+        "x": -212.53859649122808,
+        "z": 1451.459649122807
+      },
+      "water": false
+    },
+    {
+      "id": "jiusheng",
+      "destination": {
+        "x": 40.48666666666665,
+        "z": -2.7333333333333343
+      },
+      "water": false
+    },
+    {
+      "id": "workersPalace",
+      "destination": {
+        "x": 2076.046153846154,
+        "z": 3065.0538461538463
+      },
+      "water": false
+    }
+  ],
+  "cameraOverride": false
+}

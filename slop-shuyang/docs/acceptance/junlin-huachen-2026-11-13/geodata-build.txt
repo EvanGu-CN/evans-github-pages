@@ -1,0 +1,37 @@
+[shuyang] 1104 drivable road ways
+[shuyang] 92 map-only paths
+[shuyang] road graph: 1652 nodes, 1419 links
+[shuyang] water: 63 polygons, 49 waterways
+[shuyang] railways: 29
+[shuyang] parks & green: 34, other landuse: 268
+[shuyang] pois: 127, places: 25
+[shuyang] 940 curb islands labelled
+[shuyang] 527 blocks (409 with lots), 413 specks dropped
+[shuyang] 7694 source buildings { Overture: 6133, OSM: 1425, ReviewedImagery: 136 } { estimate: 2422, 'cnbh-raster': 5271, 'osm-height': 1 }
+[shuyang] map buildings: 7697
+[shuyang] procedural infill disabled (SHUYANG_INFILL=1 to enable)
+[shuyang] 20 landmark sites
+[shuyang] wrote D:\AICodingProjects\slop-shuyang\js\building-geodata.bin.gz (124 KB, 7694 buildings)
+[shuyang] wrote D:\AICodingProjects\slop-shuyang\js\shuyang-geodata.js (3298 KB)
+[shuyang]   version: 0 KB
+[shuyang]   frame: 0 KB
+[shuyang]   bounds: 0 KB
+[shuyang]   roads: 100 KB
+[shuyang]   mapPaths: 6 KB
+[shuyang]   mapBuildings: 1187 KB
+[shuyang]   buildingDataVersion: 0 KB
+[shuyang]   buildingAudit: 32 KB
+[shuyang]   neighborhoods: 60 KB
+[shuyang]   namedSites: 23 KB
+[shuyang]   urban: 472 KB
+[shuyang]   railways: 2 KB
+[shuyang]   roadGraph: 88 KB
+[shuyang]   blocks: 1211 KB
+[shuyang]   water: 42 KB
+[shuyang]   parks: 20 KB
+[shuyang]   landuse: 33 KB
+[shuyang]   landmarks: 1 KB
+[shuyang]   pois: 4 KB
+[shuyang]   places: 1 KB
+[shuyang]   attribution: 0 KB
+[shuyang]   landmarkBuildings: 1 KB

@@ -1,0 +1,454 @@
+{
+  "coverage": {
+    "source": 7640,
+    "rendered": 7619,
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1914,
+      2558,
+      2565,
+      2713,
+      2780,
+      2782,
+      3028,
+      3029,
+      3155,
+      3458,
+      6181,
+      6562,
+      6563,
+      6564,
+      6611
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "clipped": [
+      {
+        "index": 1384,
+        "sourceAreaM2": 614.3,
+        "retainedAreaM2": 216.4
+      },
+      {
+        "index": 1386,
+        "sourceAreaM2": 843.6,
+        "retainedAreaM2": 143.5
+      },
+      {
+        "index": 1400,
+        "sourceAreaM2": 979.1,
+        "retainedAreaM2": 707.6
+      },
+      {
+        "index": 1415,
+        "sourceAreaM2": 59.3,
+        "retainedAreaM2": 58.3
+      },
+      {
+        "index": 1428,
+        "sourceAreaM2": 858.8,
+        "retainedAreaM2": 137.9
+      },
+      {
+        "index": 1454,
+        "sourceAreaM2": 963.3,
+        "retainedAreaM2": 573.9
+      },
+      {
+        "index": 1455,
+        "sourceAreaM2": 4379.4,
+        "retainedAreaM2": 3110.9
+      },
+      {
+        "index": 1462,
+        "sourceAreaM2": 2435,
+        "retainedAreaM2": 1371.3
+      },
+      {
+        "index": 1476,
+        "sourceAreaM2": 3094.3,
+        "retainedAreaM2": 1696.7
+      },
+      {
+        "index": 1479,
+        "sourceAreaM2": 188.8,
+        "retainedAreaM2": 115.1
+      },
+      {
+        "index": 1487,
+        "sourceAreaM2": 235,
+        "retainedAreaM2": 212.6
+      },
+      {
+        "index": 1756,
+        "sourceAreaM2": 215.8,
+        "retainedAreaM2": 198.7
+      },
+      {
+        "index": 5030,
+        "sourceAreaM2": 1310,
+        "retainedAreaM2": 1279.3
+      }
+    ],
+    "clipFailures": [],
+    "replacedByLandmarks": 21
+  },
+  "rays": [
+    {
+      "id": "reviewed/online/happiness-01/01",
+      "x": 1794,
+      "z": 3130.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/02",
+      "x": 1855.75,
+      "z": 3109,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/03",
+      "x": 1920.25,
+      "z": 3112.75,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/05",
+      "x": 1859,
+      "z": 3142.25,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/06",
+      "x": 1912.5,
+      "z": 3146.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/07",
+      "x": 1969.25,
+      "z": 3153.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/09",
+      "x": 1849.75,
+      "z": 3174.25,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/10",
+      "x": 1901.75,
+      "z": 3180,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/13",
+      "x": 1786,
+      "z": 3187.75,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/14",
+      "x": 1960,
+      "z": 3189,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/17",
+      "x": 1842.25,
+      "z": 3208.75,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/18",
+      "x": 1891.5,
+      "z": 3212.75,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/19",
+      "x": 1959.75,
+      "z": 3220.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/20",
+      "x": 1999.75,
+      "z": 3218.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/04",
+      "x": 2036.5,
+      "z": 3126.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/08",
+      "x": 2093.25,
+      "z": 3133.25,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/11",
+      "x": 2043.25,
+      "z": 3162.75,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/12",
+      "x": 2082.5,
+      "z": 3165.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/15",
+      "x": 2003.75,
+      "z": 3185,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    },
+    {
+      "id": "reviewed/online/happiness-01/16",
+      "x": 2066,
+      "z": 3200.5,
+      "hit": {
+        "y": 18.219999313354492,
+        "mesh": "SurveyedBuildingChunk"
+      }
+    }
+  ],
+  "arrivals": [
+    {
+      "id": "central",
+      "destination": {
+        "x": -94.7304347826087,
+        "z": 261.5652173913043
+      },
+      "water": false
+    },
+    {
+      "id": "gov",
+      "destination": {
+        "x": 2266.6349999999998,
+        "z": 1935.465
+      },
+      "water": false
+    },
+    {
+      "id": "culture",
+      "destination": {
+        "x": -2515.7042253521126,
+        "z": 4061.6859154929575
+      },
+      "water": false
+    },
+    {
+      "id": "sports",
+      "destination": {
+        "x": -704.504761904762,
+        "z": 4687.8761904761905
+      },
+      "water": false
+    },
+    {
+      "id": "station",
+      "destination": {
+        "x": -1270.2,
+        "z": 1746.35
+      },
+      "water": false
+    },
+    {
+      "id": "yuji",
+      "destination": {
+        "x": 2610.7169811320755,
+        "z": 1354.0094339622642
+      },
+      "water": false
+    },
+    {
+      "id": "yujiPark",
+      "destination": {
+        "x": -107.22692307692307,
+        "z": -800.7384615384615
+      },
+      "water": false
+    },
+    {
+      "id": "nanhu",
+      "destination": {
+        "x": -2248.2283323775173,
+        "z": 4111.30150275778
+      },
+      "water": false
+    },
+    {
+      "id": "bluesky",
+      "destination": {
+        "x": -246.61612903225807,
+        "z": 15.000000000000014
+      },
+      "water": false
+    },
+    {
+      "id": "wanda",
+      "destination": {
+        "x": -1524.1206896551726,
+        "z": 3540.687931034483
+      },
+      "water": false
+    },
+    {
+      "id": "wuyinxian",
+      "destination": {
+        "x": -657.8872727272727,
+        "z": -855.1327272727274
+      },
+      "water": false
+    },
+    {
+      "id": "cotton",
+      "destination": {
+        "x": -1355.2303797468353,
+        "z": -165.17594936708855
+      },
+      "water": false
+    },
+    {
+      "id": "shuhe",
+      "destination": {
+        "x": -1527.1031578947368,
+        "z": -1282.6694736842105
+      },
+      "water": false
+    },
+    {
+      "id": "rtmart",
+      "destination": {
+        "x": -231.19411764705882,
+        "z": 1688.4764705882353
+      },
+      "water": false
+    },
+    {
+      "id": "wuyue",
+      "destination": {
+        "x": 1734,
+        "z": 2717.7
+      },
+      "water": false
+    },
+    {
+      "id": "highschool",
+      "destination": {
+        "x": 948.12,
+        "z": 107.34
+      },
+      "water": false
+    },
+    {
+      "id": "wanhao",
+      "destination": {
+        "x": -212.53859649122808,
+        "z": 1451.459649122807
+      },
+      "water": false
+    },
+    {
+      "id": "jiusheng",
+      "destination": {
+        "x": 40.48666666666665,
+        "z": -2.7333333333333343
+      },
+      "water": false
+    },
+    {
+      "id": "workersPalace",
+      "destination": {
+        "x": 2076.046153846154,
+        "z": 3065.0538461538463
+      },
+      "water": false
+    }
+  ],
+  "palace": {
+    "exists": true,
+    "meshes": 8,
+    "photoBasis": "AMap B0JG3A0FKP named exterior; 2023-05-01 opening independently verified; heights and unseen facades approximate"
+  },
+  "sourceCount": 7640,
+  "neighborhoods": 145,
+  "onlineDate": null,
+  "ground": {
+    "parkTreesOnPlaza": 0,
+    "plazaProbe": {
+      "x": 2157.7666666666664,
+      "z": 3005.6333333333337,
+      "y": 0.25
+    },
+    "palaceRoof": 18.219999313354492,
+    "cameraOverride": false
+  }
+}

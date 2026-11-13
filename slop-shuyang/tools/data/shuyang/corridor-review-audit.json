@@ -1,0 +1,1093 @@
+{
+  "referenceId": "amap-wode-rtmart-20261113",
+  "reviewedWholeSilhouettes": 186,
+  "newFootprints": [
+    {
+      "id": "reviewed/online/wode-rtmart/roof-041",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-045",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-049",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-050",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-052",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-053",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-054",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-055",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-057",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-058",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-060",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-061",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-062",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-063",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-064",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-065",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-067",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-068",
+      "context": "天下景城"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-085",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-087",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-090",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-095",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-097",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-098",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-111",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-113",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-115",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-118",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-119",
+      "context": "沃德嘉园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-143",
+      "context": "苏通花苑"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-144",
+      "context": "苏通花苑"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-145",
+      "context": "苏通花苑"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-147",
+      "context": "苏通花苑"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-172",
+      "context": "颖都家园"
+    },
+    {
+      "id": "reviewed/online/wode-rtmart/roof-174",
+      "context": "颖都家园"
+    }
+  ],
+  "coveredSilhouettes": [
+    {
+      "componentId": 1,
+      "sourceIds": [
+        "24325954-3426-4ab7-af67-0e811a5ccb64",
+        "1b44293e-ec12-4956-9f12-f96a519507d0"
+      ]
+    },
+    {
+      "componentId": 2,
+      "sourceIds": [
+        "6759aec3-3b95-4ef9-943d-f7818e8c60a2",
+        "00029ec8-0e9b-43d7-a706-0f5d64aa7ed7"
+      ]
+    },
+    {
+      "componentId": 3,
+      "sourceIds": [
+        "362f4a27-f918-438c-8cfd-29bf85e14708"
+      ]
+    },
+    {
+      "componentId": 4,
+      "sourceIds": [
+        "136205bf-a612-4300-944a-4012854fb38c"
+      ]
+    },
+    {
+      "componentId": 5,
+      "sourceIds": [
+        "2025e3a6-833c-4f9a-b79c-17eb5f1f27f5"
+      ]
+    },
+    {
+      "componentId": 6,
+      "sourceIds": [
+        "95348cc7-0b00-4dda-822a-fa65d396cf78"
+      ]
+    },
+    {
+      "componentId": 8,
+      "sourceIds": [
+        "a7058956-db75-449c-b772-4af0cbd0faff"
+      ]
+    },
+    {
+      "componentId": 9,
+      "sourceIds": [
+        "d248014b-428f-4f32-85ca-d1b1afb45c87",
+        "009ae88e-353c-49a5-bc6e-cd4a021ac876",
+        "f9172711-00d5-4465-86c5-b055528abae7"
+      ]
+    },
+    {
+      "componentId": 10,
+      "sourceIds": [
+        "141772a3-7174-4bc8-88ef-057c3936ce8c"
+      ]
+    },
+    {
+      "componentId": 11,
+      "sourceIds": [
+        "bf8e5a91-35c3-406e-aa8d-b978d409efb8"
+      ]
+    },
+    {
+      "componentId": 12,
+      "sourceIds": [
+        "7070195e-3d25-48ec-84b6-e3c08ef547ee"
+      ]
+    },
+    {
+      "componentId": 13,
+      "sourceIds": [
+        "6263ae57-d37c-4107-8667-4be2708aceb3"
+      ]
+    },
+    {
+      "componentId": 14,
+      "sourceIds": [
+        "197f1ece-b63c-4641-8af2-ec6577f7228b"
+      ]
+    },
+    {
+      "componentId": 15,
+      "sourceIds": [
+        "a9195671-966a-4f8a-b60b-a583610efaaa",
+        "28dfc86e-951f-4666-bafc-a014e1557189"
+      ]
+    },
+    {
+      "componentId": 16,
+      "sourceIds": [
+        "61a5441b-922d-4287-90b5-265162d4122f"
+      ]
+    },
+    {
+      "componentId": 17,
+      "sourceIds": [
+        "a1de2cdd-1a56-4c23-894a-a4041e97b42c"
+      ]
+    },
+    {
+      "componentId": 18,
+      "sourceIds": [
+        "6afc8212-ca9f-4c3a-a03b-9c0be0c32b2f",
+        "aff23e75-f5c7-4570-8543-323b8a03f8b8"
+      ]
+    },
+    {
+      "componentId": 19,
+      "sourceIds": [
+        "f294e4c6-b759-4d8f-b80e-585dd0685396"
+      ]
+    },
+    {
+      "componentId": 20,
+      "sourceIds": [
+        "e480c0f2-d1a2-4bdc-9f7c-7c8156b19fc9"
+      ]
+    },
+    {
+      "componentId": 21,
+      "sourceIds": [
+        "61a5441b-922d-4287-90b5-265162d4122f"
+      ]
+    },
+    {
+      "componentId": 22,
+      "sourceIds": [
+        "87c4abeb-ec40-4867-bc81-5e3f767c4ffe",
+        "faf733ee-e197-46c0-af6a-1a0a9b583492",
+        "ff66d4b1-051d-4501-b66b-7c61f432bdea"
+      ]
+    },
+    {
+      "componentId": 23,
+      "sourceIds": [
+        "79f907e7-5d43-4a05-839c-3a4ad15ab8c5"
+      ]
+    },
+    {
+      "componentId": 24,
+      "sourceIds": [
+        "b35c3e85-c7a8-429a-b064-df8a20923db3"
+      ]
+    },
+    {
+      "componentId": 25,
+      "sourceIds": [
+        "b281411b-81e2-48ea-bce1-d74630b89253"
+      ]
+    },
+    {
+      "componentId": 26,
+      "sourceIds": [
+        "6d3fb21b-4e64-428e-8f7f-f21f811166dd"
+      ]
+    },
+    {
+      "componentId": 27,
+      "sourceIds": [
+        "6aae106c-5043-4854-8968-e68ce4264d57"
+      ]
+    },
+    {
+      "componentId": 28,
+      "sourceIds": [
+        "1fe88659-c065-48f5-a4bf-9db1aa0a008d"
+      ]
+    },
+    {
+      "componentId": 29,
+      "sourceIds": [
+        "2b087778-1fc8-4f4b-94aa-2173397a735c"
+      ]
+    },
+    {
+      "componentId": 30,
+      "sourceIds": [
+        "687c19dd-7c3b-4428-ad07-1be9899bafda"
+      ]
+    },
+    {
+      "componentId": 31,
+      "sourceIds": [
+        "way/514271865"
+      ]
+    },
+    {
+      "componentId": 32,
+      "sourceIds": [
+        "way/514271897"
+      ]
+    },
+    {
+      "componentId": 33,
+      "sourceIds": [
+        "dcaa92e9-90d9-4753-8b77-dff4b850f507"
+      ]
+    },
+    {
+      "componentId": 34,
+      "sourceIds": [
+        "b851afcc-9683-4cb3-9236-82fe38a6f0d0",
+        "9024c050-26f6-454b-91d0-c47d83ea47d0"
+      ]
+    },
+    {
+      "componentId": 35,
+      "sourceIds": [
+        "5a1734f0-7346-424b-9f60-98a0789a1c2e",
+        "4a8c34ef-170f-448e-b329-0ece67857101"
+      ]
+    },
+    {
+      "componentId": 36,
+      "sourceIds": [
+        "2ad0a921-a615-43d8-8669-29983bfdee17"
+      ]
+    },
+    {
+      "componentId": 37,
+      "sourceIds": [
+        "a55aefec-d5b8-47fd-ba77-924c8407e871"
+      ]
+    },
+    {
+      "componentId": 38,
+      "sourceIds": [
+        "430c1c6a-2b64-4645-a277-249cc31f76c6"
+      ]
+    },
+    {
+      "componentId": 39,
+      "sourceIds": [
+        "6fc7b879-6408-4301-b64a-7666e40389ff",
+        "6b2bd384-64ec-4d97-b3f8-b9c3560e645a",
+        "2606ec81-b74f-42d1-ba93-480da3f2299f"
+      ]
+    },
+    {
+      "componentId": 40,
+      "sourceIds": [
+        "af1cca8d-3f19-4163-a8ff-99e36c5a8407"
+      ]
+    },
+    {
+      "componentId": 42,
+      "sourceIds": [
+        "35d070a4-57bc-42eb-8c9c-b7ee1ff58b82"
+      ]
+    },
+    {
+      "componentId": 43,
+      "sourceIds": [
+        "423d2d4e-521e-4f59-8a86-17ae63b56715"
+      ]
+    },
+    {
+      "componentId": 44,
+      "sourceIds": [
+        "95a7195c-76c3-4539-9f52-bb701da0e3e4",
+        "d1e31058-53d2-4dda-b039-d38750a4efb1"
+      ]
+    },
+    {
+      "componentId": 46,
+      "sourceIds": [
+        "5476f871-1f57-4a99-8571-b60d8afb03b2",
+        "1b0a5e20-2160-4b52-a062-c46f2d092bd6"
+      ]
+    },
+    {
+      "componentId": 47,
+      "sourceIds": [
+        "656d28c1-42c8-4048-908f-b9b4de2610c9",
+        "88f2f538-3855-46d5-b7f8-509699b970d1"
+      ]
+    },
+    {
+      "componentId": 48,
+      "sourceIds": [
+        "3d83844a-7eaf-4d1d-8285-94b37c020389"
+      ]
+    },
+    {
+      "componentId": 51,
+      "sourceIds": [
+        "41806476-0d87-4125-8388-017dd408d68f",
+        "44d51df8-b9a4-4186-8f02-9a9b39d99bdb"
+      ]
+    },
+    {
+      "componentId": 56,
+      "sourceIds": [
+        "d51459a0-0f09-4e65-aa34-b29ffff19444"
+      ]
+    },
+    {
+      "componentId": 59,
+      "sourceIds": [
+        "f21ebfc1-d346-4bcc-b1a4-050dc3ca0192"
+      ]
+    },
+    {
+      "componentId": 66,
+      "sourceIds": [
+        "32ba4119-54dc-4621-a657-772a3b6b73b0"
+      ]
+    },
+    {
+      "componentId": 69,
+      "sourceIds": [
+        "way/1371978230"
+      ]
+    },
+    {
+      "componentId": 70,
+      "sourceIds": [
+        "way/1371978230"
+      ]
+    },
+    {
+      "componentId": 71,
+      "sourceIds": [
+        "cca1d08f-a3a2-420e-b1be-f16d76a6b769"
+      ]
+    },
+    {
+      "componentId": 72,
+      "sourceIds": [
+        "way/497849438"
+      ]
+    },
+    {
+      "componentId": 73,
+      "sourceIds": [
+        "way/1371978222"
+      ]
+    },
+    {
+      "componentId": 74,
+      "sourceIds": [
+        "way/1371978221"
+      ]
+    },
+    {
+      "componentId": 75,
+      "sourceIds": [
+        "way/497849484"
+      ]
+    },
+    {
+      "componentId": 77,
+      "sourceIds": [
+        "way/497849513"
+      ]
+    },
+    {
+      "componentId": 78,
+      "sourceIds": [
+        "way/497849456"
+      ]
+    },
+    {
+      "componentId": 79,
+      "sourceIds": [
+        "way/1371978219"
+      ]
+    },
+    {
+      "componentId": 80,
+      "sourceIds": [
+        "way/1371978218"
+      ]
+    },
+    {
+      "componentId": 81,
+      "sourceIds": [
+        "way/1371978218"
+      ]
+    },
+    {
+      "componentId": 82,
+      "sourceIds": [
+        "c894f57e-a13e-485a-8a6a-cfd40ed2a0b6"
+      ]
+    },
+    {
+      "componentId": 83,
+      "sourceIds": [
+        "05abddd8-8bf9-4cd1-b814-09d016337e08"
+      ]
+    },
+    {
+      "componentId": 84,
+      "sourceIds": [
+        "f13d742f-303b-49e1-a15b-07523fb9c62c",
+        "f0f7f985-2507-422a-9845-3027d48bab0e"
+      ]
+    },
+    {
+      "componentId": 86,
+      "sourceIds": [
+        "a4e543dc-b789-4826-8309-4ab14d122f87"
+      ]
+    },
+    {
+      "componentId": 88,
+      "sourceIds": [
+        "ea0b6052-367e-49e9-965d-dc2a87bf96e5"
+      ]
+    },
+    {
+      "componentId": 89,
+      "sourceIds": [
+        "65c77a9d-9d5f-4759-a800-f5eed7823762"
+      ]
+    },
+    {
+      "componentId": 91,
+      "sourceIds": [
+        "d0a33434-d25c-4b52-ab6a-94ab43375a34"
+      ]
+    },
+    {
+      "componentId": 92,
+      "sourceIds": [
+        "196af76e-8505-41d0-9618-8e9f7e4e2c19"
+      ]
+    },
+    {
+      "componentId": 93,
+      "sourceIds": [
+        "1dd172b5-c3a3-4a96-bbf2-e0aa5c6848f3"
+      ]
+    },
+    {
+      "componentId": 94,
+      "sourceIds": [
+        "98ffbd3e-60e8-4bc9-9214-7cf40cceca03"
+      ]
+    },
+    {
+      "componentId": 96,
+      "sourceIds": [
+        "3e8e993c-1aa2-43c8-8aae-78ffc60ac9a4"
+      ]
+    },
+    {
+      "componentId": 99,
+      "sourceIds": [
+        "d5fdd6a5-7774-4c7d-9095-57d1aa210ac1"
+      ]
+    },
+    {
+      "componentId": 100,
+      "sourceIds": [
+        "57ebb414-d823-4287-ae0c-8d4f4476028c",
+        "d5ef057c-32b5-4992-945e-90971a88bfe0",
+        "908c235e-84a3-4fe1-a4c9-46ece4466981"
+      ]
+    },
+    {
+      "componentId": 101,
+      "sourceIds": [
+        "5dc0b2df-bf26-46d4-bdcc-df5dfec1c556"
+      ]
+    },
+    {
+      "componentId": 102,
+      "sourceIds": [
+        "bb18b1a1-a244-44cc-8d30-cc49396eb3ef"
+      ]
+    },
+    {
+      "componentId": 103,
+      "sourceIds": [
+        "327ec27b-36e1-4081-814c-d1cae724aeff"
+      ]
+    },
+    {
+      "componentId": 104,
+      "sourceIds": [
+        "ab3fb299-3ef7-4754-8d9a-4aa627d8af4f"
+      ]
+    },
+    {
+      "componentId": 105,
+      "sourceIds": [
+        "335da066-c741-4c6f-9840-dde030c79499"
+      ]
+    },
+    {
+      "componentId": 106,
+      "sourceIds": [
+        "way/514284992"
+      ]
+    },
+    {
+      "componentId": 107,
+      "sourceIds": [
+        "8968dedb-9d28-45df-9c68-4f5a17f1a863"
+      ]
+    },
+    {
+      "componentId": 108,
+      "sourceIds": [
+        "way/514284989"
+      ]
+    },
+    {
+      "componentId": 109,
+      "sourceIds": [
+        "2bdb12ac-2d31-47af-9913-3495602c0d7a"
+      ]
+    },
+    {
+      "componentId": 110,
+      "sourceIds": [
+        "way/514284993"
+      ]
+    },
+    {
+      "componentId": 112,
+      "sourceIds": [
+        "way/514284998"
+      ]
+    },
+    {
+      "componentId": 114,
+      "sourceIds": [
+        "way/514284985"
+      ]
+    },
+    {
+      "componentId": 116,
+      "sourceIds": [
+        "74f9b769-c372-4629-9fdc-081ade8e8756"
+      ]
+    },
+    {
+      "componentId": 117,
+      "sourceIds": [
+        "a9daaae1-6c45-4ed4-8b56-dc3b38d35d7d"
+      ]
+    },
+    {
+      "componentId": 120,
+      "sourceIds": [
+        "09f07c10-425c-410b-b91b-5758e46e0fb3",
+        "f6be9f5e-4f7e-4772-922c-5556db472a5d"
+      ]
+    },
+    {
+      "componentId": 121,
+      "sourceIds": [
+        "af2cade4-634e-44d1-8752-d5d2b5fd7b65"
+      ]
+    },
+    {
+      "componentId": 122,
+      "sourceIds": [
+        "7dc6ff01-b461-4812-ad57-2cc9abbd2faf"
+      ]
+    },
+    {
+      "componentId": 123,
+      "sourceIds": [
+        "4a5dbe78-4655-47ca-ac95-d7ffe1b763ad"
+      ]
+    },
+    {
+      "componentId": 124,
+      "sourceIds": [
+        "way/497849485",
+        "eb56a26c-bcb0-4872-b79c-5a3aae36ed04"
+      ]
+    },
+    {
+      "componentId": 125,
+      "sourceIds": [
+        "716bfe30-f779-44ff-9825-18c2d9a84700"
+      ]
+    },
+    {
+      "componentId": 126,
+      "sourceIds": [
+        "985c8ea3-6745-4fd1-94b6-066ce83b0d8b"
+      ]
+    },
+    {
+      "componentId": 127,
+      "sourceIds": [
+        "way/497849442"
+      ]
+    },
+    {
+      "componentId": 128,
+      "sourceIds": [
+        "456e71e1-582e-423b-9067-3a81c146904a"
+      ]
+    },
+    {
+      "componentId": 129,
+      "sourceIds": [
+        "954a0c6a-4c1c-4b5e-8495-d73f7bba24f5"
+      ]
+    },
+    {
+      "componentId": 130,
+      "sourceIds": [
+        "5ceadd49-190e-4d34-9efb-ba2a11cff666"
+      ]
+    },
+    {
+      "componentId": 131,
+      "sourceIds": [
+        "985c8ea3-6745-4fd1-94b6-066ce83b0d8b"
+      ]
+    },
+    {
+      "componentId": 132,
+      "sourceIds": [
+        "fdd582da-0d15-4541-81d9-22715a40247b",
+        "1d84feed-18b6-486e-8da0-2988906c77b7"
+      ]
+    },
+    {
+      "componentId": 133,
+      "sourceIds": [
+        "07fa7263-acfd-4756-aacb-fc3dadf5eaef"
+      ]
+    },
+    {
+      "componentId": 134,
+      "sourceIds": [
+        "95f2c399-1c89-4546-819d-bc6bbf5b7e58"
+      ]
+    },
+    {
+      "componentId": 135,
+      "sourceIds": [
+        "e1e7082e-0a6d-4342-b010-da2825e5f771"
+      ]
+    },
+    {
+      "componentId": 136,
+      "sourceIds": [
+        "1ec21a4d-df10-4569-81df-488100f87e3d"
+      ]
+    },
+    {
+      "componentId": 137,
+      "sourceIds": [
+        "e1e7082e-0a6d-4342-b010-da2825e5f771",
+        "c16cb0ae-4e7d-498f-92e6-a74183801f31"
+      ]
+    },
+    {
+      "componentId": 138,
+      "sourceIds": [
+        "ce057750-90c2-4d64-872f-b043abd49714",
+        "71f849f8-46f9-4cdc-b736-dcb2cef89241"
+      ]
+    },
+    {
+      "componentId": 139,
+      "sourceIds": [
+        "95f36980-07ea-4f7c-8d28-2489b537d45d"
+      ]
+    },
+    {
+      "componentId": 140,
+      "sourceIds": [
+        "5db9ceba-dce7-4dc6-8468-727fad8a1917"
+      ]
+    },
+    {
+      "componentId": 141,
+      "sourceIds": [
+        "7cdefc74-b98e-405b-afc5-a9d5daae3cc2"
+      ]
+    },
+    {
+      "componentId": 142,
+      "sourceIds": [
+        "852c07ce-cca9-471e-9098-e7433ea42724"
+      ]
+    },
+    {
+      "componentId": 146,
+      "sourceIds": [
+        "7d4f9a26-99e6-407a-b5f6-bf117f407807"
+      ]
+    },
+    {
+      "componentId": 148,
+      "sourceIds": [
+        "way/497850117"
+      ]
+    },
+    {
+      "componentId": 149,
+      "sourceIds": [
+        "way/497849496"
+      ]
+    },
+    {
+      "componentId": 150,
+      "sourceIds": [
+        "way/497849422"
+      ]
+    },
+    {
+      "componentId": 151,
+      "sourceIds": [
+        "way/497849434"
+      ]
+    },
+    {
+      "componentId": 152,
+      "sourceIds": [
+        "way/497849419"
+      ]
+    },
+    {
+      "componentId": 153,
+      "sourceIds": [
+        "way/497850102",
+        "way/497850100",
+        "cdc6d22f-ee89-4e28-9ae7-2fd74cff1e06",
+        "d0600685-9787-4345-aea4-ece702764ed6"
+      ]
+    },
+    {
+      "componentId": 154,
+      "sourceIds": [
+        "way/497850099"
+      ]
+    },
+    {
+      "componentId": 155,
+      "sourceIds": [
+        "way/497849424"
+      ]
+    },
+    {
+      "componentId": 156,
+      "sourceIds": [
+        "way/497849430"
+      ]
+    },
+    {
+      "componentId": 157,
+      "sourceIds": [
+        "way/497849420",
+        "way/497849429",
+        "way/497850115",
+        "way/497850101",
+        "way/497850113"
+      ]
+    },
+    {
+      "componentId": 158,
+      "sourceIds": [
+        "way/497850111"
+      ]
+    },
+    {
+      "componentId": 159,
+      "sourceIds": [
+        "way/497849511"
+      ]
+    },
+    {
+      "componentId": 160,
+      "sourceIds": [
+        "way/497850118"
+      ]
+    },
+    {
+      "componentId": 161,
+      "sourceIds": [
+        "way/497849458"
+      ]
+    },
+    {
+      "componentId": 162,
+      "sourceIds": [
+        "way/497850116"
+      ]
+    },
+    {
+      "componentId": 163,
+      "sourceIds": [
+        "way/497850096"
+      ]
+    },
+    {
+      "componentId": 164,
+      "sourceIds": [
+        "way/497849407",
+        "way/497849436"
+      ]
+    },
+    {
+      "componentId": 165,
+      "sourceIds": [
+        "way/497850109"
+      ]
+    },
+    {
+      "componentId": 166,
+      "sourceIds": [
+        "way/497850108"
+      ]
+    },
+    {
+      "componentId": 167,
+      "sourceIds": [
+        "way/497850112"
+      ]
+    },
+    {
+      "componentId": 168,
+      "sourceIds": [
+        "way/497849447"
+      ]
+    },
+    {
+      "componentId": 169,
+      "sourceIds": [
+        "way/497850114"
+      ]
+    },
+    {
+      "componentId": 170,
+      "sourceIds": [
+        "way/497849495",
+        "c1a034c3-1a48-4a68-a7a4-09178158c143"
+      ]
+    },
+    {
+      "componentId": 171,
+      "sourceIds": [
+        "way/497849453"
+      ]
+    },
+    {
+      "componentId": 173,
+      "sourceIds": [
+        "way/497849454",
+        "23e3cb6c-348a-418a-bbed-d8f2d70541ee",
+        "way/497849450"
+      ]
+    },
+    {
+      "componentId": 175,
+      "sourceIds": [
+        "way/497850103"
+      ]
+    },
+    {
+      "componentId": 176,
+      "sourceIds": [
+        "e8a183e8-d6ec-43d9-9528-662459dde2db"
+      ]
+    },
+    {
+      "componentId": 177,
+      "sourceIds": [
+        "way/497850106"
+      ]
+    },
+    {
+      "componentId": 178,
+      "sourceIds": [
+        "way/497850104",
+        "way/497849441",
+        "8bf3c8ae-6061-4fdb-b237-6425ee137283",
+        "way/497849425"
+      ]
+    },
+    {
+      "componentId": 179,
+      "sourceIds": [
+        "way/497849457"
+      ]
+    },
+    {
+      "componentId": 180,
+      "sourceIds": [
+        "way/497849402"
+      ]
+    },
+    {
+      "componentId": 181,
+      "sourceIds": [
+        "way/497849421"
+      ]
+    },
+    {
+      "componentId": 182,
+      "sourceIds": [
+        "way/497849461"
+      ]
+    },
+    {
+      "componentId": 183,
+      "sourceIds": [
+        "way/497849460"
+      ]
+    },
+    {
+      "componentId": 184,
+      "sourceIds": [
+        "way/497849473"
+      ]
+    },
+    {
+      "componentId": 185,
+      "sourceIds": [
+        "9c1bd1d0-dc3d-472d-9fc5-1dd5adb6be33"
+      ]
+    },
+    {
+      "componentId": 186,
+      "sourceIds": [
+        "way/497849477"
+      ]
+    },
+    {
+      "componentId": 187,
+      "sourceIds": [
+        "way/497849499"
+      ]
+    },
+    {
+      "componentId": 188,
+      "sourceIds": [
+        "way/497849499"
+      ]
+    }
+  ],
+  "note": "Existing source geometry wins overlaps; thin/partial silhouettes excluded before this review; no lot infill or random geometry."
+}

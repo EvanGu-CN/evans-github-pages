@@ -1,0 +1,1873 @@
+{
+  "boundsWgs84": [
+    118.73927349008342,
+    34.08328141335215,
+    118.81089691678638,
+    34.150204921590976
+  ],
+  "buildings": 7728,
+  "sources": {
+    "Overture": 6133,
+    "OSM": 1425,
+    "ReviewedImagery": 170
+  },
+  "heightSources": {
+    "estimate": 2462,
+    "cnbh-raster": 5265,
+    "osm-height": 1
+  },
+  "categories": {
+    "unknown": 3583,
+    "residential": 3553,
+    "industrial": 312,
+    "civic": 18,
+    "commercial": 234,
+    "office": 8,
+    "house": 20
+  },
+  "filters": {
+    "tiny-or-invalid": 87,
+    "overture-osm-duplicate": 1425,
+    "reviewed-existing-duplicate": 50
+  },
+  "courtyards": 4,
+  "overture": {
+    "release": "2026-10-21.0",
+    "features": 7643,
+    "sha256": "39798b024fb0f2033d9deb19743c3c50eba3361ad69eb0c70558e37522c045d7",
+    "reference": "https://docs.overturemaps.org/guides/buildings/"
+  },
+  "globfpArchives": [],
+  "reviewedImagery": {
+    "reference": {
+      "provider": "Esri World Imagery / Vantor Vivid",
+      "service": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "retrievedAt": "2026-11-13",
+      "imageAcquired": "2021-01-29",
+      "serviceRelease": "Raster Basemaps 2026.R05",
+      "resolutionM": 0.46,
+      "sourceAccuracyM": 5,
+      "imageSize": [
+        1536,
+        1536
+      ],
+      "extent3857": [
+        13223063.034311226,
+        4041448.920046554,
+        13225008.31922539,
+        4043394.204960718
+      ],
+      "method": "Individually reviewed roof runs and explicitly traced exterior roof polygons. Each approximate roofprint retains original image pixels; roof lean and source accuracy limit ground alignment. No random infill.",
+      "currentContext": "User supplied current district map and independently reviewed named community photographs corroborate the built-up neighbourhoods. They do not establish a newer acquisition date for this satellite image.",
+      "limitations": "Satellite roof lean, trees and shadows limit outline precision. 2026 service publication is not the imagery acquisition date. Heights and roof pitch are display estimates unless separately documented."
+    },
+    "additionalReferences": [
+      {
+        "provider": "AMap JS API official layers",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T00:37:02.832Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+        "layer": "satellite",
+        "center": [
+          118.799884,
+          34.100148
+        ],
+        "zoom": 18,
+        "rotation": 0,
+        "pitch": 0,
+        "size": [
+          1536,
+          1000
+        ],
+        "bounds": {
+          "southWest": [
+            118.795764,
+            34.097927
+          ],
+          "northEast": [
+            118.804003,
+            34.102369
+          ]
+        },
+        "id": "amap-wuyue-south-20261113",
+        "standardImage": "reference/amap-wuyue-south-standard-native-20261113.jpg",
+        "satelliteImage": "reference/amap-wuyue-south-native-20261113.jpg",
+        "screenshotSize": [
+          1536,
+          1100
+        ],
+        "mapOffset": [
+          0,
+          100
+        ],
+        "method": "Manually reviewed whole standard-map building outlines cross-checked against live satellite and named POI photos. GCJ-02 is inverted to WGS84. Native screenshots only: CDP screenshot scaling was inconsistent.",
+        "limitations": "Map geometry is approximate, acquisition dates unknown, roof lean visible in satellite. Heights are display estimates, not measurements.",
+        "outlineExtraction": "Native JPEG pale building silhouettes (RGB 247 to 251), complete connected components visually reviewed; 1.5 pixel simplification. Colours are only an aid; clipped shapes excluded."
+      },
+      {
+        "provider": "AMap JS API official layers",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T05:19:10.888Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard",
+        "center": [
+          118.798,
+          34.0988
+        ],
+        "zoom": 17.5,
+        "rotation": 0,
+        "pitch": 0,
+        "size": [
+          1536,
+          1000
+        ],
+        "bounds": {
+          "southWest": [
+            118.792174,
+            34.095659
+          ],
+          "northEast": [
+            118.803826,
+            34.101941
+          ]
+        },
+        "id": "amap-junlin-huachen-20261113",
+        "standardImage": "reference/amap-junlin-full-outlines-native-20261113.jpg",
+        "labelledImage": "reference/amap-junlin-full-standard-native-20261113.jpg",
+        "satelliteImage": "reference/amap-junlin-full-satellite-native-20261113.jpg",
+        "screenshotSize": [
+          1536,
+          1100
+        ],
+        "mapOffset": [
+          0,
+          100
+        ],
+        "limitations": "Manually reviewed whole map silhouettes, cross-checked with satellite and visible building numbers. Acquisition date unknown; heights, roof pitch and upper massing approximate.",
+        "method": "Native map screenshot; labels temporarily hidden for complete silhouettes; named screenshot retained separately.",
+        "outlineExtraction": "Pale silhouette connected components, 0.8 pixel simplification; visual review against unmodified labelled and satellite screenshots."
+      },
+      {
+        "provider": "AMap JS API official layers",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T06:05:33.814Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard",
+        "center": [
+          118.7821,
+          34.11085
+        ],
+        "zoom": 17,
+        "rotation": 0,
+        "pitch": 0,
+        "size": [
+          1536,
+          1200
+        ],
+        "bounds": {
+          "southWest": [
+            118.77386,
+            34.10552
+          ],
+          "northEast": [
+            118.79034,
+            34.11618
+          ]
+        },
+        "id": "amap-wode-rtmart-20261113",
+        "mapOffset": [
+          0,
+          100
+        ],
+        "screenshotSize": [
+          1536,
+          1300
+        ],
+        "standardImage": "reference/wode-rtmart-outlines-20261113.jpg",
+        "labelledImage": "reference/wode-rtmart-labelled-20261113.jpg",
+        "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
+        "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
+        "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+      }
+    ],
+    "traceSha256": "2028db1997d654462efc3332817dc8b3dfb9f6e9dd4f6347d9ca9b5fc6115da5",
+    "observedCandidates": 220,
+    "acceptedBuildings": 170,
+    "deduplicatedAgainstExisting": 50,
+    "decisions": [
+      {
+        "traceId": "reviewed/wuyue/shengyuan/001",
+        "status": "accepted",
+        "areaM2": 1070.9
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/002",
+        "status": "accepted",
+        "areaM2": 909.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/003",
+        "status": "accepted",
+        "areaM2": 1089.5
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/004",
+        "status": "accepted",
+        "areaM2": 1120.5
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/005",
+        "status": "accepted",
+        "areaM2": 997.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/006",
+        "status": "accepted",
+        "areaM2": 1079.0
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/007",
+        "status": "accepted",
+        "areaM2": 1085.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/008",
+        "status": "accepted",
+        "areaM2": 956.4
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/009",
+        "status": "accepted",
+        "areaM2": 1079.0
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/010",
+        "status": "accepted",
+        "areaM2": 1063.5
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/011",
+        "status": "accepted",
+        "areaM2": 1029.5
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/012",
+        "status": "accepted",
+        "areaM2": 1070.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/013",
+        "status": "accepted",
+        "areaM2": 1014.0
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/014",
+        "status": "accepted",
+        "areaM2": 1014.0
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/015",
+        "status": "accepted",
+        "areaM2": 1107.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/016",
+        "status": "accepted",
+        "areaM2": 1023.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/017",
+        "status": "accepted",
+        "areaM2": 1012.5
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/018",
+        "status": "accepted",
+        "areaM2": 1104.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/019",
+        "status": "accepted",
+        "areaM2": 966.8
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/020",
+        "status": "accepted",
+        "areaM2": 1013.2
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/021",
+        "status": "accepted",
+        "areaM2": 1117.2
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/022",
+        "status": "rejected-overlap",
+        "observedAreaM2": 999.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/wuyue/shengyuan/020",
+            "sourceAreaM2": 1013.2,
+            "intersectionM2": 890.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/023",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1085.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/wuyue/shengyuan/021",
+            "sourceAreaM2": 1117.2,
+            "intersectionM2": 838.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/024",
+        "status": "accepted",
+        "areaM2": 1092.2
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/025",
+        "status": "rejected-overlap",
+        "observedAreaM2": 922.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "1e5b15fb-e8d5-48c4-968d-b0729e7fe3d4",
+            "sourceAreaM2": 15.2,
+            "intersectionM2": 10.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/shengyuan/026",
+        "status": "accepted",
+        "areaM2": 1042.5
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/001",
+        "status": "accepted",
+        "areaM2": 908.9
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/002",
+        "status": "accepted",
+        "areaM2": 1211.2
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/003",
+        "status": "accepted",
+        "areaM2": 1682.8
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/004",
+        "status": "accepted",
+        "areaM2": 986.0
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/005",
+        "status": "rejected-overlap",
+        "observedAreaM2": 980.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "9589b536-0af5-4409-9b50-1f1ebe94e9fd",
+            "sourceAreaM2": 233.0,
+            "intersectionM2": 85.2
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/006",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1532.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "c313db2d-926c-4a73-96f6-7065c2b140d6",
+            "sourceAreaM2": 598.5,
+            "intersectionM2": 206.2
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/007",
+        "status": "accepted",
+        "areaM2": 1018.2
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/008",
+        "status": "rejected-overlap",
+        "observedAreaM2": 967.0,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "ac97abab-6f72-453c-8aaa-9bf4ded1bb22",
+            "sourceAreaM2": 237.1,
+            "intersectionM2": 112.8
+          },
+          {
+            "sourceId": "29e70ddd-5eb7-4985-b654-f6bda7da133b",
+            "sourceAreaM2": 21.0,
+            "intersectionM2": 6.8
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/009",
+        "status": "accepted",
+        "areaM2": 987.9
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/010",
+        "status": "rejected-overlap",
+        "observedAreaM2": 967.0,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "fa8ab5e1-1cab-4431-aace-ab3dec5f4949",
+            "sourceAreaM2": 641.5,
+            "intersectionM2": 267.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/011",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1487.3,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "c38511e6-847d-417c-9c4d-1dfcf12d890c",
+            "sourceAreaM2": 61.4,
+            "intersectionM2": 27.8
+          },
+          {
+            "sourceId": "3f59d83f-07ac-44d4-b97e-45253505030f",
+            "sourceAreaM2": 598.8,
+            "intersectionM2": 471.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/012",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1050.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285624",
+            "sourceAreaM2": 215.8,
+            "intersectionM2": 214.3
+          },
+          {
+            "sourceId": "way/514285601",
+            "sourceAreaM2": 372.6,
+            "intersectionM2": 271.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/013",
+        "status": "rejected-overlap",
+        "observedAreaM2": 947.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285628",
+            "sourceAreaM2": 640.6,
+            "intersectionM2": 255.5
+          },
+          {
+            "sourceId": "cc1ac855-3fe8-4e93-9a92-2d4d6bbb90b2",
+            "sourceAreaM2": 478.2,
+            "intersectionM2": 420.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/014",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1468.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285612",
+            "sourceAreaM2": 699.0,
+            "intersectionM2": 384.2
+          },
+          {
+            "sourceId": "fe35d326-866c-4922-b7a1-5b61fc8e03f2",
+            "sourceAreaM2": 52.1,
+            "intersectionM2": 41.5
+          },
+          {
+            "sourceId": "d1116e24-7b1d-41d6-bfbd-a30862c9822b",
+            "sourceAreaM2": 85.5,
+            "intersectionM2": 50.5
+          },
+          {
+            "sourceId": "ab4218ae-02aa-40f7-aeb0-02488a844a79",
+            "sourceAreaM2": 17.0,
+            "intersectionM2": 17.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/015",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1031.4,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285618",
+            "sourceAreaM2": 225.5,
+            "intersectionM2": 213.7
+          },
+          {
+            "sourceId": "way/514285623",
+            "sourceAreaM2": 391.9,
+            "intersectionM2": 372.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/016",
+        "status": "rejected-overlap",
+        "observedAreaM2": 967.0,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285628",
+            "sourceAreaM2": 640.6,
+            "intersectionM2": 196.3
+          },
+          {
+            "sourceId": "cc1ac855-3fe8-4e93-9a92-2d4d6bbb90b2",
+            "sourceAreaM2": 478.2,
+            "intersectionM2": 447.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/017",
+        "status": "rejected-overlap",
+        "observedAreaM2": 947.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/514285618",
+            "sourceAreaM2": 225.5,
+            "intersectionM2": 164.9
+          },
+          {
+            "sourceId": "way/514285623",
+            "sourceAreaM2": 391.9,
+            "intersectionM2": 270.2
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/018",
+        "status": "rejected-overlap",
+        "observedAreaM2": 902.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "beb8071d-63d6-4495-8478-92047ee3c2ae",
+            "sourceAreaM2": 32.9,
+            "intersectionM2": 32.9
+          },
+          {
+            "sourceId": "f49933a2-790b-4300-8ba3-2e6380334be4",
+            "sourceAreaM2": 22.5,
+            "intersectionM2": 14.1
+          },
+          {
+            "sourceId": "043337e0-34fb-4cc3-8a06-de39b08a934c",
+            "sourceAreaM2": 378.2,
+            "intersectionM2": 176.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/019",
+        "status": "accepted",
+        "areaM2": 1027.5
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/020",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1220.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "b8f6b2f8-403f-4024-8c27-50f92550d263",
+            "sourceAreaM2": 52.6,
+            "intersectionM2": 52.6
+          },
+          {
+            "sourceId": "b3388087-2c06-47a0-a25e-f8150d3b033d",
+            "sourceAreaM2": 49.2,
+            "intersectionM2": 49.2
+          },
+          {
+            "sourceId": "874c91ca-3805-48b8-8038-9208552c6654",
+            "sourceAreaM2": 154.5,
+            "intersectionM2": 70.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/021",
+        "status": "rejected-overlap",
+        "observedAreaM2": 899.6,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "f03631fe-a61f-4e49-8cea-406b4c2a0a86",
+            "sourceAreaM2": 666.9,
+            "intersectionM2": 506.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/022",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1034.4,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "0bc3216a-09cd-4657-a09d-2aca856cf9ee",
+            "sourceAreaM2": 27.5,
+            "intersectionM2": 23.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/023",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1651.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "9e80b6d1-8375-4617-a811-307701d02ee2",
+            "sourceAreaM2": 48.1,
+            "intersectionM2": 48.1
+          },
+          {
+            "sourceId": "d7e8efb4-23fc-44c6-b97e-581b2a0aff20",
+            "sourceAreaM2": 23.0,
+            "intersectionM2": 22.8
+          },
+          {
+            "sourceId": "3730cf06-235b-4567-b0b3-eb58fb43f78d",
+            "sourceAreaM2": 150.2,
+            "intersectionM2": 61.8
+          },
+          {
+            "sourceId": "aa577d1d-5112-4729-9258-676beb6d18db",
+            "sourceAreaM2": 306.2,
+            "intersectionM2": 209.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/024",
+        "status": "accepted",
+        "areaM2": 901.5
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/025",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1050.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "0bc3216a-09cd-4657-a09d-2aca856cf9ee",
+            "sourceAreaM2": 27.5,
+            "intersectionM2": 25.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/026",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1583.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "e584b121-8af1-495b-ab9f-0a8eee696e8e",
+            "sourceAreaM2": 52.2,
+            "intersectionM2": 52.2
+          },
+          {
+            "sourceId": "473a50a2-ecbd-4385-936d-bd10e0271b54",
+            "sourceAreaM2": 120.4,
+            "intersectionM2": 108.1
+          },
+          {
+            "sourceId": "0374c7d8-22fb-4fdb-8845-996053b4a8cf",
+            "sourceAreaM2": 63.2,
+            "intersectionM2": 57.3
+          },
+          {
+            "sourceId": "e0cadf5f-3580-4d9e-97f4-d9e6c80a6dca",
+            "sourceAreaM2": 202.0,
+            "intersectionM2": 81.3
+          },
+          {
+            "sourceId": "1ffaaacc-ceca-45e7-9dc8-505ccaf05beb",
+            "sourceAreaM2": 362.0,
+            "intersectionM2": 214.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/027",
+        "status": "rejected-overlap",
+        "observedAreaM2": 902.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "1b8b998b-eb23-40ee-ab9c-76e581c92807",
+            "sourceAreaM2": 369.2,
+            "intersectionM2": 168.7
+          },
+          {
+            "sourceId": "9516d74a-0d1d-4aa7-935f-31f997e631b8",
+            "sourceAreaM2": 59.1,
+            "intersectionM2": 57.3
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/028",
+        "status": "accepted",
+        "areaM2": 1045.0
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/029",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1551.6,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "e584b121-8af1-495b-ab9f-0a8eee696e8e",
+            "sourceAreaM2": 52.2,
+            "intersectionM2": 21.2
+          },
+          {
+            "sourceId": "473a50a2-ecbd-4385-936d-bd10e0271b54",
+            "sourceAreaM2": 120.4,
+            "intersectionM2": 36.4
+          },
+          {
+            "sourceId": "e0cadf5f-3580-4d9e-97f4-d9e6c80a6dca",
+            "sourceAreaM2": 202.0,
+            "intersectionM2": 198.0
+          },
+          {
+            "sourceId": "1ffaaacc-ceca-45e7-9dc8-505ccaf05beb",
+            "sourceAreaM2": 362.0,
+            "intersectionM2": 362.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/030",
+        "status": "rejected-overlap",
+        "observedAreaM2": 902.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "a34033bc-0ed2-4adf-9451-25d836894602",
+            "sourceAreaM2": 71.2,
+            "intersectionM2": 71.2
+          },
+          {
+            "sourceId": "79336658-5537-4e0f-8c55-848169cfa383",
+            "sourceAreaM2": 16.2,
+            "intersectionM2": 16.2
+          },
+          {
+            "sourceId": "86411ddd-4d52-435e-b500-a4cf26825900",
+            "sourceAreaM2": 73.1,
+            "intersectionM2": 73.1
+          },
+          {
+            "sourceId": "779d4724-1cdd-48b5-ae34-0d3d48d55c86",
+            "sourceAreaM2": 404.2,
+            "intersectionM2": 151.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/031",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1050.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "f366d257-0af7-4e15-9a6b-7aa56ddb6867",
+            "sourceAreaM2": 232.9,
+            "intersectionM2": 66.9
+          },
+          {
+            "sourceId": "49635fa2-31c8-43cb-a45a-c981fa5a59a1",
+            "sourceAreaM2": 198.1,
+            "intersectionM2": 90.4
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/linan/032",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1554.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "8aba1e16-298c-4be8-be1b-ad14025be0b3",
+            "sourceAreaM2": 195.9,
+            "intersectionM2": 149.6
+          },
+          {
+            "sourceId": "49e9c724-11f3-4165-8a68-53f1e2f4a566",
+            "sourceAreaM2": 362.5,
+            "intersectionM2": 206.8
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-01",
+        "status": "accepted",
+        "areaM2": 1304.1
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-02",
+        "status": "accepted",
+        "areaM2": 1269.1
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-03",
+        "status": "accepted",
+        "areaM2": 1279.2
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-04",
+        "status": "accepted",
+        "areaM2": 1736.4
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-05",
+        "status": "accepted",
+        "areaM2": 1073.4
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-07",
+        "status": "accepted",
+        "areaM2": 1193.2
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-08",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1570.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "ad4961e5-60a4-4d6b-a3c6-fc50f38f9068",
+            "sourceAreaM2": 65.6,
+            "intersectionM2": 26.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-09",
+        "status": "accepted",
+        "areaM2": 1465.1
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-11",
+        "status": "accepted",
+        "areaM2": 1272.2
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-12",
+        "status": "accepted",
+        "areaM2": 1549.6
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-13",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1390.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "01578d4b-dda9-4738-8bb6-fd9ef539082d",
+            "sourceAreaM2": 117.9,
+            "intersectionM2": 117.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-14",
+        "status": "accepted",
+        "areaM2": 682.2
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-16",
+        "status": "accepted",
+        "areaM2": 631.1
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-17",
+        "status": "accepted",
+        "areaM2": 841.9
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-18",
+        "status": "accepted",
+        "areaM2": 725.9
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-20",
+        "status": "accepted",
+        "areaM2": 759.5
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-21",
+        "status": "accepted",
+        "areaM2": 823.5
+      },
+      {
+        "traceId": "reviewed/wuyue/rose-garden/roof-22",
+        "status": "accepted",
+        "areaM2": 632.4
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/001",
+        "status": "accepted",
+        "areaM2": 878.1
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/002",
+        "status": "accepted",
+        "areaM2": 892.2
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/003",
+        "status": "accepted",
+        "areaM2": 812.2
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/004",
+        "status": "accepted",
+        "areaM2": 805.6
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/005",
+        "status": "accepted",
+        "areaM2": 860.6
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/006",
+        "status": "accepted",
+        "areaM2": 863.9
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/007",
+        "status": "accepted",
+        "areaM2": 820.5
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/008",
+        "status": "accepted",
+        "areaM2": 806.0
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/009",
+        "status": "rejected-overlap",
+        "observedAreaM2": 800.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/wuyue/sunshine-south/004",
+            "sourceAreaM2": 805.6,
+            "intersectionM2": 342.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/010",
+        "status": "accepted",
+        "areaM2": 799.6
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/011",
+        "status": "accepted",
+        "areaM2": 883.0
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/012",
+        "status": "accepted",
+        "areaM2": 834.0
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/013",
+        "status": "accepted",
+        "areaM2": 836.8
+      },
+      {
+        "traceId": "reviewed/wuyue/sunshine-south/014",
+        "status": "accepted",
+        "areaM2": 791.5
+      },
+      {
+        "traceId": "reviewed/online/workers-palace",
+        "status": "accepted",
+        "areaM2": 3866.0
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/01",
+        "status": "accepted",
+        "areaM2": 619.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/02",
+        "status": "accepted",
+        "areaM2": 440.8
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/03",
+        "status": "accepted",
+        "areaM2": 300.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/04",
+        "status": "accepted",
+        "areaM2": 436.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/05",
+        "status": "accepted",
+        "areaM2": 567.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/06",
+        "status": "accepted",
+        "areaM2": 434.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/07",
+        "status": "accepted",
+        "areaM2": 306.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/08",
+        "status": "accepted",
+        "areaM2": 482.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/09",
+        "status": "accepted",
+        "areaM2": 587.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/10",
+        "status": "accepted",
+        "areaM2": 454.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/11",
+        "status": "accepted",
+        "areaM2": 267.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/12",
+        "status": "accepted",
+        "areaM2": 579.0
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/13",
+        "status": "accepted",
+        "areaM2": 466.0
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/14",
+        "status": "accepted",
+        "areaM2": 264.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/15",
+        "status": "accepted",
+        "areaM2": 444.5
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/16",
+        "status": "accepted",
+        "areaM2": 615.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/17",
+        "status": "accepted",
+        "areaM2": 475.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/18",
+        "status": "accepted",
+        "areaM2": 440.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/19",
+        "status": "accepted",
+        "areaM2": 258.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-01/20",
+        "status": "accepted",
+        "areaM2": 425.2
+      },
+      {
+        "traceId": "reviewed/online/junlin/23",
+        "status": "accepted",
+        "areaM2": 463.6
+      },
+      {
+        "traceId": "reviewed/online/junlin/24",
+        "status": "accepted",
+        "areaM2": 1006.4
+      },
+      {
+        "traceId": "reviewed/online/junlin/20",
+        "status": "accepted",
+        "areaM2": 156.5
+      },
+      {
+        "traceId": "reviewed/online/junlin/21",
+        "status": "accepted",
+        "areaM2": 1072.5
+      },
+      {
+        "traceId": "reviewed/online/junlin/15",
+        "status": "accepted",
+        "areaM2": 158.5
+      },
+      {
+        "traceId": "reviewed/online/junlin/16",
+        "status": "accepted",
+        "areaM2": 430.8
+      },
+      {
+        "traceId": "reviewed/online/junlin/22",
+        "status": "accepted",
+        "areaM2": 490.9
+      },
+      {
+        "traceId": "reviewed/online/junlin/17",
+        "status": "accepted",
+        "areaM2": 476.4
+      },
+      {
+        "traceId": "reviewed/online/junlin/18",
+        "status": "accepted",
+        "areaM2": 426.5
+      },
+      {
+        "traceId": "reviewed/online/junlin/19",
+        "status": "accepted",
+        "areaM2": 435.0
+      },
+      {
+        "traceId": "reviewed/online/junlin/11",
+        "status": "accepted",
+        "areaM2": 115.9
+      },
+      {
+        "traceId": "reviewed/online/junlin/12",
+        "status": "accepted",
+        "areaM2": 719.4
+      },
+      {
+        "traceId": "reviewed/online/junlin/07",
+        "status": "accepted",
+        "areaM2": 150.2
+      },
+      {
+        "traceId": "reviewed/online/junlin/13",
+        "status": "accepted",
+        "areaM2": 487.0
+      },
+      {
+        "traceId": "reviewed/online/junlin/14",
+        "status": "accepted",
+        "areaM2": 232.9
+      },
+      {
+        "traceId": "reviewed/online/junlin/08",
+        "status": "accepted",
+        "areaM2": 935.0
+      },
+      {
+        "traceId": "reviewed/online/junlin/09",
+        "status": "accepted",
+        "areaM2": 677.4
+      },
+      {
+        "traceId": "reviewed/online/junlin/10",
+        "status": "accepted",
+        "areaM2": 232.1
+      },
+      {
+        "traceId": "reviewed/online/junlin/03",
+        "status": "accepted",
+        "areaM2": 179.2
+      },
+      {
+        "traceId": "reviewed/online/junlin/04",
+        "status": "accepted",
+        "areaM2": 707.0
+      },
+      {
+        "traceId": "reviewed/online/junlin/05",
+        "status": "accepted",
+        "areaM2": 442.6
+      },
+      {
+        "traceId": "reviewed/online/junlin/01",
+        "status": "accepted",
+        "areaM2": 1562.2
+      },
+      {
+        "traceId": "reviewed/online/junlin/06",
+        "status": "accepted",
+        "areaM2": 215.1
+      },
+      {
+        "traceId": "reviewed/online/junlin/02",
+        "status": "accepted",
+        "areaM2": 472.9
+      },
+      {
+        "traceId": "reviewed/online/junlin/north-east",
+        "status": "accepted",
+        "areaM2": 1135.8
+      },
+      {
+        "traceId": "reviewed/online/junlin/aux-19",
+        "status": "accepted",
+        "areaM2": 131.2
+      },
+      {
+        "traceId": "reviewed/online/junlin/aux-54",
+        "status": "accepted",
+        "areaM2": 308.4
+      },
+      {
+        "traceId": "reviewed/online/huachen/west-base",
+        "status": "accepted",
+        "areaM2": 2448.4
+      },
+      {
+        "traceId": "reviewed/online/huachen/02",
+        "status": "accepted",
+        "areaM2": 1079.0,
+        "boundSourceIds": [
+          "1f3ce979-3701-4115-870e-3d42e2d11918"
+        ],
+        "overlapResolution": "Original partial source retained in extract; dedicated model must bind both IDs to the complete reviewed outline."
+      },
+      {
+        "traceId": "reviewed/online/huachen/01",
+        "status": "accepted",
+        "areaM2": 1073.9
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/14",
+        "status": "rejected-overlap",
+        "observedAreaM2": 438.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/02",
+            "sourceAreaM2": 440.8,
+            "intersectionM2": 425.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/15",
+        "status": "rejected-overlap",
+        "observedAreaM2": 309.0,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/03",
+            "sourceAreaM2": 300.1,
+            "intersectionM2": 293.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/20",
+        "status": "rejected-overlap",
+        "observedAreaM2": 583.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/01",
+            "sourceAreaM2": 619.2,
+            "intersectionM2": 578.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/21",
+        "status": "rejected-overlap",
+        "observedAreaM2": 570.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/05",
+            "sourceAreaM2": 567.1,
+            "intersectionM2": 555.7
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/22",
+        "status": "rejected-overlap",
+        "observedAreaM2": 432.1,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/04",
+            "sourceAreaM2": 436.6,
+            "intersectionM2": 421.4
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/23",
+        "status": "rejected-overlap",
+        "observedAreaM2": 462.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/08",
+            "sourceAreaM2": 482.4,
+            "intersectionM2": 455.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/27",
+        "status": "rejected-overlap",
+        "observedAreaM2": 423.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/06",
+            "sourceAreaM2": 434.2,
+            "intersectionM2": 415.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/28",
+        "status": "rejected-overlap",
+        "observedAreaM2": 319.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/07",
+            "sourceAreaM2": 306.1,
+            "intersectionM2": 303.3
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/29",
+        "status": "rejected-overlap",
+        "observedAreaM2": 259.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/11",
+            "sourceAreaM2": 267.1,
+            "intersectionM2": 253.2
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/30",
+        "status": "rejected-overlap",
+        "observedAreaM2": 556.3,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/12",
+            "sourceAreaM2": 579.0,
+            "intersectionM2": 551.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/35",
+        "status": "rejected-overlap",
+        "observedAreaM2": 450.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/13",
+            "sourceAreaM2": 466.0,
+            "intersectionM2": 444.3
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/36",
+        "status": "rejected-overlap",
+        "observedAreaM2": 579.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/09",
+            "sourceAreaM2": 587.4,
+            "intersectionM2": 568.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/37",
+        "status": "rejected-overlap",
+        "observedAreaM2": 432.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/10",
+            "sourceAreaM2": 454.4,
+            "intersectionM2": 426.4
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/38",
+        "status": "rejected-overlap",
+        "observedAreaM2": 258.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/14",
+            "sourceAreaM2": 264.4,
+            "intersectionM2": 254.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/39",
+        "status": "rejected-overlap",
+        "observedAreaM2": 433.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/15",
+            "sourceAreaM2": 444.5,
+            "intersectionM2": 426.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/44",
+        "status": "rejected-overlap",
+        "observedAreaM2": 449.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/17",
+            "sourceAreaM2": 475.6,
+            "intersectionM2": 447.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/45",
+        "status": "rejected-overlap",
+        "observedAreaM2": 432.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/18",
+            "sourceAreaM2": 440.6,
+            "intersectionM2": 420.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/46",
+        "status": "rejected-overlap",
+        "observedAreaM2": 594.0,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/16",
+            "sourceAreaM2": 615.6,
+            "intersectionM2": 587.8
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/49",
+        "status": "rejected-overlap",
+        "observedAreaM2": 247.5,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/19",
+            "sourceAreaM2": 258.2,
+            "intersectionM2": 244.0
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/50",
+        "status": "rejected-overlap",
+        "observedAreaM2": 412.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "reviewed/online/happiness-01/20",
+            "sourceAreaM2": 425.2,
+            "intersectionM2": 405.8
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/51",
+        "status": "accepted",
+        "areaM2": 443.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/55",
+        "status": "accepted",
+        "areaM2": 427.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/56",
+        "status": "accepted",
+        "areaM2": 678.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/57",
+        "status": "accepted",
+        "areaM2": 224.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/58",
+        "status": "accepted",
+        "areaM2": 239.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/59",
+        "status": "accepted",
+        "areaM2": 263.9
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/60",
+        "status": "accepted",
+        "areaM2": 397.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/61",
+        "status": "accepted",
+        "areaM2": 425.1
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/62",
+        "status": "accepted",
+        "areaM2": 657.5
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/63",
+        "status": "accepted",
+        "areaM2": 351.5
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/64",
+        "status": "accepted",
+        "areaM2": 402.9
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/65",
+        "status": "accepted",
+        "areaM2": 329.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/66",
+        "status": "accepted",
+        "areaM2": 762.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/67",
+        "status": "accepted",
+        "areaM2": 640.5
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/68",
+        "status": "accepted",
+        "areaM2": 343.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/69",
+        "status": "accepted",
+        "areaM2": 340.9
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/70",
+        "status": "accepted",
+        "areaM2": 329.5
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/71",
+        "status": "accepted",
+        "areaM2": 400.8
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/72",
+        "status": "accepted",
+        "areaM2": 391.4
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/73",
+        "status": "accepted",
+        "areaM2": 296.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/75",
+        "status": "accepted",
+        "areaM2": 328.0
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/76",
+        "status": "accepted",
+        "areaM2": 350.2
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/77",
+        "status": "accepted",
+        "areaM2": 342.6
+      },
+      {
+        "traceId": "reviewed/online/happiness-full/78",
+        "status": "accepted",
+        "areaM2": 325.9
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-041",
+        "status": "accepted",
+        "areaM2": 666.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-045",
+        "status": "accepted",
+        "areaM2": 346.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-049",
+        "status": "accepted",
+        "areaM2": 906.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-050",
+        "status": "accepted",
+        "areaM2": 1122.1
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-052",
+        "status": "accepted",
+        "areaM2": 252.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-053",
+        "status": "accepted",
+        "areaM2": 929.1
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-054",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1119.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "a3c25677-3294-4625-9ed1-13b5f68ad0a5",
+            "sourceAreaM2": 830.4,
+            "intersectionM2": 181.6
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-055",
+        "status": "accepted",
+        "areaM2": 1907.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-057",
+        "status": "accepted",
+        "areaM2": 976.1
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-058",
+        "status": "accepted",
+        "areaM2": 1038.9
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-060",
+        "status": "accepted",
+        "areaM2": 940.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-061",
+        "status": "accepted",
+        "areaM2": 818.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-062",
+        "status": "accepted",
+        "areaM2": 300.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-063",
+        "status": "accepted",
+        "areaM2": 950.1
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-064",
+        "status": "accepted",
+        "areaM2": 771.1
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-065",
+        "status": "accepted",
+        "areaM2": 606.9
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-067",
+        "status": "accepted",
+        "areaM2": 655.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-068",
+        "status": "accepted",
+        "areaM2": 365.5
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-085",
+        "status": "accepted",
+        "areaM2": 114.5
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-087",
+        "status": "accepted",
+        "areaM2": 1244.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-090",
+        "status": "accepted",
+        "areaM2": 136.5
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-095",
+        "status": "accepted",
+        "areaM2": 179.8
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-097",
+        "status": "accepted",
+        "areaM2": 827.8
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-098",
+        "status": "accepted",
+        "areaM2": 1069.9
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-111",
+        "status": "accepted",
+        "areaM2": 856.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-113",
+        "status": "accepted",
+        "areaM2": 970.5
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-115",
+        "status": "accepted",
+        "areaM2": 856.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-118",
+        "status": "accepted",
+        "areaM2": 672.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-119",
+        "status": "accepted",
+        "areaM2": 862.9
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-143",
+        "status": "accepted",
+        "areaM2": 733.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-144",
+        "status": "accepted",
+        "areaM2": 525.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-145",
+        "status": "accepted",
+        "areaM2": 739.0
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-147",
+        "status": "accepted",
+        "areaM2": 809.2
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-172",
+        "status": "accepted",
+        "areaM2": 116.5
+      },
+      {
+        "traceId": "reviewed/online/wode-rtmart/roof-174",
+        "status": "accepted",
+        "areaM2": 126.0
+      }
+    ]
+  },
+  "cnbh": {
+    "provider": "CNBH-10m / Wanben Wu",
+    "referenceYear": 2020,
+    "resolutionM": 10,
+    "reference": "https://doi.org/10.5281/zenodo.7923866",
+    "license": "CC BY 4.0",
+    "extractSha256": "e9a5622870ba9b2487d2d198b562a519054dd01abcea428da288a7411e4fd7fb",
+    "file": "CNBH10m_X119Y35.tif",
+    "crs": "EPSG:32650"
+  },
+  "limitations": [
+    "Unlabelled heights and landuse-derived uses remain estimates.",
+    "Satellite roofprints and model heights do not reconstruct photographed facades.",
+    "CNBH is a 2020 model at 10 m resolution; mixed pixels and new construction limit individual-building accuracy.",
+    "3D-GloBFP, when available, represents 2020 and uses model-estimated heights."
+  ]
+}

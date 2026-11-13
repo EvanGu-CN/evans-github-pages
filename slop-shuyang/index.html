@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>沭阳漫游 · 江苏沭阳 三维城市</title>
+  <link rel="icon" href="data:," />
+  <meta name="description" content="基于 Three.js WebGPURenderer 与 TSL 着色器的江苏沭阳 三维城市仿真：真实 OSM 路网、街区、水系与地标，支持步行、驾车、骑行、直升机四种视角。" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <!-- three.js r187 release (npm package, served by jsDelivr) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.webgpu.js",
+        "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.webgpu.js",
+        "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.tsl.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+      }
+    }
+  </script>
+  <!-- Fetch the city modules in parallel before stylesheets; the module graph controls evaluation order. -->
+  <link rel="modulepreload" href="./js/shuyang-geodata.js" />
+  <link rel="modulepreload" href="./js/city-config.js" />
+  <link rel="modulepreload" href="./js/landmark-data.js" />
+  <link rel="modulepreload" href="./js/tsl-materials.js" />
+  <link rel="modulepreload" href="./js/trees.js" />
+  <link rel="modulepreload" href="./js/vehicles.js" />
+  <link rel="modulepreload" href="./js/cars.js" />
+  <link rel="modulepreload" href="./js/bus.js" />
+  <link rel="modulepreload" href="./js/helicopter.js" />
+  <link rel="modulepreload" href="./js/vehicle-lights.js" />
+  <link rel="modulepreload" href="./js/vehicle-physics.js" />
+  <link rel="modulepreload" href="./js/pedestrians.js" />
+  <link rel="modulepreload" href="./js/lighting.js" />
+  <link rel="modulepreload" href="./js/city-grid.js" />
+  <link rel="modulepreload" href="./js/urban-context.js" />
+  <link rel="modulepreload" href="./js/boroughs.js" />
+  <link rel="modulepreload" href="./js/buildings.js" />
+  <link rel="modulepreload" href="./js/building-details.js" />
+  <link rel="modulepreload" href="./js/building-materials.js" />
+  <link rel="modulepreload" href="./js/building-geodata.js" />
+  <link rel="preload" href="./js/building-geodata.bin.gz?v=2" as="fetch" crossorigin />
+  <link rel="modulepreload" href="./js/building-footprints.js" />
+  <link rel="modulepreload" href="./js/building-collision.js" />
+  <link rel="modulepreload" href="./js/fire-escapes.js" />
+  <link rel="modulepreload" href="./js/landmarks.js" />
+  <link rel="modulepreload" href="./js/photo-landmarks.js" />
+  <link rel="modulepreload" href="./js/core-photo-buildings.js" />
+  <link rel="modulepreload" href="./js/workers-palace.js" />
+  <link rel="modulepreload" href="./js/huachen-housing.js" />
+  <link rel="modulepreload" href="./js/civic-campuses.js" />
+  <link rel="modulepreload" href="./js/mengxi-campus.js" />
+  <link rel="modulepreload" href="./js/park-bridges.js" />
+  <link rel="modulepreload" href="./js/community-data.js" />
+  <link rel="modulepreload" href="./js/community-entrances.js" />
+  <link rel="modulepreload" href="./js/building-coverage.js" />
+  <link rel="modulepreload" href="./js/vendor/polygon-clipping.js" />
+  <link rel="modulepreload" href="./js/landmark-references.js" />
+  <link rel="modulepreload" href="./js/landmark-gallery.js" />
+  <link rel="modulepreload" href="./js/street-details.js" />
+  <link rel="modulepreload" href="./js/road-network.js" />
+  <link rel="modulepreload" href="./js/road-paint.js" />
+  <link rel="modulepreload" href="./js/traffic.js" />
+  <link rel="modulepreload" href="./js/pedestrian-system.js" />
+  <link rel="modulepreload" href="./js/pedestrian-routes.js" />
+  <link rel="modulepreload" href="./js/controllers.js" />
+  <link rel="modulepreload" href="./js/touch-controls.js" />
+  <link rel="modulepreload" href="./js/gamepad-controls.js" />
+  <link rel="modulepreload" href="./js/cameras.js" />
+  <link rel="modulepreload" href="./js/city-map.js" />
+  <link rel="modulepreload" href="./js/scene-culling.js" />
+  <link rel="modulepreload" href="./js/post-processing.js" />
+  <link rel="modulepreload" href="./js/audio-synthesis.js" />
+  <link rel="modulepreload" href="./js/audio-events.js" />
+  <link rel="modulepreload" href="./js/audio-sources.js" />
+  <link rel="modulepreload" href="./js/audio-acoustics.js" />
+  <link rel="modulepreload" href="./js/audio-system.js" />
+  <link rel="modulepreload" href="./js/main.js" />
+  <script type="module" src="./js/main.js"></script>
+  <!-- Inter (UI) & Overpass (street-name signs: modelled on Highway Gothic, the US road sign typeface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=Overpass:wght@600;700&amp;display=swap" />
+  <link rel="stylesheet" href="./css/style.css?v=20261112-photo-landmarks" />
+</head>
+<body>
+  <!-- Icon sprite (24 × 24 stroke icons, drawn in currentColor) -->
+  <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.4" r="2"/><path d="M12.3 8.2 10.8 13.8M10.8 13.8 9.2 17.2 7.2 20.5M10.8 13.8l2.4 3 1.6 3.8M12.3 8.6 9.6 10.2l-.8 2.6M12.3 8.6l2.1 2.4 2.4.8"/></symbol>
+      <symbol id="i-car" viewBox="0 0 24 24"><path d="M9.6 4.8V3.4a.6.6 0 0 1 .6-.6h3.6a.6.6 0 0 1 .6.6v1.4"/><path d="m5.2 10.5 1.4-4.1A2.2 2.2 0 0 1 8.7 4.8h6.6a2.2 2.2 0 0 1 2.1 1.6l1.4 4.1"/><rect x="3" y="10.5" width="18" height="6.5" rx="2"/><path d="M6 17v2.6M18 17v2.6M6.6 13.8h1.6M15.8 13.8h1.6"/></symbol>
+      <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="16.5" r="3.6"/><circle cx="18.5" cy="16.5" r="3.6"/><path d="M5.5 16.5 9.3 9.6h6.3M11.6 16.5 9.3 9.6M11.6 16.5l4-6.9M5.5 16.5h6.1M15.6 9.6l2.9 6.9M15.6 9.6 14.8 7h2.4M8 8.4h2.8"/></symbol>
+      <symbol id="i-heli" viewBox="0 0 24 24"><path d="M3.5 4h15M11 4v3.2"/><path d="M6 12.2a5 5 0 0 1 5-5h1.6a4.4 4.4 0 0 1 4.4 4.4V15H8.8A2.8 2.8 0 0 1 6 12.2z"/><path d="M17 11h4.2M21.2 8.8v4.4M7 19h10.5M9.5 15v4M15 15v4"/></symbol>
+      <symbol id="i-golden" viewBox="0 0 24 24"><path d="M3 17.5h18M7 17.5a5 5 0 0 1 10 0M12 5v3M5.6 9.6l2 1.6M18.4 9.6l-2 1.6M7.5 21h9"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.1M12 19.1v2.1M2.8 12h2.1M19.1 12h2.1M5.5 5.5 7 7M17 17l1.5 1.5M5.5 18.5 7 17M17 7l1.5-1.5"/></symbol>
+      <symbol id="i-twilight" viewBox="0 0 24 24"><path d="M3 15.5h18M7.5 19h9M8 15.5a4 4 0 0 1 8 0M17.5 4v3.2M15.9 5.6h3.2M7 7.4v1.8M6.1 8.3h1.8"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A7.8 7.8 0 0 1 9.4 4.5a7.8 7.8 0 1 0 10.1 10.1z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.2s-6.6-5.7-6.6-11.2a6.6 6.6 0 0 1 13.2 0c0 5.5-6.6 11.2-6.6 11.2z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4.5 3.5 6.6v13l5.5-2.1 6 2.1 5.5-2.1v-13L15 6.6 9 4.5zM9 4.5v13M15 6.6v13"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+      <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3.5 3.5l17 17M10.6 5.6c.5-.1.9-.1 1.4-.1 6 0 9.5 6.5 9.5 6.5a16 16 0 0 1-2.4 3.2M6.6 6.6A15.6 15.6 0 0 0 2.5 12s3.5 6.5 9.5 6.5c1.6 0 3.1-.4 4.4-1.1M9.9 9.9a2.8 2.8 0 0 0 4.2 4.2"/></symbol>
+      <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-5 4H3v8h3l5 4V4ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+      <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="m11 4-5 4H3v8h3l5 4V4ZM16 9l6 6M22 9l-6 6"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m7 9.5 5 5 5-5"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.5 6.5 9 12l5.5 5.5"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9.5 6.5 5.5 5.5-5.5 5.5"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2.8" y="6.5" width="12.4" height="11" rx="2.4"/><path d="m15.2 10.4 6-3.4v10l-6-3.4"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
+      <symbol id="i-locate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.4"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><path d="M12 2.5v3.1M12 18.4v3.1M2.5 12h3.1M18.4 12h3.1"/></symbol>
+      <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m20 20-4.6-4.6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Loading Screen -->
+  <div id="loading-overlay" role="status" aria-live="polite">
+    <div class="loader">
+      <span class="mta-bullet loader-bullet" aria-hidden="true">沭</span>
+      <div class="loader-title">沭阳漫游</div>
+      <div class="loader-track" aria-hidden="true"><span id="loading-progress" class="loader-fill"></span></div>
+      <div id="loading-status">正在加载沭阳城市数据...</div>
+    </div>
+  </div>
+
+  <!-- 3D WebGPU Viewport Container -->
+  <main id="canvas-container" aria-label="沭阳三维城市场景"></main>
+
+  <!-- Top-Left: Brand & Renderer Telemetry -->
+  <header class="hud hud-top-left">
+    <div class="panel brand">
+      <span class="mta-bullet" aria-hidden="true">沭</span>
+      <div class="brand-titles">
+        <div class="brand-heading">
+          <h1>沭阳漫游</h1>
+          <a class="repo-link" href="https://github.com/EvanGu-CN/evans-github-pages/tree/main/slop-shuyang" target="_blank" rel="noopener noreferrer" aria-label="项目源仓库（新窗口打开）">源代码 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="brand-subtitle">江苏沭阳 · 城市漫游 · <span id="hud-fps" class="fps-ok">60</span> 帧/秒</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top-Right Toolbar: Time of Day, Teleport, Map & Clean View -->
+  <div class="hud hud-top-right">
+    <div id="hud-toolbar" class="panel toolbar">
+      <div class="time-switch" role="group" aria-label="氛围与时段">
+        <button id="time-golden" class="time-btn active" data-time="golden" type="button" title="黄昏">
+          <svg class="icon" aria-hidden="true"><use href="#i-golden"/></svg><span class="seg-label">黄昏</span>
+        </button>
+        <button id="time-midday" class="time-btn" data-time="midday" type="button" title="正午">
+          <svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg><span class="seg-label">正午</span>
+        </button>
+        <button id="time-twilight" class="time-btn" data-time="twilight" type="button" title="蓝调时刻">
+          <svg class="icon" aria-hidden="true"><use href="#i-twilight"/></svg><span class="seg-label">蓝调</span>
+        </button>
+        <button id="time-midnight" class="time-btn" data-time="midnight" type="button" title="夜晚 23:00">
+          <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg><span class="seg-label">夜晚</span>
+        </button>
+      </div>
+      <span class="toolbar-divider" aria-hidden="true"></span>
+      <button id="btn-teleport" class="tool-btn" type="button" popovertarget="teleport-popover" title="传送到地标">
+        <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span class="tool-label">传送</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+      </button>
+      <button id="btn-open-map" class="tool-btn" type="button" title="沭阳城区街道图 [M]">
+        <svg class="icon" aria-hidden="true"><use href="#i-map"/></svg><span class="tool-label">地图</span><kbd>M</kbd>
+      </button>
+      <span class="toolbar-divider" aria-hidden="true"></span>
+      <button id="btn-sound" class="tool-btn icon-only" type="button" title="静音 [N]" aria-label="静音" aria-pressed="true">
+        <svg class="icon" aria-hidden="true"><use href="#i-sound"/></svg>
+      </button>
+      <button id="btn-toggle-hud" class="tool-btn icon-only" type="button" title="简洁视图：隐藏界面 [H]" aria-label="隐藏界面" aria-pressed="false">
+        <svg class="icon icon-hide" aria-hidden="true"><use href="#i-eye"/></svg><svg class="icon icon-show" aria-hidden="true"><use href="#i-eye-off"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Teleport Destinations (native popover: light-dismiss & Esc) -->
+  <div id="teleport-popover" class="popover" popover data-side="below" data-anchor="hud-toolbar" aria-label="传送到指定地点">
+    <div class="pop-title">传送到</div>
+    <button id="tp-central" class="pop-item tp-btn" data-teleport="central" type="button"><span class="pop-name">中央城市广场</span><span class="pop-sub">人民路商圈 · 147 米地标</span></button>
+    <button id="tp-gov" class="pop-item tp-btn" data-teleport="gov" type="button"><span class="pop-name">沭阳县政府</span><span class="pop-sub">政务中心 · 政务广场</span></button>
+    <button id="tp-culture" class="pop-item tp-btn" data-teleport="culture" type="button"><span class="pop-name">沭阳文化中心</span><span class="pop-sub">南部新城 · 博物馆/美术馆/图书馆</span></button>
+    <button id="tp-sports" class="pop-item tp-btn" data-teleport="sports" type="button"><span class="pop-name">沭阳体育中心</span><span class="pop-sub">学院路 · 两馆一场</span></button>
+    <button id="tp-station" class="pop-item tp-btn" data-teleport="station" type="button"><span class="pop-name">沭阳站</span><span class="pop-sub">新长铁路 · 站前广场</span></button>
+    <button id="tp-yuji" class="pop-item tp-btn" data-teleport="yuji" type="button"><span class="pop-name">虞姬生态园</span><span class="pop-sub">迎宾大道 · 湖湾与水岸</span></button>
+    <button id="tp-yuji-park" class="pop-item tp-btn" data-teleport="yujiPark" type="button"><span class="pop-name">虞姬公园</span><span class="pop-sub">公园路19号 · 城北公园</span></button>
+    <button id="tp-nanhu" class="pop-item tp-btn" data-teleport="nanhu" type="button"><span class="pop-name">南湖公园</span><span class="pop-sub">南部新城 · 湖岸/岛屿/步行桥</span></button>
+    <button id="tp-bluesky" class="pop-item tp-btn" data-teleport="bluesky" type="button"><span class="pop-name">蓝天国际商贸城</span><span class="pop-sub">人民路商圈</span></button>
+    <button id="tp-wanda" class="pop-item tp-btn" data-teleport="wanda" type="button"><span class="pop-name">万达广场</span><span class="pop-sub">南部新城</span></button>
+    <button id="tp-wuyinxian" class="pop-item tp-btn" data-teleport="wuyinxian" type="button"><span class="pop-name">吴印咸故居</span><span class="pop-sub">老城 · 江淮民居</span></button>
+    <button id="tp-cotton" class="pop-item tp-btn" data-teleport="cotton" type="button"><span class="pop-name">老服装厂休闲街区</span><span class="pop-sub">人民西路 · 旧厂房更新</span></button>
+    <button id="tp-shuhe" class="pop-item tp-btn" data-teleport="shuhe" type="button"><span class="pop-name">沭水之阳</span><span class="pop-sub">新沂河大桥南端 · 书法雕塑</span></button>
+    <button id="tp-rtmart" class="pop-item tp-btn" data-teleport="rtmart" type="button"><span class="pop-name">大润发</span><span class="pop-sub">上海南路 · 沭阳店</span></button>
+    <button id="tp-wuyue" class="pop-item tp-btn" data-teleport="wuyue" type="button"><span class="pop-name">吾悦广场</span><span class="pop-sub">台州南路 · 曲面玻璃入口</span></button>
+    <button id="tp-highschool" class="pop-item tp-btn" data-teleport="highschool" type="button"><span class="pop-name">沭阳高级中学</span><span class="pop-sub">东关大街 · 本部校门</span></button>
+    <button id="tp-mengxi" class="pop-item tp-btn" data-teleport="mengxi" type="button"><span class="pop-name">梦溪中学</span><span class="pop-sub">苏州西路3号 · 教学楼与校门</span></button>
+    <button id="tp-wanhao" class="pop-item tp-btn" data-teleport="wanhao" type="button"><span class="pop-name">万豪商务大厦</span><span class="pop-sub">苏州西路 · 商业裙楼与主塔</span></button>
+    <button id="tp-jiusheng" class="pop-item tp-btn" data-teleport="jiusheng" type="button"><span class="pop-name">久盛百货</span><span class="pop-sub">人民中路 · 西广场主楼</span></button>
+    <button id="tp-workersPalace" class="pop-item tp-btn" data-teleport="workersPalace" type="button"><span class="pop-name">工人文化宫（新馆）</span><span class="pop-sub">五里健身公园 · 永安路</span></button>
+    <button id="btn-landmark-photos" class="pop-item" type="button"><span class="pop-name">查看地标实景参考</span><span class="pop-sub">原图来源 · 年份与还原说明</span></button>
+    <button id="btn-community-photos" class="pop-item" type="button"><span class="pop-name">小区实景与入口</span><span class="pop-sub">入口照片 · 前往已定位通行口</span></button>
+  </div>
+
+  <!-- Bottom-Left: Street-Name Signs & Live GPS Radar Minimap -->
+  <div class="hud hud-bottom-left">
+    <div id="hud-location" class="location" aria-live="off"></div>
+
+  </div>
+
+  <div class="hud hud-navigation">
+    <button id="minimap-card" class="panel radar" type="button" aria-label="打开沭阳城区实时小地图" title="点击打开城区地图">
+      <span class="radar-title"><span>方位图</span><span id="minimap-heading">朝东</span></span>
+      <canvas id="minimap-canvas" aria-label="周边道路与建筑，上方为北"></canvas>
+      <span class="radar-north" aria-hidden="true">北</span>
+      <span class="radar-east" aria-hidden="true">东</span>
+      <span class="radar-south" aria-hidden="true">南</span>
+      <span class="radar-west" aria-hidden="true">西</span>
+    </button>
+  </div>
+  <div class="hud hud-boost">
+    <button id="btn-boost" class="panel boost-control" type="button" aria-label="开启持续加速" aria-pressed="false" title="点击切换持续加速；也可按住上档键临时加速">
+      <span aria-hidden="true">»</span><span id="boost-label">加速</span>
+    </button>
+  </div>
+
+  <!-- Bottom-Center: Third-Person Mode Switcher & Controls Guide -->
+  <footer class="hud hud-bottom-center">
+    <div id="hud-controls-hint" class="controls-hint"></div>
+    <nav id="mode-switch" class="panel mode-switch" aria-label="第三人称出行方式">
+      <span class="mode-indicator" aria-hidden="true"></span>
+      <button id="mode-person" class="mode-btn" data-mode="person" type="button" title="步行 [1]">
+        <svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg><span class="mode-label">步行</span><kbd>1</kbd>
+      </button>
+      <button id="mode-car" class="mode-btn active" data-mode="car" type="button" title="出租车 [2]">
+        <svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span class="mode-label">驾车</span><kbd>2</kbd>
+      </button>
+      <button id="mode-cyclist" class="mode-btn" data-mode="cyclist" type="button" title="自行车 [3]">
+        <svg class="icon" aria-hidden="true"><use href="#i-bike"/></svg><span class="mode-label">骑行</span><kbd>3</kbd>
+      </button>
+      <button id="mode-helicopter" class="mode-btn" data-mode="helicopter" type="button" title="直升机 [4]">
+        <svg class="icon" aria-hidden="true"><use href="#i-heli"/></svg><span class="mode-label">飞行</span><kbd>4</kbd>
+      </button>
+    </nav>
+  </footer>
+
+  <!-- Bottom-Right: Speed Cluster & Camera Switcher -->
+  <div class="hud hud-bottom-right">
+    <section id="hud-cluster" class="panel cluster" aria-label="速度、海拔与机位">
+      <div class="gauge">
+        <div class="gauge-top">
+          <span id="hud-active-mode" class="gauge-label">沭阳出租车</span>
+          <span class="gauge-alt"><span class="gauge-alt-label">海拔</span> <span id="hud-altitude">0</span> 米</span>
+        </div>
+        <div class="gauge-speed"><span id="hud-speed">0</span><span class="gauge-unit">千米/时</span></div>
+        <div class="gauge-meter" aria-hidden="true"><span id="hud-speed-meter"></span></div>
+      </div>
+      <div id="camera-switch" class="camera-switch">
+        <button id="cam-prev" class="icon-btn" type="button" title="上一个机位" aria-label="上一个机位">
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+        </button>
+        <button id="cam-menu-btn" class="camera-current" type="button" popovertarget="camera-popover" title="全部机位 [V 切换]">
+          <svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><span id="hud-active-camera">第三人称跟随</span><kbd>V</kbd>
+        </button>
+        <button id="cam-next" class="icon-btn" type="button" title="下一个机位 [V]" aria-label="下一个机位">
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Touch input stays available in clean view; the map temporarily suspends it. -->
+  <section id="touch-controls" aria-label="触屏操作" hidden>
+    <div class="touch-movement">
+      <div id="touch-stick" role="group" aria-label="移动摇杆：上下拖动前进或后退，左右拖动转向">
+        <span class="touch-stick-axis" aria-hidden="true"></span>
+        <span id="touch-stick-knob" aria-hidden="true"></span>
+      </div>
+      <span class="touch-caption">移动与转向</span>
+    </div>
+    <p class="touch-look-hint">拖动环视 · 双指缩放</p>
+    <div class="touch-actions" role="group" aria-label="按住执行动作">
+      <button class="touch-action" data-touch-action="up" type="button" aria-label="跳跃" aria-pressed="false" hidden>
+        <span aria-hidden="true">↑</span><span data-touch-label="up">跳跃</span>
+      </button>
+      <button class="touch-action" data-touch-action="down" type="button" aria-label="下降" aria-pressed="false" hidden>
+        <span aria-hidden="true">↓</span><span data-touch-label="down">下降</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- All Cameras: 3 Follow Cameras + 7 Iconic NYC Vantage Cameras + Auto-Director Drone -->
+  <div id="camera-popover" class="popover" popover data-side="above" data-anchor="hud-cluster" data-align="hud-cluster" aria-label="选择机位">
+    <div class="pop-title">跟随</div>
+    <button id="cam-chase" class="pop-item cam-btn active" data-camera="chase" type="button"><span class="pop-name">第三人称跟随</span><kbd>5</kbd></button>
+    <button id="cam-action" class="pop-item cam-btn" data-camera="action" type="button"><span class="pop-name">低角度追车</span><kbd>6</kbd></button>
+    <button id="cam-pov" class="pop-item cam-btn" data-camera="pov" type="button"><span class="pop-name">第一人称 / 驾驶舱</span><kbd>7</kbd></button>
+    <div class="pop-title">风光</div>
+    <button id="cam-centralPark" class="pop-item cam-btn" data-camera="centralPark" type="button"><span class="pop-name">南湖公园</span></button>
+    <button id="cam-fifthAve" class="pop-item cam-btn" data-camera="fifthAve" type="button"><span class="pop-name">人民中路</span><kbd>8</kbd></button>
+    <button id="cam-timesSquare" class="pop-item cam-btn" data-camera="timesSquare" type="button"><span class="pop-name">中央商场商圈</span><kbd>9</kbd></button>
+    <button id="cam-chryslerGCT" class="pop-item cam-btn" data-camera="chryslerGCT" type="button"><span class="pop-name">县政府广场</span><kbd>0</kbd></button>
+    <button id="cam-observatory" class="pop-item cam-btn" data-camera="observatory" type="button"><span class="pop-name">县城高空</span></button>
+    <button id="cam-bryantPark" class="pop-item cam-btn" data-camera="bryantPark" type="button"><span class="pop-name">虞姬生态园</span></button>
+    <button id="cam-waterfront" class="pop-item cam-btn" data-camera="waterfront" type="button"><span class="pop-name">沭河风光带</span></button>
+    <button id="cam-drone" class="pop-item cam-btn" data-camera="drone" type="button"><span class="pop-name">自动巡游航拍</span></button>
+  </div>
+
+  <!-- Full-Screen Interactive New York City Street Map ([M]) -->
+  <section id="fullmap-modal" class="fullmap-modal hidden" role="dialog" aria-modal="true" aria-label="沭阳城区交互街道图">
+    <div id="fullmap-canvas-wrap" class="fullmap-canvas-wrap">
+      <canvas id="fullmap-canvas"></canvas>
+    </div>
+
+    <div class="fullmap-header">
+      <div class="panel fullmap-title">
+        <span class="mta-bullet" aria-hidden="true">沭</span>
+        <div>
+          <h2>沭阳城区街道图</h2>
+          <p id="fullmap-player-info" class="fullmap-subtitle">你在人民中路 &amp; 上海中路</p>
+        </div>
+      </div>
+      <label class="panel fullmap-search-wrap">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="fullmap-search" class="fullmap-search" type="text" placeholder="搜索小区、学校、医院、商场或道路…" aria-label="搜索小区、道路、建筑或地点" list="neighborhood-suggestions" autocomplete="off" spellcheck="false" />
+        <datalist id="neighborhood-suggestions"></datalist>
+      </label>
+      <button id="close-fullmap-btn" class="panel tool-btn fullmap-close" type="button" title="关闭地图 [地图键 / 退出键]">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="tool-label">关闭</span><kbd>退出</kbd>
+      </button>
+    </div>
+
+    <div class="map-controls">
+      <div class="panel map-compass" title="正北 · 沭阳城区路网大致沿正南北/东西向">
+        <svg viewBox="0 0 44 44" aria-hidden="true">
+          <g id="map-compass-needle">
+            <path d="M22 9.5 25.6 22h-7.2z" fill="#f05a4f"/>
+            <path d="M22 34.5 25.6 22h-7.2z" fill="rgba(255,255,255,0.72)"/>
+            <text x="22" y="8" text-anchor="middle">北</text>
+          </g>
+        </svg>
+      </div>
+      <div class="panel map-zoom">
+        <button id="map-zoom-in" class="icon-btn" type="button" title="放大" aria-label="放大"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <button id="map-zoom-out" class="icon-btn" type="button" title="缩小" aria-label="缩小"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      </div>
+      <div class="panel map-zoom">
+        <button id="map-center-player" class="icon-btn" type="button" title="回到当前位置" aria-label="回到当前位置"><svg class="icon" aria-hidden="true"><use href="#i-locate"/></svg></button>
+        <button id="map-view-all" class="icon-btn" type="button" title="沭阳城区全图（学院路至大连路）" aria-label="沭阳城区全图"><svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg></button>
+      </div>
+    </div>
+
+    <div class="fullmap-footer">
+      <div class="panel fullmap-status">
+        <span id="fullmap-hover-info">点击任意位置传送 · 拖拽平移 · 滚轮缩放</span>
+        <span class="fullmap-reference-links" aria-label="在外部地图核对搜索地点">
+          <a id="map-reference-amap" href="https://uri.amap.com/search?keyword=沭阳县&amp;city=沭阳县&amp;view=map&amp;src=shuyang-city&amp;callnative=0" target="_blank" rel="noopener noreferrer">高德地图核对 ↗</a>
+          <a id="map-reference-baidu" href="https://api.map.baidu.com/place/search?query=沭阳县&amp;region=沭阳县&amp;output=html&amp;src=webapp.shuyang-city" target="_blank" rel="noopener noreferrer">百度地图核对 ↗</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="panel fullmap-legend">
+      <span class="legend-item"><span class="legend-swatch player-swatch"></span>你</span>
+      <span class="legend-item"><span class="legend-swatch landmark-swatch"></span>地标</span>
+      <span class="legend-item"><span class="legend-swatch neighborhood-swatch"></span>小区</span>
+      <span class="legend-item"><span class="legend-swatch gps-swatch"></span>导航路线</span>
+      <span class="legend-item"><span class="legend-swatch bridge-swatch"></span>桥梁 / 快速路</span>
+      <span class="legend-item legend-attribution">© 开放街图贡献者 · Overture地图基金会 · ODbL · CNBH-10m / Wu · CC BY 4.0 · 影像参考：Esri / Vantor（2021年，近似补录）</span>
+      <span id="fullmap-counts" class="legend-counts"></span>
+    </div>
+  </section>
+
+</body>
+</html>

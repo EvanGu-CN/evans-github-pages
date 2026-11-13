@@ -1,0 +1,12 @@
+{
+  "nodeTests": 244,
+  "pythonTests": 2,
+  "credentialFilesFound": 0,
+  "credentialFilesScanned": 184,
+  "reviewProxyStopped": true,
+  "notes": [
+    "7 existing POSIX-shell Overpass tests are not run on Windows",
+    "Background preview FPS is not a performance benchmark",
+    "Photo dates and estimated dimensions remain explicit"
+  ]
+}

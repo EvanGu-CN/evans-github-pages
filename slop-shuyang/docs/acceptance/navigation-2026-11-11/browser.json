@@ -1,0 +1,60 @@
+{
+  "layouts": [
+    {
+      "height": 568,
+      "minimap": {
+        "h": 128,
+        "w": 144,
+        "x": 12,
+        "y": 188
+      },
+      "outside": [],
+      "overlaps": [],
+      "width": 320
+    },
+    {
+      "height": 667,
+      "minimap": {
+        "h": 148,
+        "w": 174,
+        "x": 12,
+        "y": 188
+      },
+      "outside": [],
+      "overlaps": [],
+      "width": 375
+    },
+    {
+      "height": 390,
+      "minimap": {
+        "h": 124,
+        "w": 160,
+        "x": 20,
+        "y": 20
+      },
+      "outside": [],
+      "overlaps": [],
+      "width": 844
+    },
+    {
+      "height": 800,
+      "minimap": {
+        "h": 148,
+        "w": 174,
+        "x": 20,
+        "y": 196
+      },
+      "outside": [],
+      "overlaps": [],
+      "width": 1280
+    }
+  ],
+  "recentErrors": [],
+  "checks": [
+    "持续加速开关",
+    "骑行中文刹车",
+    "小地图打开与关闭全图",
+    "上档键释放"
+  ],
+  "viewportRestored": true
+}

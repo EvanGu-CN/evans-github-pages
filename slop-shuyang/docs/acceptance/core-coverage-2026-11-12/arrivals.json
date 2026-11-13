@@ -1,0 +1,121 @@
+[
+  {
+    "buildingOverlap": 0,
+    "id": "central",
+    "water": false,
+    "x": -94.7304347826087,
+    "z": 261.5652173913043
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "gov",
+    "water": false,
+    "x": 2365.871717171717,
+    "z": 2020.4040404040404
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "culture",
+    "water": false,
+    "x": -2515.7042253521126,
+    "z": 4061.6859154929575
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "sports",
+    "water": false,
+    "x": -897.6496644295303,
+    "z": 4854.196644295302
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "station",
+    "water": false,
+    "x": -1270.2,
+    "z": 1746.35
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "yuji",
+    "water": false,
+    "x": 2610.7169811320755,
+    "z": 1354.0094339622642
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "nanhu",
+    "water": false,
+    "x": -2231.691900339798,
+    "z": 4115.070801236045
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "bluesky",
+    "water": false,
+    "x": -246.61612903225807,
+    "z": 15.000000000000014
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "wanda",
+    "water": false,
+    "x": -1524.1206896551726,
+    "z": 3540.687931034483
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "wuyinxian",
+    "water": false,
+    "x": -657.8872727272727,
+    "z": -855.1327272727274
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "cotton",
+    "water": false,
+    "x": -1355.2303797468353,
+    "z": -165.17594936708855
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "shuhe",
+    "water": false,
+    "x": -1527.1031578947368,
+    "z": -1282.6694736842103
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "rtmart",
+    "water": false,
+    "x": -231.1941176470588,
+    "z": 1688.476470588235
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "wuyue",
+    "water": false,
+    "x": 1734,
+    "z": 2717.7
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "highschool",
+    "water": false,
+    "x": 948.12,
+    "z": 107.34
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "wanhao",
+    "water": false,
+    "x": -212.53859649122808,
+    "z": 1451.459649122807
+  },
+  {
+    "buildingOverlap": 0,
+    "id": "jiusheng",
+    "water": false,
+    "x": 40.48666666666665,
+    "z": -2.7333333333333343
+  }
+]

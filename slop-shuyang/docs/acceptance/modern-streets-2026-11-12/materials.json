@@ -1,0 +1,8 @@
+{
+  "threeVersion": "0.187.0",
+  "materials": [
+    { "name": "createModernRoadSurfaceMaterial", "type": "MeshStandardNodeMaterial", "nodes": 115, "construction": "passed", "serialization": "passed" },
+    { "name": "createModernSidewalkMaterial", "type": "MeshStandardNodeMaterial", "nodes": 51, "construction": "passed", "serialization": "passed" }
+  ],
+  "limitation": "Shader graphs constructed and serialized in Node; GPU compilation and visual acceptance were not run."
+}

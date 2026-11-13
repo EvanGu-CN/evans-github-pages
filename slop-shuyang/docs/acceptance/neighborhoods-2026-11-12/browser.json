@@ -1,0 +1,17 @@
+{
+  "desktop": {
+    "counts": "1196 条道路 · 7558 栋源建筑 · 141 个小区",
+    "height": 800,
+    "result": "巴黎新城 · 已收录 73 栋建筑 · 点击地图传送",
+    "suggestions": 141,
+    "width": 1280
+  },
+  "mobile": {
+    "width": 375,
+    "height": 667,
+    "query": "观澜府",
+    "result": "已收录 10 栋建筑",
+    "verified": true
+  },
+  "applicationErrors": []
+}

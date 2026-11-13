@@ -1,0 +1,549 @@
+{
+  "arrivals": [
+    {
+      "destination": {
+        "x": -94.7304347826087,
+        "z": 261.5652173913043
+      },
+      "id": "central",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": 2266.635,
+        "z": 1935.465
+      },
+      "id": "gov",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -2515.7042253521126,
+        "z": 4061.6859154929575
+      },
+      "id": "culture",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -704.504761904762,
+        "z": 4687.8761904761905
+      },
+      "id": "sports",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -1270.2,
+        "z": 1746.35
+      },
+      "id": "station",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": 2610.7169811320755,
+        "z": 1354.0094339622642
+      },
+      "id": "yuji",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -107.22692307692309,
+        "z": -800.7384615384615
+      },
+      "id": "yujiPark",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -2248.2283323775173,
+        "z": 4111.30150275778
+      },
+      "id": "nanhu",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -246.61612903225807,
+        "z": 15.000000000000014
+      },
+      "id": "bluesky",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -1524.1206896551726,
+        "z": 3540.687931034483
+      },
+      "id": "wanda",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -657.8872727272727,
+        "z": -855.1327272727274
+      },
+      "id": "wuyinxian",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -1355.2303797468353,
+        "z": -165.17594936708855
+      },
+      "id": "cotton",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -1527.1031578947368,
+        "z": -1282.6694736842103
+      },
+      "id": "shuhe",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -231.1941176470588,
+        "z": 1688.476470588235
+      },
+      "id": "rtmart",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": 1734,
+        "z": 2717.7
+      },
+      "id": "wuyue",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": 948.12,
+        "z": 107.34
+      },
+      "id": "highschool",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": -212.53859649122808,
+        "z": 1451.459649122807
+      },
+      "id": "wanhao",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    },
+    {
+      "destination": {
+        "x": 40.48666666666665,
+        "z": -2.7333333333333343
+      },
+      "id": "jiusheng",
+      "method": "full body collision and dry landing resolver",
+      "water": false
+    }
+  ],
+  "buildingDataVersion": "72f293c744c034991b50c8d9d13566d889c1c04bc2e363e93f367f9cfd4cdb1c",
+  "communityCount": 143,
+  "coverage": {
+    "clipFailures": [],
+    "clipped": [
+      {
+        "index": 1384,
+        "retainedAreaM2": 216.4,
+        "sourceAreaM2": 614.3
+      },
+      {
+        "index": 1386,
+        "retainedAreaM2": 143.5,
+        "sourceAreaM2": 843.6
+      },
+      {
+        "index": 1400,
+        "retainedAreaM2": 707.6,
+        "sourceAreaM2": 979.1
+      },
+      {
+        "index": 1415,
+        "retainedAreaM2": 58.3,
+        "sourceAreaM2": 59.3
+      },
+      {
+        "index": 1428,
+        "retainedAreaM2": 137.9,
+        "sourceAreaM2": 858.8
+      },
+      {
+        "index": 1454,
+        "retainedAreaM2": 573.9,
+        "sourceAreaM2": 963.3
+      },
+      {
+        "index": 1455,
+        "retainedAreaM2": 3110.9,
+        "sourceAreaM2": 4379.4
+      },
+      {
+        "index": 1462,
+        "retainedAreaM2": 1371.3,
+        "sourceAreaM2": 2435
+      },
+      {
+        "index": 1476,
+        "retainedAreaM2": 1696.7,
+        "sourceAreaM2": 3094.3
+      },
+      {
+        "index": 1479,
+        "retainedAreaM2": 115.1,
+        "sourceAreaM2": 188.8
+      },
+      {
+        "index": 1487,
+        "retainedAreaM2": 212.6,
+        "sourceAreaM2": 235
+      },
+      {
+        "index": 1756,
+        "retainedAreaM2": 198.7,
+        "sourceAreaM2": 215.8
+      },
+      {
+        "index": 5030,
+        "retainedAreaM2": 1279.3,
+        "sourceAreaM2": 1310
+      }
+    ],
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1914,
+      2558,
+      2565,
+      2713,
+      2780,
+      2782,
+      3028,
+      3029,
+      3155,
+      3458,
+      6181,
+      6548,
+      6549,
+      6550
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "rendered": 7599,
+    "replacedByLandmarks": 20,
+    "source": 7619
+  },
+  "deferredConflicts": [
+    {
+      "conflicts": [
+        {
+          "intersectionM2": 26.7,
+          "sourceAreaM2": 65.6,
+          "sourceId": "ad4961e5-60a4-4d6b-a3c6-fc50f38f9068"
+        }
+      ],
+      "observedAreaM2": 1570.8,
+      "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+      "status": "rejected-overlap",
+      "traceId": "reviewed/wuyue/rose-garden/roof-08"
+    },
+    {
+      "conflicts": [
+        {
+          "intersectionM2": 117.9,
+          "sourceAreaM2": 117.9,
+          "sourceId": "01578d4b-dda9-4738-8bb6-fd9ef539082d"
+        }
+      ],
+      "observedAreaM2": 1390.7,
+      "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+      "status": "rejected-overlap",
+      "traceId": "reviewed/wuyue/rose-garden/roof-13"
+    }
+  ],
+  "parkTreeCount": 3761,
+  "roofChecks": [
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-07"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-11"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-14"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-16"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-20"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-01"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-02"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-03"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-04"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-05"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-09"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-12"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-17"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-18"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-21"
+    },
+    {
+      "actualRoofY": 24.219999313354492,
+      "detailsPresent": true,
+      "expectedRoofY": 24.22,
+      "id": "reviewed/wuyue/rose-garden/roof-22"
+    }
+  ],
+  "roseGarden": [
+    {
+      "name": "嘉瑞·玫瑰园",
+      "sourceRecords": 19
+    }
+  ],
+  "sourceSummary": {
+    "OSM": 1425,
+    "Overture": 6133,
+    "ReviewedImagery": 61
+  },
+  "sportsSurfaces": [
+    {
+      "id": "reviewed/wuli/track",
+      "imageAcquired": "2021-01-29",
+      "kind": "running-track"
+    },
+    {
+      "id": "reviewed/wuli/infield",
+      "imageAcquired": "2021-01-29",
+      "kind": "infield"
+    },
+    {
+      "id": "reviewed/wuli/court-1",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-2",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-3",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-4",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-5",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-6",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/infield-apron",
+      "imageAcquired": "2021-01-29",
+      "kind": "court"
+    },
+    {
+      "id": "reviewed/wuli/court-surround",
+      "imageAcquired": "2021-01-29",
+      "kind": "sport-paving"
+    }
+  ],
+  "treesInWater": 0,
+  "finalSportsGeometry": {
+    "loadedVersion": "72f293c744c034991b50c8d9d13566d889c1c04bc2e363e93f367f9cfd4cdb1c",
+    "methods": [
+      {
+        "geometryMethod": "reviewed-pixel-boundary; 2-pass corner rounding of observed curved edges",
+        "id": "reviewed/wuli/track"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary; 2-pass corner rounding of observed curved edges",
+        "id": "reviewed/wuli/infield"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-1"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-2"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-3"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-4"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-5"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-6"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary; 2-pass corner rounding of observed curved edges",
+        "id": "reviewed/wuli/infield-apron"
+      },
+      {
+        "geometryMethod": "reviewed-pixel-boundary",
+        "id": "reviewed/wuli/court-surround"
+      }
+    ],
+    "probes": [
+      {
+        "height": 0.2800000011921071,
+        "hit": "Mapped-infield",
+        "name": "infield",
+        "pixels": [
+          965,
+          730
+        ]
+      },
+      {
+        "height": 0.2800000011920929,
+        "hit": "Mapped-running-track",
+        "name": "track",
+        "pixels": [
+          932,
+          733
+        ]
+      },
+      {
+        "height": 0.2800000011921071,
+        "hit": "Mapped-court",
+        "name": "court",
+        "pixels": [
+          901,
+          690
+        ]
+      },
+      {
+        "height": 0.27500000596045027,
+        "hit": "Mapped-sport-paving",
+        "name": "court-surround",
+        "pixels": [
+          911,
+          708
+        ]
+      },
+      {
+        "height": 0.2800000011920929,
+        "hit": "Mapped-court",
+        "name": "infield-apron",
+        "pixels": [
+          938,
+          734
+        ]
+      }
+    ]
+  },
+  "consoleErrors": []
+}

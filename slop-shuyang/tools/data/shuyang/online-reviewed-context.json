@@ -1,0 +1,604 @@
+{
+  "reference": {
+    "provider": "AMap JS API official layers",
+    "coordinates": "GCJ-02",
+    "queriedAt": "2026-11-13T00:37:02.832Z",
+    "imageAcquired": null,
+    "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+    "layer": "satellite",
+    "center": [
+      118.799884,
+      34.100148
+    ],
+    "zoom": 18,
+    "rotation": 0,
+    "pitch": 0,
+    "size": [
+      1536,
+      1000
+    ],
+    "bounds": {
+      "southWest": [
+        118.795764,
+        34.097927
+      ],
+      "northEast": [
+        118.804003,
+        34.102369
+      ]
+    },
+    "id": "amap-wuyue-south-20261113",
+    "standardImage": "reference/amap-wuyue-south-standard-native-20261113.jpg",
+    "satelliteImage": "reference/amap-wuyue-south-native-20261113.jpg",
+    "screenshotSize": [
+      1536,
+      1100
+    ],
+    "mapOffset": [
+      0,
+      100
+    ],
+    "method": "Manually reviewed whole standard-map building outlines cross-checked against live satellite and named POI photos. GCJ-02 is inverted to WGS84. Native screenshots only: CDP screenshot scaling was inconsistent.",
+    "limitations": "Map geometry is approximate, acquisition dates unknown, roof lean visible in satellite. Heights are display estimates, not measurements.",
+    "outlineExtraction": "Native JPEG pale building silhouettes (RGB 247 to 251), complete connected components visually reviewed; 1.5 pixel simplification. Colours are only an aid; clipped shapes excluded."
+  },
+  "additionalReferences": [
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T05:19:10.888Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.798,
+        34.0988
+      ],
+      "zoom": 17.5,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1000
+      ],
+      "bounds": {
+        "southWest": [
+          118.792174,
+          34.095659
+        ],
+        "northEast": [
+          118.803826,
+          34.101941
+        ]
+      },
+      "id": "amap-junlin-huachen-20261113",
+      "standardImage": "reference/amap-junlin-full-outlines-native-20261113.jpg",
+      "labelledImage": "reference/amap-junlin-full-standard-native-20261113.jpg",
+      "satelliteImage": "reference/amap-junlin-full-satellite-native-20261113.jpg",
+      "screenshotSize": [
+        1536,
+        1100
+      ],
+      "mapOffset": [
+        0,
+        100
+      ],
+      "limitations": "Manually reviewed whole map silhouettes, cross-checked with satellite and visible building numbers. Acquisition date unknown; heights, roof pitch and upper massing approximate.",
+      "method": "Native map screenshot; labels temporarily hidden for complete silhouettes; named screenshot retained separately.",
+      "outlineExtraction": "Pale silhouette connected components, 0.8 pixel simplification; visual review against unmodified labelled and satellite screenshots."
+    },
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T06:05:33.814Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.7821,
+        34.11085
+      ],
+      "zoom": 17,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1200
+      ],
+      "bounds": {
+        "southWest": [
+          118.77386,
+          34.10552
+        ],
+        "northEast": [
+          118.79034,
+          34.11618
+        ]
+      },
+      "id": "amap-wode-rtmart-20261113",
+      "mapOffset": [
+        0,
+        100
+      ],
+      "screenshotSize": [
+        1536,
+        1300
+      ],
+      "standardImage": "reference/wode-rtmart-outlines-20261113.jpg",
+      "labelledImage": "reference/wode-rtmart-labelled-20261113.jpg",
+      "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
+      "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
+      "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+    }
+  ],
+  "neighborhoods": [
+    {
+      "id": "reviewed/huachen",
+      "name": "华辰大厦小区",
+      "photoTypology": "具名华辰大厦门楼已核对；门点未定位，楼高未逐栋核实。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-wuyue-south-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T00:37:02.832Z",
+      "x": 1961.1,
+      "z": 3091.4,
+      "polygons": [
+        {
+          "outer": [
+            1756.9,
+            3047.6,
+            2166.3,
+            3077.3,
+            2143.1,
+            3130.4,
+            1763.8,
+            3105.5
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/happiness-01",
+      "name": "幸福家园1期",
+      "photoTypology": "高德台州南路94号幸福家园及1期地点、入口照片与在线图层交叉核对；仅覆盖本次可见片区，并非完整产权边界。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-wuyue-south-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T00:37:02.832Z",
+      "x": 1936.3,
+      "z": 3180.5,
+      "polygons": [
+        {
+          "outer": [
+            1763.8,
+            3106.5,
+            2142.6,
+            3131.4,
+            2107.4,
+            3229.6,
+            1736.6,
+            3230.3
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/junlin",
+      "name": "君临天下",
+      "photoTypology": "具名君临天下景石及白墙浅红竖带住宅实拍；北侧连体轮廓不按网格拆楼，楼高仍待核实。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "x": 1526.6,
+      "z": 3136.5,
+      "polygons": [
+        {
+          "outer": [
+            1387.5,
+            3007.6,
+            1661.3,
+            3032.8,
+            1622.8,
+            3266.9,
+            1426.0,
+            3240.1
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/happiness-main",
+      "name": "幸福家园",
+      "photoTypology": "高德台州南路94号幸福家园具名照片与主区地图标注核对；保留较小的1期近似范围，不将全小区当作1期。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "x": 1919.8,
+      "z": 3242.7,
+      "polygons": [
+        {
+          "outer": [
+            1753.0,
+            3094.5,
+            1834.2,
+            3092.2,
+            2153.5,
+            3127.1,
+            2048.5,
+            3407.8,
+            1711.0,
+            3358.4
+          ],
+          "holes": []
+        }
+      ]
+    }
+  ],
+  "workersPalaceRoofPanel": {
+    "x": 2069.7601293462008,
+    "z": 2984.9219305985807,
+    "w": 18.479881436507185,
+    "d": 18.82713811778127,
+    "tx": 0.9913736123884662,
+    "tz": 0.13106624531069475
+  },
+  "huachenWesternTowers": {
+    "sourceTraceId": "reviewed/online/huachen/west-base",
+    "heightEstimate": 78,
+    "baseHeightEstimate": 8,
+    "method": "Two tower masses separated from the connected map silhouette, cross-checked against labelled map and satellite. Core separation and low connector height are conservative approximate massing, not surveyed outlines.",
+    "parts": [
+      {
+        "name": "华辰大厦4号楼",
+        "outer": [
+          [
+            1774.7102078233163,
+            3072.197928386135
+          ],
+          [
+            1780.3118018580674,
+            3072.8827521027692
+          ],
+          [
+            1780.3118598078427,
+            3073.57718510876
+          ],
+          [
+            1784.513018381152,
+            3073.5699715530677
+          ],
+          [
+            1784.5133660784952,
+            3077.7365707361014
+          ],
+          [
+            1787.3141995048504,
+            3078.4261919367673
+          ],
+          [
+            1787.3142574533163,
+            3079.120625377237
+          ],
+          [
+            1799.2176387748564,
+            3079.7945789807163
+          ],
+          [
+            1799.2176967220128,
+            3080.4890125327524
+          ],
+          [
+            1802.7186826746245,
+            3080.4829803949888
+          ],
+          [
+            1802.7187406217809,
+            3081.1774139973077
+          ],
+          [
+            1804.8193340413293,
+            3081.1737928321713
+          ],
+          [
+            1804.8193919884857,
+            3081.8682264894874
+          ],
+          [
+            1816.022638232999,
+            3082.543323510128
+          ],
+          [
+            1816.022232608142,
+            3077.6822886710197
+          ],
+          [
+            1820.2233804172736,
+            3076.9805937620067
+          ],
+          [
+            1820.2234383631205,
+            3077.6750270916964
+          ],
+          [
+            1827.225460224866,
+            3077.662911970392
+          ],
+          [
+            1827.225518170713,
+            3078.3573453590075
+          ],
+          [
+            1836.3282274198734,
+            3079.0360058439887
+          ],
+          [
+            1836.3282853644107,
+            3079.730439336313
+          ],
+          [
+            1846.131169484008,
+            3079.713423692775
+          ],
+          [
+            1846.131227427236,
+            3080.4078572424537
+          ],
+          [
+            1849.6322647100465,
+            3080.4017728564822
+          ],
+          [
+            1849.6323226532745,
+            3081.0962064572295
+          ],
+          [
+            1857.3346180649426,
+            3081.082807175994
+          ],
+          [
+            1857.334676006861,
+            3081.7772408317387
+          ],
+          [
+            1865.0369897988207,
+            3081.763822838854
+          ],
+          [
+            1865.0370477394297,
+            3082.458256545668
+          ],
+          [
+            1865.737247405451,
+            3082.318149057188
+          ],
+          [
+            1865.7359842789633,
+            3067.179506715589
+          ],
+          [
+            1858.033668802973,
+            3067.192926401604
+          ],
+          [
+            1858.0336108610545,
+            3066.4984938835173
+          ],
+          [
+            1849.63104790357,
+            3065.8186797416656
+          ],
+          [
+            1849.6309899603423,
+            3065.124247332002
+          ],
+          [
+            1834.9266010082433,
+            3064.455343315403
+          ],
+          [
+            1834.9265430637058,
+            3063.7609110125914
+          ],
+          [
+            1827.2242433712474,
+            3063.079823392852
+          ],
+          [
+            1827.2241854254005,
+            3062.3853912016066
+          ],
+          [
+            1818.821761012835,
+            3062.399927467678
+          ],
+          [
+            1818.8217030656785,
+            3061.70549532593
+          ],
+          [
+            1811.8196995999388,
+            3061.7175917018017
+          ],
+          [
+            1811.8196416527824,
+            3061.023159617408
+          ],
+          [
+            1802.7170021861357,
+            3060.3444294752203
+          ],
+          [
+            1802.7169442376698,
+            3059.64999749925
+          ],
+          [
+            1795.7149761706223,
+            3059.6620578424704
+          ],
+          [
+            1795.7149182221565,
+            3058.9676259159974
+          ],
+          [
+            1788.0127711806656,
+            3058.980874144043
+          ],
+          [
+            1788.01271323089,
+            3058.2864422764956
+          ],
+          [
+            1777.5097576660085,
+            3057.610045518334
+          ]
+        ]
+      },
+      {
+        "name": "华辰大厦3号楼",
+        "outer": [
+          [
+            1892.3458622283506,
+            3087.9660050764865
+          ],
+          [
+            1892.34592016765,
+            3088.660439270419
+          ],
+          [
+            1897.2474433333011,
+            3088.6518488702236
+          ],
+          [
+            1897.247501271291,
+            3089.3462831222964
+          ],
+          [
+            1900.0483749585517,
+            3089.3413709555653
+          ],
+          [
+            1900.0484328965415,
+            3090.0358052579213
+          ],
+          [
+            1902.1489738623309,
+            3088.643250973113
+          ],
+          [
+            1901.4485809518208,
+            3086.5611772797597
+          ],
+          [
+            1915.4530493260495,
+            3087.2310077720085
+          ],
+          [
+            1915.4531072614202,
+            3087.9254419140866
+          ],
+          [
+            1916.8535515987253,
+            3087.922978201419
+          ],
+          [
+            1916.8534357253648,
+            3086.53410997226
+          ],
+          [
+            1917.5536581179435,
+            3086.5328778876874
+          ],
+          [
+            1917.5537739913043,
+            3087.9217461160606
+          ],
+          [
+            1921.0549461314517,
+            3088.610017602386
+          ],
+          [
+            1921.0547143886588,
+            3085.8322811487824
+          ],
+          [
+            1921.754937676943,
+            3085.831048151255
+          ],
+          [
+            1921.7547059341503,
+            3083.0533125650372
+          ],
+          [
+            1922.454929373028,
+            3083.0520794158742
+          ],
+          [
+            1923.1544577328116,
+            3074.717644551309
+          ],
+          [
+            1921.053787413559,
+            3074.7213439980123
+          ],
+          [
+            1919.653225407554,
+            3073.334943365901
+          ],
+          [
+            1905.6487390393393,
+            3072.6651322452676
+          ],
+          [
+            1905.6486811013494,
+            3071.970699294274
+          ],
+          [
+            1894.4451235848417,
+            3071.295919945818
+          ],
+          [
+            1894.4450656468518,
+            3070.6014871071757
+          ],
+          [
+            1890.2437632237961,
+            3070.6088470868585
+          ],
+          [
+            1890.2437052844966,
+            3069.914414297714
+          ],
+          [
+            1875.539131589252,
+            3069.245697993925
+          ],
+          [
+            1875.5390736486431,
+            3068.5512653139895
+          ],
+          [
+            1872.7382017410075,
+            3068.32467844823
+          ],
+          [
+            1872.7397315126757,
+            3086.6593152772925
+          ]
+        ]
+      }
+    ]
+  }
+}

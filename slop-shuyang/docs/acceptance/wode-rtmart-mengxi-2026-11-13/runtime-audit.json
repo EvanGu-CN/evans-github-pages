@@ -1,0 +1,653 @@
+{
+  "arrivals": [
+    {
+      "clear": true,
+      "dry": true,
+      "id": "central",
+      "x": -94.7304347826087,
+      "z": 261.5652173913043
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "gov",
+      "x": 2266.635,
+      "z": 1935.465
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "culture",
+      "x": -2515.7042253521126,
+      "z": 4061.6859154929575
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "sports",
+      "x": -704.504761904762,
+      "z": 4687.8761904761905
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "station",
+      "x": -1270.2,
+      "z": 1746.35
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "yuji",
+      "x": 2610.7169811320755,
+      "z": 1354.0094339622642
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "yujiPark",
+      "x": -107.22692307692309,
+      "z": -800.7384615384615
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "nanhu",
+      "x": -2248.2283323775173,
+      "z": 4111.30150275778
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "bluesky",
+      "x": -246.61612903225807,
+      "z": 15.000000000000014
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "wanda",
+      "x": -1524.1206896551726,
+      "z": 3540.687931034483
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "wuyinxian",
+      "x": -657.8872727272727,
+      "z": -855.1327272727274
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "cotton",
+      "x": -1355.2303797468353,
+      "z": -165.17594936708855
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "shuhe",
+      "x": -1527.1031578947368,
+      "z": -1282.6694736842103
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "rtmart",
+      "x": -231.1941176470588,
+      "z": 1688.476470588235
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "wuyue",
+      "x": 1734,
+      "z": 2717.7
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "highschool",
+      "x": 948.12,
+      "z": 107.34
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "mengxi",
+      "x": 441.3965517241379,
+      "z": 1663.451724137931
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "wanhao",
+      "x": -212.53859649122808,
+      "z": 1451.459649122807
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "jiusheng",
+      "x": 40.48666666666665,
+      "z": -2.7333333333333343
+    },
+    {
+      "clear": true,
+      "dry": true,
+      "id": "workersPalace",
+      "x": 2076.046153846154,
+      "z": 3065.0538461538463
+    }
+  ],
+  "coverage": {
+    "clipFailures": [],
+    "clipped": [
+      {
+        "index": 1384,
+        "retainedAreaM2": 216.4,
+        "sourceAreaM2": 614.3
+      },
+      {
+        "index": 1386,
+        "retainedAreaM2": 143.5,
+        "sourceAreaM2": 843.6
+      },
+      {
+        "index": 1400,
+        "retainedAreaM2": 707.6,
+        "sourceAreaM2": 979.1
+      },
+      {
+        "index": 1415,
+        "retainedAreaM2": 58.3,
+        "sourceAreaM2": 59.3
+      },
+      {
+        "index": 1428,
+        "retainedAreaM2": 137.9,
+        "sourceAreaM2": 858.8
+      },
+      {
+        "index": 1454,
+        "retainedAreaM2": 573.9,
+        "sourceAreaM2": 963.3
+      },
+      {
+        "index": 1455,
+        "retainedAreaM2": 3110.9,
+        "sourceAreaM2": 4379.4
+      },
+      {
+        "index": 1462,
+        "retainedAreaM2": 1371.3,
+        "sourceAreaM2": 2435
+      },
+      {
+        "index": 1476,
+        "retainedAreaM2": 1696.7,
+        "sourceAreaM2": 3094.3
+      },
+      {
+        "index": 1479,
+        "retainedAreaM2": 115.1,
+        "sourceAreaM2": 188.8
+      },
+      {
+        "index": 1487,
+        "retainedAreaM2": 212.6,
+        "sourceAreaM2": 235
+      },
+      {
+        "index": 1756,
+        "retainedAreaM2": 198.7,
+        "sourceAreaM2": 215.8
+      },
+      {
+        "index": 5064,
+        "retainedAreaM2": 1279.3,
+        "sourceAreaM2": 1310
+      }
+    ],
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1914,
+      2558,
+      2565,
+      2713,
+      2780,
+      2782,
+      3032,
+      3033,
+      3159,
+      3462,
+      3669,
+      3670,
+      3671,
+      3672,
+      3673,
+      3724,
+      6228,
+      6265,
+      6266,
+      6644,
+      6645,
+      6646,
+      6693,
+      6713,
+      6736
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "rendered": 7697,
+    "replacedByLandmarks": 31,
+    "source": 7728
+  },
+  "probes": [
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-174",
+      "pass": true,
+      "x": -124.05,
+      "z": 1417
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-143",
+      "pass": true,
+      "x": -35.5,
+      "z": 1894.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-144",
+      "pass": true,
+      "x": -125.73333333333332,
+      "z": 1924
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-145",
+      "pass": true,
+      "x": -27.464285714285715,
+      "z": 1935.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-172",
+      "pass": true,
+      "x": 153.85714285714286,
+      "z": 1399
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.01999855041504,
+      "id": "way/1371978220",
+      "pass": true,
+      "x": 391.75,
+      "z": 1478.25
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.019998550414986,
+      "id": "way/1371978221",
+      "pass": true,
+      "x": 395.4419642857143,
+      "z": 1431.25
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.01999855041504,
+      "id": "way/1371978222",
+      "pass": true,
+      "x": 316.25,
+      "z": 1422
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.01999855041504,
+      "id": "way/1371978226",
+      "pass": true,
+      "x": 402.4941666666666,
+      "z": 1389.5
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.01999855041504,
+      "id": "way/1371978230",
+      "pass": true,
+      "x": 320.25,
+      "z": 1383
+    },
+    {
+      "height": 21.6,
+      "hitY": 20.019998550415096,
+      "id": "way/497849513",
+      "pass": true,
+      "x": 309.20238095238096,
+      "z": 1465.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-090",
+      "pass": true,
+      "x": 468.5,
+      "z": 1844.75
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-147",
+      "pass": true,
+      "x": 41.45652173913044,
+      "z": 1947.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-041",
+      "pass": true,
+      "x": 104.60714285714286,
+      "z": 2106
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-045",
+      "pass": true,
+      "x": 376.2592592592592,
+      "z": 2095.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-049",
+      "pass": true,
+      "x": 117.42307692307692,
+      "z": 2149.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-050",
+      "pass": true,
+      "x": 207.25,
+      "z": 2160
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-052",
+      "pass": true,
+      "x": 370,
+      "z": 2143.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-053",
+      "pass": true,
+      "x": 119,
+      "z": 2185
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-055",
+      "pass": true,
+      "x": 369.25,
+      "z": 2218
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-057",
+      "pass": true,
+      "x": 202.2,
+      "z": 2227.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-058",
+      "pass": true,
+      "x": 302.5565217391304,
+      "z": 2206
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-060",
+      "pass": true,
+      "x": 194,
+      "z": 2261
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-061",
+      "pass": true,
+      "x": 308.52941176470586,
+      "z": 2244.75
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-062",
+      "pass": true,
+      "x": 82.40196078431373,
+      "z": 2287
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-063",
+      "pass": true,
+      "x": 143.70833333333334,
+      "z": 2291.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-064",
+      "pass": true,
+      "x": 288.8571428571429,
+      "z": 2274.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-065",
+      "pass": true,
+      "x": 366.51041666666663,
+      "z": 2276.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354435,
+      "id": "reviewed/online/wode-rtmart/roof-067",
+      "pass": true,
+      "x": 283.86,
+      "z": 2303.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-068",
+      "pass": true,
+      "x": 336.25,
+      "z": 2311
+    },
+    {
+      "height": 18,
+      "hitY": 18.21999931335455,
+      "id": "reviewed/online/wode-rtmart/roof-111",
+      "pass": true,
+      "x": 485.2872023809524,
+      "z": 2184
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-113",
+      "pass": true,
+      "x": 487.5,
+      "z": 2213.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-115",
+      "pass": true,
+      "x": 488.10416666666663,
+      "z": 2246
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-085",
+      "pass": true,
+      "x": 568,
+      "z": 1777.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-087",
+      "pass": true,
+      "x": 517.5,
+      "z": 1809.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-095",
+      "pass": true,
+      "x": 561.1071428571429,
+      "z": 1885.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-097",
+      "pass": true,
+      "x": 505.5,
+      "z": 1916.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-098",
+      "pass": true,
+      "x": 602.75,
+      "z": 1929.5
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-118",
+      "pass": true,
+      "x": 566.0869565217391,
+      "z": 2279.75
+    },
+    {
+      "height": 18,
+      "hitY": 18.219999313354492,
+      "id": "reviewed/online/wode-rtmart/roof-119",
+      "pass": true,
+      "x": 563.1416666666667,
+      "z": 2312.5
+    }
+  ],
+  "surfaceProbes": [
+    {
+      "hitY": 0.2750000059605213,
+      "id": "reviewed/mengxi/east-sport-apron",
+      "pass": true,
+      "x": 483.7380301056593,
+      "z": 1559
+    },
+    {
+      "hitY": 0.28000000119214974,
+      "id": "reviewed/mengxi/east-infield",
+      "pass": true,
+      "x": 535.3368721499558,
+      "z": 1562.95
+    },
+    {
+      "hitY": 0.2800000011920929,
+      "id": "reviewed/mengxi/west-courts",
+      "pass": true,
+      "x": 305.3,
+      "z": 1546
+    },
+    {
+      "hitY": 0.2750000059604645,
+      "id": "reviewed/mengxi/west-court-apron",
+      "pass": true,
+      "x": 334.6319773565034,
+      "z": 1546
+    },
+    {
+      "hitY": 0.23499999940395355,
+      "id": "reviewed/wode/central-garden",
+      "pass": true,
+      "x": 592.6465163135317,
+      "z": 1958.6
+    },
+    {
+      "hitY": 0.25,
+      "id": "reviewed/wode/garden-walk",
+      "pass": true,
+      "x": 632.5254022762952,
+      "z": 1951.25
+    },
+    {
+      "hitY": 0.25499999523168526,
+      "id": "reviewed/mengxi/central-drive",
+      "pass": true,
+      "x": 453.99574721780607,
+      "z": 1519.8
+    },
+    {
+      "hitY": 0.25499999523168526,
+      "id": "reviewed/wode/north-axis",
+      "pass": true,
+      "x": 553.7681198910082,
+      "z": 1908.05
+    },
+    {
+      "hitY": 0.2549999952316284,
+      "id": "reviewed/wode/west-axis",
+      "pass": true,
+      "x": 534.500563697858,
+      "z": 2138.3500000000004
+    },
+    {
+      "hitY": 0.2549999952316284,
+      "id": "reviewed/wode/east-axis",
+      "pass": true,
+      "x": 681.4969294242908,
+      "z": 2094.45
+    },
+    {
+      "hitY": 0.2549999952316284,
+      "id": "reviewed/wode/south-central-axis",
+      "pass": true,
+      "x": 618.8713957707353,
+      "z": 2199.6
+    }
+  ]
+}

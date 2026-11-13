@@ -1,0 +1,116 @@
+[
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Render pipeline creation failed (renderPipeline_MeshStandardNodeMaterial_224): [Invalid ShaderModule \"fragment\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment\"], entryPoint: \"main\").\n - While validating fragment state.\n - While calling [Device].CreateRenderPipeline([RenderPipelineDescriptor \"\"renderPipeline_MeshStandardNodeMaterial_224\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.774Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Render pipeline creation failed (renderPipeline_MeshBasicNodeMaterial_208): [Invalid ShaderModule \"fragment\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment\"], entryPoint: \"main\").\n - While validating fragment state.\n - While calling [Device].CreateRenderPipeline([RenderPipelineDescriptor \"\"renderPipeline_MeshBasicNodeMaterial_208\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.774Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Render pipeline creation failed (renderPipeline_MeshBasicNodeMaterial_239): [Invalid ShaderModule \"fragment\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment\"], entryPoint: \"main\").\n - While validating fragment state.\n - While calling [Device].CreateRenderPipeline([RenderPipelineDescriptor \"\"renderPipeline_MeshBasicNodeMaterial_239\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.775Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :12:8 error: structures must have at least one member\nstruct OutputType {\n       ^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.775Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :12:8 error: structures must have at least one member\nstruct OutputType {\n       ^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.782Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :12:8 error: structures must have at least one member\nstruct OutputType {\n       ^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment\"\"]).\n",
+    "timestamp": "2026-11-13T05:02:51.782Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid RenderPipeline \"renderPipeline_MeshStandardNodeMaterial_224\"] is invalid due to a previous error.\n - While encoding [RenderPassEncoder (unlabeled)].SetPipeline([Invalid RenderPipeline \"renderPipeline_MeshStandardNodeMaterial_224\"]).\n - While finishing [CommandEncoder \"renderContext_8\"].\n",
+    "timestamp": "2026-11-13T05:02:51.782Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid CommandBuffer from CommandEncoder \"renderContext_8\"] is invalid due to a previous error.\n - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder \"renderContext_8\"]])\n",
+    "timestamp": "2026-11-13T05:02:51.782Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshStandardNodeMaterial_224 / fragment error] at line 12:8: structures must have at least one member\n  struct OutputType {\n         ^",
+    "timestamp": "2026-11-13T05:02:51.790Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshBasicNodeMaterial_208 / fragment error] at line 12:8: structures must have at least one member\n  struct OutputType {\n         ^",
+    "timestamp": "2026-11-13T05:02:51.790Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshBasicNodeMaterial_239 / fragment error] at line 12:8: structures must have at least one member\n  struct OutputType {\n         ^",
+    "timestamp": "2026-11-13T05:02:51.790Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Render pipeline creation failed (renderPipeline_MeshStandardNodeMaterial_224): [Invalid ShaderModule \"fragment\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment\"], entryPoint: \"main\").\n - While validating fragment state.\n - While calling [Device].CreateRenderPipeline([RenderPipelineDescriptor \"\"renderPipeline_MeshStandardNodeMaterial_224\"\"]).\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Render pipeline creation failed (renderPipeline_MeshBasicNodeMaterial_239): [Invalid ShaderModule \"fragment\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment\"], entryPoint: \"main\").\n - While validating fragment state.\n - While calling [Device].CreateRenderPipeline([RenderPipelineDescriptor \"\"renderPipeline_MeshBasicNodeMaterial_239\"\"]).\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :12:8 error: structures must have at least one member\nstruct OutputType {\n       ^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment\"\"]).\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :12:8 error: structures must have at least one member\nstruct OutputType {\n       ^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment\"\"]).\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid RenderPipeline \"renderPipeline_MeshStandardNodeMaterial_224\"] is invalid due to a previous error.\n - While encoding [RenderPassEncoder (unlabeled)].SetPipeline([Invalid RenderPipeline \"renderPipeline_MeshStandardNodeMaterial_224\"]).\n - While finishing [CommandEncoder \"renderContext_8\"].\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid CommandBuffer from CommandEncoder \"renderContext_8\"] is invalid due to a previous error.\n - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder \"renderContext_8\"]])\n",
+    "timestamp": "2026-11-13T05:09:31.741Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshStandardNodeMaterial_224 / fragment error] at line 12:8: structures must have at least one member\n  struct OutputType {\n         ^",
+    "timestamp": "2026-11-13T05:09:31.831Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshBasicNodeMaterial_239 / fragment error] at line 12:8: structures must have at least one member\n  struct OutputType {\n         ^",
+    "timestamp": "2026-11-13T05:09:31.832Z",
+    "url": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.core.js"
+  }
+]

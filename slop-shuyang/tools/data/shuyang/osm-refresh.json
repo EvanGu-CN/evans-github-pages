@@ -1,0 +1,49 @@
+{
+  "retrievedAt": "2026-11-12T16:44:52.396505+00:00",
+  "requestedBoundsWgs84": [
+    118.72,
+    34.08,
+    118.85,
+    34.175
+  ],
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "snapshots": {
+    "roads": {
+      "features": 1884,
+      "timestamp": "2026-11-11T16:04:03Z",
+      "sha256": "f38022fd6fa2cea03e89a6179ed8562de144b69b50e4d0c39585d70f7d9939b2",
+      "endpoint": "https://overpass-api.de/api/interpreter"
+    },
+    "buildings": {
+      "features": 2075,
+      "timestamp": "2026-11-11T16:04:03Z",
+      "sha256": "25a5ff529823785fe07014734d25292c8390882fd331f97724f296145e0211c4",
+      "status": "retained-newer-local"
+    },
+    "land": {
+      "features": 566,
+      "timestamp": "2026-11-12T16:43:05Z",
+      "sha256": "b60da27649ac6e94ab69416dbc451ebe1345edce792199dd88cb49fac7b9de5b",
+      "endpoint": "https://overpass-api.de/api/interpreter"
+    },
+    "pois": {
+      "features": 147,
+      "timestamp": "2026-11-12T05:45:35Z",
+      "sha256": "cb83c2510698ea76be8674247ffbf66250a17dc08b76abf837764319f9be6f48",
+      "endpoint": "https://overpass-api.de/api/interpreter"
+    },
+    "landmark_sites": {
+      "features": 1,
+      "timestamp": "2026-11-12T09:02:21Z",
+      "sha256": "798cbae95216089d9d8bfea9bee82ab71113b7d46d9fd88b1917c14ea5fc5999",
+      "endpoint": "https://lz4.overpass-api.de/api/interpreter"
+    },
+    "building_parts": {
+      "features": 0,
+      "timestamp": "2026-11-11T16:01:02Z",
+      "sha256": "7f13ccc3c1ede039914afb0bf92f9afb8f4f76ebf57a3f02dc5184ba848a8a1a",
+      "status": "retained-newer-local"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.DS_Store
+.venv/
+tools/data/shuyang/reference/
+__pycache__/
+
+.screenshots/
+.trae-html-share-packages/

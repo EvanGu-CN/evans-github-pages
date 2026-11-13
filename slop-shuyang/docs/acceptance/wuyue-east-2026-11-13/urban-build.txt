@@ -1,0 +1,44 @@
+{
+  "neighborhoods": 143,
+  "associatedBuildings": 3086,
+  "namedSites": 120,
+  "namedSiteKinds": {
+    "building": 36,
+    "culture": 3,
+    "commercial": 8,
+    "government": 4,
+    "bank": 1,
+    "office": 6,
+    "station": 5,
+    "park": 7,
+    "school": 40,
+    "sports": 3,
+    "hospital": 7
+  },
+  "surfaces": {
+    "path": 68,
+    "plaza": 2,
+    "residential-ground": 1,
+    "parking": 4,
+    "green": 1,
+    "sports-ground": 25,
+    "soccer": 13,
+    "basketball": 8,
+    "running-track": 1,
+    "infield": 1,
+    "court": 7,
+    "sport-paving": 1
+  },
+  "barriers": 0,
+  "snapshots": {
+    "land": "2026-11-12T16:43:05Z",
+    "roads": "2026-11-11T16:04:03Z",
+    "urban": "2026-11-11T16:02:01Z",
+    "pois": "2026-11-12T05:45:35Z"
+  },
+  "limitations": [
+    "小区名称、范围和步道来自开放地图，缺失的道路和围墙不做虚构补全。",
+    "统一立面配色和住宅用地底色为示意，不能代表逐栋外立面或院内铺装实况。",
+    "小区标注为导航图层，并非真实楼顶招牌。"
+  ]
+}

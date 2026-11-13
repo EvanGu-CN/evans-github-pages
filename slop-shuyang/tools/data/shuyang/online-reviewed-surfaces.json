@@ -1,0 +1,1569 @@
+{
+  "reference": {
+    "provider": "AMap JS API official layers",
+    "coordinates": "GCJ-02",
+    "queriedAt": "2026-11-13T00:37:02.832Z",
+    "imageAcquired": null,
+    "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+    "layer": "satellite",
+    "center": [
+      118.799884,
+      34.100148
+    ],
+    "zoom": 18,
+    "rotation": 0,
+    "pitch": 0,
+    "size": [
+      1536,
+      1000
+    ],
+    "bounds": {
+      "southWest": [
+        118.795764,
+        34.097927
+      ],
+      "northEast": [
+        118.804003,
+        34.102369
+      ]
+    },
+    "id": "amap-wuyue-south-20261113",
+    "standardImage": "reference/amap-wuyue-south-standard-native-20261113.jpg",
+    "satelliteImage": "reference/amap-wuyue-south-native-20261113.jpg",
+    "screenshotSize": [
+      1536,
+      1100
+    ],
+    "mapOffset": [
+      0,
+      100
+    ],
+    "method": "Manually reviewed whole standard-map building outlines cross-checked against live satellite and named POI photos. GCJ-02 is inverted to WGS84. Native screenshots only: CDP screenshot scaling was inconsistent.",
+    "limitations": "Map geometry is approximate, acquisition dates unknown, roof lean visible in satellite. Heights are display estimates, not measurements.",
+    "outlineExtraction": "Native JPEG pale building silhouettes (RGB 247 to 251), complete connected components visually reviewed; 1.5 pixel simplification. Colours are only an aid; clipped shapes excluded."
+  },
+  "additionalReferences": [
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T05:19:10.888Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.798,
+        34.0988
+      ],
+      "zoom": 17.5,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1000
+      ],
+      "bounds": {
+        "southWest": [
+          118.792174,
+          34.095659
+        ],
+        "northEast": [
+          118.803826,
+          34.101941
+        ]
+      },
+      "id": "amap-junlin-huachen-20261113",
+      "standardImage": "reference/amap-junlin-full-outlines-native-20261113.jpg",
+      "labelledImage": "reference/amap-junlin-full-standard-native-20261113.jpg",
+      "satelliteImage": "reference/amap-junlin-full-satellite-native-20261113.jpg",
+      "screenshotSize": [
+        1536,
+        1100
+      ],
+      "mapOffset": [
+        0,
+        100
+      ],
+      "limitations": "Manually reviewed whole map silhouettes, cross-checked with satellite and visible building numbers. Acquisition date unknown; heights, roof pitch and upper massing approximate.",
+      "method": "Native map screenshot; labels temporarily hidden for complete silhouettes; named screenshot retained separately.",
+      "outlineExtraction": "Pale silhouette connected components, 0.8 pixel simplification; visual review against unmodified labelled and satellite screenshots."
+    },
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T06:05:33.814Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.7821,
+        34.11085
+      ],
+      "zoom": 17,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1200
+      ],
+      "bounds": {
+        "southWest": [
+          118.77386,
+          34.10552
+        ],
+        "northEast": [
+          118.79034,
+          34.11618
+        ]
+      },
+      "id": "amap-wode-rtmart-20261113",
+      "mapOffset": [
+        0,
+        100
+      ],
+      "screenshotSize": [
+        1536,
+        1300
+      ],
+      "standardImage": "reference/wode-rtmart-outlines-20261113.jpg",
+      "labelledImage": "reference/wode-rtmart-labelled-20261113.jpg",
+      "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
+      "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
+      "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "reviewed/online/workers-palace/plaza",
+      "kind": "plaza",
+      "name": "工人文化宫新馆前广场",
+      "sourceSiteId": "reviewed/online/workers-palace",
+      "appearanceSource": "Live satellite visible paved frontage; exact paving patterns and colours approximate, acquisition date unknown.",
+      "rings": [
+        [
+          [
+            2055.3976488299913,
+            2944.437434846798
+          ],
+          [
+            2126.699034623468,
+            2950.200639279273
+          ],
+          [
+            2130.6633099486244,
+            2987.021073119027
+          ],
+          [
+            2180.1779986054685,
+            2978.09176144218
+          ],
+          [
+            2162.3585075181454,
+            3051.780176701441
+          ],
+          [
+            2117.7950654956926,
+            3054.807812956596
+          ],
+          [
+            2054.9108643886434,
+            3044.6098413186505
+          ],
+          [
+            2031.1433319338005,
+            3033.849706195021
+          ],
+          [
+            2035.5966545294953,
+            2998.9780063471107
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T00:37:02.832Z",
+      "referenceId": "amap-wuyue-south-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/mengxi/east-sport-apron",
+      "kind": "sport-paving",
+      "name": "梦溪中学东侧运动场铺装",
+      "sourceSiteId": "way/497849521",
+      "appearanceSource": "AMap satellite native review; red paving and green sport surfaces observed, sport/lane count and acquisition date unknown",
+      "replacesSourceSurfaceIds": [
+        "way/497849393"
+      ],
+      "rings": [
+        [
+          [
+            472.57221937478994,
+            1518.8103507702779
+          ],
+          [
+            592.3474549042103,
+            1531.4252655899586
+          ],
+          [
+            611.1614068518987,
+            1602.1026498832048
+          ],
+          [
+            586.4145091670672,
+            1608.02625624844
+          ],
+          [
+            576.5147184257999,
+            1597.2372287331366
+          ],
+          [
+            559.686289665099,
+            1592.3487852152275
+          ],
+          [
+            503.2635227632788,
+            1589.4737943567848
+          ],
+          [
+            491.3857546558275,
+            1595.3803710038903
+          ],
+          [
+            478.51721071780673,
+            1589.5044843206329
+          ],
+          [
+            467.62743408732626,
+            1571.8424894600441
+          ],
+          [
+            465.64528469087776,
+            1542.385972712498
+          ]
+        ],
+        [
+          [
+            503.2591698555441,
+            1537.4296083028748
+          ],
+          [
+            569.581250201637,
+            1546.1837874479772
+          ],
+          [
+            571.5645503803437,
+            1588.4058143495554
+          ],
+          [
+            498.3134191156286,
+            1579.6602714362443
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/mengxi/east-infield",
+      "kind": "infield",
+      "name": "梦溪中学东侧绿色场地",
+      "sourceSiteId": "way/497849521",
+      "appearanceSource": "AMap satellite native review; red paving and green sport surfaces observed, sport/lane count and acquisition date unknown",
+      "rings": [
+        [
+          [
+            503.2591698555441,
+            1537.4296083028748
+          ],
+          [
+            569.581250201637,
+            1546.1837874479772
+          ],
+          [
+            571.5645503803437,
+            1588.4058143495554
+          ],
+          [
+            498.3134191156286,
+            1579.6602714362443
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/mengxi/west-courts",
+      "kind": "court",
+      "name": "梦溪中学西侧球场区",
+      "sourceSiteId": "way/497849521",
+      "appearanceSource": "AMap satellite native review; red paving and green sport surfaces observed, sport/lane count and acquisition date unknown",
+      "replacesSourceSurfaceIds": [
+        "way/1371978223"
+      ],
+      "rings": [
+        [
+          [
+            280.5504375586812,
+            1525.9130778462904
+          ],
+          [
+            333.0092935656155,
+            1533.7077513634683
+          ],
+          [
+            330.04264166336486,
+            1566.116057168069
+          ],
+          [
+            277.5838508360144,
+            1558.3212890492725
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/mengxi/west-court-apron",
+      "kind": "sport-paving",
+      "name": "梦溪中学球场外缘",
+      "sourceSiteId": "way/497849521",
+      "appearanceSource": "AMap satellite native review; red paving and green sport surfaces observed, sport/lane count and acquisition date unknown",
+      "rings": [
+        [
+          [
+            276.5908820137674,
+            1520.0258683514978
+          ],
+          [
+            338.947701305789,
+            1529.7729208151247
+          ],
+          [
+            334.9920743085838,
+            1572.0020447174318
+          ],
+          [
+            272.63544045374846,
+            1563.2368067438422
+          ]
+        ],
+        [
+          [
+            280.5504375586812,
+            1525.9130778462904
+          ],
+          [
+            333.0092935656155,
+            1533.7077513634683
+          ],
+          [
+            330.04264166336486,
+            1566.116057168069
+          ],
+          [
+            277.5838508360144,
+            1558.3212890492725
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/central-garden",
+      "kind": "green",
+      "name": "沃德嘉园中央庭院绿地",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible oval central courtyard cross-checked with AMap B020F0IJ8D photo; planting, paving details and dates unknown",
+      "rings": [
+        [
+          [
+            567.6335924334903,
+            1930.1424910892429
+          ],
+          [
+            586.4411979123837,
+            1927.1724830103044
+          ],
+          [
+            605.249766525895,
+            1934.022394584754
+          ],
+          [
+            620.0994322938932,
+            1947.7513464062413
+          ],
+          [
+            618.1208567353805,
+            1962.484042744426
+          ],
+          [
+            605.2531331913866,
+            1974.284765366472
+          ],
+          [
+            586.4454679136887,
+            1978.2369448419113
+          ],
+          [
+            572.5863801183652,
+            1970.3985450970972
+          ],
+          [
+            564.6659975617765,
+            1954.6964592331074
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/garden-walk",
+      "kind": "plaza",
+      "name": "沃德嘉园中央庭院步行铺装",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible oval central courtyard cross-checked with AMap B020F0IJ8D photo; planting, paving details and dates unknown",
+      "rings": [
+        [
+          [
+            549.8149376861056,
+            1920.3450262607669
+          ],
+          [
+            566.6419849628163,
+            1909.5216396187757
+          ],
+          [
+            594.3587757249832,
+            1908.5042436512115
+          ],
+          [
+            623.0668469455112,
+            1920.2513140221758
+          ],
+          [
+            643.8565843336478,
+            1939.8644506746768
+          ],
+          [
+            646.8281326835342,
+            1961.4647711101115
+          ],
+          [
+            630.9915203495052,
+            1985.0536383898768
+          ],
+          [
+            602.2854112670196,
+            1997.8568872915787
+          ],
+          [
+            572.5883509031066,
+            1993.9668365138239
+          ],
+          [
+            552.789330590415,
+            1977.2977596931964
+          ],
+          [
+            541.8988158332962,
+            1954.7252781138363
+          ],
+          [
+            543.8769200779684,
+            1935.0826202636838
+          ]
+        ],
+        [
+          [
+            567.6335924334903,
+            1930.1424910892429
+          ],
+          [
+            586.4411979123837,
+            1927.1724830103044
+          ],
+          [
+            605.249766525895,
+            1934.022394584754
+          ],
+          [
+            620.0994322938932,
+            1947.7513464062413
+          ],
+          [
+            618.1208567353805,
+            1962.484042744426
+          ],
+          [
+            605.2531331913866,
+            1974.284765366472
+          ],
+          [
+            586.4454679136887,
+            1978.2369448419113
+          ],
+          [
+            572.5863801183652,
+            1970.3985450970972
+          ],
+          [
+            564.6659975617765,
+            1954.6964592331074
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-1",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1543.5943499760876,
+            3040.657030070942
+          ],
+          [
+            1538.4377239369253,
+            3052.6018246227886
+          ],
+          [
+            1538.3574630019498,
+            3052.8174114144726
+          ],
+          [
+            1538.2996345588306,
+            3053.040066649304
+          ],
+          [
+            1538.2648431016478,
+            3053.2674628606596
+          ],
+          [
+            1538.2534523135432,
+            3053.4972230233902
+          ],
+          [
+            1538.2655812650578,
+            3053.7269454014186
+          ],
+          [
+            1538.301103169458,
+            3053.954228653638
+          ],
+          [
+            1538.3596467080683,
+            3054.1766969356886
+          ],
+          [
+            1540.2887683588785,
+            3060.2310454868966
+          ],
+          [
+            1535.143893291929,
+            3087.80775099613
+          ],
+          [
+            1535.1133077067261,
+            3088.03588685283
+          ],
+          [
+            1535.1061901167598,
+            3088.2659537714594
+          ],
+          [
+            1535.8010259955222,
+            3122.5816122149636
+          ],
+          [
+            1526.8349752950028,
+            3148.2555048031563
+          ],
+          [
+            1526.7774984445366,
+            3148.447040634323
+          ],
+          [
+            1526.7372549728027,
+            3148.642923318456
+          ],
+          [
+            1520.1224698111191,
+            3190.113236127448
+          ],
+          [
+            1508.9936347335888,
+            3221.1841202393643
+          ],
+          [
+            1508.9281991551618,
+            3221.400484647575
+          ],
+          [
+            1508.8848030776082,
+            3221.6223227699015
+          ],
+          [
+            1503.9867308641026,
+            3255.658141918816
+          ],
+          [
+            1508.4408450941153,
+            3256.2991305505384
+          ],
+          [
+            1513.3065968732556,
+            3222.4879002624907
+          ],
+          [
+            1524.4295939595077,
+            3191.4333153902694
+          ],
+          [
+            1524.4908319299532,
+            3191.233581118287
+          ],
+          [
+            1524.533280722095,
+            3191.029028023775
+          ],
+          [
+            1531.1494868009675,
+            3149.5498070070535
+          ],
+          [
+            1540.182956800294,
+            3123.6828622163075
+          ],
+          [
+            1540.2405170659397,
+            3123.4909955745297
+          ],
+          [
+            1540.2807844978447,
+            3123.2947698719927
+          ],
+          [
+            1540.3034399314326,
+            3123.095740417546
+          ],
+          [
+            1540.3083037969743,
+            3122.895484742919
+          ],
+          [
+            1539.609946040489,
+            3088.4058923436282
+          ],
+          [
+            1544.8162504122804,
+            3060.4999236691633
+          ],
+          [
+            1544.8461256351322,
+            3060.280226440997
+          ],
+          [
+            1544.8542327261873,
+            3060.0586555131226
+          ],
+          [
+            1544.8404929615463,
+            3059.8373624498063
+          ],
+          [
+            1544.8050397611796,
+            3059.6184961171093
+          ],
+          [
+            1544.7482173933524,
+            3059.404181816329
+          ],
+          [
+            1542.90280979189,
+            3053.612561140872
+          ],
+          [
+            1547.8191994931478,
+            3042.2242493896715
+          ],
+          [
+            1547.9008530375806,
+            3042.004227014867
+          ],
+          [
+            1547.959144308583,
+            3041.776896254832
+          ],
+          [
+            1554.2577947097168,
+            3010.517245482382
+          ],
+          [
+            1549.8464541325682,
+            3009.62838423764
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-2",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1421.6872543710015,
+            3039.28675671309
+          ],
+          [
+            1421.6815928417682,
+            3039.4464590450966
+          ],
+          [
+            1421.6831293967016,
+            3057.8488820256634
+          ],
+          [
+            1421.6916485168658,
+            3058.044304740249
+          ],
+          [
+            1421.7171088547423,
+            3058.238249020855
+          ],
+          [
+            1421.7593179799014,
+            3058.4292490274984
+          ],
+          [
+            1428.0622880769604,
+            3082.0298921204503
+          ],
+          [
+            1428.078603461539,
+            3082.0878596881635
+          ],
+          [
+            1435.6991831182736,
+            3107.836947449218
+          ],
+          [
+            1436.39259210262,
+            3131.1549118824187
+          ],
+          [
+            1436.404692697694,
+            3131.3304272169626
+          ],
+          [
+            1436.4304697013322,
+            3131.504460556138
+          ],
+          [
+            1441.3141111993489,
+            3157.4353957320536
+          ],
+          [
+            1444.457703214286,
+            3191.0067186713777
+          ],
+          [
+            1444.4993553034606,
+            3191.2753692854153
+          ],
+          [
+            1448.3514724544445,
+            3208.9774797051286
+          ],
+          [
+            1452.748568398635,
+            3208.0206373682804
+          ],
+          [
+            1448.9254071919172,
+            3190.4515917808703
+          ],
+          [
+            1445.7847725284305,
+            3156.9118512479517
+          ],
+          [
+            1445.7557006947643,
+            3156.7051941842633
+          ],
+          [
+            1440.8853623329046,
+            3130.8448953893076
+          ],
+          [
+            1440.1885187474404,
+            3107.41143215451
+          ],
+          [
+            1440.1744613676722,
+            3107.2184930062026
+          ],
+          [
+            1440.1438827523868,
+            3107.027474490967
+          ],
+          [
+            1440.0970089455031,
+            3106.839788660112
+          ],
+          [
+            1432.402141103808,
+            3080.83968941695
+          ],
+          [
+            1426.1831047341489,
+            3057.553325134356
+          ],
+          [
+            1426.1815995018474,
+            3039.5260350613994
+          ],
+          [
+            1428.2737983885252,
+            3010.0891905834487
+          ],
+          [
+            1423.7851214626783,
+            3009.770161657847
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-3",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1644.3495750997436,
+            3072.7976031115104
+          ],
+          [
+            1644.3446572244143,
+            3072.835037191478
+          ],
+          [
+            1640.8613994511882,
+            3101.1891516125643
+          ],
+          [
+            1632.5079456177502,
+            3136.42743177381
+          ],
+          [
+            1622.7297531925253,
+            3168.318304684241
+          ],
+          [
+            1622.6868122440371,
+            3168.4794322801863
+          ],
+          [
+            1614.6379674507432,
+            3203.9093654416747
+          ],
+          [
+            1614.6370340182073,
+            3203.913492243847
+          ],
+          [
+            1607.9880258785563,
+            3233.438430703328
+          ],
+          [
+            1612.3780819231267,
+            3234.427070134835
+          ],
+          [
+            1619.0266252866027,
+            3204.9041955152047
+          ],
+          [
+            1627.0565183622991,
+            3169.5576852678137
+          ],
+          [
+            1636.8316154047293,
+            3137.6769077262425
+          ],
+          [
+            1636.8697872338696,
+            3137.536326853803
+          ],
+          [
+            1645.2687601600092,
+            3102.106028567685
+          ],
+          [
+            1645.3126462796943,
+            3101.861381811384
+          ],
+          [
+            1648.8087785114915,
+            3073.402467833332
+          ],
+          [
+            1654.0542559684682,
+            3035.913073827721
+          ],
+          [
+            1649.5976685389537,
+            3035.2895126975236
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-4",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1450.4423173105308,
+            3035.432525621907
+          ],
+          [
+            1537.917707984871,
+            3053.611001588085
+          ],
+          [
+            1642.564928088391,
+            3078.0838566220164
+          ],
+          [
+            1643.5896520384028,
+            3073.7020829142275
+          ],
+          [
+            1538.9152244017669,
+            3049.2228651120054
+          ],
+          [
+            1538.8606597183582,
+            3049.2108171870636
+          ],
+          [
+            1450.9931778013997,
+            3030.9508597759273
+          ],
+          [
+            1450.7499518907837,
+            3030.914049229405
+          ],
+          [
+            1450.5041611322679,
+            3030.9040111539744
+          ],
+          [
+            1450.258743550056,
+            3030.920865538314
+          ],
+          [
+            1424.7048604522934,
+            3034.0867290645665
+          ],
+          [
+            1425.2581343717866,
+            3038.552587097465
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-5",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1464.0535085991226,
+            3156.3950778173144
+          ],
+          [
+            1464.2782339638889,
+            3156.4725216219053
+          ],
+          [
+            1464.5098752501106,
+            3156.52582590838
+          ],
+          [
+            1525.4218456580536,
+            3167.1908701025786
+          ],
+          [
+            1525.524814495591,
+            3167.206452113196
+          ],
+          [
+            1573.8350055184835,
+            3173.377176320801
+          ],
+          [
+            1574.10339883625,
+            3173.395247562277
+          ],
+          [
+            1574.3720306572845,
+            3173.381159002449
+          ],
+          [
+            1621.281727859083,
+            3168.0951578401455
+          ],
+          [
+            1620.7778361642193,
+            3163.6234587044873
+          ],
+          [
+            1574.136890893494,
+            3168.8791756589453
+          ],
+          [
+            1526.1466378485836,
+            3162.749317549856
+          ],
+          [
+            1465.5210901590951,
+            3152.134422955647
+          ],
+          [
+            1444.3880305774917,
+            3143.5778403109593
+          ],
+          [
+            1442.6992010177025,
+            3147.748913879956
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-6",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1521.9399264404208,
+            3196.018693446826
+          ],
+          [
+            1522.0426119448944,
+            3196.033468545403
+          ],
+          [
+            1613.0622972418028,
+            3206.994712342466
+          ],
+          [
+            1613.6003321039311,
+            3202.526992735425
+          ],
+          [
+            1522.6321599171501,
+            3191.5719525168192
+          ],
+          [
+            1446.718736688309,
+            3178.856240404509
+          ],
+          [
+            1445.9753308172335,
+            3183.2944098143957
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/online/junlin/path-7",
+      "name": "君临天下内部通行路",
+      "sourceSiteId": "reviewed/junlin",
+      "appearanceSource": "Visible internal route centreline traced from the native map and checked against satellite; width 4.5 m is a display estimate, not an access-right or survey claim.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            1511.025040156153,
+            3223.1077750705604
+          ],
+          [
+            1511.1673713580788,
+            3223.131228353997
+          ],
+          [
+            1609.8885865083873,
+            3236.163398072742
+          ],
+          [
+            1610.4775212932957,
+            3231.702102765421
+          ],
+          [
+            1511.8278478427417,
+            3218.6793772534934
+          ],
+          [
+            1450.9868480095572,
+            3206.6390859378234
+          ],
+          [
+            1450.1132508207972,
+            3211.0534746782714
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "widthEstimate": 4.5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/mengxi/central-drive",
+      "name": "梦溪中学校门中轴通路",
+      "sourceSiteId": "way/497849521",
+      "appearanceSource": "Visible paved campus axis; width estimated from satellite, not a surveyed public road",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            459.25680670389767,
+            1539.5663958451412
+          ],
+          [
+            461.2275032673995,
+            1500.3987128863778
+          ],
+          [
+            461.23167621625925,
+            1500.0559326919738
+          ],
+          [
+            460.2386344202209,
+            1461.7608371900128
+          ],
+          [
+            451.2416588415892,
+            1461.9941405065447
+          ],
+          [
+            452.2302542064376,
+            1500.1177663808012
+          ],
+          [
+            450.26248240045294,
+            1539.2273196521812
+          ],
+          [
+            450.2567972566503,
+            1539.4538245804854
+          ],
+          [
+            450.2608218360141,
+            1587.5701476632366
+          ],
+          [
+            459.2608218045316,
+            1587.5693948789044
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "widthEstimate": 9,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/north-axis",
+      "name": "沃德嘉园内部通路",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible internal routes traced from satellite; estimated width, clipped around retained source buildings; not surveyed public roads",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            572.0481336519142,
+            1774.9560938195732
+          ],
+          [
+            569.0998365868072,
+            1838.4444043302387
+          ],
+          [
+            554.3253206370006,
+            1897.1101135445049
+          ],
+          [
+            546.4168308763485,
+            1925.568945683492
+          ],
+          [
+            551.2342781481937,
+            1926.9076770915767
+          ],
+          [
+            559.1509148822634,
+            1898.4195279330381
+          ],
+          [
+            559.1664928757089,
+            1898.3607042913004
+          ],
+          [
+            574.0097930141518,
+            1839.4218711910955
+          ],
+          [
+            574.0586901547863,
+            1839.1764152063918
+          ],
+          [
+            574.082800077912,
+            1838.9273002080556
+          ],
+          [
+            577.0471184282294,
+            1775.0939890723669
+          ],
+          [
+            577.0487673878417,
+            1774.9058331622246
+          ],
+          [
+            575.0632477745087,
+            1706.169377426686
+          ],
+          [
+            570.0653324690275,
+            1706.3137470884412
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "widthEstimate": 5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/west-axis",
+      "name": "沃德嘉园内部通路",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible internal routes traced from satellite; estimated width, clipped around retained source buildings; not surveyed public roads",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            538.4355563894707,
+            2030.02368276045
+          ],
+          [
+            538.4298408217874,
+            2030.0719930663297
+          ],
+          [
+            531.506080556725,
+            2093.912084090749
+          ],
+          [
+            531.491665102797,
+            2094.209847453353
+          ],
+          [
+            532.4889254769661,
+            2182.5912497880577
+          ],
+          [
+            532.5110779956391,
+            2182.8962999249284
+          ],
+          [
+            542.4032745893257,
+            2256.442407474367
+          ],
+          [
+            546.3630425016197,
+            2325.0856572819675
+          ],
+          [
+            551.3547439643382,
+            2324.7977050166646
+          ],
+          [
+            547.3894966588194,
+            2256.0594689961704
+          ],
+          [
+            547.371334274452,
+            2255.870187788046
+          ],
+          [
+            537.4868785170025,
+            2182.3816314982323
+          ],
+          [
+            536.4930316131168,
+            2094.302745234846
+          ],
+          [
+            543.3980688888188,
+            2030.6352883426412
+          ],
+          [
+            550.3195769175358,
+            1976.6398735786754
+          ],
+          [
+            545.3601572294286,
+            1976.0041406495172
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "widthEstimate": 5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/east-axis",
+      "name": "沃德嘉园内部通路",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible internal routes traced from satellite; estimated width, clipped around retained source buildings; not surveyed public roads",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            659.1667512963338,
+            1804.4475544476957
+          ],
+          [
+            663.1332398974558,
+            1887.908423235202
+          ],
+          [
+            663.1414357508658,
+            1888.0241597402833
+          ],
+          [
+            670.074290817398,
+            1961.636124600548
+          ],
+          [
+            676.0180269756855,
+            2046.0406639757587
+          ],
+          [
+            681.9650220929957,
+            2143.2417951433285
+          ],
+          [
+            681.9768114576864,
+            2143.375491740792
+          ],
+          [
+            693.8635929561425,
+            2246.464705557071
+          ],
+          [
+            702.7789545598846,
+            2328.935912382845
+          ],
+          [
+            707.749992660945,
+            2328.3985296534934
+          ],
+          [
+            698.8336752836673,
+            2245.9184814816867
+          ],
+          [
+            698.8317008617175,
+            2245.9008058129093
+          ],
+          [
+            686.9515904580419,
+            2142.8694476841692
+          ],
+          [
+            681.0079928736823,
+            2045.723847762121
+          ],
+          [
+            681.0064831847577,
+            2045.7009040214339
+          ],
+          [
+            675.0598670362648,
+            1961.2554670962274
+          ],
+          [
+            675.0550283547063,
+            1961.1966658946676
+          ],
+          [
+            668.1248481331061,
+            1887.613102117254
+          ],
+          [
+            664.1609386891506,
+            1804.2065026645446
+          ],
+          [
+            664.1605766417342,
+            1804.1991151263992
+          ],
+          [
+            660.1943290651844,
+            1725.6452489038265
+          ],
+          [
+            655.200690207621,
+            1725.8973817264282
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "widthEstimate": 5,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/south-central-axis",
+      "name": "沃德嘉园内部通路",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "Visible internal routes traced from satellite; estimated width, clipped around retained source buildings; not surveyed public roads",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            605.2436418284107,
+            2079.4457865084896
+          ],
+          [
+            605.2503357399543,
+            2079.543526982899
+          ],
+          [
+            611.1950734084936,
+            2143.367589000176
+          ],
+          [
+            611.1968124660314,
+            2143.3853969098645
+          ],
+          [
+            619.121564250296,
+            2220.946503084816
+          ],
+          [
+            628.0378968075327,
+            2317.1658840677837
+          ],
+          [
+            632.020832395056,
+            2316.796798568692
+          ],
+          [
+            623.1036308060586,
+            2220.568039548561
+          ],
+          [
+            623.1018044586552,
+            2220.549292074699
+          ],
+          [
+            615.1770047166926,
+            2142.9877165283156
+          ],
+          [
+            609.2376410099837,
+            2079.2213505932323
+          ],
+          [
+            606.2644299624332,
+            2011.514804063532
+          ],
+          [
+            602.2682811315539,
+            2011.690287742151
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "widthEstimate": 4,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    }
+  ]
+}

@@ -7,6 +7,7 @@
 - [图片压缩](image-compressor/)：在浏览器本地批量压缩 JPG、PNG、WebP，可调整画质和最长边，并查看压缩前后的体积和尺寸。
 - [二维码生成](qr-generator/)：在浏览器中将网址或文本转为二维码，支持 PNG 和 SVG。
 - [投骰子](dice-roller/)：选择 1–6 颗六面骰，一次投掷并汇总点数。
+- [沭阳漫游](slop-shuyang/)：基于 Three.js 的沭阳三维城市，包含7,728条建筑来源、147个具名小区范围和20处可传送地标，支持步行、驾车、骑行、飞行、小地图与中文实景参考。需要支持WebGPU或WebGL2的现代浏览器，三维渲染依赖通过CDN加载；模型精度和数据日期见[项目说明](slop-shuyang/README.md)。
 - [宠物连连看](lianliankan/)：两转弯内连线消除同图标。
 - [超级玛丽](super-mario/)：沿用初代玩法的 8 个世界和 32 个原创关卡，支持选关、单人或双人轮流、键盘和触屏。
 - [雷霆战机](thunder-fighter/)：自动射击，拾取道具可切换并升级散射炮、穿透炮和追踪弹；十大战区各有多阶段首领战，支持六秒护盾、EMP、关间改造与多轮远征。支持键盘和触屏，最高分保存在本机。
@@ -22,3 +23,4 @@
 - 文本对比使用 [JsDiff 9.0.0](https://github.com/kpdecker/jsdiff)，[BSD-3-Clause](text-tools/vendor/diff-LICENSE.txt)。
 - MD5 使用 [blueimp-md5 2.19.0](https://github.com/blueimp/JavaScript-MD5)，[MIT](text-tools/vendor/md5-LICENSE.txt)。
 - 二维码使用 [qrcode-generator 2.0.4](https://github.com/kazuhikoarase/qrcode-generator)，[MIT](qr-generator/vendor/qrcode-LICENSE.txt)。
+- 沭阳漫游基于 [Slop New York](https://github.com/mrdoob/slop-newyork/)，保留[MIT许可](slop-shuyang/LICENSE)。建筑与地图数据署名和许可见[数据说明](slop-shuyang/tools/data/shuyang/BUILDINGS.md)。

@@ -1,0 +1,324 @@
+{
+  "reference": {
+    "provider": "Esri World Imagery / Vantor Vivid",
+    "service": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "retrievedAt": "2026-11-13",
+    "imageAcquired": "2021-01-29",
+    "serviceRelease": "Raster Basemaps 2026.R05",
+    "resolutionM": 0.46,
+    "sourceAccuracyM": 5,
+    "imageSize": [
+      1536,
+      1536
+    ],
+    "extent3857": [
+      13223063.034311226,
+      4041448.920046554,
+      13225008.31922539,
+      4043394.204960718
+    ],
+    "method": "Individually reviewed roof runs and explicitly traced exterior roof polygons. Each approximate roofprint retains original image pixels; roof lean and source accuracy limit ground alignment. No random infill.",
+    "currentContext": "User supplied current district map and independently reviewed named community photographs corroborate the built-up neighbourhoods. They do not establish a newer acquisition date for this satellite image.",
+    "limitations": "Satellite roof lean, trees and shadows limit outline precision. 2026 service publication is not the imagery acquisition date. Heights and roof pitch are display estimates unless separately documented."
+  },
+  "additionalReferences": [
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T00:37:02.832Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "satellite",
+      "center": [
+        118.799884,
+        34.100148
+      ],
+      "zoom": 18,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1000
+      ],
+      "bounds": {
+        "southWest": [
+          118.795764,
+          34.097927
+        ],
+        "northEast": [
+          118.804003,
+          34.102369
+        ]
+      },
+      "id": "amap-wuyue-south-20261113",
+      "standardImage": "reference/amap-wuyue-south-standard-native-20261113.jpg",
+      "satelliteImage": "reference/amap-wuyue-south-native-20261113.jpg",
+      "screenshotSize": [
+        1536,
+        1100
+      ],
+      "mapOffset": [
+        0,
+        100
+      ],
+      "method": "Manually reviewed whole standard-map building outlines cross-checked against live satellite and named POI photos. GCJ-02 is inverted to WGS84. Native screenshots only: CDP screenshot scaling was inconsistent.",
+      "limitations": "Map geometry is approximate, acquisition dates unknown, roof lean visible in satellite. Heights are display estimates, not measurements.",
+      "outlineExtraction": "Native JPEG pale building silhouettes (RGB 247 to 251), complete connected components visually reviewed; 1.5 pixel simplification. Colours are only an aid; clipped shapes excluded."
+    },
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T05:19:10.888Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.798,
+        34.0988
+      ],
+      "zoom": 17.5,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1000
+      ],
+      "bounds": {
+        "southWest": [
+          118.792174,
+          34.095659
+        ],
+        "northEast": [
+          118.803826,
+          34.101941
+        ]
+      },
+      "id": "amap-junlin-huachen-20261113",
+      "standardImage": "reference/amap-junlin-full-outlines-native-20261113.jpg",
+      "labelledImage": "reference/amap-junlin-full-standard-native-20261113.jpg",
+      "satelliteImage": "reference/amap-junlin-full-satellite-native-20261113.jpg",
+      "screenshotSize": [
+        1536,
+        1100
+      ],
+      "mapOffset": [
+        0,
+        100
+      ],
+      "limitations": "Manually reviewed whole map silhouettes, cross-checked with satellite and visible building numbers. Acquisition date unknown; heights, roof pitch and upper massing approximate.",
+      "method": "Native map screenshot; labels temporarily hidden for complete silhouettes; named screenshot retained separately.",
+      "outlineExtraction": "Pale silhouette connected components, 0.8 pixel simplification; visual review against unmodified labelled and satellite screenshots."
+    },
+    {
+      "provider": "AMap JS API official layers",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T06:05:33.814Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not expose image acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard",
+      "center": [
+        118.7821,
+        34.11085
+      ],
+      "zoom": 17,
+      "rotation": 0,
+      "pitch": 0,
+      "size": [
+        1536,
+        1200
+      ],
+      "bounds": {
+        "southWest": [
+          118.77386,
+          34.10552
+        ],
+        "northEast": [
+          118.79034,
+          34.11618
+        ]
+      },
+      "id": "amap-wode-rtmart-20261113",
+      "mapOffset": [
+        0,
+        100
+      ],
+      "screenshotSize": [
+        1536,
+        1300
+      ],
+      "standardImage": "reference/wode-rtmart-outlines-20261113.jpg",
+      "labelledImage": "reference/wode-rtmart-labelled-20261113.jpg",
+      "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
+      "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
+      "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+    }
+  ],
+  "neighborhoods": [
+    {
+      "id": "reviewed/shengyuan-jincheng",
+      "name": "盛源金城",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "boundarySource": "User map labels + dated imagery street-block approximation, not an official estate boundary",
+      "referenceImageDate": "2021-01-29",
+      "x": 1291.7,
+      "z": 2709.9,
+      "polygons": [
+        {
+          "outer": [
+            1135.3,
+            2425.0,
+            1431.0,
+            2478.1,
+            1416.3,
+            2986.4,
+            1178.3,
+            2941.6
+          ],
+          "holes": []
+        }
+      ],
+      "photoTypology": "Named street photographs show pale six-storey slab housing; high towers at image edges are not assigned to the entire estate."
+    },
+    {
+      "id": "reviewed/linan-xiaoqu",
+      "name": "临安小区",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "boundarySource": "User map labels + dated imagery street-block approximation, not an official estate boundary",
+      "referenceImageDate": "2021-01-29",
+      "x": 1583.9,
+      "z": 2756.7,
+      "polygons": [
+        {
+          "outer": [
+            1445.7,
+            2479.1,
+            1750.7,
+            2531.2,
+            1721.4,
+            3022.9,
+            1418.4,
+            2982.3
+          ],
+          "holes": []
+        }
+      ],
+      "photoTypology": "Named block photograph: orange-red slabs, pale window trims and approximately six residential floors; exact per-building floors unmeasured."
+    },
+    {
+      "id": "reviewed/huachen",
+      "name": "华辰大厦小区",
+      "photoTypology": "具名华辰大厦门楼已核对；门点未定位，楼高未逐栋核实。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-wuyue-south-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T00:37:02.832Z",
+      "x": 1961.1,
+      "z": 3091.4,
+      "polygons": [
+        {
+          "outer": [
+            1756.9,
+            3047.6,
+            2166.3,
+            3077.3,
+            2143.1,
+            3130.4,
+            1763.8,
+            3105.5
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/happiness-01",
+      "name": "幸福家园1期",
+      "photoTypology": "高德台州南路94号幸福家园及1期地点、入口照片与在线图层交叉核对；仅覆盖本次可见片区，并非完整产权边界。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-wuyue-south-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T00:37:02.832Z",
+      "x": 1936.3,
+      "z": 3180.5,
+      "polygons": [
+        {
+          "outer": [
+            1763.8,
+            3106.5,
+            2142.6,
+            3131.4,
+            2107.4,
+            3229.6,
+            1736.6,
+            3230.3
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/junlin",
+      "name": "君临天下",
+      "photoTypology": "具名君临天下景石及白墙浅红竖带住宅实拍；北侧连体轮廓不按网格拆楼，楼高仍待核实。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "x": 1526.6,
+      "z": 3136.5,
+      "polygons": [
+        {
+          "outer": [
+            1387.5,
+            3007.6,
+            1661.3,
+            3032.8,
+            1622.8,
+            3266.9,
+            1426.0,
+            3240.1
+          ],
+          "holes": []
+        }
+      ]
+    },
+    {
+      "id": "reviewed/happiness-main",
+      "name": "幸福家园",
+      "photoTypology": "高德台州南路94号幸福家园具名照片与主区地图标注核对；保留较小的1期近似范围，不将全小区当作1期。",
+      "source": "ReviewedImagery",
+      "scope": "approximate-context",
+      "referenceId": "amap-junlin-huachen-20261113",
+      "boundarySource": "AMap named POIs + manually reviewed visible block context, not an official estate boundary; limited to observed view",
+      "referenceImageDate": null,
+      "referenceRetrievedAt": "2026-11-13T05:19:10.888Z",
+      "x": 1919.8,
+      "z": 3242.7,
+      "polygons": [
+        {
+          "outer": [
+            1753.0,
+            3094.5,
+            1834.2,
+            3092.2,
+            2153.5,
+            3127.1,
+            2048.5,
+            3407.8,
+            1711.0,
+            3358.4
+          ],
+          "holes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+✔ city module preloads start after the import map and before stylesheets (0.7871ms)
+✔ native module entry and imports share canonical preloaded URLs on GitHub Pages (14.5759ms)
+✔ real named housing polygons resolve at their interior anchors and remain searchable (1.4882ms)
+✔ community building indices refer to this exact building extract without duplicate assignment (26.9032ms)
+✔ 3D paths and parking come from mapped surfaces with valid polygon holes (1.2082ms)
+✔ non-residential building and campus names are searchable with source provenance (0.3362ms)
+✔ external map references use official search URLs and encode the selected place without mixing coordinates (0.2709ms)
+✔ buildRoadPaint chunks markings into compact spatial cells with shared pipeline and padded bounds (2.9224ms)
+✔ createRoadPaintChunkBuilder subdivides long strips across cells with continuous dash phase and ramp height (0.3166ms)
+✔ city markings clear both asphalt and bridge decks instead of being buried underneath (1.0568ms)
+✔ createRoadPaintMaterial caches one material, gates dry/distant noise, and fades smoothly before cull distance (3.0135ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.4315

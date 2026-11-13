@@ -1,0 +1,28 @@
+{
+  "request": {
+    "f": "json",
+    "bbox": "118.7465443530972,34.09078769873569,118.75457485851541,34.09784179825276",
+    "bboxSR": 4326,
+    "imageSR": 3857,
+    "size": "1000,1054",
+    "format": "jpg",
+    "dpi": 96
+  },
+  "response": {
+    "href": "https://services.arcgisonline.com/arcgis/rest/directories/arcgisoutput/World_Imagery_MapServer/_ags_map11d36920ae5d4ccc8c40e57ffdede214.jpg",
+    "width": 1000,
+    "height": 1054,
+    "extent": {
+      "xmin": 13218801.994024787,
+      "ymin": 4040999.120257268,
+      "xmax": 13219701.65944449,
+      "ymax": 4041947.367609635,
+      "spatialReference": {
+        "wkid": 102100,
+        "latestWkid": 3857
+      }
+    },
+    "scale": 3400.3034470772036
+  },
+  "sourceReference": "nanhu-imagery-metadata.json: acquisition 2021-12-10; provider accuracy 5 m; publication Raster Basemaps 2026.R05 does not indicate a 2026 acquisition."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "CNBH-10 m: A first Chinese building height at 10 m resolution",
+  "creators": [
+    {
+      "name": "Wanben Wu",
+      "affiliation": "Fudan University",
+      "orcid": "0000-0002-1787-608X"
+    }
+  ],
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "doi": "10.5281/zenodo.7923866",
+  "publication_date": "2023-04-14",
+  "file": {
+    "id": "0242867e-bc85-4e6f-93ca-bdb0a86e5647",
+    "key": "CNBH10m_X119Y35.tif",
+    "size": 164560205,
+    "checksum": "md5:87c3d2b4e23f14edb91ae2e9a725934c",
+    "links": {
+      "self": "https://zenodo.org/api/records/7923866/files/CNBH10m_X119Y35.tif/content"
+    }
+  }
+}

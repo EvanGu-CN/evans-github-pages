@@ -1,0 +1,38 @@
+{
+  "reviewed": [
+    {
+      "community": "紫藤花园",
+      "image": "https://store.is.autonavi.com/showpic/14ce921e109c835744f0d87cab92bfb6",
+      "model": "zitengCurve",
+      "caption": "可辨金色“紫藤花园”的浅色曲梁与砖红柱列入口，与2018实拍形态一致；不是迎薰门。照片日期未知，不能据此确认2026现状；精确柱数、尺寸与饰面材质未核实。",
+      "date": "未注明",
+      "credit": "高德地图地点照片 / 原作者"
+    },
+    {
+      "community": "东方明珠城",
+      "image": "https://store.is.autonavi.com/showpic/887f122eeda39116ab4d1cc7f73cb6fd",
+      "model": "mingzhuStone",
+      "caption": "入口左侧浅色不规则题名景石可辨红色“东方明珠城”，前接深色金属栏杆；人、摊棚与竖旗有遮挡，仅能复原已见侧景石，不能推导完整门宽及横跨结构。",
+      "date": "未注明",
+      "credit": "高德地图地点照片 / 原作者"
+    },
+    {
+      "community": "宁浦·冠城",
+      "image": "https://store.is.autonavi.com/showpic/2bb069ba61e28643b2198ffe69f61e79",
+      "model": "guanchengWall",
+      "caption": "浅米白矩形题名墙可辨居中金色“宁浦冠城”，配深灰框边与两侧方柱、柱顶格栅装饰体、黑色金属栏杆。照片未标分区，未覆盖完整车行口；消防宣传横幅属于可变内容。",
+      "date": "未注明",
+      "credit": "高德地图地点照片 / 原作者"
+    }
+  ],
+  "rejected": [
+    {
+      "image": "https://store.is.autonavi.com/showpic/1ed9aa0c3862a6cb5816029ddbdcbf4c",
+      "reason": "上海陆家嘴夜景，可辨金茂大厦、上海环球金融中心、上海中心大厦；与江苏沭阳东方明珠城无关，不得作为该小区的本地实景或模型参考。"
+    },
+    {
+      "image": "https://aos-comment.amap.com/B0FFFQ5N1J/comment/B34C193E_454E_46E6_8985_E10BC61E5DD6_L0_001_776_535_1728959172224_49674085.jpg",
+      "reason": "嘉瑞玫瑰园住宅效果图，不能用作已建住宅实景或判定层数。"
+    }
+  ]
+}

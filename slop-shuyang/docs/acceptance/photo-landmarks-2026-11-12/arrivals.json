@@ -1,0 +1,107 @@
+[
+  {
+    "id": "central",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -94.7304347826087,
+    "z": 261.5652173913043
+  },
+  {
+    "id": "gov",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": 2365.871717171717,
+    "z": 2020.4040404040404
+  },
+  {
+    "id": "culture",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -2515.7042253521126,
+    "z": 4061.6859154929575
+  },
+  {
+    "id": "sports",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -897.6496644295303,
+    "z": 4854.196644295302
+  },
+  {
+    "id": "station",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -1270.2,
+    "z": 1746.35
+  },
+  {
+    "id": "yuji",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": 2610.7169811320755,
+    "z": 1354.0094339622642
+  },
+  {
+    "id": "nanhu",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -2231.691900339798,
+    "z": 4115.070801236045
+  },
+  {
+    "id": "bluesky",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -246.61612903225807,
+    "z": 15.000000000000014
+  },
+  {
+    "id": "wanda",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -1524.1206896551726,
+    "z": 3540.687931034483
+  },
+  {
+    "id": "wuyinxian",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -657.8872727272727,
+    "z": -855.1327272727274
+  },
+  {
+    "id": "cotton",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -1355.2303797468353,
+    "z": -165.17594936708855
+  },
+  {
+    "id": "shuhe",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -1527.1031578947368,
+    "z": -1282.6694736842103
+  },
+  {
+    "id": "rtmart",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": -231.1941176470588,
+    "z": 1688.476470588235
+  },
+  {
+    "id": "wuyue",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": 1734,
+    "z": 2717.7
+  },
+  {
+    "id": "highschool",
+    "overlappingBuildings": 0,
+    "water": false,
+    "x": 948.12,
+    "z": 107.34
+  }
+]

@@ -1,0 +1,902 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-11T14:00:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1359421912,
+  "lat": 34.1130788,
+  "lon": 118.7589445,
+  "tags": {
+    "alt_name": "沭阳站;沭阳火车站;Shuyang Railway Station",
+    "name": "沭阳",
+    "name:en": "Shuyang",
+    "name:zh": "沭阳",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 121415563,
+  "bounds": {
+    "minlat": 34.1012867,
+    "minlon": 118.7643847,
+    "maxlat": 34.1074793,
+    "maxlon": 118.7695993
+  },
+  "geometry": [
+    { "lat": 34.1074793, "lon": 118.7643847 },
+    { "lat": 34.1067967, "lon": 118.7651494 },
+    { "lat": 34.1056875, "lon": 118.7663336 },
+    { "lat": 34.1054220, "lon": 118.7666059 },
+    { "lat": 34.1051133, "lon": 118.7668902 },
+    { "lat": 34.1045269, "lon": 118.7674105 },
+    { "lat": 34.1041627, "lon": 118.7677082 },
+    { "lat": 34.1038302, "lon": 118.7679685 },
+    { "lat": 34.1033432, "lon": 118.7683305 },
+    { "lat": 34.1030703, "lon": 118.7685223 },
+    { "lat": 34.1028346, "lon": 118.7686832 },
+    { "lat": 34.1025825, "lon": 118.7688442 },
+    { "lat": 34.1021861, "lon": 118.7690869 },
+    { "lat": 34.1017998, "lon": 118.7693178 },
+    { "lat": 34.1012867, "lon": 118.7695993 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 153977658,
+  "bounds": {
+    "minlat": 34.1346481,
+    "minlon": 118.7387196,
+    "maxlat": 34.1481345,
+    "maxlon": 118.7444716
+  },
+  "geometry": [
+    { "lat": 34.1481345, "lon": 118.7387196 },
+    { "lat": 34.1436144, "lon": 118.7406219 },
+    { "lat": 34.1398194, "lon": 118.7422541 },
+    { "lat": 34.1346481, "lon": 118.7444716 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 153977668,
+  "bounds": {
+    "minlat": 34.1272449,
+    "minlon": 118.7444716,
+    "maxlat": 34.1346481,
+    "maxlon": 118.7452702
+  },
+  "geometry": [
+    { "lat": 34.1346481, "lon": 118.7444716 },
+    { "lat": 34.1338268, "lon": 118.7448129 },
+    { "lat": 34.1335978, "lon": 118.7449050 },
+    { "lat": 34.1333206, "lon": 118.7450020 },
+    { "lat": 34.1329876, "lon": 118.7450986 },
+    { "lat": 34.1326926, "lon": 118.7451629 },
+    { "lat": 34.1323404, "lon": 118.7452166 },
+    { "lat": 34.1320273, "lon": 118.7452510 },
+    { "lat": 34.1316988, "lon": 118.7452702 },
+    { "lat": 34.1313762, "lon": 118.7452681 },
+    { "lat": 34.1310693, "lon": 118.7452488 },
+    { "lat": 34.1307796, "lon": 118.7452179 },
+    { "lat": 34.1304749, "lon": 118.7451791 },
+    { "lat": 34.1290334, "lon": 118.7449618 },
+    { "lat": 34.1288191, "lon": 118.7449309 },
+    { "lat": 34.1286232, "lon": 118.7449056 },
+    { "lat": 34.1283939, "lon": 118.7448893 },
+    { "lat": 34.1281556, "lon": 118.7448707 },
+    { "lat": 34.1279021, "lon": 118.7448746 },
+    { "lat": 34.1276906, "lon": 118.7448888 },
+    { "lat": 34.1274536, "lon": 118.7449001 },
+    { "lat": 34.1272449, "lon": 118.7449231 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 736335886,
+  "bounds": {
+    "minlat": 34.1083234,
+    "minlon": 118.7623572,
+    "maxlat": 34.1117379,
+    "maxlon": 118.7635027
+  },
+  "geometry": [
+    { "lat": 34.1083234, "lon": 118.7635027 },
+    { "lat": 34.1086899, "lon": 118.7631592 },
+    { "lat": 34.1088532, "lon": 118.7630332 },
+    { "lat": 34.1090109, "lon": 118.7629272 },
+    { "lat": 34.1091352, "lon": 118.7628655 },
+    { "lat": 34.1092551, "lon": 118.7628105 },
+    { "lat": 34.1095442, "lon": 118.7627216 },
+    { "lat": 34.1097546, "lon": 118.7626619 },
+    { "lat": 34.1100280, "lon": 118.7626067 },
+    { "lat": 34.1117379, "lon": 118.7623572 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 764994507,
+  "bounds": {
+    "minlat": 34.1553375,
+    "minlon": 118.7235184,
+    "maxlat": 34.1678372,
+    "maxlon": 118.7356568
+  },
+  "geometry": [
+    { "lat": 34.1678372, "lon": 118.7235184 },
+    { "lat": 34.1642863, "lon": 118.7282391 },
+    { "lat": 34.1623670, "lon": 118.7306595 },
+    { "lat": 34.1612662, "lon": 118.7318182 },
+    { "lat": 34.1597055, "lon": 118.7331958 },
+    { "lat": 34.1582023, "lon": 118.7342238 },
+    { "lat": 34.1579595, "lon": 118.7343655 },
+    { "lat": 34.1571823, "lon": 118.7347915 },
+    { "lat": 34.1563548, "lon": 118.7352116 },
+    { "lat": 34.1553375, "lon": 118.7356568 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 764994508,
+  "bounds": {
+    "minlat": 34.1678372,
+    "minlon": 118.7232887,
+    "maxlat": 34.1679996,
+    "maxlon": 118.7235184
+  },
+  "geometry": [
+    { "lat": 34.1679996, "lon": 118.7232887 },
+    { "lat": 34.1678372, "lon": 118.7235184 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 764994509,
+  "bounds": {
+    "minlat": 34.1679996,
+    "minlon": 118.7184560,
+    "maxlat": 34.1716049,
+    "maxlon": 118.7232887
+  },
+  "geometry": [
+    { "lat": 34.1716049, "lon": 118.7184560 },
+    { "lat": 34.1679996, "lon": 118.7232887 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679421,
+  "bounds": {
+    "minlat": 34.0984041,
+    "minlon": 118.7698122,
+    "maxlat": 34.1008683,
+    "maxlon": 118.7708830
+  },
+  "geometry": [
+    { "lat": 34.1008683, "lon": 118.7698122 },
+    { "lat": 34.1005175, "lon": 118.7699756 },
+    { "lat": 34.0984041, "lon": 118.7708830 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679422,
+  "bounds": {
+    "minlat": 34.1008683,
+    "minlon": 118.7695993,
+    "maxlat": 34.1012867,
+    "maxlon": 118.7698122
+  },
+  "geometry": [
+    { "lat": 34.1012867, "lon": 118.7695993 },
+    { "lat": 34.1008683, "lon": 118.7698122 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679424,
+  "bounds": {
+    "minlat": 34.1196194,
+    "minlon": 118.7449231,
+    "maxlat": 34.1272449,
+    "maxlon": 118.7509610
+  },
+  "geometry": [
+    { "lat": 34.1272449, "lon": 118.7449231 },
+    { "lat": 34.1269730, "lon": 118.7449597 },
+    { "lat": 34.1266971, "lon": 118.7450103 },
+    { "lat": 34.1264256, "lon": 118.7450691 },
+    { "lat": 34.1261573, "lon": 118.7451461 },
+    { "lat": 34.1259106, "lon": 118.7452286 },
+    { "lat": 34.1256707, "lon": 118.7453131 },
+    { "lat": 34.1254109, "lon": 118.7454197 },
+    { "lat": 34.1251825, "lon": 118.7455274 },
+    { "lat": 34.1249180, "lon": 118.7456591 },
+    { "lat": 34.1246661, "lon": 118.7458084 },
+    { "lat": 34.1243776, "lon": 118.7459922 },
+    { "lat": 34.1241529, "lon": 118.7461507 },
+    { "lat": 34.1239256, "lon": 118.7463169 },
+    { "lat": 34.1236879, "lon": 118.7465081 },
+    { "lat": 34.1234391, "lon": 118.7467330 },
+    { "lat": 34.1232055, "lon": 118.7469623 },
+    { "lat": 34.1196194, "lon": 118.7509610 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679425,
+  "bounds": {
+    "minlat": 34.1165825,
+    "minlon": 118.7537717,
+    "maxlat": 34.1170445,
+    "maxlon": 118.7543035
+  },
+  "geometry": [
+    { "lat": 34.1170445, "lon": 118.7537717 },
+    { "lat": 34.1165825, "lon": 118.7543035 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679426,
+  "bounds": {
+    "minlat": 34.1170445,
+    "minlon": 118.7513594,
+    "maxlat": 34.1192609,
+    "maxlon": 118.7537717
+  },
+  "geometry": [
+    { "lat": 34.1192609, "lon": 118.7513594 },
+    { "lat": 34.1187319, "lon": 118.7519473 },
+    { "lat": 34.1170445, "lon": 118.7537717 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 870679427,
+  "bounds": {
+    "minlat": 34.1192609,
+    "minlon": 118.7509610,
+    "maxlat": 34.1196194,
+    "maxlon": 118.7513594
+  },
+  "geometry": [
+    { "lat": 34.1196194, "lon": 118.7509610 },
+    { "lat": 34.1192609, "lon": 118.7513594 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 995943426,
+  "bounds": {
+    "minlat": 34.1095442,
+    "minlon": 118.7608928,
+    "maxlat": 34.1115331,
+    "maxlon": 118.7627216
+  },
+  "geometry": [
+    { "lat": 34.1095442, "lon": 118.7627216 },
+    { "lat": 34.1098014, "lon": 118.7626161 },
+    { "lat": 34.1099325, "lon": 118.7625423 },
+    { "lat": 34.1100690, "lon": 118.7624525 },
+    { "lat": 34.1101823, "lon": 118.7623639 },
+    { "lat": 34.1102864, "lon": 118.7622757 },
+    { "lat": 34.1115331, "lon": 118.7608928 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 995943474,
+  "bounds": {
+    "minlat": 34.0887013,
+    "minlon": 118.7709810,
+    "maxlat": 34.0981737,
+    "maxlon": 118.7750101
+  },
+  "geometry": [
+    { "lat": 34.0981737, "lon": 118.7709810 },
+    { "lat": 34.0887013, "lon": 118.7750101 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 995943475,
+  "bounds": {
+    "minlat": 34.0981737,
+    "minlon": 118.7708830,
+    "maxlat": 34.0984041,
+    "maxlon": 118.7709810
+  },
+  "geometry": [
+    { "lat": 34.0984041, "lon": 118.7708830 },
+    { "lat": 34.0981737, "lon": 118.7709810 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1150435501,
+  "bounds": {
+    "minlat": 34.1506363,
+    "minlon": 118.7357880,
+    "maxlat": 34.1550347,
+    "maxlon": 118.7375830
+  },
+  "geometry": [
+    { "lat": 34.1550347, "lon": 118.7357880 },
+    { "lat": 34.1549113, "lon": 118.7358566 },
+    { "lat": 34.1515552, "lon": 118.7371655 },
+    { "lat": 34.1506363, "lon": 118.7375830 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1150435502,
+  "bounds": {
+    "minlat": 34.1550347,
+    "minlon": 118.7356568,
+    "maxlat": 34.1553375,
+    "maxlon": 118.7357880
+  },
+  "geometry": [
+    { "lat": 34.1553375, "lon": 118.7356568 },
+    { "lat": 34.1550347, "lon": 118.7357880 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800911,
+  "bounds": {
+    "minlat": 34.1075541,
+    "minlon": 118.7642565,
+    "maxlat": 34.1075910,
+    "maxlon": 118.7643009
+  },
+  "geometry": [
+    { "lat": 34.1075541, "lon": 118.7643009 },
+    { "lat": 34.1075910, "lon": 118.7642565 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "railway": "rail",
+    "service": "siding"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800912,
+  "bounds": {
+    "minlat": 34.1074793,
+    "minlon": 118.7642591,
+    "maxlat": 34.1075924,
+    "maxlon": 118.7643847
+  },
+  "geometry": [
+    { "lat": 34.1075924, "lon": 118.7642591 },
+    { "lat": 34.1075541, "lon": 118.7643009 },
+    { "lat": 34.1074793, "lon": 118.7643847 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800913,
+  "bounds": {
+    "minlat": 34.1075924,
+    "minlon": 118.7543035,
+    "maxlat": 34.1165825,
+    "maxlon": 118.7642591
+  },
+  "geometry": [
+    { "lat": 34.1165825, "lon": 118.7543035 },
+    { "lat": 34.1153366, "lon": 118.7556860 },
+    { "lat": 34.1150033, "lon": 118.7560551 },
+    { "lat": 34.1078971, "lon": 118.7639270 },
+    { "lat": 34.1075924, "lon": 118.7642591 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800922,
+  "bounds": {
+    "minlat": 34.1080392,
+    "minlon": 118.7622541,
+    "maxlat": 34.1091278,
+    "maxlon": 118.7636755
+  },
+  "geometry": [
+    { "lat": 34.1091278, "lon": 118.7622541 },
+    { "lat": 34.1089798, "lon": 118.7624370 },
+    { "lat": 34.1088304, "lon": 118.7626335 },
+    { "lat": 34.1080392, "lon": 118.7636755 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "yard"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800923,
+  "bounds": {
+    "minlat": 34.1085911,
+    "minlon": 118.7612455,
+    "maxlat": 34.1100579,
+    "maxlon": 118.7628360
+  },
+  "geometry": [
+    { "lat": 34.1100579, "lon": 118.7612455 },
+    { "lat": 34.1091278, "lon": 118.7622541 },
+    { "lat": 34.1085911, "lon": 118.7628360 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "yard"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800924,
+  "bounds": {
+    "minlat": 34.1075910,
+    "minlon": 118.7560551,
+    "maxlat": 34.1150033,
+    "maxlon": 118.7642565
+  },
+  "geometry": [
+    { "lat": 34.1075910, "lon": 118.7642565 },
+    { "lat": 34.1078149, "lon": 118.7639867 },
+    { "lat": 34.1080392, "lon": 118.7636755 },
+    { "lat": 34.1083557, "lon": 118.7633121 },
+    { "lat": 34.1142862, "lon": 118.7567447 },
+    { "lat": 34.1145205, "lon": 118.7565087 },
+    { "lat": 34.1148325, "lon": 118.7562237 },
+    { "lat": 34.1150033, "lon": 118.7560551 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "siding"
+  }
+},
+{
+  "type": "way",
+  "id": 1298800925,
+  "bounds": {
+    "minlat": 34.1078971,
+    "minlon": 118.7556860,
+    "maxlat": 34.1153366,
+    "maxlon": 118.7639270
+  },
+  "geometry": [
+    { "lat": 34.1153366, "lon": 118.7556860 },
+    { "lat": 34.1148369, "lon": 118.7563075 },
+    { "lat": 34.1146381, "lon": 118.7565194 },
+    { "lat": 34.1086011, "lon": 118.7632102 },
+    { "lat": 34.1083234, "lon": 118.7635027 },
+    { "lat": 34.1078971, "lon": 118.7639270 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "siding"
+  }
+},
+{
+  "type": "way",
+  "id": 1298801422,
+  "bounds": {
+    "minlat": 34.1100579,
+    "minlon": 118.7577827,
+    "maxlat": 34.1131758,
+    "maxlon": 118.7612455
+  },
+  "geometry": [
+    { "lat": 34.1131758, "lon": 118.7577827 },
+    { "lat": 34.1100579, "lon": 118.7612455 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "yard"
+  }
+},
+{
+  "type": "way",
+  "id": 1298801424,
+  "bounds": {
+    "minlat": 34.1142673,
+    "minlon": 118.7510169,
+    "maxlat": 34.1152022,
+    "maxlon": 118.7557724
+  },
+  "geometry": [
+    { "lat": 34.1152022, "lon": 118.7510169 },
+    { "lat": 34.1145094, "lon": 118.7547746 },
+    { "lat": 34.1144605, "lon": 118.7550053 },
+    { "lat": 34.1142673, "lon": 118.7557724 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 1298801425,
+  "bounds": {
+    "minlat": 34.1131758,
+    "minlon": 118.7565087,
+    "maxlat": 34.1145205,
+    "maxlon": 118.7577827
+  },
+  "geometry": [
+    { "lat": 34.1131758, "lon": 118.7577827 },
+    { "lat": 34.1134601, "lon": 118.7574944 },
+    { "lat": 34.1145205, "lon": 118.7565087 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "yard"
+  }
+},
+{
+  "type": "way",
+  "id": 1298801426,
+  "bounds": {
+    "minlat": 34.1131758,
+    "minlon": 118.7510034,
+    "maxlat": 34.1151533,
+    "maxlon": 118.7577827
+  },
+  "geometry": [
+    { "lat": 34.1151533, "lon": 118.7510034 },
+    { "lat": 34.1144072, "lon": 118.7550482 },
+    { "lat": 34.1142673, "lon": 118.7557724 },
+    { "lat": 34.1141807, "lon": 118.7561882 },
+    { "lat": 34.1141363, "lon": 118.7563732 },
+    { "lat": 34.1140719, "lon": 118.7565663 },
+    { "lat": 34.1139853, "lon": 118.7567702 },
+    { "lat": 34.1138965, "lon": 118.7569311 },
+    { "lat": 34.1137943, "lon": 118.7570867 },
+    { "lat": 34.1136200, "lon": 118.7572879 },
+    { "lat": 34.1131758, "lon": 118.7577827 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "railway": "rail",
+    "service": "spur"
+  }
+},
+{
+  "type": "way",
+  "id": 1456432041,
+  "bounds": {
+    "minlat": 34.1481345,
+    "minlon": 118.7377746,
+    "maxlat": 34.1502146,
+    "maxlon": 118.7387196
+  },
+  "geometry": [
+    { "lat": 34.1502146, "lon": 118.7377746 },
+    { "lat": 34.1481345, "lon": 118.7387196 }
+  ],
+  "tags": {
+    "electrified": "no",
+    "gauge": "1435",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+},
+{
+  "type": "way",
+  "id": 1456432042,
+  "bounds": {
+    "minlat": 34.1502146,
+    "minlon": 118.7375830,
+    "maxlat": 34.1506363,
+    "maxlon": 118.7377746
+  },
+  "geometry": [
+    { "lat": 34.1506363, "lon": 118.7375830 },
+    { "lat": 34.1502146, "lon": 118.7377746 }
+  ],
+  "tags": {
+    "bridge": "yes",
+    "electrified": "no",
+    "gauge": "1435",
+    "layer": "1",
+    "maxspeed": "120",
+    "name": "新长线",
+    "name:zh": "新长线",
+    "passenger_lines": "1",
+    "railway": "rail",
+    "railway:traffic_mode": "mixed",
+    "ref": "0647",
+    "source": "Bing",
+    "usage": "main"
+  }
+}
+
+  ]
+}

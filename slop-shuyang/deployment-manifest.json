@@ -1,0 +1,307 @@
+{
+  "release": "2026-11-13-wode-mengxi",
+  "sourceBuildings": 7728,
+  "teleportableLandmarks": 20,
+  "files": [
+    {
+      "path": "css/style.css",
+      "bytes": 38683,
+      "sha256": "c8629becd59308aa43a5f408acbdf8ca4b7ee1a1cab5f8baecde6aa36dabdd5f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 29083,
+      "sha256": "064aafd7d73521b6b7c75eee71fd572725fa2a9a0e16012b05934fa34b47b730"
+    },
+    {
+      "path": "js/audio-acoustics.js",
+      "bytes": 4460,
+      "sha256": "4f6aec01546528cc9f6cc668ef309a223517c3e7fd7e6c19d3976ace60ac77b5"
+    },
+    {
+      "path": "js/audio-events.js",
+      "bytes": 22664,
+      "sha256": "ca0ed1cbd312f1be6383ebb628a3baf2c77bc3c2f86c6dd894d3f1b899321128"
+    },
+    {
+      "path": "js/audio-sources.js",
+      "bytes": 10232,
+      "sha256": "6b78e0b93ea77c0df2d4d5d96b7d889eda90dafb967f2707ac7666415c40e233"
+    },
+    {
+      "path": "js/audio-synthesis.js",
+      "bytes": 29994,
+      "sha256": "42dada5c6e6809a2b80ea60fd799c41fee0b175bfef65a73b98e1584d5e19bc9"
+    },
+    {
+      "path": "js/audio-system.js",
+      "bytes": 25105,
+      "sha256": "c2ab00f8d3b34013693b78af36e28a5c97004af41a5da3d13241aab328daef03"
+    },
+    {
+      "path": "js/boroughs.js",
+      "bytes": 1735,
+      "sha256": "481f5f6a6bf112b915d15cef96623f45ee89fd4e21586133ca20d32e57dfdb8d"
+    },
+    {
+      "path": "js/building-collision.js",
+      "bytes": 9016,
+      "sha256": "e1b4487d570e3a3a2ff6f986c15d84be6d8d89d659ab6ac29eb8f47859a98d04"
+    },
+    {
+      "path": "js/building-coverage.js",
+      "bytes": 2476,
+      "sha256": "96e5eac0cbdd7971d5b838419eee07dede6758c1d74c551647a2a9fbad42a840"
+    },
+    {
+      "path": "js/building-details.js",
+      "bytes": 5461,
+      "sha256": "dc86a39f440482ad6b51b54a0ab2dce795a635f0fd860cfb1cbca119892d3804"
+    },
+    {
+      "path": "js/building-footprints.js",
+      "bytes": 7619,
+      "sha256": "0bddc95fff807914b2c488d2b08920a9a6494f7a47fcb9634d45300346994037"
+    },
+    {
+      "path": "js/building-geodata.bin.gz",
+      "bytes": 127698,
+      "sha256": "14857f5204851495163d0e399cd8a3005e33f95d01c869a9a0cdedddb9df7e87"
+    },
+    {
+      "path": "js/building-geodata.js",
+      "bytes": 3914,
+      "sha256": "764175ef6e80ddb32d3edb53c9a8928cf959ebb8f55661dab993cdf3d7e9bdb2"
+    },
+    {
+      "path": "js/building-materials.js",
+      "bytes": 3336,
+      "sha256": "ebdbe98ddcedefdb64de26619f71e5d9309c79ae2c0dcc354cae64c3877c7320"
+    },
+    {
+      "path": "js/buildings.js",
+      "bytes": 36348,
+      "sha256": "4bc7fd30a1572a42ab7005c237d7ebe0dada358489f1feeaed2c7f8bfeaa3e46"
+    },
+    {
+      "path": "js/bus.js",
+      "bytes": 33198,
+      "sha256": "7969227a4d7f7616c9da579c8d0d48a66bdf5d71b6a7b337eb51eed5580c6d56"
+    },
+    {
+      "path": "js/cameras.js",
+      "bytes": 15283,
+      "sha256": "3bfe61058f99449bc2104cbd1b28bf6207f691e693b0b7ecd70f2009439b75fd"
+    },
+    {
+      "path": "js/cars.js",
+      "bytes": 86957,
+      "sha256": "eac5b4db979910e41349d81ce667b3ca7b385c72ef79afc9cfaac75749c1eff5"
+    },
+    {
+      "path": "js/city-config.js",
+      "bytes": 21629,
+      "sha256": "2032282fbb0fcaa6ea0541c4cd18196de19fcb026182fcbce5ba0a44dfd0e96b"
+    },
+    {
+      "path": "js/city-grid.js",
+      "bytes": 23208,
+      "sha256": "2b49611a3392eb1c2f7ade5994c4dea120116c1aa07996a3f8ba8b9e7fe3f90b"
+    },
+    {
+      "path": "js/city-map.js",
+      "bytes": 34065,
+      "sha256": "0b9d050adfb9833bd2121b749fe1b1c7a48709291e96d81eeda8e1026558836d"
+    },
+    {
+      "path": "js/civic-campuses.js",
+      "bytes": 10361,
+      "sha256": "e9d9427bbc07a4b039abe872b7d95da0db5018e8d634e6944fe73186eb120ce6"
+    },
+    {
+      "path": "js/community-data.js",
+      "bytes": 178198,
+      "sha256": "c594d043f9adba76eb73fa8d2ad79ff4b8138d957621d673b33dd30cec8e20c4"
+    },
+    {
+      "path": "js/community-entrances.js",
+      "bytes": 5833,
+      "sha256": "bd0061cc70a8966da37354a5a1779b7d8fb0e2b68790a5ccbabcd8d6b1217ac9"
+    },
+    {
+      "path": "js/controllers.js",
+      "bytes": 58985,
+      "sha256": "bb1f4756c835aa694e54b6af3196f6a51af6a4df967c658b41e91d15b8b3ed1d"
+    },
+    {
+      "path": "js/core-photo-buildings.js",
+      "bytes": 2694,
+      "sha256": "2d0fea50bad6c2994037d8b041ba7339420d97756d8fb4272d851ffb20c57966"
+    },
+    {
+      "path": "js/fire-escapes.js",
+      "bytes": 15014,
+      "sha256": "455d969a1b91711046f3e30b6a49c1aa5289be782db379661b3b8f08f1c68726"
+    },
+    {
+      "path": "js/gamepad-controls.js",
+      "bytes": 6380,
+      "sha256": "5ac078cd579e116a4c0738f937970aaf15508270f38372b30c63bf174947a38e"
+    },
+    {
+      "path": "js/helicopter.js",
+      "bytes": 18257,
+      "sha256": "3e7c6660b0cf2abbc7ab3d6df0dd4e7e2fc1af67875d50aa8b3d5fa39ff71b04"
+    },
+    {
+      "path": "js/huachen-housing.js",
+      "bytes": 1524,
+      "sha256": "af626df7d5239a9a967f993b464407b17e3a68fc34aa363b7bf5d3ff7d2f9099"
+    },
+    {
+      "path": "js/landmark-data.js",
+      "bytes": 9494,
+      "sha256": "c7becd950f4ee6e0ea914790304ae5b1f64a2c5606c2f448a814ef59c9b1414d"
+    },
+    {
+      "path": "js/landmark-gallery.js",
+      "bytes": 5375,
+      "sha256": "58f81d091e297544df54a008dad55bbc231a8b6b2f4b8b25fbf824f8b18578c6"
+    },
+    {
+      "path": "js/landmark-references.js",
+      "bytes": 11777,
+      "sha256": "485592e013af508570f8621a128adcc222a4d1081265031ddd29ec18743dea75"
+    },
+    {
+      "path": "js/landmarks.js",
+      "bytes": 33181,
+      "sha256": "024805f1b4762e3dbf86137bc90aec91c72b4b399a3a0dbc54fe12a88f759e3a"
+    },
+    {
+      "path": "js/lighting.js",
+      "bytes": 11905,
+      "sha256": "f50b8790cc5c7eee46ddbf454e9cfb1a713e36a45e982c26000421b6f544120b"
+    },
+    {
+      "path": "js/main.js",
+      "bytes": 38056,
+      "sha256": "5736014ecc65b624d5c6c09c255caf0770f48515dd8887ee99b783cdc1687107"
+    },
+    {
+      "path": "js/mengxi-campus.js",
+      "bytes": 2419,
+      "sha256": "2c4b5ad6d9733d200e3bc9b69cf236a50b13838341aaa30db023214609db4827"
+    },
+    {
+      "path": "js/park-bridges.js",
+      "bytes": 1892,
+      "sha256": "7def6acaf594c25b49bd5242ebc9c3dc6cab4fcd4d2e229c7bfe31eecd61a730"
+    },
+    {
+      "path": "js/pedestrian-routes.js",
+      "bytes": 10120,
+      "sha256": "f1ae272d783a211d0db50c7060d63b81d183aee676e111e33f72454fc867bfe9"
+    },
+    {
+      "path": "js/pedestrian-system.js",
+      "bytes": 29544,
+      "sha256": "d7f6e1a6ff857c29f98caf6664b460039e293b3d1c3783045daa04ee98088a34"
+    },
+    {
+      "path": "js/pedestrians.js",
+      "bytes": 99016,
+      "sha256": "a9019fae427e90d2c0e4817c5356f132001d4699461bc9a7edfd90f5041e0396"
+    },
+    {
+      "path": "js/photo-landmarks.js",
+      "bytes": 11931,
+      "sha256": "e20c3cd5c3926a25ba08102a41e3e8f01e84d4016ea56ae69b927f8dc1f35d55"
+    },
+    {
+      "path": "js/post-processing.js",
+      "bytes": 3972,
+      "sha256": "a90e4d72dee3de8af016e429b5fb09d17b1dc23360ad76e2b7aff9f347a49e0d"
+    },
+    {
+      "path": "js/road-network.js",
+      "bytes": 39331,
+      "sha256": "c83285077f4bd1140c9cc94a288041a7eeba18079f0ee0a41350f47348cbed02"
+    },
+    {
+      "path": "js/road-paint.js",
+      "bytes": 11898,
+      "sha256": "60836689c0cef0c10d5d1013b6a3f2f5aa4d5c7135301cb1576a85eabd07f01e"
+    },
+    {
+      "path": "js/scene-culling.js",
+      "bytes": 15648,
+      "sha256": "ed61ae9661969b4fdeff6c31eb6af279dc087751626021e4bd1dabc039637833"
+    },
+    {
+      "path": "js/shuyang-geodata.js",
+      "bytes": 3402508,
+      "sha256": "cf02697191568fe75a12cf014dd8be16df45651924789e2b250206f3f3a319ef"
+    },
+    {
+      "path": "js/street-details.js",
+      "bytes": 10746,
+      "sha256": "04b20bca646b64372e124fe19ae7a3152b0b6abfd950baeebf5eca281f71f143"
+    },
+    {
+      "path": "js/touch-controls.js",
+      "bytes": 7158,
+      "sha256": "55dd570486daafdb26cd50788800a5ce8cebfc1d2665228067f089cb1b61b727"
+    },
+    {
+      "path": "js/traffic.js",
+      "bytes": 115646,
+      "sha256": "2c5b27fd18208175abc2f698c529f540bb220612fbe985802db1d87c9f29ebff"
+    },
+    {
+      "path": "js/trees.js",
+      "bytes": 52862,
+      "sha256": "c26028e0e4151ac7abb531206db3d74e6509fe6f8478fb92aa82fe659d3de0a7"
+    },
+    {
+      "path": "js/tsl-materials.js",
+      "bytes": 168853,
+      "sha256": "51efa87f60ef8b1f262183da838e226afb7687067960728abcc7d475f16ae60c"
+    },
+    {
+      "path": "js/urban-context.js",
+      "bytes": 7575,
+      "sha256": "803880ec7ca51c94f8a3dea95ae64cd0cc0fde47b4eadf18d8c7ef8c39b33a9f"
+    },
+    {
+      "path": "js/vehicle-lights.js",
+      "bytes": 1357,
+      "sha256": "3e495c8700f1bb851e356431f2f5770435cb19e7dd0aeb805280d4ebba5c0d82"
+    },
+    {
+      "path": "js/vehicle-physics.js",
+      "bytes": 7716,
+      "sha256": "1d98e0f728442b63129667f7f6a356873cd570b0c9376ae7f6ddfbf21f1f79b1"
+    },
+    {
+      "path": "js/vehicles.js",
+      "bytes": 1990,
+      "sha256": "715109b1f4743c21e8e8aa42474ca6d785093ede106627898a1a015be94edab0"
+    },
+    {
+      "path": "js/vendor/polygon-clipping-LICENSE.md",
+      "bytes": 14072,
+      "sha256": "2d655303723a633436306264b7b8f348c726414328921ef1325194313ed06ac8"
+    },
+    {
+      "path": "js/vendor/polygon-clipping.js",
+      "bytes": 29785,
+      "sha256": "48043a8763330600726aa3d45ff2c5d8357e19dc5c46e30c1b7987ff62e75b58"
+    },
+    {
+      "path": "js/workers-palace.js",
+      "bytes": 3236,
+      "sha256": "194f31ddfc28a6ce7f5d66551e1ad11ffc62adb1599d7ec3b330774efde877da"
+    }
+  ]
+}

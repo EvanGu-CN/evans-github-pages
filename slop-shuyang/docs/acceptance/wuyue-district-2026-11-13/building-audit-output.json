@@ -1,0 +1,85 @@
+{
+  "boundsWgs84": [
+    118.73927349008342,
+    34.08328141335215,
+    118.81089691678638,
+    34.150204921590976
+  ],
+  "buildings": 7603,
+  "sources": {
+    "Overture": 6133,
+    "OSM": 1425,
+    "ReviewedImagery": 45
+  },
+  "heightSources": {
+    "estimate": 2331,
+    "cnbh-raster": 5271,
+    "osm-height": 1
+  },
+  "categories": {
+    "unknown": 3586,
+    "residential": 3431,
+    "industrial": 312,
+    "civic": 12,
+    "commercial": 234,
+    "office": 8,
+    "house": 20
+  },
+  "filters": {
+    "tiny-or-invalid": 87,
+    "overture-osm-duplicate": 1425,
+    "reviewed-existing-duplicate": 27
+  },
+  "courtyards": 4,
+  "overture": {
+    "release": "2026-10-21.0",
+    "features": 7643,
+    "sha256": "39798b024fb0f2033d9deb19743c3c50eba3361ad69eb0c70558e37522c045d7",
+    "reference": "https://docs.overturemaps.org/guides/buildings/"
+  },
+  "globfpArchives": [],
+  "reviewedImagery": {
+    "reference": {
+      "provider": "Esri World Imagery / Vantor Vivid",
+      "service": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "retrievedAt": "2026-11-13",
+      "imageAcquired": "2021-01-29",
+      "serviceRelease": "Raster Basemaps 2026.R05",
+      "resolutionM": 0.46,
+      "sourceAccuracyM": 5,
+      "imageSize": [
+        1536,
+        1536
+      ],
+      "extent3857": [
+        13223063.034311226,
+        4041448.920046554,
+        13225008.31922539,
+        4043394.204960718
+      ],
+      "method": "Individually reviewed roof runs: two observed eave endpoints in reference pixels plus approximate perpendicular roof depth. These are approximate roofprints, not surveyed ground footprints. No random infill.",
+      "currentContext": "User supplied current district map and independently reviewed named community photographs corroborate the built-up neighbourhoods. They do not establish a newer acquisition date for this satellite image.",
+      "limitations": "Satellite roof lean, trees and shadows limit outline precision. 2026 service publication is not the imagery acquisition date. Heights and roof pitch are display estimates unless separately documented."
+    },
+    "traceSha256": "bc12c9f3ee0c7c07253e23a19b32e645125181f6bb70b6bf0b0967998072cde7",
+    "observedCandidates": 72,
+    "acceptedBuildings": 45,
+    "deduplicatedAgainstExisting": 27
+  },
+  "cnbh": {
+    "provider": "CNBH-10m / Wanben Wu",
+    "referenceYear": 2020,
+    "resolutionM": 10,
+    "reference": "https://doi.org/10.5281/zenodo.7923866",
+    "license": "CC BY 4.0",
+    "extractSha256": "e9a5622870ba9b2487d2d198b562a519054dd01abcea428da288a7411e4fd7fb",
+    "file": "CNBH10m_X119Y35.tif",
+    "crs": "EPSG:32650"
+  },
+  "limitations": [
+    "Unlabelled heights and landuse-derived uses remain estimates.",
+    "Satellite roofprints and model heights do not reconstruct photographed facades.",
+    "CNBH is a 2020 model at 10 m resolution; mixed pixels and new construction limit individual-building accuracy.",
+    "3D-GloBFP, when available, represents 2020 and uses model-estimated heights."
+  ]
+}
