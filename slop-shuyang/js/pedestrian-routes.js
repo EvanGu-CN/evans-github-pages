@@ -89,8 +89,8 @@ function createPedestrianRoutes({ walkable, onSidewalk }, blockAt) {
       const x = a.x + (b.x - a.x) * i / (steps || 1), z = a.z + (b.z - a.z) * i / (steps || 1);
       if (sidewalk && !onSidewalk(x, z)) return false;
       let distance = Infinity;
-      for (let j = 0, k = block.poly.length - 1; j < block.poly.length; k = j++) {
-        const p = block.poly[j], q = block.poly[k], dx = q.x - p.x, dz = q.z - p.z;
+      for (const ring of [block.poly,...(block.holes||[])])for (let j = 0, k = ring.length - 1; j < ring.length; k = j++) {
+        const p = ring[j], q = ring[k], dx = q.x - p.x, dz = q.z - p.z;
         const t = Math.max(0, Math.min(1, ((x - p.x) * dx + (z - p.z) * dz) / (dx * dx + dz * dz || 1)));
         distance = Math.min(distance, Math.hypot(x - p.x - dx * t, z - p.z - dz * t));
       }

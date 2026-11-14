@@ -157,6 +157,8 @@ python tools/build-shuyang-communities.py
 node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 ```
 
+地理生成器通过`tools/build-vector-curbs.py`使用Shapely 2生成连续路缘。默认优先使用项目`.venv`，也可用`SHUYANG_PYTHON`指定Python；`tools/audit-vector-curbs.py`审计路缘、实际路面、水面和内缩铺装。路面、地图与通行边界保留内部孔洞，大地块仅生成沿街窄带。
+
 首次下载或更新数据的方法见 `tools/data/shuyang/BUILDINGS.md`。
 
 脚本会写出：
@@ -183,6 +185,7 @@ node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 - `js/buildings.js` — 建筑立面、屋顶细节、店招与流式加载
 - `js/pitched-roofs.js` — 既有双坡标记的实体坡面规划，保留凹口/院落及来源总高；坡形与屋脊方向仍是展示估计，见[几何验收](docs/acceptance/pitched-roofs-2026-11-14/README.md)
 - `js/road-network.js` — OSM 路网 → 车道、路口、停止线与转向曲线
+- `js/road-ribbon.js` — 路面渲染与矢量路缘生成器共用的转角几何
 - `js/government-service-center.js` — 苏州东路46号政务服务中心的实拍参考南立面、题名与卫星近似前场绿地，保留来源轮廓和25.7米估高
 - `js/road-photo-references.js` — 有来源的道路断面、照片与边界切分；保留原始宽度/车道记录
 - `js/taizhou-corridor.js`、`js/taizhou-corridor-data.js`、`js/taizhou-corridor-sites.js` — 台州路裁切绿带/非机动车道/步行带/路缘、地图共用几何及树木避让；由`tools/build-taizhou-corridor.py`生成数据

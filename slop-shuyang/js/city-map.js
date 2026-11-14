@@ -461,11 +461,14 @@ class CityMapSystem {
       ctx.fillStyle = C.block;
       for (const b of BLOCKS) {
         if (b.maxX < v.minX || b.minX > v.maxX || b.maxZ < v.minZ || b.minZ > v.maxZ) continue;
-        ctx.beginPath();
-        ctx.moveTo(P.x(b.poly[0].x), P.y(b.poly[0].z));
-        for (let i = 1; i < b.poly.length; i++) ctx.lineTo(P.x(b.poly[i].x), P.y(b.poly[i].z));
-        ctx.closePath();
-        ctx.fill();
+        for(const p of b.surfaces){ctx.beginPath();
+        for(const ring of [p.outer,...p.holes]){
+          ctx.moveTo(P.x(ring[0].x), P.y(ring[0].z));
+          for(let i=1;i<ring.length;i++)ctx.lineTo(P.x(ring[i].x),P.y(ring[i].z));
+          ctx.closePath();
+        }
+        ctx.fill('evenodd');
+        }
       }
     }
 

@@ -11,6 +11,8 @@ import { fileURLToPath } from 'node:url';
 import polygonClip from '../js/vendor/polygon-clipping.js';
 import { PHOTO_LANDMARK_SITES } from '../js/landmark-data.js';
 import { reviewRoadSections } from '../js/road-photo-references.js';
+import { roadRibbonTriangles } from '../js/road-ribbon.js';
+import { spawnSync } from 'node:child_process';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(HERE, 'data', 'shuyang');
@@ -742,6 +744,19 @@ for (const c of comps) {
 }
 log(`${blocks.length} blocks (${blocks.filter((b) => b.rects.length).length} with lots), ${small} specks dropped`);
 
+// Keep the raster-derived property lots, but derive every curb from the exact
+// triangles used to render the road. Holed islands preserve dead-end streets
+// and enclosed water; neither gets filled by an outer-only block silhouette.
+const localPython=path.join(HERE,'..','.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
+const python=process.env.SHUYANG_PYTHON||(fs.existsSync(localPython)?localPython:'python');
+const vectorInput={bounds:CORE,rasterBlocks:blocks,water:waterPolys.map(p=>p.rings.map(ringPts)),
+  roadTriangles:roads.filter(r=>!r.bridge).flatMap(r=>roadRibbonTriangles(roadPoint(r.flat).map(([x,z])=>({x,z})),q(r.w)+.8))};
+const vectorResult=spawnSync(python,[path.join(HERE,'build-vector-curbs.py')],{
+  input:JSON.stringify(vectorInput),encoding:'utf8',maxBuffer:64*1024*1024});
+if(vectorResult.error||vectorResult.status!==0)throw new Error('Vector curb build requires Python with Shapely 2: '+(vectorResult.error?.message||vectorResult.stderr));
+const vectorCurbs=JSON.parse(vectorResult.stdout);blocks.splice(0,blocks.length,...vectorCurbs.blocks);
+log('vector curb islands',vectorCurbs.audit);
+
 // =====================================================================================================================
 // 8. BUILDINGS — surveyed OSM footprints + procedural infill on the block lots
 // =====================================================================================================================
@@ -944,8 +959,11 @@ const GEO = {
   railways,
   roadGraph: { nodes: graphNodes, links: graphLinks, names: graphNames },
   blocks: blocks.map((b) => [
-    flat(b.poly), b.rects.map((r) => r.map(q)), b.park, b.parkName, b.rect ? 1 : 0, 0
+    b.poly.flat(), b.rects.map((r) => r.map(q)), b.park, b.parkName, b.rect ? 1 : 0, 0,
+    b.holes.map(h=>h.flat()),b.slabs.map(s=>({outer:s.poly.flat(),holes:s.holes.map(h=>h.flat())})),[b.cx,b.cz],
+    b.surfaces.map(s=>({outer:s.poly.flat(),holes:s.holes.map(h=>h.flat())}))
   ]),
+  curbIslandAudit:vectorCurbs.audit,
   water: { polygons: waterPolys, lines: waterLines, groundPatches, reviewedReference: reviewedWater.reference },
   parks: parks.map((p) => ({ name: p.name, kind: p.kind, rings: p.rings,
     landPolygons:polygonClip.difference(p.rings.map(r=>[ringPts(r)]),...waterGeometry).map(poly=>poly.map(flat)) })),

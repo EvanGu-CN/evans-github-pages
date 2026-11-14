@@ -26,7 +26,7 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
       }
     }
   }
-  for (const r of sidewalks) insert({ minX: r.minX, maxX: r.maxX, minZ: r.minZ, maxZ: r.maxZ, curb: true });
+  for (const r of sidewalks) insert({ ...r, curb: true });
   for (const r of obstacles) insert(r);
 
   function query(minX, maxX, minZ, maxZ, fn) {
@@ -129,7 +129,10 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
       rest -= Math.hypot(p1.x - pts[k - 1].x, p1.z - pts[k - 1].z);
       let turn = Math.abs(Math.atan2(p2.z - p1.z, p2.x - p1.x) - Math.atan2(p1.z - last.z, p1.x - last.x));
       if (turn > Math.PI) turn = 2 * Math.PI - turn;
-      if (turn < 12 * DEG || d0 < 15 || rest < 15) continue;
+      // The curb now follows the source polyline. A long 5-degree bend can
+      // move a chord several metres off the asphalt, so retain gentle source
+      // bends too; eight metres matches the shortest supported lane run.
+      if (turn < .05 * DEG || d0 < 8 || rest < 8) continue;
       const s = nodeAt(p1.x, p1.z);
       s.shape = true;
       stations.push(s);
@@ -280,15 +283,15 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
     }
     edges = edges.filter((e) => e.lanes.length);
   }
-  // Edges no vehicle could both reach and leave (dead ends, and roads reached only from them) are dropped once the
-  // moves are known (7.); know them already, so that no road keeps clear of a dead one merging with it or forking off it
+  // Mark roads leading into dead ends before placing junctions, so a live
+  // approach need not keep clear of a terminal road merging or forking there.
   {
     const outsOf = new Map();
     for (const e of edges) {
       if (!outsOf.has(e.from)) outsOf.set(e.from, []);
       outsOf.get(e.from).push(e);
     }
-    const live = largestComponent(edges, (e) => (outsOf.get(e.to) || []).filter((f) => f.to !== e.from && e.dx * f.dx + e.dz * f.dz >= -0.5));
+    const live = edgesWithWayOn(edges, (e) => (outsOf.get(e.to) || []).filter((f) => f.to !== e.from && e.dx * f.dx + e.dz * f.dz >= -0.5));
     for (const e of edges) e.live = live.has(e);
   }
   const liveArm = (a) => !!((a.in && a.in.live) || (a.out && a.out.live));
@@ -671,8 +674,10 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
     for (const e of edges) e.moves = e.moves.filter((m) => !inTheWayOut.has(m.to));
   }
 
-  // 7. Keep the largest strongly connected set of edges so no vehicle can ever reach a dead end
-  const kept = largestComponent(edges, (e) => e.moves.map((m) => m.to));
+  // 7. Remove roads that eventually terminate, while retaining every district
+  // with a valid route onward. Keeping only one cycle discarded whole northern
+  // and southern districts whenever exact curbs split the inferred road graph.
+  const kept = edgesWithWayOn(edges, (e) => e.moves.map((m) => m.to));
   const genShortKept = edges.filter((e) => e.general).length;
   const genLost = edges.filter((e) => e.general && !kept.has(e));
   edges = edges.filter((e) => kept.has(e));
@@ -708,7 +713,11 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
     (e.from.out || (e.from.out = [])).push(e);
     (e.to.in || (e.to.in = [])).push(e);
   }
-  nodes = nodes.filter((n) => n.in && n.out);
+  // A valid approach into a cycle may start at a node with no incoming edge.
+  // Keep and initialise that endpoint too: traffic crosswalk arrays are built
+  // for every endpoint, including source-only junctions.
+  nodes = nodes.filter((n) => n.in || n.out);
+  for(const n of nodes){n.in ||= [];n.out ||= [];}
   nodes.forEach((n, i) => (n.id = i));
 
   // 8. Signalized intersections are exactly the ones with signal heads (street-details.js)
@@ -750,60 +759,23 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
   return { nodes, edges, paintEdges, connector, curvePoint, walkable, onSidewalk, isRoadClear };
 }
 
-// The largest strongly connected set of `list` (a Set), going on from item e to the items next(e)
-function largestComponent(list, next) {
+// An edge can be used indefinitely iff it survives repeatedly removing edges
+// with no successor. This preserves all cycles and their valid approaches,
+// rather than selecting one arbitrary district's largest cyclic component.
+function edgesWithWayOn(list, next) {
   const index = new Map(list.map((e, i) => [e, i]));
   const succ = list.map((e) => next(e).map((f) => index.get(f)).filter((j) => j !== undefined));
   const pred = list.map(() => []);
   succ.forEach((s, i) => {
     for (const j of s) pred[j].push(i);
   });
-  // Kosaraju: finishing order going forwards, then components going backwards from the last finished
-  const visited = new Uint8Array(list.length);
-  const order = [];
-  for (let root = 0; root < list.length; root++) {
-    if (visited[root]) continue;
-    visited[root] = 1;
-    const stack = [[root, 0]];
-    while (stack.length) {
-      const top = stack[stack.length - 1];
-      if (top[1] < succ[top[0]].length) {
-        const j = succ[top[0]][top[1]++];
-        if (!visited[j]) {
-          visited[j] = 1;
-          stack.push([j, 0]);
-        }
-      } else {
-        order.push(top[0]);
-        stack.pop();
-      }
-    }
+  const count=succ.map(s=>s.length),removed=new Uint8Array(list.length),queue=[];
+  for(let i=0;i<count.length;i++)if(!count[i])queue.push(i);
+  for(let k=0;k<queue.length;k++){
+    const i=queue[k];if(removed[i])continue;removed[i]=1;
+    for(const p of pred[i])if(!removed[p]&&--count[p]===0)queue.push(p);
   }
-  const comp = new Int32Array(list.length).fill(-1);
-  let best = -1;
-  let bestSize = 0;
-  for (let k = order.length - 1, c = 0; k >= 0; k--) {
-    if (comp[order[k]] >= 0) continue;
-    const stack = [order[k]];
-    comp[order[k]] = c;
-    let size = 0;
-    while (stack.length) {
-      const i = stack.pop();
-      size++;
-      for (const p of pred[i]) {
-        if (comp[p] < 0) {
-          comp[p] = c;
-          stack.push(p);
-        }
-      }
-    }
-    if (size > bestSize) {
-      bestSize = size;
-      best = c;
-    }
-    c++;
-  }
-  return new Set(list.filter((_, i) => comp[i] === best));
+  return new Set(list.filter((_,i)=>!removed[i]));
 }
 
 // Cubic Bézier from the end of lane i on edge e to the start of lane j on edge f: a quarter-circle-like

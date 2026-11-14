@@ -13,6 +13,7 @@ import {
   nearestRoads
 } from './city-config.js';
 import { GEO } from './shuyang-geodata.js';
+import { roadRibbonEdges } from './road-ribbon.js';
 import {
   createModernRoadSurfaceMaterial,
   createModernSidewalkMaterial,
@@ -76,8 +77,9 @@ function createWorldXZShape(pts) {
   return shape;
 }
 
-function createExtrudedPolygonMesh(pts, bottomY, height, material, receiveShadow = true, castShadow = false) {
+function createExtrudedPolygonMesh(pts, bottomY, height, material, receiveShadow = true, castShadow = false, holes=[]) {
   const shape = createWorldXZShape(pts);
+  for(const ring of holes)shape.holes.push(createWorldXZShape(ring));
   const geo = new THREE.ExtrudeGeometry(shape, { depth: height, bevelEnabled: false, curveSegments: 1 });
   geo.rotateX(-Math.PI / 2);
   geo.translate(0, bottomY, 0);
@@ -108,60 +110,11 @@ function createFlatLandMesh(rings, y, material) {
   const mesh=new THREE.Mesh(geo,material);mesh.receiveShadow=true;return mesh;
 }
 
-function offsetPolygonInward(pts, d) {
-  let a = 0;
-  for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) a += pts[j].x * pts[i].z - pts[i].x * pts[j].z;
-  const sign = a > 0 ? 1 : -1;
-  const out = [];
-  for (let i = 0; i < pts.length; i++) {
-    const p0 = pts[(i + pts.length - 1) % pts.length];
-    const p1 = pts[i];
-    const p2 = pts[(i + 1) % pts.length];
-    const d0x = p1.x - p0.x, d0z = p1.z - p0.z;
-    const d1x = p2.x - p1.x, d1z = p2.z - p1.z;
-    const l0 = Math.hypot(d0x, d0z) || 1;
-    const l1 = Math.hypot(d1x, d1z) || 1;
-    const n0x = (d0z / l0) * sign, n0z = (-d0x / l0) * sign;
-    const n1x = (d1z / l1) * sign, n1z = (-d1x / l1) * sign;
-    let mx = n0x + n1x, mz = n0z + n1z;
-    const ml = Math.hypot(mx, mz) || 1;
-    mx /= ml;
-    mz /= ml;
-    const scale = Math.min(3, 1 / Math.max(0.35, mx * n0x + mz * n0z));
-    out.push({ x: p1.x + mx * d * scale, z: p1.z + mz * d * scale });
-  }
-  return out;
-}
-
 // 沿折线生成一条等宽带（路面、河岸等）
 function ribbonGeometry(pts, width, y = 0) {
   const pos = [], nor = [], uv = [], idx = [];
-  const half = width / 2;
   let dist = 0;
-  const left = [], right = [];
-  for (let i = 0; i < pts.length; i++) {
-    const p = pts[i];
-    const prev = pts[Math.max(0, i - 1)];
-    const next = pts[Math.min(pts.length - 1, i + 1)];
-    let dx = next.x - prev.x, dz = next.z - prev.z;
-    const l = Math.hypot(dx, dz) || 1;
-    dx /= l; dz /= l;
-    let nx = -dz, nz = dx;
-    if (i > 0 && i < pts.length - 1) {
-      let ax = p.x - prev.x, az = p.z - prev.z;
-      let bx = next.x - p.x, bz = next.z - p.z;
-      const la = Math.hypot(ax, az) || 1, lb = Math.hypot(bx, bz) || 1;
-      ax /= la; az /= la; bx /= lb; bz /= lb;
-      const n0x = -az, n0z = ax, n1x = -bz, n1z = bx;
-      let mx = n0x + n1x, mz = n0z + n1z;
-      const ml = Math.hypot(mx, mz) || 1;
-      mx /= ml; mz /= ml;
-      const scale = Math.min(3, 1 / Math.max(0.35, mx * n0x + mz * n0z));
-      nx = mx * scale; nz = mz * scale;
-    }
-    left.push({ x: p.x + nx * half, z: p.z + nz * half });
-    right.push({ x: p.x - nx * half, z: p.z - nz * half });
-  }
+  const {left,right}=roadRibbonEdges(pts,width);
   for (let i = 0; i + 1 < pts.length; i++) {
     const L = Math.hypot(pts[i + 1].x - pts[i].x, pts[i + 1].z - pts[i].z);
     const base = pos.length / 3;
@@ -416,9 +369,9 @@ function buildCityGrid(scene) {
   const unitBox = new THREE.BoxGeometry(1, 1, 1);
   const rectSlabs = [];
   for (const b of BLOCKS) {
-    // 城区边缘的超大田块/园区不做逐点多边形挤出：公园草坪稍后由 PARKS 统一绘制。
-    if (b.area > 120000) continue;
-    if (b.rect) {
+    // Large parcels carry only a clipped street-side band, leaving their
+    // interiors to the mapped park/urban surfaces rather than a white slab.
+    if (b.rect&&b.area<=120000) {
       rectSlabs.push(b);
       blockSlabRects.push({
         cx: b.cx, cz: b.cz, w: b.maxX - b.minX, d: b.maxZ - b.minZ, block: b, cover: false
@@ -426,20 +379,21 @@ function buildCityGrid(scene) {
       roadSidewalkRects.push({ minX: b.minX, maxX: b.maxX, minZ: b.minZ, maxZ: b.maxZ });
       continue;
     }
-    const inner = offsetPolygonInward(b.poly, 0.3) || b.poly;
-    if (b.park > 0.6) {
-      lawnGeos.push(createExtrudedPolygonMesh(inner, 0.02, SW_TOP - 0.02, b.parkName ? meadowMat : lawnMat).geometry);
-    } else {
-      slabGeos.push(createExtrudedPolygonMesh(inner, 0.02, SW_TOP - 0.02, sidewalkMat).geometry);
+    for(const p of b.slabs){
+      const target=b.park>.6?lawnGeos:slabGeos,mat=b.park>.6?(b.parkName?meadowMat:lawnMat):sidewalkMat;
+      target.push(createExtrudedPolygonMesh(p.outer,.02,SW_TOP-.02,mat,true,false,p.holes).geometry);
     }
-    curbGeos.push(createExtrudedPolygonMesh(b.poly, 0.0, 0.18, curbMat).geometry);
+    for(const p of b.surfaces){
+      curbGeos.push(createExtrudedPolygonMesh(p.outer,0,.18,curbMat,true,false,p.holes).geometry);
+      roadSidewalkRects.push({minX:Math.min(...p.outer.map(p=>p.x)),maxX:Math.max(...p.outer.map(p=>p.x)),
+        minZ:Math.min(...p.outer.map(p=>p.z)),maxZ:Math.max(...p.outer.map(p=>p.z)),polygon:p});
+    }
     for (const [x0, x1, z0, z1] of b.rects) {
       const pad = 3.4;
       const r = { minX: x0 - pad, maxX: x1 + pad, minZ: z0 - pad, maxZ: z1 + pad };
       blockSlabRects.push({
         cx: (r.minX + r.maxX) / 2, cz: (r.minZ + r.maxZ) / 2, w: r.maxX - r.minX, d: r.maxZ - r.minZ, block: b, cover: true
       });
-      roadSidewalkRects.push(r);
     }
   }
   mergeInto(group, slabGeos, sidewalkMat, false, 'ShuyangSidewalks');
@@ -559,7 +513,7 @@ function buildCityGrid(scene) {
 
 function getStreetGroundHeight(x, z) {
   const b = blockAt(x, z);
-  return b ? 0.22 : 0;
+  return b?.surfaces.some(p=>insideRing(p.outer,x,z)&&!p.holes.some(h=>insideRing(h,x,z))) ? .22 : 0;
 }
 
 export {

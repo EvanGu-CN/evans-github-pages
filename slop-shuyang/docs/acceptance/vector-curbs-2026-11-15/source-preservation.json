@@ -1,0 +1,32 @@
+{
+  "sourceCommitBefore": "cee6af61e879d4ca19211058daf55da576fb5bb9",
+  "unchangedFields": [
+    "version",
+    "frame",
+    "bounds",
+    "roads",
+    "roadSourceIds",
+    "roadReviews",
+    "mapPaths",
+    "mapBuildings",
+    "buildingDataVersion",
+    "buildingAudit",
+    "neighborhoods",
+    "namedSites",
+    "urban",
+    "railways",
+    "roadGraph",
+    "water",
+    "parks",
+    "landuse",
+    "landmarks",
+    "pois",
+    "places",
+    "attribution",
+    "landmarkBuildings"
+  ],
+  "roadSha256": "6340f84446791cc0646838b9c3e81c6d067888d8bc71fe7a3a26ba39a2f730da",
+  "mapBuildingsSha256": "2cd610ccbbcc108e795f027172115da2611980a711c027b8b8954618a523f821",
+  "oldBlocks": 525,
+  "newBlocks": 500
+}

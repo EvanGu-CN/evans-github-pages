@@ -103,8 +103,10 @@ function nearestRoadPoint(x, z, radius = 400) {
 // 街区：路网切出的每一块路缘岛（含人行道、地块矩形与公园比例）
 // ---------------------------------------------------------------------------------------------------------------------
 const BLOCK_CELL = 64;
-const BLOCKS = GEO.blocks.map(([flatPoly, rects, park, parkName, isRect], id) => {
+const BLOCKS = GEO.blocks.map(([flatPoly, rects, park, parkName, isRect, , flatHoles=[], slabPolys=[], label, surfacePolys=[]], id) => {
   const poly = toPts(flatPoly);
+  const holes=flatHoles.map(toPts),slabs=slabPolys.map(p=>({outer:toPts(p.outer),holes:p.holes.map(toPts)}));
+  const surfaces=surfacePolys.map(p=>({outer:toPts(p.outer),holes:p.holes.map(toPts)}));
   let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity, a = 0, cx = 0, cz = 0;
   for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
     const p = poly[i], q = poly[j];
@@ -114,11 +116,11 @@ const BLOCKS = GEO.blocks.map(([flatPoly, rects, park, parkName, isRect], id) =>
   }
   a *= 0.5;
   return {
-    id, poly, rects, park, parkName, rect: !!isRect,
-    area: Math.abs(a),
+    id, poly, holes, slabs, surfaces, rects, park, parkName, rect: !!isRect,
+    area: Math.abs(a)-holes.reduce((sum,r)=>sum+Math.abs(r.reduce((s,p,i)=>{const q=r[(i+1)%r.length];return s+p.x*q.z-q.x*p.z;},0)/2),0),
     minX, maxX, minZ, maxZ,
-    cx: a ? cx / (6 * a) : (minX + maxX) / 2,
-    cz: a ? cz / (6 * a) : (minZ + maxZ) / 2,
+    cx: label?.[0]??(a ? cx / (6 * a) : (minX + maxX) / 2),
+    cz: label?.[1]??(a ? cz / (6 * a) : (minZ + maxZ) / 2),
     median: false
   };
 });
@@ -146,7 +148,7 @@ function blockAt(x, z) {
   if (!list) return null;
   for (const b of list) {
     if (x < b.minX || x > b.maxX || z < b.minZ || z > b.maxZ) continue;
-    if (b.rect || pointInPoly(b.poly, x, z)) return b;
+    if ((b.rect || pointInPoly(b.poly, x, z))&&!b.holes.some(h=>pointInPoly(h,x,z))) return b;
   }
   return null;
 }

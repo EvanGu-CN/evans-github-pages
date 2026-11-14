@@ -1,0 +1,130 @@
+{
+  "audit": {
+    "blocks": 500,
+    "holes": 45,
+    "largeParcelStreetBandM": 3.3,
+    "lotRectanglesDropped": 66,
+    "method": "vector complement of renderer road triangles and holed water polygons",
+    "precisionM": 0.001,
+    "rasterBlocksBefore": 525,
+    "roadClearanceM": 0.02,
+    "roadTriangles": 7752,
+    "slabInsetM": 0.3,
+    "smallIslandsDropped": 78,
+    "waterClearanceM": 0.02
+  },
+  "backend": "WebGPUBackend",
+  "edgesWithoutOnwardMove": 0,
+  "navigationStarted": 1794682357269.5,
+  "rayFailures": [],
+  "rayTests": 153,
+  "taizhouLanes": [
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ],
+    [
+      1.875,
+      5.25,
+      8.75
+    ]
+  ],
+  "trafficBounds": [
+    -3401.526208560958,
+    -2428.955926571049,
+    3591.4066417722197,
+    5134.655644025948
+  ],
+  "trafficEdges": 1210
+}

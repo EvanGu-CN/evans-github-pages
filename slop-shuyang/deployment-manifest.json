@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-government-service",
+  "release": "2026-11-15-vector-curbs",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "cee6af61e879d4ca19211058daf55da576fb5bb9",
+  "sourceCommit": "586e1214e7ae9f2f62b2396b2e2068658c87e42d",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 342,
+    "nodeTestsPassed": 351,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30491,
-      "sha256": "b94eccbb8a8084a895d705518451effe0ca35e0828c71e2bf7a348292e9eea94"
+      "bytes": 30549,
+      "sha256": "7539c911623d24a2fa441040b108a18ae15c9f7e9e25b6071f8f8aadeb7501e5"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -117,18 +117,18 @@
     },
     {
       "path": "js/city-config.js",
-      "bytes": 21962,
-      "sha256": "4ca04c006aa60391b3f4ba3d99e996d212d80a1b67f37e9ad5ed1d0cf68d73e2"
+      "bytes": 22423,
+      "sha256": "c57498b460a1defb424c56a37a72dc34656e8662851283d64de62cdb75947775"
     },
     {
       "path": "js/city-grid.js",
-      "bytes": 23208,
-      "sha256": "2b49611a3392eb1c2f7ade5994c4dea120116c1aa07996a3f8ba8b9e7fe3f90b"
+      "bytes": 21667,
+      "sha256": "eba9b59417a3e25781a82a1023adec1d05a6d531448653182dafb6ecb54a5837"
     },
     {
       "path": "js/city-map.js",
-      "bytes": 35046,
-      "sha256": "15fbf382043feae9bc6e8cd2a9c5a1fd3a67008a873963cb542e857766acf23b"
+      "bytes": 35138,
+      "sha256": "55fb9b6067e7e184798d2231db996d255a7e57b50a2a08bf1f6c8c8b00b60898"
     },
     {
       "path": "js/civic-campuses.js",
@@ -257,8 +257,8 @@
     },
     {
       "path": "js/pedestrian-routes.js",
-      "bytes": 10120,
-      "sha256": "f1ae272d783a211d0db50c7060d63b81d183aee676e111e33f72454fc867bfe9"
+      "bytes": 10149,
+      "sha256": "48853ae478bbcb7d2e49733e4a0e42ae7ad1ed41f3e69ad7c2313a4444a790ec"
     },
     {
       "path": "js/pedestrian-system.js",
@@ -287,8 +287,8 @@
     },
     {
       "path": "js/road-network.js",
-      "bytes": 39425,
-      "sha256": "f1e1af764e4594deb92edab7cedef00b8e52c82d80b6131a169ca115c776afb7"
+      "bytes": 39177,
+      "sha256": "23b289134b0e481abbf88686837dbaae61d7e602fa7a00a72716ba90961b7fe4"
     },
     {
       "path": "js/road-paint.js",
@@ -299,6 +299,11 @@
       "path": "js/road-photo-references.js",
       "bytes": 2820,
       "sha256": "a1bdcc1c1ad7f7a48896690762c9aacad5ac23f51c3267f09d23ae7243a668e0"
+    },
+    {
+      "path": "js/road-ribbon.js",
+      "bytes": 1192,
+      "sha256": "2f34bd733a07a18e52a6ca8c99a1a04b4329aae22fc1009333b4c11fb78847ae"
     },
     {
       "path": "js/rtmart-district.js",
@@ -317,8 +322,8 @@
     },
     {
       "path": "js/shuyang-geodata.js",
-      "bytes": 3484217,
-      "sha256": "0d500db02deef7ecb072e93d62c2b13a77055c41f49f8be167009af6079d4e07"
+      "bytes": 2866360,
+      "sha256": "68a0aa29f5b94b405385fec16a843f108f9ecc944294428c46efd490c18ff39e"
     },
     {
       "path": "js/street-details.js",

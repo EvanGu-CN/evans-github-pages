@@ -1,0 +1,19 @@
+{
+  "islands": 500,
+  "holes": 45,
+  "slabs": 528,
+  "surfaces": 524,
+  "largeParcels": 85,
+  "roadTriangles": 7752,
+  "roadOverlapM2": 0.0,
+  "waterOverlapM2": 0.0,
+  "mutualOverlapM2": 0.0,
+  "slabOutsideIslandM2": 0.0,
+  "minimumSlabSetbackM": 0.29932796122712785,
+  "surfaceAreaM2": 12757121.414119013,
+  "largeParcelStreetBandAreaM2": 932151.8580990002,
+  "landIslandsWithoutAdjacentRoad": 0,
+  "sourceRoadWays": 1104,
+  "renderRoadSections": 1105,
+  "sourceBuildingBinarySha256": "046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6"
+}

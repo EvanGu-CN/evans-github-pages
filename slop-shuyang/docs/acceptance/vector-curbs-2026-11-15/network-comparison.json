@@ -1,0 +1,42 @@
+{
+  "scope": "Offline production network; no extra building obstacles in either configuration. Edge count is simulation topology, not physical road count.",
+  "sourceBefore": "cee6af61e879d4ca19211058daf55da576fb5bb9",
+  "configurations": [
+    {
+      "name": "old",
+      "sidewalks": 930,
+      "edges": 146,
+      "paint": 2631,
+      "bounds": [
+        -1485.3021276595744,
+        -1201.6574728721232,
+        2378.2346356943244,
+        3664.9497259755035
+      ]
+    },
+    {
+      "name": "new",
+      "sidewalks": 524,
+      "edges": 1423,
+      "paint": 4902,
+      "bounds": [
+        -3401.526208560958,
+        -2428.955926571049,
+        3591.4066417722197,
+        5134.655644025948
+      ]
+    },
+    {
+      "name": "none",
+      "sidewalks": 0,
+      "edges": 2160,
+      "paint": 4983,
+      "bounds": [
+        -3401.526208560958,
+        -2570.9046645526873,
+        3591.4066417722197,
+        5148.023824401244
+      ]
+    }
+  ]
+}
