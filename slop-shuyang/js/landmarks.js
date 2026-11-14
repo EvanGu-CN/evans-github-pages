@@ -21,6 +21,7 @@ import { buildCoreCommercialFrontages } from './core-commercial-frontages.js';
 import { buildHospitalPrecinct } from './hospital-precinct.js';
 import { buildGovernmentServiceCenter } from './government-service-center.js';
 import { buildTaizhouCorridor } from './taizhou-corridor.js';
+import { buildArtGallery } from './art-gallery.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -333,27 +334,9 @@ function buildLandmarks(scene) {
     const c = ctxFor('沭阳文化中心');
     if (c) {
       // 三馆位置按来源轮廓保留；外观参考 UAD 实拍与2026图书馆航拍。
-      box(c,M.stone,0,.03,0,250,.25,210,{collide:false,cast:false});
-      for(const [sourceId,mat,height] of [['way/1321791112',M.stone,13.5],['way/1321791113',M.stone,.2],['way/1321791114',M.white,18]]) {
+      for(const [sourceId,mat,height] of [['way/1321791112',M.stone,13.5],['way/1321791114',M.white,18]]) {
         sourceBody({...c,s:{...c.s,sourceId}},mat,height);
       }
-      // 美术馆：红砖方块与屋顶椭圆采光井、周围黑白盒体。
-      const sh=new THREE.Shape();sh.moveTo(-24,-22);sh.lineTo(24,-22);sh.lineTo(24,22);sh.lineTo(-24,22);sh.closePath();
-      const hole=new THREE.Path();hole.absellipse(0,0,12,8,0,Math.PI*2,true);sh.holes.push(hole);
-      const artGeo=new THREE.ExtrudeGeometry(sh,{depth:26.8,bevelEnabled:false});artGeo.rotateX(-Math.PI/2);
-      const art=new THREE.Mesh(artGeo,M.brick);art.position.set(68,.3,-30);art.castShadow=art.receiveShadow=true;c.g.add(art);
-      colliders.push({minX:c.s.x+44,maxX:c.s.x+92,minZ:c.s.z-52,maxZ:c.s.z-8,minY:0,maxY:27.1,
-        polygon:{outer:[[44,-52],[92,-52],[92,-8],[44,-8]].map(([x,z])=>({x:c.s.x+x,z:c.s.z+z})),
-          holes:[Array.from({length:32},(_,i)=>({x:c.s.x+68+12*Math.cos(i/32*Math.PI*2),z:c.s.z-30+8*Math.sin(i/32*Math.PI*2)}))]}});
-      const rim=new THREE.Mesh(new THREE.TorusGeometry(10,.45,6,48),M.stone);rim.rotation.x=-Math.PI/2;rim.scale.y=.8;rim.position.set(68,27.3,-30);c.g.add(rim);
-      for(const [x,z,w,d] of [[12,-64,35,28],[24,-4,35,25],[61,13,35,22]]) box(c,M.white,x,.3,z,w,11,d);
-      box(c,M.darkStone,8,.3,-33,29,12,30);
-      box(c,M.white,55,.3,-86,38,6.5,19);
-      box(c,M.darkStone,59,.3,38,42,7.5,20);
-      // 实拍中的黑白分散体块、院落和玻璃连廊，避免把整馆压成一块平顶板楼。
-      for(const [x,z,w,d] of [[24,-24,12,13],[42,-64,18,7],[59,26,13,8]]) box(c,M.glass,x,.3,z,w,5.5,d);
-      for(const [x,z,w] of [[12,-49.7,29],[24,8.7,29],[61,24.2,29]]) box(c,M.glass,x,1.3,z,w,5.5,.4,{collide:false});
-      sign(c,'沭阳县美术馆',40,4,25,18,2.2,0,'#eeeae1','#272a2c');
       // 装饰跟随来源多边形外沿，避免窗带或入口埋在旋转楼体内。
       const records=GEO.mapBuildings.filter(b=>c.s.sourceBuildingIndices && ['way/1321791112','way/1321791113','way/1321791114'].includes(b.id));
       const edge=(b,i)=>{
@@ -583,6 +566,7 @@ function buildLandmarks(scene) {
   }
 
   buildPhotoLandmarks({ctxFor,box,cyl,sign,M,sourceBody});
+  buildArtGallery({ctxFor,box,sign,M,colliders});
   buildRtMartDistrict({ctxFor,box,sourceBody,sourceEdges});
   buildCorePhotoBuildings({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel});
   buildWorkersPalace({ctxFor,box,cyl,M,sourceBody,sourceEdges,edgePanel});

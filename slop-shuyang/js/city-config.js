@@ -251,9 +251,11 @@ LANDMARK_SITES['大润发'].arrive = 105;
 LANDMARK_SITES['吾悦广场'].front = {x:-1,z:0};
 LANDMARK_SITES['吾悦广场'].viewTarget = {x:1856,z:2688};
 LANDMARK_SITES['吾悦广场'].arrive = 130;
-LANDMARK_SITES['沭阳文化中心'].front = {x:0,z:-1};
+// Approach the art gallery from the northeast; a northwest view is hidden by
+// the separate library. This is a viewing point on a road, not a verified gate.
+LANDMARK_SITES['沭阳文化中心'].front = {x:.8,z:-.6};
 LANDMARK_SITES['沭阳文化中心'].viewTarget = {x:-2385,z:4180};
-LANDMARK_SITES['沭阳文化中心'].arrive = 180;
+LANDMARK_SITES['沭阳文化中心'].arrive = 105;
 LANDMARK_SITES['江苏省沭阳高级中学'].front = {x:Math.sin(-.63),z:Math.cos(-.63)};
 LANDMARK_SITES['吴印咸故居'].front = {x:0,z:1};
 LANDMARK_SITES['沭阳站'].front = {x:Math.sin(2.32),z:Math.cos(2.32)};

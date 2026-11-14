@@ -1,6 +1,7 @@
 import { GEO } from './shuyang-geodata.js';
 import { BUILDING_PHOTO_BY_SOURCE } from './building-photo-references.js';
 import { TAIZHOU_CORRIDOR } from './taizhou-corridor-data.js';
+import {ART_GALLERY,galleryDisplayFootprints,galleryPondPolygons} from './art-gallery-layout.js';
 import {
   ROADS,
   BLOCKS,
@@ -141,12 +142,15 @@ const PATH_ITEMS = (GEO.mapPaths || []).map(([name, kind, w, bridge, flat]) => (
 const ROAD_INDEX = makeIndex(ROAD_ITEMS);
 const PATH_INDEX = makeIndex(PATH_ITEMS);
 
-// 实测建筑（不含程序化补全）
-const BUILDING_ITEMS = (GEO.mapBuildings || []).map((b) => ({
+// 来源建筑及地标展示轮廓；美术馆分散体块仍为图纸/照片引导的估计。
+const BUILDING_ITEMS = (GEO.mapBuildings || []).flatMap((b) => b.id===ART_GALLERY.sourceId
+  ?galleryDisplayFootprints().map(p=>({flat:p.outer.flatMap(q=>[q.x,q.z]),holes:p.holes.map(r=>r.flatMap(q=>[q.x,q.z])),
+    bb:flatBBox(p.outer.flatMap(q=>[q.x,q.z])),name:p.id==='red-hall'?b.n:'',h:p.height,aliases:p.id==='red-hall'?['沭阳美术馆']:[]}))
+  :[{
   flat: b.o, holes: b.holes || [], bb: flatBBox(b.o), name: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.name || b.n,
   h: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.totalHeightEstimate || BUILDING_PHOTO_BY_SOURCE.get(b.id)?.displayHeight || b.h,
   aliases: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.aliases || []
-}));
+}]);
 const BUILDING_INDEX = makeIndex(BUILDING_ITEMS);
 
 // 水体、公园、铁路
@@ -172,7 +176,7 @@ const SPORTS_ITEMS=(GEO.urban?.surfaces||[]).filter(s=>SPORTS_COLORS[s.kind]).fl
   ...p,color:s.kind==='walkway'?'#916e69':s.kind==='cycleway'?'#586264':'#3c593d',bb:flatBBox(p.outer)
 })))).concat([...BUILDING_PHOTO_BY_SOURCE.values()].flatMap(r=>(r.forecourt||[]).map(p=>({
   outer:p.flat(),holes:[],color:'#5e7150',bb:flatBBox(p.flat())
-}))));
+})))).concat(galleryPondPolygons().map(p=>({outer:p.outer.flatMap(q=>[q.x,q.z]),holes:p.holes.map(r=>r.flatMap(q=>[q.x,q.z])),color:'#405f66',bb:flatBBox(p.outer.flatMap(q=>[q.x,q.z]))})));
 const SPORTS_INDEX=makeIndex(SPORTS_ITEMS);
 
 const PLACES = GEO.places || [];

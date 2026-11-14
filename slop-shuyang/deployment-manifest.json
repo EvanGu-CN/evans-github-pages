@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-vector-curbs",
+  "release": "2026-11-15-art-gallery",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "586e1214e7ae9f2f62b2396b2e2068658c87e42d",
+  "sourceCommit": "10a7a7fd30aa29512c2048aacab9b23c800828b1",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 351,
+    "nodeTestsPassed": 360,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 30549,
-      "sha256": "7539c911623d24a2fa441040b108a18ae15c9f7e9e25b6071f8f8aadeb7501e5"
+      "bytes": 30672,
+      "sha256": "d8de561a19b771455c4af70e806db588eb7dc16bf6024148c66ec2b3ecab2f93"
+    },
+    {
+      "path": "js/art-gallery-layout.js",
+      "bytes": 6182,
+      "sha256": "07ded77b75df9f69b4391f3715de59a1be91a6c6add39ee38fdafa1604e72792"
+    },
+    {
+      "path": "js/art-gallery.js",
+      "bytes": 9384,
+      "sha256": "705b99eefa22c79c537416c2e97002323eef9bd8bd1cf61c71ffd6b4f7710a86"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -117,8 +127,8 @@
     },
     {
       "path": "js/city-config.js",
-      "bytes": 22423,
-      "sha256": "c57498b460a1defb424c56a37a72dc34656e8662851283d64de62cdb75947775"
+      "bytes": 22584,
+      "sha256": "0462e3008008b9b5060e03fc8b3b27fe376155ce52fa933f760922eb33a4f0aa"
     },
     {
       "path": "js/city-grid.js",
@@ -127,8 +137,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 35138,
-      "sha256": "55fb9b6067e7e184798d2231db996d255a7e57b50a2a08bf1f6c8c8b00b60898"
+      "bytes": 35770,
+      "sha256": "4272dacb2253bf942432fdd333e6522d6f10eebb07315de88a0d666c2b7d4eb4"
     },
     {
       "path": "js/civic-campuses.js",
@@ -217,13 +227,13 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 17665,
-      "sha256": "8d870c21b0c99597001eb917c51b17d8435ef37734f9bf43ff5e96ac8273692f"
+      "bytes": 18835,
+      "sha256": "27fec1f6875180e9405829a83e0bcfbad8f775e840ca95359c95cd3e915c9dc0"
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 34831,
-      "sha256": "778aa19fce36144c82b5dd7ff9f15b2834049ce1b158484321c6412dc22950ea"
+      "bytes": 33167,
+      "sha256": "66ea866ac7160c085a27a0cb11475f8fd27ec6f5301da32ef3c1c810ad36a208"
     },
     {
       "path": "js/lighting.js",
@@ -362,8 +372,8 @@
     },
     {
       "path": "js/tsl-materials.js",
-      "bytes": 169485,
-      "sha256": "cc11984b11a29e9e2d2c07141a2a4552185ead3054cd09517df248e5d8c44cf3"
+      "bytes": 171696,
+      "sha256": "e60676a9d98509a24b2ef34a6ba8a95fa4ea7b4db8533f4e65fa1efacf7db514"
     },
     {
       "path": "js/urban-context.js",

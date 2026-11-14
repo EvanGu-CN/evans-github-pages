@@ -3508,7 +3508,48 @@ function createCarFlareMaterial() {
   return mat;
 }
 
+// Museum-specific, metre-scaled surfaces. These are procedural material
+// estimates from built photographs, never downloaded photographic textures.
+function createGalleryBrickMaterial(height=26.8){
+  const mat=new THREE.MeshStandardNodeMaterial({roughness:.88});
+  const cells=()=>{
+    const p=uv(),row=floor(p.y.div(.085)),col=p.x.div(.27).add(mod(row,2).mul(.5));
+    const du=float(.5).sub(abs(fract(col).sub(.5))).mul(.27),dv=float(.5).sub(abs(fract(p.y.div(.085)).sub(.5))).mul(.085);
+    const fw=max(fwidth(p.x),fwidth(p.y)),aa=max(fw.mul(1.5),.001);
+    const face=smoothstep(float(.003).sub(aa),float(.003).add(aa),min(du,dv));
+    return{p,row,col,fw,face};
+  };
+  mat.colorNode=Fn(()=>{
+    const {row,col,fw,face}=cells(),fade=float(1).sub(smoothstep(.008,.035,fw));
+    const variation=hash2D(vec2(floor(col),row)).sub(.5).mul(.2).mul(fade).add(1);
+    return mix(color(0x994f3b).mul(.92),mix(color(0x5b352c),color(0x994f3b).mul(variation),face),fade);
+  })();
+  mat.normalNode=Fn(()=>{
+    const {p,row,col,fw,face}=cells(),fade=float(1).sub(smoothstep(.008,.035,fw));
+    const header=float(1).sub(step(1,mod(floor(col).add(row),3))),upper=step(height*.58,p.y);
+    const relief=mix(float(.018),float(-.012),upper).mul(header).add(.003);
+    return bumpNormal(face.mul(relief).mul(fade));
+  })();
+  return mat;
+}
+function createGalleryConcreteMaterial(){
+  const mat=new THREE.MeshStandardNodeMaterial({roughness:.92});
+  const joints=()=>{
+    const p=uv(),fw=max(fwidth(p.x),fwidth(p.y)),aa=max(fw,.001);
+    const dx=float(.5).sub(abs(fract(p.x.div(1.2)).sub(.5))).mul(1.2);
+    const dy=float(.5).sub(abs(fract(p.y.div(3.2)).sub(.5))).mul(3.2);
+    return{p,fw,joint:float(1).sub(smoothstep(float(.004).sub(aa),float(.004).add(aa),min(dx,dy)))};
+  };
+  mat.colorNode=Fn(()=>{const {p,joint}=joints();return color(0xe2e1d8).mul(noise2D(p.mul(5)).sub(.5).mul(.035).add(1)).mul(float(1).sub(joint.mul(.14)));})();
+  mat.normalNode=Fn(()=>{
+    const {p,fw,joint}=joints(),grooves=sin(p.x.mul(180)).mul(.0015).sub(joint.mul(.003));
+    return bumpNormal(grooves.mul(float(1).sub(smoothstep(.006,.025,fw))));
+  })();return mat;
+}
+
 export {
+  createGalleryBrickMaterial,
+  createGalleryConcreteMaterial,
   cityUniforms,
   WALL_KINDS,
   filteredPulse,

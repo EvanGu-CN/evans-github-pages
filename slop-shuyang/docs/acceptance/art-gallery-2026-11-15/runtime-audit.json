@@ -1,0 +1,92 @@
+{
+  "navigationStart": 1794685798885.7,
+  "renderer": "WebGPURenderer",
+  "metadata": {
+    "sourceId": "way/1321791113",
+    "sourceBuildingIndex": 622,
+    "planBounds": [
+      233,
+      360,
+      714,
+      1062
+    ],
+    "sourceHeight": 12.9,
+    "redHeight": 26.8,
+    "captureDate": null,
+    "basis": "UAD site plan and Zhao Qiang built photographs, published 2020-07-07",
+    "sourcePage": "https://www.gooood.cn/shuyang-art-gallery-jiangsu-by-architectural-design-and-research-institute-of-zhejiang-university.htm",
+    "limits": "Plan fitted to the mapped project parcel; dimensions, heights, curved cuts, brick modules and planting are display estimates. Source footprint/height records remain unchanged.",
+    "stats": {
+      "halls": 9,
+      "links": 8,
+      "vertices": 13729,
+      "colliders": 28,
+      "ponds": 2
+    },
+    "sourceBodyReplaced": true,
+    "collision": "2.5m conservative layers around the tapered shaft"
+  },
+  "scope": "all batched landmark meshes; per-art model counts from pre-batch stats",
+  "batchedLandmarkMeshes": 595,
+  "batchedLandmarkVertices": 1668156,
+  "nonFinite": 0,
+  "rays": [
+    {
+      "plan": [
+        394,
+        497
+      ],
+      "hitY": null,
+      "name": null
+    },
+    {
+      "plan": [
+        310,
+        460
+      ],
+      "hitY": 26.799999237060547,
+      "name": "美术馆·红厅屋面"
+    },
+    {
+      "plan": [
+        549,
+        566
+      ],
+      "hitY": 11.800000190734863,
+      "name": null
+    },
+    {
+      "plan": [
+        445,
+        800
+      ],
+      "hitY": 0.0949999988079,
+      "name": null
+    },
+    {
+      "plan": [
+        610,
+        550
+      ],
+      "hitY": 0.26499998569488525,
+      "name": null
+    }
+  ],
+  "colliders": 28,
+  "shaftBlocked": false,
+  "courtBlocked": false,
+  "currentNavigationErrors": [],
+  "finalNavigation": {
+    "arrival": {
+      "curb": false,
+      "galleryCollision": 0,
+      "water": false,
+      "x": -2312.4084507042253,
+      "y": 0.24,
+      "z": 4104.671830985915
+    },
+    "navigationStart": 1794686380441.6,
+    "temporaryCameraOverride": false,
+    "errors": []
+  }
+}
