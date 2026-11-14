@@ -1,4 +1,5 @@
 import { GEO } from './shuyang-geodata.js';
+import { BUILDING_PHOTO_BY_SOURCE } from './building-photo-references.js';
 import {
   ROADS,
   BLOCKS,
@@ -141,7 +142,8 @@ const PATH_INDEX = makeIndex(PATH_ITEMS);
 
 // 实测建筑（不含程序化补全）
 const BUILDING_ITEMS = (GEO.mapBuildings || []).map((b) => ({
-  flat: b.o, holes: b.holes || [], bb: flatBBox(b.o), name: b.n, h: b.h
+  flat: b.o, holes: b.holes || [], bb: flatBBox(b.o), name: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.name || b.n, h: b.h,
+  aliases: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.aliases || []
 }));
 const BUILDING_INDEX = makeIndex(BUILDING_ITEMS);
 
@@ -388,7 +390,7 @@ class CityMapSystem {
     if (road) return flatCentroid(road.flat, Math.floor(road.flat.length / 4));
     const poi = POI_ITEMS.find((p) => p.name.includes(q));
     if (poi) return poi;
-    const building = BUILDING_ITEMS.find((b) => b.name && b.name.includes(q));
+    const building = BUILDING_ITEMS.find((b) => b.name && (b.name.includes(q) || b.aliases.some(a => a.includes(q))));
     if (building) return { ...flatCentroid(building.flat), name: building.name };
     const place = PLACES.find(([name]) => name.includes(q));
     if (place) return { x: place[2], z: place[3], name: place[0] };

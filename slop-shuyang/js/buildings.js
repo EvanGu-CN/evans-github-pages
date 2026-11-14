@@ -38,6 +38,7 @@ import { preserveBuildingCoverage } from './building-coverage.js';
 import { REAL_BUILDINGS } from './building-geodata.js';
 import { createBuildingFootprints } from './building-footprints.js';
 import { BUILDING_STYLES, buildingStyleIndex, createBuildingMaterials } from './building-materials.js';
+import { BUILDING_PHOTO_REFERENCES } from './building-photo-references.js';
 import { polygonContains, polygonBoxOverlaps } from './building-collision.js';
 import { pavedPlazaRects, parkTreeSites, sidewalkBlocks } from './city-grid.js';
 
@@ -291,6 +292,7 @@ function buildCityBlocks(scene, landmarkColliders = []) {
   const housingStyles = new Map();
   const housingPhotoStyles = new Map();
   const campusBuildings = new Set(Object.values(PHOTO_LANDMARK_SITES).flatMap(s=>s.campusBuildingIndices||[]).map(i => REAL_BUILDINGS[i]));
+  const reviewedFrontages = new Set(BUILDING_PHOTO_REFERENCES.filter(r => GEO.mapBuildings[r.sourceBuildingIndex]?.id === r.sourceId).map(r => REAL_BUILDINGS[r.sourceBuildingIndex]));
   for (const n of GEO.neighborhoods || []) for (const i of n.buildings) {
     housingStyles.set(REAL_BUILDINGS[i], n.paletteVariant);
     if(n.photoStyle)housingPhotoStyles.set(REAL_BUILDINGS[i],n.photoStyle);
@@ -304,7 +306,7 @@ function buildCityBlocks(scene, landmarkColliders = []) {
     const mat = campusBuildings.has(sourceRecord) ? 9 : buildingStyleIndex({ ...b, styleVariant: housingStyles.get(sourceRecord),photoStyle:housingPhotoStyles.get(sourceRecord) });
     // Only tagged commercial buildings receive shopfronts, on walls facing a nearby public street.
     const shopEdges = [];
-    if (b.category === 'commercial') for (const p of b.polygons) {
+    if (b.category === 'commercial' && !reviewedFrontages.has(sourceRecord)) for (const p of b.polygons) {
       let area = 0;
       p.outer.forEach((a, i, ring) => { const c = ring[(i + 1) % ring.length]; area += a.x*c.z-c.x*a.z; });
       p.outer.forEach((a, i, ring) => {

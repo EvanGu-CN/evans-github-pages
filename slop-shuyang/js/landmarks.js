@@ -17,6 +17,7 @@ import { buildBayiDistrict } from './bayi-district.js';
 import { buildMizhongCampus } from './mizhong-campus.js';
 import { buildMizhongPrecinct } from './mizhong-precinct.js';
 import { buildCoreRetail } from './core-retail.js';
+import { buildCoreCommercialFrontages } from './core-commercial-frontages.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -65,22 +66,22 @@ function materials() {
   };
 }
 
-function makeSignTexture(text, bg = '#10202b', fg = '#ffd36b') {
+function makeSignTexture(text, bg = '#10202b', fg = '#ffd36b', options = {}) {
   const c = document.createElement('canvas');
-  c.width = 512;
+  c.width = 128 * (options.aspect || 4);
   c.height = 128;
   const ctx = c.getContext('2d');
   ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, 512, 128);
+  ctx.fillRect(0, 0, c.width, 128);
   ctx.strokeStyle = fg;
   ctx.lineWidth = 6;
-  ctx.strokeRect(6, 6, 500, 116);
+  if (options.border !== false) ctx.strokeRect(6, 6, c.width - 12, 116);
   ctx.fillStyle = fg;
-  const size = text.length > 8 ? 40 : text.length > 6 ? 48 : 58;
+  const size = options.fontSize || (text.length > 8 ? 40 : text.length > 6 ? 48 : 58);
   ctx.font = `800 ${size}px ${FONT}`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(text, 256, 68);
+  ctx.fillText(text, c.width / 2, 68);
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
@@ -136,8 +137,8 @@ function buildLandmarks(scene) {
     }
     return mesh;
   };
-  const sign = (c, text, x, y, z, w, h, ry = 0, bg = '#10202b', fg = '#ffd36b') => {
-    const mat = new THREE.MeshBasicNodeMaterial({ map: makeSignTexture(text, bg, fg) });
+  const sign = (c, text, x, y, z, w, h, ry = 0, bg = '#10202b', fg = '#ffd36b', options = {}) => {
+    const mat = new THREE.MeshBasicNodeMaterial({ map: makeSignTexture(text, bg, fg, options) });
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat);
     mesh.position.set(x, y, z);
     mesh.rotation.y = ry;
@@ -586,6 +587,7 @@ function buildLandmarks(scene) {
   buildMengxiCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildShiyanCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
+  buildCoreCommercialFrontages({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildWodeDistrict(root);
   buildWodeStreetscape(root);
   buildBayiDistrict(root);

@@ -19,7 +19,7 @@ def main():
     out = ROOT / '.releases'
     out.mkdir(exist_ok=True)
     archive = out / ('shuyang-' + sha[:7] + '.zip')
-    subprocess.run(['git', '-C', str(ROOT), 'archive', '--format=zip', '--output=' + str(archive),
+    subprocess.run(['git', '-C', str(ROOT), '-c', 'core.autocrlf=false', '-c', 'core.eol=lf', 'archive', '--format=zip', '--output=' + str(archive),
                     sha, 'index.html', 'css', 'js', 'LICENSE', 'README.md'], check=True)
     manifest = {'commit': sha, 'site': '沭阳漫游', 'type': 'static',
                 'entrypoint': 'index.html', 'externalDependencies': ['https://cdn.jsdelivr.net/npm/three@0.187.0/']}

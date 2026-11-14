@@ -9,6 +9,7 @@ import { buildUrbanContext } from './urban-context.js';
 import { buildBoroughs } from './boroughs.js';
 import { buildLandmarks } from './landmarks.js';
 import { installLandmarkGallery } from './landmark-gallery.js';
+import { BUILDING_PHOTO_REFERENCES, buildingObservationPoint } from './building-photo-references.js';
 import { buildCommunityEntrances } from './community-entrances.js';
 import { buildCityBlocks } from './buildings.js';
 import { buildStreetDetails } from './street-details.js';
@@ -572,6 +573,9 @@ async function initApp() {
     const loc = TELEPORT_LOCATIONS[startAt];
     requestAnimationFrame(() => teleportTo(loc.x, loc.z, loc.heading));
   }
+  const startBuilding = BUILDING_PHOTO_REFERENCES.find(r => r.id === new URLSearchParams(location.search).get('building'));
+  const buildingView = startBuilding && buildingObservationPoint(startBuilding, ROADS);
+  if (!startAt && buildingView) requestAnimationFrame(() => teleportTo(buildingView.x, buildingView.z, buildingView.heading));
   installLandmarkGallery({
     onTeleport:teleportTo,
     onOpen:()=>{closePopovers();controllerManager.resetInput();touchControls.setEnabled(false);gamepadControls.setEnabled(false)},

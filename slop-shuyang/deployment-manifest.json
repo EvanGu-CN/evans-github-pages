@@ -1,11 +1,12 @@
 {
-  "release": "2026-11-14-jiusheng-precinct",
+  "release": "2026-11-14-vienna-frontage",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "1541606e64a0561e29695abdc27909acb868859a",
+  "sourceCommit": "b3287e9735a314e1b1a4041150218ab9f66cca9d",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
+  "reviewedStreetBuildings": 1,
   "validation": {
-    "nodeTestsPassed": 316,
+    "nodeTestsPassed": 322,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -16,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 29883,
-      "sha256": "db3d8752973542633f9b01efa58fcabb0dfbeb868ab7bc248803854b9b85efae"
+      "bytes": 30027,
+      "sha256": "ed860fd627966f5e5df204f5e12cd39753a7a236e119b82f0328faaaf9e7311f"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -90,9 +91,14 @@
       "sha256": "ebdbe98ddcedefdb64de26619f71e5d9309c79ae2c0dcc354cae64c3877c7320"
     },
     {
+      "path": "js/building-photo-references.js",
+      "bytes": 2357,
+      "sha256": "7c181dfeea7011ed685d4e2ea043521b179baa443335236195c36f518df963d6"
+    },
+    {
       "path": "js/buildings.js",
-      "bytes": 36348,
-      "sha256": "4bc7fd30a1572a42ab7005c237d7ebe0dada358489f1feeaed2c7f8bfeaa3e46"
+      "bytes": 36648,
+      "sha256": "76e0a43ff307a5e9303c97afaa9d92426ac7ad3649ea681b97d32b220423d6e7"
     },
     {
       "path": "js/bus.js",
@@ -121,8 +127,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 34065,
-      "sha256": "0b9d050adfb9833bd2121b749fe1b1c7a48709291e96d81eeda8e1026558836d"
+      "bytes": 34286,
+      "sha256": "777330930b01f8f6be32957a28dea7a0a4aff1090d1c5d37d97f382c92d90fd6"
     },
     {
       "path": "js/civic-campuses.js",
@@ -143,6 +149,11 @@
       "path": "js/controllers.js",
       "bytes": 58985,
       "sha256": "bb1f4756c835aa694e54b6af3196f6a51af6a4df967c658b41e91d15b8b3ed1d"
+    },
+    {
+      "path": "js/core-commercial-frontages.js",
+      "bytes": 5224,
+      "sha256": "ba84cd0e67006686c5f22fd5cece4b42fc6a5eb0efab38ceffad1435bdde5dd5"
     },
     {
       "path": "js/core-photo-buildings.js",
@@ -191,8 +202,8 @@
     },
     {
       "path": "js/landmark-gallery.js",
-      "bytes": 5375,
-      "sha256": "58f81d091e297544df54a008dad55bbc231a8b6b2f4b8b25fbf824f8b18578c6"
+      "bytes": 5939,
+      "sha256": "c6bb01a55dbc88a3600b0b8e57416963b629d9a962f8e8cd8d7fa43952be9348"
     },
     {
       "path": "js/landmark-references.js",
@@ -201,8 +212,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 34004,
-      "sha256": "c178943390ea43e22ab18c27bbbef8876768bf91710b3a033c7769be49f8f35c"
+      "bytes": 34294,
+      "sha256": "06dc8baa562e13c130017ea1ac90e1931c99ede73c8bc9de6a58dcaea355adec"
     },
     {
       "path": "js/lighting.js",
@@ -211,8 +222,8 @@
     },
     {
       "path": "js/main.js",
-      "bytes": 38370,
-      "sha256": "f7a18364fc9e679d173d6d13e78f846e36479ea6a306a0d535dbdffef3c0e717"
+      "bytes": 38811,
+      "sha256": "b7e252676d19acb60752a8a6ea2565e252d5db38de10f9d96d4c8e7734b45fb0"
     },
     {
       "path": "js/mengxi-campus.js",
@@ -316,8 +327,8 @@
     },
     {
       "path": "js/urban-context.js",
-      "bytes": 7575,
-      "sha256": "803880ec7ca51c94f8a3dea95ae64cd0cc0fde47b4eadf18d8c7ef8c39b33a9f"
+      "bytes": 7721,
+      "sha256": "898cab5073d9ffbd66563e74be233c6dbe4e9c545c3e37064fae7a171f3e52bb"
     },
     {
       "path": "js/vehicle-lights.js",

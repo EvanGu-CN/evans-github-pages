@@ -2,6 +2,7 @@ import * as THREE from 'three/webgpu';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GEO } from './shuyang-geodata.js';
 import { LANDMARKS, LANDMARK_SITES } from './city-config.js';
+import { BUILDING_PHOTO_BY_SOURCE } from './building-photo-references.js';
 
 function shapeFromPolygon(p) {
   const ring = (flat, Ctor) => {
@@ -78,7 +79,7 @@ function buildUrbanContext(scene) {
   const subsiteNames=new Set(subsites.map(s=>canonical(s.name)));
   const entries = [
     ...(GEO.neighborhoods || []).map((n) => ({ ...n, kind: 'housing' })),
-    ...(GEO.namedSites || []).filter(n=>!landmarkNames.has(canonical(n.name))&&!subsiteNames.has(canonical(n.name))),
+    ...(GEO.namedSites || []).filter(n=>!landmarkNames.has(canonical(n.name))&&!subsiteNames.has(canonical(n.name))).map(n=>({...n,name:BUILDING_PHOTO_BY_SOURCE.get(n.id)?.name||n.name})),
     ...subsites.map(n=>({...n,labelHeight:n.h+8})),
     ...LANDMARKS.map(l=>({...l,labelHeight:l.h+8}))
   ].map((n) => {
