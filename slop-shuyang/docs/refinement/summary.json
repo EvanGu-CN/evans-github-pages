@@ -7,7 +7,9 @@
   "sourceRoadWays": 1104,
   "buildingStatus": {
     "not-yet-inventoried": 7699,
-    "model-bound": 36,
+    "photo-massing-and-frontage-estimate": 2,
+    "photo-plan-and-massing-estimate": 1,
+    "model-bound": 33,
     "photo-campus-detail-estimate": 3,
     "photo-height-and-frontage-estimate": 1,
     "photo-frontage-estimate": 2

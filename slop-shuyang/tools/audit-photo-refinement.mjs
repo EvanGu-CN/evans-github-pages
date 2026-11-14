@@ -6,6 +6,8 @@ import {createHash} from 'node:crypto';
 import {GEO} from '../js/shuyang-geodata.js';
 import {LANDMARK_SITES, ROADS} from '../js/city-config.js';
 import {BUILDING_PHOTO_REFERENCES,reviewedSourceBindings} from '../js/building-photo-references.js';
+import {CULTURAL_HALLS,CULTURAL_IMAGERY} from '../js/cultural-hall-layout.js';
+import {ART_GALLERY} from '../js/art-gallery-layout.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -18,6 +20,14 @@ for (const [name, site] of Object.entries(LANDMARK_SITES)) {
   }
 }
 const reviewed = new Map(reviewedSourceBindings().map(r => [r.sourceBuildingIndex, r]));
+for(const h of CULTURAL_HALLS)reviewed.set(h.sourceBuildingIndex,{...h,displayHeight:h.displayMaxHeight,
+  reviewId:'cultural-halls-2026-11-15',status:'photo-massing-and-frontage-estimate',modeledFaces:[h.front,'roof'],
+  geometryEvidence:{method:'satellite-traced roof fitted to source project parcel; built-photo facade',imagery:CULTURAL_IMAGERY,
+    sourceHeight:h.sourceHeight,photoPage:h.photoPage,publicationDate:h.publicationDate,captureDate:h.captureDate,limits:h.limits}});
+reviewed.set(ART_GALLERY.sourceBuildingIndex,{...ART_GALLERY,name:'沭阳县美术馆',displayHeight:ART_GALLERY.redHeight,
+  reviewId:'art-gallery-2026-11-15',status:'photo-plan-and-massing-estimate',modeledFaces:['north','east','roof'],
+  geometryEvidence:{method:'architect site plan fitted to source project parcel; built photographs',sourceHeight:ART_GALLERY.sourceHeight,
+    photoPage:ART_GALLERY.sourcePage,captureDate:ART_GALLERY.captureDate,limits:ART_GALLERY.limits}});
 const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
 for (const [i, r] of reviewed) if (source[i]?.id !== r.sourceId) throw new Error('Photo binding drift: '+r.sourceId);
 const mapNames = new Map(GEO.mapBuildings.map(b => [b.id, b.n || '']));
@@ -28,8 +38,8 @@ const buildings = source.map((b, i) => {
   const r = reviewed.get(i);
   return {index:i, id:b.id, name:r?.name || mapNames.get(b.id) || '', x:Math.round(x), z:Math.round(z),
     height:b.height, displayHeight:r?.displayHeight??b.height, category:b.category,
-    status:r?(r.displayHeight?'photo-height-and-frontage-estimate':r.associated?'photo-campus-detail-estimate':'photo-frontage-estimate'):bindings.has(i)?'model-bound':'not-yet-inventoried',
-    model:bindings.get(i)||[], review:r?.reviewId||null, modeledFaces:r?.modeledFaces||[]};
+    status:r?(r.status||(r.displayHeight?'photo-height-and-frontage-estimate':r.associated?'photo-campus-detail-estimate':'photo-frontage-estimate')):bindings.has(i)?'model-bound':'not-yet-inventoried',
+    model:bindings.get(i)||[], review:r?.reviewId||null, modeledFaces:r?.modeledFaces||[],...(r?.geometryEvidence?{geometryEvidence:r.geometryEvidence}:{})};
 });
 const geometryKey = (name, pts) => createHash('sha256').update(JSON.stringify([name,pts])).digest('hex').slice(0,16);
 const roads = ROADS.map((r,index) => {

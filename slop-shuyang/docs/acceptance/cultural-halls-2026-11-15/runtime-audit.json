@@ -1,0 +1,128 @@
+{
+  "navigationStart": 1794688613844.6,
+  "renderer": "WebGPURenderer",
+  "metadata": {
+    "sourceIds": [
+      "way/1321791114",
+      "way/1321791112"
+    ],
+    "imagery": {
+      "provider": "AMap official public satellite tiles",
+      "zoom": 18,
+      "tileOrigin": [
+        217543,
+        104638
+      ],
+      "retrievedAt": "2026-11-15",
+      "imageAcquired": null,
+      "coordinates": "GCJ-02 Web Mercator pixels inverted to WGS84, then project world coordinates",
+      "redistribution": "Reference imagery is not bundled with the site."
+    },
+    "stats": {
+      "halls": 2,
+      "vertices": 666,
+      "colliders": 5,
+      "greens": 4
+    },
+    "limits": [
+      "West-facing facade inferred from the north road, east housing and southern art/museum relation in the built aerial. Four floors are reported in the 2019 project announcement, not individually surveyed. Height, recess depth, panels and roof details are estimates.",
+      "South entrance bound to the Lanting Road forecourt. Folded roof and blue dome are visible in UAD built aerials; ridge profile, dome elevation/radius, stone modules and entrance dimensions are estimates. Two main floors and local third floor are reported, not individually measured."
+    ]
+  },
+  "scope": "all batched landmark meshes; model statistics recorded before batching",
+  "batchedMeshes": 592,
+  "batchedVertices": 1677097,
+  "nonFinite": 0,
+  "culturalColliders": 5,
+  "rays": [
+    {
+      "label": "library raised glazing",
+      "x": -2489.0249999999996,
+      "z": 4165.977500000001,
+      "hitY": 18.98569301586382,
+      "name": null,
+      "blockedAtGround": true
+    },
+    {
+      "label": "museum ridge",
+      "x": -2428.34375,
+      "z": 4303.13,
+      "hitY": 15.300000134403607,
+      "name": null,
+      "blockedAtGround": true
+    },
+    {
+      "label": "library forecourt",
+      "x": -2530,
+      "z": 4153,
+      "hitY": 0.07999999821186066,
+      "name": null,
+      "blockedAtGround": false
+    },
+    {
+      "label": "museum forecourt",
+      "x": -2400,
+      "z": 4360,
+      "hitY": 0.07999999821186066,
+      "name": null,
+      "blockedAtGround": false
+    }
+  ],
+  "errors": [],
+  "finalNavigation": {
+    "backFaceShadows": true,
+    "bounds": {
+      "max": [
+        -2356,
+        18.99068069458008,
+        4381
+      ],
+      "min": [
+        -2560.5,
+        0.07999999821186066,
+        4107.5
+      ]
+    },
+    "checkedValues": 111984,
+    "meshes": 7,
+    "modelMetadata": {
+      "imagery": {
+        "coordinates": "GCJ-02 Web Mercator pixels inverted to WGS84, then project world coordinates",
+        "imageAcquired": null,
+        "provider": "AMap official public satellite tiles",
+        "redistribution": "Reference imagery is not bundled with the site.",
+        "retrievedAt": "2026-11-15",
+        "tileOrigin": [
+          217543,
+          104638
+        ],
+        "zoom": 18
+      },
+      "limits": [
+        "West-facing facade inferred from the north road, east housing and southern art/museum relation in the built aerial. Four floors are reported in the 2019 project announcement, not individually surveyed. Height, recess depth, panels and roof details are estimates.",
+        "South entrance bound to the Lanting Road forecourt. Folded roof and blue dome are visible in UAD built aerials; ridge profile, dome elevation/radius, stone modules and entrance dimensions are estimates. Two main floors and local third floor are reported, not individually measured."
+      ],
+      "sourceIds": [
+        "way/1321791114",
+        "way/1321791112"
+      ],
+      "stats": {
+        "colliders": 5,
+        "greens": 4,
+        "halls": 2,
+        "surfaceVertices": 666
+      }
+    },
+    "navigationStart": 1794689175034.7,
+    "nonFinite": 0,
+    "errors": [],
+    "temporaryCameraOverride": false,
+    "referenceImage": {
+      "url": "https://jsnews.jschina.com.cn/sq/a/202401/W020240118346603826861.jpg",
+      "loaded": true,
+      "naturalWidth": 600,
+      "uiCaptionDate": "2024-01-17",
+      "sourceLinkVerified": true
+    }
+  }
+}

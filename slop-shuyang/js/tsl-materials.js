@@ -3547,7 +3547,21 @@ function createGalleryConcreteMaterial(){
   })();return mat;
 }
 
+function createCulturalPanelMaterial(baseColor=0xd8d5c9,moduleWidth=1.2,moduleHeight=.85,fluted=false){
+  const mat=new THREE.MeshStandardNodeMaterial({roughness:.85});
+  mat.colorNode=Fn(()=>{
+    const p=uv(),fw=max(fwidth(p.x),fwidth(p.y)),aa=max(fw,.001);
+    const dx=float(.5).sub(abs(fract(p.x.div(moduleWidth)).sub(.5))).mul(moduleWidth);
+    const dy=float(.5).sub(abs(fract(p.y.div(moduleHeight)).sub(.5))).mul(moduleHeight);
+    const joint=float(1).sub(smoothstep(float(.006).sub(aa),float(.006).add(aa),min(dx,dy)));
+    const fade=float(1).sub(smoothstep(.035,.15,fw));
+    const relief=fluted?sin(p.x.mul(95)).mul(.018).mul(float(1).sub(smoothstep(.006,.025,fw))):float(0);
+    return color(baseColor).mul(float(1).sub(joint.mul(.16).mul(fade)).add(relief));
+  })();return mat;
+}
+
 export {
+  createCulturalPanelMaterial,
   createGalleryBrickMaterial,
   createGalleryConcreteMaterial,
   cityUniforms,

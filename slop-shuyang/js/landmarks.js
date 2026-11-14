@@ -22,6 +22,7 @@ import { buildHospitalPrecinct } from './hospital-precinct.js';
 import { buildGovernmentServiceCenter } from './government-service-center.js';
 import { buildTaizhouCorridor } from './taizhou-corridor.js';
 import { buildArtGallery } from './art-gallery.js';
+import { buildCulturalHalls } from './cultural-halls.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -330,52 +331,7 @@ function buildLandmarks(scene) {
   // ===================================================================================================================
   // 沭阳文化中心：博物馆 / 美术馆 / 图书馆 + 文化广场
   // ===================================================================================================================
-  {
-    const c = ctxFor('沭阳文化中心');
-    if (c) {
-      // 三馆位置按来源轮廓保留；外观参考 UAD 实拍与2026图书馆航拍。
-      for(const [sourceId,mat,height] of [['way/1321791112',M.stone,13.5],['way/1321791114',M.white,18]]) {
-        sourceBody({...c,s:{...c.s,sourceId}},mat,height);
-      }
-      // 装饰跟随来源多边形外沿，避免窗带或入口埋在旋转楼体内。
-      const records=GEO.mapBuildings.filter(b=>c.s.sourceBuildingIndices && ['way/1321791112','way/1321791113','way/1321791114'].includes(b.id));
-      const edge=(b,i)=>{
-        const n=b.o.length/2,j=(i+1)%n,ax=b.o[i*2],az=b.o[i*2+1],bx=b.o[j*2],bz=b.o[j*2+1];
-        const dx=bx-ax,dz=bz-az,L=Math.hypot(dx,dz),x=(ax+bx)/2-c.s.x,z=(az+bz)/2-c.s.z;
-        const cx=b.o.filter((_,k)=>k%2===0).reduce((a,v)=>a+v,0)/n-c.s.x;
-        const cz=b.o.filter((_,k)=>k%2===1).reduce((a,v)=>a+v,0)/n-c.s.z;
-        let nx=dz/L,nz=-dx/L;if((x-cx)*nx+(z-cz)*nz<0){nx=-nx;nz=-nz}
-        return {x,z,L,dx:dx/L,dz:dz/L,nx,nz,ry:-Math.atan2(dz,dx)};
-      };
-      const strip=(e,mat,y,h,w=e.L,offset=.35)=>box(c,mat,e.x+e.nx*offset,y,e.z+e.nz*offset,w,h,.35,{ry:e.ry,collide:false});
-      for(const b of records){
-        for(let i=0;i<b.o.length/2;i++){
-          const e=edge(b,i);
-          if(b.id==='way/1321791114'){
-            strip(e,M.darkStone,12,1.6,e.L-3);
-            strip(e,M.glass,1,8.5,Math.min(30,e.L*.35),.55);
-            for(let k=3;k<e.L;k+=6) box(c,M.offWhite,e.x+e.dx*(k-e.L/2)+e.nx*.55,.3,e.z+e.dz*(k-e.L/2)+e.nz*.55,.16,17,.3,{ry:e.ry,collide:false});
-          }else if(b.id==='way/1321791112') strip(e,M.glass,3,4.6,e.L-10);
-        }
-        if(b.id==='way/1321791114'){
-          const e=edge(b,1);for(const [i,ch] of [...'沭阳县图书馆'].entries()) sign(c,ch,e.x+e.nx*.8,16-i*2,e.z+e.nz*.8,2,1.8,Math.atan2(e.nx,e.nz),'#e9e6dc','#51452f');
-        }
-        if(b.id==='way/1321791112'){
-          const roofProfile=[13.7,15.8,13.7,15.3,13.7],rp=[];
-          const roofPoint=(u,v,y)=>{const a=[b.o[0]*(1-v)+b.o[2]*v,b.o[1]*(1-v)+b.o[3]*v];const d=[b.o[6]*(1-v)+b.o[4]*v,b.o[7]*(1-v)+b.o[5]*v];return [a[0]*(1-u)+d[0]*u-c.s.x,y,a[1]*(1-u)+d[1]*u-c.s.z]};
-          for(let i=0;i<4;i++){const a=roofPoint(i/4,0,roofProfile[i]),b1=roofPoint((i+1)/4,0,roofProfile[i+1]),d=roofPoint(i/4,1,roofProfile[i]),e1=roofPoint((i+1)/4,1,roofProfile[i+1]);rp.push(...a,...b1,...d,...b1,...e1,...d)}
-          const roofGeo=new THREE.BufferGeometry();roofGeo.setAttribute('position',new THREE.Float32BufferAttribute(rp,3));roofGeo.computeVertexNormals();
-          const roofMesh=new THREE.Mesh(roofGeo,new THREE.MeshStandardNodeMaterial({color:0xb9b3a6,roughness:.8,side:THREE.DoubleSide}));roofMesh.castShadow=true;c.g.add(roofMesh);
-          // 南侧短边入口：蓝玻璃、厚石材折角门框。
-          const e=edge(b,3);strip(e,M.blueGlass,.3,10,42,.7);
-          for(const t of [-24,24]) box(c,M.stone,e.x+e.dx*t+e.nx*1.5,.3,e.z+e.dz*t+e.nz*1.5,5,13,4,{ry:e.ry});
-          box(c,M.stone,e.x+e.nx*1.5,11,e.z+e.nz*1.5,53,2.5,4,{ry:e.ry,collide:false});
-          sign(c,'沭阳县博物馆',e.x+e.nx*3.6,10,e.z+e.nz*3.6,24,2.5,Math.atan2(e.nx,e.nz),'#afa790','#e9e0c8');
-        }
-      }
-      const dome=new THREE.Mesh(new THREE.SphereGeometry(8,24,14,0,Math.PI*2,0,Math.PI/2),M.blueGlass);dome.position.set(-18,11.5,75);c.g.add(dome);
-    }
-  }
+  // The three museum/library models are built from their individual layouts below.
 
   // ===================================================================================================================
   // 沭阳站：实拍站房与来源轮廓的斜向长轴
@@ -567,6 +523,7 @@ function buildLandmarks(scene) {
 
   buildPhotoLandmarks({ctxFor,box,cyl,sign,M,sourceBody});
   buildArtGallery({ctxFor,box,sign,M,colliders});
+  buildCulturalHalls({ctxFor,box,sign,M,colliders});
   buildRtMartDistrict({ctxFor,box,sourceBody,sourceEdges});
   buildCorePhotoBuildings({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel});
   buildWorkersPalace({ctxFor,box,cyl,M,sourceBody,sourceEdges,edgePanel});

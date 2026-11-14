@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-art-gallery",
+  "release": "2026-11-15-cultural-halls",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "10a7a7fd30aa29512c2048aacab9b23c800828b1",
+  "sourceCommit": "766aa6ba996b6c7b3d2aff8ac923a97a6dc0b263",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 360,
+    "nodeTestsPassed": 369,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30672,
-      "sha256": "d8de561a19b771455c4af70e806db588eb7dc16bf6024148c66ec2b3ecab2f93"
+      "bytes": 30800,
+      "sha256": "af8c940ab4f4f241a97bc5ed070bc776b36e397ea382daab27f76a5c1f0cbc8c"
     },
     {
       "path": "js/art-gallery-layout.js",
@@ -137,8 +137,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 35770,
-      "sha256": "4272dacb2253bf942432fdd333e6522d6f10eebb07315de88a0d666c2b7d4eb4"
+      "bytes": 36292,
+      "sha256": "bd1deacfdf55bf393425356bd33df3c1df948bf01d46f7591d91df7fca07ea84"
     },
     {
       "path": "js/civic-campuses.js",
@@ -174,6 +174,16 @@
       "path": "js/core-retail.js",
       "bytes": 14771,
       "sha256": "415d827b1f81f92714b895964a26a69e098014bc8f0c5749d5dbea909582992b"
+    },
+    {
+      "path": "js/cultural-hall-layout.js",
+      "bytes": 4431,
+      "sha256": "362aa9a42aaf1d50b305e2c2f94b807c109624f5218e62b57614167acb87c0fa"
+    },
+    {
+      "path": "js/cultural-halls.js",
+      "bytes": 9625,
+      "sha256": "172a424d4c2d008cc40574b242f200a3d2eb353c165069482312ed24e842712c"
     },
     {
       "path": "js/fire-escapes.js",
@@ -227,13 +237,13 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 18835,
-      "sha256": "27fec1f6875180e9405829a83e0bcfbad8f775e840ca95359c95cd3e915c9dc0"
+      "bytes": 19441,
+      "sha256": "b57a5a0c19596e5cf7001d748551e0d953225146d46cbe5530b403e4b4ab80df"
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 33167,
-      "sha256": "66ea866ac7160c085a27a0cb11475f8fd27ec6f5301da32ef3c1c810ad36a208"
+      "bytes": 29966,
+      "sha256": "db1cd3e3450bcba262e2027707079d02c68b35a8c3283184f088dcfb5be4e8cc"
     },
     {
       "path": "js/lighting.js",
@@ -372,8 +382,8 @@
     },
     {
       "path": "js/tsl-materials.js",
-      "bytes": 171696,
-      "sha256": "e60676a9d98509a24b2ef34a6ba8a95fa4ea7b4db8533f4e65fa1efacf7db514"
+      "bytes": 172523,
+      "sha256": "232c0191394eb8bada058d48d982637a9e4772a0b09c0b5c7f207d83eb4154b9"
     },
     {
       "path": "js/urban-context.js",
