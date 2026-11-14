@@ -9,10 +9,11 @@
     "not-yet-inventoried": 7699,
     "photo-massing-and-frontage-estimate": 2,
     "photo-plan-and-massing-estimate": 1,
-    "model-bound": 33,
+    "model-bound": 31,
+    "photo-frontage-estimate": 3,
+    "photo-height-and-facade-grid-estimate": 1,
     "photo-campus-detail-estimate": 3,
     "photo-height-and-frontage-estimate": 1,
-    "photo-frontage-estimate": 2,
     "imagery-roof-detail-estimate": 1
   },
   "roadStatus": {

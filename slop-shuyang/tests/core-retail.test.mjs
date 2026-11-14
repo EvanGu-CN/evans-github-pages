@@ -48,7 +48,7 @@ test('core retail notes keep the two malls distinct and cite the 2026 field surv
   assert.ok(LANDMARK_SITES['中央城市广场'].h >= 147);
 });
 
-test('core retail detail module builds facades, category signs and the tower crown', () => {
+test('Bluesky retail details remain separate from the rebuilt central plaza', () => {
   const geom = class { constructor() {} };
   const Vec = class {
     constructor(x = 0, y = 0, z = 0) { this.x = x; this.y = y; this.z = z; }
@@ -104,11 +104,11 @@ test('core retail detail module builds facades, category signs and the tower cro
     },
     edgePanel: () => { calls.panel++; }
   });
-  assert.equal(contexts.length, 2, 'both malls are refined');
-  assert.deepEqual(calls.edges, ['way/1086134482', 'way/1455053540', 'way/1321791084']);
-  assert.ok(calls.panel > 80, 'projecting slabs, louvers, tile bands and refuge galleries are placed');
-  assert.ok(calls.box > 150, 'stone fins, entrance hall, roof plant and crown are placed');
+  assert.equal(contexts.length, 1, 'central plaza has its own source-bound builder');
+  assert.deepEqual(calls.edges, ['way/1321791084']);
+  assert.ok(calls.panel > 30, 'Bluesky glazing, louvers and tile bands remain');
+  assert.ok(calls.box > 50, 'Bluesky entrance, roof plant and street furniture remain');
   assert.ok(calls.cyl > 20, 'portico columns, entrance posts, lamps and furniture');
-  assert.equal(calls.sign, 6, 'category shop signs plus the mall fascia, no invented brand names');
+  assert.equal(calls.sign, 5, 'Bluesky category signs remain');
   assert.ok(meshCount > 20, 'solid struts, roundels, lanterns and aviation lights are real meshes');
 });

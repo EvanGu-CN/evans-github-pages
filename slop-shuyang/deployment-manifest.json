@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-cultural-streets",
+  "release": "2026-11-15-central-plaza",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "dce2a66f6c47b12c1c24e26ac9ef9979637fb683",
+  "sourceCommit": "fa55f4ad66fd6c61ac782a9ea9e5c7c5bfe4b5ed",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 384,
+    "nodeTestsPassed": 390,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31000,
-      "sha256": "397638076d00a789c1a7d5427225a43aa4a66fefb697cd045a158d19c3e67867"
+      "bytes": 31127,
+      "sha256": "7113c68ee059a0f39efeb7f634aafc9d76d736d5fcbc7190618321a1aa5f55fe"
     },
     {
       "path": "js/art-gallery-layout.js",
@@ -126,6 +126,16 @@
       "sha256": "eac5b4db979910e41349d81ce667b3ca7b385c72ef79afc9cfaac75749c1eff5"
     },
     {
+      "path": "js/central-plaza-layout.js",
+      "bytes": 2768,
+      "sha256": "869a6ed0b767feaacb0519fc21c85c9bc320cafff521febcb1bb1544b8b3ad09"
+    },
+    {
+      "path": "js/central-plaza.js",
+      "bytes": 5839,
+      "sha256": "12142faebb13673acd3ce25bb3ce927a5659ae690e8df79a1403a8080db1e12a"
+    },
+    {
       "path": "js/city-config.js",
       "bytes": 22584,
       "sha256": "0462e3008008b9b5060e03fc8b3b27fe376155ce52fa933f760922eb33a4f0aa"
@@ -172,8 +182,8 @@
     },
     {
       "path": "js/core-retail.js",
-      "bytes": 14771,
-      "sha256": "415d827b1f81f92714b895964a26a69e098014bc8f0c5749d5dbea909582992b"
+      "bytes": 7457,
+      "sha256": "6670a0a2874d50e92a200b18b7831f8b4915139daddfc89c610bdcd6f8e551c4"
     },
     {
       "path": "js/cultural-hall-layout.js",
@@ -252,13 +262,13 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 19441,
-      "sha256": "b57a5a0c19596e5cf7001d748551e0d953225146d46cbe5530b403e4b4ab80df"
+      "bytes": 19969,
+      "sha256": "6cac471ae6722832a1296dad38f6c44fde7e23940bd291a4c200f4df45902c80"
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 30058,
-      "sha256": "1cccadbc91a964bc13209d66b670d630cd38a7810e66caf3894269d516be4ee2"
+      "bytes": 28775,
+      "sha256": "90c6865b28b0c8ae122ed2b5a5ffd237ca03c8afa4883f8ae66a1f668fc9926e"
     },
     {
       "path": "js/lighting.js",

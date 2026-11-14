@@ -9,6 +9,7 @@ import {BUILDING_PHOTO_REFERENCES,reviewedSourceBindings} from '../js/building-p
 import {CULTURAL_HALLS,CULTURAL_IMAGERY,ARCHIVES_ROOF} from '../js/cultural-hall-layout.js';
 import {ART_GALLERY} from '../js/art-gallery-layout.js';
 import {CULTURAL_STREETS} from '../js/cultural-streets-data.js';
+import {CENTRAL_PLAZA} from '../js/central-plaza-layout.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -34,6 +35,13 @@ reviewed.set(ARCHIVES_ROOF.sourceBuildingIndex,{...ARCHIVES_ROOF,displayHeight:A
   geometryEvidence:{method:'satellite roofprint appended as a source building; generic ground facade retained',imagery:CULTURAL_IMAGERY,
     addressPage:ARCHIVES_ROOF.addressPage,captureDate:null,identity:'inferred from official relative address',heightSource:'type estimate',limits:ARCHIVES_ROOF.limits}});
 const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
+for(const tower of [false,true]){
+  const r=CENTRAL_PLAZA,index=tower?r.towerIndex:r.podiumIndex;
+  reviewed.set(index,{sourceId:tower?r.towerId:r.podiumId,name:tower?'中央商城大厦':'中央商场',displayHeight:tower?r.towerHeight:r.podiumHeight,
+    reviewId:'central-plaza-2026-11-15',status:tower?'photo-height-and-facade-grid-estimate':'photo-frontage-estimate',modeledFaces:tower?['facade grid estimate']:['north entrance estimate'],
+    geometryEvidence:{method:tower?'source footprint retained; reported height and two refuge floors; built-photo window typology':'source podium retained; limited entrance photograph fitted to inferred north frontage',
+      sourceHeight:tower?r.sourceTowerHeight:r.podiumHeight,photoPage:tower?r.firePage:r.entrancePage,publicationDate:tower?r.publicationDate:r.entrancePublicationDate,captureDate:null,limits:r.limits}});
+}
 for (const [i, r] of reviewed) if (source[i]?.id !== r.sourceId) throw new Error('Photo binding drift: '+r.sourceId);
 const mapNames = new Map(GEO.mapBuildings.map(b => [b.id, b.n || '']));
 const buildings = source.map((b, i) => {

@@ -1,0 +1,93 @@
+{
+  "boundReplacements": [
+    2793,
+    2795
+  ],
+  "bounds": {
+    "max": [
+      -53.94085693359375,
+      147.3699951171875,
+      238.55905151367188
+    ],
+    "min": [
+      -273.0579376220703,
+      0.2199999988079071,
+      -18.057815551757812
+    ]
+  },
+  "meshes": 11,
+  "metadata": {
+    "base": 0.22,
+    "captureDate": null,
+    "entranceFace": {
+      "a": {
+        "x": -75,
+        "z": 13.5
+      },
+      "b": {
+        "x": -188.5,
+        "z": -18
+      },
+      "normal": [
+        0.26742492529667844,
+        -0.9635786990848572
+      ],
+      "placement": "north side inferred from address and source geometry; exact door location unmeasured"
+    },
+    "entrancePage": "https://www.yangtse.com/news/jiangsu/202508/t20250830_257238.html",
+    "entrancePublicationDate": "2025-08-30",
+    "firePage": "https://js.119.gov.cn/202304/jsxfww-menu-gzdt_c_08d79c5f7b964a8985bf.html",
+    "levels": 42,
+    "limits": "147.15 m and floors 14/29 are reported by the fire service. Uniform storey spacing, window modules, recess depth, facade orientation and entrance placement are display estimates. Photographs do not show the complete tower roof; the roof is kept simple within the reported height, without the previously unsupported extra crown/mast. Source geometry and the 150 m OSM height are retained. Other podium facades remain generic.",
+    "podiumHeight": 26.9,
+    "podiumId": "way/1086134482",
+    "podiumIndex": 2793,
+    "publicationDate": "2023-04-20",
+    "refugeFloors": [
+      14,
+      29
+    ],
+    "sourceTowerHeight": 150,
+    "stats": {
+      "faces": 3420,
+      "refugeWindows": 78,
+      "towerWindows": 1638
+    },
+    "towerHeight": 147.15,
+    "towerId": "way/1455053540",
+    "towerIndex": 2795
+  },
+  "navigationStart": 1794695910288.2,
+  "nonFinite": 0,
+  "rendered": 7705,
+  "renderer": "WebGPURenderer",
+  "scope": "all actual merged meshes in the central landmark parent, not the empty metadata child",
+  "sourceColliders": [
+    {
+      "maxX": -54,
+      "maxY": 27.119999999999997,
+      "maxZ": 238.5,
+      "minX": -273,
+      "minZ": -18
+    },
+    {
+      "maxX": -64,
+      "maxY": 147.37,
+      "maxZ": 161,
+      "minX": -102,
+      "minZ": 138
+    }
+  ],
+  "sourceCount": 7742,
+  "towerRoof": [
+    {
+      "name": "",
+      "y": 147.3699951171875
+    },
+    {
+      "name": "",
+      "y": 27.11999893188477
+    }
+  ],
+  "vertices": 22104
+}

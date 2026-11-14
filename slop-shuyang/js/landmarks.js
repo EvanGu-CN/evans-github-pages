@@ -17,6 +17,7 @@ import { buildBayiDistrict } from './bayi-district.js';
 import { buildMizhongCampus } from './mizhong-campus.js';
 import { buildMizhongPrecinct } from './mizhong-precinct.js';
 import { buildCoreRetail } from './core-retail.js';
+import {buildCentralPlaza} from './central-plaza.js';
 import { buildCoreCommercialFrontages } from './core-commercial-frontages.js';
 import { buildHospitalPrecinct } from './hospital-precinct.js';
 import { buildGovernmentServiceCenter } from './government-service-center.js';
@@ -145,7 +146,7 @@ function buildLandmarks(scene) {
     return mesh;
   };
   const sign = (c, text, x, y, z, w, h, ry = 0, bg = '#10202b', fg = '#ffd36b', options = {}) => {
-    const mat = new THREE.MeshBasicNodeMaterial({ map: makeSignTexture(text, bg, fg, options) });
+    const mat = new THREE.MeshBasicNodeMaterial({ map: makeSignTexture(text, bg, fg, options),alphaTest:options.cutout ? .2 : 0 });
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat);
     mesh.position.set(x, y, z);
     mesh.rotation.y = ry;
@@ -304,30 +305,6 @@ function buildLandmarks(scene) {
     }
     sign(c, '九孔桥', x, 2.2, z + width / 2 + 0.2, 4.4, 1, 0, '#1c2620', '#e8d6a8');
   };
-
-  // ===================================================================================================================
-  // 中央城市广场：147.15m 主塔 + 商业裙房 + 两栋住宅
-  // ===================================================================================================================
-  {
-    const c = ctxFor('中央城市广场');
-    if (c) {
-      // 保留中央商场完整L形轮廓；主塔回到来源实测轮廓，而不是放在猜测的位置。
-      sourceBody(c,M.offWhite,26.9);
-      sourceBody({...c,s:{...c.s,sourceId:'way/1455053540'}},M.offWhite,147.15,{residential:true,levels:40});
-      const edges=sourceEdges(c);
-      for(const e of edges){
-        if(e.L<8)continue;
-        edgePanel(c,e,M.glass,1.3,20,e.L-.8);
-        edgePanel(c,e,M.offWhite,22,4.7,e.L+.3,.7);
-        for(let k=2;k<e.L;k+=10) box(c,M.frame,e.x+e.tx*(k-e.L/2)+e.nx*.8,.3,e.z+e.tz*(k-e.L/2)+e.nz*.8,.5,24,.6,{ry:e.ry,collide:false});
-      }
-      const front=edges.filter(e=>e.L>30).sort((a,b)=>b.nz-a.nz)[0];
-      sign(c,'中央商场',front.x+front.nx,23.7,front.z+front.nz,32,4.6,front.facing,'#5c2323','#ead2a6');
-      // 主塔实拍中的浅色墙柱与避难层暗带，尺寸仍按公开实高和照片比例。
-      const towerEdges=sourceEdges({...c,s:{...c.s,sourceId:'way/1455053540'}});
-      for(const e of towerEdges)for(const y of [49,101.5])edgePanel(c,e,M.darkStone,y,.8,e.L+.4,.35);
-    }
-  }
 
   // ===================================================================================================================
   // 沭阳文化中心：博物馆 / 美术馆 / 图书馆 + 文化广场
@@ -532,6 +509,7 @@ function buildLandmarks(scene) {
   buildCivicCampuses({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildMengxiCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildShiyanCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
+  buildCentralPlaza({ctxFor,box,sign,sourceBody,sourceEdges,edgePanel});
   buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
   buildCoreCommercialFrontages({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildGovernmentServiceCenter({root,box,sign,M,sourceEdges});

@@ -1,0 +1,50 @@
+{
+  "baselineCommit": "dce2a66f6c47b12c1c24e26ac9ef9979637fb683",
+  "unchangedSourceFiles": {
+    "js/shuyang-geodata.js": {
+      "bytes": 2867481,
+      "sha256": "29d06f5c3158fbbe3519a1c68dd37c0d200508a7c5e5c74fee5c1a51f10284c3"
+    },
+    "js/building-geodata.bin.gz": {
+      "bytes": 128123,
+      "sha256": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f"
+    },
+    "tools/data/shuyang/buildings-enriched.json.gz": {
+      "bytes": 493754,
+      "sha256": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
+    }
+  },
+  "sourceBuildingCount": 7742,
+  "mapParts": 7745,
+  "sourceRoadWays": 1104,
+  "renderRoadSections": 1105,
+  "mapPaths": 92,
+  "reportedTowerHeight": 147.15,
+  "displayBase": 0.22,
+  "displayTop": 147.37,
+  "sourceTowerHeight": 150,
+  "previousCodeHighestPoint": 171.7,
+  "previousCrownEvidence": "The old code placed a radius .5 aviation sphere at y=171.2. The available fire photographs do not show a complete tower roof; absence of a mast in reality is not claimed.",
+  "refugeFloors": [
+    14,
+    29
+  ],
+  "windowSlots": 1638,
+  "windowSlotCountNote": "Illustrative modules, not a photograph count",
+  "entranceEdge": {
+    "a": {
+      "x": -75,
+      "z": 13.5
+    },
+    "b": {
+      "x": -188.5,
+      "z": -18
+    },
+    "L": 117.79006749297668,
+    "tx": -0.9635786990848573,
+    "tz": -0.26742492529667844,
+    "nx": 0.26742492529667844,
+    "nz": -0.9635786990848573,
+    "facing": 2.870873024333579
+  }
+}
