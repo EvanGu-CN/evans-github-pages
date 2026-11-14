@@ -1,5 +1,6 @@
 import {GEO} from './shuyang-geodata.js';
 import clipping from './vendor/polygon-clipping.js';
+import {STREET_MASK} from './cultural-street-layout.js';
 
 // Roof outlines digitised in AMap GCJ-02 z18 imagery, converted back to the
 // source WGS84 frame. Image acquisition date is unknown. Roof parallax and
@@ -47,8 +48,8 @@ function hallSiteSurfaces(h){
   const parcel=[Array.from({length:source.o.length/2},(_,i)=>source.o.slice(i*2,i*2+2))];
   // Green pieces are independent beds; union them before subtracting from the
   // paving. Intersection of all beds would incorrectly erase both of them.
-  const greenUnion=clipping.difference(clipping.intersection(clipping.union(...h.greens.map(polygon)),parcel),polygon(h.outer));
-  const paving=unpack(clipping.difference(parcel,polygon(h.outer),greenUnion));
+  const greenUnion=clipping.difference(clipping.intersection(clipping.union(...h.greens.map(polygon)),parcel),polygon(h.outer),STREET_MASK);
+  const paving=unpack(clipping.difference(parcel,polygon(h.outer),greenUnion,STREET_MASK));
   return{greens:unpack(greenUnion),paving};
 }
 export {CULTURAL_HALLS,CULTURAL_HALL_BY_SOURCE,CULTURAL_IMAGERY,ARCHIVES_ROOF,archivesRoofFootprint,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces};

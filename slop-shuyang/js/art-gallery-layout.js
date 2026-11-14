@@ -1,5 +1,6 @@
 import {GEO} from './shuyang-geodata.js';
 import clipping from './vendor/polygon-clipping.js';
+import {STREET_MASK} from './cultural-street-layout.js';
 
 // Digitised against the architect-supplied site plan, then fitted to the mapped
 // project parcel. Plan/photo agreement supports the arrangement, not surveying
@@ -83,7 +84,7 @@ function galleryPavingPolygons(){
   // Bilinear parcel fitting slightly bends long plan edges. Clip again in
   // world space so independently sampled edges cannot leave paving slivers.
   const worldShape=p=>[p.outer,...p.holes].map(r=>r.map(q=>[q.x,q.z]));
-  const worldObstacles=[...galleryDisplayFootprints(),...galleryPondPolygons()].map(worldShape);
+  const worldObstacles=[...galleryDisplayFootprints(),...galleryPondPolygons()].map(worldShape).concat(STREET_MASK);
   const clean=polys=>polys.flatMap(p=>clipping.difference(worldShape(p),...worldObstacles).map(p=>({
     outer:p[0].slice(0,-1).map(q=>({x:q[0],z:q[1]})),holes:p.slice(1).map(r=>r.slice(0,-1).map(q=>({x:q[0],z:q[1]})))})));
   return{base:clean(base),bands:clean(bands)};

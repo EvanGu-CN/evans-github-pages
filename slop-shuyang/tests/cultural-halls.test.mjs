@@ -6,6 +6,7 @@ import {GEO} from '../js/shuyang-geodata.js';
 import clipping from '../js/vendor/polygon-clipping.js';
 import {CULTURAL_HALLS,CULTURAL_IMAGERY,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces} from '../js/cultural-hall-layout.js';
 import {galleryDisplayFootprints} from '../js/art-gallery-layout.js';
+import {STREET_MASK} from '../js/cultural-street-layout.js';
 const ring=p=>p.map(q=>[q.x,q.z]);
 const poly=p=>[ring(p.outer),...(p.holes||[]).map(ring)];
 const areaRing=r=>Math.abs(r.reduce((s,p,i)=>{const q=r[(i+1)%r.length];return s+p[0]*q[1]-q[0]*p[1];},0)/2);
@@ -54,7 +55,7 @@ test('green beds and paving partition the free project ground without covering e
     const ps=[...greens,...paving];
     for(let i=0;i<ps.length;i++){assert.ok(area(clipping.difference(poly(ps[i]),parcel(h)))<1e-7);assert.ok(area(clipping.intersection(poly(ps[i]),poly(h)))<1e-7);
       for(let j=i+1;j<ps.length;j++)assert.ok(area(clipping.intersection(poly(ps[i]),poly(ps[j])))<1e-7);}
-    const expected=area([parcel(h)])-area([poly(h)]),actual=area(ps.map(poly));assert.ok(Math.abs(expected-actual)<1e-6);
+    const expected=area(clipping.difference(parcel(h),poly(h),STREET_MASK)),actual=area(ps.map(poly));assert.ok(Math.abs(expected-actual)<1e-6);
   }
 });
 test('imagery and built-photo dates stay distinct from inferred dimensions and acquisition dates',()=>{

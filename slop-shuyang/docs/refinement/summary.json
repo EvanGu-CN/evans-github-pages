@@ -16,9 +16,9 @@
     "imagery-roof-detail-estimate": 1
   },
   "roadStatus": {
-    "not-yet-inventoried": 1098,
+    "not-yet-inventoried": 1094,
     "photo-standard-section-estimate": 3,
-    "partial-frontage-reference": 4
+    "partial-frontage-reference": 8
   },
   "sourceDigest": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
 }

@@ -1,0 +1,91 @@
+{
+  "baselineCommit": "885735b4f5cb55eed0f3f4c44a3fb7f50870463d",
+  "unchangedSourceFiles": {
+    "js/shuyang-geodata.js": "29d06f5c3158fbbe3519a1c68dd37c0d200508a7c5e5c74fee5c1a51f10284c3",
+    "js/building-geodata.bin.gz": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f",
+    "tools/data/shuyang/buildings-enriched.json.gz": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
+  },
+  "areas": {
+    "兰亭路 walkway": 383.40740099993855,
+    "兰亭路 curb": 43.73410700004189,
+    "兰亭路 green": 1105.579808500006,
+    "承晖路 walkway": 464.4447525000305,
+    "承晖路 curb": 34.323501000064766,
+    "承晖路 green": 1132.4830374999356
+  },
+  "samples": [
+    {
+      "label": "兰亭路 walkway",
+      "x": -2350.3982568373904,
+      "z": 4242.632,
+      "expectedY": 0.255
+    },
+    {
+      "label": "兰亭路 curb",
+      "x": -2351.2581043698065,
+      "z": 4242.632,
+      "expectedY": 0.29
+    },
+    {
+      "label": "兰亭路 green",
+      "x": -2353.9380016325495,
+      "z": 4241.6255,
+      "expectedY": 0.245
+    },
+    {
+      "label": "承晖路 walkway",
+      "x": -2485.1634891403837,
+      "z": 4357.5985,
+      "expectedY": 0.255
+    },
+    {
+      "label": "承晖路 curb",
+      "x": -2479.319140387376,
+      "z": 4357.5985,
+      "expectedY": 0.29
+    },
+    {
+      "label": "承晖路 green",
+      "x": -2483.33888039615,
+      "z": 4352.108,
+      "expectedY": 0.245
+    }
+  ],
+  "frontages": [
+    {
+      "road": "兰亭路",
+      "sourceWayIds": [
+        "way/496891450",
+        "way/496891452"
+      ],
+      "axis": [
+        -2328.767,
+        4126.953,
+        -0.21594037889444478,
+        0.9764065509627246
+      ],
+      "walkwayArea": 427.142,
+      "greenArea": 1105.58,
+      "rawArea": 1854.757,
+      "clippedArea": 322.035
+    },
+    {
+      "road": "承晖路",
+      "sourceWayIds": [
+        "way/496891455",
+        "way/496891457"
+      ],
+      "axis": [
+        -2572.903,
+        4332.204,
+        0.9763177030876733,
+        0.21634172652914158
+      ],
+      "walkwayArea": 498.768,
+      "greenArea": 1132.483,
+      "rawArea": 1714.485,
+      "clippedArea": 83.234
+    }
+  ],
+  "candidateTrees": 37
+}

@@ -1,0 +1,13 @@
+{
+  "reviewId": "cultural-street-edges-20261115",
+  "photoPage": "https://www.gooood.cn/shuyang-art-gallery-jiangsu-by-architectural-design-and-research-institute-of-zhejiang-university.htm",
+  "publicationDate": "2020-07-07",
+  "photoCredits": "Zhao Qiang; supplied by UAD",
+  "captureDate": null,
+  "imagery": {"provider": "AMap public satellite tiles", "zoom": 18, "tileOrigin": [217543,104638], "retrievedAt": "2026-11-15", "imageAcquired": null},
+  "limits": "Built aerials support narrow reddish paving, adjacent planted strips and street trees on the gallery/museum road frontage. Hand-traced satellite bands are approximate and clipped against existing carriageways, actual cultural display bodies, other source buildings and reserved surfaces. Existing cultural paving is trimmed around these strips. Paver modules, tree spacing/species and curb height are display estimates. No lane-count, width, entrance or traffic-route correction is claimed; photographs and imagery do not prove current conditions.",
+  "frontages": [
+    {"name": "兰亭路", "side": "west", "sourceWayIds": ["way/496891450","way/496891452"], "walkway": [[814,330],[711,810],[705,808],[808,328]], "green": [[798,327],[807,329],[704,807],[695,804]], "treeAxis": [[802,333],[700,797]]},
+    {"name": "承晖路", "side": "north", "sourceWayIds": ["way/496891455","way/496891457"], "walkway": [[302,759],[674,842],[672,848],[300,765]], "green": [[305,744],[676,827],[674,839],[302,756]], "treeAxis": [[308,751],[667,831]]}
+  ]
+}

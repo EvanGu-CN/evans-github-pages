@@ -1,0 +1,138 @@
+{
+  "bounds": {
+    "max": [
+      -2324.175048828125,
+      0.28999999165534973,
+      4379.8310546875
+    ],
+    "min": [
+      -2576.5859375,
+      0.2199999988079071,
+      4124.005859375
+    ]
+  },
+  "meshes": 3,
+  "navigationStart": 1794693815814.6,
+  "nonFinite": 0,
+  "plantedTrees": 37,
+  "rays": [
+    {
+      "actualY": 0.2549999952316284,
+      "expectedY": 0.255,
+      "label": "兰亭路 walkway",
+      "pass": true,
+      "x": -2350.3982568373904,
+      "z": 4242.632
+    },
+    {
+      "actualY": 0.28999999165534973,
+      "expectedY": 0.29,
+      "label": "兰亭路 curb",
+      "pass": true,
+      "x": -2351.2581043698065,
+      "z": 4242.632
+    },
+    {
+      "actualY": 0.24500000476837247,
+      "expectedY": 0.245,
+      "label": "兰亭路 green",
+      "pass": true,
+      "x": -2353.9380016325495,
+      "z": 4241.6255
+    },
+    {
+      "actualY": 0.25499999523162753,
+      "expectedY": 0.255,
+      "label": "承晖路 walkway",
+      "pass": true,
+      "x": -2485.1634891403837,
+      "z": 4357.5985
+    },
+    {
+      "actualY": 0.28999999165534973,
+      "expectedY": 0.29,
+      "label": "承晖路 curb",
+      "pass": true,
+      "x": -2479.319140387376,
+      "z": 4357.5985
+    },
+    {
+      "actualY": 0.2450000047683716,
+      "expectedY": 0.245,
+      "label": "承晖路 green",
+      "pass": true,
+      "x": -2483.33888039615,
+      "z": 4352.108
+    }
+  ],
+  "renderer": "WebGPURenderer",
+  "review": {
+    "captureDate": null,
+    "counts": {
+      "兰亭路·curb": {
+        "polygons": 1,
+        "vertices": 72
+      },
+      "兰亭路·green": {
+        "polygons": 1,
+        "vertices": 6
+      },
+      "兰亭路·walkway": {
+        "polygons": 1,
+        "vertices": 6
+      },
+      "承晖路·curb": {
+        "polygons": 1,
+        "vertices": 72
+      },
+      "承晖路·green": {
+        "polygons": 1,
+        "vertices": 6
+      },
+      "承晖路·walkway": {
+        "polygons": 1,
+        "vertices": 6
+      }
+    },
+    "frontages": [
+      {
+        "axis": [
+          -2328.767,
+          4126.953,
+          -0.2159403788944448,
+          0.9764065509627246
+        ],
+        "clippedArea": 322.035,
+        "greenArea": 1105.58,
+        "rawArea": 1854.757,
+        "road": "兰亭路",
+        "sourceWayIds": [
+          "way/496891450",
+          "way/496891452"
+        ],
+        "walkwayArea": 427.142
+      },
+      {
+        "axis": [
+          -2572.903,
+          4332.204,
+          0.9763177030876732,
+          0.2163417265291416
+        ],
+        "clippedArea": 83.234,
+        "greenArea": 1132.483,
+        "rawArea": 1714.485,
+        "road": "承晖路",
+        "sourceWayIds": [
+          "way/496891455",
+          "way/496891457"
+        ],
+        "walkwayArea": 498.768
+      }
+    ],
+    "id": "cultural-street-edges-20261115",
+    "limits": "Built aerials support narrow reddish paving, adjacent planted strips and street trees on the gallery/museum road frontage. Hand-traced satellite bands are approximate and clipped against existing carriageways, actual cultural display bodies, other source buildings and reserved surfaces. Existing cultural paving is trimmed around these strips. Paver modules, tree spacing/species and curb height are display estimates. No lane-count, width, entrance or traffic-route correction is claimed; photographs and imagery do not prove current conditions."
+  },
+  "selectedTrees": 37,
+  "vertices": 168
+}

@@ -8,6 +8,7 @@ import {LANDMARK_SITES, ROADS} from '../js/city-config.js';
 import {BUILDING_PHOTO_REFERENCES,reviewedSourceBindings} from '../js/building-photo-references.js';
 import {CULTURAL_HALLS,CULTURAL_IMAGERY,ARCHIVES_ROOF} from '../js/cultural-hall-layout.js';
 import {ART_GALLERY} from '../js/art-gallery-layout.js';
+import {CULTURAL_STREETS} from '../js/cultural-streets-data.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -50,9 +51,11 @@ const roads = ROADS.map((r,index) => {
   const review = BUILDING_PHOTO_REFERENCES.filter(p => p.streetSection?.name === r.name &&
     Math.max(...r.pts.map(p=>p.z)) >= p.streetSection.minZ && Math.min(...r.pts.map(p=>p.z)) <= p.streetSection.maxZ);
   const profile=roadProfiles.get(index);
+  const frontage=CULTURAL_STREETS.frontages.find(f=>f.sourceWayIds.includes(GEO.roadSourceIds[index]));
   return {key:geometryKey(r.name,r.pts),sourceWayId:GEO.roadSourceIds?.[index]||null,name:r.name,kind:r.kind,width:r.w,
-    status:profile?'photo-standard-section-estimate':review.length?'partial-frontage-reference':'not-yet-inventoried',
+    status:profile?'photo-standard-section-estimate':review.length||frontage?'partial-frontage-reference':'not-yet-inventoried',
     ...(profile?{profileReview:profile}:{}),
+    ...(frontage?{frontageReview:{id:CULTURAL_STREETS.reviewId,scope:'partial frontage only; source road geometry and lanes unchanged',frontage,extent:CULTURAL_STREETS.extent,photoPage:CULTURAL_STREETS.photoPage,captureDate:null,limits:CULTURAL_STREETS.limits}}:{}),
     review:review.map(p=>({id:p.id,...p.streetSection})), points:r.pts};
 });
 const paths = GEO.mapPaths.map(p=>({key:geometryKey(p[0],p),name:p[0],status:'not-yet-inventoried',source:p}));

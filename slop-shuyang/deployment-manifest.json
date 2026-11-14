@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-archives-roof",
+  "release": "2026-11-15-cultural-streets",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "885735b4f5cb55eed0f3f4c44a3fb7f50870463d",
+  "sourceCommit": "dce2a66f6c47b12c1c24e26ac9ef9979637fb683",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 378,
+    "nodeTestsPassed": 384,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,13 +17,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 30800,
-      "sha256": "af8c940ab4f4f241a97bc5ed070bc776b36e397ea382daab27f76a5c1f0cbc8c"
+      "bytes": 31000,
+      "sha256": "397638076d00a789c1a7d5427225a43aa4a66fefb697cd045a158d19c3e67867"
     },
     {
       "path": "js/art-gallery-layout.js",
-      "bytes": 6182,
-      "sha256": "07ded77b75df9f69b4391f3715de59a1be91a6c6add39ee38fdafa1604e72792"
+      "bytes": 6259,
+      "sha256": "d327b4940bfc21499ed66851659db8a03437a9c0834ab44d1d88bdef19ba4a12"
     },
     {
       "path": "js/art-gallery.js",
@@ -137,8 +137,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 36292,
-      "sha256": "bd1deacfdf55bf393425356bd33df3c1df948bf01d46f7591d91df7fca07ea84"
+      "bytes": 36535,
+      "sha256": "ccbcde3506e595b1c8ab7f1d133adbdfe800c2f0eddd2f282f0d0adc5ac0dec9"
     },
     {
       "path": "js/civic-campuses.js",
@@ -177,13 +177,28 @@
     },
     {
       "path": "js/cultural-hall-layout.js",
-      "bytes": 5641,
-      "sha256": "dfdc7b659f9cd90537e6e74e76c040530379a0ce25499cbe115c4c08056d42b6"
+      "bytes": 5722,
+      "sha256": "2ab672fbe8124efd3909c22827bb08198687a02e6d21801ea8aaf459fb1f540e"
     },
     {
       "path": "js/cultural-halls.js",
       "bytes": 11710,
       "sha256": "3c1fe71045b2fef5385938898036aea30a3b26b47cb3fd479da23797becf21f3"
+    },
+    {
+      "path": "js/cultural-street-layout.js",
+      "bytes": 1461,
+      "sha256": "a6b640cdc6c00617eddaefb29f5283fdfae56cdc517651d9a555050d653b3e0b"
+    },
+    {
+      "path": "js/cultural-streets-data.js",
+      "bytes": 5492,
+      "sha256": "daf291522ba9581097c6cf2e128a297a0152725123db038e88c1d4704b28266f"
+    },
+    {
+      "path": "js/cultural-streets.js",
+      "bytes": 2265,
+      "sha256": "0ca7f2ac21d37de15e2b106343150aa82900ff472170ae7710d046d59b96f1cb"
     },
     {
       "path": "js/fire-escapes.js",
@@ -242,8 +257,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 29966,
-      "sha256": "db1cd3e3450bcba262e2027707079d02c68b35a8c3283184f088dcfb5be4e8cc"
+      "bytes": 30058,
+      "sha256": "1cccadbc91a964bc13209d66b670d630cd38a7810e66caf3894269d516be4ee2"
     },
     {
       "path": "js/lighting.js",
@@ -347,8 +362,8 @@
     },
     {
       "path": "js/street-details.js",
-      "bytes": 11662,
-      "sha256": "74924fe20c34a0734ef13eec581c3e4d1dc758b16b2be4bf5243d6210a46cd36"
+      "bytes": 12001,
+      "sha256": "0d0218c160c47b6615b0b27f91f6385c224ffd25b6b3e5df6cf6d82f972b3ed7"
     },
     {
       "path": "js/taizhou-corridor-data.js",
