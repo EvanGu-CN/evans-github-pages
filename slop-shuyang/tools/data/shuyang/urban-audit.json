@@ -1,11 +1,11 @@
 {
   "neighborhoods": 147,
-  "associatedBuildings": 3195,
-  "namedSites": 149,
+  "associatedBuildings": 3198,
+  "namedSites": 150,
   "namedSiteKinds": {
     "building": 64,
     "culture": 3,
-    "commercial": 8,
+    "commercial": 9,
     "government": 4,
     "bank": 1,
     "office": 6,
@@ -18,18 +18,18 @@
   },
   "surfaces": {
     "path": 68,
-    "plaza": 4,
+    "plaza": 7,
     "residential-ground": 1,
-    "parking": 4,
-    "green": 2,
+    "parking": 5,
+    "green": 63,
     "sports-ground": 23,
     "soccer": 13,
     "basketball": 8,
-    "running-track": 1,
-    "infield": 2,
-    "court": 8,
-    "sport-paving": 3,
-    "community-path": 12
+    "running-track": 2,
+    "infield": 3,
+    "court": 9,
+    "sport-paving": 4,
+    "community-path": 14
   },
   "barriers": 0,
   "snapshots": {

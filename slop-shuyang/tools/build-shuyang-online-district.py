@@ -82,6 +82,14 @@ def main():
         output={k:v for k,v in campus.items() if k not in ('pixels','gatePixels')}
         output.update(boundary=[convert(p) for p in campus['pixels']],gate=convert(campus['gatePixels']))
         (DATA/'reviewed-mengxi-campus.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    school=data.get('shiyanCampus')
+    if school:
+        _,convert=projection(refs[school['referenceId']])
+        output={k:v for k,v in school.items() if k not in ('pixels','gatePixels','secondaryGatePixels','fountainPixels','plazaCenterPixels')}
+        output.update(boundary=[convert(p) for p in school['pixels']],gate=convert(school['gatePixels']),
+            secondaryGate=convert(school['secondaryGatePixels']),
+            fountain=convert(school['fountainPixels']),plazaCenter=convert(school['plazaCenterPixels']))
+        (DATA/'reviewed-shiyan-campus.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (DATA/'online-reviewed-context.json').write_text(json.dumps({'reference':ref,'additionalReferences':data.get('additionalReferences',[]),
         'neighborhoods':contexts,'workersPalaceRoofPanel':panel,'huachenWesternTowers':tower_model},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps({'onlineCandidates':len(features),'onlineContexts':len(contexts),'imageAcquired':None}))

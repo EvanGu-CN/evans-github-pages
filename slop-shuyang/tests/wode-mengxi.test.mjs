@@ -44,16 +44,23 @@ test('Mengxi red apron retains the green field hole without duplicate old generi
   assert.ok(ss.some(s=>s.kind==='infield'));assert.ok(ss.some(s=>s.kind==='court'));
   for(const id of ['way/497849393','way/1371978223'])assert.equal(GEO.urban.surfaces.some(s=>s.id===id),false);
   for(const s of ss){assert.equal(s.imageAcquired,null);assert.equal(s.referenceId,'amap-wode-rtmart-20261113');}
-  const wode=GEO.urban.surfaces.filter(s=>s.sourceSiteId==='way/1321791085');assert.equal(wode.length,6);
+  const wode=GEO.urban.surfaces.filter(s=>s.sourceSiteId==='way/1321791085');
   assert.equal(wode.filter(s=>s.kind==='community-path').length,4);
-  assert.ok(wode.some(s=>s.kind==='green'));assert.ok(wode.some(s=>s.kind==='plaza'&&s.polygons.some(p=>p.holes.length)));
+  assert.ok(wode.some(s=>s.kind==='green'&&!s.id.startsWith('reviewed/wode/perimeter-')));
+  assert.equal(wode.filter(s=>s.id.startsWith('reviewed/wode/perimeter-')&&s.kind==='green').length,4,'the four boundary planting belts join the estate ground');
+  assert.ok(wode.length>=10);
+  assert.ok(wode.some(s=>s.kind==='plaza'&&s.polygons.some(p=>p.holes.length)));
 });
 
-test('four additional community photo references preserve identity uncertainty and do not invent gate placements',()=>{
-  for(const name of ['沃德嘉园','颖都家园','天下景城','苏通花苑']){
+test('community photo references keep uncertain entrances unlocated while the located Sutong west gate stays evidence-based',()=>{
+  for(const name of ['沃德嘉园','颖都家园','天下景城']){
     const c=COMMUNITY_DETAILS.communities.find(c=>c.name===name);assert.ok(c.photo?.referenceOnly);assert.equal(c.gate,undefined);assert.equal(c.photo.date,'未注明');
   }
   assert.equal(COMMUNITY_DETAILS.communities.find(c=>c.name==='沃德嘉园').photo.identityVisible,false);
+  // 苏通花苑西门：2026-11 街景把胡记水饺(苏通花园34幢)与大润发东端立体车库同框，门址钉在 way/1321791101 西边界；坐标为近似，不再当作无门址参考。
+  const sutong=COMMUNITY_DETAILS.communities.find(c=>c.name==='苏通花苑');
+  assert.equal(sutong.photo.model,'sutongWest');assert.ok(sutong.gate);assert.equal(sutong.photo.date,'未注明');
+  assert.match(sutong.photo.placementNote,/近似/);assert.equal(sutong.photo.referenceOnly,undefined);
 });
 
 test('Mengxi model uses six source bodies while its entrance leaves the central ground passage clear',()=>{

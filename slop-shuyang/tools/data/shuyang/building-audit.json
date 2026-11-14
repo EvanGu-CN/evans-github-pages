@@ -5,30 +5,30 @@
     118.81089691678638,
     34.150204921590976
   ],
-  "buildings": 7728,
+  "buildings": 7741,
   "sources": {
     "Overture": 6133,
     "OSM": 1425,
-    "ReviewedImagery": 170
+    "ReviewedImagery": 183
   },
   "heightSources": {
-    "estimate": 2462,
+    "estimate": 2475,
     "cnbh-raster": 5265,
     "osm-height": 1
   },
   "categories": {
-    "unknown": 3583,
-    "residential": 3553,
-    "industrial": 312,
+    "unknown": 3586,
+    "residential": 3555,
+    "industrial": 314,
     "civic": 18,
-    "commercial": 234,
-    "office": 8,
-    "house": 20
+    "commercial": 236,
+    "house": 24,
+    "office": 8
   },
   "filters": {
     "tiny-or-invalid": 87,
     "overture-osm-duplicate": 1425,
-    "reviewed-existing-duplicate": 50
+    "reviewed-existing-duplicate": 55
   },
   "courtyards": 4,
   "overture": {
@@ -191,12 +191,152 @@
         "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
         "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
         "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+      },
+      {
+        "id": "amap-shiyan-core-20261113",
+        "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T07:15:00Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard+satellite",
+        "size": [
+          3328,
+          2816
+        ],
+        "mapOffset": [
+          0,
+          0
+        ],
+        "screenshotSize": [
+          3328,
+          2816
+        ],
+        "bounds": {
+          "southWest": [
+            118.7677001953125,
+            34.129994745824774
+          ],
+          "northEast": [
+            118.78555297851562,
+            34.14249823152873
+          ]
+        },
+        "standardImage": "reference/shixiao-amap-standard-z18.jpg",
+        "satelliteImage": "reference/shixiao-amap-satellite-z18.jpg",
+        "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; campus POI area and water mask calibrated against OSM/WGS84 source footprints (best water-mask IoU 0.588 at -4px x, 0px y); whole silhouettes cross-checked between standard and satellite layers.",
+        "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Ground outlines are display estimates, not cadastral boundaries or measured heights. Local visual review only; tiles are not redistributed as project assets."
+      },
+      {
+        "id": "amap-core-retail-20261113",
+        "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T08:40:00Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard+satellite",
+        "size": [
+          3328,
+          2816
+        ],
+        "mapOffset": [
+          0,
+          0
+        ],
+        "screenshotSize": [
+          3328,
+          2816
+        ],
+        "bounds": {
+          "southWest": [
+            118.77044677734375,
+            34.120900139826965
+          ],
+          "northEast": [
+            118.78829956054688,
+            34.13340497084095
+          ]
+        },
+        "standardImage": "reference/core-amap-standard-z18.jpg",
+        "satelliteImage": "reference/core-amap-satellite-z18.jpg",
+        "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; project source footprints cross-checked against the standard-map building fill (best IoU 0.399 at -5/+5 px, about 3 m, below single-roof reading error, so no extra translation applied).",
+        "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Paving extents are display approximations, not cadastral boundaries. Local visual review only; tiles are not redistributed as project assets."
+      },
+      {
+        "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T09:10:00Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard+satellite",
+        "size": [
+          3840,
+          3328
+        ],
+        "mapOffset": [
+          0,
+          0
+        ],
+        "bounds": {
+          "southWest": [
+            118.7677001953125,
+            34.10498222546687
+          ],
+          "northEast": [
+            118.78829956054688,
+            34.119763245290784
+          ]
+        },
+        "standardImage": "reference/rtmart-amap-standard-z18.jpg",
+        "satelliteImage": "reference/rtmart-amap-satellite-z18.jpg",
+        "limitations": "Zoom 18 only; provider has no usable zoom-19 satellite at this location. Acquisition date unknown.",
+        "id": "amap-rtmart-20261113",
+        "screenshotSize": [
+          3840,
+          3328
+        ],
+        "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; source footprints cross-checked against the standard map and satellite."
+      },
+      {
+        "id": "amap-bayi-20261113",
+        "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+        "coordinates": "GCJ-02",
+        "queriedAt": "2026-11-13T13:55:00Z",
+        "imageAcquired": null,
+        "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+        "layer": "standard+satellite",
+        "size": [
+          3328,
+          3328
+        ],
+        "mapOffset": [
+          0,
+          0
+        ],
+        "screenshotSize": [
+          3328,
+          3328
+        ],
+        "bounds": {
+          "southWest": [
+            118.76358032226562,
+            34.131131502784406
+          ],
+          "northEast": [
+            118.78143310546875,
+            34.14590795200977
+          ]
+        },
+        "standardImage": "reference/bayi-amap-standard-z18.jpg",
+        "satelliteImage": "reference/bayi-amap-satellite-z18.jpg",
+        "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; standard-map building fills cross-checked against the satellite mosaic and reviewed one by one. Fills that differ from an existing project source only by a few metres of source offset describe the same building and are not duplicated.",
+        "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Outlines are map building fills simplified to 1.5 px, not cadastral boundaries or measured footprints. Heights are type-based display estimates. Local visual review only; tiles are not redistributed as project assets."
       }
     ],
-    "traceSha256": "2028db1997d654462efc3332817dc8b3dfb9f6e9dd4f6347d9ca9b5fc6115da5",
-    "observedCandidates": 220,
-    "acceptedBuildings": 170,
-    "deduplicatedAgainstExisting": 50,
+    "traceSha256": "69829cc44de7c12dc7994c0582286f69ffee4de4afbcbf30808472af632a18f1",
+    "observedCandidates": 238,
+    "acceptedBuildings": 183,
+    "deduplicatedAgainstExisting": 55,
     "decisions": [
       {
         "traceId": "reviewed/wuyue/shengyuan/001",
@@ -1851,6 +1991,151 @@
         "traceId": "reviewed/online/wode-rtmart/roof-174",
         "status": "accepted",
         "areaM2": 126.0
+      },
+      {
+        "traceId": "reviewed/online/bayi/sales-office",
+        "status": "accepted",
+        "areaM2": 479.2
+      },
+      {
+        "traceId": "reviewed/online/bayi/sales-annex",
+        "status": "accepted",
+        "areaM2": 527.6
+      },
+      {
+        "traceId": "reviewed/online/bayi/west-edge-shed",
+        "status": "accepted",
+        "areaM2": 226.9
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/sheds",
+        "status": "accepted",
+        "areaM2": 2039.0
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-a",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1018.9,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "ed7402e8-7c82-45d4-9c53-c456a75d8d8f",
+            "sourceAreaM2": 36.6,
+            "intersectionM2": 36.6
+          },
+          {
+            "sourceId": "e783207f-1341-41db-b3f9-9f674e2d6cb9",
+            "sourceAreaM2": 32.0,
+            "intersectionM2": 32.0
+          },
+          {
+            "sourceId": "b914ef56-d418-49a4-984c-9619efbf6f68",
+            "sourceAreaM2": 53.9,
+            "intersectionM2": 13.4
+          },
+          {
+            "sourceId": "e6c7a6d8-19d5-4907-ba8a-4780412a5c03",
+            "sourceAreaM2": 27.6,
+            "intersectionM2": 13.3
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-b",
+        "status": "accepted",
+        "areaM2": 512.5
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-c",
+        "status": "accepted",
+        "areaM2": 440.8
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-d",
+        "status": "accepted",
+        "areaM2": 277.2
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-e",
+        "status": "accepted",
+        "areaM2": 209.1
+      },
+      {
+        "traceId": "reviewed/online/dengyuan/house-f",
+        "status": "rejected-overlap",
+        "observedAreaM2": 427.8,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "6003bef6-2793-40e0-8768-c76878fe7d62",
+            "sourceAreaM2": 37.0,
+            "intersectionM2": 36.8
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/bayi/north-shed",
+        "status": "accepted",
+        "areaM2": 200.5
+      },
+      {
+        "traceId": "reviewed/online/bayi/north-shed-2",
+        "status": "accepted",
+        "areaM2": 170.4
+      },
+      {
+        "traceId": "reviewed/online/kindergarten/classroom",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1290.2,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "1afbcd46-9203-4044-9f11-8a248d39825b",
+            "sourceAreaM2": 114.4,
+            "intersectionM2": 63.9
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/kindergarten/main",
+        "status": "rejected-overlap",
+        "observedAreaM2": 1569.6,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "way/995943280",
+            "sourceAreaM2": 264.8,
+            "intersectionM2": 230.5
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/ziwu/south-shop",
+        "status": "accepted",
+        "areaM2": 364.9
+      },
+      {
+        "traceId": "reviewed/online/ziwu/south-shop-2",
+        "status": "rejected-overlap",
+        "observedAreaM2": 377.7,
+        "reason": "Overlap exceeds 20 percent of smaller footprint; existing source retained.",
+        "conflicts": [
+          {
+            "sourceId": "61aa2074-19c2-4a2c-891e-5278b6f7a47f",
+            "sourceAreaM2": 120.5,
+            "intersectionM2": 66.1
+          }
+        ]
+      },
+      {
+        "traceId": "reviewed/online/ziwu/east-shed",
+        "status": "accepted",
+        "areaM2": 123.8
+      },
+      {
+        "traceId": "reviewed/online/runyang/row",
+        "status": "accepted",
+        "areaM2": 878.6
       }
     ]
   },

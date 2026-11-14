@@ -1,0 +1,19 @@
+{
+  "modelBoxes": 39,
+  "instancedGroups": 11,
+  "meshRecords": 22,
+  "sourceBodies": [
+    17.2
+  ],
+  "maxModelTopM": 17.92,
+  "collidingDetailBoxes": 0,
+  "neighbourOverlap": [],
+  "forecourtAreaM2": 5190.4,
+  "forecourtOverlapWithMallM2": 0.7,
+  "parkingLines": 35,
+  "parkingLinesOffSurface": [],
+  "arcOutsideSourceM": 0.87,
+  "newBuildingRecords": 0,
+  "sourceRecords": 7741,
+  "note": "Model elements come from model-elements.json (stubbed three.js recording). Overlap 0 means no source building other than RT-Mart is touched; the arc is an intentional display fillet outside the source chamfer."
+}

@@ -753,13 +753,22 @@
       "photo": {
         "date": "未注明",
         "credit": "高德地图地点照片 / 原作者",
-        "model": "referenceOnly",
-        "referenceOnly": true,
+        "model": "sutongWest",
         "street": "苏州西路",
-        "image": "https://store.is.autonavi.com/showpic/5472b8ff9d656443059c4dac98065591",
+        "image": "https://store.is.autonavi.com/showpic/280e399033f6ceb7fdd8f9a56cd7b734",
         "page": "https://www.amap.com/place/B020F0IJ7U",
-        "caption": "可读苏通花苑题名的平直雨棚和浅黄色住宅实拍；门址未独立定位，不生成猜测门楼。",
-        "placementNote": "仅作身份与外观参考，尚未定位门址，不生成门楼。"
+        "caption": "苏通花苑西门与大润发东端立体车库同框（右侧灰色格栅与竖向灯箱），左侧胡记水饺(苏通花园34幢)商铺；拍摄日未注明，用于核对东端车库与服务车道关系。门址钉在 way/1321791101 西边界的服务车道交点，坐标为近似。",
+        "placementNote": "门型参考实拍；门址近似设于来源服务道路与小区边界交点，照片与该门点未独立绑定。"
+      },
+      "gate": {
+        "x": -44.6,
+        "z": 1650.0,
+        "heading": -1.5708,
+        "width": 6,
+        "roadId": "way/1321791101",
+        "accessKind": "service",
+        "streetDistance": 76.8,
+        "placementSource": "pinned on the way/1321791101 west boundary from the 2026-11 street photo, approximate coordinates"
       }
     },
     {
@@ -1948,7 +1957,7 @@
     {
       "id": "way/1372587263",
       "name": "朝阳新城",
-      "buildingCount": 12,
+      "buildingCount": 13,
       "access": [],
       "photoStatus": "not-yet-reviewed",
       "mapContext": {
@@ -4391,8 +4400,8 @@
     },
     {
       "id": "way/1456635004",
-      "name": "八一·文殊院",
-      "buildingCount": 18,
+      "name": "八一·文枢院",
+      "buildingCount": 20,
       "access": [],
       "photoStatus": "not-yet-reviewed",
       "mapContext": {
@@ -6233,7 +6242,7 @@
     "mappedAccessCrossings": 26,
     "withMappedAccess": 14,
     "reviewedPhotos": 18,
-    "placedPhotoReferences": 4,
+    "placedPhotoReferences": 5,
     "withMapPhotoCandidates": 127
   }
 }

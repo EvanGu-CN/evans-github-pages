@@ -77,6 +77,18 @@ function buildCommunityEntrances(scene){
       name(g,'东方明珠城',x,1.9,1.37,7.3,'#a63c32');
       for(let k=0;k<18;k++)box(g,gate,M.metal,x-4.3-k*.4,.3,-.7,.065,1.6,.065,false);
       box(g,gate,M.metal,x-7.5,1.7,-.7,7,.08,.08,false);
+    }else if(record.photo.model==='sutongWest'){
+      // West gate on the service drive next to the RT-Mart east parking garage:
+      // grey piers, pale-grey beam with gold 苏通花苑 lettering, red-brown upper
+      // frame and a white gatehouse with a green stripe (2026-11 street photo).
+      for(const x of [-gap/2-1.2,gap/2+1.2])box(g,gate,M.stone,x,.2,0,1.7,5.4,1.7);
+      box(g,gate,M.pale,0,5.2,0,gap+5.2,1.15,1.9);
+      box(g,gate,M.red,0,6.35,0,gap+4.2,.42,1.55,false);
+      for(let x=-gap/2;x<=gap/2+.01;x+=1.35)box(g,gate,M.red,x,6.95,0,.16,.85,1.35,false);
+      name(g,'苏通花苑',0,5.35,1.02,7.4,'#c8a24a');
+      box(g,gate,M.pale,gap/2-2.4,.2,1.5,3.4,3.1,3.0);
+      box(g,gate,M.glass,gap/2-2.4,1.05,3.05,2.6,1.5,.09,false);
+      box(g,gate,M.green,gap/2-2.4,2.55,3.08,2.9,.42,.12,false);
     }
   }
   root.userData.audit=COMMUNITY_DETAILS.audit;scene.add(root);return {group:root,colliders};

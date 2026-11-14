@@ -49,51 +49,6 @@ export function buildPhotoLandmarks({ ctxFor, box, cyl, sign, M, sourceBody }) {
   };
 
   {
-    const c = ctxFor('大润发');
-    if (c) {
-      c.g.userData.photoBasis = 'OSM way/497798167; 2009-12-13 historical Shanghai South Road RT-Mart photo; current facade unverified';
-      const whiteGrey = standard(0xd9dcd8);
-      const orange = standard(0xc98532);
-      const greyGlass = standard(0x697c83, { metalness: 0.55, roughness: 0.23, side: THREE.DoubleSide });
-      sourceBody(c, whiteGrey, 17);
-      // Historical reference only: a simple white/grey retail box, orange
-      // bands and a glazed round corner. Do not borrow the Wuyue tenant facade.
-      const a = [-185.8 - c.s.x, 1614.5 - c.s.z];
-      const b = [-200.3 - c.s.x, 1702.5 - c.s.z];
-      for (const y of [0.5, 7.1, 12]) panel(c, greyGlass, a, b, y, y < 1 ? 3.5 : 2.8);
-      for (let i = 0; i <= 12; i++) {
-        const t = i / 12, x = a[0] + (b[0] - a[0]) * t, z = a[1] + (b[1] - a[1]) * t;
-        beam(c, whiteGrey, [x, 0.4, z], [x, 16.2, z], 0.15);
-      }
-      const cornerX = -188.6 - c.s.x, cornerZ = 1700.2 - c.s.z, radius = 12;
-      const arcPoint = (theta, y, r = radius) => [cornerX + Math.cos(theta) * r, y, cornerZ + Math.sin(theta) * r];
-      const arc = (material, y, h, r = radius) => {
-        const positions = [], indices = [], n = 16;
-        for (let i = 0; i <= n; i++) {
-          const angle = Math.PI / 2 + i * Math.PI / (2 * n);
-          positions.push(...arcPoint(angle, y, r), ...arcPoint(angle, y + h, r));
-          if (i < n) indices.push(i * 2, i * 2 + 1, i * 2 + 2, i * 2 + 1, i * 2 + 3, i * 2 + 2);
-        }
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        geometry.setIndex(indices);
-        geometry.computeVertexNormals();
-        addMesh(c, geometry, material, '大润发·历史照片圆弧玻璃角部');
-      };
-      arc(greyGlass, 0.4, 16.5);
-      for (const y of [4.1, 8.6, 13.1, 16]) arc(orange, y, 0.85, radius + 0.13);
-      for (let i = 0; i <= 6; i++) {
-        const angle = Math.PI / 2 + i * Math.PI / 12;
-        beam(c, P.silver, arcPoint(angle, 0.4, radius + 0.18), arcPoint(angle, 16.8, radius + 0.18), 0.07);
-      }
-      box(c, whiteGrey, -70, 4.1, 10, 5, 0.55, 27, { collide: false });
-      sign(c, '大润发 RT-Mart', -68.8, 18.4, -8, 36, 2.8, -Math.PI / 2, '#d9dcd8', '#b21926');
-      sign(c, 'RT-Mart　欢迎光临', -72.6, 4.25, 10, 25, 1.5, -Math.PI / 2, '#f1f1e9', '#b21926');
-      built.push('大润发');
-    }
-  }
-
-  {
     const c = ctxFor('吾悦广场');
     if (c) {
       c.g.userData.photoBasis = 'OSM way/1372583929; wuyue-day/night and Amap exterior photos';

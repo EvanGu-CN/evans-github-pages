@@ -566,6 +566,12 @@ async function initApp() {
   });
   const openMapBtn = document.getElementById('btn-open-map');
   if (openMapBtn) openMapBtn.addEventListener('click', () => mapSystem.toggleFullMap(true));
+  // Local demo deep link: ?tp=<landmarkId> starts the scene at that landmark.
+  const startAt = new URLSearchParams(location.search).get('tp');
+  if (startAt && TELEPORT_LOCATIONS[startAt]) {
+    const loc = TELEPORT_LOCATIONS[startAt];
+    requestAnimationFrame(() => teleportTo(loc.x, loc.z, loc.heading));
+  }
   installLandmarkGallery({
     onTeleport:teleportTo,
     onOpen:()=>{closePopovers();controllerManager.resetInput();touchControls.setEnabled(false);gamepadControls.setEnabled(false)},

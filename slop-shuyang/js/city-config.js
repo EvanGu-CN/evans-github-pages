@@ -244,7 +244,8 @@ LANDMARK_SITES['中央城市广场'].h = 147.15;
 LANDMARK_SITES['沭阳县政府'].h = 64;
 // Legacy identifiers remain compatible; visible names now refer to verified places.
 LANDMARK_SITES['老沭棉厂文创街区'] = LANDMARK_SITES['老服装厂城市休闲街区'];
-LANDMARK_SITES['大润发'].front = {x:-1,z:0};
+LANDMARK_SITES['大润发'].front = {x:0,z:-1};
+LANDMARK_SITES['大润发'].arrive = 105;
 LANDMARK_SITES['吾悦广场'].front = {x:-1,z:0};
 LANDMARK_SITES['吾悦广场'].viewTarget = {x:1856,z:2688};
 LANDMARK_SITES['吾悦广场'].arrive = 130;
@@ -258,6 +259,9 @@ LANDMARK_SITES['沭阳站'].arrive = 135;
 LANDMARK_SITES['万豪商务大厦'].front={x:0,z:-1};
 LANDMARK_SITES['万豪商务大厦'].arrive=190;
 LANDMARK_SITES['久盛百货'].front={x:-.5,z:.866};
+// 核心商圈两处入口细节较多，落点拉近到 100-120 m，避免细节被距离吃掉。
+LANDMARK_SITES['中央城市广场'].arrive=110;
+LANDMARK_SITES['蓝天国际商贸城'].arrive=120;
 
 // 地图、传送与街角标识用的地标（id 与 index.html 的传送按钮一致）
 const LANDMARKS = [
@@ -280,7 +284,8 @@ const LANDMARKS = [
   ['mengxi', '江苏省沭阳梦溪中学', '梦溪中学', '苏州西路3号'],
   ['wanhao', '万豪商务大厦', '万豪大厦', '苏州西路'],
   ['jiusheng', '久盛百货', '久盛百货', '人民中路'],
-  ['workersPalace','沭阳县工人文化宫（新馆）','工人文化宫','五里健身公园 · 永安路']
+  ['workersPalace','沭阳县工人文化宫（新馆）','工人文化宫','五里健身公园 · 永安路'],
+  ['shiyan','沭阳实验小学','实验小学','公园路11号 · 城北公园西侧']
 ].map(([id, name, short, district]) => {
   const s = LANDMARK_SITES[name];
   return { id, name, short, district, x: s.x, z: s.z, w: s.w, d: s.d, h: s.h, kind: s.kind, model: s.model };

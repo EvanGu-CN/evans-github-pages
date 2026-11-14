@@ -51,8 +51,10 @@ test('every selectable landmark has an attributed public photograph and source p
       assert.ok(p.caption.length && p.credit.length);
     }
   }
-  assert.match(LANDMARK_REFERENCES.rtmart.note, /历史/);
-  assert.match(LANDMARK_REFERENCES.rtmart.photos[0].caption, /2009/);
+  assert.match(LANDMARK_REFERENCES.rtmart.note, /2009/);
+  assert.match(LANDMARK_REFERENCES.rtmart.note, /2024/);
+  assert.ok(LANDMARK_REFERENCES.rtmart.photos.some(p => /2009/.test(p.caption)));
+  assert.match(LANDMARK_REFERENCES.rtmart.photos[0].caption, /2024/);
 });
 
 test('name corrections retain the north river sculpture and current factory district locations', () => {

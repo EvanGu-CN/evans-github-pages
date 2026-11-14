@@ -1,0 +1,2054 @@
+TAP version 13
+# Subtest: the neighbourhood name is the corrected 八一·文枢院 with the tagged spelling searchable
+ok 1 - the neighbourhood name is the corrected 八一·文枢院 with the tagged spelling searchable
+  ---
+  duration_ms: 1.1378
+  type: 'test'
+  ...
+# Subtest: the district only overlays the 八一·文枢院 source footprints and invents no building
+ok 2 - the district only overlays the 八一·文枢院 source footprints and invents no building
+  ---
+  duration_ms: 2.7391
+  type: 'test'
+  ...
+# Subtest: every row carries a white parapet ring and dark rooftop cores, tanks and solar panels
+ok 3 - every row carries a white parapet ring and dark rooftop cores, tanks and solar panels
+  ---
+  duration_ms: 0.2472
+  type: 'test'
+  ...
+# Subtest: balconies only appear above the ground floor on sun-facing rows
+ok 4 - balconies only appear above the ground floor on sun-facing rows
+  ---
+  duration_ms: 1.5374
+  type: 'test'
+  ...
+# Subtest: shopfronts only face 公园西路 and their sign quads stand vertical
+ok 5 - shopfronts only face 公园西路 and their sign quads stand vertical
+  ---
+  duration_ms: 0.4728
+  type: 'test'
+  ...
+# Subtest: the south gate and the sales-office forecourt carry the estate nameplate
+ok 6 - the south gate and the sales-office forecourt carry the estate nameplate
+  ---
+  duration_ms: 0.3337
+  type: 'test'
+  ...
+# Subtest: every mesh vertex is finite and stays inside the estate envelope
+ok 7 - every mesh vertex is finite and stays inside the estate envelope
+  ---
+  duration_ms: 48.7717
+  type: 'test'
+  ...
+# Subtest: city module preloads start after the import map and before stylesheets
+ok 8 - city module preloads start after the import map and before stylesheets
+  ---
+  duration_ms: 0.9153
+  type: 'test'
+  ...
+# Subtest: native module entry and imports share canonical preloaded URLs on GitHub Pages
+ok 9 - native module entry and imports share canonical preloaded URLs on GitHub Pages
+  ---
+  duration_ms: 31.9937
+  type: 'test'
+  ...
+# Subtest: concavities and courtyards stay open for points, people and car-sized boxes
+ok 10 - concavities and courtyards stay open for points, people and car-sized boxes
+  ---
+  duration_ms: 2.0556
+  type: 'test'
+  ...
+# Subtest: rectangle overlap detects crossing walls, enclosing outlines and rotated corners
+ok 11 - rectangle overlap detects crossing walls, enclosing outlines and rotated corners
+  ---
+  duration_ms: 0.361
+  type: 'test'
+  ...
+# Subtest: circles resolve against actual corners and courtyard walls
+ok 12 - circles resolve against actual corners and courtyard walls
+  ---
+  duration_ms: 0.6849
+  type: 'test'
+  ...
+# Subtest: a repeated closing point produces a finite circle contact at that vertex
+ok 13 - a repeated closing point produces a finite circle contact at that vertex
+  ---
+  duration_ms: 0.1834
+  type: 'test'
+  ...
+# Subtest: car contacts clear the whole outline without triangle seams at any heading
+ok 14 - car contacts clear the whole outline without triangle seams at any heading
+  ---
+  duration_ms: 244.2498
+  type: 'test'
+  ...
+# Subtest: grazing walls, tight two-wall corners and degenerate polygons never produce NaN or through-wall pushes
+ok 15 - grazing walls, tight two-wall corners and degenerate polygons never produce NaN or through-wall pushes
+  ---
+  duration_ms: 1.723
+  type: 'test'
+  ...
+# Subtest: acoustic rays measure occupied wall thickness, leaving courtyards open
+ok 16 - acoustic rays measure occupied wall thickness, leaving courtyards open
+  ---
+  duration_ms: 0.45
+  type: 'test'
+  ...
+# Subtest: road queries preserve the open area inside concave and courtyard bounds
+ok 17 - road queries preserve the open area inside concave and courtyard bounds
+  ---
+  duration_ms: 5.2897
+  type: 'test'
+  ...
+# Subtest: listeners in a courtyard hear nearby voices but remain sheltered by its walls
+ok 18 - listeners in a courtyard hear nearby voices but remain sheltered by its walls
+  ---
+  duration_ms: 2.0497
+  type: 'test'
+  ...
+# Subtest: touching a small landmark wing preserves the rest of a real source building
+ok 19 - touching a small landmark wing preserves the rest of a real source building
+  ---
+  duration_ms: 6.2726
+  type: 'test'
+  ...
+# Subtest: rotated or concave colliders use their polygon instead of deleting the full bounding box
+ok 20 - rotated or concave colliders use their polygon instead of deleting the full bounding box
+  ---
+  duration_ms: 0.834
+  type: 'test'
+  ...
+# Subtest: courtyard holes remain open, while fully replaced buildings are counted explicitly
+ok 21 - courtyard holes remain open, while fully replaced buildings are counted explicitly
+  ---
+  duration_ms: 1.7765
+  type: 'test'
+  ...
+# Subtest: source-footprint bodies do not erase neighbouring records and low paving is not a building cutter
+ok 22 - source-footprint bodies do not erase neighbouring records and low paving is not a building cutter
+  ---
+  duration_ms: 0.2755
+  type: 'test'
+  ...
+# Subtest: roof accessories remain supported on rotated, concave and courtyard footprints
+ok 23 - roof accessories remain supported on rotated, concave and courtyard footprints
+  ---
+  duration_ms: 26.6267
+  type: 'test'
+  ...
+# Subtest: a small courtyard enclosed by all four accessory corners still blocks placement
+ok 24 - a small courtyard enclosed by all four accessory corners still blocks placement
+  ---
+  duration_ms: 0.8339
+  type: 'test'
+  ...
+# Subtest: party walls block cornices and storefronts while exposed walls keep their details
+ok 25 - party walls block cornices and storefronts while exposed walls keep their details
+  ---
+  duration_ms: 8.143
+  type: 'test'
+  ...
+# Subtest: roof accessories avoid a taller overlapping building section
+ok 26 - roof accessories avoid a taller overlapping building section
+  ---
+  duration_ms: 5.721
+  type: 'test'
+  ...
+# Subtest: non-retail buildings lose shop awnings but retain rooftop details
+ok 27 - non-retail buildings lose shop awnings but retain rooftop details
+  ---
+  duration_ms: 9.7
+  type: 'test'
+  ...
+# Subtest: seeded decoration is deterministic, bounded and leaves surveyed geometry untouched
+ok 28 - seeded decoration is deterministic, bounded and leaves surveyed geometry untouched
+  ---
+  duration_ms: 5.7104
+  type: 'test'
+  ...
+# Subtest: raised source footprints preserve clearance and source floor counts
+ok 29 - raised source footprints preserve clearance and source floor counts
+  ---
+  duration_ms: 3.5456
+  type: 'test'
+  ...
+# Subtest: commercial courtyards and non-street walls never inherit shopfronts
+ok 30 - commercial courtyards and non-street walls never inherit shopfronts
+  ---
+  duration_ms: 0.5165
+  type: 'test'
+  ...
+# Subtest: arbitrary wall angles preserve dimensions, outward normals and facade attributes
+ok 31 - arbitrary wall angles preserve dimensions, outward normals and facade attributes
+  ---
+  duration_ms: 1.1143
+  type: 'test'
+  ...
+# Subtest: courtyard walls face the hole and pass the hole to roof triangulation
+ok 32 - courtyard walls face the hole and pass the hole to roof triangulation
+  ---
+  duration_ms: 0.5606
+  type: 'test'
+  ...
+# Subtest: roof and wall triangle winding matches their normals, including closed rings
+ok 33 - roof and wall triangle winding matches their normals, including closed rings
+  ---
+  duration_ms: 0.624
+  type: 'test'
+  ...
+# Subtest: nearby buildings share a merged batch while distant chunks reuse its pipeline
+ok 34 - nearby buildings share a merged batch while distant chunks reuse its pipeline
+  ---
+  duration_ms: 0.3657
+  type: 'test'
+  ...
+# Subtest: hipped roof has a real ridge within the recorded total height and outward-facing slopes
+ok 35 - hipped roof has a real ridge within the recorded total height and outward-facing slopes
+  ---
+  duration_ms: 1.1128
+  type: 'test'
+  ...
+# Subtest: non-retail fronts keep their own treatment without changing courtyards or party walls
+ok 36 - non-retail fronts keep their own treatment without changing courtyards or party walls
+  ---
+  duration_ms: 1.9289
+  type: 'test'
+  ...
+# Subtest: adjoining masonry walls are blank above lower roofs without adding triangles
+ok 37 - adjoining masonry walls are blank above lower roofs without adding triangles
+  ---
+  duration_ms: 1.3441
+  type: 'test'
+  ...
+# Subtest: partial contacts and architectural props do not remove street-facing windows
+ok 38 - partial contacts and architectural props do not remove street-facing windows
+  ---
+  duration_ms: 0.8619
+  type: 'test'
+  ...
+# Subtest: party-wall sign clearance uses the tallest neighbor and leaves courtyard windows
+ok 39 - party-wall sign clearance uses the tallest neighbor and leaves courtyard windows
+  ---
+  duration_ms: 1.1814
+  type: 'test'
+  ...
+# Subtest: the compressed survey retains every footprint and quantized dimension
+ok 40 - the compressed survey retains every footprint and quantized dimension
+  ---
+  duration_ms: 186.3622
+  type: 'test'
+  ...
+# Subtest: survey buildings sit inside the Shuyang city frame
+ok 41 - survey buildings sit inside the Shuyang city frame
+  ---
+  duration_ms: 2.9092
+  type: 'test'
+  ...
+# Subtest: building data reports HTTP and gzip failures
+ok 42 - building data reports HTTP and gzip failures
+  ---
+  duration_ms: 3.1489
+  type: 'test'
+  ...
+# Subtest: a stale binary with a valid format and count cannot silently mix with another geography version
+ok 43 - a stale binary with a valid format and count cannot silently mix with another geography version
+  ---
+  duration_ms: 102.3816
+  type: 'test'
+  ...
+# Subtest: building data rejects damaged headers, truncated streams and trailing bytes
+ok 44 - building data rejects damaged headers, truncated streams and trailing bytes
+  ---
+  duration_ms: 313.3893
+  type: 'test'
+  ...
+# Subtest: named multi-storey photo palettes do not recolour unverified towers or other building uses
+ok 45 - named multi-storey photo palettes do not recolour unverified towers or other building uses
+  ---
+  duration_ms: 1.2465
+  type: 'test'
+  ...
+# Subtest: high residential blocks keep housing facades regardless of seed or height
+ok 46 - high residential blocks keep housing facades regardless of seed or height
+  ---
+  duration_ms: 0.3474
+  type: 'test'
+  ...
+# Subtest: tagged offices, factories and public buildings use distinct facade proportions
+ok 47 - tagged offices, factories and public buildings use distinct facade proportions
+  ---
+  duration_ms: 0.2565
+  type: 'test'
+  ...
+# Subtest: buildings in the same named community share a residential facade variant
+ok 48 - buildings in the same named community share a residential facade variant
+  ---
+  duration_ms: 0.198
+  type: 'test'
+  ...
+# Subtest: UI touches neither move nor release an active canvas orbit
+ok 49 - UI touches neither move nor release an active canvas orbit
+  ---
+  duration_ms: 5.4135
+  type: 'test'
+  ...
+# Subtest: two canvas touches pinch without orbiting and one remaining touch resumes smoothly
+ok 50 - two canvas touches pinch without orbiting and one remaining touch resumes smoothly
+  ---
+  duration_ms: 1.3318
+  type: 'test'
+  ...
+# Subtest: extra fingers are ignored and coincident pinch points keep zoom finite
+ok 51 - extra fingers are ignored and coincident pinch points keep zoom finite
+  ---
+  duration_ms: 1.34
+  type: 'test'
+  ...
+# Subtest: pointercancel ends capture without a stuck drag or jump on the next gesture
+ok 52 - pointercancel ends capture without a stuck drag or jump on the next gesture
+  ---
+  duration_ms: 1.4445
+  type: 'test'
+  ...
+# Subtest: lostpointercapture ends capture without a stuck drag or jump on the next gesture
+ok 53 - lostpointercapture ends capture without a stuck drag or jump on the next gesture
+  ---
+  duration_ms: 1.3059
+  type: 'test'
+  ...
+# Subtest: blur ends capture without a stuck drag or jump on the next gesture
+ok 54 - blur ends capture without a stuck drag or jump on the next gesture
+  ---
+  duration_ms: 1.3318
+  type: 'test'
+  ...
+# Subtest: hidden ends capture without a stuck drag or jump on the next gesture
+ok 55 - hidden ends capture without a stuck drag or jump on the next gesture
+  ---
+  duration_ms: 1.5934
+  type: 'test'
+  ...
+# Subtest: cancelling one pinch pointer leaves the other ready for orbit
+ok 56 - cancelling one pinch pointer leaves the other ready for orbit
+  ---
+  duration_ms: 1.0974
+  type: 'test'
+  ...
+# Subtest: mouse orbit and wheel zoom retain their behavior and bounds
+ok 57 - mouse orbit and wheel zoom retain their behavior and bounds
+  ---
+  duration_ms: 1.579
+  type: 'test'
+  ...
+# Subtest: teleport after driving, orbiting and chase snaps to a fresh chase view
+ok 58 - teleport after driving, orbiting and chase snaps to a fresh chase view
+  ---
+  duration_ms: 5.5015
+  type: 'test'
+  ...
+# Subtest: teleport after driving, orbiting and observatory snaps to a fresh chase view
+ok 59 - teleport after driving, orbiting and observatory snaps to a fresh chase view
+  ---
+  duration_ms: 4.4984
+  type: 'test'
+  ...
+# Subtest: teleport after driving, orbiting and drone snaps to a fresh chase view
+ok 60 - teleport after driving, orbiting and drone snaps to a fresh chase view
+  ---
+  duration_ms: 3.6865
+  type: 'test'
+  ...
+# Subtest: teleport releases every camera pointer and ignores old gestures before accepting a new drag
+ok 61 - teleport releases every camera pointer and ignores old gestures before accepting a new drag
+  ---
+  duration_ms: 1.2195
+  type: 'test'
+  ...
+# Subtest: createCarWheelMaterial is lightweight, cached, and never binds license plate textures or emissive nodes
+ok 62 - createCarWheelMaterial is lightweight, cached, and never binds license plate textures or emissive nodes
+  ---
+  duration_ms: 4.9805
+  type: 'test'
+  ...
+# Subtest: near instanced wheels match far proxy wheel shading across NYPD, blackout, and all spoke styles
+ok 63 - near instanced wheels match far proxy wheel shading across NYPD, blackout, and all spoke styles
+  ---
+  duration_ms: 47.8814
+  type: 'test'
+  ...
+# Subtest: renderCar writes per-car wheel styles to both front and rear wheel slots with dirty tracking
+ok 64 - renderCar writes per-car wheel styles to both front and rear wheel slots with dirty tracking
+  ---
+  duration_ms: 3.5435
+  type: 'test'
+  ...
+# Subtest: government tower sits over the mapped central strip rather than the old plaza location
+ok 65 - government tower sits over the mapped central strip rather than the old plaza location
+  ---
+  duration_ms: 1.2361
+  type: 'test'
+  ...
+# Subtest: stadium field and north/south passages remain open while actual stands collide
+ok 66 - stadium field and north/south passages remain open while actual stands collide
+  ---
+  duration_ms: 0.529
+  type: 'test'
+  ...
+# Subtest: sports gym and pool use their own mapped source roofs and have separate Chinese names
+ok 67 - sports gym and pool use their own mapped source roofs and have separate Chinese names
+  ---
+  duration_ms: 0.9186
+  type: 'test'
+  ...
+# Subtest: revised civic arrivals are on dry open ground clear of the model walls
+ok 68 - revised civic arrivals are on dry open ground clear of the model walls
+  ---
+  duration_ms: 0.4634
+  type: 'test'
+  ...
+# Subtest: every mapped community has an explicit photo and access review state
+ok 69 - every mapped community has an explicit photo and access review state
+  ---
+  duration_ms: 2.5329
+  type: 'test'
+  ...
+# Subtest: photo-guided gate placements remain on a mapped community boundary and vehicle access
+ok 70 - photo-guided gate placements remain on a mapped community boundary and vehicle access
+  ---
+  duration_ms: 0.7015
+  type: 'test'
+  ...
+# Subtest: unlocated reviewed entrances are retained as references without invented world gates
+ok 71 - unlocated reviewed entrances are retained as references without invented world gates
+  ---
+  duration_ms: 0.2946
+  type: 'test'
+  ...
+# Subtest: map photo candidates retain their review state and known mismatched images are excluded
+ok 72 - map photo candidates retain their review state and known mismatched images are excluded
+  ---
+  duration_ms: 0.795
+  type: 'test'
+  ...
+# Subtest: new named entrance photos preserve unknown dates and mapped access constraints
+ok 73 - new named entrance photos preserve unknown dates and mapped access constraints
+  ---
+  duration_ms: 0.2399
+  type: 'test'
+  ...
+# Subtest: releasing a movement key after focusing search stops movement
+ok 74 - releasing a movement key after focusing search stops movement
+  ---
+  duration_ms: 5.906
+  type: 'test'
+  ...
+# Subtest: releasing one movement binding preserves another held binding
+ok 75 - releasing one movement binding preserves another held binding
+  ---
+  duration_ms: 1.6042
+  type: 'test'
+  ...
+# Subtest: temporary Shift acceleration and the persistent option remain independent
+ok 76 - temporary Shift acceleration and the persistent option remain independent
+  ---
+  duration_ms: 1.8553
+  type: 'test'
+  ...
+# Subtest: either jump binding stays active until both are released
+ok 77 - either jump binding stays active until both are released
+  ---
+  duration_ms: 1.5058
+  type: 'test'
+  ...
+# Subtest: keyboard and touch input remain active independently
+ok 78 - keyboard and touch input remain active independently
+  ---
+  duration_ms: 2.5113
+  type: 'test'
+  ...
+# Subtest: clearing touch input preserves held keyboard controls
+ok 79 - clearing touch input preserves held keyboard controls
+  ---
+  duration_ms: 1.438
+  type: 'test'
+  ...
+# Subtest: touch strengths are clamped and unknown actions are ignored
+ok 80 - touch strengths are clamped and unknown actions are ignored
+  ---
+  duration_ms: 1.5965
+  type: 'test'
+  ...
+# Subtest: blur clears held controls and their physical key state
+ok 81 - blur clears held controls and their physical key state
+  ---
+  duration_ms: 1.9933
+  type: 'test'
+  ...
+# Subtest: hidden clears held controls and their physical key state
+ok 82 - hidden clears held controls and their physical key state
+  ---
+  duration_ms: 1.7463
+  type: 'test'
+  ...
+# Subtest: reset clears held controls and their physical key state
+ok 83 - reset clears held controls and their physical key state
+  ---
+  duration_ms: 1.8417
+  type: 'test'
+  ...
+# Subtest: analog person input proportionally scales movement and turning
+ok 84 - analog person input proportionally scales movement and turning
+  ---
+  duration_ms: 6.1124
+  type: 'test'
+  ...
+# Subtest: analog car input proportionally scales movement and turning
+ok 85 - analog car input proportionally scales movement and turning
+  ---
+  duration_ms: 6.7907
+  type: 'test'
+  ...
+# Subtest: analog cyclist input proportionally scales movement and turning
+ok 86 - analog cyclist input proportionally scales movement and turning
+  ---
+  duration_ms: 6.4258
+  type: 'test'
+  ...
+# Subtest: analog helicopter input proportionally scales movement and turning
+ok 87 - analog helicopter input proportionally scales movement and turning
+  ---
+  duration_ms: 11.7459
+  type: 'test'
+  ...
+# Subtest: boosted driving accelerates faster and still brakes without gaining reverse speed
+ok 88 - boosted driving accelerates faster and still brakes without gaining reverse speed
+  ---
+  duration_ms: 108.3335
+  type: 'test'
+  ...
+# Subtest: car accelerates gradually to full speed and preserves coasting and braking
+ok 89 - car accelerates gradually to full speed and preserves coasting and braking
+  ---
+  duration_ms: 94.4344
+  type: 'test'
+  ...
+# Subtest: car steering follows speed and reverses direction when backing up
+ok 90 - car steering follows speed and reverses direction when backing up
+  ---
+  duration_ms: 20.0225
+  type: 'test'
+  ...
+# Subtest: car changes direction after braking with residual turning and sideways motion
+ok 91 - car changes direction after braking with residual turning and sideways motion
+  ---
+  duration_ms: 42.8157
+  type: 'test'
+  ...
+# Subtest: player brake and reverse lamps follow braking and backward travel
+ok 92 - player brake and reverse lamps follow braking and backward travel
+  ---
+  duration_ms: 9.8328
+  type: 'test'
+  ...
+# Subtest: releasing car steering settles smoothly and suspension leans outward
+ok 93 - releasing car steering settles smoothly and suspension leans outward
+  ---
+  duration_ms: 6.8594
+  type: 'test'
+  ...
+# Subtest: braking while turning initiates a slide that recovers on release
+ok 94 - braking while turning initiates a slide that recovers on release
+  ---
+  duration_ms: 34.6741
+  type: 'test'
+  ...
+# Subtest: sustained car turns produce bounded slip that recovers with countersteering
+ok 95 - sustained car turns produce bounded slip that recovers with countersteering
+  ---
+  duration_ms: 95.5254
+  type: 'test'
+  ...
+# Subtest: car collision momentum is retained and sideways motion settles through grip
+ok 96 - car collision momentum is retained and sideways motion settles through grip
+  ---
+  duration_ms: 6.2676
+  type: 'test'
+  ...
+# Subtest: unpowered car steering and collision recovery never add translational energy
+ok 97 - unpowered car steering and collision recovery never add translational energy
+  ---
+  duration_ms: 8.8432
+  type: 'test'
+  ...
+# Subtest: car turning, handbraking and impact recovery agree across display rates
+ok 98 - car turning, handbraking and impact recovery agree across display rates
+  ---
+  duration_ms: 34.1542
+  type: 'test'
+  ...
+# Subtest: person teleport stops carried motion and updates its arrival pose immediately
+ok 99 - person teleport stops carried motion and updates its arrival pose immediately
+  ---
+  duration_ms: 4.7941
+  type: 'test'
+  ...
+# Subtest: car teleport stops carried motion and updates its arrival pose immediately
+ok 100 - car teleport stops carried motion and updates its arrival pose immediately
+  ---
+  duration_ms: 2.508
+  type: 'test'
+  ...
+# Subtest: cyclist teleport stops carried motion and updates its arrival pose immediately
+ok 101 - cyclist teleport stops carried motion and updates its arrival pose immediately
+  ---
+  duration_ms: 2.0271
+  type: 'test'
+  ...
+# Subtest: helicopter teleport stops carried motion and updates its arrival pose immediately
+ok 102 - helicopter teleport stops carried motion and updates its arrival pose immediately
+  ---
+  duration_ms: 1.8243
+  type: 'test'
+  ...
+# Subtest: teleport checks all overlapping buildings instead of leaving a sequential push trap
+ok 103 - teleport checks all overlapping buildings instead of leaving a sequential push trap
+  ---
+  duration_ms: 17.8967
+  type: 'test'
+  ...
+# Subtest: teleports use oriented building footprints without rejecting clear corners of their bounds
+ok 104 - teleports use oriented building footprints without rejecting clear corners of their bounds
+  ---
+  duration_ms: 7.4175
+  type: 'test'
+  ...
+# Subtest: movement and teleports preserve polygon courtyards and avoid their actual walls
+ok 105 - movement and teleports preserve polygon courtyards and avoid their actual walls
+  ---
+  duration_ms: 8.6631
+  type: 'test'
+  ...
+# Subtest: pedestrians pass clear building corners and resolve real corner hits radially
+ok 106 - pedestrians pass clear building corners and resolve real corner hits radially
+  ---
+  duration_ms: 1.4266
+  type: 'test'
+  ...
+# Subtest: corner collision normals follow an oriented building footprint
+ok 107 - corner collision normals follow an oriented building footprint
+  ---
+  duration_ms: 1.4352
+  type: 'test'
+  ...
+# Subtest: rotated cars use their own separating axes at building corners
+ok 108 - rotated cars use their own separating axes at building corners
+  ---
+  duration_ms: 1.3872
+  type: 'test'
+  ...
+# Subtest: teleports preserve clear rounded corners and separated rotated cars
+ok 109 - teleports preserve clear rounded corners and separated rotated cars
+  ---
+  duration_ms: 3.2032
+  type: 'test'
+  ...
+# Subtest: movement and teleports pass underneath elevated building sections
+ok 110 - movement and teleports pass underneath elevated building sections
+  ---
+  duration_ms: 5.3201
+  type: 'test'
+  ...
+# Subtest: building clearance uses the full player height beneath an overhang
+ok 111 - building clearance uses the full player height beneath an overhang
+  ---
+  duration_ms: 9.117
+  type: 'test'
+  ...
+# Subtest: players above a roof are clear once their body bottoms clear it
+ok 112 - players above a roof are clear once their body bottoms clear it
+  ---
+  duration_ms: 7.0353
+  type: 'test'
+  ...
+# Subtest: helicopter skids cannot pass through a roof below the body origin
+ok 113 - helicopter skids cannot pass through a roof below the body origin
+  ---
+  duration_ms: 2.3897
+  type: 'test'
+  ...
+# Subtest: ground arrivals share movement shoreline limits while helicopters may remain above lower buildings
+ok 114 - ground arrivals share movement shoreline limits while helicopters may remain above lower buildings
+  ---
+  duration_ms: 2.934
+  type: 'test'
+  ...
+# Subtest: a displaced pedestrian samples ground and resets its feet at the resolved destination
+ok 115 - a displaced pedestrian samples ground and resets its feet at the resolved destination
+  ---
+  duration_ms: 1.6054
+  type: 'test'
+  ...
+# Subtest: failed or invalid teleports keep the current position and stop the player with bounded search
+ok 116 - failed or invalid teleports keep the current position and stop the player with bounded search
+  ---
+  duration_ms: 31.3248
+  type: 'test'
+  ...
+# Subtest: successive mode teleports keep parked players out of the arrival and default chase view
+ok 117 - successive mode teleports keep parked players out of the arrival and default chase view
+  ---
+  duration_ms: 3.862
+  type: 'test'
+  ...
+# Subtest: player clearance respects altitude and permits a ground arrival under an airborne helicopter
+ok 118 - player clearance respects altitude and permits a ground arrival under an airborne helicopter
+  ---
+  duration_ms: 2.7688
+  type: 'test'
+  ...
+# Subtest: walk mode keeps curb step-offs grounded while real jumps arc and pin the contact shadow to the pavement
+ok 119 - walk mode keeps curb step-offs grounded while real jumps arc and pin the contact shadow to the pavement
+  ---
+  duration_ms: 3.2456
+  type: 'test'
+  ...
+# Subtest: walk mode clamps phantom speed when blocked head-on by a building wall
+ok 120 - walk mode clamps phantom speed when blocked head-on by a building wall
+  ---
+  duration_ms: 4.1125
+  type: 'test'
+  ...
+# Subtest: cyclist braking stops briskly, pauses at zero before reversing, and supports Space handbrake
+ok 121 - cyclist braking stops briskly, pauses at zero before reversing, and supports Space handbrake
+  ---
+  duration_ms: 10.4198
+  type: 'test'
+  ...
+# Subtest: boost increases person travel speed with the same input
+ok 122 - boost increases person travel speed with the same input
+  ---
+  duration_ms: 4.3288
+  type: 'test'
+  ...
+# Subtest: boost increases cyclist travel speed with the same input
+ok 123 - boost increases cyclist travel speed with the same input
+  ---
+  duration_ms: 6.3096
+  type: 'test'
+  ...
+# Subtest: boost increases helicopter travel speed with the same input
+ok 124 - boost increases helicopter travel speed with the same input
+  ---
+  duration_ms: 3.6725
+  type: 'test'
+  ...
+# Subtest: core retail review adds forecourts and inner-street routes without inventing footprints
+ok 125 - core retail review adds forecourts and inner-street routes without inventing footprints
+  ---
+  duration_ms: 9.4045
+  type: 'test'
+  ...
+# Subtest: core retail notes keep the two malls distinct and cite the 2026 field survey
+ok 126 - core retail notes keep the two malls distinct and cite the 2026 field survey
+  ---
+  duration_ms: 0.429
+  type: 'test'
+  ...
+# Subtest: core retail detail module builds facades, category signs and the tower crown
+ok 127 - core retail detail module builds facades, category signs and the tower crown
+  ---
+  duration_ms: 5.7809
+  type: 'test'
+  ...
+# Subtest: 45-degree facade (-1, -1) keeps its windows and room frame across camera rotations
+ok 128 - 45-degree facade (-1, -1) keeps its windows and room frame across camera rotations
+  ---
+  duration_ms: 33.2353
+  type: 'test'
+  ...
+# Subtest: 45-degree facade (-1, 1) keeps its windows and room frame across camera rotations
+ok 129 - 45-degree facade (-1, 1) keeps its windows and room frame across camera rotations
+  ---
+  duration_ms: 30.5902
+  type: 'test'
+  ...
+# Subtest: 45-degree facade (1, -1) keeps its windows and room frame across camera rotations
+ok 130 - 45-degree facade (1, -1) keeps its windows and room frame across camera rotations
+  ---
+  duration_ms: 21.6497
+  type: 'test'
+  ...
+# Subtest: 45-degree facade (1, 1) keeps its windows and room frame across camera rotations
+ok 131 - 45-degree facade (1, 1) keeps its windows and room frame across camera rotations
+  ---
+  duration_ms: 19.8904
+  type: 'test'
+  ...
+# Subtest: cardinal facades retain their original world-coordinate mapping
+ok 132 - cardinal facades retain their original world-coordinate mapping
+  ---
+  duration_ms: 0.4495
+  type: 'test'
+  ...
+# Subtest: world projection includes object rotation and the inverse scale used for normals
+ok 133 - world projection includes object rotation and the inverse scale used for normals
+  ---
+  duration_ms: 0.2926
+  type: 'test'
+  ...
+# Subtest: surveyed storefronts remain glazed above the sidewalk while cut-off storeys stay solid
+ok 134 - surveyed storefronts remain glazed above the sidewalk while cut-off storeys stay solid
+  ---
+  duration_ms: 1.2044
+  type: 'test'
+  ...
+# Subtest: escapeGeometry preserves flat horizontal stair treads and per-triangle part invariants
+ok 135 - escapeGeometry preserves flat horizontal stair treads and per-triangle part invariants
+  ---
+  duration_ms: 6.761
+  type: 'test'
+  ...
+# Subtest: positionNode keeps horizontal stair treads flat and collapses unused upper storeys
+ok 136 - positionNode keeps horizontal stair treads flat and collapses unused upper storeys
+  ---
+  duration_ms: 2.9785
+  type: 'test'
+  ...
+# Subtest: opacityNode obeys WGSL derivative uniformity, gates per-part ALU, and matches HEAD on parts 1, 3, 4, 5
+ok 137 - opacityNode obeys WGSL derivative uniformity, gates per-part ALU, and matches HEAD on parts 1, 3, 4, 5
+  ---
+  duration_ms: 10.3197
+  type: 'test'
+  ...
+# Subtest: createFireEscapes partitions near shadow casters vs 4x4 far cells and computes tight bounding spheres
+ok 138 - createFireEscapes partitions near shadow casters vs 4x4 far cells and computes tight bounding spheres
+  ---
+  duration_ms: 4.801
+  type: 'test'
+  ...
+# Subtest: Shuyang geodata exposes the roads, blocks, water and landmarks the city builds from
+ok 139 - Shuyang geodata exposes the roads, blocks, water and landmarks the city builds from
+  ---
+  duration_ms: 154.3551
+  type: 'test'
+  ...
+# Subtest: the city configuration resolves blocks, roads, water and teleports
+ok 140 - the city configuration resolves blocks, roads, water and teleports
+  ---
+  duration_ms: 134.9425
+  type: 'test'
+  ...
+# Subtest: the sampler fills a green surface and skips blocked ground
+ok 141 - the sampler fills a green surface and skips blocked ground
+  ---
+  duration_ms: 1.5746
+  type: 'test'
+  ...
+# Subtest: only reviewed Wode green surfaces receive courtyard trees
+ok 142 - only reviewed Wode green surfaces receive courtyard trees
+  ---
+  duration_ms: 1477.3653
+  type: 'test'
+  ...
+# Subtest: green areas are real surfaces, not empty placeholders
+ok 143 - green areas are real surfaces, not empty placeholders
+  ---
+  duration_ms: 0.4242
+  type: 'test'
+  ...
+# Subtest: commercial replacements reference exact source records, while the school preserves its campus
+ok 144 - commercial replacements reference exact source records, while the school preserves its campus
+  ---
+  duration_ms: 1.2556
+  type: 'test'
+  ...
+# Subtest: new landmark arrivals stay dry, in front of their verified entrance and face it
+ok 145 - new landmark arrivals stay dry, in front of their verified entrance and face it
+  ---
+  duration_ms: 0.361
+  type: 'test'
+  ...
+# Subtest: every selectable landmark has an attributed public photograph and source page
+ok 146 - every selectable landmark has an attributed public photograph and source page
+  ---
+  duration_ms: 1.7344
+  type: 'test'
+  ...
+# Subtest: name corrections retain the north river sculpture and current factory district locations
+ok 147 - name corrections retain the north river sculpture and current factory district locations
+  ---
+  duration_ms: 0.2061
+  type: 'test'
+  ...
+# Subtest: extended cascade ceiling keeps 30 Hudson Yards and 541 m towers in front of cascade near across all yaws and presets
+ok 148 - extended cascade ceiling keeps 30 Hudson Yards and 541 m towers in front of cascade near across all yaws and presets
+  ---
+  duration_ms: 12.9119
+  type: 'test'
+  ...
+# Subtest: extended cascade ceiling preserves texel-snapped X/Y bounds, downstream far plane, and receiver depth in (0, 1)
+ok 149 - extended cascade ceiling preserves texel-snapped X/Y bounds, downstream far plane, and receiver depth in (0, 1)
+  ---
+  duration_ms: 10.283
+  type: 'test'
+  ...
+# Subtest: world headings match the Chinese compass in every quadrant
+ok 150 - world headings match the Chinese compass in every quadrant
+  ---
+  duration_ms: 1.2633
+  type: 'test'
+  ...
+# Subtest: all 23 campus source footprints are matched and rendered
+ok 151 - all 23 campus source footprints are matched and rendered
+  ---
+  duration_ms: 1.4507
+  type: 'test'
+  ...
+# Subtest: each named role appears exactly where the evidence places it
+ok 152 - each named role appears exactly where the evidence places it
+  ---
+  duration_ms: 0.2631
+  type: 'test'
+  ...
+# Subtest: campus geometry stays inside the campus bounding box
+ok 153 - campus geometry stays inside the campus bounding box
+  ---
+  duration_ms: 197.164
+  type: 'test'
+  ...
+# Subtest: 育华楼 gets the distinctive pediment and forecourt features
+ok 154 - 育华楼 gets the distinctive pediment and forecourt features
+  ---
+  duration_ms: 0.2571
+  type: 'test'
+  ...
+# Subtest: the auditorium gets its gabled roof and brick walls
+ok 155 - the auditorium gets its gabled roof and brick walls
+  ---
+  duration_ms: 0.179
+  type: 'test'
+  ...
+# Subtest: teaching buildings get corridor railings and accent panels
+ok 156 - teaching buildings get corridor railings and accent panels
+  ---
+  duration_ms: 0.1505
+  type: 'test'
+  ...
+# Subtest: the running track and football field are rendered as ground surfaces
+ok 157 - the running track and football field are rendered as ground surfaces
+  ---
+  duration_ms: 0.1369
+  type: 'test'
+  ...
+# Subtest: no source building was replaced — only overlay geometry exists
+ok 158 - no source building was replaced — only overlay geometry exists
+  ---
+  duration_ms: 0.2396
+  type: 'test'
+  ...
+# Subtest: street shops are overlaid on existing source buildings only
+ok 159 - street shops are overlaid on existing source buildings only
+  ---
+  duration_ms: 1.0055
+  type: 'test'
+  ...
+# Subtest: three photo-evidenced gates are present
+ok 160 - three photo-evidenced gates are present
+  ---
+  duration_ms: 0.2062
+  type: 'test'
+  ...
+# Subtest: shop signs use real AMap POI labels from the standard map
+ok 161 - shop signs use real AMap POI labels from the standard map
+  ---
+  duration_ms: 0.667
+  type: 'test'
+  ...
+# Subtest: all overlay meshes stay named and inside the precinct box
+ok 162 - all overlay meshes stay named and inside the precinct box
+  ---
+  duration_ms: 71.1525
+  type: 'test'
+  ...
+# Subtest: no source building replaced — overlay only
+ok 163 - no source building replaced — overlay only
+  ---
+  duration_ms: 11.9043
+  type: 'test'
+  ...
+# Subtest: userData records photo basis and caveats
+ok 164 - userData records photo basis and caveats
+  ---
+  duration_ms: 0.2882
+  type: 'test'
+  ...
+# Subtest: real named housing polygons resolve at their interior anchors and remain searchable
+ok 165 - real named housing polygons resolve at their interior anchors and remain searchable
+  ---
+  duration_ms: 3.1823
+  type: 'test'
+  ...
+# Subtest: community building indices refer to this exact building extract without duplicate assignment
+ok 166 - community building indices refer to this exact building extract without duplicate assignment
+  ---
+  duration_ms: 97.2125
+  type: 'test'
+  ...
+# Subtest: 3D paths and parking come from mapped surfaces with valid polygon holes
+ok 167 - 3D paths and parking come from mapped surfaces with valid polygon holes
+  ---
+  duration_ms: 2.7051
+  type: 'test'
+  ...
+# Subtest: non-residential building and campus names are searchable with source provenance
+ok 168 - non-residential building and campus names are searchable with source provenance
+  ---
+  duration_ms: 1.0368
+  type: 'test'
+  ...
+# Subtest: external map references use official search URLs and encode the selected place without mixing coordinates
+ok 169 - external map references use official search URLs and encode the selected place without mixing coordinates
+  ---
+  duration_ms: 0.6052
+  type: 'test'
+  ...
+# Subtest: Overpass accepts complete JSON with leading whitespace
+ok 170 - Overpass accepts complete JSON with leading whitespace
+  ---
+  duration_ms: 1533.7327
+  type: 'test'
+  ...
+# Subtest: Overpass preserves existing data after failed transfer after HTTP 200
+not ok 171 - Overpass preserves existing data after failed transfer after HTTP 200
+  ---
+  duration_ms: 1229.873
+  type: 'test'
+  location: 'D:\\AICodingProjects\\slop-shuyang\\tests\\overpass.test.mjs:61:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    temporary downloads are removed
+    + actual - expected
+    
+    + [
+    +   'data.json.tmp.2NCfeu'
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0: 'data.json.tmp.2NCfeu'
+  operator: 'deepStrictEqual'
+  stack: |-
+    download (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:40:12)
+    TestContext.<anonymous> (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:62:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Overpass preserves existing data after malformed JSON
+not ok 172 - Overpass preserves existing data after malformed JSON
+  ---
+  duration_ms: 1516.839
+  type: 'test'
+  location: 'D:\\AICodingProjects\\slop-shuyang\\tests\\overpass.test.mjs:61:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    temporary downloads are removed
+    + actual - expected
+    
+    + [
+    +   'data.json.tmp.BoJZkO'
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0: 'data.json.tmp.BoJZkO'
+  operator: 'deepStrictEqual'
+  stack: |-
+    download (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:40:12)
+    TestContext.<anonymous> (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:62:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Overpass preserves existing data after HTTP error
+not ok 173 - Overpass preserves existing data after HTTP error
+  ---
+  duration_ms: 1158.9223
+  type: 'test'
+  location: 'D:\\AICodingProjects\\slop-shuyang\\tests\\overpass.test.mjs:61:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    temporary downloads are removed
+    + actual - expected
+    
+    + [
+    +   'data.json.tmp.RJdPgI'
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0: 'data.json.tmp.RJdPgI'
+  operator: 'deepStrictEqual'
+  stack: |-
+    download (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:40:12)
+    TestContext.<anonymous> (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:62:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Overpass preserves existing data after Overpass runtime error
+not ok 174 - Overpass preserves existing data after Overpass runtime error
+  ---
+  duration_ms: 1379.5628
+  type: 'test'
+  location: 'D:\\AICodingProjects\\slop-shuyang\\tests\\overpass.test.mjs:61:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    temporary downloads are removed
+    + actual - expected
+    
+    + [
+    +   'data.json.tmp.DqO8Nr'
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0: 'data.json.tmp.DqO8Nr'
+  operator: 'deepStrictEqual'
+  stack: |-
+    download (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:40:12)
+    TestContext.<anonymous> (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:62:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Overpass preserves existing data after missing elements
+not ok 175 - Overpass preserves existing data after missing elements
+  ---
+  duration_ms: 1404.0965
+  type: 'test'
+  location: 'D:\\AICodingProjects\\slop-shuyang\\tests\\overpass.test.mjs:61:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    temporary downloads are removed
+    + actual - expected
+    
+    + [
+    +   'data.json.tmp.mbHsdV'
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0: 'data.json.tmp.mbHsdV'
+  operator: 'deepStrictEqual'
+  stack: |-
+    download (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:40:12)
+    TestContext.<anonymous> (file:///D:/AICodingProjects/slop-shuyang/tests/overpass.test.mjs:62:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Overpass retries a failed endpoint before replacing data
+ok 176 - Overpass retries a failed endpoint before replacing data
+  ---
+  duration_ms: 1034.4388
+  type: 'test'
+  ...
+# Subtest: unobstructed sidewalk lines stay straight and reuse their cached tracks
+ok 177 - unobstructed sidewalk lines stay straight and reuse their cached tracks
+  ---
+  duration_ms: 3.3824
+  type: 'test'
+  ...
+# Subtest: pedestrians bypass an obstruction within the curb island (0)
+ok 178 - pedestrians bypass an obstruction within the curb island (0)
+  ---
+  duration_ms: 7.2329
+  type: 'test'
+  ...
+# Subtest: pedestrians bypass an obstruction within the curb island (0.5235987755982988)
+ok 179 - pedestrians bypass an obstruction within the curb island (0.5235987755982988)
+  ---
+  duration_ms: 9.6371
+  type: 'test'
+  ...
+# Subtest: a blocked sidewalk does not send pedestrians into the road or through a lot
+ok 180 - a blocked sidewalk does not send pedestrians into the road or through a lot
+  ---
+  duration_ms: 5.0145
+  type: 'test'
+  ...
+# Subtest: a cached route can weave between obstacles on opposite sides of the sidewalk
+ok 181 - a cached route can weave between obstacles on opposite sides of the sidewalk
+  ---
+  duration_ms: 8.8975
+  type: 'test'
+  ...
+# Subtest: pedestrians waiting at WALK set off at individual times
+ok 182 - pedestrians waiting at WALK set off at individual times
+  ---
+  duration_ms: 17.6346
+  type: 'test'
+  ...
+# Subtest: a new WALK phase resets an unfinished reaction delay
+ok 183 - a new WALK phase resets an unfinished reaction delay
+  ---
+  duration_ms: 8.8701
+  type: 'test'
+  ...
+# Subtest: reverse crossings respect red and reaction delays despite curb rounding
+ok 184 - reverse crossings respect red and reaction delays despite curb rounding
+  ---
+  duration_ms: 11.3198
+  type: 'test'
+  ...
+# Subtest: reaction delays do not bypass traffic checks or restart when a vehicle clears
+ok 185 - reaction delays do not bypass traffic checks or restart when a vehicle clears
+  ---
+  duration_ms: 11.9942
+  type: 'test'
+  ...
+# Subtest: pedestrians already crossing continue when WALK ends
+ok 186 - pedestrians already crossing continue when WALK ends
+  ---
+  duration_ms: 7.3441
+  type: 'test'
+  ...
+# Subtest: PersonCrowd creates 2 LODs only when farDistance is finite and disables shadow casting on PeopleFar
+ok 187 - PersonCrowd creates 2 LODs only when farDistance is finite and disables shadow casting on PeopleFar
+  ---
+  duration_ms: 40.0735
+  type: 'test'
+  ...
+# Subtest: PersonCrowd keeps 1 warm-up instance for 2 updates, then hides empty LODs with zero uploads
+ok 188 - PersonCrowd keeps 1 warm-up instance for 2 updates, then hides empty LODs with zero uploads
+  ---
+  duration_ms: 4.4068
+  type: 'test'
+  ...
+# Subtest: buildPersonGeometry assigns constant partId across every triangle so flat/interpolated part varyings never bleed
+ok 189 - buildPersonGeometry assigns constant partId across every triangle so flat/interpolated part varyings never bleed
+  ---
+  duration_ms: 2.2353
+  type: 'test'
+  ...
+# Subtest: createPersonMaterial hoists palette hashes to vertex stage, keeps positionNode clean, and makes PeopleFar branch-free
+ok 190 - createPersonMaterial hoists palette hashes to vertex stage, keeps positionNode clean, and makes PeopleFar branch-free
+  ---
+  duration_ms: 10.829
+  type: 'test'
+  ...
+# Subtest: PeopleNear hoisted varyings produce identical fragment color and roughness across triangle interiors
+ok 191 - PeopleNear hoisted varyings produce identical fragment color and roughness across triangle interiors
+  ---
+  duration_ms: 415.3633
+  type: 'test'
+  ...
+# Subtest: renderPed skips hidden rig updates beyond 50m while preserving <=50m footstep audio gait and dives
+ok 192 - renderPed skips hidden rig updates beyond 50m while preserving <=50m footstep audio gait and dives
+  ---
+  duration_ms: 3.5466
+  type: 'test'
+  ...
+# Subtest: poseCharacters skips stationary inactive cyclist IK/uploads and culls parked characters beyond 320m
+ok 193 - poseCharacters skips stationary inactive cyclist IK/uploads and culls parked characters beyond 320m
+  ---
+  duration_ms: 3.487
+  type: 'test'
+  ...
+# Subtest: PersonRig walk and full-speed run keep smooth kneecushion, bounded swing stride, and springy flight
+ok 194 - PersonRig walk and full-speed run keep smooth kneecushion, bounded swing stride, and springy flight
+  ---
+  duration_ms: 61.2186
+  type: 'test'
+  ...
+# Subtest: PersonRig backward locomotion rolls forefoot-to-heel and keeps torso upright instead of leaning forward
+ok 195 - PersonRig backward locomotion rolls forefoot-to-heel and keeps torso upright instead of leaning forward
+  ---
+  duration_ms: 10.4872
+  type: 'test'
+  ...
+# Subtest: PersonRig continuous Walk-mode turns activate head lead, banking, and turn-in-place stepping
+ok 196 - PersonRig continuous Walk-mode turns activate head lead, banking, and turn-in-place stepping
+  ---
+  duration_ms: 7.4995
+  type: 'test'
+  ...
+# Subtest: PersonRig jump prepares with countermovement, evolves continuously across the arc without sprint foot lag, and absorbs landings
+ok 197 - PersonRig jump prepares with countermovement, evolves continuously across the arc without sprint foot lag, and absorbs landings
+  ---
+  duration_ms: 13.186
+  type: 'test'
+  ...
+# Subtest: PersonRig full-speed sprint stays vertically smooth even under uneven browser frame times
+ok 198 - PersonRig full-speed sprint stays vertically smooth even under uneven browser frame times
+  ---
+  duration_ms: 17.4742
+  type: 'test'
+  ...
+# Subtest: PersonRig running uses spring-mass vertical phase, shin-aligned swing feet, and zero-lag contralateral arm pump
+ok 199 - PersonRig running uses spring-mass vertical phase, shin-aligned swing feet, and zero-lag contralateral arm pump
+  ---
+  duration_ms: 33.8406
+  type: 'test'
+  ...
+# Subtest: reviewed additions retain image acquisition date and estimated heights, separately from service publication
+ok 200 - reviewed additions retain image acquisition date and estimated heights, separately from service publication
+  ---
+  duration_ms: 33.5206
+  type: 'test'
+  ...
+# Subtest: online outlines retain unknown imagery date and converted coordinates, with separate southern community names
+ok 201 - online outlines retain unknown imagery date and converted coordinates, with separate southern community names
+  ---
+  duration_ms: 4.7644
+  type: 'test'
+  ...
+# Subtest: supplemental roofprints do not duplicate existing buildings or each other after quantization
+ok 202 - supplemental roofprints do not duplicate existing buildings or each other after quantization
+  ---
+  duration_ms: 183.1006
+  type: 'test'
+  ...
+# Subtest: Junlin numbered outlines and Huachen complete towers preserve original partial data and date uncertainty
+ok 203 - Junlin numbered outlines and Huachen complete towers preserve original partial data and date uncertainty
+  ---
+  duration_ms: 1.4306
+  type: 'test'
+  ...
+# Subtest: new named communities expose approximate boundaries and never invent a gate from a photograph
+ok 204 - new named communities expose approximate boundaries and never invent a gate from a photograph
+  ---
+  duration_ms: 0.2161
+  type: 'test'
+  ...
+# Subtest: Rose Garden supplemental outlines preserve dated pixel provenance, original source conflicts and unlocated gate status
+ok 205 - Rose Garden supplemental outlines preserve dated pixel provenance, original source conflicts and unlocated gate status
+  ---
+  duration_ms: 4.1167
+  type: 'test'
+  ...
+# Subtest: school sports grounds use actual mapped outlines, while historic and ecological Yuji parks stay distinct
+ok 206 - school sports grounds use actual mapped outlines, while historic and ecological Yuji parks stay distinct
+  ---
+  duration_ms: 0.3098
+  type: 'test'
+  ...
+# Subtest: Wuli sports surfaces retain the observed track hole, infield and six courts without assigning an unverified sport
+ok 207 - Wuli sports surfaces retain the observed track hole, infield and six courts without assigning an unverified sport
+  ---
+  duration_ms: 0.8224
+  type: 'test'
+  ...
+# Subtest: four mapped Nanhu footbridges offer narrow walking decks without allowing cars over lake water
+ok 208 - four mapped Nanhu footbridges offer narrow walking decks without allowing cars over lake water
+  ---
+  duration_ms: 1.8434
+  type: 'test'
+  ...
+# Subtest: reviewed Nanhu water retains islands and peninsulas in collision, park lawn and precise ground
+ok 209 - reviewed Nanhu water retains islands and peninsulas in collision, park lawn and precise ground
+  ---
+  duration_ms: 1.4936
+  type: 'test'
+  ...
+# Subtest: buildRoadPaint chunks markings into compact spatial cells with shared pipeline and padded bounds
+ok 210 - buildRoadPaint chunks markings into compact spatial cells with shared pipeline and padded bounds
+  ---
+  duration_ms: 5.7255
+  type: 'test'
+  ...
+# Subtest: createRoadPaintChunkBuilder subdivides long strips across cells with continuous dash phase and ramp height
+ok 211 - createRoadPaintChunkBuilder subdivides long strips across cells with continuous dash phase and ramp height
+  ---
+  duration_ms: 0.6257
+  type: 'test'
+  ...
+# Subtest: city markings clear both asphalt and bridge decks instead of being buried underneath
+ok 212 - city markings clear both asphalt and bridge decks instead of being buried underneath
+  ---
+  duration_ms: 1.9466
+  type: 'test'
+  ...
+# Subtest: createRoadPaintMaterial caches one material, gates dry/distant noise, and fades smoothly before cull distance
+ok 213 - createRoadPaintMaterial caches one material, gates dry/distant noise, and fades smoothly before cull distance
+  ---
+  duration_ms: 5.1628
+  type: 'test'
+  ...
+# Subtest: RT-Mart keeps one mapped footprint and gains no invented buildings
+ok 214 - RT-Mart keeps one mapped footprint and gains no invented buildings
+  ---
+  duration_ms: 3.5807
+  type: 'test'
+  ...
+# Subtest: the north forecourt is a reviewed asphalt surface with an unknown capture date
+ok 215 - the north forecourt is a reviewed asphalt surface with an unknown capture date
+  ---
+  duration_ms: 0.3975
+  type: 'test'
+  ...
+# Subtest: the RT-Mart model rebuilds the 2024 beige entrance, east garage and roof plant
+ok 216 - the RT-Mart model rebuilds the 2024 beige entrance, east garage and roof plant
+  ---
+  duration_ms: 14.6832
+  type: 'test'
+  ...
+# Subtest: the RT-Mart teleport stays dry and outside the new frontage
+ok 217 - the RT-Mart teleport stays dry and outside the new frontage
+  ---
+  duration_ms: 0.2865
+  type: 'test'
+  ...
+# Subtest: Shiyan campus keeps its six mapped teaching blocks and does not invent footprints
+ok 218 - Shiyan campus keeps its six mapped teaching blocks and does not invent footprints
+  ---
+  duration_ms: 5.9928
+  type: 'test'
+  ...
+# Subtest: reviewed school and park surfaces carry the new unknown-date tile reference
+ok 219 - reviewed school and park surfaces carry the new unknown-date tile reference
+  ---
+  duration_ms: 0.393
+  type: 'test'
+  ...
+# Subtest: the 21st teleport and its 2026 photo references stay consistent
+ok 220 - the 21st teleport and its 2026 photo references stay consistent
+  ---
+  duration_ms: 0.4294
+  type: 'test'
+  ...
+# Subtest: Shiyan model rebuilds six mapped facades and keeps the central gate passage open
+ok 221 - Shiyan model rebuilds six mapped facades and keeps the central gate passage open
+  ---
+  duration_ms: 3.4307
+  type: 'test'
+  ...
+# Subtest: smoke lattice cache preserves every texture byte and avoids repeated hash calculations
+ok 222 - smoke lattice cache preserves every texture byte and avoids repeated hash calculations
+  ---
+  duration_ms: 283.7417
+  type: 'test'
+  ...
+# Subtest: street and bridge surfaces face upward for every direction, including bends
+ok 223 - street and bridge surfaces face upward for every direction, including bends
+  ---
+  duration_ms: 1.9352
+  type: 'test'
+  ...
+# Subtest: park vegetation stays within concave mapped park boundaries
+ok 224 - park vegetation stays within concave mapped park boundaries
+  ---
+  duration_ms: 0.2664
+  type: 'test'
+  ...
+# Subtest: park vegetation leaves space beside both legs of a mapped walking path
+ok 225 - park vegetation leaves space beside both legs of a mapped walking path
+  ---
+  duration_ms: 0.3085
+  type: 'test'
+  ...
+# Subtest: every teleport button has a destination on a real Shuyang roadway
+ok 226 - every teleport button has a destination on a real Shuyang roadway
+  ---
+  duration_ms: 120.1385
+  type: 'test'
+  ...
+# Subtest: county government arrives by road within sight of the civic complex
+ok 227 - county government arrives by road within sight of the civic complex
+  ---
+  duration_ms: 0.2242
+  type: 'test'
+  ...
+# Subtest: preset and map teleports share arrival resets and mark the resolved landing point
+ok 228 - preset and map teleports share arrival resets and mark the resolved landing point
+  ---
+  duration_ms: 2.5369
+  type: 'test'
+  ...
+# Subtest: stick preserves analog strength and normalizes diagonal input with a radial deadzone
+ok 229 - stick preserves analog strength and normalizes diagonal input with a radial deadzone
+  ---
+  duration_ms: 4.4038
+  type: 'test'
+  ...
+# Subtest: stick and multiple held button pointers release independently
+ok 230 - stick and multiple held button pointers release independently
+  ---
+  duration_ms: 2.6792
+  type: 'test'
+  ...
+# Subtest: pointercancel clears only the affected pointer and its feedback
+ok 231 - pointercancel clears only the affected pointer and its feedback
+  ---
+  duration_ms: 1.1858
+  type: 'test'
+  ...
+# Subtest: lostpointercapture clears only the affected pointer and its feedback
+ok 232 - lostpointercapture clears only the affected pointer and its feedback
+  ---
+  duration_ms: 1.1137
+  type: 'test'
+  ...
+# Subtest: mode changes clear touches and expose the relevant actions
+ok 233 - mode changes clear touches and expose the relevant actions
+  ---
+  duration_ms: 2.0174
+  type: 'test'
+  ...
+# Subtest: disabling controls clears held input and blocks new input until enabled
+ok 234 - disabling controls clears held input and blocks new input until enabled
+  ---
+  duration_ms: 1.3216
+  type: 'test'
+  ...
+# Subtest: blur resets all held input and pointer captures
+ok 235 - blur resets all held input and pointer captures
+  ---
+  duration_ms: 1.2267
+  type: 'test'
+  ...
+# Subtest: hidden resets all held input and pointer captures
+ok 236 - hidden resets all held input and pointer captures
+  ---
+  duration_ms: 2.3797
+  type: 'test'
+  ...
+# Subtest: resize resets all held input and pointer captures
+ok 237 - resize resets all held input and pointer captures
+  ---
+  duration_ms: 3.0974
+  type: 'test'
+  ...
+# Subtest: desktop controls stay hidden until a coarse pointer or first touch is available
+ok 238 - desktop controls stay hidden until a coarse pointer or first touch is available
+  ---
+  duration_ms: 1.7553
+  type: 'test'
+  ...
+# Subtest: availability callback runs after visibility updates and only on an actual change
+ok 239 - availability callback runs after visibility updates and only on an actual change
+  ---
+  duration_ms: 1.7716
+  type: 'test'
+  ...
+# Subtest: pedestrian gait always advances; pose generation follows drawing (true, false)
+ok 240 - pedestrian gait always advances; pose generation follows drawing (true, false)
+  ---
+  duration_ms: 2.5281
+  type: 'test'
+  ...
+# Subtest: pedestrian gait always advances; pose generation follows drawing (true, true)
+ok 241 - pedestrian gait always advances; pose generation follows drawing (true, true)
+  ---
+  duration_ms: 1.1715
+  type: 'test'
+  ...
+# Subtest: pedestrian gait always advances; pose generation follows drawing (false, false)
+ok 242 - pedestrian gait always advances; pose generation follows drawing (false, false)
+  ---
+  duration_ms: 1.0298
+  type: 'test'
+  ...
+# Subtest: hidden pedestrians finish their dive without drawing or changing the escape heading
+ok 243 - hidden pedestrians finish their dive without drawing or changing the escape heading
+  ---
+  duration_ms: 1.1898
+  type: 'test'
+  ...
+# Subtest: idle collision sparks write and upload nothing after warm-up
+ok 244 - idle collision sparks write and upload nothing after warm-up
+  ---
+  duration_ms: 6.7622
+  type: 'test'
+  ...
+# Subtest: spark shader warm-up keeps one degenerate visible instance on frame 1
+ok 245 - spark shader warm-up keeps one degenerate visible instance on frame 1
+  ---
+  duration_ms: 4.0841
+  type: 'test'
+  ...
+# Subtest: spark shader warm-up keeps one degenerate visible instance on frame 2
+ok 246 - spark shader warm-up keeps one degenerate visible instance on frame 2
+  ---
+  duration_ms: 2.0351
+  type: 'test'
+  ...
+# Subtest: live sparks preserve motion, bounce and fade while packing only live matrices
+ok 247 - live sparks preserve motion, bounce and fade while packing only live matrices
+  ---
+  duration_ms: 2.4079
+  type: 'test'
+  ...
+# Subtest: street traffic recognizes players on its own road, including sidewalk height
+ok 248 - street traffic recognizes players on its own road, including sidewalk height
+  ---
+  duration_ms: 2.094
+  type: 'test'
+  ...
+# Subtest: viaduct traffic ignores players below it and recognizes players at deck height
+ok 249 - viaduct traffic ignores players below it and recognizes players at deck height
+  ---
+  duration_ms: 0.4701
+  type: 'test'
+  ...
+# Subtest: sloped lanes use horizontal projection and compare interpolated road height
+ok 250 - sloped lanes use horizontal projection and compare interpolated road height
+  ---
+  duration_ms: 2.0042
+  type: 'test'
+  ...
+# Subtest: long lanes find the player in any run of segments and ignore players inside their overall bounds
+ok 251 - long lanes find the player in any run of segments and ignore players inside their overall bounds
+  ---
+  duration_ms: 0.5566
+  type: 'test'
+  ...
+# Subtest: overlapping road segments select the matching elevation
+ok 252 - overlapping road segments select the matching elevation
+  ---
+  duration_ms: 0.2618
+  type: 'test'
+  ...
+# Subtest: underground lanes and helicopters remain excluded
+ok 253 - underground lanes and helicopters remain excluded
+  ---
+  duration_ms: 0.161
+  type: 'test'
+  ...
+# Subtest: police pass red and amber signals while ordinary cars stop
+ok 254 - police pass red and amber signals while ordinary cars stop
+  ---
+  duration_ms: 2.758
+  type: 'test'
+  ...
+# Subtest: police still wait for crossing traffic, pedestrians and a blocked exit
+ok 255 - police still wait for crossing traffic, pedestrians and a blocked exit
+  ---
+  duration_ms: 1.1259
+  type: 'test'
+  ...
+# Subtest: police running a red yield to fast cross traffic regardless of how long they waited
+ok 256 - police running a red yield to fast cross traffic regardless of how long they waited
+  ---
+  duration_ms: 1.5693
+  type: 'test'
+  ...
+# Subtest: left turns account for oncoming police even when their signal is red
+ok 257 - left turns account for oncoming police even when their signal is red
+  ---
+  duration_ms: 1.8251
+  type: 'test'
+  ...
+# Subtest: cars replenish the road ahead while nearby visible spawning stays blocked
+ok 258 - cars replenish the road ahead while nearby visible spawning stays blocked
+  ---
+  duration_ms: 1.9139
+  type: 'test'
+  ...
+# Subtest: pedestrians replenish visible sidewalks ahead without appearing nearby
+ok 259 - pedestrians replenish visible sidewalks ahead without appearing nearby
+  ---
+  duration_ms: 1.6465
+  type: 'test'
+  ...
+# Subtest: long roads are available near their ends and spawn only in the local section
+ok 260 - long roads are available near their ends and spawn only in the local section
+  ---
+  duration_ms: 2.109
+  type: 'test'
+  ...
+# Subtest: crossing pedestrians fall back to a sidewalk when nearby crosswalks are unusable
+ok 261 - crossing pedestrians fall back to a sidewalk when nearby crosswalks are unusable
+  ---
+  duration_ms: 1.2905
+  type: 'test'
+  ...
+# Subtest: drivers notice a player about to hit them only shortly before, and react later still
+ok 262 - drivers notice a player about to hit them only shortly before, and react later still
+  ---
+  duration_ms: 2.9298
+  type: 'test'
+  ...
+# Subtest: a driver about to be hit head-on brakes and swerves; hit from behind, it floors it instead of braking
+ok 263 - a driver about to be hit head-on brakes and swerves; hit from behind, it floors it instead of braking
+  ---
+  duration_ms: 4.5851
+  type: 'test'
+  ...
+# Subtest: drivers swerve behind a player crossing their way, and to the side with room
+ok 264 - drivers swerve behind a player crossing their way, and to the side with room
+  ---
+  duration_ms: 3.5655
+  type: 'test'
+  ...
+# Subtest: drivers commit to their manoeuvre whatever the player does then
+ok 265 - drivers commit to their manoeuvre whatever the player does then
+  ---
+  duration_ms: 2.0514
+  type: 'test'
+  ...
+# Subtest: a player passing in the next lane or going away is no threat
+ok 266 - a player passing in the next lane or going away is no threat
+  ---
+  duration_ms: 1.2098
+  type: 'test'
+  ...
+# Subtest: a lane change is steered: the car turns only as fast as its wheels let it, and settles in its lane
+ok 267 - a lane change is steered: the car turns only as fast as its wheels let it, and settles in its lane
+  ---
+  duration_ms: 10.2757
+  type: 'test'
+  ...
+# Subtest: a panicking driver yanks the wheel, but the car still turns only as fast as the tyres grip
+ok 268 - a panicking driver yanks the wheel, but the car still turns only as fast as the tyres grip
+  ---
+  duration_ms: 3.3248
+  type: 'test'
+  ...
+# Subtest: a standing car does not turn, however far it is off its line
+ok 269 - a standing car does not turn, however far it is off its line
+  ---
+  duration_ms: 3.5075
+  type: 'test'
+  ...
+# Subtest: createTreeField leaves scene.onBeforeRender untouched and matches per-tree oracle across trajectories
+ok 270 - createTreeField leaves scene.onBeforeRender untouched and matches per-tree oracle across trajectories
+  ---
+  duration_ms: 408.5409
+  type: 'test'
+  ...
+# Subtest: the shared profile creates ordinary unshadowed spots with no cookie or custom light node
+ok 271 - the shared profile creates ordinary unshadowed spots with no cookie or custom light node
+  ---
+  duration_ms: 1.436
+  type: 'test'
+  ...
+# Subtest: sedan beams originate at the modeled lamps and stay below the chassis horizon
+ok 272 - sedan beams originate at the modeled lamps and stay below the chassis horizon
+  ---
+  duration_ms: 0.3741
+  type: 'test'
+  ...
+# Subtest: suv beams originate at the modeled lamps and stay below the chassis horizon
+ok 273 - suv beams originate at the modeled lamps and stay below the chassis horizon
+  ---
+  duration_ms: 0.2303
+  type: 'test'
+  ...
+# Subtest: bus beams originate at the modeled lamps and stay below the chassis horizon
+ok 274 - bus beams originate at the modeled lamps and stay below the chassis horizon
+  ---
+  duration_ms: 0.2038
+  type: 'test'
+  ...
+# Subtest: lamp and target follow both yaw and slope at elevated road height
+ok 275 - lamp and target follow both yaw and slope at elevated road height
+  ---
+  duration_ms: 1.3046
+  type: 'test'
+  ...
+# Subtest: centered rear-end impacts exchange momentum without artificial spin
+ok 276 - centered rear-end impacts exchange momentum without artificial spin
+  ---
+  duration_ms: 2.2063
+  type: 'test'
+  ...
+# Subtest: offset bumper contacts lie in the overlapping faces and spin both cars
+ok 277 - offset bumper contacts lie in the overlapping faces and spin both cars
+  ---
+  duration_ms: 0.6501
+  type: 'test'
+  ...
+# Subtest: bus contacts conserve momentum and move the heavy vehicle much less
+ok 278 - bus contacts conserve momentum and move the heavy vehicle much less
+  ---
+  duration_ms: 0.2784
+  type: 'test'
+  ...
+# Subtest: separating or resting overlaps produce no impulse or spin
+ok 279 - separating or resting overlaps produce no impulse or spin
+  ---
+  duration_ms: 0.4366
+  type: 'test'
+  ...
+# Subtest: angled and spinning impacts conserve momentum without gaining energy
+ok 280 - angled and spinning impacts conserve momentum without gaining energy
+  ---
+  duration_ms: 3.1562
+  type: 'test'
+  ...
+# Subtest: sideswipes retain forward motion instead of imposing a fixed speed penalty
+ok 281 - sideswipes retain forward motion instead of imposing a fixed speed penalty
+  ---
+  duration_ms: 0.3182
+  type: 'test'
+  ...
+# Subtest: all four SAT axes reject a diagonal near miss
+ok 282 - all four SAT axes reject a diagonal near miss
+  ---
+  duration_ms: 0.3908
+  type: 'test'
+  ...
+# Subtest: swept contacts catch a complete side crossing and rewind to first contact
+ok 283 - swept contacts catch a complete side crossing and rewind to first contact
+  ---
+  duration_ms: 0.4627
+  type: 'test'
+  ...
+# Subtest: sweeps handle relative movement and reject departing overlaps and near misses
+ok 284 - sweeps handle relative movement and reject departing overlaps and near misses
+  ---
+  duration_ms: 0.6197
+  type: 'test'
+  ...
+# Subtest: first contact wins when a fast side impact crosses the center but still overlaps
+ok 285 - first contact wins when a fast side impact crosses the center but still overlaps
+  ---
+  duration_ms: 1.1744
+  type: 'test'
+  ...
+# Subtest: swept side scrapes preserve each vehicle’s tangential travel
+ok 286 - swept side scrapes preserve each vehicle’s tangential travel
+  ---
+  duration_ms: 0.5274
+  type: 'test'
+  ...
+# Subtest: swept touching bumpers preserve mass-weighted common forward travel
+ok 287 - swept touching bumpers preserve mass-weighted common forward travel
+  ---
+  duration_ms: 0.3556
+  type: 'test'
+  ...
+# Subtest: touching vehicles at equal velocity are never rewound
+ok 288 - touching vehicles at equal velocity are never rewound
+  ---
+  duration_ms: 0.1894
+  type: 'test'
+  ...
+# Subtest: player collision impulses persist in both driving speeds and preserve momentum
+ok 289 - player collision impulses persist in both driving speeds and preserve momentum
+  ---
+  duration_ms: 3.7189
+  type: 'test'
+  ...
+# Subtest: a route-constrained vehicle leaves the player fully outside its body
+ok 290 - a route-constrained vehicle leaves the player fully outside its body
+  ---
+  duration_ms: 2.1565
+  type: 'test'
+  ...
+# Subtest: player collision integration uses first contact rather than the crossed center
+ok 291 - player collision integration uses first contact rather than the crossed center
+  ---
+  duration_ms: 2.728
+  type: 'test'
+  ...
+# Subtest: touching player and traffic retain movement along the road during a scrape
+ok 292 - touching player and traffic retain movement along the road during a scrape
+  ---
+  duration_ms: 1.6691
+  type: 'test'
+  ...
+# Subtest: touching traffic bumpers continue down the road together
+ok 293 - touching traffic bumpers continue down the road together
+  ---
+  duration_ms: 2.0099
+  type: 'test'
+  ...
+# Subtest: a traffic impact propagates through a queue once per pair in the same update
+ok 294 - a traffic impact propagates through a queue once per pair in the same update
+  ---
+  duration_ms: 1.9598
+  type: 'test'
+  ...
+# Subtest: undisturbed traffic never enters the pair collision loop
+ok 295 - undisturbed traffic never enters the pair collision loop
+  ---
+  duration_ms: 2.6373
+  type: 'test'
+  ...
+# Subtest: knocked traffic closes a gap before transferring longitudinal momentum
+ok 296 - knocked traffic closes a gap before transferring longitudinal momentum
+  ---
+  duration_ms: 9.3195
+  type: 'test'
+  ...
+# Subtest: water emissiveNode skips skyline raycast in midday and golden hour presets
+ok 297 - water emissiveNode skips skyline raycast in midday and golden hour presets
+  ---
+  duration_ms: 2.4996
+  type: 'test'
+  ...
+# Subtest: water emissiveNode skips skyline raycast in outer harbor and upper Hudson at night
+ok 298 - water emissiveNode skips skyline raycast in outer harbor and upper Hudson at night
+  ---
+  duration_ms: 8.9673
+  type: 'test'
+  ...
+# Subtest: water emissiveNode evaluates skyline reflections at twilight/midnight in uniform-safe control flow
+ok 299 - water emissiveNode evaluates skyline reflections at twilight/midnight in uniform-safe control flow
+  ---
+  duration_ms: 10.5695
+  type: 'test'
+  ...
+# Subtest: the four perimeter green buffers come from the reviewed Wode frame
+ok 300 - the four perimeter green buffers come from the reviewed Wode frame
+  ---
+  duration_ms: 0.9028
+  type: 'test'
+  ...
+# Subtest: the district only overlays the 沃德嘉园 source footprints and invents no building
+ok 301 - the district only overlays the 沃德嘉园 source footprints and invents no building
+  ---
+  duration_ms: 1.8309
+  type: 'test'
+  ...
+# Subtest: every detailed row gets a grass verge and a paved entrance apron
+ok 302 - every detailed row gets a grass verge and a paved entrance apron
+  ---
+  duration_ms: 0.4598
+  type: 'test'
+  ...
+# Subtest: roof tones follow the satellite split at the central north-south lane
+ok 303 - roof tones follow the satellite split at the central north-south lane
+  ---
+  duration_ms: 0.2346
+  type: 'test'
+  ...
+# Subtest: balconies and unit doors only appear on storey buildings, never on the ground floor
+ok 304 - balconies and unit doors only appear on storey buildings, never on the ground floor
+  ---
+  duration_ms: 0.2177
+  type: 'test'
+  ...
+# Subtest: every mesh vertex is finite and stays inside the district envelope
+ok 305 - every mesh vertex is finite and stays inside the district envelope
+  ---
+  duration_ms: 73.1738
+  type: 'test'
+  ...
+# Subtest: shopfronts only face a named road and their sign quads stand vertical
+ok 306 - shopfronts only face a named road and their sign quads stand vertical
+  ---
+  duration_ms: 0.3253
+  type: 'test'
+  ...
+# Subtest: stone plinths and white belt courses wrap every detailed row like the photos
+ok 307 - stone plinths and white belt courses wrap every detailed row like the photos
+  ---
+  duration_ms: 3.9882
+  type: 'test'
+  ...
+# Subtest: grass-grid parking strips sit outside the row greens and clear of source buildings
+ok 308 - grass-grid parking strips sit outside the row greens and clear of source buildings
+  ---
+  duration_ms: 306.1623
+  type: 'test'
+  ...
+# Subtest: the four mapped gates appear with plaques, barriers and guard booths
+ok 309 - the four mapped gates appear with plaques, barriers and guard booths
+  ---
+  duration_ms: 0.4863
+  type: 'test'
+  ...
+# Subtest: balcony panels carry the photo grille and entrances get canopies and AC units
+ok 310 - balcony panels carry the photo grille and entrances get canopies and AC units
+  ---
+  duration_ms: 0.1885
+  type: 'test'
+  ...
+# Subtest: corridor additions cover four estates, preserve overlaps and use their own GCJ map frame
+ok 311 - corridor additions cover four estates, preserve overlaps and use their own GCJ map frame
+  ---
+  duration_ms: 20.8857
+  type: 'test'
+  ...
+# Subtest: Mengxi only replaces six identified teaching footprints and preserves the rest of its campus
+ok 312 - Mengxi only replaces six identified teaching footprints and preserves the rest of its campus
+  ---
+  duration_ms: 1.5717
+  type: 'test'
+  ...
+# Subtest: Mengxi red apron retains the green field hole without duplicate old generic sports polygons
+ok 313 - Mengxi red apron retains the green field hole without duplicate old generic sports polygons
+  ---
+  duration_ms: 0.2754
+  type: 'test'
+  ...
+# Subtest: community photo references keep uncertain entrances unlocated while the located Sutong west gate stays evidence-based
+ok 314 - community photo references keep uncertain entrances unlocated while the located Sutong west gate stays evidence-based
+  ---
+  duration_ms: 0.2292
+  type: 'test'
+  ...
+# Subtest: Mengxi model uses six source bodies while its entrance leaves the central ground passage clear
+ok 315 - Mengxi model uses six source bodies while its entrance leaves the central ground passage clear
+  ---
+  duration_ms: 2.5355
+  type: 'test'
+  ...
+# Subtest: road-edge study window only carries photo-backed strip types
+ok 316 - road-edge study window only carries photo-backed strip types
+  ---
+  duration_ms: 1.6298
+  type: 'test'
+  ...
+# Subtest: no strip leaves the study window and all pieces hug the ground
+ok 317 - no strip leaves the study window and all pieces hug the ground
+  ---
+  duration_ms: 20.9077
+  type: 'test'
+  ...
+# Subtest: the photo basis keeps the position caveat and unpublished capture dates
+ok 318 - the photo basis keeps the position caveat and unpublished capture dates
+  ---
+  duration_ms: 0.3174
+  type: 'test'
+  ...
+# Subtest: bricks never cover the carriageway: offsets sit outside the mapped road half-width
+ok 319 - bricks never cover the carriageway: offsets sit outside the mapped road half-width
+  ---
+  duration_ms: 0.3289
+  type: 'test'
+  ...
+1..319
+# tests 319
+# suites 0
+# pass 314
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9820.0543

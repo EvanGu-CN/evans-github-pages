@@ -63,7 +63,8 @@ test('non-residential building and campus names are searchable with source prove
     assert.ok(sites.length > 0, `${kind} is included`);
     for (const s of sites) {
       assert.ok(s.name && Number.isFinite(s.x) && Number.isFinite(s.z));
-      assert.ok(['OSM', 'Overture'].includes(s.source));
+      // ReviewedImagery 的具名来源来自公开地图标注核对（如八一文枢院售楼处），同样保留出处。
+      assert.ok(['OSM', 'Overture', 'ReviewedImagery'].includes(s.source));
       assert.ok(['building', 'place'].includes(s.scope));
       assert.equal(CityMapSystem.prototype.findPlace(s.name).name, s.name);
     }

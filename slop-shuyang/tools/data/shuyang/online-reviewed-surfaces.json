@@ -129,6 +129,146 @@
       "satelliteImage": "reference/wode-rtmart-satellite-20261113.jpg",
       "limitations": "Whole map silhouettes cross-checked with satellite; view covers Wode Jiayuan to RT-Mart and Mengxi campus. Acquisition date unknown. Heights and upper massing estimated.",
       "method": "Native screenshot, separate labelled and hidden-label views; GCJ-02 inverted to WGS84."
+    },
+    {
+      "id": "amap-shiyan-core-20261113",
+      "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T07:15:00Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard+satellite",
+      "size": [
+        3328,
+        2816
+      ],
+      "mapOffset": [
+        0,
+        0
+      ],
+      "screenshotSize": [
+        3328,
+        2816
+      ],
+      "bounds": {
+        "southWest": [
+          118.7677001953125,
+          34.129994745824774
+        ],
+        "northEast": [
+          118.78555297851562,
+          34.14249823152873
+        ]
+      },
+      "standardImage": "reference/shixiao-amap-standard-z18.jpg",
+      "satelliteImage": "reference/shixiao-amap-satellite-z18.jpg",
+      "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; campus POI area and water mask calibrated against OSM/WGS84 source footprints (best water-mask IoU 0.588 at -4px x, 0px y); whole silhouettes cross-checked between standard and satellite layers.",
+      "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Ground outlines are display estimates, not cadastral boundaries or measured heights. Local visual review only; tiles are not redistributed as project assets."
+    },
+    {
+      "id": "amap-core-retail-20261113",
+      "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T08:40:00Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard+satellite",
+      "size": [
+        3328,
+        2816
+      ],
+      "mapOffset": [
+        0,
+        0
+      ],
+      "screenshotSize": [
+        3328,
+        2816
+      ],
+      "bounds": {
+        "southWest": [
+          118.77044677734375,
+          34.120900139826965
+        ],
+        "northEast": [
+          118.78829956054688,
+          34.13340497084095
+        ]
+      },
+      "standardImage": "reference/core-amap-standard-z18.jpg",
+      "satelliteImage": "reference/core-amap-satellite-z18.jpg",
+      "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; project source footprints cross-checked against the standard-map building fill (best IoU 0.399 at -5/+5 px, about 3 m, below single-roof reading error, so no extra translation applied).",
+      "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Paving extents are display approximations, not cadastral boundaries. Local visual review only; tiles are not redistributed as project assets."
+    },
+    {
+      "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T09:10:00Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard+satellite",
+      "size": [
+        3840,
+        3328
+      ],
+      "mapOffset": [
+        0,
+        0
+      ],
+      "bounds": {
+        "southWest": [
+          118.7677001953125,
+          34.10498222546687
+        ],
+        "northEast": [
+          118.78829956054688,
+          34.119763245290784
+        ]
+      },
+      "standardImage": "reference/rtmart-amap-standard-z18.jpg",
+      "satelliteImage": "reference/rtmart-amap-satellite-z18.jpg",
+      "limitations": "Zoom 18 only; provider has no usable zoom-19 satellite at this location. Acquisition date unknown.",
+      "id": "amap-rtmart-20261113",
+      "screenshotSize": [
+        3840,
+        3328
+      ],
+      "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; source footprints cross-checked against the standard map and satellite."
+    },
+    {
+      "id": "amap-bayi-20261113",
+      "provider": "AMap official public zoom-18 tiles (standard vector + satellite mosaic)",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-13T13:55:00Z",
+      "imageAcquired": null,
+      "dateNote": "Provider does not disclose imagery acquisition date; retrieval time is not acquisition time.",
+      "layer": "standard+satellite",
+      "size": [
+        3328,
+        3328
+      ],
+      "mapOffset": [
+        0,
+        0
+      ],
+      "screenshotSize": [
+        3328,
+        3328
+      ],
+      "bounds": {
+        "southWest": [
+          118.76358032226562,
+          34.131131502784406
+        ],
+        "northEast": [
+          118.78143310546875,
+          34.14590795200977
+        ]
+      },
+      "standardImage": "reference/bayi-amap-standard-z18.jpg",
+      "satelliteImage": "reference/bayi-amap-satellite-z18.jpg",
+      "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; standard-map building fills cross-checked against the satellite mosaic and reviewed one by one. Fills that differ from an existing project source only by a few metres of source offset describe the same building and are not duplicated.",
+      "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Outlines are map building fills simplified to 1.5 px, not cadastral boundaries or measured footprints. Heights are type-based display estimates. Local visual review only; tiles are not redistributed as project assets."
     }
   ],
   "surfaces": [
@@ -521,6 +661,3143 @@
           [
             564.6659975617765,
             1954.6964592331074
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/shiyan/fountain-plaza",
+      "kind": "plaza",
+      "name": "沭阳实验小学喷泉广场",
+      "sourceSiteId": "way/1456634995",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers and the 2026-10-16 school feature article; paving extent and colours are display approximations, acquisition date unknown. Fountain square visible in the 2026 campus photos; source footprints kept clear.",
+      "rings": [
+        [
+          [
+            -352.1777611642512,
+            -1034.3513702916207
+          ],
+          [
+            -352.17323841429277,
+            -980.3610925433678
+          ],
+          [
+            -291.81512183089325,
+            -980.4146412997696
+          ],
+          [
+            -291.81964444335307,
+            -1034.4049188696742
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/shiyan/east-sport-apron",
+      "kind": "sport-paving",
+      "name": "沭阳实验小学东侧运动场铺装",
+      "sourceSiteId": "way/1456634995",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers and the 2026-10-16 school feature article; paving extent and colours are display approximations, acquisition date unknown. Narrow north-south coloured strip; sport type and lane count unconfirmed.",
+      "rings": [
+        [
+          [
+            -260.1582264753525,
+            -1064.3735904330679
+          ],
+          [
+            -262.13723494892434,
+            -1064.3717802036606
+          ],
+          [
+            -261.148183191287,
+            -1069.7716762684206
+          ],
+          [
+            -288.8541306800351,
+            -1069.7465065024494
+          ],
+          [
+            -288.85408956532876,
+            -1069.2556892581333
+          ],
+          [
+            -285.39078263319107,
+            -1068.2771819277955
+          ],
+          [
+            -285.8852415416701,
+            -1064.8410129951965
+          ],
+          [
+            -288.85376064374947,
+            -1065.3291503277967
+          ],
+          [
+            -288.85232161593234,
+            -1048.150521912464
+          ],
+          [
+            -275.4938930119693,
+            -1045.2177029351692
+          ],
+          [
+            -277.96677300384493,
+            -1034.9082609807938
+          ],
+          [
+            -288.851458201861,
+            -1037.84332877043
+          ],
+          [
+            -288.8484568269884,
+            -1002.0134682406713
+          ],
+          [
+            -260.15300496788427,
+            -1002.0395434489727
+          ],
+          [
+            -260.15612963973354,
+            -1039.3418608232842
+          ],
+          [
+            -266.0915463619542,
+            -1020.1944765155974
+          ],
+          [
+            -274.5025036180349,
+            -1022.6409174197854
+          ],
+          [
+            -263.12640961592325,
+            -1060.444334635981
+          ],
+          [
+            -260.1578153295986,
+            -1059.4654137669022
+          ]
+        ],
+        [
+          [
+            -273.01702218289125,
+            -1007.917658630145
+          ],
+          [
+            -277.46996881807416,
+            -1010.3677170099373
+          ],
+          [
+            -272.02859193865805,
+            -1020.6798870214391
+          ],
+          [
+            -267.57563449346463,
+            -1018.2298424624648
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/shiyan/east-infield",
+      "kind": "court",
+      "name": "沭阳实验小学东侧绿色场地",
+      "sourceSiteId": "way/1456634995",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers and the 2026-10-16 school feature article; paving extent and colours are display approximations, acquisition date unknown. Green inner surface traced from satellite; exact markings unknown.",
+      "rings": [
+        [
+          [
+            -263.6214490448846,
+            -1063.8796061487826
+          ],
+          [
+            -285.39041259821494,
+            -1063.8598250169646
+          ],
+          [
+            -285.38901468772315,
+            -1047.172012231385
+          ],
+          [
+            -275.4938930119693,
+            -1045.2177029351692
+          ],
+          [
+            -277.96677300384493,
+            -1034.9082609807938
+          ],
+          [
+            -285.3881512749614,
+            -1036.8648179414788
+          ],
+          [
+            -285.3856432804934,
+            -1006.9248041811894
+          ],
+          [
+            -263.6166797834721,
+            -1006.9445853813611
+          ],
+          [
+            -263.61844769096416,
+            -1028.0498515485122
+          ],
+          [
+            -266.0915463619542,
+            -1020.1944765155974
+          ],
+          [
+            -274.5025036180349,
+            -1022.6409174197854
+          ],
+          [
+            -263.62099678442434,
+            -1058.480611363844
+          ]
+        ],
+        [
+          [
+            -273.01702218289125,
+            -1007.917658630145
+          ],
+          [
+            -277.46996881807416,
+            -1010.3677170099373
+          ],
+          [
+            -272.02859193865805,
+            -1020.6798870214391
+          ],
+          [
+            -267.57563449346463,
+            -1018.2298424624648
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/chengbei/north-running-track",
+      "kind": "running-track",
+      "name": "城北公园北侧椭圆跑道（归属未核实）",
+      "sourceSiteId": "way/1372587295",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers and the 2026-10-16 school feature article; paving extent and colours are display approximations, acquisition date unknown. Complete red oval visible in satellite; owning school and lane count are not identified.",
+      "rings": [
+        [
+          [
+            46.11883513761887,
+            -1008.7214412744748
+          ],
+          [
+            39.19134127693866,
+            -1009.2049905495683
+          ],
+          [
+            31.768929027986847,
+            -1011.160505347811
+          ],
+          [
+            25.336004643009137,
+            -1015.0803562443143
+          ],
+          [
+            18.902974821470732,
+            -1020.472683602117
+          ],
+          [
+            12.964651227833563,
+            -1027.337997619263
+          ],
+          [
+            7.521071162199403,
+            -1035.1854718425332
+          ],
+          [
+            3.561809197791028,
+            -1044.506940356364
+          ],
+          [
+            0.09732180464548319,
+            -1054.3197340859504
+          ],
+          [
+            -2.3776259857595927,
+            -1065.1151761987912
+          ],
+          [
+            -3.862955140527044,
+            -1075.9116261227691
+          ],
+          [
+            -3.8639006294887444,
+            -1087.2004074323634
+          ],
+          [
+            -2.875188599512649,
+            -1097.999377407444
+          ],
+          [
+            -0.8968177738258595,
+            -1108.3085391435723
+          ],
+          [
+            2.071214395879377,
+            -1118.1278969462505
+          ],
+          [
+            6.028993948382274,
+            -1126.4758282353305
+          ],
+          [
+            10.976443757433204,
+            -1134.3339696804794
+          ],
+          [
+            16.41888100394358,
+            -1140.2293754931948
+          ],
+          [
+            22.356226957513204,
+            -1145.1436792735096
+          ],
+          [
+            29.283382788967458,
+            -1148.0957772668228
+          ],
+          [
+            36.21068268361849,
+            -1149.575457052748
+          ],
+          [
+            43.13816772998241,
+            -1149.091906559072
+          ],
+          [
+            50.06579680287682,
+            -1147.1359383749827
+          ],
+          [
+            56.9936109881988,
+            -1143.2167383760818
+          ],
+          [
+            63.42674662081795,
+            -1137.8245934505646
+          ],
+          [
+            69.36519957315663,
+            -1130.9594967127707
+          ],
+          [
+            74.31410007514572,
+            -1123.111728855844
+          ],
+          [
+            78.7683086084952,
+            -1113.7909932083571
+          ],
+          [
+            82.23291357474628,
+            -1103.9783849359071
+          ],
+          [
+            84.70795165984023,
+            -1093.1830819952718
+          ],
+          [
+            85.69851022163824,
+            -1082.3861819782132
+          ],
+          [
+            86.1942829241915,
+            -1071.097923154628
+          ],
+          [
+            85.20553279531212,
+            -1060.2988815644378
+          ],
+          [
+            83.22708837643549,
+            -1049.9895890094062
+          ],
+          [
+            80.25895219098862,
+            -1040.170049773036
+          ],
+          [
+            76.3010458202349,
+            -1031.8219081020495
+          ],
+          [
+            71.353456527346,
+            -1023.9635337716758
+          ],
+          [
+            65.91089027963052,
+            -1018.067919346395
+          ],
+          [
+            59.47861107615276,
+            -1013.152908489535
+          ],
+          [
+            53.04618527295607,
+            -1010.2011954080896
+          ]
+        ],
+        [
+          [
+            45.12788236727786,
+            -1024.4266477402962
+          ],
+          [
+            39.68488434901548,
+            -1024.420935126555
+          ],
+          [
+            33.74691848750174,
+            -1026.3779968106967
+          ],
+          [
+            28.79851561527942,
+            -1029.3177450799942
+          ],
+          [
+            23.850041107585696,
+            -1033.2391416925257
+          ],
+          [
+            18.901453861499814,
+            -1038.6330043263004
+          ],
+          [
+            14.94241903826381,
+            -1045.0095382151299
+          ],
+          [
+            11.47816122067096,
+            -1051.8774051741127
+          ],
+          [
+            9.003447883745809,
+            -1059.72793164073
+          ],
+          [
+            7.023506467633901,
+            -1068.0697827362033
+          ],
+          [
+            6.033145869801128,
+            -1076.903467161864
+          ],
+          [
+            6.0324470350302155,
+            -1085.2473494603425
+          ],
+          [
+            6.526558475330412,
+            -1093.591735343834
+          ],
+          [
+            8.010291103504517,
+            -1101.9371369470723
+          ],
+          [
+            10.483729045136664,
+            -1109.301926197252
+          ],
+          [
+            13.452022508052412,
+            -1116.1764103378498
+          ],
+          [
+            17.4100271169867,
+            -1122.0702920005444
+          ],
+          [
+            21.862934286137182,
+            -1126.98306337496
+          ],
+          [
+            26.810787978395894,
+            -1130.423915160746
+          ],
+          [
+            31.758734471746894,
+            -1132.8831489492293
+          ],
+          [
+            37.201631708758995,
+            -1133.8704700575279
+          ],
+          [
+            42.644623950769834,
+            -1133.876176748847
+          ],
+          [
+            48.087793404930416,
+            -1131.9186415254958
+          ],
+          [
+            53.53105784575658,
+            -1128.9794910004944
+          ],
+          [
+            58.47959577698033,
+            -1125.0582013191874
+          ],
+          [
+            62.93344513381613,
+            -1119.6639535158436
+          ],
+          [
+            66.89256195860997,
+            -1113.2875568146032
+          ],
+          [
+            70.35690261060944,
+            -1106.419821724186
+          ],
+          [
+            73.3265059849003,
+            -1098.5699292309346
+          ],
+          [
+            74.81167904468698,
+            -1090.227638030674
+          ],
+          [
+            76.29689415548015,
+            -1081.3945233022646
+          ],
+          [
+            76.29759295358475,
+            -1073.0506373142537
+          ],
+          [
+            75.30864151101184,
+            -1064.7056903358723
+          ],
+          [
+            73.82486573708036,
+            -1056.36020970389
+          ],
+          [
+            71.84618437010597,
+            -1048.9958332272033
+          ],
+          [
+            68.38299248764676,
+            -1042.1206957887644
+          ],
+          [
+            64.91972355619905,
+            -1036.227196484492
+          ],
+          [
+            60.466733660021816,
+            -1031.3142906118546
+          ],
+          [
+            55.51880813717461,
+            -1027.8733272837144
+          ],
+          [
+            50.570810951356265,
+            -1025.4140127796418
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/chengbei/north-infield",
+      "kind": "infield",
+      "name": "城北公园北侧绿色内场",
+      "sourceSiteId": "way/1372587295",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers and the 2026-10-16 school feature article; paving extent and colours are display approximations, acquisition date unknown. Green inner field with visible transverse stripes; not a surveyed pitch.",
+      "rings": [
+        [
+          [
+            45.12788236727786,
+            -1024.4266477402962
+          ],
+          [
+            39.68488434901548,
+            -1024.420935126555
+          ],
+          [
+            33.74691848750174,
+            -1026.3779968106967
+          ],
+          [
+            28.79851561527942,
+            -1029.3177450799942
+          ],
+          [
+            23.850041107585696,
+            -1033.2391416925257
+          ],
+          [
+            18.901453861499814,
+            -1038.6330043263004
+          ],
+          [
+            14.94241903826381,
+            -1045.0095382151299
+          ],
+          [
+            11.47816122067096,
+            -1051.8774051741127
+          ],
+          [
+            9.003447883745809,
+            -1059.72793164073
+          ],
+          [
+            7.023506467633901,
+            -1068.0697827362033
+          ],
+          [
+            6.033145869801128,
+            -1076.903467161864
+          ],
+          [
+            6.0324470350302155,
+            -1085.2473494603425
+          ],
+          [
+            6.526558475330412,
+            -1093.591735343834
+          ],
+          [
+            8.010291103504517,
+            -1101.9371369470723
+          ],
+          [
+            10.483729045136664,
+            -1109.301926197252
+          ],
+          [
+            13.452022508052412,
+            -1116.1764103378498
+          ],
+          [
+            17.4100271169867,
+            -1122.0702920005444
+          ],
+          [
+            21.862934286137182,
+            -1126.98306337496
+          ],
+          [
+            26.810787978395894,
+            -1130.423915160746
+          ],
+          [
+            31.758734471746894,
+            -1132.8831489492293
+          ],
+          [
+            37.201631708758995,
+            -1133.8704700575279
+          ],
+          [
+            42.644623950769834,
+            -1133.876176748847
+          ],
+          [
+            48.087793404930416,
+            -1131.9186415254958
+          ],
+          [
+            53.53105784575658,
+            -1128.9794910004944
+          ],
+          [
+            58.47959577698033,
+            -1125.0582013191874
+          ],
+          [
+            62.93344513381613,
+            -1119.6639535158436
+          ],
+          [
+            66.89256195860997,
+            -1113.2875568146032
+          ],
+          [
+            70.35690261060944,
+            -1106.419821724186
+          ],
+          [
+            73.3265059849003,
+            -1098.5699292309346
+          ],
+          [
+            74.81167904468698,
+            -1090.227638030674
+          ],
+          [
+            76.29689415548015,
+            -1081.3945233022646
+          ],
+          [
+            76.29759295358475,
+            -1073.0506373142537
+          ],
+          [
+            75.30864151101184,
+            -1064.7056903358723
+          ],
+          [
+            73.82486573708036,
+            -1056.36020970389
+          ],
+          [
+            71.84618437010597,
+            -1048.9958332272033
+          ],
+          [
+            68.38299248764676,
+            -1042.1206957887644
+          ],
+          [
+            64.91972355619905,
+            -1036.227196484492
+          ],
+          [
+            60.466733660021816,
+            -1031.3142906118546
+          ],
+          [
+            55.51880813717461,
+            -1027.8733272837144
+          ],
+          [
+            50.570810951356265,
+            -1025.4140127796418
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/core/central-north-plaza",
+      "kind": "plaza",
+      "name": "中央商场人民路前广场",
+      "sourceSiteId": "way/1086134482",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers, 2026-05-04 Renmin/Shanghai retail field survey and 2024 Xinhua Daily night-market report; paving extent and colours are display approximations, acquisition date unknown. Forecourt along 人民中路, cross-checked with the 2025-08-30 mall opening photo.",
+      "rings": [
+        [
+          [
+            -226.91753419059233,
+            34.60481390336557
+          ],
+          [
+            -218.50935906194223,
+            1.708161195075462
+          ],
+          [
+            -248.68960548118002,
+            1.7361425590515296
+          ],
+          [
+            -257.0976677378679,
+            34.632680973551714
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T08:40:00Z",
+      "referenceId": "amap-core-retail-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/core/bluesky-south-plaza",
+      "kind": "plaza",
+      "name": "蓝天市场人民路前广场",
+      "sourceSiteId": "way/1321791084",
+      "appearanceSource": "2026-11-13 queried AMap standard/satellite layers, 2026-05-04 Renmin/Shanghai retail field survey and 2024 Xinhua Daily night-market report; paving extent and colours are display approximations, acquisition date unknown. South forecourt toward 人民中路; the 2024 report describes an evening snack street nearby, not a permanent structure.",
+      "rings": [
+        [
+          [
+            -75.02674660337007,
+            -31.3191360302623
+          ],
+          [
+            -240.7762683617274,
+            -31.159848017261808
+          ],
+          [
+            -248.19513833195037,
+            -1.7004504615537002
+          ],
+          [
+            -217.5201236559102,
+            -1.728900778751239
+          ],
+          [
+            -216.53088781643012,
+            -5.165961856122166
+          ],
+          [
+            -188.33035264061468,
+            -17.955283725767273
+          ],
+          [
+            -129.9456119338739,
+            -1.812445196754382
+          ],
+          [
+            -103.22729161230109,
+            -1.8386151048838144
+          ],
+          [
+            -113.61799225374335,
+            -4.282783350692739
+          ],
+          [
+            -110.15569104020088,
+            -18.52159195390024
+          ],
+          [
+            -75.02493823199843,
+            -9.720606766103458
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T08:40:00Z",
+      "referenceId": "amap-core-retail-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/rtmart/north-forecourt",
+      "kind": "parking",
+      "name": "大润发北侧停车场",
+      "sourceSiteId": "way/497798167",
+      "appearanceSource": "AMap zoom-18 satellite shows a continuous asphalt forecourt between the mall north facade and Suzhou West Road; bay markings and kerb details are not surveyed, acquisition date unknown.",
+      "rings": [
+        [
+          [
+            -202.9902757123891,
+            1577.9909062692495
+          ],
+          [
+            -45.00519790769522,
+            1591.9764742945076
+          ],
+          [
+            -45.002683695670605,
+            1622.023592920738
+          ],
+          [
+            -54.50230606603186,
+            1628.022976852009
+          ],
+          [
+            -178.49660708675245,
+            1609.978663135082
+          ],
+          [
+            -197.00076655647374,
+            1612.0091620637183
+          ],
+          [
+            -202.98885413249207,
+            1594.9782900832934
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T09:10:00Z",
+      "referenceId": "amap-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/perimeter-north-green",
+      "kind": "green",
+      "name": "沃德嘉园北侧绿化退界",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "AMap native satellite/standard screenshot 2026-11-13; a 14 m planted setback follows the mapped estate boundary; species, kerb lines and exact depth are display estimates, capture date unpublished.",
+      "rings": [
+        [
+          [
+            647.1045871597148,
+            1716.0635148424433
+          ],
+          [
+            464.17250482169004,
+            1685.6574214649856
+          ],
+          [
+            462.5916332148924,
+            1720.0287099576885
+          ],
+          [
+            476.548431693696,
+            1720.0115238343465
+          ],
+          [
+            477.4377991152836,
+            1702.1383494729519
+          ],
+          [
+            585.1370134255029,
+            1719.9732709696834
+          ],
+          [
+            648.0948305092007,
+            1719.9901555405452
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/perimeter-south-green",
+      "kind": "green",
+      "name": "沃德嘉园南侧绿化退界",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "AMap native satellite/standard screenshot 2026-11-13; a 14 m planted setback follows the mapped estate boundary; species, kerb lines and exact depth are display estimates, capture date unpublished.",
+      "rings": [
+        [
+          [
+            793.3728471719569,
+            2357.519277589012
+          ],
+          [
+            774.6584800191745,
+            2310.013424511471
+          ],
+          [
+            759.6110662884035,
+            2310.03376584408
+          ],
+          [
+            772.2852428859079,
+            2342.0314785403157
+          ],
+          [
+            458.18762927759644,
+            2321.2246069012426
+          ],
+          [
+            445.0220397785378,
+            2312.1076630853163
+          ],
+          [
+            445.1208507154975,
+            2310.045240331061
+          ],
+          [
+            431.16422446484603,
+            2309.964039689214
+          ],
+          [
+            430.5710995324765,
+            2319.196021103508
+          ],
+          [
+            453.4375472266824,
+            2334.8809308473765
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/perimeter-east-green",
+      "kind": "green",
+      "name": "沃德嘉园东侧滨河绿化",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "AMap native satellite/standard screenshot 2026-11-13; a 14 m planted setback follows the mapped estate boundary; species, kerb lines and exact depth are display estimates, capture date unpublished.",
+      "rings": [
+        [
+          [
+            793.3728471719569,
+            2357.519277589012
+          ],
+          [
+            748.022937906567,
+            2242.5828916890314
+          ],
+          [
+            729.996051777831,
+            2125.548535198324
+          ],
+          [
+            730.003752587079,
+            2217.6632411826436
+          ],
+          [
+            734.1637994868706,
+            2244.761974286407
+          ],
+          [
+            734.4609072509746,
+            2246.2346386137237
+          ],
+          [
+            734.9560048353047,
+            2247.7070380332525
+          ],
+          [
+            772.2852428859079,
+            2342.0314785403157
+          ],
+          [
+            730.0139160712499,
+            2339.2404033433468
+          ],
+          [
+            730.0150900239897,
+            2353.2837530351776
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/perimeter-west-green",
+      "kind": "green",
+      "name": "沃德嘉园西侧绿化退界",
+      "sourceSiteId": "way/1321791085",
+      "appearanceSource": "AMap native satellite/standard screenshot 2026-11-13; a 14 m planted setback follows the mapped estate boundary; species, kerb lines and exact depth are display estimates, capture date unpublished.",
+      "rings": [
+        [
+          [
+            479.9654858003509,
+            2336.714193646172
+          ],
+          [
+            479.9643115333285,
+            2322.6708704732473
+          ],
+          [
+            458.18762927759644,
+            2321.2246069012426
+          ],
+          [
+            445.0220397785378,
+            2312.1076630853163
+          ],
+          [
+            465.3828921605692,
+            1955.606180839398
+          ],
+          [
+            465.3828839486278,
+            1955.5079799210403
+          ],
+          [
+            477.4377991152836,
+            1702.1383494729519
+          ],
+          [
+            480.01143563256556,
+            1702.5279631104756
+          ],
+          [
+            480.0102447544004,
+            1688.28924747861
+          ],
+          [
+            464.17250482169004,
+            1685.6574214649856
+          ],
+          [
+            451.42609203963923,
+            1954.8376951079906
+          ],
+          [
+            430.5710995324765,
+            2319.196021103508
+          ],
+          [
+            453.4375472266824,
+            2334.8809308473765
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-000",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "1dd172b5-c3a3-4a96-bbf2-e0aa5c6848f3",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            465.67437522803783,
+            1890.2042445163793
+          ],
+          [
+            484.778487643971,
+            1891.1626774646527
+          ],
+          [
+            484.97623591055026,
+            1888.5110272649774
+          ],
+          [
+            465.87213016133586,
+            1887.650796340507
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-001",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "9f9903f2-5da4-485b-992b-e4ded64ebe06",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            473.69271847202566,
+            1897.4611886622804
+          ],
+          [
+            473.7919165540278,
+            1900.014274142832
+          ],
+          [
+            495.8654812791015,
+            1898.9067505600449
+          ],
+          [
+            495.6672968734478,
+            1896.35378925551
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-002",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "f13d742f-303b-49e1-a15b-07523fb9c62c",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            510.80237546306114,
+            1779.8701815981963
+          ],
+          [
+            471.4061128155934,
+            1778.3478600949875
+          ],
+          [
+            471.30735010398297,
+            1780.9993542964303
+          ],
+          [
+            510.7036029445253,
+            1782.4234788693705
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-003",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "2bdb12ac-2d31-47af-9913-3495602c0d7a",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            511.03087214658746,
+            2144.883030391806
+          ],
+          [
+            511.2286225411216,
+            2142.2313022436906
+          ],
+          [
+            452.43119569126907,
+            2137.393853790812
+          ],
+          [
+            452.23344184224584,
+            2139.947372707337
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-004",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "327ec27b-36e1-4081-814c-d1cae724aeff",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            455.7906566271073,
+            2065.800083578557
+          ],
+          [
+            537.256107455057,
+            2070.6089715460307
+          ],
+          [
+            537.4538681685351,
+            2068.0554656041513
+          ],
+          [
+            455.8894187206287,
+            2063.148504912281
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-005",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "335da066-c741-4c6f-9840-dde030c79499",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            523.8963826594621,
+            2112.459995160449
+          ],
+          [
+            524.1931206688253,
+            2109.808151526674
+          ],
+          [
+            454.0121019739091,
+            2103.5119679799977
+          ],
+          [
+            453.81434799917287,
+            2106.06547728614
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-006",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "335da066-c741-4c6f-9840-dde030c79499",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            509.24547779347375,
+            2101.283223211405
+          ],
+          [
+            524.7864407667357,
+            2102.638617946969
+          ],
+          [
+            525.0831870954202,
+            2100.084979657262
+          ],
+          [
+            512.0168897365861,
+            2098.9229029002686
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-007",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "335da066-c741-4c6f-9840-dde030c79499",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            486.0824730799927,
+            2096.598293738475
+          ],
+          [
+            454.9021428886172,
+            2093.7888288897543
+          ],
+          [
+            454.7043888405484,
+            2096.3423354688166
+          ],
+          [
+            485.78573146685625,
+            2099.151926244825
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-008",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "5dc0b2df-bf26-46d4-bdcc-df5dfec1c556",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            539.0329160774482,
+            2011.2928012295768
+          ],
+          [
+            459.05223864401137,
+            2007.365997693937
+          ],
+          [
+            458.8544842607078,
+            2009.9194797559949
+          ],
+          [
+            538.8351552395666,
+            2013.8462909692557
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-009",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "8968dedb-9d28-45df-9c68-4f5a17f1a863",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            490.735415315506,
+            2104.252325440248
+          ],
+          [
+            458.0704720477704,
+            2103.8998035615273
+          ],
+          [
+            490.73562882860085,
+            2106.8055924731284
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-010",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "a9daaae1-6c45-4ed4-8b56-dc3b38d35d7d",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            466.2023097076368,
+            2284.9772008879695
+          ],
+          [
+            469.96588998745995,
+            2310.99681866579
+          ],
+          [
+            472.53945278060104,
+            2310.600828378071
+          ],
+          [
+            468.7758685512937,
+            2284.5812157629243
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-011",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-111",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            447.28848394949097,
+            2190.429890684333
+          ],
+          [
+            447.1897139910485,
+            2192.9833034631656
+          ],
+          [
+            521.3297788259919,
+            2196.7214985636056
+          ],
+          [
+            521.4285435791294,
+            2194.069878100963
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-012",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-113",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            449.86487253045766,
+            2224.110614199359
+          ],
+          [
+            523.6091783814245,
+            2229.1258883359023
+          ],
+          [
+            523.7079432301564,
+            2226.474258102599
+          ],
+          [
+            450.0626179776604,
+            2221.4588674150204
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-013",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-115",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            454.6166147135171,
+            2230.3898488527043
+          ],
+          [
+            454.3198851308551,
+            2233.0417199442672
+          ],
+          [
+            524.4019742222646,
+            2239.9273360212455
+          ],
+          [
+            524.6987205051162,
+            2237.3736582969123
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-014",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "05abddd8-8bf9-4cd1-b814-09d016337e08",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            565.8345828099019,
+            1724.2204078117006
+          ],
+          [
+            600.6784855888918,
+            1721.720917514689
+          ],
+          [
+            600.4802846048331,
+            1719.069817385305
+          ],
+          [
+            565.6363927995425,
+            1721.6675024629767
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-015",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "05abddd8-8bf9-4cd1-b814-09d016337e08",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            591.1762213396922,
+            1730.3745689225125
+          ],
+          [
+            591.1762213396922,
+            1730.3745689225125
+          ],
+          [
+            591.1762213396922,
+            1730.3745689225125
+          ],
+          [
+            591.1762213396922,
+            1730.3745689225125
+          ],
+          [
+            591.2752106005762,
+            1730.3744420901269
+          ],
+          [
+            591.2752188125176,
+            1730.4726405171073
+          ],
+          [
+            591.7703047749404,
+            1732.1413797316977
+          ],
+          [
+            601.4712157734862,
+            1731.4415398120263
+          ],
+          [
+            601.2730229385122,
+            1728.888635248978
+          ],
+          [
+            571.6754630749944,
+            1730.988667555991
+          ],
+          [
+            572.2696075583202,
+            1733.5410708659115
+          ],
+          [
+            580.9805621106907,
+            1732.9407707169744
+          ],
+          [
+            590.978234619078,
+            1730.276624146947
+          ],
+          [
+            590.978234619078,
+            1730.276624146947
+          ],
+          [
+            590.978234619078,
+            1730.276624146947
+          ],
+          [
+            590.978234619078,
+            1730.276624146947
+          ],
+          [
+            591.0772238721049,
+            1730.276497322418
+          ],
+          [
+            591.0772238721049,
+            1730.276497322418
+          ],
+          [
+            591.0772238721049,
+            1730.276497322418
+          ],
+          [
+            591.0772238721049,
+            1730.276497322418
+          ],
+          [
+            591.0772238721049,
+            1730.276497322418
+          ],
+          [
+            591.1762131277508,
+            1730.2763704947465
+          ],
+          [
+            591.1762131277508,
+            1730.2763704947465
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-016",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "196af76e-8505-41d0-9618-8e9f7e4e2c19",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            588.1195865613909,
+            1874.2403610442418
+          ],
+          [
+            634.6451597068279,
+            1877.1263701714586
+          ],
+          [
+            634.7439371910282,
+            1874.5730406082346
+          ],
+          [
+            588.3173513356616,
+            1871.6869074747071
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-017",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "3e8e993c-1aa2-43c8-8aae-78ffc60ac9a4",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            631.0842132185915,
+            1909.7334735322963
+          ],
+          [
+            631.2819814067565,
+            1907.180006288079
+          ],
+          [
+            587.2311562164684,
+            1903.7997564234433
+          ],
+          [
+            587.0333915286255,
+            1906.3532191468837
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-018",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "3e8e993c-1aa2-43c8-8aae-78ffc60ac9a4",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            613.2649900100081,
+            1898.5616871988602
+          ],
+          [
+            631.7763362523515,
+            1900.0107388457448
+          ],
+          [
+            631.9741209154702,
+            1897.6536748995989
+          ],
+          [
+            613.264801147142,
+            1896.3030808371238
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-019",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "545eeea0-7f95-4aca-9f23-fe6e81fc0046",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            672.8515166683961,
+            1823.8521769511683
+          ],
+          [
+            673.0492881473614,
+            1821.2987310788965
+          ],
+          [
+            627.8099633071793,
+            1819.393789722342
+          ],
+          [
+            627.61219539794,
+            1821.9472314211052
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-020",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "65c77a9d-9d5f-4759-a800-f5eed7823762",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            589.9981226222998,
+            1847.232988569728
+          ],
+          [
+            616.5273719061449,
+            1847.1988677572826
+          ],
+          [
+            616.5271584074546,
+            1844.6456753879331
+          ],
+          [
+            589.9979009051206,
+            1844.5815965061033
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-021",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "74827c46-b21c-485e-9038-bcfbb4bdc120",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            678.4985528681957,
+            1877.1672233510503
+          ],
+          [
+            678.4983393852195,
+            1874.6140223408413
+          ],
+          [
+            648.9986788559071,
+            1874.5544841049286
+          ],
+          [
+            648.9989005573722,
+            1877.2058851441104
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-022",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "98ffbd3e-60e8-4bc9-9214-7cf40cceca03",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            550.2081125144738,
+            1887.152808644229
+          ],
+          [
+            493.5879958511218,
+            1889.089553898533
+          ],
+          [
+            493.68719472930644,
+            1891.6426361578149
+          ],
+          [
+            550.3073136515643,
+            1889.7058880538657
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-023",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "a4e543dc-b789-4826-8309-4ab14d122f87",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            653.4441713137711,
+            1765.350914093276
+          ],
+          [
+            653.6419412645374,
+            1762.797486614454
+          ],
+          [
+            588.3079980876433,
+            1759.8378223489924
+          ],
+          [
+            588.2092306683421,
+            1762.4893157954011
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-024",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "a97bc246-732e-4779-b027-43ae2022169f",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            676.221721781743,
+            1877.170219780008
+          ],
+          [
+            648.9989005573722,
+            1877.2058851441104
+          ],
+          [
+            648.9987445448907,
+            1875.3400843304257
+          ],
+          [
+            645.4350515505326,
+            1875.3447311478192
+          ],
+          [
+            645.4352650413658,
+            1877.8979323599467
+          ],
+          [
+            676.2218203119444,
+            1878.348620492235
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-025",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "b4b32430-1d4c-40e6-a37e-a5087825fa23",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            631.7673365931649,
+            1792.38385702985
+          ],
+          [
+            631.5695683696432,
+            1794.9372912733384
+          ],
+          [
+            662.2570854782809,
+            1796.8612639499167
+          ],
+          [
+            662.3558558426718,
+            1794.2097572413052
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-026",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "c894f57e-a13e-485a-8a6a-cfd40ed2a0b6",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            481.6944654034382,
+            1705.9628179520478
+          ],
+          [
+            561.2799859737594,
+            1710.5766293587099
+          ],
+          [
+            561.4777486004326,
+            1708.0232250793147
+          ],
+          [
+            481.8922216292233,
+            1703.4094214940526
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-027",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "d0a33434-d25c-4b52-ab6a-94ab43375a34",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            550.5032851884781,
+            1865.7448235461288
+          ],
+          [
+            550.5032851884781,
+            1865.7448235461288
+          ],
+          [
+            550.5032851884781,
+            1865.7448235461288
+          ],
+          [
+            550.6022728268784,
+            1865.7446983573764
+          ],
+          [
+            550.6022728268784,
+            1865.7446983573764
+          ],
+          [
+            550.6022728268784,
+            1865.7446983573764
+          ],
+          [
+            550.6022728268784,
+            1865.7446983573764
+          ],
+          [
+            550.7012686824581,
+            1865.8427730891735
+          ],
+          [
+            550.7012686824581,
+            1865.8427730891735
+          ],
+          [
+            550.7012686824581,
+            1865.8427730891735
+          ],
+          [
+            550.7012686824581,
+            1865.8427730891735
+          ],
+          [
+            550.7012686824581,
+            1865.8427730891735
+          ],
+          [
+            550.7012768943995,
+            1865.9409730175798
+          ],
+          [
+            550.7012768943995,
+            1865.9409730175798
+          ],
+          [
+            550.7012768943995,
+            1865.9409730175798
+          ],
+          [
+            550.7012768943995,
+            1865.9409730175798
+          ],
+          [
+            550.7012851063408,
+            1866.0391729452006
+          ],
+          [
+            550.8004452046766,
+            1868.1012464878984
+          ],
+          [
+            562.5801922523586,
+            1870.3449186035546
+          ],
+          [
+            567.3316593465128,
+            1870.731681466149
+          ],
+          [
+            567.7274401613414,
+            1868.6689786075697
+          ],
+          [
+            483.88441991980244,
+            1852.865782165484
+          ],
+          [
+            483.38970868433245,
+            1855.4195891907955
+          ],
+          [
+            540.2086169891476,
+            1866.0524210530375
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-028",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "d0a33434-d25c-4b52-ab6a-94ab43375a34",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            546.3450113582695,
+            1856.2246902057268
+          ],
+          [
+            546.3450113582695,
+            1856.2246902057268
+          ],
+          [
+            546.3450113582695,
+            1856.2246902057268
+          ],
+          [
+            546.3450113582695,
+            1856.2246902057268
+          ],
+          [
+            546.3450031463282,
+            1856.126490387315
+          ],
+          [
+            546.2460156781643,
+            1856.1266154040045
+          ],
+          [
+            546.2460156781643,
+            1856.1266154040045
+          ],
+          [
+            546.2460156781643,
+            1856.1266154040045
+          ],
+          [
+            546.2460074662229,
+            1856.0284155855927
+          ],
+          [
+            546.2460074662229,
+            1856.0284155855927
+          ],
+          [
+            546.2460074662229,
+            1856.0284155855927
+          ],
+          [
+            546.2460074662229,
+            1856.0284155855927
+          ],
+          [
+            546.2459417693824,
+            1855.242817078368
+          ],
+          [
+            542.7813417936765,
+            1854.756191086135
+          ],
+          [
+            542.7814978244912,
+            1856.6219875518914
+          ],
+          [
+            569.0136974498396,
+            1861.5969476283883
+          ],
+          [
+            569.5084258687085,
+            1859.0431213956672
+          ],
+          [
+            559.1144936862516,
+            1856.9941280682322
+          ],
+          [
+            546.4439988316715,
+            1856.224565185109
+          ],
+          [
+            546.4439988316715,
+            1856.224565185109
+          ],
+          [
+            546.4439988316715,
+            1856.224565185109
+          ],
+          [
+            546.4439988316715,
+            1856.224565185109
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-029",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "d5ef057c-32b5-4992-945e-90971a88bfe0",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            637.5264509678211,
+            2003.3106040515388
+          ],
+          [
+            637.031282087183,
+            2000.7580101595206
+          ],
+          [
+            610.403170715582,
+            2004.9169398939243
+          ],
+          [
+            610.7993443063491,
+            2007.4696679313959
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-030",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "d5fdd6a5-7774-4c7d-9095-57d1aa210ac1",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            539.8242470001358,
+            2004.5158999250439
+          ],
+          [
+            465.78259858325515,
+            2000.6800303284901
+          ],
+          [
+            465.6838278783916,
+            2003.2333892940494
+          ],
+          [
+            539.6264943126486,
+            2007.1675892694307
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-031",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "ea0b6052-367e-49e9-965d-dc2a87bf96e5",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            620.9773556097598,
+            1792.3978356422908
+          ],
+          [
+            620.8781516729355,
+            1789.8447870704183
+          ],
+          [
+            590.884262839972,
+            1790.276192161673
+          ],
+          [
+            590.9834738075592,
+            1792.9274411734264
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-032",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "f72c9ea2-8823-4db6-87e7-439d6edd778d",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            581.2906759006706,
+            1890.1575117976388
+          ],
+          [
+            584.0600663416936,
+            1862.6579579182524
+          ],
+          [
+            581.4863297136309,
+            1862.366647027348
+          ],
+          [
+            578.7169421443648,
+            1889.8661970907085
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-033",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-085",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            558.3166526556973,
+            1785.996940295184
+          ],
+          [
+            560.8903406825813,
+            1785.9936758589483
+          ],
+          [
+            560.8890842280505,
+            1770.969235069749
+          ],
+          [
+            558.3153961985475,
+            1770.9724995044132
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-034",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-087",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            569.5051657371475,
+            1820.0578660786841
+          ],
+          [
+            465.3714765380147,
+            1819.1079531277935
+          ],
+          [
+            465.3716900707522,
+            1821.6611381141502
+          ],
+          [
+            569.4063990655768,
+            1822.7093767620281
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-035",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-095",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            552.584358636108,
+            1893.6310163697947
+          ],
+          [
+            552.6835598687928,
+            1896.1840975487728
+          ],
+          [
+            571.7881901582182,
+            1895.2760424922635
+          ],
+          [
+            571.6889799566948,
+            1892.6247621202715
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-036",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-097",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            470.23087324057275,
+            1928.6932008162025
+          ],
+          [
+            540.906849064324,
+            1929.6853295492467
+          ],
+          [
+            540.9066355538481,
+            1927.1321134579962
+          ],
+          [
+            470.32964412745827,
+            1926.1398631094517
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-037",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-098",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            645.6389792067507,
+            1946.441581500543
+          ],
+          [
+            645.6387657198461,
+            1943.8883605624599
+          ],
+          [
+            559.1215723299591,
+            1941.6427841131108
+          ],
+          [
+            559.0227978602525,
+            1944.196129915462
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-038",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-098",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            578.5227337967762,
+            1934.9404526341968
+          ],
+          [
+            619.0095527603742,
+            1935.9686618799337
+          ],
+          [
+            607.6254410762429,
+            1933.037329157172
+          ],
+          [
+            592.0840410118922,
+            1932.6644936927592
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-039",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "25977d89-3f7f-46db-8ff0-d3dcfcfd08cd",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            616.2556916112085,
+            2149.659545671734
+          ],
+          [
+            613.6819300880385,
+            2149.466462015389
+          ],
+          [
+            612.3966596546344,
+            2168.6177406361653
+          ],
+          [
+            614.9704198499606,
+            2168.8108260602803
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-040",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "3d18c9ff-2078-4a07-a665-afee1c013063",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            670.4129804361876,
+            2257.711260234985
+          ],
+          [
+            621.9065744737054,
+            2250.507375453701
+          ],
+          [
+            621.5108261033129,
+            2253.061196808163
+          ],
+          [
+            670.0172244156338,
+            2260.265091423747
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-041",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "5027a98d-fbbc-4c85-b7c8-64a75aa0e8af",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            664.0624674832616,
+            2078.203994265709
+          ],
+          [
+            664.1612379314611,
+            2075.5524034183195
+          ],
+          [
+            626.1484135143842,
+            2074.030702007947
+          ],
+          [
+            625.950645728239,
+            2076.5842168452455
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-042",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "5178c981-e6aa-4eea-87ca-abb84964e8ff",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            672.8751964986776,
+            2107.0639473634787
+          ],
+          [
+            618.726729471218,
+            2105.170470341406
+          ],
+          [
+            618.6279526116543,
+            2107.7238656067457
+          ],
+          [
+            672.7764174941354,
+            2109.6173453480415
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-043",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "87f5fea3-c504-4173-925d-fc6e8406ff66",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            616.5514882120451,
+            2135.6161345919318
+          ],
+          [
+            616.6506919550619,
+            2138.169282823602
+          ],
+          [
+            646.3478728280033,
+            2137.2469214163925
+          ],
+          [
+            646.2486597075807,
+            2134.5955717321053
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-044",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "ab3fb299-3ef7-4754-8d9a-4aa627d8af4f",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            609.8126054823996,
+            2045.278599801742
+          ],
+          [
+            553.2897546944926,
+            2042.8957505592064
+          ],
+          [
+            553.1909804539501,
+            2045.4491252579178
+          ],
+          [
+            609.7138289803323,
+            2047.8319774758068
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-045",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "b27a8323-5105-449a-ae7f-e2d4d87b7d85",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            559.1471264707122,
+            2247.24882746401
+          ],
+          [
+            559.2463361523598,
+            2249.900214269894
+          ],
+          [
+            575.4803442500071,
+            2248.9957340676633
+          ],
+          [
+            575.3811339266991,
+            2246.3443481841628
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-046",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "bb18b1a1-a244-44cc-8d30-cc49396eb3ef",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            554.475316880182,
+            2015.4959628083866
+          ],
+          [
+            610.8004199750754,
+            2020.3340730200464
+          ],
+          [
+            610.9981865577804,
+            2017.78057558389
+          ],
+          [
+            554.6730707580144,
+            2012.8442697689677
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-047",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "c912c466-d3f8-4f0f-b998-c9c98fe1348e",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            662.1987281844201,
+            2282.862363895127
+          ],
+          [
+            662.2975067764664,
+            2280.308916518287
+          ],
+          [
+            616.8603481874679,
+            2277.814706464419
+          ],
+          [
+            616.6625893426615,
+            2280.466483667757
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-048",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "c912c466-d3f8-4f0f-b998-c9c98fe1348e",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            647.7466847921702,
+            2291.9160770028793
+          ],
+          [
+            647.7466847921702,
+            2291.9160770028793
+          ],
+          [
+            661.6055969362807,
+            2292.683601414713
+          ],
+          [
+            661.803359335099,
+            2290.0318169595894
+          ],
+          [
+            620.721817360768,
+            2287.924784451001
+          ],
+          [
+            620.7220144146233,
+            2290.281695081996
+          ],
+          [
+            647.5486854033497,
+            2291.7199259176505
+          ],
+          [
+            647.5486854033497,
+            2291.7199259176505
+          ],
+          [
+            647.5486854033497,
+            2291.7199259176505
+          ],
+          [
+            647.5486854033497,
+            2291.7199259176505
+          ],
+          [
+            647.6476850944862,
+            2291.818001462622
+          ],
+          [
+            647.6476850944862,
+            2291.818001462622
+          ],
+          [
+            647.6476850944862,
+            2291.818001462622
+          ],
+          [
+            647.6476850944862,
+            2291.818001462622
+          ],
+          [
+            647.6476850944862,
+            2291.818001462622
+          ],
+          [
+            647.7466765815384,
+            2291.817872364348
+          ],
+          [
+            647.7466847921702,
+            2291.9160770028793
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-049",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "ca2e845e-25d8-4da7-ac0c-36631a5362a4",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            623.1739172805167,
+            2016.8810328754266
+          ],
+          [
+            623.0751402480976,
+            2019.4344029205822
+          ],
+          [
+            660.988959271119,
+            2021.3490780834936
+          ],
+          [
+            661.1867298242603,
+            2018.7955763261218
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-050",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-118",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            539.351252313702,
+            2266.914705776731
+          ],
+          [
+            593.6961576858896,
+            2270.970206397494
+          ],
+          [
+            593.8939147052382,
+            2268.3184338807105
+          ],
+          [
+            539.549013201345,
+            2264.3611432104303
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-051",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "reviewed/online/wode-rtmart/roof-119",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            533.6146415524436,
+            2322.40757240241
+          ],
+          [
+            533.4168811401529,
+            2324.961151170911
+          ],
+          [
+            592.0182000570798,
+            2329.109564012234
+          ],
+          [
+            592.2159651547996,
+            2326.5559792961694
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-052",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "way/514284985",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            542.2181462317136,
+            2222.228213759684
+          ],
+          [
+            591.7124712604648,
+            2224.325772533085
+          ],
+          [
+            591.8112388408359,
+            2221.6741409594197
+          ],
+          [
+            542.3169200388079,
+            2219.6747886693156
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-053",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "way/514284989",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            546.7617125488168,
+            2104.378605067779
+          ],
+          [
+            546.6629385675576,
+            2106.93199718256
+          ],
+          [
+            595.167442072946,
+            2108.8343030714914
+          ],
+          [
+            595.2662179962095,
+            2106.2809084346923
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-054",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "way/514284992",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            548.1451563603422,
+            2075.898155722658
+          ],
+          [
+            601.203225225203,
+            2077.9909814146363
+          ],
+          [
+            601.3019931774751,
+            2075.339393162333
+          ],
+          [
+            548.2439304005294,
+            2073.3447724734397
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-055",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "way/514284993",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            598.1396798540073,
+            2139.3715575492256
+          ],
+          [
+            598.2384476858044,
+            2136.7199510865357
+          ],
+          [
+            545.1804588844258,
+            2134.823452777517
+          ],
+          [
+            545.0816931766549,
+            2137.4750565178415
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
+      "referenceId": "amap-wode-rtmart-20261113",
+      "geometryMethod": "reviewed-native-satellite-pixel-boundary; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/wode/row-green-056",
+      "kind": "green",
+      "name": "沃德嘉园楼间绿化",
+      "sourceSiteId": "way/514284998",
+      "appearanceSource": "Strip geometry derived from mapped row footprints and the AMap native screenshot 2026-11-13; the planting depth is a display estimate, species and kerb unknown, capture date unpublished.",
+      "rings": [
+        [
+          [
+            541.4236941990457,
+            2191.687861570774
+          ],
+          [
+            598.4412712542957,
+            2194.6596111780805
+          ],
+          [
+            598.6390286481643,
+            2192.007861062478
+          ],
+          [
+            541.6214552503776,
+            2189.134320467558
           ]
         ]
       ],
@@ -1563,6 +4840,170 @@
       "referenceRetrievedAt": "2026-11-13T06:05:33.814Z",
       "referenceId": "amap-wode-rtmart-20261113",
       "widthEstimate": 4,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/shiyan/central-walk",
+      "name": "沭阳实验小学校门中轴通路",
+      "sourceSiteId": "way/1456634995",
+      "appearanceSource": "Visible paved campus axis from the south gate to the fountain square; width estimated, not a surveyed public road.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            -310.1694426874801,
+            -991.958668190592
+          ],
+          [
+            -310.23469360368506,
+            -992.206804041728
+          ],
+          [
+            -316.1042532804501,
+            -1011.6064321566533
+          ],
+          [
+            -319.0367949019834,
+            -1030.0197839482503
+          ],
+          [
+            -325.94967376040677,
+            -1028.9188271422117
+          ],
+          [
+            -322.9796780711253,
+            -1010.2703022432972
+          ],
+          [
+            -322.87326063231666,
+            -1009.8071965778664
+          ],
+          [
+            -316.9719135759818,
+            -990.3025072017286
+          ],
+          [
+            -313.040580639776,
+            -972.761706191059
+          ],
+          [
+            -306.21003482656005,
+            -974.2926026256874
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T07:15:00Z",
+      "referenceId": "amap-shiyan-core-20261113",
+      "widthEstimate": 7,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/core/central-arcade-walk",
+      "name": "中央商街内街",
+      "sourceSiteId": "way/1086134482",
+      "appearanceSource": "Inner retail street visible in the standard map and the mall's published 1936-block layout; width estimated, not a surveyed public road.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            -183.91101047325805,
+            30.937597034207492
+          ],
+          [
+            -185.39000082445096,
+            56.900479147150584
+          ],
+          [
+            -186.87144693612203,
+            79.9587975487707
+          ],
+          [
+            -178.88790711223965,
+            80.4717223780432
+          ],
+          [
+            -177.40553060938151,
+            57.3989226827328
+          ],
+          [
+            -177.40377492023137,
+            57.36995372608639
+          ],
+          [
+            -175.92164405931229,
+            31.351941649834657
+          ],
+          [
+            -175.91784126690501,
+            31.270618347929833
+          ],
+          [
+            -174.93056182588214,
+            4.271398756052982
+          ],
+          [
+            -182.92521861287935,
+            3.979058443882956
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T08:40:00Z",
+      "referenceId": "amap-core-retail-20261113",
+      "widthEstimate": 8,
+      "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
+    },
+    {
+      "id": "reviewed/core/bluesky-snack-street",
+      "name": "蓝天市场小吃街通路",
+      "sourceSiteId": "way/1321791084",
+      "appearanceSource": "Night-market/snack-street route reported by Xinhua Daily 2024-07-10; alignment approximate, no permanent stalls modelled.",
+      "kind": "community-path",
+      "rings": [
+        [
+          [
+            -253.5141772026061,
+            -57.623388615374445
+          ],
+          [
+            -253.26379613465733,
+            -57.60316024626201
+          ],
+          [
+            -203.78770374765134,
+            -55.685652793009396
+          ],
+          [
+            -154.31045799737302,
+            -53.7692412339022
+          ],
+          [
+            -154.0782329912742,
+            -59.76474551182098
+          ],
+          [
+            -203.55537523669074,
+            -61.68115306105934
+          ],
+          [
+            -252.9058187744367,
+            -63.59379083699257
+          ],
+          [
+            -292.3614211956578,
+            -68.45116941703195
+          ],
+          [
+            -293.0945463443015,
+            -62.49612722436647
+          ]
+        ]
+      ],
+      "imageAcquired": null,
+      "referenceRetrievedAt": "2026-11-13T08:40:00Z",
+      "referenceId": "amap-core-retail-20261113",
+      "widthEstimate": 6,
       "geometryMethod": "reviewed-visible-route-centreline; estimated width; GCJ-02 inverted to WGS84"
     }
   ]

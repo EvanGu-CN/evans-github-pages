@@ -4,11 +4,19 @@ import { createBuildingMaterials } from './building-materials.js';
 import { createBuildingFootprints } from './building-footprints.js';
 import { GEO } from './shuyang-geodata.js';
 import { buildPhotoLandmarks } from './photo-landmarks.js';
+import { buildRtMartDistrict } from './rtmart-district.js';
 import { buildCorePhotoBuildings } from './core-photo-buildings.js';
 import { buildWorkersPalace } from './workers-palace.js';
 import { buildHuachenHousing } from './huachen-housing.js';
 import { buildCivicCampuses } from './civic-campuses.js';
 import { buildMengxiCampus } from './mengxi-campus.js';
+import { buildShiyanCampus } from './shiyan-campus.js';
+import { buildWodeDistrict } from './wode-district.js';
+import { buildWodeStreetscape } from './wode-streetscape.js';
+import { buildBayiDistrict } from './bayi-district.js';
+import { buildMizhongCampus } from './mizhong-campus.js';
+import { buildMizhongPrecinct } from './mizhong-precinct.js';
+import { buildCoreRetail } from './core-retail.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -570,11 +578,19 @@ function buildLandmarks(scene) {
   }
 
   buildPhotoLandmarks({ctxFor,box,cyl,sign,M,sourceBody});
-  buildCorePhotoBuildings({ctxFor,box,sign,M,sourceBody,sourceEdges,edgePanel});
+  buildRtMartDistrict({ctxFor,box,sourceBody,sourceEdges});
+  buildCorePhotoBuildings({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel});
   buildWorkersPalace({ctxFor,box,cyl,M,sourceBody,sourceEdges,edgePanel});
   buildHuachenHousing({ctxFor,sourceBody,M,colliders,facadeMaterial:facadeMaterials[0]});
   buildCivicCampuses({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildMengxiCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
+  buildShiyanCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
+  buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
+  buildWodeDistrict(root);
+  buildWodeStreetscape(root);
+  buildBayiDistrict(root);
+  buildMizhongCampus(root);
+  buildMizhongPrecinct(root);
   buildParkFootbridges(root,colliders);
   for(const group of root.children) batchStaticGroupMeshes(group,new Set(facadeMaterials));
   scene.add(root);

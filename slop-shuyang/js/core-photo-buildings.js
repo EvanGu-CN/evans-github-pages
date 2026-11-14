@@ -1,8 +1,9 @@
 import * as THREE from 'three/webgpu';
+import { buildJiushengPrecinct } from './jiusheng-precinct.js';
 
 // Named, positioned source buildings with independently checked exterior photos.
 // Storey-derived heights are explicitly approximate in the reference gallery.
-function buildCorePhotoBuildings({ctxFor,box,sign,M,sourceBody,sourceEdges,edgePanel}) {
+function buildCorePhotoBuildings({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel}) {
   const stone=new THREE.MeshStandardNodeMaterial({color:0xc1bcb1,roughness:.8});
   const brown=new THREE.MeshStandardNodeMaterial({color:0x554039,roughness:.75});
   const c=ctxFor('万豪商务大厦');
@@ -43,7 +44,8 @@ function buildCorePhotoBuildings({ctxFor,box,sign,M,sourceBody,sourceEdges,edgeP
       }
     });
     const south=edges.reduce((a,b)=>b.nz>a.nz?b:a);
-    sign(j,'久盛百货',south.x+south.nx*1.2,13,south.z+south.nz*1.2,23,3.4,south.facing,'#e5e1d7','#793e36');
+    sign(j,'久盛百货',south.x+south.nx*1.2,14.2,south.z+south.nz*1.2,18,1.3,south.facing,'#e5e1d7','#793e36');
+    buildJiushengPrecinct({c:j,box,cyl,M,sourceEdges,edgePanel});
   }
 }
 export {buildCorePhotoBuildings};

@@ -6,6 +6,7 @@ import { GEO } from './shuyang-geodata.js';
 import { cityUniforms } from './tsl-materials.js';
 import { createTreeField } from './trees.js';
 import { parkTreeSites } from './city-grid.js';
+import { collectGreenTreeSites } from './green-tree-sites.js';
 
 // 沭阳街道设施：行道树、路灯、路口信号灯。交通系统的信号灯位置与相位都从这里来。
 
@@ -54,6 +55,9 @@ function buildStreetDetails(scene, colliders = []) {
     const pts = road.pts;
     const step = 11;
     let acc = 0;
+    // 临安路/苏州路：省住建厅 2020-11 报道「临安路，梧桐遮夏荫」、苏州路林荫步道，
+    // 行道树统一用梧桐（species 0）并加密种植；其他道路保留混交。
+    const planeRoad = /^(临安|苏州)/.test(road.name || '');
     for (let i = 0; i + 1 < pts.length; i++) {
       const a = pts[i], b = pts[i + 1];
       const L = Math.hypot(b.x - a.x, b.z - a.z);
@@ -70,10 +74,10 @@ function buildStreetDetails(scene, colliders = []) {
           if (!blk || blk.park > 0.5) continue;
           if (blockedAt(x, z, 1.4)) continue;
           const h = hash(x, z);
-          if (h < 0.32) continue; // gaps for shop fronts and driveways
+          if (h < (planeRoad ? 0.16 : 0.32)) continue; // gaps for shop fronts and driveways
           sites.push({
             x: x + (h - 0.5) * 1.6, y: 0.22, z: z + (hash(z, x) - 0.5) * 1.6,
-            scale: 0.62 + h * 0.28, species: h < 0.55 ? 1 : h < 0.82 ? 0 : 2, tier: 1
+            scale: 0.62 + h * 0.28, species: planeRoad ? 0 : (h < 0.55 ? 1 : h < 0.82 ? 0 : 2), tier: 1
           });
         }
       }
@@ -81,6 +85,9 @@ function buildStreetDetails(scene, colliders = []) {
     }
     if (sites.length > 9000) break;
   }
+  // 已核对的小区绿地（沃德嘉园边界绿化、楼间绿带与中央庭院）里的庭院树。
+  for (const site of collectGreenTreeSites(GEO.urban?.surfaces || [], blockedAt)) sites.push(site);
+
   const treeField = createTreeField(scene, sites, colliders);
   group.add(treeField.group);
 

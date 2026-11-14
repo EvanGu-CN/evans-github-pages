@@ -46,6 +46,12 @@ def main():
     land, roads, urban, water = (load('osm_'+k+'.json') for k in ('land', 'roads', 'urban_features', 'water'))
     neighborhoods, areas = [], []
     name_aliases=load('place-name-aliases.json')
+    # OSM name corrections: the tagged name is wrong; the corrected display name is
+    # cross-checked against public map labels and official documents, and the tagged
+    # spelling stays searchable as an alias. Nothing here invents a new place.
+    name_corrections={
+        'way/1456635004':('八一·文枢院',['八一·文殊院','八一文枢院']),
+    }
     for e in land['elements']:
         t = e.get('tags', {})
         if t.get('landuse') != 'residential' or not t.get('name'):
@@ -54,9 +60,11 @@ def main():
         if g.is_empty or g.area < 200:
             continue
         p = g.representative_point()
-        aliases = sorted({s.strip() for k in ('alt_name', 'short_name', 'name:zh') for s in t.get(k, '').split(';') if s.strip() and s != t['name']})
-        aliases=sorted(set(aliases+name_aliases.get(f"{e['type']}/{e['id']}",[])))
-        neighborhoods.append({'id': f"{e['type']}/{e['id']}", 'name': t['name'], 'aliases': aliases,
+        fix=name_corrections.get(f"{e['type']}/{e['id']}")
+        display_name=fix[0] if fix else t['name']
+        aliases = sorted({s.strip() for k in ('alt_name', 'short_name', 'name:zh') for s in t.get(k, '').split(';') if s.strip() and s != t['name'] and s != display_name})
+        aliases=sorted(set(aliases+name_aliases.get(f"{e['type']}/{e['id']}",[])+([t['name']] if fix else [])+(fix[1] if fix else [])))
+        neighborhoods.append({'id': f"{e['type']}/{e['id']}", 'name': display_name, 'aliases': aliases,
                               'x': round(p.x, 1), 'z': round(p.y, 1), 'area': round(g.area),
                               'bounds': [round(v, 1) for v in g.bounds], 'polygons': encode(g),
                               'buildings': [], 'paletteVariant': e['id'] % 3})

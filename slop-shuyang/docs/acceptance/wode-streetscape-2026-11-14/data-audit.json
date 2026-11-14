@@ -1,0 +1,92 @@
+{
+  "batch": "wode-streetscape-2026-11-14",
+  "generatedAt": "2026-11-13T18:24:38.880Z",
+  "buildingSources": {
+    "total": 7741,
+    "reviewedImagery": 183,
+    "note": "unchanged; this batch adds no building sources"
+  },
+  "wodeDistrict": {
+    "buildings": 67,
+    "pitchedRoofs": 47,
+    "redRoofs": 35,
+    "flatRoofs": 20,
+    "balconies": 1984,
+    "entrances": 268,
+    "hedges": 217,
+    "groundStrips": 51,
+    "shopEdges": 4,
+    "signs": 14,
+    "stoneBands": 416,
+    "parkBays": 670,
+    "acUnits": 536,
+    "gates": 4,
+    "evPiles": 2,
+    "meshes": 30,
+    "vertices": 528882,
+    "photoBasis": "AMap satellite/standard layers 2026-11-13 + z18 mosaic 2026-11-14 (capture dates unpublished), courtyard aerial, 2026-03-14 comment photo, A区/E区 place photos and AMap standard-map gate/POI labels; roof tones, gates, balconies and shop names are type estimates",
+    "gateNote": "门址按高德标准图图示定位（±10 m）；照片未见门楼题名，门柱/道闸/门卫室为类型化估计",
+    "facadeNote": "勒脚与白色腰线依据 2026-03-14 评论图与 A区41栋照片；上部面砖统一米黄展示色，A区红褐面砖未逐栋绑定"
+  },
+  "wodeStreetscape": {
+    "brickSegments": 164,
+    "slotLines": 1148,
+    "slabSegments": 164,
+    "promenadeSegments": 53,
+    "lamps": 95,
+    "roads": [
+      "临安东路",
+      "河滨路",
+      "苏州西路",
+      "苏州西路辅路",
+      "长安路"
+    ],
+    "meshes": 6,
+    "vertices": 65304,
+    "photoBasis": "AMap place photo B020F0IJ8D-2 (road edge style, position not point-bound), AMap z18 mosaic 2026-11-14 (capture date unpublished) and Jiangsu housing dept. 2020-11-12 street-landscape report; strip widths, bay pitch and lamp spacing are display estimates"
+  },
+  "gates": [
+    {
+      "name": "西门",
+      "world": [
+        487,
+        2001
+      ],
+      "source": "AMap standard map 2026-11-14, ±10 m"
+    },
+    {
+      "name": "南门",
+      "world": [
+        512,
+        2338
+      ],
+      "source": "AMap standard map 2026-11-14 + Tencent place 南门 (34.105977,118.785149 GCJ-02), ±10 m"
+    },
+    {
+      "name": "南1门",
+      "world": [
+        611,
+        2312
+      ],
+      "source": "AMap standard map 2026-11-14, ±10 m"
+    },
+    {
+      "name": "南2门",
+      "world": [
+        706,
+        2316
+      ],
+      "source": "AMap standard map 2026-11-14, ±10 m"
+    }
+  ],
+  "sutongWestGate": {
+    "community": "苏通花苑",
+    "world": [
+      -44.6,
+      1650.0
+    ],
+    "heading": -1.5708,
+    "source": "pinned on way/1321791101 west boundary from 2026-11 street photo (胡记水饺34幢与大润发东端立体车库同框), approximate; aligned with the rtmart round-2 batch placement"
+  },
+  "imageryCaveat": "AMap layers/mosaic retrieved 2026-11-13 and 2026-11-14; provider publishes no acquisition dates; retrieval is not acquisition. Photos are research references only and are not distributed as textures."
+}

@@ -1,0 +1,61 @@
+{
+  "referenceId": "amap-shiyan-core-20261113",
+  "sourcePoiId": "AMap standard map label 沭阳实验小学 / Tencent POI 公园路11号",
+  "name": "沭阳实验小学",
+  "teachingSourceIds": [
+    "875cd8e5-c5f6-404a-964e-f808ce5bf212",
+    "2b6e4c22-55bc-4c99-b16a-0eb3f05e2fbf",
+    "f7bdb3d8-dfd4-4af0-92dc-9c9ac2ab775e",
+    "a9ebacef-aafc-44f4-92b5-147f9f7d9529",
+    "38674603-ca16-43a3-b693-3185d6ae04a6",
+    "53f35667-5407-46bd-abee-936744eb5461"
+  ],
+  "heightEstimate": 18.0,
+  "bodyHeightEstimate": 16.5,
+  "heightNote": "2026-10 campus photos show four-to-five-storey teaching blocks with an open roof frame; 18.0 m including the frame and 16.5 m for the body are typology display estimates, not measured heights or official floor counts. Original CNBH/raster values remain in the source records.",
+  "boundaryNote": "Approximate campus enclosure visible in standard map POI area and satellite; it is not an official school red line. The north teaching rows extend beyond the map POI polygon and are included by visual review.",
+  "photoDate": null,
+  "photoEventEvidence": "School feature article describes a 2026-10-16 campus showcase (fountain square, AI rooms, rear-campus covered sports hall); a 2026-10-17 repost supplies exterior photos. Publication date is not asserted as capture date.",
+  "boundary": [
+    [
+      -360.6010172069974,
+      -1187.478298910715
+    ],
+    [
+      -239.3888520094826,
+      -1187.5870421403279
+    ],
+    [
+      -223.54999670237297,
+      -1109.0716800320229
+    ],
+    [
+      -249.26883834787705,
+      -1006.9577400244519
+    ],
+    [
+      -260.1504559150189,
+      -971.6085885221238
+    ],
+    [
+      -355.63561938227275,
+      -971.5232660591257
+    ]
+  ],
+  "gate": [
+    -310.1200490821453,
+    -973.5267127589476
+  ],
+  "secondaryGate": [
+    -246.79284318989005,
+    -980.4556580625052
+  ],
+  "fountain": [
+    -322.4924120213541,
+    -1019.6529105823105
+  ],
+  "plazaCenter": [
+    -321.9966455271909,
+    -1007.3828403540358
+  ]
+}

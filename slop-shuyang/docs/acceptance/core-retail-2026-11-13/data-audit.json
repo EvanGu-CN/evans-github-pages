@@ -1,0 +1,95 @@
+{
+  "batch": "core-retail-2026-11-13",
+  "queriedAt": "2026-11-13",
+  "referenceId": "amap-core-retail-20261113",
+  "calibration": [
+    0.3986910085801117,
+    -5,
+    5,
+    2134549
+  ],
+  "sourceCounts": {
+    "Overture": 6133,
+    "OSM": 1425,
+    "ReviewedImagery": 170
+  },
+  "buildings": 7728,
+  "newFootprints": 0,
+  "surfaces": [
+    {
+      "id": "reviewed/core/central-north-plaza",
+      "kind": "plaza",
+      "area": 717,
+      "parts": 2,
+      "maxBuildingOverlap": 0,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/core/bluesky-south-plaza",
+      "kind": "plaza",
+      "area": 3343,
+      "parts": 2,
+      "maxBuildingOverlap": 0,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/core/bluesky-snack-street",
+      "kind": "community-path",
+      "area": 481,
+      "parts": 2,
+      "maxBuildingOverlap": 0,
+      "imageAcquired": null
+    }
+  ],
+  "innerStreet": "reviewed/core/central-arcade-walk traced but absorbed by existing mapped pedestrian paving",
+  "browserScreenshot": "unavailable: headless Chrome and Edge cannot be launched in this environment; 3D preview is served locally on port 8123",
+  "limitations": [
+    "AMap tile imagery acquisition date unknown; 2026-11-13 is the query date only.",
+    "31/32-storey residential towers and the 28-storey Bluesky F1 tower are documented but not bound to single source footprints, so no invented volumes were added.",
+    "Storey counts, tower crowns, roof lanterns and atrium geometry are display estimates, not measured."
+  ],
+  "sources": [
+    {
+      "title": "沭阳县雨润中央广场 / 沭阳中央商场",
+      "url": "https://baike.baidu.com/item/沭阳县雨润中央广场/16849837",
+      "facts": "人民路与上海路交汇处西南角；占地61743㎡、建面316574㎡；3#楼150m/42层；7层百货+3层内外街商业；一期2幢31层商住楼，二期5幢32层住宅；2017-03竣工",
+      "date": "词条更新至2024"
+    },
+    {
+      "title": "中央商场集团：沭阳中央商场9月28日开业",
+      "url": "https://m.linkshop.com/news/show.aspx?id=432899",
+      "facts": "总建筑面积32万方，地上七层/地下两层，42层地标公寓，1936街区",
+      "date": "开业报道"
+    },
+    {
+      "title": "中央商场官网：京东折扣超市2025-08-30开业",
+      "url": "https://www.njzysc.com/new_1_9e0aca90b0dc4490b5e919c84a5de186.html",
+      "facts": "入口深灰玻璃幕墙、白色横框与顶部广告带、斜向钢桁架、红色圆标；舞狮与充气拱门为临时活动设施",
+      "date": "2025-08-30"
+    },
+    {
+      "title": "蓝天国际商贸城司法评估报告",
+      "url": "https://filegy.rmfysszc.gov.cn/2022/1020/B0244830DBA7825D978D2A52A75BFF6B/E879296BA895502C0B7BCFA637F969B9/%e6%b2%ad%e9%98%b3%e8%93%9d%e5%a4%a9%e5%95%86%e8%b4%b8(1).pdf",
+      "facts": "F1区-2+28层，外墙玻璃幕+贴砖、断桥铝窗；四至东临上海路、南临人民中路、西临沈阳路、北临南京东路",
+      "date": "2022-10-20"
+    },
+    {
+      "title": "沭阳最贵商圈现场观察（三石说沭阳）",
+      "url": "https://m.toutiao.com/article/7635874027835376147/",
+      "facts": "2026年现场：西南角中央商场综合体、西北角蓝天市场（黄金珠宝/数码）、东北角数码通信与移动营业厅、东南角药店/3C；一楼临街几无空铺",
+      "date": "2026-05-04"
+    },
+    {
+      "title": "新华日报：沭阳打造重要支点城市",
+      "url": "https://zgjssw.jschina.com.cn/shixianchuanzhen/suqian/202407/t20240710_8355875.shtml",
+      "facts": "蓝天商贸城附近小吃一条街与夜市，中央商场等核心商圈载体运营提升",
+      "date": "2024-07-10"
+    },
+    {
+      "title": "沭阳县十四五规划纲要",
+      "url": "http://www.shuyang.gov.cn/shuyang/file/zgsyadmin/eWebEditor/uploadfile/20210323121627769.pdf",
+      "facts": "重点推进中央商场、蓝天商贸城等载体运营提升",
+      "date": "2021-03"
+    }
+  ]
+}

@@ -1,7 +1,13 @@
 {
-  "release": "2026-11-13-wode-mengxi",
-  "sourceBuildings": 7728,
-  "teleportableLandmarks": 20,
+  "release": "2026-11-14-jiusheng-precinct",
+  "sourceProject": "slop-shuyang",
+  "sourceCommit": "1541606e64a0561e29695abdc27909acb868859a",
+  "sourceBuildings": 7741,
+  "teleportableLandmarks": 21,
+  "validation": {
+    "nodeTestsPassed": 316,
+    "pythonTestsPassed": 2
+  },
   "files": [
     {
       "path": "css/style.css",
@@ -10,8 +16,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 29083,
-      "sha256": "064aafd7d73521b6b7c75eee71fd572725fa2a9a0e16012b05934fa34b47b730"
+      "bytes": 29883,
+      "sha256": "db3d8752973542633f9b01efa58fcabb0dfbeb868ab7bc248803854b9b85efae"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -37,6 +43,11 @@
       "path": "js/audio-system.js",
       "bytes": 25105,
       "sha256": "c2ab00f8d3b34013693b78af36e28a5c97004af41a5da3d13241aab328daef03"
+    },
+    {
+      "path": "js/bayi-district.js",
+      "bytes": 25810,
+      "sha256": "5c4e7e7aba6590ff14410084b0fb8584a300dee6d5738f113656350bc3ff4d9c"
     },
     {
       "path": "js/boroughs.js",
@@ -65,8 +76,8 @@
     },
     {
       "path": "js/building-geodata.bin.gz",
-      "bytes": 127698,
-      "sha256": "14857f5204851495163d0e399cd8a3005e33f95d01c869a9a0cdedddb9df7e87"
+      "bytes": 128104,
+      "sha256": "046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6"
     },
     {
       "path": "js/building-geodata.js",
@@ -100,8 +111,8 @@
     },
     {
       "path": "js/city-config.js",
-      "bytes": 21629,
-      "sha256": "2032282fbb0fcaa6ea0541c4cd18196de19fcb026182fcbce5ba0a44dfd0e96b"
+      "bytes": 21962,
+      "sha256": "4ca04c006aa60391b3f4ba3d99e996d212d80a1b67f37e9ad5ed1d0cf68d73e2"
     },
     {
       "path": "js/city-grid.js",
@@ -120,13 +131,13 @@
     },
     {
       "path": "js/community-data.js",
-      "bytes": 178198,
-      "sha256": "c594d043f9adba76eb73fa8d2ad79ff4b8138d957621d673b33dd30cec8e20c4"
+      "bytes": 178645,
+      "sha256": "bc75aeb7c82bd2d2007a9347c80ab26832d180b267331fe7a325f7733842b951"
     },
     {
       "path": "js/community-entrances.js",
-      "bytes": 5833,
-      "sha256": "bd0061cc70a8966da37354a5a1779b7d8fb0e2b68790a5ccbabcd8d6b1217ac9"
+      "bytes": 6654,
+      "sha256": "4cdf376b4e428dbfa468a4954711bd813f91010742b148d9c13dfaecf5649bb2"
     },
     {
       "path": "js/controllers.js",
@@ -135,8 +146,13 @@
     },
     {
       "path": "js/core-photo-buildings.js",
-      "bytes": 2694,
-      "sha256": "2d0fea50bad6c2994037d8b041ba7339420d97756d8fb4272d851ffb20c57966"
+      "bytes": 2830,
+      "sha256": "ca505b37b1a2c37f8c619cbab64289b7ceb9fa46f0e3405bddd358bb63bfc623"
+    },
+    {
+      "path": "js/core-retail.js",
+      "bytes": 14771,
+      "sha256": "415d827b1f81f92714b895964a26a69e098014bc8f0c5749d5dbea909582992b"
     },
     {
       "path": "js/fire-escapes.js",
@@ -149,6 +165,11 @@
       "sha256": "5ac078cd579e116a4c0738f937970aaf15508270f38372b30c63bf174947a38e"
     },
     {
+      "path": "js/green-tree-sites.js",
+      "bytes": 2263,
+      "sha256": "8fef61f3b2416f21e3c72c7c139ea1744e61cedbc2760588dc9f214162c1121d"
+    },
+    {
       "path": "js/helicopter.js",
       "bytes": 18257,
       "sha256": "3e7c6660b0cf2abbc7ab3d6df0dd4e7e2fc1af67875d50aa8b3d5fa39ff71b04"
@@ -159,9 +180,14 @@
       "sha256": "af626df7d5239a9a967f993b464407b17e3a68fc34aa363b7bf5d3ff7d2f9099"
     },
     {
+      "path": "js/jiusheng-precinct.js",
+      "bytes": 6965,
+      "sha256": "57b7d0588515acfdbc91396cf9d76b34e67aca1f9ab1c7fa1e2e81f944dbcc41"
+    },
+    {
       "path": "js/landmark-data.js",
-      "bytes": 9494,
-      "sha256": "c7becd950f4ee6e0ea914790304ae5b1f64a2c5606c2f448a814ef59c9b1414d"
+      "bytes": 11268,
+      "sha256": "58c6df0905f25ae46f52f06a2fdc216c5a72c8993548fc8234eb323cc6c24ff0"
     },
     {
       "path": "js/landmark-gallery.js",
@@ -170,13 +196,13 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 11777,
-      "sha256": "485592e013af508570f8621a128adcc222a4d1081265031ddd29ec18743dea75"
+      "bytes": 17665,
+      "sha256": "8d870c21b0c99597001eb917c51b17d8435ef37734f9bf43ff5e96ac8273692f"
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 33181,
-      "sha256": "024805f1b4762e3dbf86137bc90aec91c72b4b399a3a0dbc54fe12a88f759e3a"
+      "bytes": 34004,
+      "sha256": "c178943390ea43e22ab18c27bbbef8876768bf91710b3a033c7769be49f8f35c"
     },
     {
       "path": "js/lighting.js",
@@ -185,13 +211,23 @@
     },
     {
       "path": "js/main.js",
-      "bytes": 38056,
-      "sha256": "5736014ecc65b624d5c6c09c255caf0770f48515dd8887ee99b783cdc1687107"
+      "bytes": 38370,
+      "sha256": "f7a18364fc9e679d173d6d13e78f846e36479ea6a306a0d535dbdffef3c0e717"
     },
     {
       "path": "js/mengxi-campus.js",
       "bytes": 2419,
       "sha256": "2c4b5ad6d9733d200e3bc9b69cf236a50b13838341aaa30db023214609db4827"
+    },
+    {
+      "path": "js/mizhong-campus.js",
+      "bytes": 52372,
+      "sha256": "a51d4b156e783cae49c045be7d208a1ca4709b8ad157df24350682d2d1b6586e"
+    },
+    {
+      "path": "js/mizhong-precinct.js",
+      "bytes": 23768,
+      "sha256": "7c5ecee63e1e3e1b41d1a3e8b6f92da4c6910ac09126b732102e891b5fb24d21"
     },
     {
       "path": "js/park-bridges.js",
@@ -215,8 +251,8 @@
     },
     {
       "path": "js/photo-landmarks.js",
-      "bytes": 11931,
-      "sha256": "e20c3cd5c3926a25ba08102a41e3e8f01e84d4016ea56ae69b927f8dc1f35d55"
+      "bytes": 9442,
+      "sha256": "efbde5b645cf30cd9688c696732386ea5c0ec41408b4ad7226b4f9f49a92cf1f"
     },
     {
       "path": "js/post-processing.js",
@@ -234,19 +270,29 @@
       "sha256": "60836689c0cef0c10d5d1013b6a3f2f5aa4d5c7135301cb1576a85eabd07f01e"
     },
     {
+      "path": "js/rtmart-district.js",
+      "bytes": 34546,
+      "sha256": "cb14f7bfc101bcab5371bac37df01c38ae70ae71829399fd475a7e0f145bf540"
+    },
+    {
       "path": "js/scene-culling.js",
       "bytes": 15648,
       "sha256": "ed61ae9661969b4fdeff6c31eb6af279dc087751626021e4bd1dabc039637833"
     },
     {
+      "path": "js/shiyan-campus.js",
+      "bytes": 6218,
+      "sha256": "764395dff7b636608eb23d9390965fc3e752f94d043edfa874d0bc0600994bdc"
+    },
+    {
       "path": "js/shuyang-geodata.js",
-      "bytes": 3402508,
-      "sha256": "cf02697191568fe75a12cf014dd8be16df45651924789e2b250206f3f3a319ef"
+      "bytes": 3466185,
+      "sha256": "8c996b1474b5d35c9320ddf032921cb5b48b0258d733ac0e7fc7186ef226e77c"
     },
     {
       "path": "js/street-details.js",
-      "bytes": 10746,
-      "sha256": "04b20bca646b64372e124fe19ae7a3152b0b6abfd950baeebf5eca281f71f143"
+      "bytes": 11330,
+      "sha256": "7bf2cd4384dc8b02a27ffce5c78c6000f1f21aa56c48cb2e02a952990c918bd8"
     },
     {
       "path": "js/touch-controls.js",
@@ -295,8 +341,18 @@
     },
     {
       "path": "js/vendor/polygon-clipping.js",
-      "bytes": 29785,
-      "sha256": "48043a8763330600726aa3d45ff2c5d8357e19dc5c46e30c1b7987ff62e75b58"
+      "bytes": 29789,
+      "sha256": "dc1d066877649c1aca22ad1f2c32f922c26d00a6d1636e4ef6758334bbd9f6fc"
+    },
+    {
+      "path": "js/wode-district.js",
+      "bytes": 38642,
+      "sha256": "9db26f5f2a4713cdb6cd689a730976f663aac9ea52dbafa821dc120219497c18"
+    },
+    {
+      "path": "js/wode-streetscape.js",
+      "bytes": 9552,
+      "sha256": "8d90454f5d4352229fd2b9c97bf4553fcdd22b045cc45a2f3885857d84ccb1b7"
     },
     {
       "path": "js/workers-palace.js",

@@ -1,0 +1,16 @@
+{
+  "neighbourhood": "沃德嘉园",
+  "neighbourhoodAreaM2": 171182,
+  "greenSurfaces": 62,
+  "rowGreenStrips": 57,
+  "perimeterBelts": 4,
+  "plantedAreaM2": 28690,
+  "rowGreenAreaM2": 6653,
+  "perimeterAreaM2": 20115,
+  "courtyardTrees": 270,
+  "buildingRecords": 7728,
+  "newBuildingRecords": 0,
+  "surfaceReference": "amap-wode-rtmart-20261113",
+  "imageAcquired": null,
+  "note": "Row strips are derived from mapped row footprints and clipped against every source building and each other; perimeter belts follow the estate boundary inset 14 m. Trees come from the same sampler the street module uses, with the building collision pad. No building footprint is added or replaced."
+}

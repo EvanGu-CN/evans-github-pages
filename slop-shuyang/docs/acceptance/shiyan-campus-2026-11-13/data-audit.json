@@ -1,0 +1,116 @@
+{
+  "batch": "shiyan-campus-2026-11-13",
+  "queriedAt": "2026-11-13",
+  "sourceCounts": {
+    "Overture": 6133,
+    "OSM": 1425,
+    "ReviewedImagery": 170
+  },
+  "buildings": 7728,
+  "newFootprints": 0,
+  "reviewedTileReference": "amap-shiyan-core-20261113",
+  "calibration": {
+    "calibrationFine": {
+      "score": 0.588,
+      "dx": -4,
+      "dy": 0
+    },
+    "bounds": {
+      "southWest": [
+        118.7677001953125,
+        34.129994745824774
+      ],
+      "northEast": [
+        118.78555297851562,
+        34.14249823152873
+      ]
+    },
+    "size": [
+      3328,
+      2816
+    ],
+    "mapOffset": [
+      0,
+      0
+    ],
+    "tileRange": {
+      "x": [
+        217556,
+        217568
+      ],
+      "y": [
+        104593,
+        104603
+      ]
+    }
+  },
+  "newSurfaces": [
+    {
+      "id": "reviewed/shiyan/fountain-plaza",
+      "kind": "plaza",
+      "parts": 2,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/shiyan/east-sport-apron",
+      "kind": "sport-paving",
+      "parts": 1,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/shiyan/east-infield",
+      "kind": "court",
+      "parts": 1,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/chengbei/north-running-track",
+      "kind": "running-track",
+      "parts": 1,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/chengbei/north-infield",
+      "kind": "infield",
+      "parts": 1,
+      "imageAcquired": null
+    },
+    {
+      "id": "reviewed/shiyan/central-walk",
+      "kind": "community-path",
+      "parts": 1,
+      "imageAcquired": null
+    }
+  ],
+  "surfaceBuildingOverlapSquareMetres": 0,
+  "campus": {
+    "name": "沭阳实验小学",
+    "gate": [
+      -310.1,
+      -973.5
+    ],
+    "secondaryGate": [
+      -246.8,
+      -980.5
+    ],
+    "teachingSourceIds": [
+      "875cd8e5-c5f6-404a-964e-f808ce5bf212",
+      "2b6e4c22-55bc-4c99-b16a-0eb3f05e2fbf",
+      "f7bdb3d8-dfd4-4af0-92dc-9c9ac2ab775e",
+      "a9ebacef-aafc-44f4-92b5-147f9f7d9529",
+      "38674603-ca16-43a3-b693-3185d6ae04a6",
+      "53f35667-5407-46bd-abee-936744eb5461"
+    ],
+    "heightEstimate": 18.0,
+    "bodyHeightEstimate": 16.5
+  },
+  "teleport": "shiyan",
+  "photos": 3,
+  "browserScreenshot": "unavailable: local headless Chrome could not be launched in this environment; native 3D preview is provided through the WorkBuddy preview panel",
+  "limitations": [
+    "AMap tile imagery acquisition date not disclosed; 2026-11-13 is the query date only.",
+    "School photos are from a 2026-10-16 campus feature reposted 2026-10-17; capture date unconfirmed.",
+    "Heights and decorative dimensions are typology estimates, not measurements.",
+    "Campus enclosure is approximate, not an official red line; rear and south campuses are not modelled."
+  ]
+}

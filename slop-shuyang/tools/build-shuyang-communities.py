@@ -80,6 +80,16 @@ def main():
     '仅作身份与外观参考，尚未定位门址，不生成门楼。' if photo.get('referenceOnly') else
     '门型参考实拍；门址近似设于来源服务道路与小区边界交点，照片与该门点未独立绑定。'}
    if usable and not photo.get('referenceOnly'):record['gate']={**usable[0],'placementSource':'mapped-service-road/boundary intersection, approximate photo association'}
+   # 苏通花苑西门：2026-11 街景把胡记水饺(苏通花园34幢)与大润发东端立体车库同框，门址钉在
+   # way/1321791101 西边界（服务车道一侧，与车库 z≈1640 同框）；该边界没有可自动提取的
+   # service 交点，按边界线上的近似坐标固定（与 rtmart 二轮批次 (-44.6,1650) 一致），
+   # 朝向取边界外法向，不作实测。
+   if photo.get('model')=='sutongWest' and 'gate' not in record:
+    pin=Point(-44.6,1650.0)
+    dist=min([line2.distance(pin) for _,t2,line2 in roads if t2.get('name')=='苏州西路'] or [9999])
+    record['gate']={'x':-44.6,'z':1650.0,'heading':-1.5708,'width':6,'roadId':'way/1321791101',
+     'accessKind':'service','streetDistance':h['number'](round(dist,1)) or round(dist,1),
+     'placementSource':'pinned on the way/1321791101 west boundary from the 2026-11 street photo, approximate coordinates'}
   records.append(record)
  output={'communities':records,'audit':{'communities':len(records),'mappedAccessCrossings':all_access,'withMappedAccess':sum(bool(r['access']) for r in records),'reviewedPhotos':len(PHOTOS),'placedPhotoReferences':sum('gate' in r for r in records)}}
  output['audit']['withMapPhotoCandidates']=sum(any(m['photos'] for m in r.get('mapContext',{}).get('matches',[])) for r in records)
