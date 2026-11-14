@@ -312,9 +312,21 @@ def main():
                     categorySource='reviewed-campus-photo-typology',heightNote=campus['heightNote'],
                     heightReferenceId=campus['referenceId'])
 
-    # Deterministic order makes binary diffs reproducible and keeps neighbouring geometry together.
-    rows.sort(key=lambda r: (math.floor(r['_geometry'].centroid.x/500),
+    # Keep established source indices stable when genuinely missing buildings
+    # are appended. Landmark/campus bindings use these indices. A tracked ID
+    # order is explicit input, rather than silently depending on yesterday's gz.
+    order_file = DATA/'building-source-order.json'
+    source_order = json.loads(order_file.read_bytes()) if order_file.exists() else {'schema':1,'ids':[]}
+    rank = {ident:i for i,ident in enumerate(source_order['ids'])}
+    if len(rank) != len(source_order['ids']):
+        raise ValueError('Duplicate ID in building source order')
+    missing = set(rank)-{r['id'] for r in rows}
+    if missing:
+        raise ValueError('Existing source IDs disappeared; review before changing indices: '+', '.join(sorted(missing)))
+    rows.sort(key=lambda r: (rank.get(r['id'],len(rank)),math.floor(r['_geometry'].centroid.x/500),
                              math.floor(r['_geometry'].centroid.y/500), str(r['id'])))
+    source_order['ids'] = [r['id'] for r in rows]
+    order_file.write_text(json.dumps(source_order,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
     for r in rows:
         del r['_geometry']
     report = {'boundsWgs84': WGS_BOUNDS, 'buildings': len(rows),

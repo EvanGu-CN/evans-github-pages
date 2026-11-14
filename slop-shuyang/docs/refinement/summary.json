@@ -1,7 +1,7 @@
 {
   "scope": "All source buildings and roads within the existing Shuyang core-city dataset; no area is removed from the goal.",
   "limits": "Not-yet-inventoried means no per-source evidence record here; existing campus, housing and street overlays are not yet fully registered. Model-bound is not full facade verification. No status means complete.",
-  "buildings": 7741,
+  "buildings": 7742,
   "roads": 1105,
   "paths": 92,
   "sourceRoadWays": 1104,
@@ -12,12 +12,13 @@
     "model-bound": 33,
     "photo-campus-detail-estimate": 3,
     "photo-height-and-frontage-estimate": 1,
-    "photo-frontage-estimate": 2
+    "photo-frontage-estimate": 2,
+    "imagery-roof-detail-estimate": 1
   },
   "roadStatus": {
     "not-yet-inventoried": 1098,
     "photo-standard-section-estimate": 3,
     "partial-frontage-reference": 4
   },
-  "sourceDigest": "88c757797a569b1f67cdbfddee6c32e45d0f27f77c18dfc7cd648e50f4b3af8a"
+  "sourceDigest": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
 }

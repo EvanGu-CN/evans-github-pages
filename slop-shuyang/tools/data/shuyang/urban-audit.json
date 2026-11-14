@@ -1,7 +1,7 @@
 {
   "neighborhoods": 147,
   "associatedBuildings": 3198,
-  "namedSites": 150,
+  "namedSites": 151,
   "namedSiteKinds": {
     "building": 64,
     "culture": 3,
@@ -9,7 +9,7 @@
     "government": 4,
     "bank": 1,
     "office": 6,
-    "civic": 1,
+    "civic": 2,
     "station": 5,
     "park": 7,
     "school": 40,

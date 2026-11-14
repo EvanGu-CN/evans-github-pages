@@ -23,6 +23,13 @@ const CULTURAL_HALLS=[
     limits:'South entrance bound to the Lanting Road forecourt. Folded roof and blue dome are visible in UAD built aerials; ridge profile, dome elevation/radius, stone modules and entrance dimensions are estimates. Two main floors and local third floor are reported, not individually measured.'}
 ];
 const CULTURAL_HALL_BY_SOURCE=new Map(CULTURAL_HALLS.map(h=>[h.sourceId,h]));
+const ARCHIVES_ROOF={sourceId:'reviewed/online/cultural/archives',sourceBuildingIndex:7741,name:'沭阳县档案馆（位置推定）',
+  heightEstimate:20,displayMaxHeight:20.6,referenceId:'amap-cultural-archives-20261115',imageAcquired:null,
+  addressPage:'https://jsggzy.jszwfw.gov.cn/jyxx/003004/003004006/20230621/42b40e39-81ac-4cd0-a15e-f2f08bc2325b.html',
+  glazing:points([[-2549.68,4277.2],[-2530.4,4281.63],[-2535.84,4305.2],[-2555.11,4300.78]]),
+  roofWell:points([[-2520.52,4280.65],[-2499.27,4285.56],[-2504.21,4306.68],[-2525.46,4301.76]]),
+  limits:'Independent roof observed south of the library and west of the museum. Archives identity inferred from official address; no verified street photograph or measured height. Glazing, raised roof-well and parapet positions follow satellite appearance, with estimated elevations and modules. Ground facade remains generic civic rendering. Unrelated Guangzhou school photo rejected.'};
+function archivesRoofFootprint(){const b=GEO.mapBuildings.find(b=>b.id===ARCHIVES_ROOF.sourceId);if(!b)throw Error('Missing appended archives source');return Array.from({length:b.o.length/2},(_,i)=>({x:b.o[i*2],z:b.o[i*2+1]}));}
 const CULTURAL_IMAGERY={provider:'AMap official public satellite tiles',zoom:18,tileOrigin:[217543,104638],retrievedAt:'2026-11-15',imageAcquired:null,
   coordinates:'GCJ-02 Web Mercator pixels inverted to WGS84, then project world coordinates',redistribution:'Reference imagery is not bundled with the site.'};
 function hallPoint(h,u,v){const [nw,ne,se,sw]=h.outer;return{x:(nw.x*(1-u)+ne.x*u)*(1-v)+(sw.x*(1-u)+se.x*u)*v,z:(nw.z*(1-u)+ne.z*u)*(1-v)+(sw.z*(1-u)+se.z*u)*v};}
@@ -44,4 +51,4 @@ function hallSiteSurfaces(h){
   const paving=unpack(clipping.difference(parcel,polygon(h.outer),greenUnion));
   return{greens:unpack(greenUnion),paving};
 }
-export {CULTURAL_HALLS,CULTURAL_HALL_BY_SOURCE,CULTURAL_IMAGERY,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces};
+export {CULTURAL_HALLS,CULTURAL_HALL_BY_SOURCE,CULTURAL_IMAGERY,ARCHIVES_ROOF,archivesRoofFootprint,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces};

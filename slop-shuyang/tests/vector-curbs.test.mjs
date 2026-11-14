@@ -69,7 +69,7 @@ test('traffic sidewalk queries retain polygon boundaries and holes within the sp
 
 test('curb and inset data preserve every source road identity and the immutable building binary',()=>{
   assert.equal(GEO.roads.length,1105);assert.equal(new Set(GEO.roadSourceIds).size,1104);
-  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6');
+  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f');
   assert.match(GEO.curbIslandAudit.method,/renderer road triangles/);assert.equal(GEO.curbIslandAudit.slabInsetM,.3);
   for(const b of BLOCKS){assert.ok(b.area>0&&Number.isFinite(b.cx+b.cz));assert.ok(b.surfaces.length&&b.slabs.length,'a valid road-adjacent parcel must not collapse during inset buffering');assert.equal(blockAt(b.cx,b.cz),b);}
   assert.ok(BLOCKS.reduce((s,b)=>s+b.slabs.length,0)>450);

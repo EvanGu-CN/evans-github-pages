@@ -1,0 +1,13 @@
+{
+  "baselineCommit": "766aa6ba996b6c7b3d2aff8ac923a97a6dc0b263",
+  "preservedSourceBuildings": 7741,
+  "preservedPackedBuildings": 7741,
+  "sourcePrefixSha256": "0dfe83213b18f3a711db593d43162a9649a9c6e3befc60cd582046c665ee6276",
+  "packedPrefixSha256": "f577f82e40458217e2000f3f0aa5140f0c0545bc4ee7579ab4b9fca639097acb",
+  "newCount": 7742,
+  "appendedIds": [
+    "reviewed/online/cultural/archives"
+  ],
+  "newBinarySha256": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f",
+  "oldBinarySha256": "046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6"
+}

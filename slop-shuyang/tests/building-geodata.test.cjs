@@ -26,6 +26,11 @@ function loadBuildings(bytes = compressed, status = 200,version=dataVersion) {
 }
 const buildings = loadBuildings();
 
+test('an appended source preserves every decoded coordinate and attribute of the established binary prefix',async()=>{
+  const rows=await buildings;
+  assert.equal(createHash('sha256').update(JSON.stringify(rows.slice(0,7741))).digest('hex'),'f577f82e40458217e2000f3f0aa5140f0c0545bc4ee7579ab4b9fca639097acb');
+});
+
 function area(ring) {
   let sum = 0;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {

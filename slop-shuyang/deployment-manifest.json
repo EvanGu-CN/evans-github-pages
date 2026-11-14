@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-cultural-halls",
+  "release": "2026-11-15-archives-roof",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "766aa6ba996b6c7b3d2aff8ac923a97a6dc0b263",
-  "sourceBuildings": 7741,
+  "sourceCommit": "885735b4f5cb55eed0f3f4c44a3fb7f50870463d",
+  "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 369,
+    "nodeTestsPassed": 378,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -77,8 +77,8 @@
     },
     {
       "path": "js/building-details.js",
-      "bytes": 5572,
-      "sha256": "cba53c3d2668fe57e478947956bb8db58c65b3e91ccf264fd98703661253aafe"
+      "bytes": 5610,
+      "sha256": "21ca322a7be31ec11c240c00e446018f6f5e2968cd2086e8a653b6deafb767d8"
     },
     {
       "path": "js/building-footprints.js",
@@ -87,8 +87,8 @@
     },
     {
       "path": "js/building-geodata.bin.gz",
-      "bytes": 128104,
-      "sha256": "046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6"
+      "bytes": 128123,
+      "sha256": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f"
     },
     {
       "path": "js/building-geodata.js",
@@ -107,8 +107,8 @@
     },
     {
       "path": "js/buildings.js",
-      "bytes": 36783,
-      "sha256": "5022b87b677ac73634f08f769ce72bdc46c65e5e5cd13e32ad1103fc13a89121"
+      "bytes": 36927,
+      "sha256": "0475d837759c054cd07405c9b0f12342674d99bedf2f67019438548fe0d27415"
     },
     {
       "path": "js/bus.js",
@@ -177,13 +177,13 @@
     },
     {
       "path": "js/cultural-hall-layout.js",
-      "bytes": 4431,
-      "sha256": "362aa9a42aaf1d50b305e2c2f94b807c109624f5218e62b57614167acb87c0fa"
+      "bytes": 5641,
+      "sha256": "dfdc7b659f9cd90537e6e74e76c040530379a0ce25499cbe115c4c08056d42b6"
     },
     {
       "path": "js/cultural-halls.js",
-      "bytes": 9625,
-      "sha256": "172a424d4c2d008cc40574b242f200a3d2eb353c165069482312ed24e842712c"
+      "bytes": 11710,
+      "sha256": "3c1fe71045b2fef5385938898036aea30a3b26b47cb3fd479da23797becf21f3"
     },
     {
       "path": "js/fire-escapes.js",
@@ -342,8 +342,8 @@
     },
     {
       "path": "js/shuyang-geodata.js",
-      "bytes": 2866360,
-      "sha256": "68a0aa29f5b94b405385fec16a843f108f9ecc944294428c46efd490c18ff39e"
+      "bytes": 2867481,
+      "sha256": "29d06f5c3158fbbe3519a1c68dd37c0d200508a7c5e5c74fee5c1a51f10284c3"
     },
     {
       "path": "js/street-details.js",

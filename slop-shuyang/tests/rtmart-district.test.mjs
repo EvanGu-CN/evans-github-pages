@@ -15,9 +15,9 @@ test('RT-Mart keeps one mapped footprint and gains no invented buildings', () =>
   const site = PHOTO_LANDMARK_SITES['大润发'];
   assert.ok(site && site.sourceId === 'way/497798167');
   for (const i of site.sourceBuildingIndices) assert.equal(enriched.buildings[i].id, site.sourceId);
-  // 全量清单护栏：本批为八一·文枢院及周边补录 13 条 reviewed 来源（3 条因与既有来源重叠被保守拒绝）。
-  assert.equal(enriched.buildings.length, 7741);
-  assert.equal(enriched.buildings.filter(b => b.source === 'ReviewedImagery').length, 183);
+  // 全量清单护栏含新补录的独立档案馆候选；大润发仍只绑定原有一条来源。
+  assert.equal(enriched.buildings.length, 7742);
+  assert.equal(enriched.buildings.filter(b => b.source === 'ReviewedImagery').length, 184);
 });
 
 test('the north forecourt is a reviewed asphalt surface with an unknown capture date', () => {

@@ -2,6 +2,7 @@ import * as THREE from 'three/webgpu';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { createFireEscapes } from './fire-escapes.js';
 import { addBuildingDetails } from './building-details.js';
+import { ARCHIVES_ROOF } from './cultural-hall-layout.js';
 import {
   Fn,
   vec2,
@@ -326,7 +327,8 @@ function buildCityBlocks(scene, landmarkColliders = []) {
         }
       });
     }
-    const record = { ...b, tone, storefronts: shopEdges.length > 0, shopEdges };
+    const record = { ...b, tone, storefronts: shopEdges.length > 0, shopEdges,
+      reviewedRoof:sourceRecord===REAL_BUILDINGS[ARCHIVES_ROOF.sourceBuildingIndex] };
     surveyedBuckets[mat].push(record);
     const detail = {
       cx: b.cx, cz: b.cz, minX: b.minX, maxX: b.maxX, minZ: b.minZ, maxZ: b.maxZ,

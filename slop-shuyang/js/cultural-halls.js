@@ -1,5 +1,5 @@
 import * as THREE from 'three/webgpu';
-import {CULTURAL_HALLS,CULTURAL_IMAGERY,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces} from './cultural-hall-layout.js';
+import {CULTURAL_HALLS,CULTURAL_IMAGERY,ARCHIVES_ROOF,archivesRoofFootprint,hallPoint,hallEdge,hallFacePoint,hallSiteSurfaces} from './cultural-hall-layout.js';
 import {createCulturalPanelMaterial} from './tsl-materials.js';
 
 function buildCulturalHalls({ctxFor,box,sign,M,colliders}){
@@ -100,7 +100,24 @@ function buildCulturalHalls({ctxFor,box,sign,M,colliders}){
       collider(Array.from({length:32},(_,i)=>({x:d.x+d.radius*Math.cos(i/32*Math.PI*2),z:d.z+d.radius*Math.sin(i/32*Math.PI*2)})),d.base,d.base+d.radius);
     }
   }
-  group.userData.culturalHalls={sourceIds:CULTURAL_HALLS.map(h=>h.sourceId),imagery:CULTURAL_IMAGERY,stats,limits:CULTURAL_HALLS.map(h=>h.limits)};
+  // Keep the newly appended source building's generic civic body and its own
+  // collision. Only the satellite-visible roof receives authored additions.
+  const a=ARCHIVES_ROOF,outer=archivesRoofFootprint(),ag=new THREE.Group();ag.name='档案馆位置推定·影像屋顶细节';group.add(ag);
+  const aCtx={...c,g:ag},top=a.heightEstimate+.22,center={x:outer.reduce((s,p)=>s+p.x,0)/outer.length,z:outer.reduce((s,p)=>s+p.z,0)/outer.length};
+  const onRoof=(p,mat,y,w,height,depth,angle)=>box(aCtx,mat,p.x-c.s.x,y,p.z-c.s.z,w,height,depth,{ry:angle,collide:false});
+  const trim=(ring,mat,y,height,depth,inset=0)=>ring.forEach((p,i)=>{const q=ring[(i+1)%ring.length],L=Math.hypot(q.x-p.x,q.z-p.z),mid={x:(p.x+q.x)/2,z:(p.z+q.z)/2},dx=center.x-mid.x,dz=center.z-mid.z,D=Math.hypot(dx,dz);
+    onRoof({x:mid.x+dx/D*inset,z:mid.z+dz/D*inset},mat,y,L,height,depth,-Math.atan2(q.z-p.z,q.x-p.x));});
+  ag.add(flat(a.glazing,[],top+.035,glass,'档案馆位置推定·矩形采光面'));
+  trim(a.glazing,frame,top+.045,.065,.09);
+  for(let i=1;i<14;i++){const t=i/14,p={x:a.glazing[0].x+(a.glazing[3].x-a.glazing[0].x)*t,z:a.glazing[0].z+(a.glazing[3].z-a.glazing[0].z)*t},q={x:a.glazing[1].x+(a.glazing[2].x-a.glazing[1].x)*t,z:a.glazing[1].z+(a.glazing[2].z-a.glazing[1].z)*t};
+    onRoof({x:(p.x+q.x)/2,z:(p.z+q.z)/2},frame,top+.045,Math.hypot(q.x-p.x,q.z-p.z),.05,.07,-Math.atan2(q.z-p.z,q.x-p.x));}
+  trim(outer,stone,top,.35,.3,.25);
+  ag.add(flat(a.roofWell,[],top+.02,dark,'档案馆位置推定·屋面暗色区'));trim(a.roofWell,roof,top,.32,.38);
+  // A roof-only reserve must not subtract the source building in the ground
+  // coverage pass. sourceFootprint explicitly keeps that body and its index.
+  colliders.push({minX:Math.min(...outer.map(p=>p.x)),maxX:Math.max(...outer.map(p=>p.x)),minZ:Math.min(...outer.map(p=>p.z)),maxZ:Math.max(...outer.map(p=>p.z)),minY:top,maxY:a.displayMaxHeight,polygon:{outer,holes:[]},sourceFootprint:true,archivesRoof:true});
+  ag.userData.archivesRoof={...a,bodyRetained:true};
+  group.userData.culturalHalls={sourceIds:CULTURAL_HALLS.map(h=>h.sourceId),imagery:CULTURAL_IMAGERY,stats,limits:CULTURAL_HALLS.map(h=>h.limits),archivesRoof:a.sourceId};
   return{group,stats};
 }
 export {buildCulturalHalls};

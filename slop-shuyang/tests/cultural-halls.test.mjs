@@ -15,8 +15,8 @@ const parcel=h=>{const b=GEO.mapBuildings.find(b=>b.id===h.sourceId);return[Arra
 test('both cultural hall reconstructions retain their source records and source heights separately',()=>{
   assert.equal(CULTURAL_HALLS.length,2);
   for(const h of CULTURAL_HALLS){const b=GEO.mapBuildings[h.sourceBuildingIndex];assert.equal(b.id,h.sourceId);assert.equal(b.h,h.sourceHeight);}
-  assert.equal(GEO.mapBuildings.length,7744);
-  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6');
+  assert.equal(GEO.mapBuildings.length,7745);
+  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f');
 });
 test('traced hall bodies leave their forecourts open instead of filling the whole source parcels',()=>{
   for(const h of CULTURAL_HALLS){
@@ -65,5 +65,5 @@ test('the complete source inventory records all three cultural models with evide
   const inventory=JSON.parse(readFileSync(new URL('../docs/refinement/coverage.json',import.meta.url)));
   for(const i of [621,622,623]){const r=inventory.buildings[i];assert.match(r.status,/^photo-/);assert.ok(r.geometryEvidence.limits.length);assert.equal(r.geometryEvidence.captureDate,null);assert.ok(r.review);assert.equal(r.id,GEO.mapBuildings[i].id);}
   assert.equal(inventory.buildings[621].geometryEvidence.sourceHeight,11.7);assert.equal(inventory.buildings[623].geometryEvidence.sourceHeight,15);
-  assert.equal(inventory.buildings.length,7741);assert.ok(inventory.buildings.every(b=>b.status!=='complete'));
+  assert.equal(inventory.buildings.length,7742);assert.ok(inventory.buildings.every(b=>b.status!=='complete'));
 });

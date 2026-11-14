@@ -20,6 +20,11 @@ function details(b, seed = 1, neighbours = [b], rand = random(seed)) {
 const overlaps = (polygon, item) => collision.polygonBoxOverlaps(polygon, item.x, item.z,
   item.w / 2, item.d / 2, Math.cos(item.ry), Math.sin(item.ry));
 
+test('an imagery-authored roof does not acquire random equipment or a second generic cornice',()=>{
+  const b={...building(square(0,0,40)),reviewedRoof:true};
+  for(let seed=1;seed<=40;seed++){const d=details(b,seed);assert.equal(d.cornices.length,0);assert.equal(d.hvacUnits.length,0);assert.equal(d.waterTowers.length,0);}
+});
+
 test('roof accessories remain supported on rotated, concave and courtyard footprints', () => {
   const rotated = square(0, 0, 40).map(({ x, z }) => ({ x: x * Math.cos(0.6) - z * Math.sin(0.6), z: x * Math.sin(0.6) + z * Math.cos(0.6) }));
   const fixtures = [building(rotated),

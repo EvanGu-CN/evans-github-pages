@@ -1,0 +1,35 @@
+{
+  "baseline": "766aa6ba996b6c7b3d2aff8ac923a97a6dc0b263",
+  "unchangedFields": [
+    "version",
+    "frame",
+    "bounds",
+    "roads",
+    "roadSourceIds",
+    "roadReviews",
+    "mapPaths",
+    "neighborhoods",
+    "railways",
+    "roadGraph",
+    "blocks",
+    "curbIslandAudit",
+    "water",
+    "parks",
+    "landuse",
+    "landmarks",
+    "pois",
+    "places",
+    "attribution",
+    "landmarkBuildings"
+  ],
+  "changedFields": [
+    "mapBuildings",
+    "buildingDataVersion",
+    "buildingAudit",
+    "namedSites",
+    "urban"
+  ],
+  "preservedMapParts": 7744,
+  "newMapParts": 7745,
+  "roadSha256": "6340f84446791cc0646838b9c3e81c6d067888d8bc71fe7a3a26ba39a2f730da"
+}

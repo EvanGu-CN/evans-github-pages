@@ -291,6 +291,33 @@
       "satelliteImage": "reference/bayi-amap-satellite-z18.jpg",
       "method": "Native zoom-18 tiles joined on the GCJ-02 Web Mercator grid; standard-map building fills cross-checked against the satellite mosaic and reviewed one by one. Fills that differ from an existing project source only by a few metres of source offset describe the same building and are not duplicated.",
       "limitations": "Tile imagery acquisition date unknown; a 2026 query is not proof of 2026 capture. Outlines are map building fills simplified to 1.5 px, not cadastral boundaries or measured footprints. Heights are type-based display estimates. Local visual review only; tiles are not redistributed as project assets."
+    },
+    {
+      "id": "amap-cultural-archives-20261115",
+      "provider": "AMap official public satellite tiles",
+      "layer": "satellite",
+      "coordinates": "GCJ-02",
+      "queriedAt": "2026-11-14T21:17:28.121625+00:00",
+      "imageAcquired": null,
+      "bounds": {
+        "southWest": [
+          118.74984741210938,
+          34.08678665571844
+        ],
+        "northEast": [
+          118.7567138671875,
+          34.09133591486735
+        ]
+      },
+      "size": [
+        1280,
+        1024
+      ],
+      "mapOffset": [
+        0,
+        0
+      ],
+      "limitations": "Manually traced visible roofprint, not a cadastral/ground survey. Imagery capture date is undisclosed. The archives identity is inferred from official address west of the museum, not a verified facade title. Height and facade treatment remain type estimates; an unrelated Guangzhou school photograph was rejected."
     }
   ],
   "neighborhoods": [

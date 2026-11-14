@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import {GEO} from '../js/shuyang-geodata.js';
 import {LANDMARK_SITES, ROADS} from '../js/city-config.js';
 import {BUILDING_PHOTO_REFERENCES,reviewedSourceBindings} from '../js/building-photo-references.js';
-import {CULTURAL_HALLS,CULTURAL_IMAGERY} from '../js/cultural-hall-layout.js';
+import {CULTURAL_HALLS,CULTURAL_IMAGERY,ARCHIVES_ROOF} from '../js/cultural-hall-layout.js';
 import {ART_GALLERY} from '../js/art-gallery-layout.js';
 
 const root = new URL('../', import.meta.url);
@@ -28,6 +28,10 @@ reviewed.set(ART_GALLERY.sourceBuildingIndex,{...ART_GALLERY,name:'沭阳县美�
   reviewId:'art-gallery-2026-11-15',status:'photo-plan-and-massing-estimate',modeledFaces:['north','east','roof'],
   geometryEvidence:{method:'architect site plan fitted to source project parcel; built photographs',sourceHeight:ART_GALLERY.sourceHeight,
     photoPage:ART_GALLERY.sourcePage,captureDate:ART_GALLERY.captureDate,limits:ART_GALLERY.limits}});
+reviewed.set(ARCHIVES_ROOF.sourceBuildingIndex,{...ARCHIVES_ROOF,displayHeight:ARCHIVES_ROOF.displayMaxHeight,
+  reviewId:'archives-roof-2026-11-15',status:'imagery-roof-detail-estimate',modeledFaces:['roof'],
+  geometryEvidence:{method:'satellite roofprint appended as a source building; generic ground facade retained',imagery:CULTURAL_IMAGERY,
+    addressPage:ARCHIVES_ROOF.addressPage,captureDate:null,identity:'inferred from official relative address',heightSource:'type estimate',limits:ARCHIVES_ROOF.limits}});
 const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
 for (const [i, r] of reviewed) if (source[i]?.id !== r.sourceId) throw new Error('Photo binding drift: '+r.sourceId);
 const mapNames = new Map(GEO.mapBuildings.map(b => [b.id, b.n || '']));

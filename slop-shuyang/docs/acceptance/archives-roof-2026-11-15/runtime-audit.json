@@ -1,0 +1,123 @@
+{
+  "bodyRay": [
+    {
+      "name": "SurveyedBuildingChunk",
+      "y": 20.219999313354492
+    }
+  ],
+  "clipped": false,
+  "covered": false,
+  "metadata": {
+    "addressPage": "https://jsggzy.jszwfw.gov.cn/jyxx/003004/003004006/20230621/42b40e39-81ac-4cd0-a15e-f2f08bc2325b.html",
+    "bodyRetained": true,
+    "displayMaxHeight": 20.6,
+    "glazing": [
+      {
+        "x": -2549.68,
+        "z": 4277.2
+      },
+      {
+        "x": -2530.4,
+        "z": 4281.63
+      },
+      {
+        "x": -2535.84,
+        "z": 4305.2
+      },
+      {
+        "x": -2555.11,
+        "z": 4300.78
+      }
+    ],
+    "heightEstimate": 20,
+    "imageAcquired": null,
+    "limits": "Independent roof observed south of the library and west of the museum. Archives identity inferred from official address; no verified street photograph or measured height. Glazing, raised roof-well and parapet positions follow satellite appearance, with estimated elevations and modules. Ground facade remains generic civic rendering. Unrelated Guangzhou school photo rejected.",
+    "name": "沭阳县档案馆（位置推定）",
+    "referenceId": "amap-cultural-archives-20261115",
+    "roofWell": [
+      {
+        "x": -2520.52,
+        "z": 4280.65
+      },
+      {
+        "x": -2499.27,
+        "z": 4285.56
+      },
+      {
+        "x": -2504.21,
+        "z": 4306.68
+      },
+      {
+        "x": -2525.46,
+        "z": 4301.76
+      }
+    ],
+    "sourceBuildingIndex": 7741,
+    "sourceId": "reviewed/online/cultural/archives"
+  },
+  "rendered": 7705,
+  "replaced": false,
+  "roofCollider": [
+    {
+      "_order": 55,
+      "archivesRoof": true,
+      "maxX": -2484,
+      "maxY": 20.6,
+      "maxZ": 4332,
+      "minX": -2568.5,
+      "minY": 20.22,
+      "minZ": 4255.5,
+      "polygon": {
+        "holes": [],
+        "outer": [
+          {
+            "x": -2484,
+            "z": 4271.5
+          },
+          {
+            "x": -2554.5,
+            "z": 4255.5
+          },
+          {
+            "x": -2568.5,
+            "z": 4316.5
+          },
+          {
+            "x": -2497.5,
+            "z": 4332
+          }
+        ]
+      },
+      "sourceFootprint": true
+    }
+  ],
+  "sourceCount": 7742,
+  "sourceIndex": 7741,
+  "batchedGeometry": {
+    "bounds": {
+      "max": [
+        -2484.021987915039,
+        20.56999969482422,
+        4331.97834777832
+      ],
+      "min": [
+        -2568.476806640625,
+        20.219999313354492,
+        4255.520769119263
+      ]
+    },
+    "checkedValues": 260010,
+    "glazingRay": [
+      20.254999160766587
+    ],
+    "meshes": 19,
+    "navigationStart": 1794692154005,
+    "nonFinite": 0,
+    "renderer": "WebGPURenderer",
+    "roofVertices": 912,
+    "scope": "actual batched meshes from both cultural landmark groups; roof bounds selected by world region and y>=20.2",
+    "wellRay": [
+      20.239999771118164
+    ]
+  }
+}

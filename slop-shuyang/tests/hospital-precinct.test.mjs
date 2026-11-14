@@ -72,7 +72,7 @@ test('photo height estimates are separate from immutable CNBH records and preser
     if(r.displayHeight)assert.equal(b.levels,19);
   }
   assert.equal(applyPhotoBuildingEstimate(records[3555]),records[3555]);
-  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'046c22fdec5cbfd2156a842b57643789abbc9f6248ac54b705b479e6c4a875a6');
+  assert.equal(createHash('sha256').update(readFileSync(new URL('../js/building-geodata.bin.gz',import.meta.url))).digest('hex'),'211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f');
 });
 
 test('the curved crown stays on the source roof and podium equipment stays off the courtyard',()=>{
