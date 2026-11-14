@@ -1,0 +1,30 @@
+{
+  "reviewId": "tcmHospital",
+  "reviewedAt": "2026-11-14",
+  "name": "沭阳县中医院 · 上海中路28号院区",
+  "imageAcquired": null,
+  "method": "Visually compared labelled street/aerial photographs with existing source footprints projected from WGS84 into GCJ-02 AMap satellite tiles. Photo perspective and roof displacement are not ground survey measurements.",
+  "sources": [
+    {"index":3558,"id":"way/1370836783","role":"ward-tower","originalHeight":25.9,"displayHeight":68.4,"displayLevels":19,"roofEstimate":71},
+    {"index":3557,"id":"way/1370836782","role":"west-U-podium","originalHeight":26.9,"displayHeight":26.9},
+    {"index":3559,"id":"way/1455053529","role":"east-wing","originalHeight":26.4,"displayHeight":26.4},
+    {"index":3560,"id":"way/1455053530","role":"river-end","originalHeight":25.1,"displayHeight":25.1}
+  ],
+  "excludedSources": [{"index":3555,"id":"way/1086134484","name":"中医大厦","reason":"Separate northern L-shaped source; not the photographed ward tower. No height or facade changes in this batch."}],
+  "evidence": [
+    {"type":"street-photo","page":"https://m.baike.com/wikiid/8917680364442827932","image":"https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/fdd86f7639974f6da10d1cebd86d9669~tplv-xv4ileqgde-resize-w%3A1440.image","viewed":true,"captureDate":null,"observed":"Pale cyan glazed west podium, stone entry surround, dark portal, hospital name, green bus shelter; tower has horizontal window bands and a white vertical sign strip."},
+    {"type":"aerial-photo","page":"https://www.uborn.net/xiuqian/hospital","image":"https://img.uborn.net/city/2023/11-25/05ea8ab61986043ee6f6.png","viewed":true,"captureDate":null,"observed":"Hospital-labelled tower, U-shaped west podium, courtyard, east wing and curved river end; URL year is not a verified image date."},
+    {"type":"address-and-level-description","page":"https://js.guahaoe.com/hospital/desc/7871aa8e-7749-47fe-9c55-fa0e6bac1ce7000","observed":"Shanghai Middle Road 28; description mentions a 19-storey ward building and separately a Zhongyi tower. This is not a measured height or a dated as-built survey."},
+    {"type":"poi","page":"https://ditu.amap.com/place/B020F000EE","gcj02":[118.780448,34.125231]},
+    {"type":"satellite","provider":"AMap public satellite layer","template":"https://webst01.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z=18","zoom":18,"tileOrigin":[217564,104607],"tileGrid":[3,3],"coordinates":"GCJ-02","captureDate":null,"viewed":true},
+    {"type":"excluded-rendering","image":"https://www.sidri.com/shy/fileDir/resource/cms/2022/06/img_pc_site/2022061516341158422.jpg","viewed":true,"reason":"Architectural CGI; excluded as evidence of built facade."}
+  ],
+  "estimates": [
+    "Tower display body 68.4 m = 19 storeys x 3.6 m; roof about 71 m. Neither is surveyed. The original 25.9 m raster height remains intact in the source data.",
+    "Window/piers, roof curvature, entry surround, roof equipment, shelter bays, paving dimensions and placements are approximate.",
+    "The dark entry panel is exterior-only; no new traversable doorway, campus route, or source collider cut is introduced.",
+    "Medical grades, cooperating-hospital names, old pharmacy tenants, bus routes and advertising visible in undated photos are omitted.",
+    "North/east tower elevations, campus rear walls, current curb furniture, true doorway position and measured heights remain unverified."
+  ],
+  "distribution": "Source URLs and review metadata only; no third-party photographs or satellite tiles are bundled into the static release."
+}

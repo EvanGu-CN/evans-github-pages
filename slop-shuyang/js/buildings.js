@@ -38,7 +38,7 @@ import { preserveBuildingCoverage } from './building-coverage.js';
 import { REAL_BUILDINGS } from './building-geodata.js';
 import { createBuildingFootprints } from './building-footprints.js';
 import { BUILDING_STYLES, buildingStyleIndex, createBuildingMaterials } from './building-materials.js';
-import { BUILDING_PHOTO_REFERENCES } from './building-photo-references.js';
+import { reviewedSourceBindings, applyPhotoBuildingEstimate } from './building-photo-references.js';
 import { polygonContains, polygonBoxOverlaps } from './building-collision.js';
 import { pavedPlazaRects, parkTreeSites, sidewalkBlocks } from './city-grid.js';
 
@@ -292,17 +292,18 @@ function buildCityBlocks(scene, landmarkColliders = []) {
   const housingStyles = new Map();
   const housingPhotoStyles = new Map();
   const campusBuildings = new Set(Object.values(PHOTO_LANDMARK_SITES).flatMap(s=>s.campusBuildingIndices||[]).map(i => REAL_BUILDINGS[i]));
-  const reviewedFrontages = new Set(BUILDING_PHOTO_REFERENCES.filter(r => GEO.mapBuildings[r.sourceBuildingIndex]?.id === r.sourceId).map(r => REAL_BUILDINGS[r.sourceBuildingIndex]));
+  const reviewedFrontages = new Map(reviewedSourceBindings().filter(r => GEO.mapBuildings[r.sourceBuildingIndex]?.id === r.sourceId).map(r => [REAL_BUILDINGS[r.sourceBuildingIndex],r]));
   for (const n of GEO.neighborhoods || []) for (const i of n.buildings) {
     housingStyles.set(REAL_BUILDINGS[i], n.paletteVariant);
     if(n.photoStyle)housingPhotoStyles.set(REAL_BUILDINGS[i],n.photoStyle);
   }
   const detailsToPlace = [];
-  for (const b of surveyedBuildings) {
+  for (const original of surveyedBuildings) {
+    const sourceRecord=original.sourceRecord||original;
+    const b=applyPhotoBuildingEstimate(original,reviewedFrontages.get(sourceRecord));
     const seed = b.seed ?? Math.round(b.cx * 31 + b.cz * 17);
     const rand = mulberry32(seed);
     const tone = rand();
-    const sourceRecord=b.sourceRecord||b;
     const mat = campusBuildings.has(sourceRecord) ? 9 : buildingStyleIndex({ ...b, styleVariant: housingStyles.get(sourceRecord),photoStyle:housingPhotoStyles.get(sourceRecord) });
     // Only tagged commercial buildings receive shopfronts, on walls facing a nearby public street.
     const shopEdges = [];

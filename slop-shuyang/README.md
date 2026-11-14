@@ -182,6 +182,7 @@ node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 - `js/road-network.js` — OSM 路网 → 车道、路口、停止线与转向曲线
 - `js/street-details.js` — 行道树、路灯、信号灯
 - `js/landmarks.js` — 地标的实景参考模型与来源步行桥
+- `js/hospital-precinct.js` — 上海中路中医院四栋来源的照片引导细节、估高塔楼与临街候车棚；原始高度另行保留，见[本批验收](docs/acceptance/hospital-precinct-2026-11-14/README.md)
 - `js/wode-district.js` — 沃德嘉园街区的坡屋面、阳台、单元门、绿篱与临街商铺（只叠加在来源轮廓上）
 - `js/mizhong-campus.js` — 沭阳高级中学本部的育华楼山花/金字/泰山石、大礼堂坡顶、教学楼外廊、宿舍、跑道球场（只叠加在来源轮廓上）
 - `js/boroughs.js` — 城区外缘绿带（不再生成乡镇）

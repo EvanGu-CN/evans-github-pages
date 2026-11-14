@@ -1,0 +1,113 @@
+{
+  "backend": "WebGPUBackend",
+  "groups": [
+    {
+      "bounds": {
+        "max": [
+          172.87949752807617,
+          71.05387115478516,
+          219.45064858079337
+        ],
+        "min": [
+          99.6635856628418,
+          0.23999816179275513,
+          188.35748386383057
+        ]
+      },
+      "meshes": 9,
+      "name": "医院·tower",
+      "reference": {
+        "captureDate": null,
+        "displayHeight": 68.4,
+        "originalHeight": 25.9,
+        "reviewId": "tcmHospital",
+        "role": "tower",
+        "sourceBuildingIndex": 3558,
+        "sourceId": "way/1370836783",
+        "totalHeightEstimate": 71
+      },
+      "vertices": 19690
+    },
+    {
+      "bounds": {
+        "max": [
+          10.780637741088867,
+          28.739999771118164,
+          263.41171646118164
+        ],
+        "min": [
+          -21.255615234375,
+          0.23999999463558197,
+          162.37928771972656
+        ]
+      },
+      "meshes": 12,
+      "name": "医院·west-podium",
+      "reference": {
+        "captureDate": null,
+        "displayHeight": 26.9,
+        "originalHeight": 26.9,
+        "reviewId": "tcmHospital",
+        "role": "west-podium",
+        "sourceBuildingIndex": 3557,
+        "sourceId": "way/1370836782",
+        "totalHeightEstimate": 26.9
+      },
+      "vertices": 5620
+    },
+    {
+      "bounds": {
+        "max": [
+          188.6189022064209,
+          26.200000762939453,
+          265.9132995605469
+        ],
+        "min": [
+          149.3405704498291,
+          0.3499998152256012,
+          220.84063529968265
+        ]
+      },
+      "meshes": 5,
+      "name": "医院·east-wing",
+      "reference": {
+        "captureDate": null,
+        "displayHeight": 26.4,
+        "originalHeight": 26.4,
+        "reviewId": "tcmHospital",
+        "role": "east-wing",
+        "sourceBuildingIndex": 3559,
+        "sourceId": "way/1455053529",
+        "totalHeightEstimate": 26.4
+      },
+      "vertices": 1872
+    },
+    {
+      "bounds": {
+        "max": [
+          175.47960090637207,
+          24.899999618530273,
+          291.91944456100464
+        ],
+        "min": [
+          135.8391151428223,
+          0.35000038146972656,
+          265.34120178222656
+        ]
+      },
+      "meshes": 5,
+      "name": "医院·river-end",
+      "reference": {
+        "captureDate": null,
+        "displayHeight": 25.1,
+        "originalHeight": 25.1,
+        "reviewId": "tcmHospital",
+        "role": "river-end",
+        "sourceBuildingIndex": 3560,
+        "sourceId": "way/1455053530",
+        "totalHeightEstimate": 25.1
+      },
+      "vertices": 1656
+    }
+  ]
+}

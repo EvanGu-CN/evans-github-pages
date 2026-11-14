@@ -5,7 +5,7 @@ import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {GEO} from '../js/shuyang-geodata.js';
 import {LANDMARK_SITES, ROADS} from '../js/city-config.js';
-import {BUILDING_PHOTO_REFERENCES} from '../js/building-photo-references.js';
+import {BUILDING_PHOTO_REFERENCES,reviewedSourceBindings} from '../js/building-photo-references.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -17,7 +17,7 @@ for (const [name, site] of Object.entries(LANDMARK_SITES)) {
     bindings.get(i).push(name);
   }
 }
-const reviewed = new Map(BUILDING_PHOTO_REFERENCES.map(r => [r.sourceBuildingIndex, r]));
+const reviewed = new Map(reviewedSourceBindings().map(r => [r.sourceBuildingIndex, r]));
 for (const [i, r] of reviewed) if (source[i]?.id !== r.sourceId) throw new Error('Photo binding drift: '+r.sourceId);
 const mapNames = new Map(GEO.mapBuildings.map(b => [b.id, b.n || '']));
 const buildings = source.map((b, i) => {
@@ -26,8 +26,9 @@ const buildings = source.map((b, i) => {
   const x = (Math.min(...xs)+Math.max(...xs))/2, z = (Math.min(...zs)+Math.max(...zs))/2;
   const r = reviewed.get(i);
   return {index:i, id:b.id, name:r?.name || mapNames.get(b.id) || '', x:Math.round(x), z:Math.round(z),
-    height:b.height, category:b.category, status:r?'photo-frontage-estimate':bindings.has(i)?'model-bound':'not-yet-inventoried',
-    model:bindings.get(i)||[], review:r?.id||null, modeledFaces:r?.modeledFaces||[]};
+    height:b.height, displayHeight:r?.displayHeight??b.height, category:b.category,
+    status:r?(r.displayHeight?'photo-height-and-frontage-estimate':r.associated?'photo-campus-detail-estimate':'photo-frontage-estimate'):bindings.has(i)?'model-bound':'not-yet-inventoried',
+    model:bindings.get(i)||[], review:r?.reviewId||null, modeledFaces:r?.modeledFaces||[]};
 });
 const geometryKey = (name, pts) => createHash('sha256').update(JSON.stringify([name,pts])).digest('hex').slice(0,16);
 const roads = ROADS.map(r => {

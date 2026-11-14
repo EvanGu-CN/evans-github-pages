@@ -2,7 +2,7 @@ import * as THREE from 'three/webgpu';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GEO } from './shuyang-geodata.js';
 import { LANDMARKS, LANDMARK_SITES } from './city-config.js';
-import { BUILDING_PHOTO_BY_SOURCE } from './building-photo-references.js';
+import { BUILDING_PHOTO_REFERENCES } from './building-photo-references.js';
 
 function shapeFromPolygon(p) {
   const ring = (flat, Ctor) => {
@@ -77,9 +77,16 @@ function buildUrbanContext(scene) {
   const landmarkNames = new Set(LANDMARKS.flatMap(l=>[l.name,l.short,...(LANDMARK_SITES[l.name].aliases||[])].map(canonical)));
   const subsites=Object.values(LANDMARK_SITES).flatMap(s=>s.subsites||[]);
   const subsiteNames=new Set(subsites.map(s=>canonical(s.name)));
+  const photoSiteIds=new Set(BUILDING_PHOTO_REFERENCES.flatMap(r=>[r.sourceId,...(r.relatedSiteIds||[])]));
+  const photoLabels=BUILDING_PHOTO_REFERENCES.map(r=>{
+    const b=GEO.mapBuildings.find(b=>b.id===r.sourceId),xs=b.o.filter((_,i)=>i%2===0),zs=b.o.filter((_,i)=>i%2===1);
+    return {name:r.name,kind:r.kind||'commercial',x:(Math.min(...xs)+Math.max(...xs))/2,z:(Math.min(...zs)+Math.max(...zs))/2,
+      labelHeight:(r.totalHeightEstimate||r.displayHeight||b.h)+8};
+  });
   const entries = [
     ...(GEO.neighborhoods || []).map((n) => ({ ...n, kind: 'housing' })),
-    ...(GEO.namedSites || []).filter(n=>!landmarkNames.has(canonical(n.name))&&!subsiteNames.has(canonical(n.name))).map(n=>({...n,name:BUILDING_PHOTO_BY_SOURCE.get(n.id)?.name||n.name})),
+    ...(GEO.namedSites || []).filter(n=>!landmarkNames.has(canonical(n.name))&&!subsiteNames.has(canonical(n.name))&&!photoSiteIds.has(n.id)),
+    ...photoLabels,
     ...subsites.map(n=>({...n,labelHeight:n.h+8})),
     ...LANDMARKS.map(l=>({...l,labelHeight:l.h+8}))
   ].map((n) => {

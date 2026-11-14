@@ -142,7 +142,8 @@ const PATH_INDEX = makeIndex(PATH_ITEMS);
 
 // 实测建筑（不含程序化补全）
 const BUILDING_ITEMS = (GEO.mapBuildings || []).map((b) => ({
-  flat: b.o, holes: b.holes || [], bb: flatBBox(b.o), name: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.name || b.n, h: b.h,
+  flat: b.o, holes: b.holes || [], bb: flatBBox(b.o), name: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.name || b.n,
+  h: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.totalHeightEstimate || BUILDING_PHOTO_BY_SOURCE.get(b.id)?.displayHeight || b.h,
   aliases: BUILDING_PHOTO_BY_SOURCE.get(b.id)?.aliases || []
 }));
 const BUILDING_INDEX = makeIndex(BUILDING_ITEMS);
@@ -379,6 +380,8 @@ class CityMapSystem {
     if (!q) return null;
     const exactSite = POI_ITEMS.find((p) => p.name === q);
     if (exactSite) return exactSite;
+    const exactBuilding = BUILDING_ITEMS.find(b => b.name === q || b.aliases.includes(q));
+    if (exactBuilding) return {...flatCentroid(exactBuilding.flat), name:exactBuilding.name, h:exactBuilding.h};
     const neighborhood = NEIGHBORHOODS.find((n) => n.name === q || n.aliases.includes(q)) ||
       NEIGHBORHOODS.find((n) => n.name.includes(q) || n.aliases.some((a) => a.includes(q)));
     if (neighborhood) return neighborhood;
@@ -391,7 +394,7 @@ class CityMapSystem {
     const poi = POI_ITEMS.find((p) => p.name.includes(q));
     if (poi) return poi;
     const building = BUILDING_ITEMS.find((b) => b.name && (b.name.includes(q) || b.aliases.some(a => a.includes(q))));
-    if (building) return { ...flatCentroid(building.flat), name: building.name };
+    if (building) return { ...flatCentroid(building.flat), name: building.name, h:building.h };
     const place = PLACES.find(([name]) => name.includes(q));
     if (place) return { x: place[2], z: place[3], name: place[0] };
     return null;

@@ -18,6 +18,7 @@ import { buildMizhongCampus } from './mizhong-campus.js';
 import { buildMizhongPrecinct } from './mizhong-precinct.js';
 import { buildCoreRetail } from './core-retail.js';
 import { buildCoreCommercialFrontages } from './core-commercial-frontages.js';
+import { buildHospitalPrecinct } from './hospital-precinct.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -68,20 +69,21 @@ function materials() {
 
 function makeSignTexture(text, bg = '#10202b', fg = '#ffd36b', options = {}) {
   const c = document.createElement('canvas');
-  c.width = 128 * (options.aspect || 4);
-  c.height = 128;
+  c.width = options.vertical ? 128 : 128 * (options.aspect || 4);
+  c.height = options.vertical ? 128 * text.length : 128;
   const ctx = c.getContext('2d');
   ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, c.width, 128);
+  ctx.fillRect(0, 0, c.width, c.height);
   ctx.strokeStyle = fg;
   ctx.lineWidth = 6;
-  if (options.border !== false) ctx.strokeRect(6, 6, c.width - 12, 116);
+  if (options.border !== false) ctx.strokeRect(6, 6, c.width - 12, c.height - 12);
   ctx.fillStyle = fg;
   const size = options.fontSize || (text.length > 8 ? 40 : text.length > 6 ? 48 : 58);
   ctx.font = `800 ${size}px ${FONT}`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(text, c.width / 2, 68);
+  if (options.vertical) [...text].forEach((char,i)=>ctx.fillText(char,64,i*128+68));
+  else ctx.fillText(text, c.width / 2, 68);
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
@@ -588,6 +590,7 @@ function buildLandmarks(scene) {
   buildShiyanCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
   buildCoreCommercialFrontages({root,box,cyl,sign,M,sourceEdges,edgePanel});
+  buildHospitalPrecinct({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildWodeDistrict(root);
   buildWodeStreetscape(root);
   buildBayiDistrict(root);

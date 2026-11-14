@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-14-vienna-frontage",
+  "release": "2026-11-14-hospital-precinct",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "b3287e9735a314e1b1a4041150218ab9f66cca9d",
+  "sourceCommit": "15d4c2ce9a743d73c46eb080d25e50077a337b54",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
-  "reviewedStreetBuildings": 1,
+  "reviewedStreetBuildings": 2,
   "validation": {
-    "nodeTestsPassed": 322,
+    "nodeTestsPassed": 327,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30027,
-      "sha256": "ed860fd627966f5e5df204f5e12cd39753a7a236e119b82f0328faaaf9e7311f"
+      "bytes": 30091,
+      "sha256": "af83c654761ccc453ae3c4059214329a5d5b068b3dd342f10229acea848c6200"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -92,13 +92,13 @@
     },
     {
       "path": "js/building-photo-references.js",
-      "bytes": 2357,
-      "sha256": "7c181dfeea7011ed685d4e2ea043521b179baa443335236195c36f518df963d6"
+      "bytes": 5231,
+      "sha256": "7188a1dfd75a155ecc3189eec2ca66ab447527ca94c1d303957726847af8adf4"
     },
     {
       "path": "js/buildings.js",
-      "bytes": 36648,
-      "sha256": "76e0a43ff307a5e9303c97afaa9d92426ac7ad3649ea681b97d32b220423d6e7"
+      "bytes": 36783,
+      "sha256": "5022b87b677ac73634f08f769ce72bdc46c65e5e5cd13e32ad1103fc13a89121"
     },
     {
       "path": "js/bus.js",
@@ -127,8 +127,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 34286,
-      "sha256": "777330930b01f8f6be32957a28dea7a0a4aff1090d1c5d37d97f382c92d90fd6"
+      "bytes": 34618,
+      "sha256": "c45e39142eba2a3e9734f2c9ec7a6afdb3cd0a351c6d5b209986cb2274c3536a"
     },
     {
       "path": "js/civic-campuses.js",
@@ -186,6 +186,11 @@
       "sha256": "3e7c6660b0cf2abbc7ab3d6df0dd4e7e2fc1af67875d50aa8b3d5fa39ff71b04"
     },
     {
+      "path": "js/hospital-precinct.js",
+      "bytes": 8241,
+      "sha256": "08f8829b7b8ace296355782f5b65f41dc26e2c211b5fc4d9b66f7d246cd3d754"
+    },
+    {
       "path": "js/huachen-housing.js",
       "bytes": 1524,
       "sha256": "af626df7d5239a9a967f993b464407b17e3a68fc34aa363b7bf5d3ff7d2f9099"
@@ -212,8 +217,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 34294,
-      "sha256": "06dc8baa562e13c130017ea1ac90e1931c99ede73c8bc9de6a58dcaea355adec"
+      "bytes": 34597,
+      "sha256": "48960f42bb6921771669abff1b64bb2b4cd6f4c897f31fb5661f52bcbb76aed6"
     },
     {
       "path": "js/lighting.js",
@@ -327,8 +332,8 @@
     },
     {
       "path": "js/urban-context.js",
-      "bytes": 7721,
-      "sha256": "898cab5073d9ffbd66563e74be233c6dbe4e9c545c3e37064fae7a171f3e52bb"
+      "bytes": 8177,
+      "sha256": "250fd73ea6e3a9b7a57d230743216cf16e0389f2c1e8d9ad9e5d512fe56e008d"
     },
     {
       "path": "js/vehicle-lights.js",
