@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-taizhou-corridor",
+  "release": "2026-11-15-government-service",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "539aeb746daf6894bca0448f6b15763b1312bb94",
+  "sourceCommit": "cee6af61e879d4ca19211058daf55da576fb5bb9",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
-  "reviewedStreetBuildings": 2,
+  "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 337,
+    "nodeTestsPassed": 342,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30419,
-      "sha256": "2a3ad9f458f0a39a1c002cfe421d549a78d7964ec9bc8b86c41d8a35b3b2e290"
+      "bytes": 30491,
+      "sha256": "b94eccbb8a8084a895d705518451effe0ca35e0828c71e2bf7a348292e9eea94"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -92,8 +92,8 @@
     },
     {
       "path": "js/building-photo-references.js",
-      "bytes": 5231,
-      "sha256": "7188a1dfd75a155ecc3189eec2ca66ab447527ca94c1d303957726847af8adf4"
+      "bytes": 7264,
+      "sha256": "9860aace75285228fb248b933e9d7c71e7afcac94e598a9441d79a37a2e8a03d"
     },
     {
       "path": "js/buildings.js",
@@ -127,8 +127,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 34891,
-      "sha256": "67c0b5242c7bb6734bc8c0d823262c921df573835f1429494e89622f7e45cd09"
+      "bytes": 35046,
+      "sha256": "15fbf382043feae9bc6e8cd2a9c5a1fd3a67008a873963cb542e857766acf23b"
     },
     {
       "path": "js/civic-campuses.js",
@@ -176,6 +176,11 @@
       "sha256": "5ac078cd579e116a4c0738f937970aaf15508270f38372b30c63bf174947a38e"
     },
     {
+      "path": "js/government-service-center.js",
+      "bytes": 4962,
+      "sha256": "3806417bb253dd6e9c4a8c6d63eeffd48fbc0ead64599117c13ead47f49ba6bf"
+    },
+    {
       "path": "js/green-tree-sites.js",
       "bytes": 2263,
       "sha256": "8fef61f3b2416f21e3c72c7c139ea1744e61cedbc2760588dc9f214162c1121d"
@@ -217,8 +222,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 34689,
-      "sha256": "343d894d4f99c121b8ceef543c93e436aada3511a23d2ee43b56a6eccd70697b"
+      "bytes": 34831,
+      "sha256": "778aa19fce36144c82b5dd7ff9f15b2834049ce1b158484321c6412dc22950ea"
     },
     {
       "path": "js/lighting.js",

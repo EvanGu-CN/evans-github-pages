@@ -170,6 +170,8 @@ const SPORTS_ITEMS=(GEO.urban?.surfaces||[]).filter(s=>SPORTS_COLORS[s.kind]).fl
   ...p,color:SPORTS_COLORS[s.kind],bb:flatBBox(p.outer)
 }))).concat(TAIZHOU_CORRIDOR.surfaces.filter(s=>!s.kind.includes('curb')).flatMap(s=>s.polygons.map(p=>({
   ...p,color:s.kind==='walkway'?'#916e69':s.kind==='cycleway'?'#586264':'#3c593d',bb:flatBBox(p.outer)
+})))).concat([...BUILDING_PHOTO_BY_SOURCE.values()].flatMap(r=>(r.forecourt||[]).map(p=>({
+  outer:p.flat(),holes:[],color:'#5e7150',bb:flatBBox(p.flat())
 }))));
 const SPORTS_INDEX=makeIndex(SPORTS_ITEMS);
 

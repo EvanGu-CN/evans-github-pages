@@ -1,0 +1,20 @@
+{
+  "backend": "WebGPUBackend",
+  "children": 9,
+  "photoReview": {
+    "captureDate": null,
+    "counts": {
+      "fins": 7,
+      "panels": 102,
+      "signs": 1
+    },
+    "id": "governmentService",
+    "modeledFaces": [
+      "south"
+    ],
+    "orientation": "inferred from mapped southern recess and 2022 named photograph; not surveyed",
+    "retainedHeight": 25.7,
+    "sourceBuildingIndex": 7143,
+    "sourceId": "way/1372583952"
+  }
+}

@@ -33,6 +33,22 @@ const BUILDING_PHOTO_REFERENCES = [{
     {image:'https://img.uborn.net/city/2023/11-25/05ea8ab61986043ee6f6.png',page:'https://www.uborn.net/xiuqian/hospital',
       caption:'医院具名航拍：塔楼、U形裙房、院落和东翼的相对关系；目录路径含2023年，不能当作拍摄日期。',credit:'优宝目录收录 / 原作者'}
   ]
+}, {
+  id:'governmentService',name:'沭阳县政务服务中心',kind:'civic',aliases:['沭阳政务服务中心'],
+  sourceId:'way/1372583952',sourceBuildingIndex:7143,modeledFaces:['south'],captureDate:null,
+  // GCJ-02 satellite garden edges converted into the source WGS84 metre frame.
+  // Retrieved 2026-11-15; image acquisition day and planting details unknown.
+  forecourt:[
+    [[2590.47,2047.18],[2616.23,2056.46],[2631.58,2077.54],[2622.67,2091.3],[2584.53,2075.18]],
+    [[2645.94,2067.69],[2655.85,2071.11],[2647.43,2089.29],[2636.54,2082.44]]
+  ],
+  access:{x:2634,z:2080,heading:2.75},accessLabel:'前往苏州东路观察点',
+  streetSection:{name:'苏州东路',minZ:2115,maxZ:2195,side:'north'},
+  note:'苏州东路46号，2022-01-04启用报道有具名正面与自助入口实拍。按既有同名来源、路口东北侧位置及卫星可见的前场退入关系推定南侧主立面；保留来源25.7米CNBH估高和轮廓，不将玻璃横缝数当楼层数。蓝玻璃、浅石材框架、竖向线条、红字题名和首层入口按照片细化；两块前场绿地沿卫星可辨边界近似描绘，分格/尺寸/植被/夜间亮灯为展示估计。照片和卫星具体拍摄日未知，不能视作2026现状；自助入口尚未定位，其他立面与屋顶未按实拍定制。观察点不是已核实的通行入口。',
+  photos:[
+    {image:'https://upload.suxinwen.cn/images/321300/202201/news/22a15567a83903ae9210d6f38eab4579505994d8.jpeg',page:'https://www.suxinwen.cn/wap/news/2164315',caption:'2022-01-04新址启用报道中的具名正面：蓝玻璃、浅色石材框架与右侧竖向红字；拍摄日未单列。',credit:'速新闻 / 徐盼、黄嫣 / 原作者'},
+    {image:'https://upload.suxinwen.cn/images/321300/202201/news/f2e220ab1107f0dd61f1ab49652492ffffd1422d.jpeg',page:'https://www.suxinwen.cn/wap/news/2164315',caption:'24小时自助服务入口实拍，具体立面方位尚未确定，未据此另设门址。',credit:'速新闻 / 徐盼、黄嫣 / 原作者'}
+  ]
 }];
 
 const BUILDING_PHOTO_BY_SOURCE = new Map(BUILDING_PHOTO_REFERENCES.map(r => [r.sourceId, r]));

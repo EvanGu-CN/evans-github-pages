@@ -6,16 +6,16 @@
   "paths": 92,
   "sourceRoadWays": 1104,
   "buildingStatus": {
-    "not-yet-inventoried": 7700,
+    "not-yet-inventoried": 7699,
     "model-bound": 36,
     "photo-campus-detail-estimate": 3,
     "photo-height-and-frontage-estimate": 1,
-    "photo-frontage-estimate": 1
+    "photo-frontage-estimate": 2
   },
   "roadStatus": {
-    "not-yet-inventoried": 1099,
+    "not-yet-inventoried": 1098,
     "photo-standard-section-estimate": 3,
-    "partial-frontage-reference": 3
+    "partial-frontage-reference": 4
   },
   "sourceDigest": "88c757797a569b1f67cdbfddee6c32e45d0f27f77c18dfc7cd648e50f4b3af8a"
 }

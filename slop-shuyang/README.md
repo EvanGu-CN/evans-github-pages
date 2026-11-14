@@ -183,6 +183,7 @@ node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 - `js/buildings.js` — 建筑立面、屋顶细节、店招与流式加载
 - `js/pitched-roofs.js` — 既有双坡标记的实体坡面规划，保留凹口/院落及来源总高；坡形与屋脊方向仍是展示估计，见[几何验收](docs/acceptance/pitched-roofs-2026-11-14/README.md)
 - `js/road-network.js` — OSM 路网 → 车道、路口、停止线与转向曲线
+- `js/government-service-center.js` — 苏州东路46号政务服务中心的实拍参考南立面、题名与卫星近似前场绿地，保留来源轮廓和25.7米估高
 - `js/road-photo-references.js` — 有来源的道路断面、照片与边界切分；保留原始宽度/车道记录
 - `js/taizhou-corridor.js`、`js/taizhou-corridor-data.js`、`js/taizhou-corridor-sites.js` — 台州路裁切绿带/非机动车道/步行带/路缘、地图共用几何及树木避让；由`tools/build-taizhou-corridor.py`生成数据
 - `js/street-details.js` — 行道树、路灯、信号灯
