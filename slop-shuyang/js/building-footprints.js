@@ -1,6 +1,7 @@
 import * as THREE from 'three/webgpu';
 import { WALL_KINDS } from './tsl-materials.js';
 import { polygonContains } from './building-collision.js';
+import { gableRoofPlan } from './pitched-roofs.js';
 
 function partyWallHeight(record, a, b, neighbours) {
   const dx = b.x - a.x, dz = b.y - a.y, length = Math.hypot(dx, dz);
@@ -23,6 +24,7 @@ function partyWallHeight(record, a, b, neighbours) {
 // One merged facade/roof mesh per 1 km cell. Explicit wall coordinates keep window bays metre-sized on any angle.
 function createBuildingFootprints(material, records, getNeighbours) {
   const cells = new Map();
+  const roofAudit={gabledPolygons:0,gablePlanePolygons:0,hippedPolygons:0,flatPolygons:0};
   records.forEach((record, index) => {
     if (!(record.height > 0)) return;
     const key = Math.floor(record.cx / 1000) + ',' + Math.floor(record.cz / 1000);
@@ -47,7 +49,8 @@ function createBuildingFootprints(material, records, getNeighbours) {
       const turns=rings[0].map((p,i,r)=>{const q=r[(i+1)%r.length],s=r[(i+2)%r.length];return (q.x-p.x)*(s.y-q.y)-(q.y-p.y)*(s.x-q.x)});
       const convex=turns.every(v=>v>1e-6)||turns.every(v=>v< -1e-6);
       const pitched=record.roofShape==='hipped'&&record.roofHeight>0&&rings.length===1&&rings[0].length===4&&convex;
-      const rise=pitched?Math.min(record.roofHeight,height*.25):0,wallTop=top-rise,wallHeight=height-rise;
+      const gable=record.roofShape==='gabled'?gableRoofPlan(polygon,height,record.roofHeight):null;
+      const rise=gable?.rise||(pitched?Math.min(record.roofHeight,height*.25):0),wallTop=top-rise,wallHeight=height-rise;
       rings.forEach((ring, i) => {
         for (let j = 0; j < ring.length; j++) {
           const a = ring[j], b = ring[(j + 1) % ring.length];
@@ -73,7 +76,50 @@ function createBuildingFootprints(material, records, getNeighbours) {
           cell.indices.push(offset, offset + 1, offset + 2, offset + 2, offset + 1, offset + 3);
         }
       });
+      if(gable){
+        roofAudit.gabledPolygons++;roofAudit.gablePlanePolygons+=gable.faces.length;
+        const triangle=(aa,bb,cc,normal=null)=>{
+          const u=bb.map((v,i)=>v-aa[i]),v=cc.map((v,i)=>v-aa[i]);
+          let n=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];
+          if(normal?n.reduce((s,q,i)=>s+q*normal[i],0)<0:n[1]<0){[bb,cc]=[cc,bb];n=n.map(q=>-q);}
+          const length=Math.hypot(...n);if(length<1e-8)return;
+          const offset=cell.positions.length/3,kind=normal?WALL_KINDS.lotLine:WALL_KINDS.front;
+          for(const q of [aa,bb,cc]){
+            addInfo();cell.positions.push(...q);cell.normals.push(...n.map(v=>v/length));
+            cell.boxes.push(1,height,normal?0:height,seed);
+            cell.walls.push(normal?0:q[0]*gable.axis[0]+q[2]*gable.axis[1],normal?0:gable.across(q[0],q[2]),kind);
+          }
+          cell.indices.push(offset,offset+1,offset+2);
+        };
+        // Blank gable caps start at the common eave, preserving horizontal
+        // storeys on the main facade. Split boundary edges at ridge crossings.
+        for(const ring of rings)for(let i=0;i<ring.length;i++){
+          const a=ring[i],b=ring[(i+1)%ring.length],va=gable.across(a.x,a.y),vb=gable.across(b.x,b.y);
+          const points=[a];
+          if(va*vb< -1e-8){const t=va/(va-vb);points.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});}
+          points.push(b);
+          const L=Math.hypot(b.x-a.x,b.y-a.y);if(L<1e-6)continue;
+          const normal=[-(b.y-a.y)/L,0,(b.x-a.x)/L];
+          for(let j=1;j<points.length;j++){
+            const c=points[j-1],d=points[j],C=[c.x,wallTop,c.y],D=[d.x,wallTop,d.y];
+            const ct=[c.x,gable.heightAt(c.x,c.y),c.y],dt=[d.x,gable.heightAt(d.x,d.y),d.y];
+            triangle(C,D,ct,normal);triangle(ct,D,dt,normal);
+          }
+        }
+        for(const face of gable.faces){
+          const faceRings=[face.outer,...face.holes].map((r,i)=>{
+            const ps=r.map(p=>new THREE.Vector2(p.x,p.z));
+            if(THREE.ShapeUtils.isClockWise(ps)!==(i===0))ps.reverse();return ps;
+          });
+          const points=faceRings.flat();
+          for(const ids of THREE.ShapeUtils.triangulateShape(faceRings[0],faceRings.slice(1))){
+            triangle(...ids.map(i=>{const p=points[i];return[p.x,gable.heightAt(p.x,p.y),p.y];}));
+          }
+        }
+        continue;
+      }
       if(pitched){
+        roofAudit.hippedPolygons++;
         // The source height includes the roof. Four hips meet an actual ridge,
         // rather than adding a wedge above the recorded building height.
         const p=rings[0].slice(),distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
@@ -96,6 +142,7 @@ function createBuildingFootprints(material, records, getNeighbours) {
         triangle(v[2],v[3],a);triangle(v[2],a,b);triangle(v[3],v[0],a);
         continue;
       }
+      roofAudit.flatPolygons++;
       const triangles = THREE.ShapeUtils.triangulateShape(rings[0], rings.slice(1));
       const points = rings.flat(), offset = cell.positions.length / 3;
       for (const p of points) {
@@ -111,6 +158,7 @@ function createBuildingFootprints(material, records, getNeighbours) {
 
   const group = new THREE.Group();
   group.name = 'SurveyedBuildings';
+  group.userData={...group.userData,roofAudit};
   let first;
   for (const cell of cells.values()) {
     if (cell.indices.length === 0) continue;

@@ -1119,7 +1119,15 @@ function createPreWarBuildingMaterial(opts = {}) {
 
     const frameCol = masonryTint.mul(0.46).mul(recessShade);
     const roofNoise = noise2D(positionWorld.xz.mul(0.35));
-    const roofCol = mix(mix(cTrim.mul(0.42), cTrim.mul(0.62), roofNoise),mix(cRoof.mul(.9),cRoof.mul(1.08),roofNoise),uRoofTint);
+    const roofBase = mix(mix(cTrim.mul(0.42), cTrim.mul(0.62), roofNoise),mix(cRoof.mul(.9),cRoof.mul(1.08),roofNoise),uRoofTint);
+    // Gabled footprint roofs carry metre-based coordinates along/across their
+    // ridge. Derivative-filtered tile seams and the ridge cap stay stable at
+    // distance; dimensions describe a display material, not measured tiles.
+    const roofCoords=footprintLocal?attribute('facadeWall','vec3'):vec3(0);
+    const gableMask=footprintLocal?attribute('buildingInfo','vec3').z:float(0);
+    const roofSeams=max(gridLine(roofCoords.x,.34,.012),gridLine(roofCoords.y,.62,.014));
+    const roofRidge=lineAA(roofCoords.y,.14);
+    const roofCol=roofBase.mul(float(1).sub(roofSeams.mul(.13).add(roofRidge.mul(.22)).mul(gableMask)));
 
     const wallOrRoof = mix(masonryWeathered, roofCol, isRoof);
     const withFrames = mix(wallOrRoof, frameCol, isWindowOpening.mul(sashMask));

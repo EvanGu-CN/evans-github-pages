@@ -179,6 +179,7 @@ node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 - `js/city-grid.js` — 地面、水面、路面、人行道、公园与河岸
 - `js/urban-context.js` — 真实步道、停车场、小区用地底色与三维小区名称标注
 - `js/buildings.js` — 建筑立面、屋顶细节、店招与流式加载
+- `js/pitched-roofs.js` — 既有双坡标记的实体坡面规划，保留凹口/院落及来源总高；坡形与屋脊方向仍是展示估计，见[几何验收](docs/acceptance/pitched-roofs-2026-11-14/README.md)
 - `js/road-network.js` — OSM 路网 → 车道、路口、停止线与转向曲线
 - `js/street-details.js` — 行道树、路灯、信号灯
 - `js/landmarks.js` — 地标的实景参考模型与来源步行桥

@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-14-hospital-precinct",
+  "release": "2026-11-14-pitched-roofs",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "15d4c2ce9a743d73c46eb080d25e50077a337b54",
+  "sourceCommit": "542e39de831f71c10d4224dfd66d005e0ef0cab3",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 2,
   "validation": {
-    "nodeTestsPassed": 327,
+    "nodeTestsPassed": 332,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30091,
-      "sha256": "af83c654761ccc453ae3c4059214329a5d5b068b3dd342f10229acea848c6200"
+      "bytes": 30151,
+      "sha256": "bb0b35ed17a27f413807f746ad0e37f32ed2b314a5057720b7e4acc7772b2700"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -67,13 +67,13 @@
     },
     {
       "path": "js/building-details.js",
-      "bytes": 5461,
-      "sha256": "dc86a39f440482ad6b51b54a0ab2dce795a635f0fd860cfb1cbca119892d3804"
+      "bytes": 5572,
+      "sha256": "cba53c3d2668fe57e478947956bb8db58c65b3e91ccf264fd98703661253aafe"
     },
     {
       "path": "js/building-footprints.js",
-      "bytes": 7619,
-      "sha256": "0bddc95fff807914b2c488d2b08920a9a6494f7a47fcb9634d45300346994037"
+      "bytes": 10374,
+      "sha256": "2d274e1d8a1633041aaa5874245f8416730c63e1ea7722d4d163c5cc5c1a5830"
     },
     {
       "path": "js/building-geodata.bin.gz",
@@ -271,6 +271,11 @@
       "sha256": "efbde5b645cf30cd9688c696732386ea5c0ec41408b4ad7226b4f9f49a92cf1f"
     },
     {
+      "path": "js/pitched-roofs.js",
+      "bytes": 1958,
+      "sha256": "3d6ae0f3a5064947a3a7a72e7365188d05b0e79fc3b8e55eb53c53c6860ac5b6"
+    },
+    {
       "path": "js/post-processing.js",
       "bytes": 3972,
       "sha256": "a90e4d72dee3de8af016e429b5fb09d17b1dc23360ad76e2b7aff9f347a49e0d"
@@ -327,8 +332,8 @@
     },
     {
       "path": "js/tsl-materials.js",
-      "bytes": 168853,
-      "sha256": "51efa87f60ef8b1f262183da838e226afb7687067960728abcc7d475f16ae60c"
+      "bytes": 169485,
+      "sha256": "cc11984b11a29e9e2d2c07141a2a4552185ead3054cd09517df248e5d8c44cf3"
     },
     {
       "path": "js/urban-context.js",

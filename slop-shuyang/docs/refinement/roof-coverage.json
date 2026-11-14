@@ -1,0 +1,1429 @@
+{
+  "sourceBuildings": 7741,
+  "gabledSources": 71,
+  "planePolygons": 142,
+  "sourceDigest": "88c757797a569b1f67cdbfddee6c32e45d0f27f77c18dfc7cd648e50f4b3af8a",
+  "limits": "Geometry rendering audit only. Existing gabled tags, roof heights, tile scale and inferred long-axis ridge are display estimates; this is not a completed photo reconstruction of these buildings.",
+  "records": [
+    {
+      "index": 1820,
+      "id": "reviewed/online/dengyuan/house-b",
+      "height": 8,
+      "roofShape": "gabled",
+      "roofHeight": 1.6,
+      "sourceAreaM2": 512.5,
+      "projectedRoofAreaM2": 512.4999999998254,
+      "planePolygons": 2,
+      "eaveHeights": [
+        6.620000000000001
+      ],
+      "axes": [
+        [
+          -0.8709784677429291,
+          -0.49132118693190874
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 1821,
+      "id": "reviewed/online/dengyuan/house-c",
+      "height": 8,
+      "roofShape": "gabled",
+      "roofHeight": 1.6,
+      "sourceAreaM2": 440.75,
+      "projectedRoofAreaM2": 440.75,
+      "planePolygons": 2,
+      "eaveHeights": [
+        6.620000000000001
+      ],
+      "axes": [
+        [
+          0.8778955729143844,
+          0.4788521306805733
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 1822,
+      "id": "reviewed/online/dengyuan/house-d",
+      "height": 8,
+      "roofShape": "gabled",
+      "roofHeight": 1.6,
+      "sourceAreaM2": 277.25,
+      "projectedRoofAreaM2": 277.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        6.620000000000001
+      ],
+      "axes": [
+        [
+          -0.8892878023181471,
+          -0.45734801262076136
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 1823,
+      "id": "reviewed/online/dengyuan/house-e",
+      "height": 8,
+      "roofShape": "gabled",
+      "roofHeight": 1.6,
+      "sourceAreaM2": 209.125,
+      "projectedRoofAreaM2": 209.12499999988358,
+      "planePolygons": 2,
+      "eaveHeights": [
+        6.620000000000001
+      ],
+      "axes": [
+        [
+          -0.9175556253099241,
+          -0.3976074376343004
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 1824,
+      "id": "reviewed/online/dengyuan/sheds",
+      "height": 6,
+      "roofShape": "gabled",
+      "roofHeight": 1.2,
+      "sourceAreaM2": 2039,
+      "projectedRoofAreaM2": 2039,
+      "planePolygons": 2,
+      "eaveHeights": [
+        5.02
+      ],
+      "axes": [
+        [
+          -0.9048187022009941,
+          -0.4257970363298796
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5473,
+      "id": "reviewed/online/junlin/01",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 1562.25,
+      "projectedRoofAreaM2": 1562.2500000004657,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9899494936611665,
+          -0.1414213562373095
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5474,
+      "id": "reviewed/online/junlin/03",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 179.25,
+      "projectedRoofAreaM2": 179.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9877629653290689,
+          0.15596257347301087
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5475,
+      "id": "reviewed/online/junlin/04",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 707,
+      "projectedRoofAreaM2": 706.9999999995343,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9908301680442989,
+          0.13511320473331348
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5476,
+      "id": "reviewed/online/junlin/07",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 150.25,
+      "projectedRoofAreaM2": 150.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9738412097417931,
+          -0.22722961560641838
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5477,
+      "id": "reviewed/online/junlin/08",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 935,
+      "projectedRoofAreaM2": 935,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9954954725939523,
+          0.09480909262799546
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5478,
+      "id": "reviewed/online/junlin/11",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 115.875,
+      "projectedRoofAreaM2": 115.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9931506043228762,
+          -0.1168412475673972
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5479,
+      "id": "reviewed/online/junlin/12",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 719.375,
+      "projectedRoofAreaM2": 719.3749999995343,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9805806756909201,
+          -0.19611613513818402
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5480,
+      "id": "reviewed/online/junlin/15",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 158.5,
+      "projectedRoofAreaM2": 158.49999999953434,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9958932064677039,
+          -0.09053574604251853
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5481,
+      "id": "reviewed/online/junlin/16",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 430.75,
+      "projectedRoofAreaM2": 430.75,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9908301680442989,
+          0.13511320473331348
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5482,
+      "id": "reviewed/online/junlin/20",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 156.5,
+      "projectedRoofAreaM2": 156.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 5483,
+      "id": "reviewed/online/junlin/21",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 1072.5,
+      "projectedRoofAreaM2": 1072.4999999995343,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9899494936611665,
+          -0.1414213562373095
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6245,
+      "id": "reviewed/online/happiness-01/01",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 619.25,
+      "projectedRoofAreaM2": 619.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9958932064677039,
+          0.09053574604251853
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6246,
+      "id": "reviewed/online/happiness-01/02",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 440.75,
+      "projectedRoofAreaM2": 440.75,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.995785108762236,
+          -0.09171704949125858
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6247,
+      "id": "reviewed/online/happiness-01/03",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 300.125,
+      "projectedRoofAreaM2": 300.125,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9993394979464321,
+          -0.036339618107142986
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6248,
+      "id": "reviewed/online/happiness-01/05",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 567.125,
+      "projectedRoofAreaM2": 567.125,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9943889131791123,
+          0.10578605459352258
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6249,
+      "id": "reviewed/online/happiness-01/06",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 434.25,
+      "projectedRoofAreaM2": 434.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9896873708806833,
+          -0.14324422473273046
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6250,
+      "id": "reviewed/online/happiness-01/07",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 306.125,
+      "projectedRoofAreaM2": 306.125,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9994629430332294,
+          -0.03276927682076162
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6251,
+      "id": "reviewed/online/happiness-01/09",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 587.375,
+      "projectedRoofAreaM2": 587.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9945054529214061,
+          -0.10468478451804275
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6252,
+      "id": "reviewed/online/happiness-01/10",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 454.375,
+      "projectedRoofAreaM2": 454.3750000009313,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9888367737587506,
+          -0.1490028015252912
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6253,
+      "id": "reviewed/online/happiness-01/13",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 466,
+      "projectedRoofAreaM2": 466,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9951750001597838,
+          -0.09811584508617587
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6254,
+      "id": "reviewed/online/happiness-01/14",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 264.375,
+      "projectedRoofAreaM2": 264.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          1,
+          0
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6255,
+      "id": "reviewed/online/happiness-01/17",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 475.625,
+      "projectedRoofAreaM2": 475.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9930611231942691,
+          -0.11759934353616344
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6256,
+      "id": "reviewed/online/happiness-01/18",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 440.625,
+      "projectedRoofAreaM2": 440.62499999953434,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9978983626048055,
+          0.06479859497433801
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6257,
+      "id": "reviewed/online/happiness-01/19",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 258.25,
+      "projectedRoofAreaM2": 258.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6258,
+      "id": "reviewed/online/happiness-01/20",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 425.25,
+      "projectedRoofAreaM2": 425.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9899494936611665,
+          -0.1414213562373095
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6259,
+      "id": "reviewed/online/happiness-full/55",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 427.375,
+      "projectedRoofAreaM2": 427.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9950371902099892,
+          -0.09950371902099892
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6260,
+      "id": "reviewed/online/happiness-full/56",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 678.375,
+      "projectedRoofAreaM2": 678.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9992611746313144,
+          0.0384331221012044
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6261,
+      "id": "reviewed/online/happiness-full/57",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 224.25,
+      "projectedRoofAreaM2": 224.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.999133073092352,
+          -0.04163054471218133
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6262,
+      "id": "reviewed/online/happiness-full/58",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 239.125,
+      "projectedRoofAreaM2": 239.125,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6263,
+      "id": "reviewed/online/happiness-full/59",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 263.875,
+      "projectedRoofAreaM2": 263.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9996539193528472,
+          -0.02630668208823282
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6264,
+      "id": "reviewed/online/happiness-full/60",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 397.625,
+      "projectedRoofAreaM2": 397.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9958932064677039,
+          0.09053574604251853
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6265,
+      "id": "reviewed/online/happiness-full/61",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 425.125,
+      "projectedRoofAreaM2": 425.12500000046566,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9922778767136677,
+          0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6266,
+      "id": "reviewed/online/happiness-full/63",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 351.5,
+      "projectedRoofAreaM2": 351.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9922778767136677,
+          -0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6267,
+      "id": "reviewed/online/happiness-full/64",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 402.875,
+      "projectedRoofAreaM2": 402.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9970544855015816,
+          -0.07669649888473705
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6268,
+      "id": "reviewed/online/happiness-full/65",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 329.25,
+      "projectedRoofAreaM2": 329.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          1,
+          0
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6269,
+      "id": "reviewed/online/happiness-full/66",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 762.375,
+      "projectedRoofAreaM2": 762.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9938837346736188,
+          -0.11043152607484653
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6270,
+      "id": "reviewed/online/happiness-full/67",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 640.5,
+      "projectedRoofAreaM2": 640.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.98058067569092,
+          0.19611613513818402
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6271,
+      "id": "reviewed/online/happiness-full/68",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 343.25,
+      "projectedRoofAreaM2": 343.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9989685402102997,
+          0.045407660918649985
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6272,
+      "id": "reviewed/online/happiness-full/70",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 329.5,
+      "projectedRoofAreaM2": 329.50000000046566,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9778024140774096,
+          0.20952908873087348
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6273,
+      "id": "reviewed/online/happiness-full/71",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 400.75,
+      "projectedRoofAreaM2": 400.75,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9778024140774096,
+          -0.20952908873087348
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6274,
+      "id": "reviewed/online/happiness-full/72",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 391.375,
+      "projectedRoofAreaM2": 391.37499999953434,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.997458699830735,
+          -0.07124704998790965
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6275,
+      "id": "reviewed/online/happiness-full/75",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 328,
+      "projectedRoofAreaM2": 328,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9847835588179369,
+          0.17378533390904768
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6276,
+      "id": "reviewed/online/happiness-full/76",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 350.25,
+      "projectedRoofAreaM2": 350.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.986393923832144,
+          -0.16439898730535732
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6277,
+      "id": "reviewed/online/happiness-full/77",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 342.625,
+      "projectedRoofAreaM2": 342.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9992611746313144,
+          -0.0384331221012044
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6280,
+      "id": "reviewed/online/junlin/02",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 472.875,
+      "projectedRoofAreaM2": 472.87500000046566,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9883716976506173,
+          0.15205718425394113
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6281,
+      "id": "reviewed/online/junlin/05",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 442.625,
+      "projectedRoofAreaM2": 442.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.986393923832144,
+          0.16439898730535732
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6282,
+      "id": "reviewed/online/junlin/06",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 215.125,
+      "projectedRoofAreaM2": 215.12500000046566,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9912279006826348,
+          -0.13216372009101796
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6283,
+      "id": "reviewed/online/junlin/09",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 677.375,
+      "projectedRoofAreaM2": 677.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.986393923832144,
+          -0.16439898730535732
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6284,
+      "id": "reviewed/online/junlin/10",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 232.125,
+      "projectedRoofAreaM2": 232.125,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9912279006826348,
+          -0.13216372009101796
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6285,
+      "id": "reviewed/online/junlin/13",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 487,
+      "projectedRoofAreaM2": 487,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9922778767136677,
+          -0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6286,
+      "id": "reviewed/online/junlin/14",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 232.875,
+      "projectedRoofAreaM2": 232.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9922778767136677,
+          -0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6287,
+      "id": "reviewed/online/junlin/17",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 476.375,
+      "projectedRoofAreaM2": 476.375,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9899494936611665,
+          0.1414213562373095
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6288,
+      "id": "reviewed/online/junlin/18",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 426.5,
+      "projectedRoofAreaM2": 426.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9899494936611665,
+          0.1414213562373095
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6289,
+      "id": "reviewed/online/junlin/19",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 435,
+      "projectedRoofAreaM2": 435,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9883716976506173,
+          -0.15205718425394113
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6290,
+      "id": "reviewed/online/junlin/22",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 490.875,
+      "projectedRoofAreaM2": 490.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9958932064677039,
+          0.09053574604251853
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6738,
+      "id": "reviewed/online/happiness-01/04",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 436.625,
+      "projectedRoofAreaM2": 436.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9906788398452958,
+          0.1362183404787282
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6739,
+      "id": "reviewed/online/happiness-01/08",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 482.375,
+      "projectedRoofAreaM2": 482.37499999953434,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9911220224593662,
+          -0.13295539325674424
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6740,
+      "id": "reviewed/online/happiness-01/11",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 267.125,
+      "projectedRoofAreaM2": 267.12500000046566,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9922778767136677,
+          0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6741,
+      "id": "reviewed/online/happiness-01/12",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 579,
+      "projectedRoofAreaM2": 579,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9831887360764879,
+          0.18259219384277633
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6742,
+      "id": "reviewed/online/happiness-01/15",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 444.5,
+      "projectedRoofAreaM2": 444.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.999133073092352,
+          -0.04163054471218133
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6743,
+      "id": "reviewed/online/happiness-01/16",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 615.625,
+      "projectedRoofAreaM2": 615.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9872411207126472,
+          0.15923243882462051
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6744,
+      "id": "reviewed/online/happiness-full/51",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 443.25,
+      "projectedRoofAreaM2": 443.25,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9922778767136677,
+          0.12403473458920847
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6745,
+      "id": "reviewed/online/happiness-full/62",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 657.5,
+      "projectedRoofAreaM2": 657.5,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9958932064677039,
+          0.09053574604251853
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6746,
+      "id": "reviewed/online/happiness-full/69",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 340.875,
+      "projectedRoofAreaM2": 340.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.994309153919809,
+          -0.10653312363426524
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6747,
+      "id": "reviewed/online/happiness-full/73",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 296.625,
+      "projectedRoofAreaM2": 296.625,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          0.9960377053144618,
+          0.08893193797450552
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    },
+    {
+      "index": 6748,
+      "id": "reviewed/online/happiness-full/78",
+      "height": 18,
+      "roofShape": "gabled",
+      "roofHeight": 2,
+      "sourceAreaM2": 325.875,
+      "projectedRoofAreaM2": 325.875,
+      "planePolygons": 2,
+      "eaveHeights": [
+        16.22
+      ],
+      "axes": [
+        [
+          -0.9965457582448798,
+          -0.08304547985373999
+        ]
+      ],
+      "status": "source-estimate-rendered; ridge orientation and roof form not individually photo-verified"
+    }
+  ]
+}

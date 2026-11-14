@@ -40,6 +40,7 @@ const THREE = {
 const collision = loadModule(readFileSync(join(__dirname, '../js/building-collision.js'), 'utf8'));
 const { createBuildingFootprints } = loadModule(readFileSync(join(__dirname, '../js/building-footprints.js'), 'utf8'), {
   imports: { 'three/webgpu': THREE, './tsl-materials.js': { WALL_KINDS: { shop: 0, front: 1, rear: 2, lotLine: 3 } },
+    './pitched-roofs.js': {gableRoofPlan:()=>null},
     './building-collision.js': collision }
 });
 const p = (x, z) => ({ x, z });

@@ -43,7 +43,8 @@ function addBuildingDetails(b, detail, { masonry, rand, neighbours }) {
       && r.polygons.some((p) => polygonBoxOverlaps(p, x, z, w / 2, d / 2, cs, sn)));
   }
 
-  if (masonry) {
+  const pitchedRoof=['gabled','hipped'].includes(b.roofShape)&&b.roofHeight>0;
+  if (masonry && !pitchedRoof) {
     for (const e of edges.slice(0, 16)) {
       const x = e.x - e.nx * 0.1, z = e.z - e.nz * 0.1;
       const cs = -e.nz, sn = -e.nx;
@@ -59,7 +60,7 @@ function addBuildingDetails(b, detail, { masonry, rand, neighbours }) {
   const area = (p) => ringArea(p.outer) - p.holes.reduce((n, ring) => n + ringArea(ring), 0);
   const polygon = b.polygons.reduce((a, c) => area(a) > area(c) ? a : c);
   const edge = edges.find((e) => e.polygon === polygon);
-  if (edge) {
+  if (edge && !pitchedRoof) {
     const cs = -edge.nz, sn = -edge.nx, ry = Math.atan2(sn, cs);
     const us = polygon.outer.map((p) => (p.x - b.cx) * cs - (p.z - b.cz) * sn);
     const vs = polygon.outer.map((p) => (p.x - b.cx) * sn + (p.z - b.cz) * cs);

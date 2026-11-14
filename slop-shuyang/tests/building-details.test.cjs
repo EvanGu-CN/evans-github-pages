@@ -51,6 +51,18 @@ test('a small courtyard enclosed by all four accessory corners still blocks plac
   assert.equal(d.waterTowers.length, 0);
 });
 
+test('pitched sources do not inherit floating flat-roof cornices or HVAC units',()=>{
+  const flat=building(square(0,0,40));let awnings=0,flatUnits=0;
+  for(let seed=1;seed<=40;seed++){
+    flatUnits+=details(flat,seed*104729).hvacUnits.length;
+    for(const roofShape of ['gabled','hipped']){
+      const d=details({...flat,roofShape,roofHeight:2},seed*104729);
+      assert.equal(d.hvacUnits.length,0);assert.equal(d.cornices.length,0);awnings+=d.awnings.length;
+    }
+  }
+  assert.ok(flatUnits>0);assert.ok(awnings>0,'ground-level retail details remain available');
+});
+
 test('party walls block cornices and storefronts while exposed walls keep their details', () => {
   const b = building(square(0, 0, 40)), neighbour = building(square(40, 0, 40));
   neighbour.height = 40;

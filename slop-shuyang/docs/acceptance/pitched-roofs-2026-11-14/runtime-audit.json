@@ -1,0 +1,11 @@
+{
+  "backend": "WebGPUBackend",
+  "cameraRestored": true,
+  "total": {
+    "flatPolygons": 7608,
+    "gablePlanePolygons": 142,
+    "gabledPolygons": 71,
+    "hippedPolygons": 45
+  },
+  "errors": []
+}
