@@ -1,5 +1,6 @@
 import { GEO } from './shuyang-geodata.js';
 import { BUILDING_PHOTO_BY_SOURCE } from './building-photo-references.js';
+import { TAIZHOU_CORRIDOR } from './taizhou-corridor-data.js';
 import {
   ROADS,
   BLOCKS,
@@ -167,7 +168,9 @@ const SPORTS_COLORS={soccer:'#31543b',basketball:'#375b68','sports-ground':'#354
   infield:'#365d41',court:'#406d69','sport-paving':'#73594d','community-path':'#748180'};
 const SPORTS_ITEMS=(GEO.urban?.surfaces||[]).filter(s=>SPORTS_COLORS[s.kind]).flatMap(s=>s.polygons.map(p=>({
   ...p,color:SPORTS_COLORS[s.kind],bb:flatBBox(p.outer)
-})));
+}))).concat(TAIZHOU_CORRIDOR.surfaces.filter(s=>!s.kind.includes('curb')).flatMap(s=>s.polygons.map(p=>({
+  ...p,color:s.kind==='walkway'?'#916e69':s.kind==='cycleway'?'#586264':'#3c593d',bb:flatBBox(p.outer)
+}))));
 const SPORTS_INDEX=makeIndex(SPORTS_ITEMS);
 
 const PLACES = GEO.places || [];

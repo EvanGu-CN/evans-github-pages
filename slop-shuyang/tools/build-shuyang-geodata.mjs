@@ -10,6 +10,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import polygonClip from '../js/vendor/polygon-clipping.js';
 import { PHOTO_LANDMARK_SITES } from '../js/landmark-data.js';
+import { reviewRoadSections } from '../js/road-photo-references.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(HERE, 'data', 'shuyang');
@@ -264,13 +265,14 @@ const roads = [];
     const lanes = Math.max(1, Math.min(8, Math.round(Number.isFinite(NUM(t.lanes)) ? NUM(t.lanes) : w / 3.5)));
     pts = rdp(pts, 0.9);
     if (pts.length < 2) continue;
-    roads.push({
+    roads.push(...reviewRoadSections({
       name, kind, w, lanes, dir: onewayDir(t),
+      sourceId:`way/${e.id}`,
       bridge: t.bridge === 'yes' || t.bridge === 'viaduct',
       tunnel: false,
       // keep the surface class for the renderer
       flat: flat(pts)
-    });
+    }));
   }
 }
 log(`${roads.length} drivable road ways`);
@@ -930,6 +932,8 @@ const GEO = {
   },
   bounds: BOUNDS,
   roads: roads.map((r) => [r.name, r.kind, q(r.w), r.lanes, r.dir, r.bridge ? 1 : 0, r.flat]),
+  roadSourceIds:roads.map(r=>r.sourceId),
+  roadReviews:roads.flatMap((r,index)=>r.photoReviewId?[{index,sourceId:r.sourceId,reviewId:r.photoReviewId,originalWidth:r.originalWidth,originalLanes:r.originalLanes,width:r.w,lanes:r.lanes}]:[]),
   mapPaths,
   mapBuildings,
   buildingDataVersion: createHash('sha256').update(zlib.gunzipSync(fs.readFileSync(BUILDINGS_OUT))).digest('hex'),

@@ -1,0 +1,120 @@
+{
+  "edges": [
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 1967.8367440695815,
+      "sz": 1894.6303708649875
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 1951.692730181951,
+      "sz": 1966.9838725479597
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 2090.9680524944188,
+      "sz": 1430.0372772338403
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 1996.258845760996,
+      "sz": 1780.7761898749584
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 1976.8011172387864,
+      "sz": 1857.4932841332595
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 2211.9737591303065,
+      "sz": 999.7674461009428
+    },
+    {
+      "half": 10.75,
+      "lanes": [
+        1.875,
+        5.25,
+        8.75
+      ],
+      "sx": 2307.202043353597,
+      "sz": 640.4258410368108
+    }
+  ],
+  "noPlantViolations": 0,
+  "review": {
+    "areaByKind": {
+      "curb": 1077.81,
+      "cycle-curb": 1018.13,
+      "cycleway": 25800.68,
+      "landscape": 66507.6,
+      "outer-curb": 1023.24,
+      "side-green": 22757.19,
+      "walkway": 15053.97
+    },
+    "captureDate": null,
+    "counts": {
+      "curb": {
+        "polygons": 34,
+        "vertices": 1245
+      },
+      "cycle-curb": {
+        "polygons": 32,
+        "vertices": 1194
+      },
+      "cycleway": {
+        "polygons": 31,
+        "vertices": 297
+      },
+      "landscape": {
+        "polygons": 85,
+        "vertices": 792
+      },
+      "outer-curb": {
+        "polygons": 30,
+        "vertices": 1137
+      },
+      "side-green": {
+        "polygons": 35,
+        "vertices": 324
+      },
+      "walkway": {
+        "polygons": 30,
+        "vertices": 285
+      }
+    },
+    "id": "taizhou2022"
+  },
+  "taizhouTreeCount": 408,
+  "treeSites": 9553
+}

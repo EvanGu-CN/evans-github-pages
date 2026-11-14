@@ -2,6 +2,7 @@ import {LANDMARKS,nearestRoadPoint,ROADS} from './city-config.js';
 import {LANDMARK_REFERENCES} from './landmark-references.js';
 import {COMMUNITY_DETAILS} from './community-data.js';
 import {BUILDING_PHOTO_REFERENCES,buildingObservationPoint} from './building-photo-references.js';
+import {ROAD_PHOTO_REFERENCES} from './road-photo-references.js';
 
 function installLandmarkGallery({onOpen,onClose,onTeleport}={}){
   const dialog=document.createElement('dialog');dialog.className='landmark-gallery';dialog.id='landmark-gallery';
@@ -11,17 +12,18 @@ function installLandmarkGallery({onOpen,onClose,onTeleport}={}){
   const select=dialog.querySelector('select'),image=dialog.querySelector('img'),caption=dialog.querySelector('.landmark-gallery-caption');
   const records=new Map(LANDMARKS.map(l=>[l.id,{name:l.name,...LANDMARK_REFERENCES[l.id]}]));
   for(const r of BUILDING_PHOTO_REFERENCES)records.set('building:'+r.id,r);
+  for(const r of ROAD_PHOTO_REFERENCES)records.set('road:'+r.id,r);
   for(const c of COMMUNITY_DETAILS.communities){
     const candidates=(c.mapContext?.matches||[]).flatMap(m=>m.photos).filter(p=>p.image!==c.photo?.image);
     const note=c.photo?(c.gate?c.photo.placementNote:c.photo.identityVisible===false?'地点照片与可见庭院布局交叉核对，照片未见小区题名；具体门址尚未确认。':'已核对具名实拍，具体门址尚未确认，暂不设置门楼。'):'入口外观尚未核对实拍。地点关联图片经名称与位置筛选，外观仍需逐张核验。';
     records.set('community:'+c.id,{name:c.name,note:`小区内建筑仍在逐步核对完善。${c.boundarySource?'小区范围依据参考图近似标注，不是正式红线。':''}${note}`,
       access:c.gate||c.access[0],photos:[...(c.photo?[{...c.photo,caption:(c.photo.caption||'小区入口实景参考。')+' 拍摄日期：'+c.photo.date+'。'}]:[]),...candidates]});
   }
-  for(const [label,keys] of [['地标建筑',LANDMARKS.map(l=>l.id)],['沿街建筑',BUILDING_PHOTO_REFERENCES.map(r=>'building:'+r.id)],['小区',COMMUNITY_DETAILS.communities.map(c=>'community:'+c.id)]]){
+  for(const [label,keys] of [['地标建筑',LANDMARKS.map(l=>l.id)],['沿街建筑',BUILDING_PHOTO_REFERENCES.map(r=>'building:'+r.id)],['道路',ROAD_PHOTO_REFERENCES.map(r=>'road:'+r.id)],['小区',COMMUNITY_DETAILS.communities.map(c=>'community:'+c.id)]]){
     const group=document.createElement('optgroup');group.label=label;select.append(group);
     for(const key of keys){const r=records.get(key),o=document.createElement('option');o.value=key;o.textContent=r.name+(r.photos.length?'':' · 照片待补充');group.append(o)}
   }
-  dialog.querySelector('.landmark-gallery-progress').textContent=`${LANDMARKS.length}处地标 · ${BUILDING_PHOTO_REFERENCES.length}处沿街建筑 · ${COMMUNITY_DETAILS.audit.communities}个小区 · ${COMMUNITY_DETAILS.audit.reviewedPhotos}个已核对实景照片 · ${COMMUNITY_DETAILS.audit.withMapPhotoCandidates||0}个有地图地点图片`;
+  dialog.querySelector('.landmark-gallery-progress').textContent=`${LANDMARKS.length}处地标 · ${BUILDING_PHOTO_REFERENCES.length}处沿街建筑 · ${ROAD_PHOTO_REFERENCES.length}处道路 · ${COMMUNITY_DETAILS.audit.communities}个小区 · ${COMMUNITY_DETAILS.audit.reviewedPhotos}个已核对实景照片 · ${COMMUNITY_DETAILS.audit.withMapPhotoCandidates||0}个有地图地点图片`;
   let index=0;
   const current=()=>records.get(select.value);
   function render(){

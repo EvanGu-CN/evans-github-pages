@@ -179,7 +179,7 @@ async function initApp() {
   const cameraSystem = new CameraSystem(renderer.domElement, controllerManager);
   if (new URLSearchParams(location.search).has('debug')) {
     window.__debug = {
-      scene, renderer, controllerManager, cameraSystem, streetDetails, THREE, landmarkColliders, cityBlocks,
+      scene, renderer, controllerManager, cameraSystem, streetDetails, THREE, landmarkColliders, cityBlocks, trafficSystem,
       teleportToLandmark: (id) => {
         const loc = TELEPORT_LOCATIONS[id];
         if (!loc) return false;

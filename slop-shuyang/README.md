@@ -65,6 +65,8 @@
 
 公开站点：[沭阳漫游](https://evangu-cn.github.io/evans-github-pages/slop-shuyang/)。部署仓库为 [EvanGu-CN/evans-github-pages](https://github.com/EvanGu-CN/evans-github-pages)，使用 `main` 分支下的 `slop-shuyang/` 目录。该目录的 `deployment-manifest.json` 记录来源提交及运行文件校验值。
 
+台州路珠海路—杭州路已按2022年标准断面与通车后实景细化为21.5米双向六车道，并补两侧分隔绿带、非机动车道、步行带和路缘；三维、地图与车流共用道路几何。照片拍摄日未知，路口和植栽铺装仍为展示估计，详见[验收与来源](docs/acceptance/taizhou-corridor-2026-11-15/README.md)。
+
 项目是纯静态页面，不需要构建：
 
 ```bash
@@ -181,6 +183,8 @@ node --max-old-space-size=8192 tools/build-shuyang-geodata.mjs
 - `js/buildings.js` — 建筑立面、屋顶细节、店招与流式加载
 - `js/pitched-roofs.js` — 既有双坡标记的实体坡面规划，保留凹口/院落及来源总高；坡形与屋脊方向仍是展示估计，见[几何验收](docs/acceptance/pitched-roofs-2026-11-14/README.md)
 - `js/road-network.js` — OSM 路网 → 车道、路口、停止线与转向曲线
+- `js/road-photo-references.js` — 有来源的道路断面、照片与边界切分；保留原始宽度/车道记录
+- `js/taizhou-corridor.js`、`js/taizhou-corridor-data.js`、`js/taizhou-corridor-sites.js` — 台州路裁切绿带/非机动车道/步行带/路缘、地图共用几何及树木避让；由`tools/build-taizhou-corridor.py`生成数据
 - `js/street-details.js` — 行道树、路灯、信号灯
 - `js/landmarks.js` — 地标的实景参考模型与来源步行桥
 - `js/hospital-precinct.js` — 上海中路中医院四栋来源的照片引导细节、估高塔楼与临街候车棚；原始高度另行保留，见[本批验收](docs/acceptance/hospital-precinct-2026-11-14/README.md)

@@ -18,6 +18,7 @@ for (const [name, site] of Object.entries(LANDMARK_SITES)) {
   }
 }
 const reviewed = new Map(reviewedSourceBindings().map(r => [r.sourceBuildingIndex, r]));
+const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
 for (const [i, r] of reviewed) if (source[i]?.id !== r.sourceId) throw new Error('Photo binding drift: '+r.sourceId);
 const mapNames = new Map(GEO.mapBuildings.map(b => [b.id, b.n || '']));
 const buildings = source.map((b, i) => {
@@ -31,11 +32,13 @@ const buildings = source.map((b, i) => {
     model:bindings.get(i)||[], review:r?.reviewId||null, modeledFaces:r?.modeledFaces||[]};
 });
 const geometryKey = (name, pts) => createHash('sha256').update(JSON.stringify([name,pts])).digest('hex').slice(0,16);
-const roads = ROADS.map(r => {
+const roads = ROADS.map((r,index) => {
   const review = BUILDING_PHOTO_REFERENCES.filter(p => p.streetSection?.name === r.name &&
     Math.max(...r.pts.map(p=>p.z)) >= p.streetSection.minZ && Math.min(...r.pts.map(p=>p.z)) <= p.streetSection.maxZ);
-  return {key:geometryKey(r.name,r.pts), name:r.name, kind:r.kind, width:r.w,
-    status:review.length?'partial-frontage-reference':'not-yet-inventoried',
+  const profile=roadProfiles.get(index);
+  return {key:geometryKey(r.name,r.pts),sourceWayId:GEO.roadSourceIds?.[index]||null,name:r.name,kind:r.kind,width:r.w,
+    status:profile?'photo-standard-section-estimate':review.length?'partial-frontage-reference':'not-yet-inventoried',
+    ...(profile?{profileReview:profile}:{}),
     review:review.map(p=>({id:p.id,...p.streetSection})), points:r.pts};
 });
 const paths = GEO.mapPaths.map(p=>({key:geometryKey(p[0],p),name:p[0],status:'not-yet-inventoried',source:p}));
@@ -50,6 +53,7 @@ for (const b of buildings) {
 const report = {scope:'All source buildings and roads within the existing Shuyang core-city dataset; no area is removed from the goal.',
   limits:'Not-yet-inventoried means no per-source evidence record here; existing campus, housing and street overlays are not yet fully registered. Model-bound is not full facade verification. No status means complete.',
   buildings:buildings.length, roads:roads.length, paths:paths.length,
+  sourceRoadWays:new Set(GEO.roadSourceIds||[]).size,
   buildingStatus:statusCounts(buildings),roadStatus:statusCounts(roads),
   sourceDigest:createHash('sha256').update(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz',root))).digest('hex')};
 const out = new URL('docs/refinement/',root); mkdirSync(out,{recursive:true});

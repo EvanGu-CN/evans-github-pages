@@ -3,10 +3,10 @@
 All geometry uses the same metre frame as the building extract. Membership uses
 polygon coverage, never proximity. No perimeter walls or internal roads are invented.
 """
-import gzip, hashlib, json, runpy
+import gzip, hashlib, json, runpy, subprocess
 from collections import Counter
 from shapely import make_valid, set_precision
-from shapely.geometry import Polygon, LineString, Point
+from shapely.geometry import Polygon, LineString, Point, box
 from shapely.ops import unary_union
 from shapely.strtree import STRtree
 from pathlib import Path
@@ -143,6 +143,12 @@ def main():
               'motorway_link': 9, 'trunk_link': 9, 'primary_link': 9, 'secondary_link': 8, 'tertiary_link': 8}
     path_widths = {'footway': 2, 'cycleway': 2.5, 'path': 1.8, 'pedestrian': 4, 'steps': 1.5, 'track': 3, 'bridleway': 2}
     road_shapes, path_records = [], []
+    # Use the same reviewed standard-section dimensions as the renderer and
+    # traffic generator. Raw OSM widths predate the 2022 Taizhou widening.
+    road_review=json.loads(subprocess.check_output(['node','--input-type=module','-e',
+        "import {TAIZHOU_ROAD_REVIEW} from './js/road-photo-references.js';process.stdout.write(JSON.stringify(TAIZHOU_ROAD_REVIEW));"],
+        cwd=Path(__file__).resolve().parents[1],text=True,encoding='utf-8'))
+    review_window=box(-1e6,road_review['minZ'],1e6,road_review['maxZ'])
     for e in roads['elements']:
         t = e.get('tags', {})
         if t.get('area') == 'yes' or t.get('tunnel') == 'yes' or t.get('covered') == 'yes':
@@ -155,6 +161,10 @@ def main():
             tagged_width, lanes = number(t.get('width')), number(t.get('lanes'))
             w = tagged_width if tagged_width and tagged_width > 2 else max(widths[kind], lanes * 3.5 + 1.4) if lanes else widths[kind]
             road_shapes.append(g.buffer(min(50, max(3, w))/2 + .5))
+            if t.get('name') in road_review['mainNames'] and t.get('bridge') not in ('yes','viaduct'):
+                # 1.5 m protection includes the renderer's <=0.9 m line
+                # simplification and quantisation; this is not extra asphalt.
+                road_shapes.append(g.intersection(review_window).buffer(road_review['carriageway']/2+1.5))
         elif kind in path_widths:
             w = number(t.get('width')) or path_widths[kind]
             # Bridge elevations cannot be recovered from a centreline: keep them map-only.

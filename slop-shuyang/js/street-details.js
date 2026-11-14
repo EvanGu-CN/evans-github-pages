@@ -7,6 +7,7 @@ import { cityUniforms } from './tsl-materials.js';
 import { createTreeField } from './trees.js';
 import { parkTreeSites } from './city-grid.js';
 import { collectGreenTreeSites } from './green-tree-sites.js';
+import { collectTaizhouTreeSites,taizhouNoPlantAt } from './taizhou-corridor-sites.js';
 
 // 沭阳街道设施：行道树、路灯、路口信号灯。交通系统的信号灯位置与相位都从这里来。
 
@@ -87,6 +88,9 @@ function buildStreetDetails(scene, colliders = []) {
   }
   // 已核对的小区绿地（沃德嘉园边界绿化、楼间绿带与中央庭院）里的庭院树。
   for (const site of collectGreenTreeSites(GEO.urban?.surfaces || [], blockedAt)) sites.push(site);
+  for(let i=sites.length-1;i>=0;i--)if(taizhouNoPlantAt(sites[i].x,sites[i].z))sites.splice(i,1);
+  const taizhouTrees=collectTaizhouTreeSites(sites,blockedAt);sites.push(...taizhouTrees);
+  group.userData.taizhouTreeCount=taizhouTrees.length;
 
   const treeField = createTreeField(scene, sites, colliders);
   group.add(treeField.group);

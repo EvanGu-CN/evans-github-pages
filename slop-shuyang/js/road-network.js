@@ -1,6 +1,7 @@
 import { ISLAND_BOUNDS } from './city-config.js';
 import { GEO } from './shuyang-geodata.js';
 import { polygonBoxOverlaps } from './building-collision.js';
+import { reviewedLaneCenters } from './road-photo-references.js';
 
 // 沭阳可行驶路网：以 OSM 道路中心线图（GEO.roadGraph）为唯一来源，路口按真实连接关系生成
 // 车道、停止线、信号相位与转向曲线。车道方向：+1 沿 a -> b，-1 反向，0 双向。
@@ -112,7 +113,7 @@ function buildRoadNetwork(sidewalks, obstacles, signalIntersections = []) {
       const lanes = laneOffsets(half) || [0];
       return { half, axis, fwd: l.dir > 0 ? lanes : [], back: l.dir < 0 ? lanes : [] };
     }
-    const each = half >= 8.5 ? [1.8, 5.4] : half >= 5 ? [1.8] : [0];
+    const each = reviewedLaneCenters(l) || (half >= 8.5 ? [1.8, 5.4] : half >= 5 ? [1.8] : [0]);
     return { half, axis, fwd: each, back: each };
   }
   const genRuns = [];

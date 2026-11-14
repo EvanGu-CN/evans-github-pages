@@ -19,6 +19,7 @@ import { buildMizhongPrecinct } from './mizhong-precinct.js';
 import { buildCoreRetail } from './core-retail.js';
 import { buildCoreCommercialFrontages } from './core-commercial-frontages.js';
 import { buildHospitalPrecinct } from './hospital-precinct.js';
+import { buildTaizhouCorridor } from './taizhou-corridor.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -591,6 +592,7 @@ function buildLandmarks(scene) {
   buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
   buildCoreCommercialFrontages({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildHospitalPrecinct({root,box,cyl,sign,M,sourceEdges,edgePanel});
+  buildTaizhouCorridor(root);
   buildWodeDistrict(root);
   buildWodeStreetscape(root);
   buildBayiDistrict(root);

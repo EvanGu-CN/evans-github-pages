@@ -137,7 +137,8 @@ test('road queries preserve the open area inside concave and courtyard bounds', 
       getIslandBoundsAtZ: () => ({ westX: -200, eastX: 200 })
     },
     './shuyang-geodata.js': { GEO: { roadGraph: { nodes: [], links: [], names: [] } } },
-    './building-collision.js': { polygonBoxOverlaps }
+    './building-collision.js': { polygonBoxOverlaps },
+    './road-photo-references.js': {reviewedLaneCenters:()=>null}
   } });
   for (const polygon of [concave, courtyard]) {
     const network = buildRoadNetwork([], [{ minX: 0, maxX: 12, minZ: 0, maxZ: 12, polygon }]);

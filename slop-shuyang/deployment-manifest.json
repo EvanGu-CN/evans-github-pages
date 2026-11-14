@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-14-pitched-roofs",
+  "release": "2026-11-15-taizhou-corridor",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "542e39de831f71c10d4224dfd66d005e0ef0cab3",
+  "sourceCommit": "539aeb746daf6894bca0448f6b15763b1312bb94",
   "sourceBuildings": 7741,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 2,
   "validation": {
-    "nodeTestsPassed": 332,
+    "nodeTestsPassed": 337,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 30151,
-      "sha256": "bb0b35ed17a27f413807f746ad0e37f32ed2b314a5057720b7e4acc7772b2700"
+      "bytes": 30419,
+      "sha256": "2a3ad9f458f0a39a1c002cfe421d549a78d7964ec9bc8b86c41d8a35b3b2e290"
     },
     {
       "path": "js/audio-acoustics.js",
@@ -127,8 +127,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 34618,
-      "sha256": "c45e39142eba2a3e9734f2c9ec7a6afdb3cd0a351c6d5b209986cb2274c3536a"
+      "bytes": 34891,
+      "sha256": "67c0b5242c7bb6734bc8c0d823262c921df573835f1429494e89622f7e45cd09"
     },
     {
       "path": "js/civic-campuses.js",
@@ -207,8 +207,8 @@
     },
     {
       "path": "js/landmark-gallery.js",
-      "bytes": 5939,
-      "sha256": "c6bb01a55dbc88a3600b0b8e57416963b629d9a962f8e8cd8d7fa43952be9348"
+      "bytes": 6171,
+      "sha256": "495379eb7dbe54febd32a5b218d0c7b4a2b2930df33585101fd169cea634acca"
     },
     {
       "path": "js/landmark-references.js",
@@ -217,8 +217,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 34597,
-      "sha256": "48960f42bb6921771669abff1b64bb2b4cd6f4c897f31fb5661f52bcbb76aed6"
+      "bytes": 34689,
+      "sha256": "343d894d4f99c121b8ceef543c93e436aada3511a23d2ee43b56a6eccd70697b"
     },
     {
       "path": "js/lighting.js",
@@ -227,8 +227,8 @@
     },
     {
       "path": "js/main.js",
-      "bytes": 38811,
-      "sha256": "b7e252676d19acb60752a8a6ea2565e252d5db38de10f9d96d4c8e7734b45fb0"
+      "bytes": 38826,
+      "sha256": "420c036800c91588b028082aa9cb2c539bbb7edf8b5d10148b48a52effe2d533"
     },
     {
       "path": "js/mengxi-campus.js",
@@ -282,13 +282,18 @@
     },
     {
       "path": "js/road-network.js",
-      "bytes": 39331,
-      "sha256": "c83285077f4bd1140c9cc94a288041a7eeba18079f0ee0a41350f47348cbed02"
+      "bytes": 39425,
+      "sha256": "f1e1af764e4594deb92edab7cedef00b8e52c82d80b6131a169ca115c776afb7"
     },
     {
       "path": "js/road-paint.js",
       "bytes": 11898,
       "sha256": "60836689c0cef0c10d5d1013b6a3f2f5aa4d5c7135301cb1576a85eabd07f01e"
+    },
+    {
+      "path": "js/road-photo-references.js",
+      "bytes": 2820,
+      "sha256": "a1bdcc1c1ad7f7a48896690762c9aacad5ac23f51c3267f09d23ae7243a668e0"
     },
     {
       "path": "js/rtmart-district.js",
@@ -307,13 +312,28 @@
     },
     {
       "path": "js/shuyang-geodata.js",
-      "bytes": 3466185,
-      "sha256": "8c996b1474b5d35c9320ddf032921cb5b48b0258d733ac0e7fc7186ef226e77c"
+      "bytes": 3484217,
+      "sha256": "0d500db02deef7ecb072e93d62c2b13a77055c41f49f8be167009af6079d4e07"
     },
     {
       "path": "js/street-details.js",
-      "bytes": 11330,
-      "sha256": "7bf2cd4384dc8b02a27ffce5c78c6000f1f21aa56c48cb2e02a952990c918bd8"
+      "bytes": 11662,
+      "sha256": "74924fe20c34a0734ef13eec581c3e4d1dc758b16b2be4bf5243d6210a46cd36"
+    },
+    {
+      "path": "js/taizhou-corridor-data.js",
+      "bytes": 62042,
+      "sha256": "920f12843aed415edbdfd864365408e05c9e5a7d9415bc580b48e680491b790f"
+    },
+    {
+      "path": "js/taizhou-corridor-sites.js",
+      "bytes": 2416,
+      "sha256": "2ebdfd89525acba2b5b275470502089ba76d1b10a65acb5a1df9bf98183ed2f1"
+    },
+    {
+      "path": "js/taizhou-corridor.js",
+      "bytes": 2757,
+      "sha256": "3dfe6cf5421bd2ba48ada095cf1d39fa14210692f4285d57e4d9d5715b133d7c"
     },
     {
       "path": "js/touch-controls.js",
