@@ -5,6 +5,7 @@
 ## 项目与仓库
 
 - 这是沭阳城区的静态Three.js WebGPU/TSL项目，没有前端构建步骤，也没有需启动的应用后端。运行：`python -m http.server 8123`。
+- 数据生成环境使用Python ≥3.12及Shapely 2；当前锁定的rasterio依赖不支持较旧Python。优先使用项目虚拟环境，静态HTTP服务与数据工具的解释器要求要区分。
 - 源码远程 `origin`：`https://github.com/EvanGu-CN/slop-shuyang.git`；原项目保留为 `upstream`：`https://github.com/mrdoob/slop-newyork.git`。不得将沭阳提交推送到upstream。
 - 新开发分支使用 `codex/` 前缀。当前工作分支可能与远程main不同；推送前检查实际分支、远程URL及目标引用，不使用强推覆盖既有历史。
 - Pages部署位于另一个仓库 `EvanGu-CN/evans-github-pages` 的 `slop-shuyang/` 子目录。源码仓库与发布仓库要区分；修改不能覆盖其他游戏或无关文件。

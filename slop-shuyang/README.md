@@ -63,7 +63,7 @@ python -m http.server 8123
 
 ## 开发与验证
 
-日常修改直接编辑HTML、CSS和ES模块。几何生成与审计使用Python、Shapely 2和Node.js；本次验证环境为Node.js 24，Python依赖见[requirements-buildings.txt](tools/requirements-buildings.txt)。
+日常修改直接编辑HTML、CSS和ES模块。几何生成与审计使用Python、Shapely 2和Node.js；本次验证环境为Node.js 24、Python 3.12，依赖见[requirements-buildings.txt](tools/requirements-buildings.txt)。
 
 Windows PowerShell：
 
@@ -87,13 +87,15 @@ node --test tests/overpass.test.mjs
 
 世界坐标按1单位=1米组织，`x`向东、`z`向南，原点为人民中路与上海中路交叉口附近。OSM来源、Overture建筑增量、估高与逐个核对的影像补录均保存在 `tools/data/shuyang/`。
 
-使用独立Python虚拟环境安装数据工具：
+数据生成工具需要Python 3.12或更新版本，当前锁定的rasterio要求Python ≥3.12；仅启动静态HTTP服务无需安装这些数据依赖。请确认下面的 `python` 指向符合版本的解释器，再创建独立环境：
 
 ```bash
 python -m venv .venv
 # 激活虚拟环境后
 python -m pip install -r tools/requirements-buildings.txt
 ```
+
+Windows也可用 `py -3.12 -m venv .venv` 创建环境，之后通过 `.\.venv\Scripts\python.exe` 执行脚本，避免误用系统中的旧版Python。
 
 如需从已提交观察记录重新生成基础层，按依赖顺序运行：
 
