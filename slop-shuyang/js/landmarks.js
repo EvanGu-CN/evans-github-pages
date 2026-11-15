@@ -25,6 +25,7 @@ import { buildTaizhouCorridor } from './taizhou-corridor.js';
 import { buildArtGallery } from './art-gallery.js';
 import { buildCulturalHalls } from './cultural-halls.js';
 import { buildCulturalStreets } from './cultural-streets.js';
+import {buildCoreJunctionFrontage} from './core-junction-frontage.js';
 import { buildParkFootbridges } from './park-bridges.js';
 import { batchStaticGroupMeshes } from './city-grid.js';
 
@@ -508,6 +509,7 @@ function buildLandmarks(scene) {
   buildHospitalPrecinct({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildTaizhouCorridor(root);
   buildCulturalStreets(root);
+  buildCoreJunctionFrontage(root);
   buildWodeDistrict(root);
   buildWodeStreetscape(root);
   buildBayiDistrict(root);

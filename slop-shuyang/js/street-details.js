@@ -9,6 +9,7 @@ import { parkTreeSites } from './city-grid.js';
 import { collectGreenTreeSites } from './green-tree-sites.js';
 import { collectTaizhouTreeSites,taizhouNoPlantAt } from './taizhou-corridor-sites.js';
 import {culturalStreetAt,collectCulturalStreetTrees} from './cultural-street-layout.js';
+import {coreFrontageAt} from './core-junction-frontage-layout.js';
 
 // 沭阳街道设施：行道树、路灯、路口信号灯。交通系统的信号灯位置与相位都从这里来。
 
@@ -95,6 +96,10 @@ function buildStreetDetails(scene, colliders = []) {
   for(let i=sites.length-1;i>=0;i--)if(culturalStreetAt(sites[i].x,sites[i].z,.65))sites.splice(i,1);
   const culturalTrees=collectCulturalStreetTrees(sites,blockedAt);sites.push(...culturalTrees);
   group.userData.culturalStreetTrees=culturalTrees;
+
+  let coreFrontageTreesRemoved=0;
+  for(let i=sites.length-1;i>=0;i--)if(coreFrontageAt(sites[i].x,sites[i].z,.65)){sites.splice(i,1);coreFrontageTreesRemoved++;}
+  group.userData.coreFrontageTreesRemoved=coreFrontageTreesRemoved;
 
   const treeField = createTreeField(scene, sites, colliders);
   group.add(treeField.group);

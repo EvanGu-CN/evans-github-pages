@@ -1,0 +1,199 @@
+{
+  "counts": {
+    "clipFailures": [],
+    "clipped": [
+      {
+        "index": 1384,
+        "retainedAreaM2": 216.4,
+        "sourceAreaM2": 614.3
+      },
+      {
+        "index": 1386,
+        "retainedAreaM2": 143.5,
+        "sourceAreaM2": 843.6
+      },
+      {
+        "index": 1400,
+        "retainedAreaM2": 707.6,
+        "sourceAreaM2": 979.1
+      },
+      {
+        "index": 1415,
+        "retainedAreaM2": 58.3,
+        "sourceAreaM2": 59.3
+      },
+      {
+        "index": 1428,
+        "retainedAreaM2": 137.9,
+        "sourceAreaM2": 858.8
+      },
+      {
+        "index": 1454,
+        "retainedAreaM2": 573.9,
+        "sourceAreaM2": 963.3
+      },
+      {
+        "index": 1455,
+        "retainedAreaM2": 3110.9,
+        "sourceAreaM2": 4379.4
+      },
+      {
+        "index": 1462,
+        "retainedAreaM2": 1371.3,
+        "sourceAreaM2": 2435
+      },
+      {
+        "index": 1476,
+        "retainedAreaM2": 1696.7,
+        "sourceAreaM2": 3094.3
+      },
+      {
+        "index": 1479,
+        "retainedAreaM2": 115.1,
+        "sourceAreaM2": 188.8
+      },
+      {
+        "index": 1487,
+        "retainedAreaM2": 212.6,
+        "sourceAreaM2": 235
+      },
+      {
+        "index": 1756,
+        "retainedAreaM2": 198.7,
+        "sourceAreaM2": 215.8
+      },
+      {
+        "index": 2702,
+        "retainedAreaM2": 602.2,
+        "sourceAreaM2": 608.3
+      },
+      {
+        "index": 5077,
+        "retainedAreaM2": 1279.3,
+        "sourceAreaM2": 1310
+      }
+    ],
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1925,
+      2569,
+      2576,
+      2589,
+      2591,
+      2593,
+      2595,
+      2598,
+      2605,
+      2726,
+      2793,
+      2795,
+      3045,
+      3046,
+      3172,
+      3475,
+      3682,
+      3683,
+      3684,
+      3685,
+      3686,
+      3737,
+      6241,
+      6278,
+      6279,
+      6657,
+      6658,
+      6659,
+      6706,
+      6726,
+      6749
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "rendered": 7705,
+    "replacedByLandmarks": 37,
+    "source": 7742
+  },
+  "finite": true,
+  "meshes": 3,
+  "review": {
+    "audit": {
+      "blueAreaM2": 1333.931,
+      "buildingOverlapM2": 0,
+      "rawBlueAreaM2": 1466.867,
+      "rawRedAreaM2": 1728.225,
+      "redAreaM2": 1173.02,
+      "removedAreaM2": 688.14,
+      "roadOverlapM2": 0
+    },
+    "counts": {
+      "blue": {
+        "polygons": 1,
+        "vertices": 72
+      },
+      "joint": {
+        "polygons": 1,
+        "vertices": 159
+      },
+      "red": {
+        "polygons": 1,
+        "vertices": 135
+      }
+    },
+    "id": "core-junction-frontage-2026-11-15",
+    "limits": "Partial northeast-corner frontage only. Curves, colour boundaries, widths, paver modules and elevation are manually reviewed display estimates. The 2022 published panorama has lens distortion and an unknown capture date; satellite acquisition date is also unknown. The two coloured bands are not asserted to be regulated cycle lanes, running lanes or current 2026 conditions. Road names, motor lane counts/widths, crosswalks, signals, all source geometry and adjacent buildings remain unchanged. No whole-road or whole-city completion is claimed.",
+    "sourceWayIds": [
+      "way/121227003",
+      "way/995943497"
+    ]
+  },
+  "samples": [
+    {
+      "car": 0,
+      "cyclist": 0.33,
+      "hits": [
+        0.33
+      ],
+      "kind": "blue",
+      "person": 0.33,
+      "x": 30.43796521870547,
+      "z": -44.06423251812063
+    },
+    {
+      "car": 0,
+      "cyclist": 0.33,
+      "hits": [
+        0.33
+      ],
+      "kind": "red",
+      "person": 0.33,
+      "x": 23.637965218705496,
+      "z": -38.46423251812065
+    },
+    {
+      "car": 0,
+      "cyclist": 0.33,
+      "hits": [
+        0.33
+      ],
+      "kind": "joint",
+      "person": 0.33,
+      "x": 30.83796521870547,
+      "z": -31.26423251812068
+    }
+  ],
+  "treeConflicts": 0,
+  "treesRemoved": 7,
+  "up": true,
+  "vertices": 366,
+  "restoration": {
+    "activeMode": "car",
+    "cameraRestored": true,
+    "forward": false,
+    "savedMode": "car"
+  }
+}

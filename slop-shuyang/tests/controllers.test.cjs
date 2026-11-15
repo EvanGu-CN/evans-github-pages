@@ -7,6 +7,15 @@ const { loadModule } = require('./helpers/module.cjs');
 const source = readFileSync(join(__dirname, '../js/controllers.js'), 'utf8');
 const polygonCollision = loadModule(readFileSync(join(__dirname, '../js/building-collision.js'), 'utf8'));
 
+test('people and bicycles share the reviewed core frontage height while cars retain the road level', async()=>{
+  const {coreFrontageHeightAt}=await import('../js/core-junction-frontage-layout.js');
+  const {CORE_JUNCTION_FRONTAGE:F}=await import('../js/core-junction-frontage-data.js');
+  let sample;for(let x=F.extent[0];x<F.extent[2]&&!sample;x+=2)for(let z=F.extent[1];z<F.extent[3];z+=2)if(coreFrontageHeightAt(x,z)!==null){sample={x,z};break;}
+  assert.ok(sample);const {controller}=keyboardHarness({coreFrontageHeightAt});
+  assert.equal(controller.getGroundHeight(sample.x,sample.z,'person'),F.height);assert.equal(controller.getGroundHeight(sample.x,sample.z,'cyclist'),F.height);assert.equal(controller.getGroundHeight(sample.x,sample.z,'car'),0);
+  assert.equal(controller.getGroundHeight(0,0,'person'),0);
+});
+
 function eventTarget() {
   const listeners = new Map();
   return {
@@ -38,6 +47,7 @@ function keyboardHarness(nyc = {}) {
     globals: { window, document },
     imports: {
       'three/webgpu': {},
+      './core-junction-frontage-layout.js': { coreFrontageHeightAt: nyc.coreFrontageHeightAt || (()=>null) },
       './city-config.js': config,
       './tsl-materials.js': {},
       './cars.js': {},

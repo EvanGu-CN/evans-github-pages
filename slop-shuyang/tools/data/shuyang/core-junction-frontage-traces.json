@@ -1,0 +1,15 @@
+{
+  "reviewId": "core-junction-frontage-2026-11-15",
+  "name": "人民路商圈路口东北角沿街铺装",
+  "sourceWayIds": ["way/121227003", "way/995943497"],
+  "imagery": {"provider":"AMap public satellite tiles","zoom":18,"tileOrigin":[217558,104601],"size":[3328,2816],"retrievedAt":"2026-11-13","imageAcquired":null},
+  "photoPage": "https://www.sohu.com/a/523006934_412025",
+  "photo": "https://p1.itc.cn/q_70/images03/20220215/92b2d3e48d0f4622acd9a30073334173.jpeg",
+  "publicationDate": "2022-02-15",
+  "captureDate": null,
+  "reviewedAt": "2026-11-15",
+  "blueOuter": [[1758,1214],[1753,1260],[1742,1293],[1733,1312],[1733,1337],[1746,1358],[1773,1372],[1820,1387],[1890,1407],[1960,1427],[2020,1441],[2058,1444]],
+  "blueInner": [[1772,1216],[1766,1264],[1756,1298],[1747,1316],[1746,1333],[1757,1348],[1780,1362],[1824,1375],[1894,1395],[1962,1414],[2022,1429],[2056,1432]],
+  "redOuter": [[1744,1210],[1739,1255],[1728,1288],[1719,1310],[1720,1344],[1736,1369],[1766,1386],[1816,1401],[1886,1421],[1956,1441],[2018,1455],[2060,1458]],
+  "limits": "Partial northeast-corner frontage only. Curves, colour boundaries, widths, paver modules and elevation are manually reviewed display estimates. The 2022 published panorama has lens distortion and an unknown capture date; satellite acquisition date is also unknown. The two coloured bands are not asserted to be regulated cycle lanes, running lanes or current 2026 conditions. Road names, motor lane counts/widths, crosswalks, signals, all source geometry and adjacent buildings remain unchanged. No whole-road or whole-city completion is claimed."
+}

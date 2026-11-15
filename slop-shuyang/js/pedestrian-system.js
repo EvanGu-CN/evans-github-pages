@@ -1,4 +1,5 @@
 import { blockAt } from './city-config.js';
+import {coreFrontageHeightAt} from './core-junction-frontage-layout.js';
 import { createPedestrianRoutes } from './pedestrian-routes.js';
 import { PersonCrowd, PersonRig, PEDESTRIAN_DIVE_DURATION } from './pedestrians.js';
 
@@ -582,6 +583,7 @@ function createPedestrianSystem(network, { player, nearEdges, nearSignals, mayCr
   const SIDEWALK_Y = 0.22;
   const CROSSWALK_Y = 0.012;
   function pedGround(p, x, z) {
+    const frontage=coreFrontageHeightAt(x,z);if(frontage!==null)return frontage;
     if (!p.node) return SIDEWALK_Y;
     const t = (x - p.ax) * p.ux + (z - p.az) * p.uz;
     return t > 2 && t < p.len - 2 ? CROSSWALK_Y : SIDEWALK_Y;

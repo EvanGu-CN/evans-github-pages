@@ -5,6 +5,7 @@ import {CULTURAL_STREETS} from './cultural-streets-data.js';
 import {ART_GALLERY,galleryDisplayFootprints,galleryPondPolygons} from './art-gallery-layout.js';
 import {CULTURAL_HALL_BY_SOURCE,CULTURAL_HALLS,hallSiteSurfaces} from './cultural-hall-layout.js';
 import {BLUESKY_ROOF,blueskyRoofSurfaces} from './bluesky-roof-layout.js';
+import {CORE_JUNCTION_FRONTAGE} from './core-junction-frontage-data.js';
 import {
   ROADS,
   BLOCKS,
@@ -182,6 +183,7 @@ const SPORTS_ITEMS=(GEO.urban?.surfaces||[]).filter(s=>SPORTS_COLORS[s.kind]).fl
 })))).concat(galleryPondPolygons().map(p=>({outer:p.outer.flatMap(q=>[q.x,q.z]),holes:p.holes.map(r=>r.flatMap(q=>[q.x,q.z])),color:'#405f66',bb:flatBBox(p.outer.flatMap(q=>[q.x,q.z]))})))
   .concat(CULTURAL_HALLS.flatMap(h=>hallSiteSurfaces(h).greens.map(p=>({outer:p.outer.flatMap(q=>[q.x,q.z]),holes:p.holes.map(r=>r.flatMap(q=>[q.x,q.z])),color:'#3c593d',bb:flatBBox(p.outer.flatMap(q=>[q.x,q.z]))}))));
 SPORTS_ITEMS.push(...CULTURAL_STREETS.surfaces.filter(s=>s.kind!=='curb').flatMap(s=>s.polygons.map(p=>({...p,color:s.kind==='walkway'?'#916e69':'#3c593d',bb:flatBBox(p.outer)}))));
+SPORTS_ITEMS.push(...CORE_JUNCTION_FRONTAGE.surfaces.filter(s=>s.kind!=='joint').flatMap(s=>s.polygons.map(p=>({...p,color:s.kind==='blue'?'#3d7a93':'#a96b56',bb:flatBBox(p.outer)}))));
 const SPORTS_INDEX=makeIndex(SPORTS_ITEMS);
 
 const PLACES = GEO.places || [];

@@ -1,4 +1,5 @@
 import * as THREE from 'three/webgpu';
+import {coreFrontageHeightAt} from './core-junction-frontage-layout.js';
 import {
   ISLAND_BOUNDS,
   CENTRAL_PARK_BOUNDS,
@@ -891,6 +892,7 @@ class ThirdPersonControllerManager {
 
   getGroundHeight(x, z, mode = 'person') {
     if(mode==='person'||mode==='cyclist'){
+      const frontage=coreFrontageHeightAt(x,z);if(frontage!==null)return frontage;
       const bridge=getParkFootbridgeHeight?.(x,z);
       if(bridge!==null&&bridge!==undefined)return bridge;
     }

@@ -13,6 +13,7 @@ import {CENTRAL_PLAZA} from '../js/central-plaza-layout.js';
 import {BLUESKY_CANOPY} from '../js/bluesky-canopy-layout.js';
 import {BLUESKY_ROOF} from '../js/bluesky-roof-data.js';
 import {RENMIN_JUNCTION_REFERENCE} from '../js/road-photo-references.js';
+import {CORE_JUNCTION_FRONTAGE} from '../js/core-junction-frontage-data.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -67,9 +68,11 @@ const roads = ROADS.map((r,index) => {
     Math.max(...r.pts.map(p=>p.z)) >= p.streetSection.minZ && Math.min(...r.pts.map(p=>p.z)) <= p.streetSection.maxZ);
   const profile=roadProfiles.get(index);
   const frontage=CULTURAL_STREETS.frontages.find(f=>f.sourceWayIds.includes(GEO.roadSourceIds[index]));
+  const coreFrontage=CORE_JUNCTION_FRONTAGE.sourceWayIds.includes(GEO.roadSourceIds[index]);
   const historic=RENMIN_JUNCTION_REFERENCE.sourceWayIds.includes(GEO.roadSourceIds[index])?RENMIN_JUNCTION_REFERENCE:null;
   return {key:geometryKey(r.name,r.pts),sourceWayId:GEO.roadSourceIds?.[index]||null,name:r.name,kind:r.kind,width:r.w,
-    status:profile?'photo-standard-section-estimate':review.length||frontage?'partial-frontage-reference':historic?'historical-junction-reference':'not-yet-inventoried',
+    status:profile?'photo-standard-section-estimate':review.length||frontage||coreFrontage?'partial-frontage-reference':historic?'historical-junction-reference':'not-yet-inventoried',
+    ...(coreFrontage?{coreFrontageReview:{id:CORE_JUNCTION_FRONTAGE.reviewId,scope:'partial northeast junction frontage only; no motor-road section changes',extent:CORE_JUNCTION_FRONTAGE.extent,audit:CORE_JUNCTION_FRONTAGE.audit,photoPage:CORE_JUNCTION_FRONTAGE.photoPage,captureDate:null,limits:CORE_JUNCTION_FRONTAGE.limits}}:{}),
     ...(historic?{historicalReference:historic}:{}),
     ...(profile?{profileReview:profile}:{}),
     ...(frontage?{frontageReview:{id:CULTURAL_STREETS.reviewId,scope:'partial frontage only; source road geometry and lanes unchanged',frontage,extent:CULTURAL_STREETS.extent,photoPage:CULTURAL_STREETS.photoPage,captureDate:null,limits:CULTURAL_STREETS.limits}}:{}),

@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-bluesky-roof-and-renmin-reference",
+  "release": "2026-11-15-core-junction-frontage",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "2a6acd6bab5a08e775129e1a1ca74b04d6dfc2de",
+  "sourceCommit": "83ac8f3e01dae15eeb24227ef67df61f22170bae",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 402,
+    "nodeTestsPassed": 410,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31444,
-      "sha256": "171df00b5490a250cc93a6f9299ea244644e3d559c84443a26245a740ec453cc"
+      "bytes": 31663,
+      "sha256": "4552e04dd39346ca78add2445233b4c6a70792bf9b29fe92a57e370bfddcb946"
     },
     {
       "path": "js/art-gallery-layout.js",
@@ -172,8 +172,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 37265,
-      "sha256": "0c12db302c82a7dfe64110717183fbed29e7e31010d397d9819a0e9624b433c6"
+      "bytes": 37524,
+      "sha256": "698257f984866442a1c15adff5f39f80a0de38bce71a4eac4532afc27841b620"
     },
     {
       "path": "js/civic-campuses.js",
@@ -192,13 +192,28 @@
     },
     {
       "path": "js/controllers.js",
-      "bytes": 58985,
-      "sha256": "bb1f4756c835aa694e54b6af3196f6a51af6a4df967c658b41e91d15b8b3ed1d"
+      "bytes": 59141,
+      "sha256": "76d63c23ffaf48ed2c6c6b37c044061921d685f5add6d8a899d3ac10ed82454c"
     },
     {
       "path": "js/core-commercial-frontages.js",
       "bytes": 5224,
       "sha256": "ba84cd0e67006686c5f22fd5cece4b42fc6a5eb0efab38ceffad1435bdde5dd5"
+    },
+    {
+      "path": "js/core-junction-frontage-data.js",
+      "bytes": 3665,
+      "sha256": "bc9a34443a1777395ac7a95a045bd83cf591f19c2ca99c41f54e681d88d7751a"
+    },
+    {
+      "path": "js/core-junction-frontage-layout.js",
+      "bytes": 720,
+      "sha256": "443c13c69d131bf22953a946f39e861b2f3d48fe933628cb4aea6b939a046114"
+    },
+    {
+      "path": "js/core-junction-frontage.js",
+      "bytes": 1710,
+      "sha256": "a00ee1b29e7886a781ff75c728e6337ad6d85ffb218d6734ac3ade2cdc023e47"
     },
     {
       "path": "js/core-photo-buildings.js",
@@ -292,8 +307,8 @@
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 27892,
-      "sha256": "064cdab37f02072e5baf5991e4b19d53a4dbabd8f84705cedfcf539a7ee4536f"
+      "bytes": 27998,
+      "sha256": "92114bb0b3722667700655632bc04debedac6bcf72c854f486147c174f889d6f"
     },
     {
       "path": "js/lighting.js",
@@ -332,8 +347,8 @@
     },
     {
       "path": "js/pedestrian-system.js",
-      "bytes": 29544,
-      "sha256": "d7f6e1a6ff857c29f98caf6664b460039e293b3d1c3783045daa04ee98088a34"
+      "bytes": 29698,
+      "sha256": "e6193332cefe63e8fe5fc77914b337477a99cf95f8f7b68b3cf0549c17f35521"
     },
     {
       "path": "js/pedestrians.js",
@@ -397,8 +412,8 @@
     },
     {
       "path": "js/street-details.js",
-      "bytes": 12001,
-      "sha256": "0d0218c160c47b6615b0b27f91f6385c224ffd25b6b3e5df6cf6d82f972b3ed7"
+      "bytes": 12300,
+      "sha256": "0bae59fae1dc9f2711b8ca122d9c9d0db54e0284478d5c1ad821618ec414ff7a"
     },
     {
       "path": "js/taizhou-corridor-data.js",
