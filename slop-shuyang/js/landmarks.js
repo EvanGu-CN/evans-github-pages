@@ -389,14 +389,6 @@ function buildLandmarks(scene) {
         for(let y=5;y<25;y+=4.7)edgePanel(c,e,M.frame,y,.3,e.L-2,.8);
         for(let k=3;k<e.L;k+=10)box(c,M.frame,e.x+e.tx*(k-e.L/2)+e.nx*.8,1.5,e.z+e.tz*(k-e.L/2)+e.nz*.8,.3,23,.4,{ry:e.ry,collide:false});
       }
-      const front=edges.reduce((a,b)=>b.nz>a.nz?b:a);
-      // 实拍宽门架中央开圆洞，跟随真实南侧外沿。
-      const canopy=new THREE.Shape();canopy.moveTo(-104,-8);canopy.lineTo(104,-8);canopy.lineTo(104,8);canopy.lineTo(-104,8);canopy.closePath();
-      const opening=new THREE.Path();opening.absarc(0,0,6.2,0,Math.PI*2,true);canopy.holes.push(opening);
-      const cg=new THREE.ExtrudeGeometry(canopy,{depth:1.2,bevelEnabled:false});cg.rotateX(-Math.PI/2);
-      const cm=new THREE.Mesh(cg,M.white);cm.rotation.y=front.ry;cm.position.set(front.x+front.nx*5,26.2,front.z+front.nz*5);cm.castShadow=true;c.g.add(cm);
-      for(const k of [-90,-45,45,90])cyl(c,M.frame,front.x+front.tx*k+front.nx*5,.25,front.z+front.tz*k+front.nz*5,.45,.45,26,10);
-      sign(c,'蓝天国际商贸城',front.x+front.nx*13.2,29,front.z+front.nz*13.2,64,5.5,front.facing,'#c8cdce','#c36c9c');
     }
   }
 
@@ -510,7 +502,7 @@ function buildLandmarks(scene) {
   buildMengxiCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildShiyanCampus({ctxFor,box,cyl,sign,M,sourceBody,sourceEdges,edgePanel,colliders});
   buildCentralPlaza({ctxFor,box,sign,sourceBody,sourceEdges,edgePanel});
-  buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel});
+  buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel,colliders});
   buildCoreCommercialFrontages({root,box,cyl,sign,M,sourceEdges,edgePanel});
   buildGovernmentServiceCenter({root,box,sign,M,sourceEdges});
   buildHospitalPrecinct({root,box,cyl,sign,M,sourceEdges,edgePanel});

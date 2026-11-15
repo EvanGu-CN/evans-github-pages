@@ -1,0 +1,41 @@
+{
+  "baselineCommit": "00efad2a337b95c9fb073a8ef74662a5b419bd13",
+  "unchangedSourceFiles": {
+    "js/shuyang-geodata.js": {
+      "bytes": 2867481,
+      "sha256": "29d06f5c3158fbbe3519a1c68dd37c0d200508a7c5e5c74fee5c1a51f10284c3"
+    },
+    "js/building-geodata.bin.gz": {
+      "bytes": 128123,
+      "sha256": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f"
+    },
+    "tools/data/shuyang/buildings-enriched.json.gz": {
+      "bytes": 493754,
+      "sha256": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
+    }
+  },
+  "sourceBuildingCount": 7742,
+  "mapParts": 7745,
+  "sourceRoadWays": 1104,
+  "renderRoadSections": 1105,
+  "mapPaths": 92,
+  "canopy": {
+    "sourceId": "way/1321791084",
+    "sourceIndex": 2726,
+    "sourceHeight": 19.3,
+    "bodyDisplayHeight": 25,
+    "base": 26.2,
+    "thickness": 1.2,
+    "halfWidth": 104,
+    "halfDepth": 8,
+    "offset": 5,
+    "radius": 6.2,
+    "displayMaxHeight": 32,
+    "photo": "https://img10.360buyimg.com/n0/jfs/t1/216838/2/45438/129947/6713843eFd9215053/edb0ba1c72c3ac0b.jpg",
+    "page": "https://paimai.jd.com/detailUnaudit/309846413",
+    "captureDate": null,
+    "limits": "The auction photograph shows a single flat canopy with a circular open oculus, rectangular sky slots, slender silver posts and pink roof lettering. Dimensions, slot count/spacing, post count, height and south-front placement are display estimates. The source parcel/body is retained; this is not a reconstructed whole-market roofprint or a verified entrance coordinate. No newly bound 28-storey tower, dome or rooftop billboard is claimed."
+  },
+  "outerAreaM2": 3328,
+  "holeAreaM2": 466.16892397658575
+}

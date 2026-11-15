@@ -10,6 +10,7 @@ import {CULTURAL_HALLS,CULTURAL_IMAGERY,ARCHIVES_ROOF} from '../js/cultural-hall
 import {ART_GALLERY} from '../js/art-gallery-layout.js';
 import {CULTURAL_STREETS} from '../js/cultural-streets-data.js';
 import {CENTRAL_PLAZA} from '../js/central-plaza-layout.js';
+import {BLUESKY_CANOPY} from '../js/bluesky-canopy-layout.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -35,6 +36,10 @@ reviewed.set(ARCHIVES_ROOF.sourceBuildingIndex,{...ARCHIVES_ROOF,displayHeight:A
   geometryEvidence:{method:'satellite roofprint appended as a source building; generic ground facade retained',imagery:CULTURAL_IMAGERY,
     addressPage:ARCHIVES_ROOF.addressPage,captureDate:null,identity:'inferred from official relative address',heightSource:'type estimate',limits:ARCHIVES_ROOF.limits}});
 const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
+reviewed.set(BLUESKY_CANOPY.sourceIndex,{sourceId:BLUESKY_CANOPY.sourceId,name:'蓝天国际商贸城',displayHeight:BLUESKY_CANOPY.displayMaxHeight,
+  reviewId:'bluesky-canopy-2026-11-15',status:'photo-canopy-detail-estimate',modeledFaces:['canopy openings'],
+  geometryEvidence:{method:'source body retained; single canopy with true oculus and sky-slot holes guided by named auction photograph',sourceHeight:BLUESKY_CANOPY.sourceHeight,
+    photoPage:BLUESKY_CANOPY.page,captureDate:null,limits:BLUESKY_CANOPY.limits}});
 for(const tower of [false,true]){
   const r=CENTRAL_PLAZA,index=tower?r.towerIndex:r.podiumIndex;
   reviewed.set(index,{sourceId:tower?r.towerId:r.podiumId,name:tower?'中央商城大厦':'中央商场',displayHeight:tower?r.towerHeight:r.podiumHeight,

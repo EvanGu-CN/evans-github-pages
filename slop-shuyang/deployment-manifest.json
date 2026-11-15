@@ -1,16 +1,13 @@
 {
-  "release": "2026-11-15-source-repository",
+  "release": "2026-11-15-bluesky-canopy",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "00efad2a337b95c9fb073a8ef74662a5b419bd13",
+  "sourceCommit": "35cb47aba5a5667c2ba311ec37d087cb2747dba7",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "baselineSourceCommit": "fa55f4ad66fd6c61ac782a9ea9e5c7c5bfe4b5ed",
-    "baselineNodeTestsPassed": 390,
-    "baselinePythonTestsPassed": 2,
-    "bootTestsPassed": 2,
-    "documentationLinksChecked": true
+    "nodeTestsPassed": 395,
+    "pythonTestsPassed": 2
   },
   "files": [
     {
@@ -20,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31126,
-      "sha256": "4edb07faa718cd6bc5cfde632c15461719c05c1e6d8245c1756cbff64ab5af13"
+      "bytes": 31255,
+      "sha256": "f9d0e35ab51ca6d0d00cb3cdad4b6e1ec49b45792ec0f2b25905ffbcb5414f70"
     },
     {
       "path": "js/art-gallery-layout.js",
@@ -62,6 +59,16 @@
       "path": "js/bayi-district.js",
       "bytes": 25810,
       "sha256": "5c4e7e7aba6590ff14410084b0fb8584a300dee6d5738f113656350bc3ff4d9c"
+    },
+    {
+      "path": "js/bluesky-canopy-layout.js",
+      "bytes": 2177,
+      "sha256": "d752eff4ac4479057df16fce82e56a4ffd67f09a9eb0687251086aacf5c3b917"
+    },
+    {
+      "path": "js/bluesky-canopy.js",
+      "bytes": 2634,
+      "sha256": "1b28be3d48d6f93a8ed2a7e06ea87c01d729dbe74718f1be5f06c6f02b533e9c"
     },
     {
       "path": "js/boroughs.js",
@@ -185,8 +192,8 @@
     },
     {
       "path": "js/core-retail.js",
-      "bytes": 7457,
-      "sha256": "6670a0a2874d50e92a200b18b7831f8b4915139daddfc89c610bdcd6f8e551c4"
+      "bytes": 2564,
+      "sha256": "ada678c040a83d84cee5b216943a7a6a237c467da0ceb81610a0bb4575b6e028"
     },
     {
       "path": "js/cultural-hall-layout.js",
@@ -265,13 +272,13 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 19969,
-      "sha256": "6cac471ae6722832a1296dad38f6c44fde7e23940bd291a4c200f4df45902c80"
+      "bytes": 20010,
+      "sha256": "70de55a6654ff56bb8cec27e5e758b27a91f2b2e511700b1843b39c68a937db1"
     },
     {
       "path": "js/landmarks.js",
-      "bytes": 28775,
-      "sha256": "90c6865b28b0c8ae122ed2b5a5ffd237ca03c8afa4883f8ae66a1f668fc9926e"
+      "bytes": 27892,
+      "sha256": "064cdab37f02072e5baf5991e4b19d53a4dbabd8f84705cedfcf539a7ee4536f"
     },
     {
       "path": "js/lighting.js",

@@ -78,7 +78,7 @@ test('Bluesky retail details remain separate from the rebuilt central plaza', ()
   };
   const {buildCoreRetail} = loadModule(
     readFileSync(new URL('../js/core-retail.js', import.meta.url), 'utf8'),
-    {imports: {'three/webgpu': THREE}}
+    {imports: {'three/webgpu': THREE,'./bluesky-canopy.js':{buildBlueskyCanopy:({c})=>{assert.equal(c.s.sourceId,'way/1321791084');}}}}
   );
   const calls = {box:0, cyl:0, sign:0, panel:0, edges:[]};
   const M = new Proxy({}, {get: () => ({})});
@@ -105,10 +105,10 @@ test('Bluesky retail details remain separate from the rebuilt central plaza', ()
     edgePanel: () => { calls.panel++; }
   });
   assert.equal(contexts.length, 1, 'central plaza has its own source-bound builder');
-  assert.deepEqual(calls.edges, ['way/1321791084']);
-  assert.ok(calls.panel > 30, 'Bluesky glazing, louvers and tile bands remain');
-  assert.ok(calls.box > 50, 'Bluesky entrance, roof plant and street furniture remain');
-  assert.ok(calls.cyl > 20, 'portico columns, entrance posts, lamps and furniture');
-  assert.equal(calls.sign, 5, 'Bluesky category signs remain');
-  assert.ok(meshCount > 20, 'solid struts, roundels, lanterns and aviation lights are real meshes');
+  assert.deepEqual(calls.edges, [],'gate geometry is delegated instead of duplicating full facades');
+  assert.equal(calls.panel,0);
+  assert.ok(calls.box > 0, 'existing forecourt furniture remains while unsupported duplicate roof plant is removed');
+  assert.ok(calls.cyl > 20, 'existing forecourt lamps, posts and furniture remain');
+  assert.equal(calls.sign,0,'historic category signs are not claimed as current tenants');
+  assert.equal(meshCount,0,'old duplicated canopy and dome meshes are removed from the wrapper');
 });

@@ -44,7 +44,7 @@ node --test $cases
 python -m unittest discover -s tests -p 'test_*.py'
 ```
 
-- 当前2026-11-15基线为390项Node与2项Python。7项Overpass用例需Bash，上述Windows命令未运行它们；不要计入通过数。有Bash时可单独运行 `node --test tests/overpass.test.mjs`。
+- 当前2026-11-15基线为395项Node与2项Python。7项Overpass用例需Bash，上述Windows命令未运行它们；不要计入通过数。有Bash时可单独运行 `node --test tests/overpass.test.mjs`。
 - 先做与变更有关的检查，再完成必要回归。纯文档或低影响链接修改无需添加镜像实现的测试。
 - 视觉变更需在实际浏览器检查相关整体/近地视角；涉及灯光时核对相应时段，涉及地图或碰撞时检查实际行为。
 - 静态服务器和浏览器可能缓存旧模块。确认运行的是本次代码；临时禁用缓存、相机覆盖及调试修改在验收结束后恢复。
