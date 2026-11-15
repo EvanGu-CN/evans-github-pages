@@ -1,13 +1,16 @@
 {
-  "release": "2026-11-15-central-plaza",
+  "release": "2026-11-15-source-repository",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "fa55f4ad66fd6c61ac782a9ea9e5c7c5bfe4b5ed",
+  "sourceCommit": "da5bca20906de7bd000823d28bc6013c1c8e5001",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 390,
-    "pythonTestsPassed": 2
+    "baselineSourceCommit": "fa55f4ad66fd6c61ac782a9ea9e5c7c5bfe4b5ed",
+    "baselineNodeTestsPassed": 390,
+    "baselinePythonTestsPassed": 2,
+    "bootTestsPassed": 2,
+    "documentationLinksChecked": true
   },
   "files": [
     {
@@ -17,8 +20,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31127,
-      "sha256": "7113c68ee059a0f39efeb7f634aafc9d76d736d5fcbc7190618321a1aa5f55fe"
+      "bytes": 31126,
+      "sha256": "4edb07faa718cd6bc5cfde632c15461719c05c1e6d8245c1756cbff64ab5af13"
     },
     {
       "path": "js/art-gallery-layout.js",
