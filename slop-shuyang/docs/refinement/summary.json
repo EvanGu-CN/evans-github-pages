@@ -10,7 +10,7 @@
     "photo-massing-and-frontage-estimate": 2,
     "photo-plan-and-massing-estimate": 1,
     "model-bound": 30,
-    "photo-canopy-detail-estimate": 1,
+    "photo-canopy-and-imagery-roof-estimate": 1,
     "photo-frontage-estimate": 3,
     "photo-height-and-facade-grid-estimate": 1,
     "photo-campus-detail-estimate": 3,
@@ -18,8 +18,9 @@
     "imagery-roof-detail-estimate": 1
   },
   "roadStatus": {
-    "not-yet-inventoried": 1094,
+    "not-yet-inventoried": 1093,
     "photo-standard-section-estimate": 3,
+    "historical-junction-reference": 1,
     "partial-frontage-reference": 8
   },
   "sourceDigest": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"

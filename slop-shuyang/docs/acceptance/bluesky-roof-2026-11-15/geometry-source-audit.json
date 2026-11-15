@@ -1,0 +1,215 @@
+{
+  "baselineCommit": "35cb47aba5a5667c2ba311ec37d087cb2747dba7",
+  "unchangedSourceFiles": {
+    "js/shuyang-geodata.js": {
+      "bytes": 2867481,
+      "sha256": "29d06f5c3158fbbe3519a1c68dd37c0d200508a7c5e5c74fee5c1a51f10284c3"
+    },
+    "js/building-geodata.bin.gz": {
+      "bytes": 128123,
+      "sha256": "211ef701274c3124809f5fe0390b2fc949ce47c968b967b0d2c03d98fb79615f"
+    },
+    "tools/data/shuyang/buildings-enriched.json.gz": {
+      "bytes": 493754,
+      "sha256": "b146438a7ab41d9ef070a73f2f86a0a9cf964506f225ead6129c897e09224cdc"
+    }
+  },
+  "sourceBuildingCount": 7742,
+  "mapParts": 7745,
+  "sourceRoadWays": 1104,
+  "renderRoadSections": 1105,
+  "mapPaths": 92,
+  "sourceRoadsDigest": "6340f84446791cc0646838b9c3e81c6d067888d8bc71fe7a3a26ba39a2f730da",
+  "roof": {
+    "sourceId": "way/1321791084",
+    "sourceIndex": 2726,
+    "imagery": {
+      "provider": "AMap public satellite tiles",
+      "zoom": 18,
+      "tileOrigin": [
+        217558,
+        104601
+      ],
+      "size": [
+        3328,
+        2816
+      ],
+      "retrievedAt": "2026-11-13",
+      "imageAcquired": null,
+      "coordinates": "GCJ-02 Web Mercator pixels inverted to WGS84 before project world metres",
+      "redistribution": "Reference mosaic is ignored and not published"
+    },
+    "photographs": {
+      "page": "https://www.sohu.com/a/523006934_412025",
+      "publisher": "速新闻",
+      "publicationDate": "2022-02-15",
+      "captureDate": null,
+      "retrievedAt": "2026-11-15",
+      "panorama": "https://p1.itc.cn/q_70/images03/20220215/92b2d3e48d0f4622acd9a30073334173.jpeg",
+      "use": "Historical intersection context and roof-level comparison; not a measured roof plan or 2026 condition proof"
+    },
+    "sourceHeight": 19.3,
+    "bodyDisplayHeight": 25,
+    "bodyTop": 25.22,
+    "roofBase": 25.245,
+    "pavilionRim": 26.05,
+    "pavilionTop": 26.55,
+    "limits": "Eight trace vertices approximate the visible polygonal roof feature; its exact side count, glazing, slope, dimensions and all elevations are unmeasured. The eastern planted area is represented at the retained podium roof level, not cut into a ground courtyard. Beds and dark rectangular roof patch follow visible colour boundaries; the dark patch is not asserted to be a pool. No species, precise tree count, rooftop public access or current tenancy is inferred. Source footprint and original height remain unchanged; the full market body and 28-storey tower are still unverified.",
+    "pavilion": [
+      [
+        -206.652,
+        -202.015
+      ],
+      [
+        -186.368,
+        -212.342
+      ],
+      [
+        -165.092,
+        -205.49
+      ],
+      [
+        -153.711,
+        -188.811
+      ],
+      [
+        -160.141,
+        -170.643
+      ],
+      [
+        -175.973,
+        -158.356
+      ],
+      [
+        -195.269,
+        -164.229
+      ],
+      [
+        -209.619,
+        -180.904
+      ]
+    ],
+    "terrace": [
+      [
+        -145.797,
+        -227.107
+      ],
+      [
+        -55.744,
+        -197.744
+      ],
+      [
+        -69.589,
+        -96.12
+      ],
+      [
+        -166.569,
+        -122.041
+      ]
+    ],
+    "darkPanel": [
+      [
+        -118.583,
+        -204.062
+      ],
+      [
+        -104.728,
+        -200.149
+      ],
+      [
+        -110.664,
+        -176.582
+      ],
+      [
+        -125.013,
+        -180.985
+      ]
+    ],
+    "beds": [
+      [
+        [
+          -144.311,
+          -206.492
+        ],
+        [
+          -120.1696050421815,
+          -199.11287519718024
+        ],
+        [
+          -118.72179036818244,
+          -204.30902126745647
+        ],
+        [
+          -114.65776929458028,
+          -203.1612396390909
+        ],
+        [
+          -108.83775473818402,
+          -215.05593764091478
+        ],
+        [
+          -115.13898894089013,
+          -217.1105403736839
+        ],
+        [
+          -139.365,
+          -223.677
+        ]
+      ],
+      [
+        [
+          -73.055,
+          -125.569
+        ],
+        [
+          -66.626,
+          -155.027
+        ],
+        [
+          -93.84,
+          -162.854
+        ],
+        [
+          -98.29,
+          -129.961
+        ]
+      ],
+      [
+        [
+          -139.851,
+          -124.03
+        ],
+        [
+          -132.927,
+          -149.071
+        ],
+        [
+          -156.677,
+          -156.411
+        ],
+        [
+          -162.117,
+          -129.899
+        ]
+      ]
+    ],
+    "bedClipping": [
+      {
+        "rawAreaM2": 553.001,
+        "retainedAreaM2": 531.688
+      },
+      {
+        "rawAreaM2": 850.795,
+        "retainedAreaM2": 850.795
+      },
+      {
+        "rawAreaM2": 633.895,
+        "retainedAreaM2": 633.895
+      }
+    ],
+    "traceSha256": "daa337780aff73c95fe8fa1d185c62ea6e3ef6628284bbdd9eb35a580601f7ef"
+  },
+  "pavilionAreaM2": 2110.505637999995,
+  "terraceAreaM2": 10142.904249499996,
+  "bedsAreaM2": 2016.377494589262
+}

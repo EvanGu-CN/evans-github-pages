@@ -11,6 +11,8 @@ import {ART_GALLERY} from '../js/art-gallery-layout.js';
 import {CULTURAL_STREETS} from '../js/cultural-streets-data.js';
 import {CENTRAL_PLAZA} from '../js/central-plaza-layout.js';
 import {BLUESKY_CANOPY} from '../js/bluesky-canopy-layout.js';
+import {BLUESKY_ROOF} from '../js/bluesky-roof-data.js';
+import {RENMIN_JUNCTION_REFERENCE} from '../js/road-photo-references.js';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(gunzipSync(readFileSync(new URL('tools/data/shuyang/buildings-enriched.json.gz', root)))).buildings;
@@ -37,9 +39,9 @@ reviewed.set(ARCHIVES_ROOF.sourceBuildingIndex,{...ARCHIVES_ROOF,displayHeight:A
     addressPage:ARCHIVES_ROOF.addressPage,captureDate:null,identity:'inferred from official relative address',heightSource:'type estimate',limits:ARCHIVES_ROOF.limits}});
 const roadProfiles=new Map((GEO.roadReviews||[]).map(r=>[r.index,r]));
 reviewed.set(BLUESKY_CANOPY.sourceIndex,{sourceId:BLUESKY_CANOPY.sourceId,name:'蓝天国际商贸城',displayHeight:BLUESKY_CANOPY.displayMaxHeight,
-  reviewId:'bluesky-canopy-2026-11-15',status:'photo-canopy-detail-estimate',modeledFaces:['canopy openings'],
+  reviewId:'bluesky-roof-2026-11-15',status:'photo-canopy-and-imagery-roof-estimate',modeledFaces:['canopy openings','roof feature and eastern terrace estimate'],
   geometryEvidence:{method:'source body retained; single canopy with true oculus and sky-slot holes guided by named auction photograph',sourceHeight:BLUESKY_CANOPY.sourceHeight,
-    photoPage:BLUESKY_CANOPY.page,captureDate:null,limits:BLUESKY_CANOPY.limits}});
+    photoPage:BLUESKY_CANOPY.page,captureDate:null,limits:BLUESKY_CANOPY.limits,roofEvidence:BLUESKY_ROOF}});
 for(const tower of [false,true]){
   const r=CENTRAL_PLAZA,index=tower?r.towerIndex:r.podiumIndex;
   reviewed.set(index,{sourceId:tower?r.towerId:r.podiumId,name:tower?'中央商城大厦':'中央商场',displayHeight:tower?r.towerHeight:r.podiumHeight,
@@ -65,8 +67,10 @@ const roads = ROADS.map((r,index) => {
     Math.max(...r.pts.map(p=>p.z)) >= p.streetSection.minZ && Math.min(...r.pts.map(p=>p.z)) <= p.streetSection.maxZ);
   const profile=roadProfiles.get(index);
   const frontage=CULTURAL_STREETS.frontages.find(f=>f.sourceWayIds.includes(GEO.roadSourceIds[index]));
+  const historic=RENMIN_JUNCTION_REFERENCE.sourceWayIds.includes(GEO.roadSourceIds[index])?RENMIN_JUNCTION_REFERENCE:null;
   return {key:geometryKey(r.name,r.pts),sourceWayId:GEO.roadSourceIds?.[index]||null,name:r.name,kind:r.kind,width:r.w,
-    status:profile?'photo-standard-section-estimate':review.length||frontage?'partial-frontage-reference':'not-yet-inventoried',
+    status:profile?'photo-standard-section-estimate':review.length||frontage?'partial-frontage-reference':historic?'historical-junction-reference':'not-yet-inventoried',
+    ...(historic?{historicalReference:historic}:{}),
     ...(profile?{profileReview:profile}:{}),
     ...(frontage?{frontageReview:{id:CULTURAL_STREETS.reviewId,scope:'partial frontage only; source road geometry and lanes unchanged',frontage,extent:CULTURAL_STREETS.extent,photoPage:CULTURAL_STREETS.photoPage,captureDate:null,limits:CULTURAL_STREETS.limits}}:{}),
     review:review.map(p=>({id:p.id,...p.streetSection})), points:r.pts};

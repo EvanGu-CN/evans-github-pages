@@ -1,0 +1,404 @@
+{
+  "bounds": {
+    "isBox3": true,
+    "max": {
+      "x": -55.74400329589844,
+      "y": 26.659868240356445,
+      "z": -96.12000274658205
+    },
+    "min": {
+      "x": -209.71690464019775,
+      "y": 25.219999313354492,
+      "z": -227.10699844360352
+    }
+  },
+  "buildingCounts": {
+    "clipFailures": [],
+    "clipped": [
+      {
+        "index": 1384,
+        "retainedAreaM2": 216.4,
+        "sourceAreaM2": 614.3
+      },
+      {
+        "index": 1386,
+        "retainedAreaM2": 143.5,
+        "sourceAreaM2": 843.6
+      },
+      {
+        "index": 1400,
+        "retainedAreaM2": 707.6,
+        "sourceAreaM2": 979.1
+      },
+      {
+        "index": 1415,
+        "retainedAreaM2": 58.3,
+        "sourceAreaM2": 59.3
+      },
+      {
+        "index": 1428,
+        "retainedAreaM2": 137.9,
+        "sourceAreaM2": 858.8
+      },
+      {
+        "index": 1454,
+        "retainedAreaM2": 573.9,
+        "sourceAreaM2": 963.3
+      },
+      {
+        "index": 1455,
+        "retainedAreaM2": 3110.9,
+        "sourceAreaM2": 4379.4
+      },
+      {
+        "index": 1462,
+        "retainedAreaM2": 1371.3,
+        "sourceAreaM2": 2435
+      },
+      {
+        "index": 1476,
+        "retainedAreaM2": 1696.7,
+        "sourceAreaM2": 3094.3
+      },
+      {
+        "index": 1479,
+        "retainedAreaM2": 115.1,
+        "sourceAreaM2": 188.8
+      },
+      {
+        "index": 1487,
+        "retainedAreaM2": 212.6,
+        "sourceAreaM2": 235
+      },
+      {
+        "index": 1756,
+        "retainedAreaM2": 198.7,
+        "sourceAreaM2": 215.8
+      },
+      {
+        "index": 2702,
+        "retainedAreaM2": 602.2,
+        "sourceAreaM2": 608.3
+      },
+      {
+        "index": 5077,
+        "retainedAreaM2": 1279.3,
+        "sourceAreaM2": 1310
+      }
+    ],
+    "explicitReplacements": [
+      621,
+      622,
+      623,
+      1761,
+      1782,
+      1925,
+      2569,
+      2576,
+      2589,
+      2591,
+      2593,
+      2595,
+      2598,
+      2605,
+      2726,
+      2793,
+      2795,
+      3045,
+      3046,
+      3172,
+      3475,
+      3682,
+      3683,
+      3684,
+      3685,
+      3686,
+      3737,
+      6241,
+      6278,
+      6279,
+      6657,
+      6658,
+      6659,
+      6706,
+      6726,
+      6749
+    ],
+    "fullyCovered": [
+      1418
+    ],
+    "rendered": 7705,
+    "replacedByLandmarks": 37,
+    "source": 7742
+  },
+  "colliders": [
+    {
+      "_order": 143,
+      "blueskyRoof": true,
+      "maxX": -108.83775473818402,
+      "maxY": 25.595,
+      "maxZ": -199.11287519718024,
+      "minX": -144.311,
+      "minY": 25.22,
+      "minZ": -223.677,
+      "polygon": {
+        "holes": [],
+        "outer": [
+          {
+            "x": -144.311,
+            "z": -206.492
+          },
+          {
+            "x": -120.1696050421815,
+            "z": -199.11287519718024
+          },
+          {
+            "x": -118.72179036818244,
+            "z": -204.30902126745647
+          },
+          {
+            "x": -114.65776929458028,
+            "z": -203.1612396390909
+          },
+          {
+            "x": -108.83775473818402,
+            "z": -215.0559376409148
+          },
+          {
+            "x": -115.13898894089012,
+            "z": -217.1105403736839
+          },
+          {
+            "x": -139.365,
+            "z": -223.677
+          }
+        ]
+      },
+      "sourceFootprint": true
+    },
+    {
+      "_order": 144,
+      "_seen": 281,
+      "blueskyRoof": true,
+      "maxX": -66.626,
+      "maxY": 25.595,
+      "maxZ": -125.569,
+      "minX": -98.29,
+      "minY": 25.22,
+      "minZ": -162.854,
+      "polygon": {
+        "holes": [],
+        "outer": [
+          {
+            "x": -73.055,
+            "z": -125.569
+          },
+          {
+            "x": -66.626,
+            "z": -155.027
+          },
+          {
+            "x": -93.84,
+            "z": -162.854
+          },
+          {
+            "x": -98.29,
+            "z": -129.961
+          }
+        ]
+      },
+      "sourceFootprint": true
+    },
+    {
+      "_order": 145,
+      "_seen": 281,
+      "blueskyRoof": true,
+      "maxX": -132.927,
+      "maxY": 25.595,
+      "maxZ": -124.03,
+      "minX": -162.117,
+      "minY": 25.22,
+      "minZ": -156.411,
+      "polygon": {
+        "holes": [],
+        "outer": [
+          {
+            "x": -139.851,
+            "z": -124.03
+          },
+          {
+            "x": -132.927,
+            "z": -149.071
+          },
+          {
+            "x": -156.677,
+            "z": -156.411
+          },
+          {
+            "x": -162.117,
+            "z": -129.899
+          }
+        ]
+      },
+      "sourceFootprint": true
+    },
+    {
+      "_order": 146,
+      "_seen": 281,
+      "blueskyRoof": true,
+      "maxX": -153.711,
+      "maxY": 26.7,
+      "maxZ": -158.356,
+      "minX": -209.619,
+      "minY": 25.22,
+      "minZ": -212.342,
+      "polygon": {
+        "holes": [],
+        "outer": [
+          {
+            "x": -206.652,
+            "z": -202.015
+          },
+          {
+            "x": -186.368,
+            "z": -212.342
+          },
+          {
+            "x": -165.092,
+            "z": -205.49
+          },
+          {
+            "x": -153.711,
+            "z": -188.811
+          },
+          {
+            "x": -160.141,
+            "z": -170.643
+          },
+          {
+            "x": -175.973,
+            "z": -158.356
+          },
+          {
+            "x": -195.269,
+            "z": -164.229
+          },
+          {
+            "x": -209.619,
+            "z": -180.904
+          }
+        ]
+      },
+      "sourceFootprint": true
+    }
+  ],
+  "continuity": [
+    {
+      "baseBodyCollider": true,
+      "down": [
+        25.245,
+        25.22
+      ],
+      "x": -90,
+      "z": -185
+    },
+    {
+      "baseBodyCollider": true,
+      "down": [
+        25.595,
+        25.22
+      ],
+      "x": -160,
+      "z": -135
+    },
+    {
+      "baseBodyCollider": true,
+      "down": [
+        25.22
+      ],
+      "x": -250,
+      "z": -170
+    }
+  ],
+  "finite": true,
+  "meshCount": 6,
+  "rays": [
+    {
+      "hits": [
+        26.59,
+        26.59,
+        26.59,
+        26.59,
+        26.59,
+        26.59,
+        26.59,
+        26.59,
+        26.55
+      ],
+      "name": "pavilion center",
+      "x": -181.603125,
+      "y": 26.55,
+      "z": -185.34875
+    },
+    {
+      "hits": [
+        25.595
+      ],
+      "name": "蓝天楼顶·近似绿化区1",
+      "x": -123.02884405485976,
+      "z": -209.84551630261805
+    },
+    {
+      "hits": [
+        25.595
+      ],
+      "name": "蓝天楼顶·近似绿化区2",
+      "x": -82.95275000000001,
+      "z": -143.35275
+    },
+    {
+      "hits": [
+        25.595
+      ],
+      "name": "蓝天楼顶·近似绿化区3",
+      "x": -147.893,
+      "z": -139.85275
+    },
+    {
+      "hits": [
+        25.26
+      ],
+      "name": "蓝天楼顶·深色矩形区",
+      "x": -114.747,
+      "z": -190.4445
+    }
+  ],
+  "review": {
+    "beds": 3,
+    "bodyTop": 25.22,
+    "featureTop": 26.7,
+    "imagery": {
+      "coordinates": "GCJ-02 Web Mercator pixels inverted to WGS84 before project world metres",
+      "imageAcquired": null,
+      "provider": "AMap public satellite tiles",
+      "redistribution": "Reference mosaic is ignored and not published",
+      "retrievedAt": "2026-11-13",
+      "size": [
+        3328,
+        2816
+      ],
+      "tileOrigin": [
+        217558,
+        104601
+      ],
+      "zoom": 18
+    },
+    "limits": "Eight trace vertices approximate the visible polygonal roof feature; its exact side count, glazing, slope, dimensions and all elevations are unmeasured. The eastern planted area is represented at the retained podium roof level, not cut into a ground courtyard. Beds and dark rectangular roof patch follow visible colour boundaries; the dark patch is not asserted to be a pool. No species, precise tree count, rooftop public access or current tenancy is inferred. Source footprint and original height remain unchanged; the full market body and 28-storey tower are still unverified.",
+    "ribs": 16,
+    "sourceHeight": 19.3,
+    "sourceId": "way/1321791084",
+    "sourceIndex": 2726,
+    "vertices": 279
+  },
+  "vertices": 1239
+}

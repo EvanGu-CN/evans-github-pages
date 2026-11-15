@@ -1,12 +1,12 @@
 {
-  "release": "2026-11-15-bluesky-canopy",
+  "release": "2026-11-15-bluesky-roof-and-renmin-reference",
   "sourceProject": "slop-shuyang",
-  "sourceCommit": "35cb47aba5a5667c2ba311ec37d087cb2747dba7",
+  "sourceCommit": "2a6acd6bab5a08e775129e1a1ca74b04d6dfc2de",
   "sourceBuildings": 7742,
   "teleportableLandmarks": 21,
   "reviewedStreetBuildings": 3,
   "validation": {
-    "nodeTestsPassed": 395,
+    "nodeTestsPassed": 402,
     "pythonTestsPassed": 2
   },
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31255,
-      "sha256": "f9d0e35ab51ca6d0d00cb3cdad4b6e1ec49b45792ec0f2b25905ffbcb5414f70"
+      "bytes": 31444,
+      "sha256": "171df00b5490a250cc93a6f9299ea244644e3d559c84443a26245a740ec453cc"
     },
     {
       "path": "js/art-gallery-layout.js",
@@ -69,6 +69,21 @@
       "path": "js/bluesky-canopy.js",
       "bytes": 2634,
       "sha256": "1b28be3d48d6f93a8ed2a7e06ea87c01d729dbe74718f1be5f06c6f02b533e9c"
+    },
+    {
+      "path": "js/bluesky-roof-data.js",
+      "bytes": 2562,
+      "sha256": "891f89ecfe6cc8a24d9fc2271b99439f74f591e5a8354cc3c85a8a8f729f2852"
+    },
+    {
+      "path": "js/bluesky-roof-layout.js",
+      "bytes": 1327,
+      "sha256": "c625ff5d5c41d17fa5b5eeece225c6adf7da8546fbadcb915fc6ad4083ef1ccc"
+    },
+    {
+      "path": "js/bluesky-roof.js",
+      "bytes": 3637,
+      "sha256": "b7ed351f765bd8630d38f4d86c88dab0b17577af59c7594b40d90c1590fb4a7a"
     },
     {
       "path": "js/boroughs.js",
@@ -157,8 +172,8 @@
     },
     {
       "path": "js/city-map.js",
-      "bytes": 36535,
-      "sha256": "ccbcde3506e595b1c8ab7f1d133adbdfe800c2f0eddd2f282f0d0adc5ac0dec9"
+      "bytes": 37265,
+      "sha256": "0c12db302c82a7dfe64110717183fbed29e7e31010d397d9819a0e9624b433c6"
     },
     {
       "path": "js/civic-campuses.js",
@@ -192,8 +207,8 @@
     },
     {
       "path": "js/core-retail.js",
-      "bytes": 2564,
-      "sha256": "ada678c040a83d84cee5b216943a7a6a237c467da0ceb81610a0bb4575b6e028"
+      "bytes": 2659,
+      "sha256": "b0e411846e3f21573897d4ce26c83b0aaef3a675ad776f3f4fa72a10c9752637"
     },
     {
       "path": "js/cultural-hall-layout.js",
@@ -272,8 +287,8 @@
     },
     {
       "path": "js/landmark-references.js",
-      "bytes": 20010,
-      "sha256": "70de55a6654ff56bb8cec27e5e758b27a91f2b2e511700b1843b39c68a937db1"
+      "bytes": 20214,
+      "sha256": "75e866c8c0dea83b983b1e0cb41b612d36e0c796d841ba2832e7849218f0c546"
     },
     {
       "path": "js/landmarks.js",
@@ -352,8 +367,8 @@
     },
     {
       "path": "js/road-photo-references.js",
-      "bytes": 2820,
-      "sha256": "a1bdcc1c1ad7f7a48896690762c9aacad5ac23f51c3267f09d23ae7243a668e0"
+      "bytes": 4316,
+      "sha256": "931a70a9fb34ba99cfebccc34333c82e3983ec3ab846287410e965ffbaa23b63"
     },
     {
       "path": "js/road-ribbon.js",

@@ -4,6 +4,7 @@ import { TAIZHOU_CORRIDOR } from './taizhou-corridor-data.js';
 import {CULTURAL_STREETS} from './cultural-streets-data.js';
 import {ART_GALLERY,galleryDisplayFootprints,galleryPondPolygons} from './art-gallery-layout.js';
 import {CULTURAL_HALL_BY_SOURCE,CULTURAL_HALLS,hallSiteSurfaces} from './cultural-hall-layout.js';
+import {BLUESKY_ROOF,blueskyRoofSurfaces} from './bluesky-roof-layout.js';
 import {
   ROADS,
   BLOCKS,
@@ -578,6 +579,16 @@ class CityMapSystem {
         }
         ctx.fill('evenodd');
         ctx.stroke();
+      }
+    }
+
+    // Roof-level details share the 3D plan; these green areas are not ground parks.
+    if(zoom>=.4&&!radar){
+      const roofs=[...blueskyRoofSurfaces(),{outer:BLUESKY_ROOF.pavilion.map(([x,z])=>({x,z})),holes:[],material:'roof'}];
+      for(const s of roofs){
+        if(!inRect(flatBBox(s.outer.flatMap(p=>[p.x,p.z])),v))continue;
+        ctx.beginPath();for(const ring of [s.outer,...s.holes]){ctx.moveTo(P.x(ring[0].x),P.y(ring[0].z));for(const p of ring.slice(1))ctx.lineTo(P.x(p.x),P.y(p.z));ctx.closePath();}
+        ctx.fillStyle=({paving:'#646e72',green:'#667452',dark:'#344b4c',roof:'#9ca79e'})[s.material];ctx.fill('evenodd');
       }
     }
 

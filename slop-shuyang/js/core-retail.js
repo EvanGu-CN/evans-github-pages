@@ -1,5 +1,6 @@
 import * as THREE from 'three/webgpu';
 import {buildBlueskyCanopy} from './bluesky-canopy.js';
+import {buildBlueskyRoof} from './bluesky-roof.js';
 
 // 蓝天商贸城识别性细化。中央商场由 central-plaza.js 单独重建，
 // 避免重复的旧冠部、入口体块和两套立面叠加。
@@ -15,6 +16,7 @@ function buildCoreRetail({ctxFor,box,cyl,sign,M,sourceEdges,edgePanel,colliders}
   const b = ctxFor('蓝天国际商贸城');
 
   if(b) buildBlueskyCanopy({c:b,cyl,sign,colliders});
+  if(b) buildBlueskyRoof({c:b,colliders});
 
   // ---------------- Street furniture on the Bluesky forecourt ----------------
   // Bluesky's south forecourt is the larger one; keep positions inside the

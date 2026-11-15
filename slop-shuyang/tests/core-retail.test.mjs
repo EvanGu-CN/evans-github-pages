@@ -78,7 +78,7 @@ test('Bluesky retail details remain separate from the rebuilt central plaza', ()
   };
   const {buildCoreRetail} = loadModule(
     readFileSync(new URL('../js/core-retail.js', import.meta.url), 'utf8'),
-    {imports: {'three/webgpu': THREE,'./bluesky-canopy.js':{buildBlueskyCanopy:({c})=>{assert.equal(c.s.sourceId,'way/1321791084');}}}}
+    {imports: {'three/webgpu': THREE,'./bluesky-canopy.js':{buildBlueskyCanopy:({c})=>{assert.equal(c.s.sourceId,'way/1321791084');}},'./bluesky-roof.js':{buildBlueskyRoof:({c})=>{assert.equal(c.s.sourceId,'way/1321791084');}}}}
   );
   const calls = {box:0, cyl:0, sign:0, panel:0, edges:[]};
   const M = new Proxy({}, {get: () => ({})});

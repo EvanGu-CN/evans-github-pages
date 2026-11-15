@@ -16,7 +16,17 @@ const TAIZHOU_ROAD_REVIEW={
     credit:'沭阳发布 / 凤凰网转载 / 原作者'
   }]
 };
-const ROAD_PHOTO_REFERENCES=[TAIZHOU_ROAD_REVIEW];
+const RENMIN_JUNCTION_REFERENCE={
+  id:'renmin2022',name:'人民中路×上海中路（历史街景）',sourceWayIds:['way/121226962'],
+  publicationDate:'2022-02-15',captureDate:null,reviewedAt:'2026-11-15',status:'historical-junction-reference',
+  scope:'Intersection context only; no road width, lanes, signal phases, fencing or pavement geometry is changed from these historical photographs.',
+  note:'速新闻2022年2月15日图文中的核心商圈路口全景与人民中路路名牌实拍。拍摄日未披露，不当作2026现状；全景有广角畸变，未据此量取路宽。仅登记人民中路与上海中路路口附近的历史参考，整条路、各路口车道和人行道仍待逐段核实；路名牌近景背后商铺暂未逐栋绑定。',
+  photos:[
+    {image:'https://p1.itc.cn/q_70/images03/20220215/92b2d3e48d0f4622acd9a30073334173.jpeg',page:'https://www.sohu.com/a/523006934_412025',caption:'人民路核心商圈路口全景：中央商场及周边楼群、路口与沿街空间；2022年发表，拍摄日未知，广角图不作尺寸量测。',credit:'速新闻 / 原作者'},
+    {image:'https://p5.itc.cn/q_70/images03/20220215/d88f6204f8fd4ef8a95ddd1b11403c50.jpeg',page:'https://www.sohu.com/a/523006934_412025',caption:'人民中路路名牌与沿街白色百叶商业立面近景；2022年发表，商户反映历史时点，背后楼体尚未可靠绑定。',credit:'速新闻 / 原作者'}
+  ]
+};
+const ROAD_PHOTO_REFERENCES=[TAIZHOU_ROAD_REVIEW,RENMIN_JUNCTION_REFERENCE];
 
 function reviewRoadSections(road){
   const review=TAIZHOU_ROAD_REVIEW;
@@ -47,4 +57,4 @@ function reviewedLaneCenters(link){
   if(r.mainNames.includes(link.name)&&link.dir===0&&link.lanes===6&&Math.abs(link.w-r.carriageway)<.01)return r.laneCenters.slice();
   return null;
 }
-export {TAIZHOU_ROAD_REVIEW,ROAD_PHOTO_REFERENCES,reviewRoadSections,reviewedLaneCenters};
+export {TAIZHOU_ROAD_REVIEW,RENMIN_JUNCTION_REFERENCE,ROAD_PHOTO_REFERENCES,reviewRoadSections,reviewedLaneCenters};
